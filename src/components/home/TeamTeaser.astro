@@ -1,0 +1,91 @@
+---
+import ProviderCard from '../shared/ProviderCard.astro';
+import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
+import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
+import ritamariePhoto from '../../assets/staff/ritamarie-smedile.jpg';
+
+const providers = [
+  {
+    name: 'Dr. David Bigley',
+    credentials: 'DO — Family Medicine',
+    role: 'Physician, Founder',
+    photo: drBigleyPhoto.src,
+    photoAlt: 'Dr. David Bigley DO, Founder of Forward Family Medicine, Wayne PA',
+    tagline: 'Whole-person osteopathic medicine — built on truly knowing his patients. Dr. Bigley left the insurance-based model to practice the way he always believed medicine should be: with time, trust, and genuine relationship.',
+    badges: ['DO', 'Family Medicine', 'PCOM'],
+    href: '/about#dr-bigley',
+  },
+  {
+    name: 'Dr. Philip Lieberman',
+    credentials: 'MD — Family Medicine + Lifestyle Medicine',
+    role: 'Physician',
+    photo: drLiebermanPhoto.src,
+    photoAlt: 'Dr. Philip Lieberman MD, Family Medicine and Lifestyle Medicine Physician at Forward Family Medicine',
+    tagline: 'Dual board-certified in Family Medicine and Lifestyle Medicine, with a culinary arts background that makes nutrition advice actually practical. The only physician of his kind on the Main Line.',
+    badges: ['MD', 'Family Medicine', 'Lifestyle Medicine', 'U.S. Navy'],
+    href: '/about#dr-lieberman',
+  },
+  {
+    name: 'Ritamarie Smedile',
+    credentials: 'PhD, RN',
+    role: 'Clinical Operations & Wellness',
+    photo: ritamariePhoto.src,
+    photoAlt: 'Ritamarie Smedile PhD RN, Clinical Operations and Wellness at Forward Family Medicine',
+    tagline: 'A decade of maternal health, integrative wellness, and compassionate care in your community. Ritamarie supports clinic operations and patient services with deep clinical expertise.',
+    badges: ['PhD', 'RN', 'Maternal Health'],
+    href: '/about#ritamarie',
+  },
+];
+---
+
+<section class="team-teaser section" aria-label="Meet the team">
+  <div class="container">
+    <div class="team-header text-center">
+      <span class="section-label">Your Care Team</span>
+      <h2 class="section-title">Meet the Doctors</h2>
+      <p class="section-intro" style="margin:0 auto;">
+        Two board-certified physicians who left the insurance model to build something better —
+        a practice where every patient gets the time, attention, and expertise they deserve.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      {providers.map(p => (
+        <ProviderCard {...p} />
+      ))}
+    </div>
+
+    <div class="team-cta text-center">
+      <a href="/about" class="btn btn-outline">Read Full Bios →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-teaser {
+    background: var(--color-light);
+  }
+  .team-header {
+    margin-bottom: 3rem;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .team-cta {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 860px) {
+    .team-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 540px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

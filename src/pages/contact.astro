@@ -1,0 +1,247 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://forwardfamilymedicine.com/contact" }
+  ]
+};
+---
+
+<MainLayout
+  title="Schedule a Meet & Greet | Forward Family Medicine Wayne PA"
+  description="Schedule a free meet and greet at Forward Family Medicine in Wayne, PA. No obligation, no commitment. Meet Dr. Bigley and Dr. Lieberman and see if we're the right fit for you."
+  schema={breadcrumb}
+>
+  <!-- Hero -->
+  <section class="contact-hero section" style="background: linear-gradient(160deg, #e8f4f7 0%, var(--color-bg) 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Contact</span>
+      </nav>
+      <span class="section-label">Free &amp; No Obligation</span>
+      <h1>Schedule a Meet &amp; Greet</h1>
+      <div class="divider"></div>
+      <p class="section-intro">
+        The best way to decide if Forward Family Medicine is right for you is to come in
+        and meet us. Ask everything. See the office. It's free. No pressure. No commitment.
+        Just a conversation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact content -->
+  <section class="contact-section section">
+    <div class="container contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-col">
+        <MeetGreetForm />
+      </div>
+
+      <!-- Info -->
+      <div class="contact-info-col">
+
+        <div class="card contact-info-card">
+          <h3>Practice Information</h3>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Address</strong>
+              <address style="font-style:normal;">
+                295 Old Eagle School Road<br />
+                Wayne, PA 19087
+              </address>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+12156457044">(215) 645-7044</a>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📠</span>
+            <div>
+              <strong>Fax</strong>
+              <span>(215) 449-8854</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:Information@forwardfamilymedicine.com">Information@forwardfamilymedicine.com</a>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">🕐</span>
+            <div>
+              <strong>Office Hours</strong>
+              <span>Monday–Friday: 8:00 AM – 5:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card contact-info-card" style="margin-top:1.25rem; background: linear-gradient(135deg, #e8f4f7, #f3ede6); border: 2px solid var(--color-primary);">
+          <h3>Serving the Main Line</h3>
+          <p>We see patients from across the Main Line and greater Philadelphia area, including:</p>
+          <ul style="list-style:none; padding:0; font-size:0.9rem; color:#555;">
+            <li style="padding:0.2rem 0;">Wayne, PA</li>
+            <li style="padding:0.2rem 0;">Berwyn &amp; Devon</li>
+            <li style="padding:0.2rem 0;">Paoli &amp; Malvern</li>
+            <li style="padding:0.2rem 0;">Radnor &amp; Villanova</li>
+            <li style="padding:0.2rem 0;">Chester County</li>
+            <li style="padding:0.2rem 0;">Greater Philadelphia</li>
+          </ul>
+        </div>
+
+        <div class="card contact-info-card" style="margin-top:1.25rem;">
+          <h3>Ready to Enroll?</h3>
+          <p style="font-size:0.9rem; color:#555; margin-bottom:1rem;">If you've already met with us and are ready to join, enroll directly online:</p>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll as Individual</a>
+            <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-accent" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll Your Family</a>
+            <a href="https://patient.sigmamd.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="text-align:center;">Patient Portal Login</a>
+          </div>
+        </div>
+
+        <div class="card contact-info-card" style="margin-top:1.25rem;">
+          <h3>What Happens After You Submit</h3>
+          <ol style="padding-left:1.25rem; font-size:0.9rem; color:#555; line-height:1.8;">
+            <li>We review your request</li>
+            <li>We reach out within 24 hours to schedule</li>
+            <li>You come in for your free meet &amp; greet</li>
+            <li>You decide — no pressure, no obligation</li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section class="map-section">
+    <div class="map-placeholder">
+      <div class="map-overlay">
+        <p><strong>295 Old Eagle School Road, Wayne, PA 19087</strong></p>
+        <a
+          href="https://maps.google.com/?q=295+Old+Eagle+School+Road+Wayne+PA+19087"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Get Directions →
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+
+  .contact-section {
+    background: var(--color-bg);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-info-card {
+    padding: 1.75rem;
+  }
+  .contact-info-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-light);
+    padding-bottom: 0.75rem;
+  }
+  .info-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-light);
+  }
+  .info-item:last-child { border-bottom: none; }
+  .info-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .info-item strong {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #888;
+    margin-bottom: 0.25rem;
+  }
+  .info-item a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.15s;
+  }
+  .info-item a:hover { color: var(--color-secondary); }
+  .info-item address, .info-item span {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* Map */
+  .map-section {
+    height: 300px;
+    position: relative;
+  }
+  .map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .map-placeholder::before {
+    content: '📍';
+    font-size: 4rem;
+    position: absolute;
+    opacity: 0.15;
+  }
+  .map-overlay {
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  .map-overlay p {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>

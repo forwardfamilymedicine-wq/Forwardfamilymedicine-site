@@ -1,0 +1,329 @@
+---
+// Meet & Greet interest form — Google Sheets via Apps Script
+const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
+---
+
+<div class="form-wrap card">
+  <div class="form-header">
+    <h2>Request Your Free Meet &amp; Greet</h2>
+    <p>Fill out the form below and we'll reach out within 24 hours to schedule your visit. No pressure, no commitment, no credit card.</p>
+  </div>
+
+  <form id="meetgreet-form" novalidate aria-label="Meet and greet request form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+          autocomplete="given-name"
+          aria-required="true"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          required
+          autocomplete="family-name"
+          aria-required="true"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+          aria-required="true"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          autocomplete="tel"
+          aria-required="true"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="interest">I'm interested in <span aria-hidden="true">*</span></label>
+      <select id="interest" name="interest" required aria-required="true">
+        <option value="">Select one…</option>
+        <option value="just-me">Just me (individual membership)</option>
+        <option value="family">My family (2+ people)</option>
+        <option value="employer">Employer / Business membership</option>
+        <option value="exploring">Just exploring — not sure yet</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="family-size-group" hidden>
+      <label for="familySize">Approximate family size</label>
+      <select id="familySize" name="familySize">
+        <option value="">Select…</option>
+        <option value="2">2 people</option>
+        <option value="3">3 people</option>
+        <option value="4">4 people</option>
+        <option value="5+">5 or more</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="referral">How did you hear about us?</label>
+      <select id="referral" name="referral">
+        <option value="">Select…</option>
+        <option value="google">Google search</option>
+        <option value="instagram">Instagram</option>
+        <option value="facebook">Facebook</option>
+        <option value="friend-family">Friend or family</option>
+        <option value="existing-patient">Referred by an existing patient</option>
+        <option value="zocdoc">Zocdoc</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Questions or anything you'd like us to know (optional)</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder="Tell us a bit about yourself, your health goals, or any questions you have..."
+      ></textarea>
+    </div>
+
+    <div id="form-error" class="form-message error" hidden role="alert" aria-live="assertive"></div>
+    <div id="form-success" class="form-message success" hidden role="alert" aria-live="assertive"></div>
+
+    <!-- Honeypot field — hidden from real users, bots fill it in -->
+    <input type="text" id="company" name="company" autocomplete="off" style="display:none" tabindex="-1" aria-hidden="true">
+
+    <button type="submit" class="btn btn-accent submit-btn" id="submit-btn">
+      Request My Free Meet &amp; Greet
+    </button>
+
+    <p class="form-note">
+      We'll contact you within 24 hours. Your information is never shared or sold.
+    </p>
+  </form>
+</div>
+
+<style>
+  .form-wrap {
+    padding: 2.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .form-header {
+    margin-bottom: 2rem;
+  }
+  .form-header h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+  }
+  .form-header p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  label span[aria-hidden] {
+    color: var(--color-accent);
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #d5cfc8;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(44, 95, 110, 0.15);
+  }
+  input:invalid:not(:placeholder-shown),
+  select:invalid:not(:placeholder-shown) {
+    border-color: #c0392b;
+  }
+  textarea { resize: vertical; }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232C5F6E' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+  }
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .form-message {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  .form-message.error {
+    background: #fdf0f0;
+    border: 1px solid #e74c3c;
+    color: #c0392b;
+  }
+  .form-message.success {
+    background: #f0faf5;
+    border: 1px solid var(--color-secondary);
+    color: #1e6b47;
+  }
+  .form-note {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+  }
+  @media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-wrap { padding: 1.5rem; }
+  }
+</style>
+
+<script define:vars={{ CONTACT_EMAIL }}>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHmO1sVRzNtt3DKTzTMaqLUr-FMIHMbuDmDdc9W8rH3kMthCGhp2rodaBXm4eUP2c/exec';
+
+  const form            = document.getElementById('meetgreet-form');
+  const errorEl         = document.getElementById('form-error');
+  const successEl       = document.getElementById('form-success');
+  const submitBtn       = document.getElementById('submit-btn');
+  const interestSel     = document.getElementById('interest');
+  const familySizeGroup = document.getElementById('family-size-group');
+
+  const formLoadTime = Date.now();
+
+  interestSel?.addEventListener('change', () => {
+    if (familySizeGroup) familySizeGroup.hidden = interestSel.value !== 'family';
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (errorEl)   { errorEl.hidden   = true; errorEl.textContent = ''; }
+    if (successEl) { successEl.hidden = true; successEl.innerHTML  = ''; }
+
+    const firstName  = form.querySelector('#firstName').value.trim();
+    const lastName   = form.querySelector('#lastName').value.trim();
+    const email      = form.querySelector('#email').value.trim();
+    const phone      = form.querySelector('#phone').value.trim();
+    const interest   = form.querySelector('#interest').value;
+    const familySize = form.querySelector('#familySize')?.value || '';
+    const referral   = form.querySelector('#referral').value;
+    const message    = form.querySelector('#message').value.trim();
+    const company    = form.querySelector('#company')?.value || '';
+
+    if (!firstName || !lastName || !email || !phone || !interest) {
+      if (errorEl) {
+        errorEl.textContent = 'Please fill in all required fields.';
+        errorEl.hidden = false;
+      }
+      return;
+    }
+
+    const interestLabels = {
+      'just-me':   'Individual membership',
+      'family':    'Family membership',
+      'employer':  'Employer / Business membership',
+      'exploring': 'Just exploring',
+    };
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone,
+          interest: interestLabels[interest] || interest,
+          familySize,
+          referral,
+          message,
+          page:      window.location.href,
+          referrer:  document.referrer,
+          userAgent: navigator.userAgent,
+          company,
+          loadTime:  formLoadTime,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const json = await res.json();
+      if (!json.success) throw new Error(json.error || 'Unknown error from script');
+
+      if (successEl) {
+        successEl.innerHTML = `
+          <strong>Request received!</strong> We'll reach out within 24 hours to schedule your visit.<br />
+          Questions? Email <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>
+          or call <a href="tel:+12156457044">(215) 645-7044</a>.
+        `;
+        successEl.hidden = false;
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        form.reset();
+        if (familySizeGroup) familySizeGroup.hidden = true;
+      }
+
+    } catch (err) {
+      console.error('Form submission error:', err);
+      if (errorEl) {
+        errorEl.textContent =
+          `Something went wrong — please email us directly at ${CONTACT_EMAIL} or call (215) 645-7044.`;
+        errorEl.hidden = false;
+      }
+    } finally {
+      submitBtn.disabled    = false;
+      submitBtn.textContent = 'Request My Free Meet & Greet';
+    }
+  });
+</script>

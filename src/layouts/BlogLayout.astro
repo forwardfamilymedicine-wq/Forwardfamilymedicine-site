@@ -1,0 +1,150 @@
+---
+import MainLayout from './MainLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  author: string;
+  date: string;
+  tags?: string[];
+  featuredImage?: string;
+  slug: string;
+}
+
+const { title, description, author, date, tags = [], featuredImage, slug } = Astro.props;
+
+const siteUrl = 'https://forwardfamilymedicine.com';
+const canonicalUrl = `${siteUrl}/blog/${slug}`;
+const ogImage = featuredImage || `${siteUrl}/images/og-default.webp`;
+
+const dateObj = new Date(date);
+const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const dateISO = dateObj.toISOString();
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "datePublished": dateISO,
+  "image": ogImage,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Forward Family Medicine",
+    "url": siteUrl
+  },
+  "url": canonicalUrl
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/blog` },
+    { "@type": "ListItem", "position": 3, "name": title, "item": canonicalUrl }
+  ]
+};
+---
+
+<MainLayout
+  title={`${title} | Forward Family Medicine`}
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={ogImage}
+  ogType="article"
+  schema={[articleSchema, breadcrumbSchema]}
+>
+  <article class="blog-post">
+    {featuredImage && (
+      <div class="post-hero">
+        <img
+          src={featuredImage}
+          alt={title}
+          loading="eager"
+          width="1200"
+          height="600"
+        />
+      </div>
+    )}
+    <div class="container">
+      <div class="post-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true"> › </span>
+          <a href="/blog">Blog</a>
+          <span aria-hidden="true"> › </span>
+          <span>{title}</span>
+        </nav>
+        <header class="post-header">
+          {tags.length > 0 && (
+            <div class="post-tags">
+              {tags.map(tag => <span class="badge">{tag}</span>)}
+            </div>
+          )}
+          <h1>{title}</h1>
+          <p class="post-meta">
+            By <strong>{author}</strong> &middot;
+            <time datetime={dateISO}>{dateFormatted}</time>
+          </p>
+        </header>
+        <div class="post-body prose">
+          <slot />
+        </div>
+        <div class="post-cta-block card">
+          <p class="text-muted" style="font-size:0.9rem; margin-bottom:0.5rem;">Forward Family Medicine</p>
+          <h3>Ready to experience medicine the way it should be?</h3>
+          <p>Schedule a free, no-obligation meet and greet with Dr. Bigley or Dr. Lieberman. No pressure, no commitment — just a conversation.</p>
+          <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  .post-hero {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+  }
+  .post-hero img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+  }
+  .post-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 2rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .post-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .post-header { margin-bottom: 2.5rem; }
+  .post-header h1 { margin-bottom: 0.75rem; }
+  .post-meta { color: #666; font-size: 0.9rem; }
+  .prose h2 { margin: 2.5rem 0 1rem; }
+  .prose h3 { margin: 2rem 0 0.75rem; }
+  .prose ul, .prose ol { margin: 1rem 0 1rem 1.5rem; }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose p { margin-bottom: 1.25rem; }
+  .prose strong { color: var(--color-primary); }
+  .post-cta-block {
+    margin-top: 3rem;
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, #e8f4f7 0%, #f3ede6 100%);
+    border-radius: var(--radius);
+  }
+  .post-cta-block h3 { margin-bottom: 0.75rem; }
+  .post-cta-block p { margin-bottom: 1.25rem; }
+</style>

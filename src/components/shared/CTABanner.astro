@@ -1,0 +1,59 @@
+---
+export interface Props {
+  headline?: string;
+  subhead?: string;
+  btnText?: string;
+  btnHref?: string;
+}
+
+const {
+  headline = 'Ready for a Different Kind of Doctor?',
+  subhead = 'Start with a free, no-obligation meet and greet. Meet the team, see the office, and ask every question you have. No pressure. No commitment.',
+  btnText = 'Schedule My Free Meet & Greet',
+  btnHref = '/contact',
+} = Astro.props;
+---
+
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div class="cta-content">
+      <h2>{headline}</h2>
+      <p>{subhead}</p>
+    </div>
+    <a href={btnHref} class="btn btn-accent cta-btn">{btnText}</a>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e4452 100%);
+    padding: clamp(48px, 8vw, 80px) 0;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .cta-content h2 {
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+  .cta-content p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+    max-width: 580px;
+    margin: 0;
+  }
+  .cta-btn {
+    flex-shrink: 0;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 700px) {
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

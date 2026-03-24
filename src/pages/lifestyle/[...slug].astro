@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('lifestyle');
+  return entries
+    .filter(entry => !entry.data.draft)
+    .map(entry => ({
+      params: { slug: entry.id.replace(/\.mdx?$/, '') },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const slug = entry.id.replace(/\.mdx?$/, '');
+const canonicalUrl = entry.data.canonical ?? `https://forwardfamilymedicine.com/lifestyle/${slug}`;
+---
+
+<MainLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical={canonicalUrl}
+>
+  <article class="prose-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span>
+        <a href="/lifestyle-medicine">Lifestyle Medicine</a> <span aria-hidden="true">›</span>
+        <span>{entry.data.title}</span>
+      </nav>
+      <Content />
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 2rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .prose-page {
+    padding: 4rem 0;
+  }
+  .prose-page :global(h1) { font-size: 2.25rem; margin-bottom: 1rem; color: var(--color-primary); }
+  .prose-page :global(h2) { font-size: 1.6rem; margin: 2rem 0 0.75rem; color: var(--color-primary); }
+  .prose-page :global(h3) { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+  .prose-page :global(p) { margin-bottom: 1rem; line-height: 1.75; color: #444; }
+  .prose-page :global(ul), .prose-page :global(ol) { margin: 0.5rem 0 1rem 1.5rem; }
+  .prose-page :global(li) { margin-bottom: 0.4rem; line-height: 1.7; color: #444; }
+  .prose-page :global(a) { color: var(--color-primary); text-decoration: underline; }
+  .prose-page :global(strong) { color: #222; }
+  .prose-page :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  .prose-page :global(blockquote) { border-left: 4px solid var(--color-accent); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: #f9f6f1; color: #555; }
+</style>

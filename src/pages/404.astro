@@ -1,0 +1,94 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Page Not Found | Forward Family Medicine"
+  description="The page you were looking for doesn't exist. Return to the Forward Family Medicine homepage."
+  noindex={true}
+>
+  <section class="error-section">
+    <div class="container error-inner">
+      <span class="error-code" aria-hidden="true">404</span>
+      <h1>This Page Has Left the Building</h1>
+      <p>
+        We can't find what you're looking for — but we can find the right doctor for you.
+      </p>
+      <div class="error-ctas">
+        <a href="/" class="btn btn-primary">Return to Homepage</a>
+        <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+      </div>
+      <div class="error-links">
+        <p>Looking for something specific?</p>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/lifestyle-medicine">Lifestyle Medicine</a></li>
+          <li><a href="/membership">Membership</a></li>
+          <li><a href="/new-patients">New Patients</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .error-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);
+    padding: var(--section-pad) 0;
+  }
+  .error-inner {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .error-code {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 700;
+    color: var(--color-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .error-inner h1 {
+    margin-bottom: 1rem;
+  }
+  .error-inner > p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  .error-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .error-links p {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 0.75rem;
+  }
+  .error-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+  }
+  .error-links a {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .error-links a:hover { color: var(--color-secondary); }
+</style>

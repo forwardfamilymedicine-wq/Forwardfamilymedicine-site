@@ -1,0 +1,548 @@
+---
+import logo from '../../assets/logo/logo.png';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/membership', label: 'Membership' },
+  { href: '/new-patients', label: 'New Patients' },
+  { href: '/for-businesses', label: 'For Businesses' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const servicesChildren = [
+  { href: '/direct-primary-care', label: 'Direct Primary Care' },
+  { href: '/lifestyle-medicine', label: 'Lifestyle Medicine' },
+  { href: '/concierge-medicine', label: 'Concierge Medicine' },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+};
+const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].some(h => currentPath.startsWith(h));
+---
+
+<header class="site-header" role="banner">
+
+  <!-- ── Tier 1: Utility bar ── -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <a href="tel:+12156457044" class="utility-phone">(215) 645-7044</a>
+      <div class="utility-right">
+        <a href="https://patient.sigmamd.com" class="utility-link" target="_blank" rel="noopener noreferrer">Patient Portal</a>
+        <span class="utility-divider" aria-hidden="true">|</span>
+        <div class="signup-dropdown-parent">
+          <button class="utility-link signup-btn">Sign Up ▾</button>
+          <ul class="signup-dropdown-menu">
+            <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Individual Membership</a></li>
+            <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Family Membership</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Tier 2: Main nav bar ── -->
+  <div class="main-nav-bar">
+    <div class="container main-nav-inner">
+
+      <!-- Logo -->
+      <a href="/" class="logo" aria-label="Forward Family Medicine — Home">
+        <img
+          src={logo.src}
+          alt="Forward Family Medicine logo"
+          class="logo-img"
+          height="64"
+          width="auto"
+        />
+      </a>
+
+      <!-- Desktop nav (no Home — logo handles it) -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul>
+          <li>
+            <a href="/about" class={isActive('/about') ? 'active' : ''} aria-current={isActive('/about') ? 'page' : undefined}>About</a>
+          </li>
+
+          <!-- Services dropdown -->
+          <li class="has-dropdown services-parent">
+            <a href="/services">
+              Services <span style="font-size:1rem; margin-left:0.2rem;">▾</span>
+            </a>
+            <ul style="position:absolute; top:100%; left:0; display:none; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:6px; min-width:200px; z-index:1001; padding:0.5rem 0; list-style:none;">
+              <li><a href="/direct-primary-care">Direct Primary Care</a></li>
+              <li><a href="/lifestyle-medicine">Lifestyle Medicine</a></li>
+              <li><a href="/concierge-medicine">Concierge Medicine</a></li>
+            </ul>
+          </li>
+
+          <!-- FAQ through Contact; For Businesses hidden at mid breakpoint -->
+          {navLinks.slice(2).map(link => (
+            <li class={link.href === '/for-businesses' ? 'hide-mid' : ''}>
+              <a
+                href={link.href}
+                class={isActive(link.href) ? 'active' : ''}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Persistent CTA -->
+      <a href="/contact" class="btn btn-accent nav-cta">Schedule Meet &amp; Greet</a>
+
+      <!-- Mobile hamburger -->
+      <button
+        class="hamburger"
+        id="mobile-menu-btn"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Mobile nav drawer (content unchanged) ── -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+    <ul>
+      <li><a href="/" class={isActive('/') ? 'active' : ''}>Home</a></li>
+      <li><a href="/about" class={isActive('/about') ? 'active' : ''}>About</a></li>
+
+      <!-- Services with children in mobile -->
+      <li>
+        <a href="/services">Services</a>
+        <ul class="pl-4 mt-1 space-y-1">
+          <li><a href="/direct-primary-care" class="block py-1">Direct Primary Care</a></li>
+          <li><a href="/lifestyle-medicine" class="block py-1">Lifestyle Medicine</a></li>
+          <li><a href="/concierge-medicine" class="block py-1">Concierge Medicine</a></li>
+        </ul>
+      </li>
+
+      {navLinks.slice(2).map(link => (
+        <li>
+          <a href={link.href} class={isActive(link.href) ? 'active' : ''}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a href="/contact" class="btn btn-accent mobile-cta">Schedule Meet &amp; Greet</a>
+    <div class="mobile-portal-links">
+      <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
+      <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
+      <a href="https://patient.sigmamd.com" target="_blank" rel="noopener noreferrer">Patient Portal Login</a>
+    </div>
+  </nav>
+
+</header>
+
+<style>
+  /* ── Sticky header shell ─────────────────────────────── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  /* ── Tier 1: Utility bar ─────────────────────────────── */
+  .utility-bar {
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .utility-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 0.8rem;
+  }
+  .utility-phone {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.15s;
+  }
+  .utility-phone:hover { color: var(--color-primary); }
+  .utility-right {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .utility-divider {
+    color: #d1d5db;
+    font-size: 0.75rem;
+  }
+  .utility-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+  .utility-link:hover { color: var(--color-primary); }
+
+  /* Sign Up dropdown */
+  .signup-dropdown-parent {
+    position: relative;
+  }
+  .signup-dropdown-parent::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.75rem;
+  }
+  .signup-dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    transition-delay: 0.1s;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 190px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    list-style: none;
+    padding: 0.5rem 0 0.4rem;
+    margin: 0;
+    z-index: 1001;
+  }
+  .signup-dropdown-parent:hover .signup-dropdown-menu,
+  .signup-dropdown-parent:focus-within .signup-dropdown-menu,
+  .signup-dropdown-parent.open .signup-dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  .signup-dropdown-menu li { display: block; }
+  .signup-dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .signup-dropdown-menu a:hover {
+    background: var(--color-light);
+    color: var(--color-primary);
+  }
+
+  /* ── Tier 2: Main nav bar ─────────────────────────────── */
+  .main-nav-bar {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-light);
+  }
+  .main-nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 72px;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .logo-img {
+    height: 64px;
+    width: auto;
+    display: block;
+  }
+
+  /* Desktop nav */
+  .desktop-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+  .desktop-nav > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .desktop-nav > ul > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .desktop-nav a {
+    display: block;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .desktop-nav a:hover,
+  .desktop-nav a.active {
+    color: var(--color-primary);
+    background: var(--color-light);
+  }
+  .caret {
+    font-size: 1rem;
+    margin-left: 0.2rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  /* Services dropdown */
+  li.services-parent:hover ul { display: block !important; }
+  .has-dropdown { position: relative; }
+  .has-dropdown::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.75rem;
+  }
+  .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    transition-delay: 0.1s;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 210px;
+    background: white;
+    border: 1px solid var(--color-light);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    list-style: none;
+    padding: 0.5rem 0 0.4rem;
+    margin: 0;
+    z-index: 200;
+  }
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown,
+  .has-dropdown.open .dropdown {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  .dropdown li { display: block; }
+  .dropdown a {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 0;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .dropdown a:hover,
+  .dropdown a.active {
+    background: var(--color-light);
+    color: var(--color-primary);
+  }
+
+  /* CTA */
+  .nav-cta {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.25rem;
+    white-space: nowrap;
+  }
+
+  /* ── Hamburger ─────────────────────────────────────────── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── Mobile nav drawer ─────────────────────────────────── */
+  .mobile-nav {
+    background: var(--color-white);
+    border-top: 1px solid var(--color-light);
+    padding: 1.5rem clamp(16px, 4vw, 40px) 2rem;
+  }
+  .mobile-nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+  .mobile-nav > ul > li { border-bottom: 1px solid var(--color-light); }
+  .mobile-nav a {
+    display: block;
+    padding: 0.9rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .mobile-nav a:hover,
+  .mobile-nav a.active { color: var(--color-primary); }
+  .mobile-sub {
+    list-style: none;
+    padding: 0 0 0.5rem 1rem;
+    margin: 0;
+  }
+  .mobile-sub li { border: none; }
+  .mobile-sub a {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .mobile-sub a:hover,
+  .mobile-sub a.active { color: var(--color-primary); }
+  .mobile-cta { display: inline-block; }
+  .mobile-portal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-light);
+  }
+  .mobile-portal-links a {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .mobile-portal-links a:hover { text-decoration: underline; }
+
+  /* ── Breakpoints ────────────────────────────────────────── */
+
+  /* 1024–1279px: two-tier, tighter fonts, hide For Businesses */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .desktop-nav a {
+      font-size: 0.82rem;
+      padding: 0.4rem 0.45rem;
+    }
+    .hide-mid { display: none; }
+  }
+
+  /* <1024px: hamburger mode */
+  @media (max-width: 1023px) {
+    .desktop-nav { display: none; }
+    .hamburger { display: flex; }
+    .utility-right { display: none; }
+    .logo-img { height: 48px; }
+    .main-nav-inner { min-height: 60px; gap: 0.75rem; }
+  }
+
+  /* <640px: hide utility bar entirely */
+  @media (max-width: 639px) {
+    .utility-bar { display: none; }
+    .nav-cta {
+      font-size: 0.8rem;
+      padding: 0.5rem 0.9rem;
+    }
+    .logo-img { height: 40px; }
+  }
+</style>
+
+<script>
+  // Mobile nav toggle
+  const btn = document.getElementById('mobile-menu-btn') as HTMLButtonElement;
+  const nav = document.getElementById('mobile-nav') as HTMLElement;
+
+  btn?.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    nav.hidden = expanded;
+  });
+
+  // Services dropdown — click/touch toggle
+  const servicesParent = document.querySelector('.has-dropdown') as HTMLElement | null;
+  const servicesLink = servicesParent?.querySelector(':scope > a') as HTMLAnchorElement | null;
+
+  servicesLink?.addEventListener('click', (e) => {
+    const isOpen = servicesParent!.classList.contains('open');
+    if (!isOpen) {
+      e.preventDefault();
+      servicesParent!.classList.add('open');
+    }
+    // If already open, allow navigation to /services
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!servicesParent?.contains(e.target as Node)) {
+      servicesParent?.classList.remove('open');
+    }
+  });
+
+  // Sign Up dropdown — click/touch toggle
+  const signupParent = document.querySelector('.signup-dropdown-parent') as HTMLElement | null;
+  const signupBtn = signupParent?.querySelector('.signup-btn') as HTMLButtonElement | null;
+
+  signupBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = signupParent!.classList.contains('open');
+    signupParent!.classList.toggle('open', !isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!signupParent?.contains(e.target as Node)) {
+      signupParent?.classList.remove('open');
+    }
+  });
+</script>

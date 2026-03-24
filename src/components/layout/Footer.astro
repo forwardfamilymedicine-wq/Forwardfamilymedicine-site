@@ -1,0 +1,256 @@
+---
+import logo from '../../assets/logo/logo.png';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label="Forward Family Medicine">
+        <img
+          src={logo.src}
+          alt="Forward Family Medicine logo"
+          class="footer-logo-img"
+          height="56"
+          width="auto"
+        />
+      </a>
+      <p class="tagline">The Main Line's only Direct Primary Care practice with in-person, board-certified Lifestyle Medicine.</p>
+      <a href="/contact" class="btn btn-accent footer-cta">Schedule a Free Meet &amp; Greet</a>
+    </div>
+
+    <div class="footer-nav">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/lifestyle-medicine">Lifestyle Medicine</a></li>
+        <li><a href="/membership">Membership</a></li>
+        <li><a href="/new-patients">New Patients</a></li>
+        <li><a href="/for-businesses">For Businesses</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <address>
+        <p>
+          <strong>Address</strong><br />
+          295 Old Eagle School Road<br />
+          Wayne, PA 19087
+        </p>
+        <p>
+          <strong>Phone</strong><br />
+          <a href="tel:+12156457044">(215) 645-7044</a>
+        </p>
+        <p>
+          <strong>Fax</strong><br />
+          (215) 449-8854
+        </p>
+        <p>
+          <strong>Email</strong><br />
+          <a href="mailto:Information@forwardfamilymedicine.com">Information@forwardfamilymedicine.com</a>
+        </p>
+      </address>
+
+      <div class="office-hours">
+        <strong>Office Hours</strong>
+        <p style="font-size:0.85rem; margin-top:0.25rem; color:#374151;">
+          Monday–Friday: 8:00 AM – 5:00 PM
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Areas We Serve — internal links for local SEO crawlability -->
+  <div class="footer-local">
+    <div class="container">
+      <p class="footer-local-label">Areas We Serve</p>
+      <ul class="footer-local-list">
+        <li><a href="/local/direct-primary-care-wayne-pa">Wayne</a></li>
+        <li><a href="/local/direct-primary-care-bryn-mawr-pa">Bryn Mawr</a></li>
+        <li><a href="/local/direct-primary-care-ardmore-pa">Ardmore</a></li>
+        <li><a href="/local/direct-primary-care-berwyn-pa">Berwyn</a></li>
+        <li><a href="/local/direct-primary-care-devon-pa">Devon</a></li>
+        <li><a href="/local/direct-primary-care-haverford-pa">Haverford</a></li>
+        <li><a href="/local/direct-primary-care-villanova-pa">Villanova</a></li>
+        <li><a href="/local/direct-primary-care-radnor-pa">Radnor</a></li>
+        <li><a href="/local/direct-primary-care-paoli-pa">Paoli</a></li>
+        <li><a href="/local/direct-primary-care-malvern-pa">Malvern</a></li>
+        <li><a href="/local/direct-primary-care-king-of-prussia-pa">King of Prussia</a></li>
+        <li><a href="/local/direct-primary-care-newtown-square-pa">Newtown Square</a></li>
+        <li><a href="/local/direct-primary-care-media-pa">Media</a></li>
+        <li><a href="/local/direct-primary-care-west-chester-pa">West Chester</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; {year} Forward Family Medicine. All rights reserved.</p>
+      <p class="disclaimer">
+        Forward Family Medicine is a Direct Primary Care practice. Membership is not insurance.
+        We recommend pairing DPC with a high-deductible or health-sharing plan.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #ffffff;
+    color: #374151;
+    border-top: 1px solid #e5e7eb;
+    margin-top: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Brand column */
+  .footer-logo {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  .footer-logo-img {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+  .footer-cta {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.5rem;
+  }
+
+  /* Nav column */
+  .footer-nav h3,
+  .footer-contact h3 {
+    font-family: var(--font-heading);
+    color: #111827;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-nav li { margin-bottom: 0.4rem; }
+  .footer-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+  }
+  .footer-nav a:hover { color: var(--color-primary); text-decoration: underline; }
+
+  /* Contact column */
+  .footer-contact address { font-style: normal; }
+  .footer-contact p {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  .footer-contact strong { color: #111827; }
+  .footer-contact a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .footer-contact a:hover { opacity: 0.8; }
+  .office-hours { margin-top: 1rem; }
+  .office-hours strong { color: #111827; font-size: 0.9rem; }
+
+  /* Bottom bar */
+  .footer-bottom {
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    padding: 1.25rem 0;
+  }
+  .footer-bottom-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 0;
+  }
+  .disclaimer { max-width: 600px; }
+
+  /* Areas We Serve */
+  .footer-local {
+    border-top: 1px solid #e5e7eb;
+    padding: 1.25rem 0;
+  }
+  .footer-local .container {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .footer-local-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .footer-local-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.1rem;
+  }
+  .footer-local-list li::after {
+    content: '·';
+    color: #e5e7eb;
+    margin: 0 0.35rem;
+  }
+  .footer-local-list li:last-child::after { content: ''; }
+  .footer-local-list a {
+    font-size: 0.82rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-local-list a:hover { color: var(--color-primary); text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+</style>

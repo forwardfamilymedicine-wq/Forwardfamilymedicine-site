@@ -1,0 +1,142 @@
+---
+/**
+ * ArticleSchema.astro
+ * Emits JSON-LD Article (or MedicalWebPage) schema for blog posts,
+ * SEO content pages, and lifestyle knowledge library articles.
+ *
+ * Usage in article page template:
+ *   <ArticleSchema
+ *     title={frontmatter.title}
+ *     description={frontmatter.description}
+ *     canonical={frontmatter.canonical}
+ *     datePublished={frontmatter.date}
+ *     author={frontmatter.author}
+ *     image={frontmatter.image}
+ *     imageAlt={frontmatter.imageAlt}
+ *     category={frontmatter.category}
+ *     isMedical={frontmatter.category === "lifestyle" || frontmatter.schemaType === "MedicalWebPage"}
+ *   />
+ */
+
+import { SITE } from "../../data/siteConfig";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  datePublished: string;
+  dateModified?: string;
+  /** Author name string or "Forward Family Medicine" */
+  author?: string;
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  category?: string;
+  /** Use MedicalWebPage type for health/medical content (better for Google Health) */
+  isMedical?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  datePublished,
+  dateModified,
+  author = SITE.name,
+  image,
+  imageAlt,
+  imageWidth = 1200,
+  imageHeight = 630,
+  category,
+  isMedical = false,
+} = Astro.props;
+
+const articleType = isMedical ? "MedicalWebPage" : "Article";
+
+// Determine if author is the org or a physician
+const authorSchema =
+  author === SITE.name || !author
+    ? {
+        "@type": "Organization",
+        "@id": `${SITE.url}/#organization`,
+        name: SITE.name,
+        url: SITE.url,
+      }
+    : {
+        "@type": "Person",
+        name: author,
+        worksFor: {
+          "@type": "Organization",
+          "@id": `${SITE.url}/#organization`,
+          name: SITE.name,
+        },
+      };
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": articleType,
+  headline: title,
+  description,
+  url: canonical,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": canonical,
+  },
+  datePublished,
+  ...(dateModified ? { dateModified } : {}),
+  author: authorSchema,
+  publisher: {
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    logo: {
+      "@type": "ImageObject",
+      url: SITE.logo.url,
+      width: SITE.logo.width,
+      height: SITE.logo.height,
+    },
+  },
+  ...(image
+    ? {
+        image: {
+          "@type": "ImageObject",
+          url: new URL(image, SITE.url).href,
+          width: imageWidth,
+          height: imageHeight,
+          caption: imageAlt ?? title,
+        },
+      }
+    : {
+        image: {
+          "@type": "ImageObject",
+          url: SITE.defaultOGImage.url,
+          width: SITE.defaultOGImage.width,
+          height: SITE.defaultOGImage.height,
+        },
+      }),
+  ...(category ? { articleSection: category } : {}),
+  // MedicalWebPage-specific
+  ...(isMedical
+    ? {
+        about: {
+          "@type": "MedicalCondition",
+          name: category ?? "Lifestyle Medicine",
+        },
+        medicalAudience: {
+          "@type": "MedicalAudience",
+          audienceType: "Patient",
+        },
+        reviewedBy: {
+          "@type": "Physician",
+          name: SITE.name,
+          worksFor: {
+            "@id": `${SITE.url}/#organization`,
+          },
+        },
+      }
+    : {}),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />

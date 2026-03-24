@@ -1,0 +1,105 @@
+---
+/**
+ * MedicalClinicSchema.astro
+ * Emits JSON-LD for the physical clinic location.
+ * Combines MedicalClinic + LocalBusiness types for maximum local SEO signal.
+ * Render once in BaseLayout.astro alongside MedicalOrganizationSchema.
+ *
+ * Usage in BaseLayout.astro:
+ *   <MedicalClinicSchema />
+ *
+ * On local landing pages, pass areaServed to override the default:
+ *   <MedicalClinicSchema areaServed="King of Prussia, PA" />
+ */
+
+import { SITE } from "../../data/siteConfig";
+
+interface Props {
+  /** Override areaServed for local landing pages */
+  areaServed?: string;
+}
+
+const { areaServed } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalClinic", "LocalBusiness"],
+  "@id": `${SITE.url}/#clinic`,
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  image: {
+    "@type": "ImageObject",
+    url: SITE.clinicImage.url,
+    width: SITE.clinicImage.width,
+    height: SITE.clinicImage.height,
+  },
+  logo: {
+    "@type": "ImageObject",
+    url: SITE.logo.url,
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.zip,
+    addressCountry: SITE.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+  ],
+  priceRange: SITE.priceRange,
+  currenciesAccepted: SITE.currenciesAccepted,
+  paymentAccepted: SITE.paymentAccepted,
+  areaServed: areaServed
+    ? { "@type": "City", name: areaServed }
+    : {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: SITE.geo.latitude,
+          longitude: SITE.geo.longitude,
+        },
+        geoRadius: "25000", // 25km radius in meters
+      },
+  medicalSpecialty: "Family Practice",
+  availableService: [
+    {
+      "@type": "MedicalProcedure",
+      name: "Direct Primary Care Membership",
+      procedureType: "http://schema.org/PalliativeProcedure",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Lifestyle Medicine Consultation",
+    },
+    {
+      "@type": "MedicalProcedure",
+      name: "Annual Physical Exam",
+    },
+    {
+      "@type": "MedicalProcedure",
+      name: "Telehealth Consultation",
+    },
+  ],
+  isAcceptingNewPatients: true,
+  parentOrganization: {
+    "@id": `${SITE.url}/#organization`,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />

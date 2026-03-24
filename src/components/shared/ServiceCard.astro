@@ -1,0 +1,58 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  href: string;
+  featured?: boolean;
+}
+
+const { title, description, icon, href, featured = false } = Astro.props;
+---
+
+<div class={`service-card card ${featured ? 'featured' : ''}`}>
+  <div class="service-icon" aria-hidden="true">{icon}</div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={href} class="service-link">Learn more →</a>
+</div>
+
+<style>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .service-card.featured {
+    background: linear-gradient(135deg, #e8f4f7 0%, #f3ede6 100%);
+    border: 2px solid var(--color-primary);
+  }
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  .service-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 1.25rem;
+  }
+  .service-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: auto;
+    transition: color 0.15s;
+  }
+  .service-link:hover { color: var(--color-secondary); }
+</style>

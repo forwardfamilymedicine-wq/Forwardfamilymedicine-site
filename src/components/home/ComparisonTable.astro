@@ -1,0 +1,126 @@
+---
+const rows = [
+  { feature: 'Average appointment time', traditional: '7–10 minutes', concierge: '30–60 min', ffm: '1–2 hours' },
+  { feature: 'Same-day access', traditional: 'Rarely available', concierge: 'Usually available', ffm: 'Always available' },
+  { feature: 'Direct doctor contact', traditional: 'No — through staff', concierge: 'Yes — direct', ffm: 'Yes — call, text, email' },
+  { feature: 'Lifestyle & nutrition coaching', traditional: 'No', concierge: 'Rarely', ffm: 'Yes — board-certified' },
+  { feature: 'Monthly cost clarity', traditional: 'Unpredictable copays & bills', concierge: '$350–$500+/month retainer', ffm: 'Flat monthly membership' },
+  { feature: 'Insurance required', traditional: 'Yes', concierge: 'Often still billed', ffm: 'No — membership only' },
+  { feature: 'Patient panel size', traditional: '2,000+ patients per doctor', concierge: '300–600 patients', ffm: '~250 patients per physician' },
+];
+---
+
+<section class="comparison-section section">
+  <div class="container">
+    <div class="comparison-header">
+      <span class="section-label">Why Forward Family Medicine</span>
+      <h2 class="section-title">This Is What Primary Care Should Feel Like</h2>
+      <p class="section-intro">The traditional model was never built around you. Ours is.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="comparison-table" aria-label="Forward Family Medicine vs Traditional Primary Care">
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Traditional Primary Care</th>
+            <th scope="col">Traditional Concierge Medicine</th>
+            <th scope="col" class="ffm-col">Forward Family Medicine (DPC + Concierge + Lifestyle Medicine)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(row => (
+            <tr>
+              <td class="feature-col">{row.feature}</td>
+              <td class="trad-col">
+                <span class="cell-no">{row.traditional}</span>
+              </td>
+              <td class="trad-col">
+                <span class="cell-no">{row.concierge}</span>
+              </td>
+              <td class="ffm-col">
+                <span class="cell-yes">{row.ffm}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comparison-cta text-center">
+      <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+      <a href="/membership" class="btn btn-outline" style="margin-left:1rem;">Learn About Membership</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .comparison-header {
+    margin-bottom: 2.5rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 0.95rem;
+  }
+  .comparison-table thead {
+    background: var(--color-primary);
+    color: white;
+  }
+  .comparison-table thead th {
+    padding: 1rem 1.25rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-align: left;
+    color: white;
+  }
+  .comparison-table thead th.ffm-col {
+    background: var(--color-secondary);
+  }
+  .comparison-table tbody tr {
+    border-bottom: 1px solid var(--color-light);
+    transition: background 0.15s;
+  }
+  .comparison-table tbody tr:hover {
+    background: #fafaf8;
+  }
+  .comparison-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .comparison-table td {
+    padding: 0.9rem 1.25rem;
+    vertical-align: middle;
+  }
+  .feature-col {
+    font-weight: 600;
+    color: var(--color-text);
+    max-width: 240px;
+  }
+  .trad-col {
+    color: #888;
+  }
+  .ffm-col {
+    background: #f0faf5;
+  }
+  .cell-yes {
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+  .cell-no {
+    color: #999;
+  }
+  .comparison-cta {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 560px) {
+    .comparison-cta .btn { display: block; margin: 0 auto 1rem; }
+  }
+</style>

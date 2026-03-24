@@ -1,0 +1,63 @@
+---
+title: "Lifestyle Medicine Near Berwyn, PA | Forward Family Medicine"
+description: "Berwyn, PA patients can access Forward Family Medicine's lifestyle medicine-integrated DPC practice in Wayne — evidence-based nutrition, activity, sleep, and stress counseling included in membership."
+keywords:
+  - lifestyle medicine Berwyn PA
+  - preventive care Berwyn Pennsylvania
+  - wellness doctor Berwyn PA
+  - chronic disease prevention Berwyn PA
+canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-berwyn-pa"
+location: "Berwyn, PA"
+date: "2026-01-01"
+author: "Forward Family Medicine"
+schemaType: "MedicalOrganization"
+linksTo:
+  - "/lifestyle-medicine"
+  - "/membership"
+  - "/become-a-patient"
+---
+
+# Lifestyle Medicine Near Berwyn, PA
+
+## About Berwyn, PA
+
+Berwyn is a residential Chester County community on Lancaster Avenue, just east of Wayne. With proximity to the Chester Valley Trail and a community that values outdoor living and family health, Berwyn is a natural home base for patients who want a physician who takes prevention seriously.
+
+## Lifestyle Medicine as Part of Your Primary Care
+
+Forward Family Medicine integrates lifestyle medicine into every DPC membership — meaning your physician uses evidence-based nutrition, activity, sleep, and stress counseling as clinical tools, not add-ons. For Berwyn patients, this means a 3-mile drive to a practice that approaches your health differently.
+
+[What is lifestyle medicine? →](/lifestyle-medicine)
+
+## Why Berwyn Patients Choose This Approach
+
+- Prevention-first care that addresses root causes of chronic disease
+- Personalized nutrition guidance — not generic advice
+- Exercise prescription tailored to your baseline and goals
+- Sleep disorders and insomnia taken seriously clinically
+- Stress management integrated into chronic disease management
+- Conditions improved: diabetes, hypertension, cholesterol, obesity, insomnia, anxiety
+
+## Services Included in Membership
+
+Full lifestyle medicine counseling · Chronic disease management · Preventive care · Unlimited visits · Wholesale labs [Full services →](/services)
+
+## Practical Information
+
+**Distance from Berwyn:** ~3 miles via Route 30
+**Telehealth:** Lifestyle medicine consultations are well-suited to video visits — Berwyn patients often use telehealth for check-ins and nutrition follow-ups
+
+## Frequently Asked Questions
+
+**Is lifestyle medicine available near Berwyn, PA?**
+Yes — Forward Family Medicine in Wayne, PA is 3 miles from Berwyn and integrates lifestyle medicine into every membership. [Learn more →](/lifestyle-medicine)
+
+**Is lifestyle medicine included in the membership fee for Berwyn patients?**
+Yes — all lifestyle medicine counseling is included at no extra cost. [See membership →](/membership)
+
+**Can Berwyn patients use telehealth for lifestyle medicine consultations?**
+Absolutely. Phone and video visits are included and work especially well for nutrition and lifestyle check-ins.
+
+## Take the First Step
+
+**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Explore Lifestyle Medicine →](/lifestyle-medicine)**

@@ -1,0 +1,156 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import CredentialStrip from '../components/home/CredentialStrip.astro';
+import ComparisonTable from '../components/home/ComparisonTable.astro';
+import TeamTeaser from '../components/home/TeamTeaser.astro';
+import LifestyleMedTeaser from '../components/home/LifestyleMedTeaser.astro';
+import ServiceCard from '../components/shared/ServiceCard.astro';
+import TestimonialCard from '../components/shared/TestimonialCard.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+
+const services = [
+  {
+    icon: '🏥',
+    title: 'Direct Primary Care',
+    description: 'The financial model that makes everything else possible. No insurance billing. No copays. Labs at wholesale, medications at cost, and a physician incentivized by your health — not by billing volume.',
+    href: '/services#dpc',
+    featured: false,
+  },
+  {
+    icon: '🌿',
+    title: 'Lifestyle Medicine',
+    description: 'The only in-person, board-certified Lifestyle Medicine practice on the Main Line. Dr. Lieberman is dual board-certified, culinary-trained, and built FFM so this is part of every visit — not an add-on, not a referral.',
+    href: '/lifestyle-medicine',
+    featured: true,
+  },
+  {
+    icon: '⭐',
+    title: 'Concierge Medicine',
+    description: 'Every FFM member gets the experience most people associate with a $5,000/year concierge retainer — 250-patient panels, 1–2 hour visits, and your doctor\'s direct line. There is no separate tier. This is the standard.',
+    href: '/services#concierge',
+    featured: false,
+  },
+];
+
+const testimonials = [
+  {
+    quote: "I've never had a doctor pick up the phone personally when I called. Dr. Bigley does — every time. That alone is worth everything.",
+    author: 'D.W.',
+    detail: 'Forward Family Medicine Patient',
+  },
+  {
+    quote: "When I needed a specialist, they didn't just give me a name. They called ahead, explained my case, and made sure I got in quickly. I felt like I had someone fighting for me.",
+    author: 'P.H.',
+    detail: 'Forward Family Medicine Patient',
+  },
+  {
+    quote: "Dr. Lieberman didn't just tell me to lose weight — he built a real plan with me, based on what I actually eat and how I actually live. Three months later, my A1C is down significantly.",
+    author: 'R.M.',
+    detail: 'Forward Family Medicine Patient',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What is Direct Primary Care?',
+    a: 'DPC is a membership model where you pay a flat monthly fee directly to your doctor — no insurance involved. You get unlimited primary care access, longer appointments, same-day availability, and a genuine care relationship. Think of it as your primary care doctor, always available, always on your side.',
+  },
+  {
+    q: 'Is this the same as insurance?',
+    a: 'No. Direct Primary Care covers your day-to-day primary care needs. We recommend pairing it with a high-deductible health plan for hospital stays, surgeries, and specialist care.',
+  },
+  {
+    q: 'Do you accept insurance?',
+    a: 'We do not bill insurance. Our membership model is precisely what allows us to keep our patient panel capped at ~250 patients per physician and spend real time with each patient. No insurance means no compromises.',
+  },
+  {
+    q: 'What is Lifestyle Medicine and is it included?',
+    a: "Lifestyle medicine is an evidence-based specialty using therapeutic changes in nutrition, activity, sleep, and stress to prevent, treat, and even reverse chronic disease. Dr. Lieberman is board-certified in it — and it's fully integrated into your membership. No extra fee.",
+  },
+  {
+    q: 'Can I use my HSA or FSA?',
+    a: 'In many cases, yes — especially following the Primary Care Enhancement Act (effective January 1, 2026), which clarified that HSA funds can be used for DPC memberships. Confirm eligibility with your plan administrator.',
+  },
+  {
+    q: 'How do I get started?',
+    a: 'Schedule a free, no-obligation meet and greet. Come in, meet Dr. Bigley and Dr. Lieberman, see the office, and ask everything. No commitment required. Fill out the form on our contact page or call (215) 645-7044.',
+  },
+];
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" }
+  ]
+};
+---
+
+<MainLayout
+  title="Direct Primary Care Wayne PA | Forward Family Medicine"
+  description="The Main Line's only Direct Primary Care practice with in-person, board-certified Lifestyle Medicine. No insurance. Same-day access. Wayne, PA — serving the Main Line and Chester County."
+  schema={breadcrumb}
+>
+  <HeroSection />
+  <CredentialStrip />
+  <ComparisonTable />
+  <TeamTeaser />
+
+  <!-- Services -->
+  <section class="services-section section">
+    <div class="container">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Three Things Every FFM Member Gets</h2>
+      <p class="section-intro">Every service starts with more time, more access, and a doctor who genuinely knows you.</p>
+      <div class="services-grid">
+        {services.map(s => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <LifestyleMedTeaser />
+
+  <!-- Testimonials -->
+  <section class="testimonials-section section">
+    <div class="container">
+      <span class="section-label">Patient Stories</span>
+      <h2 class="section-title">What Our Patients Say</h2>
+      <div class="testimonials-grid">
+        {testimonials.map(t => <TestimonialCard {...t} />)}
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTABanner />
+</MainLayout>
+
+<style>
+  .services-section {
+    background: var(--color-white);
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+  .testimonials-section {
+    background: var(--color-bg);
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 860px) {
+    .services-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

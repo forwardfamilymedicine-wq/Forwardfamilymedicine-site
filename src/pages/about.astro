@@ -1,0 +1,440 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+import drBigleyPhoto from '../assets/staff/dr-david-bigley.jpg';
+import drLiebermanPhoto from '../assets/staff/dr-philip-lieberman.jpg';
+import ritamariePhoto from '../assets/staff/ritamarie-smedile.jpg';
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://forwardfamilymedicine.com/about" }
+  ]
+};
+
+const physicianSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. David Bigley",
+    "honorificPrefix": "Dr.",
+    "honorificSuffix": "DO",
+    "medicalSpecialty": "FamilyMedicine",
+    "worksFor": {
+      "@type": "MedicalOrganization",
+      "name": "Forward Family Medicine",
+      "url": "https://forwardfamilymedicine.com"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Philadelphia College of Osteopathic Medicine" },
+      { "@type": "CollegeOrUniversity", "name": "University of Scranton" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Philip Lieberman",
+    "honorificPrefix": "Dr.",
+    "honorificSuffix": "MD",
+    "medicalSpecialty": ["FamilyMedicine", "LifestyleMedicine"],
+    "worksFor": {
+      "@type": "MedicalOrganization",
+      "name": "Forward Family Medicine",
+      "url": "https://forwardfamilymedicine.com"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Thomas Jefferson University" }
+    ]
+  }
+];
+---
+
+<MainLayout
+  title="About Us | Meet Our Team | Forward Family Medicine Wayne PA"
+  description="Meet Dr. David Bigley, Dr. Philip Lieberman, and Ritamarie Smedile — the team behind Forward Family Medicine in Wayne, PA. Learn our story and philosophy."
+  schema={[breadcrumb, ...physicianSchema]}
+>
+  <!-- Page hero -->
+  <section class="about-hero section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>About</span>
+      </nav>
+      <span class="section-label">Our Story</span>
+      <h1>Why We Started Forward Family Medicine</h1>
+      <div class="divider"></div>
+      <div class="about-intro grid-2">
+        <div>
+          <p>
+            Dr. Bigley trained in traditional medicine and witnessed firsthand the strain the
+            insurance-driven system places on patients and physicians — rushed appointments,
+            fragmented care, a system that rewards volume over relationship. He chose a different
+            path. By founding Forward Family Medicine as a Direct Primary Care practice, he
+            committed to keeping the patient panel small, the doors open, and his attention fully
+            on the people in front of him. Dr. Lieberman joined the practice bringing dual board
+            certification in Family Medicine and Lifestyle Medicine — deepening the clinical
+            foundation Dr. Bigley built.
+          </p>
+          <p>
+            At Forward Family Medicine, <em>cura personalis</em> — the care of the whole person — isn't
+            a slogan. It's how we practice every day.
+          </p>
+        </div>
+        <div>
+          <div class="callout callout-accent">
+            <strong>Our Promise</strong>
+            <p style="margin-top:0.5rem;">You will never be rushed. Your doctor will know your name, your history, and your goals. Your care will be built around your life — not a billing code.</p>
+          </div>
+          <p style="margin-top:1.25rem;">
+            Forward Family Medicine is located in Wayne, Pennsylvania — serving patients across
+            the Main Line, Chester County, and greater Philadelphia. We do not accept insurance.
+            We accept patients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Medicine Difference -->
+  <section class="lm-difference section" style="background: var(--color-light);">
+    <div class="container">
+      <span class="section-label">What Sets Us Apart</span>
+      <h2>We Don't Just Treat What's Wrong. We Build What's Right.</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div>
+          <p>
+            Most primary care practices treat symptoms. We treat causes. Dr. Lieberman's
+            dual board certification in Lifestyle Medicine — paired with his background in
+            culinary arts and nutrition science — means every patient at Forward Family
+            Medicine has access to something most practices simply cannot offer: a physician
+            who understands that food, movement, sleep, and stress are medicine.
+          </p>
+          <p>
+            And unlike competitors who offer lifestyle medicine virtually or as an add-on service,
+            ours is in-person, integrated into every visit, and included in your membership.
+          </p>
+        </div>
+        <div class="lm-diff-stats">
+          <div class="stat-item">
+            <span class="stat-label">Only DPC practice on the Main Line with</span>
+            <strong>In-person, board-certified Lifestyle Medicine</strong>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Dr. Lieberman holds</span>
+            <strong>Dual board certification — Family Medicine + Lifestyle Medicine</strong>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Pre-medical training includes</span>
+            <strong>Culinary Arts + Nutrition Science degrees</strong>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Built a formal curriculum to train</span>
+            <strong>other physicians in Lifestyle Medicine at Abington</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Provider Bios -->
+  <section class="providers-section section" id="providers">
+    <div class="container">
+      <span class="section-label">Meet the Team</span>
+      <h2>Your Care Team</h2>
+
+      <!-- Dr. Bigley -->
+      <div class="provider-bio" id="dr-bigley">
+        <div class="provider-bio-photo">
+          <img
+            src={drBigleyPhoto.src}
+            alt="Dr. David Bigley DO, Founder of Forward Family Medicine, Wayne PA"
+            loading="lazy"
+            width="400"
+            height="500"
+          />
+        </div>
+        <div class="provider-bio-content">
+          <div class="provider-bio-header">
+            <h3>Dr. David Bigley</h3>
+            <p class="provider-credentials">DO — Family Medicine | Founder</p>
+            <div class="provider-badge-row">
+              <span class="badge">Doctor of Osteopathic Medicine</span>
+              <span class="badge">Family Medicine</span>
+              <span class="badge">PCOM Graduate</span>
+              <span class="badge">Christiana Care Residency</span>
+            </div>
+          </div>
+          <p>
+            Dr. David Bigley, DO, embarked on his journey in healthcare with a strong foundation
+            in neuroscience and biochemistry, earning his undergraduate degree from the University
+            of Scranton. Inspired by a holistic approach to medicine, he pursued his medical
+            education at the Philadelphia College of Osteopathic Medicine (PCOM) in Philadelphia,
+            where he embraced the principle of <em>cura personalis</em> — caring for the whole person.
+          </p>
+          <p>
+            During his residency in Family Medicine at Christiana Care in Delaware, Dr. Bigley
+            honed his skills while understanding the limitations of the current insurance-based
+            primary care system. Motivated to seek alternatives that prioritize patient well-being,
+            he delved into exploring innovative models of care.
+          </p>
+          <p>
+            Dr. Bigley's philosophy revolves around truly knowing his patients on an individual
+            level, fostering relationships built on trust and understanding. Beyond the clinic,
+            he finds solace in the outdoors — hiking through nature's trails, or nurturing his
+            creative side in the pottery studio or garden.
+          </p>
+          <div class="bio-education">
+            <h4>Education &amp; Training</h4>
+            <ul class="prose-list">
+              <li>BS — Neuroscience and Biochemistry, University of Scranton</li>
+              <li>DO — Philadelphia College of Osteopathic Medicine (PCOM)</li>
+              <li>Family Medicine Residency — Christiana Care, Delaware</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="provider-divider" />
+
+      <!-- Dr. Lieberman -->
+      <div class="provider-bio" id="dr-lieberman">
+        <div class="provider-bio-photo">
+          <img
+            src={drLiebermanPhoto.src}
+            alt="Dr. Philip Lieberman MD, Family Medicine and Lifestyle Medicine Physician at Forward Family Medicine"
+            loading="lazy"
+            width="400"
+            height="500"
+          />
+        </div>
+        <div class="provider-bio-content">
+          <div class="provider-bio-header">
+            <h3>Dr. Philip Lieberman</h3>
+            <p class="provider-credentials">MD — Family Medicine + Lifestyle Medicine</p>
+            <div class="provider-badge-row">
+              <span class="badge badge-accent">Board-Certified: Family Medicine</span>
+              <span class="badge badge-accent">Board-Certified: Lifestyle Medicine</span>
+              <span class="badge">Thomas Jefferson University MD</span>
+              <span class="badge">U.S. Navy Physician</span>
+              <span class="badge">Culinary Arts + Nutrition Science</span>
+              <span class="badge">Built LM Residency Curriculum</span>
+            </div>
+          </div>
+
+          <div class="lieberman-narrative callout callout-accent">
+            <p>
+              <em>Most doctors learn about nutrition in a single semester. Dr. Lieberman went to
+              culinary school first. Then nutrition science. Then Jefferson Medical College.
+              Then the Navy. Then he wrote the curriculum that teaches other physicians how
+              to practice lifestyle medicine. The result is a doctor who can sit with you in
+              the exam room, interpret your labs, and then help you figure out exactly what
+              to put on your plate — and how to make it taste good.</em>
+            </p>
+          </div>
+
+          <p>
+            Dr. Philip Lieberman's path to medicine is unlike any other physician you've met.
+            Before medical school, he earned an Associate's Degree in Culinary Arts and a
+            Bachelor of Science in Nutrition Science — building a clinical foundation in food,
+            metabolism, and lifestyle that most doctors simply never receive.
+          </p>
+          <p>
+            He earned his Medical Doctorate from Thomas Jefferson University in Philadelphia
+            and went on to serve as a primary care physician in the U.S. Navy. After his
+            military service, Dr. Lieberman completed residency training at Abington Family
+            Medicine, where he became dual board-certified in both Family Medicine and Lifestyle
+            Medicine.
+          </p>
+          <p>
+            During residency, he didn't just learn lifestyle medicine — he developed
+            and implemented a comprehensive curriculum that enabled fellow residents to qualify
+            for board certification through the American College of Lifestyle Medicine.
+          </p>
+          <p>
+            At Forward Family Medicine, Dr. Lieberman brings that rare combination — clinical
+            medicine, evidence-based lifestyle protocols, and the practical culinary knowledge
+            to make nutrition advice actually work in real life. He lives locally with his
+            wife and two sons, and enjoys rock climbing and spending time outdoors.
+          </p>
+          <div class="bio-education">
+            <h4>Education &amp; Training</h4>
+            <ul class="prose-list">
+              <li>AS — Culinary Arts</li>
+              <li>BS — Nutrition Science</li>
+              <li>MD — Thomas Jefferson University, Philadelphia</li>
+              <li>Family Medicine Residency — Abington Family Medicine</li>
+              <li>Board-Certified: Family Medicine</li>
+              <li>Board-Certified: Lifestyle Medicine (American College of Lifestyle Medicine)</li>
+              <li>U.S. Navy Physician</li>
+              <li>Developed Lifestyle Medicine curriculum for Abington residency program</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="provider-divider" />
+
+      <!-- Ritamarie -->
+      <div class="provider-bio" id="ritamarie">
+        <div class="provider-bio-photo">
+          <img
+            src={ritamariePhoto.src}
+            alt="Ritamarie Smedile PhD RN, Clinical Operations and Wellness at Forward Family Medicine"
+            loading="lazy"
+            width="400"
+            height="500"
+          />
+        </div>
+        <div class="provider-bio-content">
+          <div class="provider-bio-header">
+            <h3>Ritamarie Smedile</h3>
+            <p class="provider-credentials">PhD, RN — Clinical Operations &amp; Wellness</p>
+            <div class="provider-badge-row">
+              <span class="badge">PhD in Nursing</span>
+              <span class="badge">Licensed RN</span>
+              <span class="badge">Maternal &amp; Child Health</span>
+              <span class="badge">Integrative Wellness</span>
+            </div>
+          </div>
+          <p>
+            Ritamarie brings over a decade of experience in maternal-child health, birth,
+            postpartum care, reproductive health, and integrative wellness. She holds a PhD
+            in Nursing — a research-focused doctoral degree that has prepared her for leadership
+            in healthcare, academic teaching, and scientific inquiry. She has held roles in both
+            high-acuity hospital settings and academic institutions.
+          </p>
+          <p>
+            As a licensed RN, Ritamarie supports patient care both in the office and virtually,
+            helping with clinic flow, patient services, and wellness coordination. Her approach
+            blends clinical excellence with individualized care, offering medical expertise
+            alongside deep respect for each patient's unique journey.
+          </p>
+          <p>
+            Ritamarie lives in the neighborhood with her husband and baby girl, and is excited
+            to care for the same community she calls home. She looks forward to expanding her
+            offerings to include pregnancy and postpartum support, menstrual cycle health,
+            Reiki sessions, and community-based workshops.
+          </p>
+          <div class="callout" style="margin-top:1.25rem;">
+            <strong>Note:</strong> Ritamarie does not see patients independently.
+            She supports clinic operations and patient services.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</MainLayout>
+
+<style>
+  .about-hero {
+    background: var(--color-bg);
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .lm-diff-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .stat-item {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--color-accent);
+  }
+  .stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+  }
+  .stat-item strong {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+  }
+
+  /* Provider bios */
+  .provider-bio {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    align-items: start;
+  }
+  .provider-bio-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .provider-bio-photo img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .provider-bio-header {
+    margin-bottom: 1.5rem;
+  }
+  .provider-bio-header h3 {
+    margin-bottom: 0.3rem;
+  }
+  .provider-credentials {
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  .provider-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .provider-bio-content p {
+    margin-bottom: 1rem;
+    color: #444;
+    line-height: 1.75;
+  }
+  .lieberman-narrative {
+    margin-bottom: 1.25rem;
+  }
+  .lieberman-narrative p { margin: 0; }
+  .bio-education {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-light);
+  }
+  .bio-education h4 {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .provider-divider {
+    border: none;
+    border-top: 1px solid var(--color-light);
+  }
+
+  @media (max-width: 768px) {
+    .provider-bio {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .provider-bio-photo img {
+      height: 320px;
+    }
+  }
+</style>

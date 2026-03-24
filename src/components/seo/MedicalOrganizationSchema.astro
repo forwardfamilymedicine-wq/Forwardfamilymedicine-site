@@ -1,0 +1,107 @@
+---
+/**
+ * MedicalOrganizationSchema.astro
+ * Emits JSON-LD for the practice as a MedicalOrganization.
+ * Render once in BaseLayout.astro so it appears on every page.
+ *
+ * Usage in BaseLayout.astro:
+ *   import MedicalOrganizationSchema from "../components/seo/MedicalOrganizationSchema.astro";
+ *   <MedicalOrganizationSchema />
+ *
+ * No props required — all data sourced from siteConfig.ts and physicians.ts.
+ */
+
+import { SITE } from "../../data/siteConfig";
+import { physicians } from "../../data/physicians";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalOrganization", "LocalBusiness"],
+  "@id": `${SITE.url}/#organization`,
+  name: SITE.name,
+  alternateName: "Forward Family Medicine DPC",
+  description: SITE.description,
+  url: SITE.url,
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${SITE.url}/#logo`,
+    url: SITE.logo.url,
+    width: SITE.logo.width,
+    height: SITE.logo.height,
+    caption: SITE.name,
+  },
+  image: {
+    "@type": "ImageObject",
+    url: SITE.clinicImage.url,
+    width: SITE.clinicImage.width,
+    height: SITE.clinicImage.height,
+    caption: `${SITE.name} — Direct Primary Care practice in Wayne, PA`,
+  },
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.zip,
+    addressCountry: SITE.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  openingHoursSpecification: SITE.openingHours.map((hours) => {
+    // Parse "Mo-Fr 08:00-17:00" format
+    const [days, times] = hours.split(" ");
+    const [opens, closes] = times.split("-");
+    const [dayFrom, dayTo] = days.includes("-") ? days.split("-") : [days, days];
+    return {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: dayFrom === dayTo ? [dayFrom] : undefined,
+      opens,
+      closes,
+    };
+  }),
+  priceRange: SITE.priceRange,
+  currenciesAccepted: SITE.currenciesAccepted,
+  paymentAccepted: SITE.paymentAccepted,
+  medicalSpecialty: [
+    "http://schema.org/FamilyPractice",
+    "http://schema.org/PreventiveMedicine",
+    "http://schema.org/InternalMedicine",
+  ],
+  areaServed: [
+    { "@type": "City", name: "Wayne, PA" },
+    { "@type": "City", name: "Villanova, PA" },
+    { "@type": "City", name: "Radnor, PA" },
+    { "@type": "City", name: "Berwyn, PA" },
+    { "@type": "City", name: "Devon, PA" },
+    { "@type": "City", name: "Paoli, PA" },
+    { "@type": "City", name: "Bryn Mawr, PA" },
+    { "@type": "City", name: "Ardmore, PA" },
+    { "@type": "City", name: "Haverford, PA" },
+    { "@type": "City", name: "Malvern, PA" },
+    { "@type": "City", name: "King of Prussia, PA" },
+    { "@type": "City", name: "Newtown Square, PA" },
+    { "@type": "City", name: "West Chester, PA" },
+    { "@type": "City", name: "Media, PA" },
+  ],
+  founder: physicians.map((p) => ({
+    "@type": "Physician",
+    "@id": `${SITE.url}/#physician-${p.id}`,
+    name: p.name,
+    jobTitle: p.jobTitle,
+  })),
+  employee: physicians.map((p) => ({
+    "@type": "Physician",
+    "@id": `${SITE.url}/#physician-${p.id}`,
+    name: p.name,
+  })),
+  sameAs: Object.values(SITE.social).filter(Boolean),
+  hasMap: `https://www.google.com/maps/search/${encodeURIComponent(SITE.address.full)}`,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />

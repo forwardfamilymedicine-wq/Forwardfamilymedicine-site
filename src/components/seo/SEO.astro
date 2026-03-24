@@ -1,0 +1,126 @@
+---
+/**
+ * SEO.astro
+ * Master SEO head component. Place inside <head> in BaseLayout.astro.
+ *
+ * Usage:
+ *   <SEO
+ *     title={frontmatter.title}
+ *     description={frontmatter.description}
+ *     canonical={frontmatter.canonical}
+ *     image={frontmatter.image}
+ *     imageAlt={frontmatter.imageAlt}
+ *     keywords={frontmatter.keywords}
+ *     schemaType={frontmatter.schemaType}
+ *     noindex={frontmatter.draft}
+ *   />
+ */
+
+import { SITE } from "../../data/siteConfig";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  keywords?: string[];
+  schemaType?: string;
+  noindex?: boolean;
+  /** Page-level author override (defaults to SITE.name) */
+  author?: string;
+  /** ISO date string for article pages */
+  datePublished?: string;
+  dateModified?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image,
+  imageAlt,
+  imageWidth = 1200,
+  imageHeight = 630,
+  keywords = [],
+  schemaType,
+  noindex = false,
+  author = SITE.name,
+  datePublished,
+  dateModified,
+} = Astro.props;
+
+// Resolve canonical: prefer explicit prop, fall back to current URL
+const resolvedCanonical = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
+
+// Resolve OG image
+const ogImage = image
+  ? new URL(image, SITE.url).href
+  : SITE.defaultOGImage.url;
+const ogImageAlt = imageAlt ?? SITE.defaultOGImage.alt;
+
+// Full page title
+const pageTitle = title.includes(SITE.name)
+  ? title
+  : `${title} | ${SITE.name}`;
+---
+
+<!-- Primary meta -->
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && (
+  <meta name="keywords" content={keywords.join(", ")} />
+)}
+<meta name="author" content={author} />
+<link rel="canonical" href={resolvedCanonical} />
+
+<!-- Robots -->
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+)}
+
+<!-- Open Graph -->
+<meta property="og:type" content={schemaType === "Article" ? "article" : "website"} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={resolvedCanonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:image:width" content={String(imageWidth)} />
+<meta property="og:image:height" content={String(imageHeight)} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Article-specific OG -->
+{schemaType === "Article" && datePublished && (
+  <meta property="article:published_time" content={datePublished} />
+)}
+{schemaType === "Article" && dateModified && (
+  <meta property="article:modified_time" content={dateModified} />
+)}
+{schemaType === "Article" && (
+  <meta property="article:author" content={author} />
+)}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<!-- Verification tags (populate in siteConfig.ts) -->
+{SITE.verificationMeta.google && (
+  <meta name="google-site-verification" content={SITE.verificationMeta.google} />
+)}
+{SITE.verificationMeta.bing && (
+  <meta name="msvalidate.01" content={SITE.verificationMeta.bing} />
+)}
+
+<!-- Preconnect hints for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

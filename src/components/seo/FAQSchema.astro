@@ -1,0 +1,62 @@
+---
+/**
+ * FAQSchema.astro
+ * Emits JSON-LD FAQPage schema from a structured array of Q&A pairs.
+ *
+ * Usage (two patterns):
+ *
+ * Pattern A — Pass faq array as prop (from frontmatter or hardcoded):
+ *   <FAQSchema
+ *     faqs={[
+ *       { question: "What is DPC?", answer: "DPC is..." },
+ *       { question: "How much does it cost?", answer: "Membership starts at..." },
+ *     ]}
+ *   />
+ *
+ * Pattern B — Pass frontmatter.faq (if you define FAQs in markdown frontmatter):
+ *   <FAQSchema faqs={frontmatter.faq} />
+ *
+ * Frontmatter FAQ format (optional — add to any .md file):
+ *   faq:
+ *     - question: "Do patients from King of Prussia come to Forward Family Medicine?"
+ *       answer: "Yes — King of Prussia is about 7 miles from Wayne..."
+ *
+ * NOTE: Answer text must be plain text or basic HTML (no markdown).
+ * Google truncates answers over ~300 words; keep answers concise.
+ */
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQItem[];
+  /** Optional: page canonical URL for mainEntity reference */
+  pageUrl?: string;
+}
+
+const { faqs, pageUrl } = Astro.props;
+
+if (!faqs || faqs.length === 0) {
+  // Nothing to render — component is a no-op
+}
+
+const schema = faqs && faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  ...(pageUrl ? { mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl } } : {}),
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+} : null;
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />
+)}

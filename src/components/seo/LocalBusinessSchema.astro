@@ -1,0 +1,75 @@
+---
+/**
+ * LocalBusinessSchema.astro
+ * Emits a focused LocalBusiness JSON-LD node targeting a specific town.
+ * Use on /local/* pages to strengthen local SEO signals for each community.
+ *
+ * Usage on local landing pages:
+ *   <LocalBusinessSchema
+ *     areaServed={frontmatter.location}
+ *     pageUrl={frontmatter.canonical}
+ *   />
+ *
+ * The component reads global data from siteConfig.ts and
+ * only requires the page-specific location override.
+ */
+
+import { SITE } from "../../data/siteConfig";
+
+interface Props {
+  /** e.g. "King of Prussia, PA" — from frontmatter.location */
+  areaServed: string;
+  /** Canonical URL of this local page */
+  pageUrl?: string;
+}
+
+const { areaServed, pageUrl } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": pageUrl ?? `${SITE.url}/#local-${encodeURIComponent(areaServed)}`,
+  name: SITE.name,
+  description: `${SITE.name} is a Direct Primary Care practice in Wayne, PA serving patients from ${areaServed} and the Philadelphia Main Line.`,
+  url: pageUrl ?? SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  image: SITE.clinicImage.url,
+  logo: SITE.logo.url,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.zip,
+    addressCountry: SITE.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  areaServed: {
+    "@type": "City",
+    name: areaServed,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+  ],
+  priceRange: SITE.priceRange,
+  currenciesAccepted: SITE.currenciesAccepted,
+  paymentAccepted: SITE.paymentAccepted,
+  isAcceptingNewPatients: true,
+  sameAs: Object.values(SITE.social).filter(Boolean),
+  parentOrganization: {
+    "@id": `${SITE.url}/#organization`,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />

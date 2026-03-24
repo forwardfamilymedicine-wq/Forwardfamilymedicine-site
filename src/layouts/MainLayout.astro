@@ -1,0 +1,110 @@
+---
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  schema?: object | object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = 'https://forwardfamilymedicine.com/images/og-default.webp',
+  ogType = 'website',
+  schema,
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://forwardfamilymedicine.com';
+const canonicalUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalOrganization", "LocalBusiness"],
+  "name": "Forward Family Medicine",
+  "url": siteUrl,
+  "telephone": "+12156457044",
+  "faxNumber": "+12154498854",
+  "email": "Information@forwardfamilymedicine.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "295 Old Eagle School Road",
+    "addressLocality": "Wayne",
+    "addressRegion": "PA",
+    "postalCode": "19087",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.0440",
+    "longitude": "-75.3944"
+  },
+  "medicalSpecialty": ["FamilyMedicine", "LifestyleMedicine"],
+  "availableService": [
+    { "@type": "MedicalTherapy", "name": "Direct Primary Care" },
+    { "@type": "MedicalTherapy", "name": "Lifestyle Medicine" },
+    { "@type": "MedicalTherapy", "name": "Concierge Medicine" }
+  ],
+  "sameAs": []
+};
+
+const schemas = [orgSchema, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="Forward Family Medicine" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- JSON-LD Schema -->
+  {schemas.map(s => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

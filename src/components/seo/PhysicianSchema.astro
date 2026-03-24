@@ -1,0 +1,117 @@
+---
+/**
+ * PhysicianSchema.astro
+ * Emits JSON-LD for a specific physician.
+ * Use on /about and any physician bio page.
+ *
+ * Usage:
+ *   import PhysicianSchema from "../components/seo/PhysicianSchema.astro";
+ *   <PhysicianSchema physicianId="david-bigley" />
+ *   <PhysicianSchema physicianId="philip-lieberman" />
+ *
+ * Or to emit both on the About page:
+ *   {physicians.map(p => <PhysicianSchema physicianId={p.id} />)}
+ */
+
+import { SITE } from "../../data/siteConfig";
+import { getPhysician, physicians } from "../../data/physicians";
+
+interface Props {
+  /** physician ID from physicians.ts — "david-bigley" | "philip-lieberman" */
+  physicianId?: string;
+  /** If true, emit schema for ALL physicians in physicians.ts */
+  all?: boolean;
+}
+
+const { physicianId, all = false } = Astro.props;
+
+const targets = all
+  ? physicians
+  : physicianId
+  ? [getPhysician(physicianId)].filter(Boolean)
+  : [];
+
+const schemas = targets.map((p) => ({
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "@id": `${SITE.url}/#physician-${p!.id}`,
+  name: p!.name,
+  givenName: p!.givenName,
+  familyName: p!.familyName,
+  honorificPrefix: p!.honorificPrefix,
+  jobTitle: p!.jobTitle,
+  description: p!.description,
+  image: {
+    "@type": "ImageObject",
+    url: p!.image.url,
+    width: p!.image.width,
+    height: p!.image.height,
+    caption: p!.image.alt,
+  },
+  medicalSpecialty: p!.medicalSpecialty.map((spec) => ({
+    "@type": "MedicalSpecialty",
+    name: spec,
+  })),
+  hasCredential: [
+    ...p!.boardCertification.map((cert) => ({
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Board Certification",
+      name: cert,
+    })),
+    ...p!.medicalEducation.map((edu) => ({
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: edu.degree,
+      educationalLevel: "Medical Degree",
+      recognizedBy: {
+        "@type": "Organization",
+        name: edu.institution,
+      },
+    })),
+    ...(p!.residency
+      ? [
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Residency",
+            name: p!.residency.program,
+            recognizedBy: {
+              "@type": "MedicalOrganization",
+              name: p!.residency.institution,
+            },
+          },
+        ]
+      : []),
+  ],
+  memberOf: p!.memberOf.map((org) => ({
+    "@type": "MedicalOrganization",
+    name: org,
+  })),
+  worksFor: {
+    "@type": "MedicalOrganization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+  },
+  workLocation: {
+    "@type": "MedicalClinic",
+    "@id": `${SITE.url}/#clinic`,
+    name: SITE.name,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: SITE.address.street,
+      addressLocality: SITE.address.city,
+      addressRegion: SITE.address.state,
+      postalCode: SITE.address.zip,
+      addressCountry: SITE.address.country,
+    },
+  },
+  telephone: p!.telephone,
+  email: p!.email,
+  url: `${SITE.url}/about#${p!.id}`,
+  sameAs: p!.sameAs,
+  ...(p!.npi ? { identifier: { "@type": "PropertyValue", name: "NPI", value: p!.npi } } : {}),
+}));
+---
+
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />
+))}

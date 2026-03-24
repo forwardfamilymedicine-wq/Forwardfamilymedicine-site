@@ -1,0 +1,114 @@
+---
+/**
+ * ImageObjectSchema.astro
+ * Emits JSON-LD ImageObject schema for key site images.
+ * Primary use: logo, physician headshots, clinic exterior.
+ *
+ * Usage — emit all site-level images once in BaseLayout.astro:
+ *   <ImageObjectSchema />
+ *
+ * Usage — emit a specific page image:
+ *   <ImageObjectSchema
+ *     url={frontmatter.image}
+ *     alt={frontmatter.imageAlt}
+ *     width={frontmatter.imageWidth}
+ *     height={frontmatter.imageHeight}
+ *     caption={frontmatter.title}
+ *   />
+ *
+ * Usage — emit physician images (on About page):
+ *   <ImageObjectSchema emitPhysicianImages />
+ */
+
+import { SITE } from "../../data/siteConfig";
+import { physicians } from "../../data/physicians";
+
+interface Props {
+  /** Specific image URL — for page-level images */
+  url?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  /** If true, emit ImageObject for all physician headshots */
+  emitPhysicianImages?: boolean;
+  /** If true, emit ImageObject for logo (auto-included when no url prop) */
+  emitLogo?: boolean;
+}
+
+const {
+  url,
+  alt,
+  width,
+  height,
+  caption,
+  emitPhysicianImages = false,
+  emitLogo = false,
+} = Astro.props;
+
+// Build list of schema objects to emit
+const schemas: object[] = [];
+
+// Page-specific image
+if (url) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": url,
+    url,
+    width: width ?? 1200,
+    height: height ?? 630,
+    name: alt ?? caption ?? "",
+    caption: caption ?? alt ?? "",
+    contentUrl: url,
+    encodingFormat: url.endsWith(".webp")
+      ? "image/webp"
+      : url.endsWith(".jpg") || url.endsWith(".jpeg")
+      ? "image/jpeg"
+      : url.endsWith(".png")
+      ? "image/png"
+      : undefined,
+  });
+}
+
+// Logo
+if (emitLogo || (!url && !emitPhysicianImages)) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${SITE.url}/#logo`,
+    url: SITE.logo.url,
+    width: SITE.logo.width,
+    height: SITE.logo.height,
+    name: "Forward Family Medicine Logo",
+    caption: SITE.name,
+    contentUrl: SITE.logo.url,
+    representativeOfPage: false,
+  });
+}
+
+// Physician headshots
+if (emitPhysicianImages) {
+  physicians.forEach((p) => {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "@id": p.image.url,
+      url: p.image.url,
+      width: p.image.width,
+      height: p.image.height,
+      name: p.image.alt,
+      caption: `${p.name}, ${p.jobTitle} at ${SITE.name}`,
+      contentUrl: p.image.url,
+      about: {
+        "@type": "Person",
+        name: p.name,
+      },
+    });
+  });
+}
+---
+
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />
+))}

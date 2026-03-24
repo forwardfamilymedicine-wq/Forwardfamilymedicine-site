@@ -1,0 +1,338 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "For Businesses", "item": "https://forwardfamilymedicine.com/for-businesses" }
+  ]
+};
+---
+
+<MainLayout
+  title="Employee Health Benefits Wayne PA | Forward Family Medicine"
+  description="DPC memberships for small businesses and employers on the Main Line. Better primary care for your team at a flat monthly cost. Wayne, PA — serving Main Line companies."
+  schema={breadcrumb}
+>
+  <!-- Hero -->
+  <section class="biz-hero section" style="background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);">
+    <div class="container biz-hero-inner">
+      <div>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">›</span> <span>For Businesses</span>
+        </nav>
+        <span class="section-label">Employer Memberships</span>
+        <h1>Better Healthcare for Your Team. Simpler Than You Think.</h1>
+        <div class="divider"></div>
+        <p>
+          The Main Line is home to thousands of small businesses, independent professionals,
+          and growing companies — many offering health insurance that costs a fortune and
+          still leaves employees with 7-minute appointments and high copays.
+        </p>
+        <p>
+          Forward Family Medicine employer memberships give your team direct, unlimited
+          access to their primary care physician — no copays, same-day availability, and
+          a doctor who actually knows them.
+        </p>
+        <div class="biz-ctas">
+          <a href="/contact" class="btn btn-accent">Inquire About Employer Memberships</a>
+          <a href="mailto:Information@forwardfamilymedicine.com" class="btn btn-outline">Email Us Directly</a>
+        </div>
+      </div>
+      <div class="biz-hero-aside">
+        <div class="card biz-hero-card">
+          <h3>Quick Contact</h3>
+          <p>Reach us to discuss employer memberships for your team:</p>
+          <div class="biz-contact-item">
+            <span class="biz-contact-icon" aria-hidden="true">📞</span>
+            <a href="tel:+12156457044">(215) 645-7044</a>
+          </div>
+          <div class="biz-contact-item">
+            <span class="biz-contact-icon" aria-hidden="true">✉️</span>
+            <a href="mailto:Information@forwardfamilymedicine.com">Information@forwardfamilymedicine.com</a>
+          </div>
+          <p class="biz-note">We respond within 1 business day and are happy to set up a call to discuss your team's specific needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="biz-problem section" style="background: var(--color-primary);">
+    <div class="container">
+      <span class="section-label" style="color: var(--color-accent);">The Problem</span>
+      <h2 style="color: white;">Traditional Health Insurance Wasn't Built for Your Team</h2>
+      <div class="problem-grid">
+        <div class="problem-item">
+          <span class="problem-icon" aria-hidden="true">⏱️</span>
+          <strong>7-minute appointments</strong>
+          <p>The national average for a primary care visit. Your employees deserve better — especially for preventive care and chronic condition management.</p>
+        </div>
+        <div class="problem-item">
+          <span class="problem-icon" aria-hidden="true">💸</span>
+          <strong>Unpredictable costs</strong>
+          <p>Premiums rise every year. High deductibles mean employees avoid the doctor until things get expensive. Then the ER visit costs everyone more.</p>
+        </div>
+        <div class="problem-item">
+          <span class="problem-icon" aria-hidden="true">📅</span>
+          <strong>3-week wait times</strong>
+          <p>The average wait for a primary care appointment. Sick employees who wait get sicker, stay home longer, and cost your business more.</p>
+        </div>
+        <div class="problem-item">
+          <span class="problem-icon" aria-hidden="true">📋</span>
+          <strong>Administrative burden</strong>
+          <p>Claims, pre-authorizations, EOBs, in-network restrictions. Traditional insurance adds friction at every point of care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How employer membership works -->
+  <section class="biz-how section">
+    <div class="container">
+      <span class="section-label">How It Works</span>
+      <h2>Employer Memberships at Forward Family Medicine</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div>
+          <p>
+            Employer memberships at Forward Family Medicine work simply: you pay a flat monthly
+            per-employee fee, and your team gets unlimited direct primary care. No copays when
+            they visit. No hoops to jump through. Just a doctor who knows them, picks up the
+            phone, and has time for them.
+          </p>
+          <p>
+            Our employer plans pair seamlessly with your existing high-deductible health plan —
+            or as a standalone benefit for companies looking to add meaningful healthcare value
+            without replacing full insurance.
+          </p>
+          <p>
+            Because Dr. Lieberman is board-certified in Lifestyle Medicine, your employees
+            also gain access to evidence-based nutrition, sleep, and stress coaching — the
+            kind of proactive care that keeps people out of the ER and off sick days.
+          </p>
+        </div>
+        <div>
+          <h3>What Your Employees Get</h3>
+          <ul class="prose-list">
+            <li>Unlimited primary care office visits — no copay</li>
+            <li>Same-day and next-day appointments</li>
+            <li>Visits: 1–2 hours (not 7 minutes)</li>
+            <li>Direct phone, text &amp; email access to their doctor</li>
+            <li>Preventive care and chronic disease management</li>
+            <li>Board-certified Lifestyle Medicine — nutrition, sleep, stress, movement</li>
+            <li>Wholesale lab pricing — significant cost savings</li>
+            <li>Specialist referral coordination</li>
+            <li>Telehealth visits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="biz-who section" style="background: var(--color-light);">
+    <div class="container">
+      <span class="section-label">Who It's For</span>
+      <h2>Built for Companies Like Yours</h2>
+      <div class="divider"></div>
+      <div class="who-grid">
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">🏢</span>
+          <h3>Small Businesses</h3>
+          <p>Can't afford full group health insurance? DPC lets you offer a real, meaningful healthcare benefit at a predictable monthly cost.</p>
+        </div>
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">⚖️</span>
+          <h3>Professional Firms</h3>
+          <p>Law firms, accounting practices, and financial services firms who want to offer premium healthcare as a retention and recruitment tool.</p>
+        </div>
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">🌿</span>
+          <h3>Wellness-Focused Employers</h3>
+          <p>Companies who value employee wellbeing and want to offer lifestyle medicine alongside primary care — as a real, board-certified service.</p>
+        </div>
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">🔧</span>
+          <h3>Companies Supplementing Insurance</h3>
+          <p>Already have a high-deductible plan? DPC fills the primary care gap — employees get unlimited access without touching their deductible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI section -->
+  <section class="biz-roi section">
+    <div class="container">
+      <span class="section-label">The Business Case</span>
+      <h2>Better Care Means Lower Costs</h2>
+      <div class="divider"></div>
+      <div class="roi-grid">
+        <div class="roi-item">
+          <span class="roi-icon" aria-hidden="true">📉</span>
+          <h3>Fewer ER Visits</h3>
+          <p>Same-day primary care access means employees handle problems early — before they become expensive emergency room visits.</p>
+        </div>
+        <div class="roi-item">
+          <span class="roi-icon" aria-hidden="true">📅</span>
+          <h3>Less Time Away</h3>
+          <p>Same-day appointments, telehealth, and direct doctor access mean employees spend less time away from work managing healthcare logistics.</p>
+        </div>
+        <div class="roi-item">
+          <span class="roi-icon" aria-hidden="true">💊</span>
+          <h3>Wholesale Medications</h3>
+          <p>Employees access medications and labs at wholesale pricing — significantly below retail and often below insurance negotiated rates.</p>
+        </div>
+        <div class="roi-item">
+          <span class="roi-icon" aria-hidden="true">❤️</span>
+          <h3>Preventive Care That Sticks</h3>
+          <p>Dr. Lieberman's lifestyle medicine approach builds long-term health — reducing the chronic conditions that drive the highest healthcare costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / inquiry -->
+  <section class="biz-contact-section section" style="background: var(--color-light);">
+    <div class="container" style="max-width: 680px;">
+      <span class="section-label">Get in Touch</span>
+      <h2>Ready to Talk?</h2>
+      <div class="divider"></div>
+      <p>
+        Employer memberships are inquiry-based — we'll work with you to design a plan
+        that fits your company size, existing benefits, and employee needs. There's no
+        standard price list because there's no standard company. Reach out and we'll
+        figure it out together.
+      </p>
+      <div class="biz-contact-methods">
+        <a href="/contact" class="btn btn-accent">Fill Out Our Contact Form</a>
+        <div class="biz-direct-contact">
+          <p>Or reach us directly:</p>
+          <p><strong>Phone:</strong> <a href="tel:+12156457044">(215) 645-7044</a></p>
+          <p><strong>Email:</strong> <a href="mailto:Information@forwardfamilymedicine.com">Information@forwardfamilymedicine.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    headline="Your Team Deserves a Doctor Who Has Time for Them"
+    subhead="Contact us about employer memberships. We'll design a plan that makes sense for your company — and genuinely improves healthcare for your people."
+    btnText="Contact Us About Employer Plans"
+  />
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+
+  .biz-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
+    align-items: start;
+  }
+  .biz-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+  .biz-hero-card {
+    padding: 1.75rem;
+  }
+  .biz-hero-card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+  .biz-hero-card > p { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+  .biz-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .biz-contact-icon { font-size: 1.1rem; }
+  .biz-contact-item a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .biz-contact-item a:hover { text-decoration: underline; }
+  .biz-note {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0.75rem 0 0;
+  }
+
+  /* Problem */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .problem-item {
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .problem-icon { font-size: 1.75rem; display: block; margin-bottom: 0.6rem; }
+  .problem-item strong {
+    display: block;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  .problem-item p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Who + ROI */
+  .who-grid, .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .who-card, .roi-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .who-card { padding: 1.5rem; }
+  .roi-item {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .who-icon, .roi-icon { font-size: 1.75rem; }
+  .who-card h3, .roi-item h3 { font-size: 1.05rem; }
+  .who-card p, .roi-item p { font-size: 0.9rem; color: #555; margin: 0; }
+
+  /* Contact section */
+  .biz-contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .biz-direct-contact p { margin-bottom: 0.4rem; font-size: 0.95rem; }
+  .biz-direct-contact a { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+  .biz-direct-contact a:hover { text-decoration: underline; }
+
+  @media (max-width: 860px) {
+    .biz-hero-inner { grid-template-columns: 1fr; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .who-grid, .roi-grid { grid-template-columns: 1fr; }
+  }
+</style>

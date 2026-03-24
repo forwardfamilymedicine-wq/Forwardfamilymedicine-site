@@ -1,0 +1,103 @@
+---
+export interface Props {
+  name: string;
+  credentials: string;
+  role: string;
+  photo: string;
+  photoAlt: string;
+  tagline: string;
+  badges?: string[];
+  href?: string;
+}
+
+const { name, credentials, role, photo, photoAlt, tagline, badges = [], href } = Astro.props;
+---
+
+<div class="provider-card card">
+  <div class="provider-photo">
+    <img
+      src={photo}
+      alt={photoAlt}
+      loading="lazy"
+      width="300"
+      height="350"
+    />
+  </div>
+  <div class="provider-body">
+    <h3 class="provider-name">{name}</h3>
+    <p class="provider-creds">{credentials}</p>
+    <p class="provider-role text-muted" style="font-size:0.85rem; margin-bottom:0.75rem;">{role}</p>
+    {badges.length > 0 && (
+      <div class="provider-badges">
+        {badges.map(b => <span class="badge badge-accent">{b}</span>)}
+      </div>
+    )}
+    <p class="provider-tagline">{tagline}</p>
+    {href && (
+      <a href={href} class="provider-link">Read full bio →</a>
+    )}
+  </div>
+</div>
+
+<style>
+  .provider-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .provider-photo {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--color-light);
+    max-height: 280px;
+  }
+  .provider-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+  }
+  .provider-card:hover .provider-photo img {
+    transform: scale(1.03);
+  }
+  .provider-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .provider-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .provider-creds {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: 0.25rem;
+  }
+  .provider-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .provider-tagline {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 0.75rem;
+  }
+  .provider-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: auto;
+    transition: color 0.15s;
+  }
+  .provider-link:hover { color: var(--color-secondary); }
+</style>

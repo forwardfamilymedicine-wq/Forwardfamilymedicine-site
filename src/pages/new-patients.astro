@@ -1,0 +1,215 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "New Patients", "item": "https://forwardfamilymedicine.com/new-patients" }
+  ]
+};
+
+const faqs = [
+  {
+    q: 'Do I need to bring insurance information?',
+    a: "No. Forward Family Medicine does not bill insurance. You don't need an insurance card, an explanation of benefits, or a referral. Just come in.",
+  },
+  {
+    q: 'What should I bring to my first visit?',
+    a: "Your ID, a list of current medications, and any recent labs or specialist notes you'd like us to review. That's it.",
+  },
+  {
+    q: 'How long does the meet and greet take?',
+    a: "Meet and greets are typically 20–30 minutes — enough time to see the office, meet the doctors, and ask everything you want to know.",
+  },
+  {
+    q: 'Can I enroll at the meet and greet?',
+    a: "Absolutely — if it feels right, we'll get you started that day. And if you want more time to think, that's completely fine too. No pressure.",
+  },
+  {
+    q: 'What if I have a chronic condition?',
+    a: "Great — that's exactly who we're built for. Chronic conditions improve dramatically with more time, better monitoring, and a lifestyle medicine approach. We'd love to be part of that journey.",
+  },
+];
+---
+
+<MainLayout
+  title="New Patients | Getting Started | Forward Family Medicine Wayne PA"
+  description="Getting started at Forward Family Medicine is easy. Schedule a free meet and greet in Wayne, PA. No insurance needed. No commitment. Just a conversation."
+  schema={breadcrumb}
+>
+  <!-- Hero -->
+  <section class="np-hero section" style="background: linear-gradient(160deg, #e8f4f7 0%, var(--color-bg) 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>New Patients</span>
+      </nav>
+      <span class="section-label">Welcome</span>
+      <h1>Start With a Conversation. No Commitment Required.</h1>
+      <div class="divider"></div>
+      <p class="section-intro">
+        We know choosing a new doctor is a big decision. That's why we offer a free,
+        no-obligation meet and greet — a chance to see the office, meet Dr. Bigley and
+        Dr. Lieberman, ask every question you have, and decide for yourself if we're
+        the right fit. No paperwork. No credit card. No pressure.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4-step process -->
+  <section class="process-section section" style="background: var(--color-primary);">
+    <div class="container">
+      <span class="section-label" style="color: var(--color-accent);">How It Works</span>
+      <h2 style="color:white; margin-bottom:2.5rem;">Getting Started in 4 Simple Steps</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Fill Out the Form</h3>
+          <p>Tell us a little about yourself — takes about 2 minutes. That's all we need to get started.</p>
+        </div>
+        <div class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>We Reach Out Within 24 Hours</h3>
+          <p>A member of our team will contact you to find a convenient time for your visit.</p>
+        </div>
+        <div class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Come In and Meet the Team</h3>
+          <p>See the office, meet Dr. Bigley and Dr. Lieberman, and ask everything you want to know.</p>
+        </div>
+        <div class="step">
+          <span class="step-num" aria-hidden="true">4</span>
+          <h3>Decide When You're Ready</h3>
+          <p>If it feels right, we'll get you enrolled. If you need more time — no worries at all. Zero pressure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance note -->
+  <section class="insurance-note section" style="background: var(--color-light);">
+    <div class="container">
+      <div class="insurance-inner">
+        <div>
+          <span class="section-label">Important Note</span>
+          <h2>We Don't Accept Insurance — Here's Why That's a Good Thing</h2>
+          <p>
+            Forward Family Medicine is a Direct Primary Care practice. We don't bill insurance.
+            We don't deal with authorizations, referral forms, or billing departments. That's
+            exactly why your appointments run 1–2 hours — instead of 7 minutes.
+          </p>
+          <p>
+            Your flat monthly membership covers all your primary care needs directly.
+            We recommend pairing it with a high-deductible health plan or health sharing
+            plan for hospital stays, surgeries, and specialist care.
+          </p>
+        </div>
+        <div class="insurance-cards">
+          <div class="card ins-card">
+            <span class="ins-icon" aria-hidden="true">❌</span>
+            <h4>What We Don't Do</h4>
+            <ul class="prose-list" style="--check-color:var(--color-text);">
+              <li style="color:#888;">Bill your insurance</li>
+              <li style="color:#888;">Submit claims or prior authorizations</li>
+              <li style="color:#888;">Charge copays or deductibles</li>
+              <li style="color:#888;">Make you wait 3 weeks for a routine appointment</li>
+            </ul>
+          </div>
+          <div class="card ins-card" style="border: 2px solid var(--color-secondary);">
+            <span class="ins-icon" aria-hidden="true">✅</span>
+            <h4>What We Do</h4>
+            <ul class="prose-list">
+              <li>Flat monthly membership fee</li>
+              <li>Unlimited visits, no copay</li>
+              <li>Same-day access, always</li>
+              <li>Your doctor, directly, when you need them</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="form-section section" id="request">
+    <div class="container">
+      <MeetGreetForm />
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} headline="New Patient FAQs" />
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .step {
+    color: rgba(255,255,255,0.9);
+    position: relative;
+  }
+  .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  .step h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .step p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .insurance-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .insurance-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ins-card { padding: 1.5rem; }
+  .ins-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
+  .ins-card h4 { margin-bottom: 0.75rem; font-size: 0.95rem; }
+
+  .form-section {
+    background: var(--color-bg);
+  }
+
+  @media (max-width: 860px) {
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .insurance-inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 540px) {
+    .steps-grid { grid-template-columns: 1fr; }
+  }
+</style>

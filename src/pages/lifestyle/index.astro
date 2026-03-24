@@ -1,0 +1,160 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const entries = await getCollection('lifestyle');
+const published = entries
+  .filter(e => !e.data.draft)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Group by first path segment (category directory)
+const categoryLabels: Record<string, string> = {
+  'cardiovascular-prevention': 'Cardiovascular Prevention',
+  'lifestyle-medicine':        'Lifestyle Medicine',
+  'metabolic-health':          'Metabolic Health',
+  'nutrition':                 'Nutrition',
+  'physical-activity':         'Physical Activity',
+  'sleep-hormones':            'Sleep & Hormones',
+  'stress-mental-health':      'Stress & Mental Health',
+};
+
+const grouped: Record<string, typeof published> = {};
+for (const entry of published) {
+  const parts = entry.id.replace(/\.mdx?$/, '').split('/');
+  const cat = parts.length > 1 ? parts[0] : 'general';
+  if (!grouped[cat]) grouped[cat] = [];
+  grouped[cat].push(entry);
+}
+
+const categoryOrder = Object.keys(categoryLabels);
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "Lifestyle Medicine", "item": "https://forwardfamilymedicine.com/lifestyle-medicine" },
+    { "@type": "ListItem", "position": 3, "name": "Lifestyle Library", "item": "https://forwardfamilymedicine.com/lifestyle" }
+  ]
+};
+---
+
+<MainLayout
+  title="Lifestyle Medicine Library | Forward Family Medicine Wayne, PA"
+  description="Evidence-based articles on nutrition, physical activity, sleep, metabolic health, stress, and cardiovascular prevention — from the physicians at Forward Family Medicine."
+  canonical="https://forwardfamilymedicine.com/lifestyle"
+  schema={breadcrumb}
+>
+  <section class="library-hero section" style="background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span>
+        <a href="/lifestyle-medicine">Lifestyle Medicine</a> <span aria-hidden="true">›</span>
+        <span>Library</span>
+      </nav>
+      <span class="section-label">Evidence-Based Resources</span>
+      <h1>Lifestyle Medicine Library</h1>
+      <div class="divider"></div>
+      <p class="section-intro">
+        Articles written by the physicians at Forward Family Medicine covering the six pillars of
+        lifestyle medicine — nutrition, physical activity, sleep, stress management, social
+        connection, and avoiding risky substances.
+      </p>
+    </div>
+  </section>
+
+  <section class="library-body section">
+    <div class="container">
+      {categoryOrder.filter(cat => grouped[cat]?.length).map(cat => (
+        <div class="category-block">
+          <h2 class="category-heading">{categoryLabels[cat] ?? cat}</h2>
+          <ul class="article-list">
+            {grouped[cat].map(entry => {
+              const slug = entry.id.replace(/\.mdx?$/, '');
+              return (
+                <li class="article-item">
+                  <a href={`/lifestyle/${slug}`} class="article-link">
+                    <span class="article-title">{entry.data.title}</span>
+                    {entry.data.description && (
+                      <span class="article-desc">{entry.data.description}</span>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="library-cta section" style="background: var(--color-light);">
+    <div class="container" style="max-width:680px; text-align:center;">
+      <span class="section-label">Put It Into Practice</span>
+      <h2>Lifestyle Medicine as Part of Your Care</h2>
+      <p>
+        Forward Family Medicine is the only DPC practice on the Main Line with in-person,
+        board-certified Lifestyle Medicine integrated into membership. No extra cost.
+      </p>
+      <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+
+  .category-block {
+    margin-bottom: 3rem;
+  }
+  .category-heading {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+  }
+  .article-item { display: flex; }
+  .article-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: border-color 0.15s, background 0.15s;
+    width: 100%;
+  }
+  .article-link:hover {
+    border-color: var(--color-light);
+    background: white;
+  }
+  .article-title {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .article-desc {
+    font-size: 0.82rem;
+    color: #777;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .article-list { grid-template-columns: 1fr; }
+  }
+</style>

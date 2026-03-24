@@ -1,0 +1,397 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "Membership", "item": "https://forwardfamilymedicine.com/membership" }
+  ]
+};
+
+const faqs = [
+  {
+    q: 'Is this health insurance?',
+    a: "No. DPC membership is not insurance. It covers your primary care needs directly. We recommend pairing it with a high-deductible health plan or health sharing plan to cover hospitalizations, surgeries, and specialist care.",
+  },
+  {
+    q: 'Can I use my HSA or FSA for DPC membership?',
+    a: "In many cases, yes — particularly following the Primary Care Enhancement Act (effective January 1, 2026), which clarified that HSA funds may be used for DPC memberships. Please confirm eligibility with your plan administrator.",
+  },
+  {
+    q: 'What does my membership cover?',
+    a: "Unlimited office visits (no copay), same-day and next-day appointments, visits of 1–2 hours, direct phone/text/email access to your doctor, preventive care, chronic disease management, minor procedures, wholesale lab pricing, telehealth, specialist referral coordination, and integrated Lifestyle Medicine with Dr. Lieberman.",
+  },
+  {
+    q: "Are there any additional fees for Lifestyle Medicine?",
+    a: "No. Lifestyle medicine is integrated into how Dr. Lieberman practices — it's part of your membership, not an add-on service.",
+  },
+  {
+    q: 'Can I cancel my membership?',
+    a: 'Please contact us to discuss your specific situation. Our goal is to make membership work for you.',
+  },
+  {
+    q: "What if I need a specialist or hospital care?",
+    a: "Your DPC membership covers primary care. For specialist referrals, we coordinate directly — calling ahead, advocating for you, and ensuring continuity of care. For hospitalizations and surgical care, you'll need a separate insurance plan.",
+  },
+];
+
+const INDIVIDUAL_ENROLLMENT_LINK = 'https://forwardfamilymedicine.sigmamd.com/signup/individual-membership';
+const FAMILY_ENROLLMENT_LINK = 'https://forwardfamilymedicine.sigmamd.com/signup/family-membership';
+const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
+---
+
+<MainLayout
+  title="Membership & Pricing | Forward Family Medicine Wayne PA"
+  description="DPC membership plans at Forward Family Medicine in Wayne, PA. Individual and family options. Flat monthly fee. No insurance. Includes board-certified Lifestyle Medicine."
+  schema={breadcrumb}
+>
+  <!-- Hero -->
+  <section class="membership-hero section" style="background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Membership</span>
+      </nav>
+      <span class="section-label">Simple, Transparent, Valuable</span>
+      <h1>Membership &amp; Pricing</h1>
+      <div class="divider"></div>
+      <p class="section-intro">
+        Concierge-quality care. DPC pricing. Board-certified Lifestyle Medicine. One flat monthly fee — no insurance, no copays, no surprises.
+      </p>
+    </div>
+  </section>
+
+  <!-- Value Frame — Critical -->
+  <section class="value-frame section" style="background: var(--color-primary);">
+    <div class="container value-frame-inner">
+      <div class="value-quote">
+        <span class="value-quote-mark" aria-hidden="true">"</span>
+        <blockquote>
+          Your membership includes something no other DPC practice on the Main Line
+          offers: integrated, in-person, board-certified Lifestyle Medicine. A physician
+          with a culinary arts degree, a nutrition science background, and a Lifestyle
+          Medicine board certification who knows your name, answers your calls, and has
+          a plan for your long-term health. That's what the membership covers.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="plans-section section">
+    <div class="container">
+      <span class="section-label">Choose Your Plan</span>
+      <h2>Membership Options</h2>
+      <div class="divider"></div>
+
+      <div class="plans-grid">
+        <!-- Individual -->
+        <div class="plan-card card">
+          <div class="plan-header">
+            <span class="plan-badge">Individual</span>
+            <h3>Individual Membership</h3>
+            <div class="plan-price">$200<span class="plan-price-unit">/month</span></div>
+            <p class="plan-tagline">Primary care plus board-certified lifestyle medicine — for you, personally.</p>
+          </div>
+          <ul class="prose-list plan-features">
+            <li>Unlimited office visits, no copay</li>
+            <li>Same-day and next-day appointments</li>
+            <li>Visits: 1–2 hours</li>
+            <li>Direct phone, text &amp; email access to your doctor</li>
+            <li>Preventive care and annual wellness exams</li>
+            <li>Chronic disease management</li>
+            <li>Minor in-office procedures</li>
+            <li>Wholesale lab and medication pricing</li>
+            <li>Telehealth visits</li>
+            <li>Specialist referral coordination</li>
+            <li>Board-certified Lifestyle Medicine (with Dr. Lieberman)</li>
+          </ul>
+          <div class="plan-cta">
+            <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn btn-primary plan-btn">Enroll as Individual</a>
+            <a href="/contact" class="plan-greet-link">Or start with a free meet &amp; greet →</a>
+          </div>
+        </div>
+
+        <!-- Family -->
+        <div class="plan-card card featured-plan">
+          <div class="plan-header">
+            <span class="plan-badge plan-badge-accent">Family</span>
+            <h3>Family Membership</h3>
+            <div class="plan-price-family">
+              <div class="family-tier"><span class="family-size">2 members</span><span class="family-rate">$175/person/month</span></div>
+              <div class="family-tier"><span class="family-size">3 members</span><span class="family-rate">$150/person/month</span></div>
+              <div class="family-tier"><span class="family-size">4 members</span><span class="family-rate">$125/person/month</span></div>
+              <div class="family-tier"><span class="family-size">5+ members</span><span class="family-rate">$100/person/month</span></div>
+            </div>
+            <p class="plan-tagline">Whole-family care — every member gets direct access, real time, and genuine relationship.</p>
+          </div>
+          <ul class="prose-list plan-features">
+            <li>Everything in Individual Membership</li>
+            <li>Coverage for 2 or more family members</li>
+            <li>Each member gets their own doctor relationship</li>
+            <li>Coordinated family health planning</li>
+            <li>Pediatric-friendly care options</li>
+            <li>Wholesale lab pricing for the whole family</li>
+            <li>All members access Lifestyle Medicine with Dr. Lieberman</li>
+          </ul>
+          <div class="plan-cta">
+            <a href={FAMILY_ENROLLMENT_LINK} class="btn btn-accent plan-btn">Enroll Your Family</a>
+            <a href="/contact" class="plan-greet-link">Or start with a free meet &amp; greet →</a>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <div class="plan-card card">
+          <div class="plan-header">
+            <span class="plan-badge">Employer</span>
+            <h3>Employer / Business</h3>
+            <div class="plan-price">Contact us<span class="plan-price-unit"> for pricing</span></div>
+            <p class="plan-tagline">Better healthcare for your team — simpler than traditional insurance and genuinely more valuable.</p>
+          </div>
+          <ul class="prose-list plan-features">
+            <li>Flat per-employee monthly membership</li>
+            <li>Pairs with your existing health plan</li>
+            <li>Employees get unlimited primary care, no copays</li>
+            <li>Direct doctor access for your whole team</li>
+            <li>Fewer sick days and ER visits</li>
+            <li>Access to board-certified Lifestyle Medicine</li>
+            <li>Inquiry-based — we'll build a plan for your company</li>
+          </ul>
+          <div class="plan-cta">
+            <a href="/for-businesses" class="btn btn-primary plan-btn">Learn About Employer Plans</a>
+            <a href="/contact" class="plan-greet-link">Or contact us directly →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-note callout" style="max-width: 680px; margin: 2.5rem auto 1rem; text-align:center;">
+        Already a patient? <a href={PATIENT_PORTAL_LINK} target="_blank" rel="noopener noreferrer" style="color:var(--color-primary); font-weight:600;">Log in to the Patient Portal →</a>
+      </div>
+
+      <div class="pricing-note callout" style="max-width: 680px; margin: 0 auto 1rem;">
+        <strong>Panel size is capped at ~250 patients per physician</strong> to ensure timely access to your doctor. When a panel fills, we open a waitlist.
+      </div>
+
+      <div class="pricing-note callout" style="max-width: 680px; margin: 0 auto 0;">
+        <strong>Not sure which plan is right for you?</strong>
+        <p style="margin-top:0.4rem; margin-bottom:0;">
+          Start with a free, no-obligation meet and greet. Come in, meet the team, ask
+          every question — and we'll help you figure out the best fit. No pressure, no commitment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included deep dive -->
+  <section class="included-section section" style="background: var(--color-light);">
+    <div class="container">
+      <span class="section-label">Full Breakdown</span>
+      <h2>What Your Membership Covers</h2>
+      <div class="divider"></div>
+      <div class="included-grid">
+        <div class="included-category">
+          <h3>Primary Care</h3>
+          <ul class="prose-list">
+            <li>Annual physicals and wellness exams</li>
+            <li>Sick visits and acute care</li>
+            <li>Preventive screenings and immunizations</li>
+            <li>Chronic condition monitoring</li>
+            <li>Prescription management</li>
+            <li>Lab review and follow-up</li>
+          </ul>
+        </div>
+        <div class="included-category">
+          <h3>Access &amp; Convenience</h3>
+          <ul class="prose-list">
+            <li>Same-day and next-day appointments</li>
+            <li>Visits: 1–2 hours</li>
+            <li>Direct phone, text, and email access</li>
+            <li>Telehealth included</li>
+            <li>After-hours communication (urgent questions)</li>
+          </ul>
+        </div>
+        <div class="included-category">
+          <h3>Lifestyle Medicine</h3>
+          <ul class="prose-list">
+            <li>Comprehensive lifestyle assessment</li>
+            <li>Personalized nutrition guidance</li>
+            <li>Physical activity planning</li>
+            <li>Sleep optimization</li>
+            <li>Stress management</li>
+            <li>Chronic disease reversal protocols</li>
+          </ul>
+        </div>
+        <div class="included-category">
+          <h3>Cost Savings</h3>
+          <ul class="prose-list">
+            <li>Wholesale lab pricing — CBC: $2 | CMP: $2 | Lipid panel: $3 | ApoB: $7 | Thyroid panel: $7</li>
+            <li>Medications dispensed at cost — no pharmacy markup</li>
+            <li>Reduced urgent care and ER visits through same-day access</li>
+            <li>Discounted imaging coordination at local centers</li>
+            <li>No per-visit fees, ever</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} headline="Membership FAQs" />
+  <CTABanner
+    headline="The Best Time to Start Is Now"
+    subhead="Begin with a free, no-obligation meet and greet. No paperwork, no credit card, no pressure. Just a conversation with your future doctor."
+  />
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+
+  /* Value Frame */
+  .value-frame-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .value-quote {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .value-quote-mark {
+    position: absolute;
+    left: -0.5rem;
+    top: -1rem;
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .value-quote blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: white;
+    line-height: 1.7;
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* Plans */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+  .plan-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .featured-plan {
+    border: 2px solid var(--color-secondary);
+    position: relative;
+  }
+  .plan-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--color-light);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+  .plan-badge-accent {
+    background: #fdf0e6;
+    color: #b86a30;
+  }
+  .plan-header h3 {
+    margin-bottom: 0.5rem;
+  }
+  .plan-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    margin: 0.5rem 0 0.75rem;
+    line-height: 1;
+  }
+  .plan-price-unit {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888;
+  }
+  .plan-price-family {
+    margin: 0.5rem 0 0.75rem;
+  }
+  .family-tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--color-light);
+    font-size: 0.9rem;
+  }
+  .family-tier:last-child { border-bottom: none; }
+  .family-size { color: #555; }
+  .family-rate { font-weight: 700; color: var(--color-primary); }
+
+  .plan-tagline {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+  }
+  .plan-features {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  .plan-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+  .plan-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .plan-greet-link {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.15s;
+  }
+  .plan-greet-link:hover { color: var(--color-secondary); }
+
+  /* Included grid */
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .included-category {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .included-category h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 900px) {
+    .plans-grid { grid-template-columns: 1fr; }
+    .included-grid { grid-template-columns: 1fr; }
+  }
+</style>
