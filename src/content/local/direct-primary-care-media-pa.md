@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **12 miles north** via Route 252 or Baltimore Pike (Route 1) to Route 30
 - Same-day and next-day appointments
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, and message
 - Longer visits — your health history matters here
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Telehealth included — reduces travel for routine care
 - Family memberships available
 
@@ -43,6 +44,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Media Patients
 
@@ -50,11 +52,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~25–30 minutes
 **SEPTA:** Media/Elwyn (R3) line connects to center city, but not directly to Wayne — telehealth recommended for routine care
 **Telehealth:** All phone and video visits are included — the most practical option for many Media patients managing the distance
-
-## Member Experiences
-
-> *"Media's great but there wasn't anything like this close by. The drive to Wayne takes less than 30 minutes and telehealth means I almost never need to actually go in. It's changed how I think about healthcare."*
-> — **Member, Media PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -69,6 +66,14 @@ Yes — phone and video visits are included in all memberships. Follow-ups, pres
 
 **Is Forward Family Medicine accepting new patients from Media?**
 Yes. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

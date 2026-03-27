@@ -226,7 +226,8 @@ const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
   }
 </style>
 
-<script define:vars={{ CONTACT_EMAIL }}>
+<script is:inline define:vars={{ CONTACT_EMAIL }}>
+  (function() {
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHmO1sVRzNtt3DKTzTMaqLUr-FMIHMbuDmDdc9W8rH3kMthCGhp2rodaBXm4eUP2c/exec';
 
   const form            = document.getElementById('meetgreet-form');
@@ -326,4 +327,5 @@ const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
       submitBtn.textContent = 'Request My Free Meet & Greet';
     }
   });
+  })();
 </script>

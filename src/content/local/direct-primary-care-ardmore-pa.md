@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - 6 miles west of Ardmore on Lancaster Avenue
 - Same-day appointments available
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, or message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, or message
 - Longer visits — not a 10-minute slot
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Ardmore Patients
 
@@ -49,11 +51,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~12–14 minutes
 **SEPTA:** Ardmore Station on the Paoli–Thorndale (R5) line — 4–5 stops from Wayne Station. Easy SEPTA commute for patients who prefer transit.
 **Telehealth:** All phone and video visits are included in membership — great for routine follow-ups and minor concerns
-
-## Member Experiences
-
-> *"I'm in Ardmore, so it's about 12 minutes. The SEPTA option is great too. For my chronic conditions, having a DPC doctor has completely changed how I feel about managing my health."*
-> — **Member, Ardmore PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Absolutely. Phone and video visits are included for all members, reducing the ne
 
 **Is Forward Family Medicine accepting new patients from Ardmore?**
 Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

@@ -33,9 +33,9 @@ Forward Family Medicine delivers the essential concierge medicine experience —
 
 - Just 3 miles from Berwyn — SEPTA and Route 30 accessible
 - Same-day appointments available
-- Direct line to Dr. Bigley and Dr. Lieberman by phone and text
+- Direct line to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone and text
 - Unhurried 30–60 minute visits when needed
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Whole-family plans available
 
 ## Services Included
@@ -47,7 +47,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Practical Information
 
 **Distance:** ~3 miles from Berwyn center via Route 30
-**SEPTA:** Berwyn Station → Wayne Station (1 stop, Paoli–Thorndale R5)
+**SEPTA:** Berwyn Station → Wayne Station (3 stops, Paoli–Thorndale R5: Wayne → Strafford → Devon → Berwyn)
 **Telehealth:** Included — perfect for follow-ups and minor questions without the drive
 
 ## Frequently Asked Questions
@@ -56,10 +56,18 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Yes — Forward Family Medicine in Wayne offers concierge-style DPC care just 3 miles from Berwyn. [Schedule a Meet & Greet →](/become-a-patient)
 
 **How much does concierge medicine cost for Berwyn patients?**
-Our DPC membership starts at $[X]/month — far below traditional concierge retainer pricing. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month — far below traditional concierge retainer pricing. [See pricing →](/membership)
 
 **Do you offer telehealth for Berwyn patients?**
 Yes — all phone and video visits are included in membership.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

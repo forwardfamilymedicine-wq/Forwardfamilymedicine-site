@@ -27,6 +27,8 @@ Malvern's professional community — including many who work in pharmaceutical, 
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership. For Malvern patients, telehealth makes nutrition and lifestyle coaching accessible without every visit requiring a drive to Wayne.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why Malvern Patients Choose This Approach
@@ -57,6 +59,14 @@ Yes — completely included. [See membership →](/membership)
 
 **Can Malvern patients do lifestyle consultations by video?**
 Yes — telehealth is included and particularly useful for Malvern patients to reduce travel for coaching check-ins.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Take the First Step
 

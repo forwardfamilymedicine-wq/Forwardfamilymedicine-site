@@ -35,7 +35,7 @@ Forward Family Medicine delivers the concierge medicine experience — same-day 
 - Same-day and next-day appointments
 - Direct physician access by phone and text
 - Telehealth included for routine care
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly membership — no retainer, no surprise bills
 
 ## Services
@@ -58,7 +58,15 @@ Forward Family Medicine in Wayne is 12 miles north and provides concierge-style 
 Traditional concierge practices typically charge $1,500–$6,000+ per year in retainer fees and often still bill insurance. DPC replaces insurance billing with a flat monthly fee that delivers the same quality of access and relationship — typically at a fraction of the cost. [See comparison →](/concierge-medicine)
 
 **What does membership cost for Media patients?**
-Our DPC membership starts at $[X]/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

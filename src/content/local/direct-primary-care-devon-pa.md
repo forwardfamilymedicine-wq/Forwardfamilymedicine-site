@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **3 miles east of Devon** on Lancaster Avenue
 - Same-day appointments available
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, and message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
 - Visits as long as they need to be — no billing clock
-- Lifestyle medicine and prevention built into every membership
+- Lifestyle medicine and prevention built into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Devon Patients
 
@@ -49,11 +51,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~6–8 minutes
 **SEPTA:** Devon Station on the Paoli–Thorndale (R5) line — two stops from Wayne Station
 **Telehealth:** All phone and video visits are included in membership
-
-## Member Experiences
-
-> *"Devon to Wayne is nothing — I'm basically a neighbor. And the difference in how my care feels is enormous."*
-> — **Member, Devon PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Absolutely. Phone and video visits are included for all members.
 
 **Is Forward Family Medicine accepting new Devon patients?**
 Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

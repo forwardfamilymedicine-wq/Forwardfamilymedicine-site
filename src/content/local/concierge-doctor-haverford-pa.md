@@ -33,9 +33,9 @@ Forward Family Medicine delivers the concierge medicine experience — same-day 
 
 - 5–6 miles from Haverford — Route 30 or SEPTA
 - Same-day appointments available
-- Direct access to Dr. Bigley and Dr. Lieberman by phone and text
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone and text
 - Longer, unhurried visits
-- Lifestyle medicine built in
+- Lifestyle medicine built in. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee — no surprises
 
 ## Services
@@ -54,10 +54,18 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Forward Family Medicine in Wayne is 5–6 miles from Haverford. [Schedule a Meet & Greet →](/become-a-patient)
 
 **What does concierge care cost near Haverford?**
-Our DPC membership starts at $[X]/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
 
 **Can Haverford patients use telehealth?**
 Yes — phone and video visits included.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

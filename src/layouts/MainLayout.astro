@@ -98,6 +98,15 @@ const schemas = [orgSchema, ...(Array.isArray(schema) ? schema : schema ? [schem
   {schemas.map(s => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Z3EP3H07B"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8Z3EP3H07B');
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>

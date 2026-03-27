@@ -32,10 +32,10 @@ Forward Family Medicine is located in Wayne — within Radnor Township — and o
 ## Why Radnor Patients Choose This Practice
 
 - Located within Radnor Township in Wayne
-- Direct physician access — call, text, or message Dr. Bigley and Dr. Lieberman
+- Direct physician access — call, text, or message Dr. David Bigley, DO and Dr. Philip Lieberman, MD
 - Same-day and next-day appointments
 - 30–60 minute visits when needed
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee — no billing surprises
 
 ## Services
@@ -54,10 +54,18 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Yes — Forward Family Medicine is located within Radnor Township in Wayne, PA, and offers concierge-style DPC care.
 
 **How much does concierge care cost in Radnor?**
-Our DPC membership starts at $[X]/month — significantly less than traditional concierge annual retainers. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month — significantly less than traditional concierge annual retainers. [See pricing →](/membership)
 
 **Is the practice currently accepting Radnor patients?**
 Yes. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

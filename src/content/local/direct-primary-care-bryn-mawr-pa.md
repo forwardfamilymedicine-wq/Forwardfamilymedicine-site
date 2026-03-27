@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **5 miles west** of Bryn Mawr on Lancaster Avenue
 - Same-day appointments for acute concerns
-- Direct access to Dr. Bigley and Dr. Lieberman — phone, text, message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD — phone, text, message
 - Visits as long as your health requires
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Smaller panel means your physician knows your history
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Bryn Mawr Patients
 
@@ -49,11 +51,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~10–12 minutes
 **SEPTA:** Bryn Mawr Station on the Paoli–Thorndale (R5) line — approximately 4 stops from Wayne Station
 **Telehealth:** All phone and video visits included in membership
-
-## Member Experiences
-
-> *"I work at the hospital in Bryn Mawr and I know what overcrowded, rushed medicine looks like from the inside. That's exactly why I chose DPC."*
-> — **Member, Bryn Mawr PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Forward Family Medicine in Wayne is the nearest DPC practice to Bryn Mawr reside
 
 **Is Forward Family Medicine accepting new patients from Bryn Mawr?**
 Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

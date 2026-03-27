@@ -35,7 +35,7 @@ Forward Family Medicine in Wayne delivers the concierge medicine experience — 
 - Same-day and next-day appointments
 - Direct physician access by phone and text
 - Telehealth included for routine care — reduces travel
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly membership
 
 ## Services
@@ -54,10 +54,18 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Forward Family Medicine in Wayne, PA is 10 miles east and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs. [Schedule a Meet & Greet →](/become-a-patient)
 
 **What does membership cost for Malvern patients?**
-Our DPC membership starts at $[X]/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
 
 **How does telehealth help Malvern patients specifically?**
 For follow-up visits, prescription refills, lab result reviews, and minor illness questions, telehealth is fully functional and included — meaning Malvern patients rarely need to make the trip to Wayne for routine care.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

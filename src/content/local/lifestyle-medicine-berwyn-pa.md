@@ -27,6 +27,8 @@ Berwyn is a residential Chester County community on Lancaster Avenue, just east 
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership — meaning your physician uses evidence-based nutrition, activity, sleep, and stress counseling as clinical tools, not add-ons. For Berwyn patients, this means a 3-mile drive to a practice that approaches your health differently.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why Berwyn Patients Choose This Approach
@@ -57,6 +59,22 @@ Yes — all lifestyle medicine counseling is included at no extra cost. [See mem
 
 **Can Berwyn patients use telehealth for lifestyle medicine consultations?**
 Absolutely. Phone and video visits are included and work especially well for nutrition and lifestyle check-ins.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+
+## Lifestyle Medicine and Life in Berwyn
+
+Berwyn's proximity to the Chester Valley Trail is more than a geographic convenience — it represents the kind of active community baseline that lifestyle medicine builds on. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, starts with what patients are already doing. If you're running or cycling the trail on weekends, that's a foundation. The clinical conversation is about extending that into the rest of the week and managing the factors that undermine it: sleep, recovery, nutrition, stress load.
+
+Berwyn's walkable downtown and farmers market culture create natural touchpoints for nutrition conversations grounded in how people actually shop and eat. These aren't abstract dietary recommendations — they're practical adjustments rooted in your real food environment.
+
+A significant share of Berwyn patients work in the Daylesford and Paoli business corridor. Demanding professional schedules are among the most common drivers of metabolic dysfunction, disrupted sleep, and chronic stress — and all three respond well to structured lifestyle medicine interventions. Forward Family Medicine addresses those connections directly, built into every membership.
 
 ## Take the First Step
 

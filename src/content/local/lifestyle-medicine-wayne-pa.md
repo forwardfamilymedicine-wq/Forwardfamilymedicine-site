@@ -31,6 +31,8 @@ Wayne's walkable neighborhoods, proximity to Chester Valley Trail, and health-co
 
 Lifestyle medicine uses evidence-based behavioral interventions — changes in nutrition, physical activity, sleep, stress management, and social connection — as clinical tools to prevent and treat chronic disease. At Forward Family Medicine, these aren't "wellness extras." They're integrated into your care plan from day one.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [Full lifestyle medicine explainer →](/lifestyle-medicine)
 
 ## Why Wayne Patients Choose Lifestyle Medicine at Forward Family Medicine
@@ -62,14 +64,6 @@ Lifestyle medicine uses evidence-based behavioral interventions — changes in n
 **Telehealth:** Lifestyle medicine counseling is especially well-suited to phone and video visits. Members can have nutrition and coaching conversations without coming in.
 **Chester Valley Trail:** Wayne is a short distance from the Chester Valley Trail — and we love when patients are already moving. We build on what you're already doing.
 
-## Wayne Member Experiences
-
-> *"I came in for high blood pressure and left with a plan that actually made sense for my life. Six months later I'm off one medication and I feel better than I have in years."*
-> — **Member, Wayne PA** *(placeholder)*
-
-> *"The lifestyle medicine piece was why I stayed. My previous doctor never once asked about my diet or sleep."*
-> — **Member, Wayne PA** *(placeholder)*
-
 ## Frequently Asked Questions
 
 **Is lifestyle medicine covered in the DPC membership in Wayne?**
@@ -83,6 +77,14 @@ For many conditions — prediabetes, mild hypertension, high cholesterol, early 
 
 **Do I need to live in Wayne to access lifestyle medicine at Forward Family Medicine?**
 No. Members from Berwyn, Devon, Villanova, Radnor, and surrounding Main Line communities are welcome. Telehealth makes lifestyle consultations accessible regardless of where you live.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Start Living Better — With a Doctor Who Supports It
 

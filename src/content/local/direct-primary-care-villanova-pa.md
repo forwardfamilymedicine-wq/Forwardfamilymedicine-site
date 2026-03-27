@@ -32,9 +32,10 @@ Direct Primary Care (DPC) replaces insurance billing with a flat monthly members
 
 - **1 mile from Villanova** — the closest DPC practice on the Main Line
 - Same-day appointments for acute concerns
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, and secure message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and secure message
 - Visits as long as your situation requires — not a billing clock
-- Preventive care and lifestyle medicine integrated into every membership
+- Preventive care and lifestyle medicine integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available for Villanova households
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ Direct Primary Care (DPC) replaces insurance billing with a flat monthly members
 Unlimited visits (in-person, phone, video) · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Villanova Patients
 
@@ -49,11 +51,6 @@ Unlimited visits (in-person, phone, video) · Annual physicals · Preventive scr
 **Drive time:** ~3–5 minutes via Lancaster Avenue
 **SEPTA:** Villanova Station on the Paoli–Thorndale (R5) line is one stop from Wayne Station
 **Telehealth:** All phone and video visits are included — ideal for follow-ups and minor concerns
-
-## Member Experiences
-
-> *"I'm a faculty member at Villanova. My schedule doesn't allow for three-hour medical visits. Forward Family Medicine means I can handle most things in a quick call or a 20-minute in-person visit."*
-> — **Member, Villanova PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Yes — we are currently accepting new members. [Schedule a Meet & Greet →](/b
 
 **What makes DPC different from practices near Villanova University?**
 Most practices near the university run on traditional insurance billing schedules. Forward Family Medicine's DPC model keeps our panel smaller, giving you same-day access and a physician who genuinely knows your history. [Learn more →](/direct-primary-care)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

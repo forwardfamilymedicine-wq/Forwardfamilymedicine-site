@@ -27,6 +27,8 @@ Bryn Mawr's community — home to a college, a hospital, and a health-aware popu
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership — nutrition, physical activity, sleep, and stress counseling as clinical tools. For Bryn Mawr patients, this is 5 miles west on Lancaster Avenue, and telehealth brings it even closer.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why Bryn Mawr Patients Choose This Approach
@@ -57,6 +59,22 @@ Yes. [See membership →](/membership)
 
 **Can I do consultations by video from Bryn Mawr?**
 Yes — telehealth is included.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+
+## Lifestyle Medicine and Life in Bryn Mawr
+
+Bryn Mawr Hospital's presence in this community shapes both the health landscape and the health literacy of people who live here. Many Bryn Mawr residents work in or adjacent to healthcare and have firsthand experience with what conventional medicine does well — and where it falls short. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, operates in that gap: using evidence-based behavioral interventions to prevent and treat chronic disease rather than waiting to manage its complications. Forward Family Medicine coordinates with Bryn Mawr Hospital specialists when members require multidisciplinary care, making proximity a practical asset.
+
+Bryn Mawr College adds a significant academic and professional population with high health literacy and a natural affinity for evidence-based reasoning. Lifestyle medicine meets that standard — it draws on the same clinical trial evidence as any specialty, not trend-driven wellness content.
+
+The walkable character of Bryn Mawr — compact streets, accessible transit, a functional downtown — supports the daily physical activity that accumulates into meaningful health outcomes over time. Lifestyle medicine accounts for what patients' environments make possible, and Bryn Mawr's built environment is genuinely supportive.
 
 ## Take the First Step
 

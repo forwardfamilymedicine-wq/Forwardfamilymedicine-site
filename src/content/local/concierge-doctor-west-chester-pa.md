@@ -35,7 +35,7 @@ Forward Family Medicine provides the concierge medicine experience — same-day 
 - Same-day and next-day appointments
 - Direct physician access by phone and text
 - Telehealth fully included — most routine care handled remotely
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee — no retainer, no insurance surprises
 
 ## Services
@@ -58,10 +58,18 @@ Forward Family Medicine in Wayne is 14 miles northeast and provides concierge-st
 DPC delivers the same experience — direct access, longer visits, a physician who knows you — but through a lower-cost flat monthly fee rather than a high annual retainer. Many patients find DPC is better value than traditional concierge. [See the comparison →](/concierge-medicine)
 
 **What does membership cost for West Chester patients?**
-Our DPC membership starts at $[X]/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
 
 **How does telehealth work for West Chester patients specifically?**
 Given the 14-mile distance and Route 202 traffic, telehealth is genuinely valuable for West Chester members. Phone and video visits are fully included and handle follow-ups, prescription refills, lab results, and many acute concerns without requiring a drive.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

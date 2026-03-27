@@ -35,7 +35,7 @@ Forward Family Medicine delivers the concierge experience — direct physician a
 - Same-day and next-day appointments
 - Direct physician access by phone and text
 - Longer, unhurried visits
-- Lifestyle medicine built in
+- Lifestyle medicine built in. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee
 
 ## Services
@@ -54,10 +54,18 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Forward Family Medicine in Wayne is 6 miles from Ardmore and offers concierge-style DPC care. [Schedule a Meet & Greet →](/become-a-patient)
 
 **What does concierge care cost near Ardmore?**
-Our DPC membership starts at $[X]/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
 
 **Does the SEPTA line connect Ardmore to the Wayne practice?**
 Yes — the Paoli–Thorndale (R5) line runs from Ardmore to Wayne directly.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **7 miles south** of King of Prussia via Route 202 or the Blue Route (I-476)
 - Same-day and next-day appointments
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct physician access by phone, text, and message
 - Telehealth included — handles most routine care without the drive
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for King of Prussia Patients
 
@@ -49,11 +51,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~15–20 minutes depending on Route 202 traffic
 **SEPTA:** No direct rail connection, but SEPTA bus routes connect KOP to the Main Line; telehealth is recommended for routine care
 **Telehealth:** All phone and video visits are included — highly practical for KOP patients managing busy schedules
-
-## Member Experiences
-
-> *"I work in KOP and the drive to Wayne is easy — 15 minutes with no traffic. More importantly, I can handle most routine things by phone or message, so I only come in when I actually need to."*
-> — **Member, King of Prussia PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Yes — phone and video visits are fully included in all memberships, making mos
 
 **Is Forward Family Medicine accepting new patients from King of Prussia?**
 Yes. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - 5–6 miles west via Lancaster Avenue or SEPTA
 - Same-day and next-day appointments
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, and message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
 - Longer visits when your situation requires it
-- Lifestyle medicine and prevention built into every membership
+- Lifestyle medicine and prevention built into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Haverford Patients
 
@@ -49,11 +51,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~10–12 minutes
 **SEPTA:** Haverford Station on the Paoli–Thorndale (R5) line — 4–5 stops from Wayne Station
 **Telehealth:** All phone and video visits included in membership
-
-## Member Experiences
-
-> *"I'm faculty at Haverford College. The DPC model aligns with how I think about human relationships — it's what medicine should look like."*
-> — **Member, Haverford PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Yes — phone and video visits are included for all members.
 
 **Is Forward Family Medicine accepting new patients from Haverford?**
 Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

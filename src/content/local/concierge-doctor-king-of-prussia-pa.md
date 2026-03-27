@@ -35,7 +35,7 @@ Traditional concierge medicine often requires a retainer of $1,500–$6,000 or m
 - Same-day and next-day appointments — no 3-week waits
 - Direct physician access by phone and text
 - Telehealth included — most routine care handled without the drive
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly membership fee — no per-visit charges
 
 ## Services
@@ -58,10 +58,18 @@ Forward Family Medicine in Wayne, PA is 7 miles south and offers concierge-style
 Both offer direct physician access and longer visits. Traditional concierge practices often bill insurance on top of the retainer fee; DPC replaces insurance billing entirely with a flat monthly fee — typically much lower than concierge retainers. [Full comparison →](/concierge-medicine)
 
 **What does membership cost for King of Prussia patients?**
-Our DPC membership starts at $[X]/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
 
 **How does telehealth help KOP patients specifically?**
 King of Prussia has no direct rail connection to Wayne. Telehealth is fully included and handles the majority of follow-up visits, prescription questions, lab result reviews, and minor illness concerns — meaning KOP members rarely need to make the drive for routine care.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

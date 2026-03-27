@@ -32,10 +32,11 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **14 miles northeast** via Route 202 north
 - Same-day and next-day appointments
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, and message
 - Telehealth included — handles most routine care without the drive
 - Longer visits — no rushed 10-minute slots
-- Lifestyle medicine and prevention integrated
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership
@@ -43,6 +44,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for West Chester Patients
 
@@ -50,11 +52,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~25–35 minutes depending on Route 202 traffic
 **SEPTA:** No direct rail connection between West Chester and Wayne — telehealth is strongly recommended for routine care
 **Telehealth:** All phone and video visits are included — the most practical option for West Chester patients managing the distance
-
-## Member Experiences
-
-> *"The drive from West Chester to Wayne is part of Route 202 I know well from commuting. For in-person visits I plan ahead; for everything else, telehealth means I don't need to drive at all."*
-> — **Member, West Chester PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -69,6 +66,14 @@ Absolutely — and we strongly encourage it. Phone and video visits are included
 
 **Is Forward Family Medicine accepting new patients from West Chester?**
 Yes. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

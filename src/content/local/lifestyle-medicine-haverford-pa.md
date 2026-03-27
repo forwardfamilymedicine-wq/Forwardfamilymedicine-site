@@ -27,6 +27,8 @@ Haverford's community — centered around a liberal arts college and its famous 
 
 Forward Family Medicine in Wayne integrates lifestyle medicine into every DPC membership. Evidence-based nutrition, activity, sleep, and stress counseling are clinical standards — included, not extra.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why Haverford Patients Choose This Approach
@@ -56,6 +58,22 @@ Yes. [See membership →](/membership)
 
 **Can Haverford patients use telehealth for lifestyle consultations?**
 Yes — telehealth is included.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+
+## Lifestyle Medicine and Life in Haverford
+
+Haverford College's arboretum and trail loop are genuinely unusual community assets — a maintained, walkable natural environment integrated into daily township life. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, incorporates physical environment into the clinical conversation: patients who live somewhere walkable have a real advantage, and lifestyle medicine makes that advantage explicit and actionable rather than leaving it as an unexamined background fact.
+
+Haverford Township's walkability is measurably above average for the region. The combination of sidewalked residential streets, SEPTA access, and local amenities within walking distance makes low-intensity daily physical activity realistic here in a way it isn't everywhere. That matters clinically — it is one reason cardiovascular and metabolic health outcomes correlate with community design, and one reason exercise prescriptions land differently for Haverford patients than for patients in car-dependent suburbs.
+
+The professional and academic community around Haverford College tends to bring high health literacy and a preference for evidence over trend. Lifestyle medicine fits that expectation. The interventions — dietary pattern shifts, structured activity, sleep hygiene, stress management protocols — are derived from the same clinical evidence base as any pharmaceutical treatment, applied by a physician who tracks outcomes and adjusts.
 
 ## Take the First Step
 

@@ -35,11 +35,11 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 
 ## Why Wayne Patients Choose a Concierge-Style DPC Practice
 
-- **You reach Dr. Bigley and Dr. Lieberman directly** — not a call center
+- **You reach Dr. David Bigley, DO and Dr. Philip Lieberman, MD directly** — not a call center
 - **Same-day appointments** for acute concerns
 - **30–60 minute visits** when your situation calls for it
 - **Proactive follow-up** — we reach out, not just the other way around
-- **Whole-person, prevention-first approach** including lifestyle medicine
+- **Whole-person, prevention-first approach** including lifestyle medicine. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - **One predictable monthly fee** — no copays, no billing surprises
 - **A physician who knows your history** without you having to re-explain it
 
@@ -58,15 +58,13 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 
 ## Practical Information
 
-**Location:** Wayne, PA — at the center of the Main Line
-**Parking:** [Details placeholder]
+**Location:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Parking:** Free parking available on-site
 **Telehealth:** All visits can be conducted by phone or video when appropriate. Great for follow-ups, prescription questions, or minor acute concerns.
-**Hours:** [Hours placeholder]
-
-## Wayne Member Experiences
-
-> *"I've used concierge services in other cities and this is the first time I've found that level of care at a price that actually makes sense for my family."*
-> — **Member, Wayne PA** *(placeholder)*
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Frequently Asked Questions
 
@@ -77,7 +75,7 @@ We deliver the same-day access, direct physician contact, longer visits, and pro
 Large health system practices typically operate on high-volume schedules with centralized scheduling and limited direct physician access. Forward Family Medicine is intentionally small — your physician knows you and is accessible to you directly.
 
 **What does concierge care cost in Wayne, PA?**
-Our DPC membership starts at $[X]/month for individual adults — far less than traditional concierge retainer models. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month — far less than traditional concierge retainer models. [See pricing →](/membership)
 
 **Can I schedule a visit before committing?**
 Yes — our free Meet & Greet is exactly for that. [Schedule here →](/become-a-patient)

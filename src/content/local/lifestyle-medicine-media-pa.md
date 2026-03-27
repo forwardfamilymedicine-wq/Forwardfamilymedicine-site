@@ -27,6 +27,8 @@ Media's community-oriented character attracts residents who value quality of lif
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership. Nutrition, activity, sleep, stress management, and chronic disease prevention are included as clinical standards — not referrals to outside programs. Telehealth makes most lifestyle consultations available to Media patients without requiring a drive to Wayne.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why Media Patients Choose This Approach
@@ -61,6 +63,14 @@ Yes — telehealth is included and recommended for routine lifestyle coaching, f
 
 **What does lifestyle medicine address?**
 Prediabetes, hypertension, high cholesterol, metabolic syndrome, obesity, stress, and sleep dysfunction — all through evidence-based behavioral interventions integrated into your ongoing primary care.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Take the First Step
 

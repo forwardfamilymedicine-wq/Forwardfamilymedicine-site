@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — covering unlim
 
 - **Located within Radnor Township** — Wayne is Radnor Township
 - Same-day and next-day availability for acute concerns
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, or message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, or message
 - Longer visits when your health requires real conversation
-- Lifestyle medicine and preventive care integrated into every membership
+- Lifestyle medicine and preventive care integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership
@@ -42,17 +43,13 @@ DPC replaces insurance billing with a flat monthly membership — covering unlim
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Specialist coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Radnor Patients
 
 **Location:** Wayne, PA — within Radnor Township
 **SEPTA:** Wayne Station is accessible from Strafford, Villanova, and other Radnor Township train stops on the Paoli–Thorndale (R5) line
 **Telehealth:** All phone and video visits included in membership
-
-## Member Experiences
-
-> *"I live in the Radnor area and was looking for a practice that matched the quality I expect in other professionals I work with. Forward Family Medicine fit that immediately."*
-> — **Member, Radnor PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -67,6 +64,14 @@ Large health system practices operate on high-volume schedules. Our DPC model li
 
 **What's the best way to try this before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Bigley and Dr. Lieberman. [Schedule here →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

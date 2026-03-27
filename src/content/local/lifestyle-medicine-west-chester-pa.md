@@ -27,6 +27,8 @@ West Chester residents — from university faculty and local business owners to 
 
 Forward Family Medicine includes lifestyle medicine in every DPC membership. Evidence-based behavioral counseling and chronic disease prevention are integrated into ongoing care — not a separate referral or add-on service. Telehealth makes most lifestyle consultations accessible for West Chester patients without requiring the drive to Wayne.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why West Chester Patients Choose This Approach
@@ -61,6 +63,14 @@ Yes — telehealth is fully included and is the recommended approach for West Ch
 
 **What conditions does lifestyle medicine address?**
 Prediabetes, diabetes, hypertension, high cholesterol, obesity, metabolic syndrome, stress-related health problems, and sleep dysfunction — all addressed through evidence-based behavioral interventions as part of your ongoing care.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Take the First Step
 

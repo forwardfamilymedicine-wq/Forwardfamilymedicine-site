@@ -27,6 +27,8 @@ Devon's community — active, health-aware, and increasingly focused on whole-pe
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership — evidence-based nutrition, activity, sleep, and stress counseling as clinical tools. Devon patients are just 3 miles from our Wayne practice — and telehealth makes it even more accessible.
 
+Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why Devon Patients Choose This Approach
@@ -56,6 +58,22 @@ Yes. [See membership details →](/membership)
 
 **Can I do video lifestyle consultations as a Devon patient?**
 Yes — telehealth is included for all members.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+
+## Lifestyle Medicine and Life in Devon
+
+Devon has a distinctive identity on the Main Line — anchored by the Devon Horse Show, one of the oldest and largest outdoor equestrian events in the country. The equestrian lifestyle active in this community involves real physical demands, outdoor time, and a particular relationship to physical capacity. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, understands that lifestyle medicine looks different for someone managing the demands of equestrian activity than for someone managing a desk-based career — and tailors the approach accordingly.
+
+The Chester Valley Trail, accessible from Devon, connects directly to the outdoor culture that defines the area. For patients already moving — riding, cycling, running — lifestyle medicine builds on that foundation by addressing the nutrition, sleep, and recovery patterns that determine whether activity protects health or depletes it.
+
+Devon also has a well-established residential character, with multigenerational families and longtime residents often managing the chronic conditions — hypertension, type 2 diabetes, elevated cholesterol — that lifestyle medicine addresses most directly. The clinical evidence on these conditions is unambiguous: behavioral intervention, applied with rigor, produces durable results.
 
 ## Take the First Step
 

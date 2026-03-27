@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **10 miles east** of Malvern on Route 30 — a quick commute
 - Same-day and next-day appointments
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, and message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
 - Longer visits — not a rushed 10-minute slot
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Telehealth reduces in-office visits for routine care
 - Family memberships available
 
@@ -43,6 +44,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Malvern Patients
 
@@ -50,11 +52,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~18–22 minutes
 **SEPTA:** Malvern Station on the Paoli–Thorndale (R5) line — approximately 7–8 stops from Wayne Station (~30 minutes)
 **Telehealth:** All phone and video visits are included — ideal for Malvern patients to reduce travel for follow-ups, prescription questions, and routine care
-
-## Member Experiences
-
-> *"I work near Malvern and the drive to Wayne is part of my commute anyway. My DPC membership has made healthcare something I don't dread."*
-> — **Member, Malvern PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -69,6 +66,14 @@ Absolutely — and we encourage it. Phone and video visits are included in all m
 
 **Is Forward Family Medicine accepting new patients from Malvern?**
 Yes. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

@@ -37,9 +37,10 @@ Direct Primary Care (DPC) is a membership-based model in which patients pay a fl
 
 - **Located right here in Wayne** — no commute, no detour to a large health system
 - **Same-day appointments** for sick visits, acute concerns, and urgent questions
-- **Direct access to Dr. Bigley and Dr. Lieberman** by phone, text, or secure message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- **Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD** by phone, text, or secure message
 - **Longer visits** — 30–60 minutes when you need them, not 10-minute slots
-- **Lifestyle medicine integrated** into every membership — nutrition, sleep, activity, stress
+- **Lifestyle medicine integrated** into every membership — nutrition, sleep, activity, stress. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - **Wholesale lab pricing** — dramatically less than standard billed rates
 - **Whole-family memberships** available — one physician for everyone
 
@@ -62,22 +63,14 @@ Lab work and medications are available at wholesale pricing. [See full services 
 
 ## Practical Information for Wayne Patients
 
-**Office location:** [Address], Wayne, PA [Zip]
-**Parking:** Free parking available [details placeholder]
-**SEPTA:** Wayne Station on the Paoli–Thorndale (R5) line is [distance] from our office — walkable for most patients
+**Office location:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Parking:** Free parking available on-site
+**SEPTA:** Wayne Station on the Paoli–Thorndale (R5) line is approximately 0.5 miles from our office — walkable for most patients
 **Telehealth:** All phone and video visits are included in membership. Many routine questions are handled without coming in at all.
-**Office hours:** [Hours placeholder]
-
-## What Wayne Members Say
-
-> *"Having a doctor I can actually reach — on the same day, by text — has changed how I think about healthcare. I'm not dreading the process anymore."*
-> — **Member, Wayne PA** *(placeholder)*
-
-> *"We have three kids and a family plan. One doctor for everyone, and we can get an appointment same morning when someone wakes up sick. That's what parenting should look like."*
-> — **Family member, Wayne PA** *(placeholder)*
-
-> *"I work from home and can't afford to spend a morning waiting at an office. My DPC membership means I handle most things by message or a 10-minute call."*
-> — **Member, Wayne PA** *(placeholder)*
+**Office hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Frequently Asked Questions
 
@@ -88,7 +81,7 @@ Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main
 No. While we're located in Wayne, we welcome members from throughout the Main Line and Delaware County. Telehealth visits make membership practical for patients who live a bit farther away.
 
 **What's the membership fee for Wayne patients?**
-Our flat monthly membership covers all primary care at the rates listed on our membership page. There is a one-time enrollment fee. [See pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership). There is a one-time enrollment fee.
 
 **How is Direct Primary Care different from my current doctor in Wayne?**
 Traditional practices bill insurance per visit and typically see 20–30 patients a day. DPC practices like Forward Family Medicine cap their panel and bill a flat monthly fee — giving your physician the time and availability to truly know and serve you. [Learn more →](/direct-primary-care)

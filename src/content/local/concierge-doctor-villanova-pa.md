@@ -33,8 +33,8 @@ Forward Family Medicine — just 1 mile from Villanova — offers the same-day a
 
 - Closest concierge-style DPC practice to Villanova
 - Same-day appointments available
-- Direct line to Dr. Bigley and Dr. Lieberman — call, text, or message
-- Unhurried visits, proactive prevention, lifestyle medicine integration
+- Direct line to Dr. David Bigley, DO and Dr. Philip Lieberman, MD — call, text, or message
+- Unhurried visits, proactive prevention, lifestyle medicine integration. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Predictable flat monthly fee — no billing surprises
 - Family plans available
 
@@ -54,10 +54,18 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Yes — Forward Family Medicine in Wayne is just 1 mile away and offers concierge-style DPC care. [Schedule a Meet & Greet →](/become-a-patient)
 
 **Is concierge medicine affordable near Villanova?**
-Forward Family Medicine uses the DPC model — a flat monthly membership starting at $[X]/month, far below traditional concierge retainer fees. [See pricing →](/membership)
+Forward Family Medicine uses the DPC model — Individual membership starting at $200/month; family plans from $175/person/month, far below traditional concierge retainer fees. [See pricing →](/membership)
 
 **Can Villanova patients use telehealth?**
 Yes — phone and video visits are included in all memberships.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started
 

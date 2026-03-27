@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **6 miles east** of Paoli on Route 30 — a quick drive or SEPTA ride
 - Same-day appointments for acute concerns
-- Direct access to Dr. Bigley and Dr. Lieberman by phone, text, and message
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
+- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
 - Longer visits when your health requires it
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family plans available for Paoli households
 
 ## Services Included in Membership
@@ -42,6 +43,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Minor procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Paoli Patients
 
@@ -49,11 +51,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~12–15 minutes
 **SEPTA:** Paoli Station is the western terminus of the Paoli–Thorndale (R5) line — approximately 6 stops from Wayne Station. A straightforward SEPTA commute for patients who prefer not to drive.
 **Telehealth:** All phone and video visits are included — many Paoli patients handle routine follow-ups and minor concerns without traveling to Wayne
-
-## Member Experiences
-
-> *"I'm in Paoli, so the drive is maybe 15 minutes. Honestly, knowing I can reach my doctor the same day by text makes the occasional drive completely worth it."*
-> — **Member, Paoli PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -68,6 +65,14 @@ Absolutely. Phone and video visits are included and are an excellent option for 
 
 **Is there a DPC practice closer to Paoli?**
 Forward Family Medicine in Wayne is the nearest DPC practice for most Paoli residents. Our telehealth coverage makes membership practical regardless of distance.
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 

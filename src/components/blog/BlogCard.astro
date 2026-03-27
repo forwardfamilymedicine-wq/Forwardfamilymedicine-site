@@ -33,7 +33,7 @@ const dateISO = dateObj.toISOString();
   <div class="card-body">
     {tags.length > 0 && (
       <div class="card-tags">
-        {tags.slice(0, 2).map(t => <span class="badge">{t}</span>)}
+        {tags.slice(0, 2).map(t => <span class="tag">{t}</span>)}
       </div>
     )}
     <h3><a href={`/blog/${slug}`}>{title}</a></h3>
@@ -80,6 +80,17 @@ const dateISO = dateObj.toISOString();
     gap: 0.4rem;
     margin-bottom: 0.75rem;
     flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--color-light);
+    color: var(--color-primary);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
   }
   .card-body h3 {
     font-size: 1.1rem;

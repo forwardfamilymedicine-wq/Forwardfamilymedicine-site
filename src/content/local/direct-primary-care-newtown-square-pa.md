@@ -32,9 +32,10 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 
 - **7–8 miles north** of Newtown Square via Route 252 or West Chester Pike (Route 3)
 - Same-day and next-day appointments
+- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, and message
 - Longer visits — your questions get answered
-- Lifestyle medicine and prevention integrated into every membership
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Telehealth reduces in-office visits for routine care
 - Family memberships available
 
@@ -43,6 +44,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Newtown Square Patients
 
@@ -50,11 +52,6 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Drive time:** ~18–22 minutes
 **SEPTA:** No direct rail connection to Wayne from Newtown Square — telehealth is recommended for routine care
 **Telehealth:** All phone and video visits are included — practical for Newtown Square patients managing work and family schedules
-
-## Member Experiences
-
-> *"Newtown Square is a quick drive to Wayne — and with telehealth for routine visits, I rarely need to make the trip at all. It's the most accessible doctor I've ever had."*
-> — **Member, Newtown Square PA** *(placeholder)*
 
 ## Frequently Asked Questions
 
@@ -69,6 +66,14 @@ Yes — phone and video visits are included in all memberships. Most routine fol
 
 **Is Forward Family Medicine accepting new patients from Newtown Square?**
 Yes. [Schedule a Meet & Greet →](/become-a-patient)
+
+## Contact & Practice Information
+
+**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Phone:** (215) 645-7044
+**Fax:** (215) 449-8854
+**Email:** Information@forwardfamilymedicine.com
+**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Get Started Today
 
