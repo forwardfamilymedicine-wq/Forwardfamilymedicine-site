@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://forwardfamilymedicine.com',
+  base: '/Forwardfamilymedicine-site',
   integrations: [sitemap()],
   vite: {
     server: {
