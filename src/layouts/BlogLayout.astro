@@ -15,7 +15,7 @@ const { title, description, author, date, tags = [], featuredImage, slug } = Ast
 
 const siteUrl = 'https://forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/blog/${slug}`;
-const ogImage = featuredImage || `${siteUrl}/images/og-default.webp`;
+const ogImage = featuredImage || `${siteUrl}/logo.png`;
 
 const dateObj = new Date(date);
 const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });

@@ -54,9 +54,9 @@ export const SITE = {
 
   // Images
   logo: {
-    url: "https://forwardfamilymedicine.com/images/logo.png",
-    width: 400,
-    height: 120,
+    url: "https://forwardfamilymedicine.com/logo.png",
+    width: 2411,
+    height: 1071,
     alt: "Forward Family Medicine logo",
   },
 
@@ -69,9 +69,9 @@ export const SITE = {
 
   // Default OG image for pages without a specific image
   defaultOGImage: {
-    url: "https://forwardfamilymedicine.com/images/og-default.jpg",
-    width: 1200,
-    height: 630,
+    url: "https://forwardfamilymedicine.com/logo.png",
+    width: 2411,
+    height: 1071,
     alt: "Forward Family Medicine — Direct Primary Care in Wayne, PA",
   },
 
