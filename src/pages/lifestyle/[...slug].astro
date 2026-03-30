@@ -7,14 +7,14 @@ export async function getStaticPaths() {
   return entries
     .filter(entry => !entry.data.draft)
     .map(entry => ({
-      params: { slug: entry.id.replace(/\.mdx?$/, '') },
+      params: { slug: entry.id.replace(/\.mdx?$/, '').replace(/\/index$/, '') },
       props: { entry },
     }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const slug = entry.id.replace(/\.mdx?$/, '');
+const slug = entry.id.replace(/\.mdx?$/, '').replace(/\/index$/, '');
 const canonicalUrl = entry.data.canonical ?? `https://forwardfamilymedicine.com/lifestyle/${slug}`;
 ---
 

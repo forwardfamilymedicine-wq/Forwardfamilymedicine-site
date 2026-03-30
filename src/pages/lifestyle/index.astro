@@ -69,7 +69,7 @@ const breadcrumb = {
           <h2 class="category-heading">{categoryLabels[cat] ?? cat}</h2>
           <ul class="article-list">
             {grouped[cat].map(entry => {
-              const slug = entry.id.replace(/\.mdx?$/, '');
+              const slug = entry.id.replace(/\.mdx?$/, '').replace(/\/index$/, '');
               return (
                 <li class="article-item">
                   <a href={`/lifestyle/${slug}`} class="article-link">
