@@ -55,7 +55,7 @@ const faqs = [
   schema={[breadcrumb, clinicSchema]}
 >
   <!-- Page hero -->
-  <section class="page-hero section" style="background: var(--color-bg);">
+  <section class="page-hero section" style="background: var(--cream-100);">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Services</span>
@@ -140,9 +140,9 @@ const faqs = [
               <span>Patients per physician at FFM</span>
             </div>
           </div>
-          <div class="card aside-card" style="margin-top:1.25rem; background: linear-gradient(135deg,#e8f4f7,#f3ede6); border:2px solid var(--color-primary);">
+          <div class="card aside-card" style="margin-top:1.25rem; background: linear-gradient(135deg,var(--green-50),var(--cream-200)); border:2px solid var(--green-300);">
             <h4>Lifestyle Medicine Included</h4>
-            <p style="font-size:0.9rem; color:#555; margin-bottom:1rem;">Every DPC membership includes access to Dr. Lieberman's board-certified Lifestyle Medicine practice. Nutrition, movement, sleep, and stress — treated as medicine.</p>
+            <p style="font-size:0.9rem; color:var(--ink-700); margin-bottom:1rem;">Every DPC membership includes access to Dr. Lieberman's board-certified Lifestyle Medicine practice. Nutrition, movement, sleep, and stress — treated as medicine.</p>
             <a href="/lifestyle-medicine" class="btn btn-primary" style="font-size:0.85rem; padding:0.6rem 1.25rem;">Learn More →</a>
           </div>
         </div>
@@ -151,7 +151,7 @@ const faqs = [
   </section>
 
   <!-- Lifestyle Medicine teaser -->
-  <section class="service-detail section" style="background: var(--color-light);" id="lifestyle-medicine">
+  <section class="service-detail section" style="background: var(--cream-200);" id="lifestyle-medicine">
     <div class="container">
       <span class="section-label">Our Differentiator</span>
       <h2>Lifestyle Medicine</h2>
@@ -215,10 +215,10 @@ const faqs = [
 <style>
   .breadcrumb {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--ink-300);
     margin-bottom: 1.5rem;
   }
-  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
   .breadcrumb a:hover { text-decoration: underline; }
 
   .service-detail-inner {
@@ -245,19 +245,19 @@ const faqs = [
     align-items: baseline;
     gap: 0.75rem;
     padding: 0.6rem 0;
-    border-bottom: 1px solid var(--color-light);
+    border-bottom: 1px solid var(--cream-300);
   }
   .aside-stat:last-child { border-bottom: none; }
   .aside-num {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--ink-900);
     flex-shrink: 0;
   }
   .aside-stat span:last-child {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--ink-300);
   }
 
   @media (max-width: 900px) {

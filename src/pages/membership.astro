@@ -50,7 +50,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   schema={breadcrumb}
 >
   <!-- Hero -->
-  <section class="membership-hero section" style="background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);">
+  <section class="membership-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Membership</span>
@@ -65,7 +65,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   </section>
 
   <!-- Value Frame — Critical -->
-  <section class="value-frame section" style="background: var(--color-primary);">
+  <section class="value-frame section" style="background: var(--green-500);">
     <div class="container value-frame-inner">
       <div class="value-quote">
         <span class="value-quote-mark" aria-hidden="true">"</span>
@@ -168,7 +168,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
       </div>
 
       <div class="pricing-note callout" style="max-width: 680px; margin: 2.5rem auto 1rem; text-align:center;">
-        Already a patient? <a href={PATIENT_PORTAL_LINK} target="_blank" rel="noopener noreferrer" style="color:var(--color-primary); font-weight:600;">Log in to the Patient Portal →</a>
+        Already a patient? <a href={PATIENT_PORTAL_LINK} target="_blank" rel="noopener noreferrer" style="color:var(--green-300); font-weight:600;">Log in to the Patient Portal →</a>
       </div>
 
       <div class="pricing-note callout" style="max-width: 680px; margin: 0 auto 1rem;">
@@ -186,7 +186,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   </section>
 
   <!-- What's included deep dive -->
-  <section class="included-section section" style="background: var(--color-light);">
+  <section class="included-section section" style="background: var(--cream-200);">
     <div class="container">
       <span class="section-label">Full Breakdown</span>
       <h2>What Your Membership Covers</h2>
@@ -248,10 +248,10 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
 <style>
   .breadcrumb {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--ink-300);
     margin-bottom: 1.5rem;
   }
-  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
 
   /* Value Frame */
   .value-frame-inner {
@@ -293,7 +293,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     flex-direction: column;
   }
   .featured-plan {
-    border: 2px solid var(--color-secondary);
+    border: 2px solid var(--green-400);
     position: relative;
   }
   .plan-badge {
@@ -302,8 +302,8 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    background: var(--color-light);
-    color: var(--color-primary);
+    background: var(--green-100);
+    color: var(--ink-900);
     padding: 0.25rem 0.75rem;
     border-radius: 999px;
     margin-bottom: 0.75rem;
@@ -318,7 +318,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   .plan-price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--ink-900);
     font-family: var(--font-heading);
     margin: 0.5rem 0 0.75rem;
     line-height: 1;
@@ -326,7 +326,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   .plan-price-unit {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #888;
+    color: var(--ink-300);
   }
   .plan-price-family {
     margin: 0.5rem 0 0.75rem;
@@ -336,16 +336,16 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     justify-content: space-between;
     align-items: center;
     padding: 0.3rem 0;
-    border-bottom: 1px solid var(--color-light);
+    border-bottom: 1px solid var(--ink-100);
     font-size: 0.9rem;
   }
   .family-tier:last-child { border-bottom: none; }
-  .family-size { color: #555; }
-  .family-rate { font-weight: 700; color: var(--color-primary); }
+  .family-size { color: var(--ink-700); }
+  .family-rate { font-weight: 700; color: var(--ink-900); }
 
   .plan-tagline {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--ink-500);
     margin-bottom: 1.5rem;
     line-height: 1.55;
   }
@@ -365,12 +365,12 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   }
   .plan-greet-link {
     font-size: 0.85rem;
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
     text-align: center;
     transition: color 0.15s;
   }
-  .plan-greet-link:hover { color: var(--color-secondary); }
+  .plan-greet-link:hover { color: var(--green-400); }
 
   /* Included grid */
   .included-grid {

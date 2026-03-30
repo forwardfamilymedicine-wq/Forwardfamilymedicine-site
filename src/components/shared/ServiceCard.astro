@@ -28,8 +28,8 @@ const { title, description, icon, href, featured = false } = Astro.props;
     transform: translateY(-2px);
   }
   .service-card.featured {
-    background: linear-gradient(135deg, #e8f4f7 0%, #f3ede6 100%);
-    border: 2px solid var(--color-primary);
+    background: linear-gradient(135deg, var(--green-50) 0%, var(--cream-200) 100%);
+    border: 2px solid var(--green-300);
   }
   .service-icon {
     font-size: 2rem;
@@ -41,7 +41,7 @@ const { title, description, icon, href, featured = false } = Astro.props;
   }
   .service-card p {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--ink-700);
     line-height: 1.7;
     flex: 1;
     margin-bottom: 1.25rem;
@@ -49,10 +49,10 @@ const { title, description, icon, href, featured = false } = Astro.props;
   .service-link {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
     margin-top: auto;
     transition: color 0.15s;
   }
-  .service-link:hover { color: var(--color-secondary); }
+  .service-link:hover { color: var(--green-400); }
 </style>

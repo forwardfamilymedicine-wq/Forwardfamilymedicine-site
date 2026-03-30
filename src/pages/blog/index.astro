@@ -27,7 +27,7 @@ const breadcrumb = {
   description="Evidence-based health articles from Dr. Bigley and Dr. Lieberman at Forward Family Medicine. Direct Primary Care, Lifestyle Medicine, nutrition, sleep, and more — Wayne, PA."
   schema={breadcrumb}
 >
-  <section class="blog-hero section" style="background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);">
+  <section class="blog-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Blog</span>
@@ -78,7 +78,7 @@ const breadcrumb = {
   </section>
 
   <!-- Lifestyle Library promo -->
-  <section class="blog-cta section" style="background: var(--color-light);">
+  <section class="blog-cta section" style="background: var(--cream-200);">
     <div class="container blog-cta-inner">
       <div style="max-width:480px;">
         <span class="section-label">Stay Informed</span>
@@ -105,12 +105,12 @@ const breadcrumb = {
 <style>
   .breadcrumb {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--ink-300);
     margin-bottom: 1.5rem;
   }
-  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
   .blog-grid-section {
-    background: var(--color-bg);
+    background: var(--cream-100);
   }
   .blog-grid {
     display: grid;
@@ -132,7 +132,7 @@ const breadcrumb = {
     margin-bottom: 1rem;
   }
   .blog-empty-inner h2 { margin-bottom: 0.75rem; }
-  .blog-empty-inner p { color: #666; }
+  .blog-empty-inner p { color: var(--ink-500); }
   .blog-cta-inner {
     display: flex;
     gap: 3rem;
@@ -145,7 +145,7 @@ const breadcrumb = {
     padding: 2rem;
   }
   .lifestyle-promo h3 { margin-bottom: 0.5rem; }
-  .lifestyle-promo p { color: #666; font-size: 0.92rem; margin-bottom: 1.25rem; }
+  .lifestyle-promo p { color: var(--ink-500); font-size: 0.92rem; margin-bottom: 1.25rem; }
   @media (max-width: 860px) {
     .blog-grid { grid-template-columns: 1fr 1fr; }
   }

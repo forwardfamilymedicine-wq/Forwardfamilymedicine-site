@@ -69,17 +69,17 @@ const faqSchema = schema ? {
 
 <style>
   .faq-section {
-    background: var(--color-light);
+    background: var(--cream-200);
   }
   .faq-list {
     margin-top: 2rem;
     max-width: 800px;
   }
   .faq-item {
-    border-bottom: 1px solid #d5cfc8;
+    border-bottom: 1px solid var(--cream-300);
   }
   .faq-item:first-child {
-    border-top: 1px solid #d5cfc8;
+    border-top: 1px solid var(--cream-300);
   }
   .faq-question {
     width: 100%;
@@ -93,18 +93,18 @@ const faqSchema = schema ? {
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--ink-900);
     cursor: pointer;
     text-align: left;
     transition: color 0.15s;
   }
-  .faq-question:hover { color: var(--color-secondary); }
+  .faq-question:hover { color: var(--green-400); }
   .faq-icon {
     font-size: 1.4rem;
     font-weight: 300;
     flex-shrink: 0;
     transition: transform 0.2s;
-    color: var(--color-accent);
+    color: var(--green-400);
   }
   .faq-question[aria-expanded="true"] .faq-icon {
     transform: rotate(45deg);
@@ -113,7 +113,7 @@ const faqSchema = schema ? {
     padding-bottom: 1.25rem;
   }
   .faq-answer p {
-    color: #555;
+    color: var(--ink-700);
     line-height: 1.7;
     margin: 0;
   }

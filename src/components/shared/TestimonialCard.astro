@@ -20,8 +20,8 @@ const { quote, author, detail } = Astro.props;
 <style>
   .testimonial-card {
     position: relative;
-    border-left: 4px solid var(--color-accent);
-    background: white;
+    border-left: 4px solid var(--green-300);
+    background: var(--warm-50);
     margin: 0;
   }
   .quote-mark {
@@ -31,14 +31,14 @@ const { quote, author, detail } = Astro.props;
     font-family: var(--font-heading);
     font-size: 5rem;
     line-height: 1;
-    color: var(--color-light);
+    color: var(--ink-100);
     pointer-events: none;
     user-select: none;
   }
   .quote-text {
     font-size: 1rem;
     line-height: 1.75;
-    color: #444;
+    color: var(--ink-700);
     font-style: italic;
     margin-bottom: 1rem;
     position: relative;
@@ -46,11 +46,11 @@ const { quote, author, detail } = Astro.props;
   }
   .quote-footer {
     font-size: 0.9rem;
-    color: var(--color-primary);
+    color: var(--ink-900);
     font-weight: 600;
   }
   .detail {
     font-weight: 400;
-    color: #888;
+    color: var(--ink-300);
   }
 </style>

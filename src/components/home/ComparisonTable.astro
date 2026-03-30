@@ -67,11 +67,11 @@ const rows = [
   .comparison-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: var(--warm-50);
     font-size: 0.95rem;
   }
   .comparison-table thead {
-    background: var(--color-primary);
+    background: var(--green-500);
     color: white;
   }
   .comparison-table thead th {
@@ -82,14 +82,14 @@ const rows = [
     color: white;
   }
   .comparison-table thead th.ffm-col {
-    background: var(--color-secondary);
+    background: var(--green-400);
   }
   .comparison-table tbody tr {
-    border-bottom: 1px solid var(--color-light);
+    border-bottom: 1px solid var(--cream-300);
     transition: background 0.15s;
   }
   .comparison-table tbody tr:hover {
-    background: #fafaf8;
+    background: var(--cream-50);
   }
   .comparison-table tbody tr:last-child {
     border-bottom: none;
@@ -100,21 +100,21 @@ const rows = [
   }
   .feature-col {
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--ink-900);
     max-width: 240px;
   }
   .trad-col {
-    color: #888;
+    color: var(--ink-300);
   }
   .ffm-col {
-    background: #f0faf5;
+    background: var(--green-50);
   }
   .cell-yes {
-    color: var(--color-secondary);
+    color: var(--green-400);
     font-weight: 600;
   }
   .cell-no {
-    color: #999;
+    color: var(--ink-300);
   }
   .comparison-cta {
     margin-top: 2rem;

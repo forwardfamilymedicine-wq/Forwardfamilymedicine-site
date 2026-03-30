@@ -73,7 +73,7 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
             <a href="/services">
               Services <span style="font-size:1rem; margin-left:0.2rem;">▾</span>
             </a>
-            <ul style="position:absolute; top:100%; left:0; display:none; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:6px; min-width:200px; z-index:1001; padding:0.5rem 0; list-style:none;">
+            <ul style="position:absolute; top:100%; left:0; display:none; background:var(--cream-50); box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:6px; min-width:200px; z-index:1001; padding:0.5rem 0; list-style:none;">
               <li><a href="/direct-primary-care">Direct Primary Care</a></li>
               <li><a href="/lifestyle-medicine">Lifestyle Medicine</a></li>
               <li><a href="/concierge-medicine">Concierge Medicine</a></li>
@@ -158,8 +158,8 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
 
   /* ── Tier 1: Utility bar ─────────────────────────────── */
   .utility-bar {
-    background: #f3f4f6;
-    border-bottom: 1px solid #e5e7eb;
+    background: var(--ink-50);
+    border-bottom: 1px solid var(--ink-100);
   }
   .utility-inner {
     display: flex;
@@ -170,25 +170,25 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     font-size: 0.8rem;
   }
   .utility-phone {
-    color: #6b7280;
+    color: var(--ink-500);
     text-decoration: none;
     font-size: 0.8rem;
     transition: color 0.15s;
   }
-  .utility-phone:hover { color: var(--color-primary); }
+  .utility-phone:hover { color: var(--green-400); }
   .utility-right {
     display: flex;
     align-items: center;
     gap: 0.6rem;
   }
   .utility-divider {
-    color: #d1d5db;
+    color: var(--ink-100);
     font-size: 0.75rem;
   }
   .utility-link {
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--ink-900);
     text-decoration: none;
     background: none;
     border: none;
@@ -198,7 +198,7 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     transition: color 0.15s;
     white-space: nowrap;
   }
-  .utility-link:hover { color: var(--color-primary); }
+  .utility-link:hover { color: var(--green-400); }
 
   /* Sign Up dropdown */
   .signup-dropdown-parent {
@@ -222,8 +222,8 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     top: calc(100% + 4px);
     right: 0;
     min-width: 190px;
-    background: white;
-    border: 1px solid #e5e7eb;
+    background: var(--cream-50);
+    border: 1px solid var(--ink-100);
     border-radius: var(--radius-sm);
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
     list-style: none;
@@ -244,20 +244,20 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     padding: 0.6rem 1rem;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--ink-900);
     text-decoration: none;
     white-space: nowrap;
     transition: background 0.15s, color 0.15s;
   }
   .signup-dropdown-menu a:hover {
-    background: var(--color-light);
-    color: var(--color-primary);
+    background: var(--cream-200);
+    color: var(--green-400);
   }
 
   /* ── Tier 2: Main nav bar ─────────────────────────────── */
   .main-nav-bar {
-    background: var(--color-white);
-    border-bottom: 1px solid var(--color-light);
+    background: var(--cream-50);
+    border-bottom: 1px solid var(--cream-300);
   }
   .main-nav-inner {
     display: flex;
@@ -305,7 +305,7 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     padding: 0.5rem 0.6rem;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--ink-900);
     text-decoration: none;
     border-radius: var(--radius-sm);
     transition: color 0.15s, background 0.15s;
@@ -313,8 +313,8 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
   }
   .desktop-nav a:hover,
   .desktop-nav a.active {
-    color: var(--color-primary);
-    background: var(--color-light);
+    color: var(--green-400);
+    background: var(--cream-200);
   }
   .caret {
     font-size: 1rem;
@@ -345,8 +345,8 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     top: calc(100% + 4px);
     left: 0;
     min-width: 210px;
-    background: white;
-    border: 1px solid var(--color-light);
+    background: var(--cream-50);
+    border: 1px solid var(--cream-300);
     border-radius: var(--radius-sm);
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
     list-style: none;
@@ -367,7 +367,7 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     padding: 0.6rem 1rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--ink-900);
     text-decoration: none;
     border-radius: 0;
     transition: background 0.15s, color 0.15s;
@@ -375,8 +375,8 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
   }
   .dropdown a:hover,
   .dropdown a.active {
-    background: var(--color-light);
-    color: var(--color-primary);
+    background: var(--cream-200);
+    color: var(--green-400);
   }
 
   /* CTA */
@@ -403,7 +403,7 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--color-primary);
+    background: var(--ink-900);
     border-radius: 2px;
     transition: transform 0.2s, opacity 0.2s;
   }
@@ -419,8 +419,8 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
 
   /* ── Mobile nav drawer ─────────────────────────────────── */
   .mobile-nav {
-    background: var(--color-white);
-    border-top: 1px solid var(--color-light);
+    background: var(--cream-50);
+    border-top: 1px solid var(--cream-300);
     padding: 1.5rem clamp(16px, 4vw, 40px) 2rem;
   }
   .mobile-nav > ul {
@@ -428,18 +428,18 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     padding: 0;
     margin: 0 0 1.5rem;
   }
-  .mobile-nav > ul > li { border-bottom: 1px solid var(--color-light); }
+  .mobile-nav > ul > li { border-bottom: 1px solid var(--cream-300); }
   .mobile-nav a {
     display: block;
     padding: 0.9rem 0;
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--ink-900);
     text-decoration: none;
     transition: color 0.15s;
   }
   .mobile-nav a:hover,
-  .mobile-nav a.active { color: var(--color-primary); }
+  .mobile-nav a.active { color: var(--green-400); }
   .mobile-sub {
     list-style: none;
     padding: 0 0 0.5rem 1rem;
@@ -449,10 +449,10 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
   .mobile-sub a {
     padding: 0.5rem 0;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--ink-500);
   }
   .mobile-sub a:hover,
-  .mobile-sub a.active { color: var(--color-primary); }
+  .mobile-sub a.active { color: var(--green-400); }
   .mobile-cta { display: inline-block; }
   .mobile-portal-links {
     display: flex;
@@ -460,11 +460,11 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     gap: 1rem;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--color-light);
+    border-top: 1px solid var(--cream-300);
   }
   .mobile-portal-links a {
     font-size: 0.85rem;
-    color: var(--color-primary);
+    color: var(--green-400);
     text-decoration: none;
   }
   .mobile-portal-links a:hover { text-decoration: underline; }

@@ -38,7 +38,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     min-height: 70vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);
+    background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);
     padding: var(--section-pad) 0;
   }
   .error-inner {
@@ -51,7 +51,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     font-family: var(--font-heading);
     font-size: clamp(6rem, 20vw, 10rem);
     font-weight: 700;
-    color: var(--color-light);
+    color: var(--cream-300);
     line-height: 1;
     margin-bottom: 0.5rem;
   }
@@ -60,7 +60,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
   .error-inner > p {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--ink-500);
     margin-bottom: 2rem;
   }
   .error-ctas {
@@ -72,7 +72,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
   .error-links p {
     font-size: 0.9rem;
-    color: #999;
+    color: var(--ink-300);
     margin-bottom: 0.75rem;
   }
   .error-links ul {
@@ -85,10 +85,10 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
   .error-links a {
     font-size: 0.9rem;
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.15s;
   }
-  .error-links a:hover { color: var(--color-secondary); }
+  .error-links a:hover { color: var(--green-400); }
 </style>

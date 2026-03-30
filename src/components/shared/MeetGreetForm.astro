@@ -136,7 +136,7 @@ const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
     font-size: 1.6rem;
   }
   .form-header p {
-    color: #666;
+    color: var(--ink-500);
     font-size: 0.95rem;
   }
   .form-row {
@@ -153,27 +153,27 @@ const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
   label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--ink-900);
   }
   label span[aria-hidden] {
-    color: var(--color-accent);
+    color: var(--green-400);
   }
   input, select, textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1.5px solid #d5cfc8;
+    border: 1.5px solid var(--cream-300);
     border-radius: var(--radius-sm);
     font-family: var(--font-body);
     font-size: 1rem;
-    color: var(--color-text);
-    background: white;
+    color: var(--ink-900);
+    background: var(--cream-50);
     transition: border-color 0.2s, box-shadow 0.2s;
     appearance: none;
   }
   input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(44, 95, 110, 0.15);
+    border-color: var(--green-300);
+    box-shadow: 0 0 0 3px rgba(114, 163, 119, 0.2);
   }
   input:invalid:not(:placeholder-shown),
   select:invalid:not(:placeholder-shown) {
@@ -181,7 +181,7 @@ const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
   }
   textarea { resize: vertical; }
   select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232C5F6E' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2372A377' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
@@ -209,13 +209,13 @@ const CONTACT_EMAIL = 'Information@forwardfamilymedicine.com';
     color: #c0392b;
   }
   .form-message.success {
-    background: #f0faf5;
-    border: 1px solid var(--color-secondary);
-    color: #1e6b47;
+    background: var(--green-50);
+    border: 1px solid var(--green-300);
+    color: var(--green-500);
   }
   .form-note {
     font-size: 0.8rem;
-    color: #999;
+    color: var(--ink-300);
     text-align: center;
     margin-top: 0.75rem;
     margin-bottom: 0;

@@ -60,7 +60,7 @@ const year = new Date().getFullYear();
 
       <div class="office-hours">
         <strong>Office Hours</strong>
-        <p style="font-size:0.85rem; margin-top:0.25rem; color:#374151;">
+        <p style="font-size:0.85rem; margin-top:0.25rem; color:var(--ink-700);">
           Monday–Friday: 8:00 AM – 5:00 PM
         </p>
       </div>
@@ -104,9 +104,9 @@ const year = new Date().getFullYear();
 
 <style>
   .site-footer {
-    background: #ffffff;
-    color: #374151;
-    border-top: 1px solid #e5e7eb;
+    background: var(--cream-50);
+    color: var(--ink-900);
+    border-top: 1px solid var(--ink-100);
     margin-top: auto;
   }
 
@@ -132,7 +132,7 @@ const year = new Date().getFullYear();
 
   .tagline {
     font-size: 0.9rem;
-    color: #374151;
+    color: var(--ink-700);
     margin-bottom: 1.5rem;
     line-height: 1.6;
     max-width: 320px;
@@ -146,7 +146,7 @@ const year = new Date().getFullYear();
   .footer-nav h3,
   .footer-contact h3 {
     font-family: var(--font-heading);
-    color: #111827;
+    color: var(--ink-900);
     font-size: 1rem;
     margin-bottom: 1rem;
   }
@@ -157,35 +157,35 @@ const year = new Date().getFullYear();
   }
   .footer-nav li { margin-bottom: 0.4rem; }
   .footer-nav a {
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.15s;
   }
-  .footer-nav a:hover { color: var(--color-primary); text-decoration: underline; }
+  .footer-nav a:hover { color: var(--green-400); text-decoration: underline; }
 
   /* Contact column */
   .footer-contact address { font-style: normal; }
   .footer-contact p {
     font-size: 0.9rem;
-    color: #374151;
+    color: var(--ink-700);
     margin-bottom: 0.75rem;
     line-height: 1.5;
   }
-  .footer-contact strong { color: #111827; }
+  .footer-contact strong { color: var(--ink-900); }
   .footer-contact a {
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
     transition: opacity 0.15s;
   }
   .footer-contact a:hover { opacity: 0.8; }
   .office-hours { margin-top: 1rem; }
-  .office-hours strong { color: #111827; font-size: 0.9rem; }
+  .office-hours strong { color: var(--ink-900); font-size: 0.9rem; }
 
   /* Bottom bar */
   .footer-bottom {
-    background: #f9fafb;
-    border-top: 1px solid #e5e7eb;
+    background: var(--ink-50);
+    border-top: 1px solid var(--ink-100);
     padding: 1.25rem 0;
   }
   .footer-bottom-inner {
@@ -197,14 +197,14 @@ const year = new Date().getFullYear();
   }
   .footer-bottom p {
     font-size: 0.8rem;
-    color: #6b7280;
+    color: var(--ink-500);
     margin: 0;
   }
   .disclaimer { max-width: 600px; }
 
   /* Areas We Serve */
   .footer-local {
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--ink-100);
     padding: 1.25rem 0;
   }
   .footer-local .container {
@@ -216,7 +216,7 @@ const year = new Date().getFullYear();
   .footer-local-label {
     font-size: 0.78rem;
     font-weight: 600;
-    color: #6b7280;
+    color: var(--ink-500);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     white-space: nowrap;
@@ -233,17 +233,17 @@ const year = new Date().getFullYear();
   }
   .footer-local-list li::after {
     content: '·';
-    color: #e5e7eb;
+    color: var(--ink-100);
     margin: 0 0.35rem;
   }
   .footer-local-list li:last-child::after { content: ''; }
   .footer-local-list a {
     font-size: 0.82rem;
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
     transition: color 0.15s;
   }
-  .footer-local-list a:hover { color: var(--color-primary); text-decoration: underline; }
+  .footer-local-list a:hover { color: var(--green-400); text-decoration: underline; }
 
   @media (max-width: 768px) {
     .footer-grid {

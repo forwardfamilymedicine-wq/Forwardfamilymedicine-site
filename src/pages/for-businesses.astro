@@ -18,7 +18,7 @@ const breadcrumb = {
   schema={breadcrumb}
 >
   <!-- Hero -->
-  <section class="biz-hero section" style="background: linear-gradient(160deg, var(--color-bg) 0%, #ede8e0 100%);">
+  <section class="biz-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);">
     <div class="container biz-hero-inner">
       <div>
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -61,9 +61,9 @@ const breadcrumb = {
   </section>
 
   <!-- The problem -->
-  <section class="biz-problem section" style="background: var(--color-primary);">
+  <section class="biz-problem section" style="background: var(--green-500);">
     <div class="container">
-      <span class="section-label" style="color: var(--color-accent);">The Problem</span>
+      <span class="section-label" style="color: var(--green-400);">The Problem</span>
       <h2 style="color: white;">Traditional Health Insurance Wasn't Built for Your Team</h2>
       <div class="problem-grid">
         <div class="problem-item">
@@ -134,7 +134,7 @@ const breadcrumb = {
   </section>
 
   <!-- Who it's for -->
-  <section class="biz-who section" style="background: var(--color-light);">
+  <section class="biz-who section" style="background: var(--cream-200);">
     <div class="container">
       <span class="section-label">Who It's For</span>
       <h2>Built for Companies Like Yours</h2>
@@ -196,7 +196,7 @@ const breadcrumb = {
   </section>
 
   <!-- Contact / inquiry -->
-  <section class="biz-contact-section section" style="background: var(--color-light);">
+  <section class="biz-contact-section section" style="background: var(--cream-200);">
     <div class="container" style="max-width: 680px;">
       <span class="section-label">Get in Touch</span>
       <h2>Ready to Talk?</h2>
@@ -228,10 +228,10 @@ const breadcrumb = {
 <style>
   .breadcrumb {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--ink-300);
     margin-bottom: 1.5rem;
   }
-  .breadcrumb a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
 
   .biz-hero-inner {
     display: grid;
@@ -249,7 +249,7 @@ const breadcrumb = {
     padding: 1.75rem;
   }
   .biz-hero-card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
-  .biz-hero-card > p { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+  .biz-hero-card > p { font-size: 0.9rem; color: var(--ink-500); margin-bottom: 1rem; }
   .biz-contact-item {
     display: flex;
     align-items: center;
@@ -260,13 +260,13 @@ const breadcrumb = {
   .biz-contact-item a {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--green-300);
     text-decoration: none;
   }
   .biz-contact-item a:hover { text-decoration: underline; }
   .biz-note {
     font-size: 0.8rem;
-    color: #999;
+    color: var(--ink-300);
     margin: 0.75rem 0 0;
   }
 
@@ -310,14 +310,14 @@ const breadcrumb = {
   }
   .who-card { padding: 1.5rem; }
   .roi-item {
-    background: var(--color-white);
+    background: var(--cream-50);
     border-radius: var(--radius);
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
   }
   .who-icon, .roi-icon { font-size: 1.75rem; }
   .who-card h3, .roi-item h3 { font-size: 1.05rem; }
-  .who-card p, .roi-item p { font-size: 0.9rem; color: #555; margin: 0; }
+  .who-card p, .roi-item p { font-size: 0.9rem; color: var(--ink-700); margin: 0; }
 
   /* Contact section */
   .biz-contact-methods {
@@ -327,7 +327,7 @@ const breadcrumb = {
     margin-top: 2rem;
   }
   .biz-direct-contact p { margin-bottom: 0.4rem; font-size: 0.95rem; }
-  .biz-direct-contact a { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+  .biz-direct-contact a { color: var(--green-300); font-weight: 600; text-decoration: none; }
   .biz-direct-contact a:hover { text-decoration: underline; }
 
   @media (max-width: 860px) {
