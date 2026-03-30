@@ -93,10 +93,6 @@ const schemas = [orgSchema, ...(Array.isArray(schema) ? schema : schema ? [schem
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Fonts preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <!-- JSON-LD Schema -->
   {schemas.map(s => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />

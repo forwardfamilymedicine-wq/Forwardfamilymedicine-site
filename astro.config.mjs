@@ -8,7 +8,7 @@ export default defineConfig({
   vite: {
     server: {
       host: true,
-      allowedHosts: ['juliane-nonproblematic-funkily.ngrok-free.dev']
+      allowedHosts: process.env.VITE_ALLOWED_HOSTS ? process.env.VITE_ALLOWED_HOSTS.split(',') : [],
     },
   },
 });
