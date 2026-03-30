@@ -27,7 +27,7 @@ Villanova is a prestigious Main Line community adjacent to Wayne, home to Villan
 
 Forward Family Medicine integrates evidence-based lifestyle medicine into every DPC membership — nutrition, physical activity, sleep, and stress as clinical tools. For Villanova patients, the practice is literally next door.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
@@ -67,7 +67,7 @@ Absolutely. Telehealth is included and works very well for nutrition and lifesty
 
 ## Lifestyle Medicine and Life in Villanova
 
-Villanova University shapes the health expectations of the community around it. Faculty, staff, and graduate students tend to be evidence-literate and skeptical of vague wellness claims. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, approaches lifestyle interventions the same way: with the clinical evidence, applied to the individual in front of him — not a generic protocol.
+Villanova University shapes the health expectations of the community around it. Faculty, staff, and graduate students tend to be evidence-literate and skeptical of vague wellness claims. Dr. Philip Lieberman, dual board-eligible in Family Medicine and Lifestyle Medicine, approaches lifestyle interventions the same way: with the clinical evidence, applied to the individual in front of him — not a generic protocol.
 
 For the performance-focused — whether competitive athletes or professionals who train seriously — lifestyle medicine looks different than it does for someone managing a chronic condition. Dr. Lieberman addresses both: the athlete optimizing recovery and sleep quality, and the 50-year-old faculty member reversing early metabolic syndrome through dietary change and structured activity.
 

@@ -27,7 +27,7 @@ Media's community-oriented character attracts residents who value quality of lif
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership. Nutrition, activity, sleep, stress management, and chronic disease prevention are included as clinical standards — not referrals to outside programs. Telehealth makes most lifestyle consultations available to Media patients without requiring a drive to Wayne.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 

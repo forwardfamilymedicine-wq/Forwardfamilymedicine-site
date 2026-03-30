@@ -55,7 +55,7 @@ A few things worth knowing:
 
 ### Lifestyle Medicine for the Whole Family
 
-One additional benefit worth highlighting for families at Forward Family Medicine: integrated board-certified Lifestyle Medicine. Dr. Lieberman's background in culinary arts, nutrition science, and Lifestyle Medicine means the whole family has access to evidence-based nutritional guidance, metabolic health support, and lifestyle coaching — not as a referral, but built into your membership. For parents wanting to build healthy habits for their children, or adults managing their own metabolic health, this is a clinical resource most DPC practices simply don't offer.
+One additional benefit worth highlighting for families at Forward Family Medicine: integrated board-eligible Lifestyle Medicine. Dr. Lieberman's background in culinary arts, nutrition science, and Lifestyle Medicine means the whole family has access to evidence-based nutritional guidance, metabolic health support, and lifestyle coaching — not as a referral, but built into your membership. For parents wanting to build healthy habits for their children, or adults managing their own metabolic health, this is a clinical resource most DPC practices simply don't offer.
 
 ### The Real Cost Comparison
 

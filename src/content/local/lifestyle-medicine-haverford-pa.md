@@ -27,7 +27,7 @@ Haverford's community — centered around a liberal arts college and its famous 
 
 Forward Family Medicine in Wayne integrates lifestyle medicine into every DPC membership. Evidence-based nutrition, activity, sleep, and stress counseling are clinical standards — included, not extra.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
@@ -69,7 +69,7 @@ Yes — telehealth is included.
 
 ## Lifestyle Medicine and Life in Haverford
 
-Haverford College's arboretum and trail loop are genuinely unusual community assets — a maintained, walkable natural environment integrated into daily township life. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, incorporates physical environment into the clinical conversation: patients who live somewhere walkable have a real advantage, and lifestyle medicine makes that advantage explicit and actionable rather than leaving it as an unexamined background fact.
+Haverford College's arboretum and trail loop are genuinely unusual community assets — a maintained, walkable natural environment integrated into daily township life. Dr. Philip Lieberman, dual board-eligible in Family Medicine and Lifestyle Medicine, incorporates physical environment into the clinical conversation: patients who live somewhere walkable have a real advantage, and lifestyle medicine makes that advantage explicit and actionable rather than leaving it as an unexamined background fact.
 
 Haverford Township's walkability is measurably above average for the region. The combination of sidewalked residential streets, SEPTA access, and local amenities within walking distance makes low-intensity daily physical activity realistic here in a way it isn't everywhere. That matters clinically — it is one reason cardiovascular and metabolic health outcomes correlate with community design, and one reason exercise prescriptions land differently for Haverford patients than for patients in car-dependent suburbs.
 

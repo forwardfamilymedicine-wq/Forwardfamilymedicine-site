@@ -39,7 +39,7 @@ If you're evaluating concierge or DPC practices in the Wayne, Radnor, Villanova,
 
 *Physician continuity.* One of the primary values of concierge care is that you have a consistent relationship with one physician — not a rotating cast of providers. Ask how the practice handles physician absence, and make sure you understand who you'll be seeing.
 
-*Clinical depth* — specifically, whether the practice offers integrated Lifestyle Medicine. Forward Family Medicine is the only DPC practice on the Main Line with in-person, board-certified Lifestyle Medicine (Dr. Lieberman, dual-certified in Family Medicine and Lifestyle Medicine). This means nutrition, physical activity, sleep, and stress management are treated as clinical interventions — not handouts — and included in every membership at no additional cost.
+*Clinical depth* — specifically, whether the practice offers integrated Lifestyle Medicine. Forward Family Medicine is the only DPC practice on the Main Line with in-person, board-eligible Lifestyle Medicine (Dr. Lieberman, board-eligible in Family Medicine and Lifestyle Medicine). This means nutrition, physical activity, sleep, and stress management are treated as clinical interventions — not handouts — and included in every membership at no additional cost.
 
 *What the fee actually covers.* This varies more than you'd expect. Some DPC practices include labs; others offer wholesale pricing. Some include telehealth; others charge separately. Get a clear picture of the full scope before you compare prices.
 
@@ -57,7 +57,7 @@ Forward Family Medicine is located in Wayne, PA — in the center of the Main Li
 
 Our patients get same-day and next-day appointments, direct access to their physician, telehealth when that's more convenient, and longer visits that actually allow us to address what matters. We know our patients by name, by history, and by context. That's the whole point.
 
-We also offer something no other DPC practice on the Main Line provides: integrated, in-person, board-certified Lifestyle Medicine. Dr. Lieberman's dual certification in Family Medicine and Lifestyle Medicine — combined with his background in culinary arts and nutrition science — means every member has access to a physician who can translate the latest evidence on diet, movement, and metabolic health into a plan that actually works in real life.
+We also offer something no other DPC practice on the Main Line provides: integrated, in-person, board-eligible Lifestyle Medicine. Dr. Lieberman's dual board eligibility in Family Medicine and Lifestyle Medicine — combined with his background in culinary arts and nutrition science — means every member has access to a physician who can translate the latest evidence on diet, movement, and metabolic health into a plan that actually works in real life.
 
 Learn more about our approach on our [concierge medicine](/concierge-medicine) and [direct primary care](/direct-primary-care) pages, or visit [/membership](/membership) for details on our current membership structure.
 

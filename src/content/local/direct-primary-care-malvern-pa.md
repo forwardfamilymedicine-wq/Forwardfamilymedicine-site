@@ -35,7 +35,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
 - Longer visits — not a rushed 10-minute slot
-- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Telehealth reduces in-office visits for routine care
 - Family memberships available
 

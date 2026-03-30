@@ -27,7 +27,7 @@ Newtown Square's professional community — many working in tech, consulting, an
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership. Evidence-based nutrition, activity, sleep, and stress counseling are included as clinical standards — not add-ons or referrals to separate programs.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 

@@ -47,7 +47,7 @@ One of the most significant benefits of concierge-style primary care for profess
 
 For many professionals, the most valuable health investment is catching problems early — when they're manageable, reversible, or preventable — rather than treating them when they've compounded into something serious. That kind of proactive medicine requires a relationship, not a transaction.
 
-At Forward Family Medicine, this proactive approach is deepened by integrated board-certified Lifestyle Medicine with Dr. Lieberman — evidence-based guidance on nutrition, movement, sleep, and stress built directly into your care, not referred out. For professionals managing cardiovascular risk, metabolic health, or the physiological effects of chronic work stress, this is a meaningful clinical differentiator.
+At Forward Family Medicine, this proactive approach is deepened by integrated board-eligible Lifestyle Medicine with Dr. Lieberman — evidence-based guidance on nutrition, movement, sleep, and stress built directly into your care, not referred out. For professionals managing cardiovascular risk, metabolic health, or the physiological effects of chronic work stress, this is a meaningful clinical differentiator.
 
 **Time Is the Real Luxury**
 

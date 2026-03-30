@@ -31,7 +31,7 @@ Wayne's walkable neighborhoods, proximity to Chester Valley Trail, and health-co
 
 Lifestyle medicine uses evidence-based behavioral interventions — changes in nutrition, physical activity, sleep, stress management, and social connection — as clinical tools to prevent and treat chronic disease. At Forward Family Medicine, these aren't "wellness extras." They're integrated into your care plan from day one.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [Full lifestyle medicine explainer →](/lifestyle-medicine)
 

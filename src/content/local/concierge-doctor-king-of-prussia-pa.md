@@ -35,7 +35,7 @@ Traditional concierge medicine often requires a retainer of $1,500–$6,000 or m
 - Same-day and next-day appointments — no 3-week waits
 - Direct physician access by phone and text
 - Telehealth included — most routine care handled without the drive
-- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly membership fee — no per-visit charges
 
 ## Services

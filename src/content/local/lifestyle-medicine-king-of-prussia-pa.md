@@ -27,7 +27,7 @@ King of Prussia's corporate environment — long hours, desk work, and high-pres
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership — nutrition, activity, sleep, stress management, and chronic disease prevention are clinical priorities, not add-ons. For KOP patients, telehealth makes most lifestyle consultations accessible without needing to drive to Wayne.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 

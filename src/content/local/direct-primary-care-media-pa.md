@@ -35,7 +35,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, and message
 - Longer visits — your health history matters here
-- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Telehealth included — reduces travel for routine care
 - Family memberships available
 

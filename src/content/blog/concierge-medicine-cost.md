@@ -15,7 +15,7 @@ canonical: "https://forwardfamilymedicine.com/blog/how-much-does-concierge-medic
 
 
 ## Quick Answer
-Traditional concierge medicine typically costs $150 to $500 per month (or $1,500 to $6,000+ per year) and may still bill insurance on top of the retainer. Direct Primary Care practices typically charge $75–$200 per month depending on what's included. At Forward Family Medicine, individual membership is $200/month and covers unlimited primary care plus integrated board-certified Lifestyle Medicine — a clinical service most DPC practices do not offer.
+Traditional concierge medicine typically costs $150 to $500 per month (or $1,500 to $6,000+ per year) and may still bill insurance on top of the retainer. Direct Primary Care practices typically charge $75–$200 per month depending on what's included. At Forward Family Medicine, individual membership is $200/month and covers unlimited primary care plus integrated board-eligible Lifestyle Medicine — a clinical service most DPC practices do not offer.
 
 ## Explanation
 
@@ -72,7 +72,7 @@ The math varies based on your specific situation, but for patients who use prima
 
 **What You're Actually Buying**
 
-At Forward Family Medicine, the membership also includes something most DPC practices don't offer: integrated, in-person, board-certified Lifestyle Medicine with Dr. Lieberman — dual-certified in Family Medicine and Lifestyle Medicine, with a background in culinary arts and nutrition science. For patients managing chronic conditions, this is the difference between managing numbers and actually addressing root causes.
+At Forward Family Medicine, the membership also includes something most DPC practices don't offer: integrated, in-person, board-eligible Lifestyle Medicine with Dr. Lieberman — board-eligible in Family Medicine and Lifestyle Medicine, with a background in culinary arts and nutrition science. For patients managing chronic conditions, this is the difference between managing numbers and actually addressing root causes.
 
 The membership fee in any concierge or DPC model isn't just paying for medical care — it's paying for *time* and *access*. When you have a physician who knows your history, returns your call the same day, and has 1 to 2 hours to spend with you instead of 12 minutes, the quality of the medical decision-making improves. You're less likely to be sent for unnecessary tests to cover a rushed exam. You're more likely to catch something early. You're less likely to end up in the emergency room with a problem that could have been managed in the office.
 

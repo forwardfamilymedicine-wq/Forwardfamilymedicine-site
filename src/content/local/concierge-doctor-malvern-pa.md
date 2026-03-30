@@ -35,7 +35,7 @@ Forward Family Medicine in Wayne delivers the concierge medicine experience — 
 - Same-day and next-day appointments
 - Direct physician access by phone and text
 - Telehealth included for routine care — reduces travel
-- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly membership
 
 ## Services

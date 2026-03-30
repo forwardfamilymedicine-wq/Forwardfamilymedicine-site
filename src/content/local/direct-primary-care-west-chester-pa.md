@@ -36,7 +36,7 @@ DPC replaces insurance billing with a flat monthly membership — unlimited visi
 - Direct access to your physician by phone, text, and message
 - Telehealth included — handles most routine care without the drive
 - Longer visits — no rushed 10-minute slots
-- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
 
 ## Services Included in Membership

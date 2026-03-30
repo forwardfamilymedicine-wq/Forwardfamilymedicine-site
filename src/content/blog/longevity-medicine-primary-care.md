@@ -59,7 +59,7 @@ Forward Family Medicine is built for the kind of proactive, longitudinal care th
 
 Our [direct primary care](/direct-primary-care) structure gives us time to address the upstream drivers of chronic disease: metabolic health, fitness, sleep, stress, and risk factor modification. We integrate [lifestyle medicine](/lifestyle-medicine) into every long-term patient relationship, because the evidence base for lifestyle interventions in longevity is as strong as anything in a prescription pad.
 
-At Forward Family Medicine, Dr. Lieberman's dual board certification in Family and Lifestyle Medicine — combined with his background in culinary arts and nutrition science — means the lifestyle medicine pillars are delivered with clinical specificity, not generic advice. This is included in every membership at no additional cost.
+At Forward Family Medicine, Dr. Lieberman's dual board eligibility in Family and Lifestyle Medicine — combined with his background in culinary arts and nutrition science — means the lifestyle medicine pillars are delivered with clinical specificity, not generic advice. This is included in every membership at no additional cost.
 
 We are not a biohacking clinic. We are clinicians who take the evidence seriously and help you act on it — consistently, over time.
 

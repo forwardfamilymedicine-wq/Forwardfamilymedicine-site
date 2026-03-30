@@ -35,7 +35,7 @@ Forward Family Medicine delivers the concierge experience — direct physician a
 - Same-day and next-day appointments
 - Direct physician access by phone and text
 - Longer, unhurried visits
-- Lifestyle medicine built in. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine built in. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee
 
 ## Services

@@ -27,7 +27,7 @@ Ardmore is an active, diverse Lower Merion community with easy transit access an
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership. Evidence-based nutrition, activity, sleep, and stress counseling are standard parts of your care — not extras. SEPTA access and telehealth make this practical for Ardmore residents.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
@@ -69,7 +69,7 @@ Yes — phone and video visits are included.
 
 ## Lifestyle Medicine and Life in Ardmore
 
-South Ardmore Park and the LMBA trail network give Ardmore residents genuinely good infrastructure for the active lifestyle that lifestyle medicine prescribes. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, uses exercise prescription as a clinical tool — and when a patient has accessible trails and parks nearby, the conversation shifts from "how do I start?" to "how do I structure what I'm already doing?" The environment matters clinically, and Ardmore's trail access is an asset Forward Family Medicine works with directly.
+South Ardmore Park and the LMBA trail network give Ardmore residents genuinely good infrastructure for the active lifestyle that lifestyle medicine prescribes. Dr. Philip Lieberman, dual board-eligible in Family Medicine and Lifestyle Medicine, uses exercise prescription as a clinical tool — and when a patient has accessible trails and parks nearby, the conversation shifts from "how do I start?" to "how do I structure what I'm already doing?" The environment matters clinically, and Ardmore's trail access is an asset Forward Family Medicine works with directly.
 
 Ardmore's dense, walkable downtown supports daily movement and a food culture that extends beyond the generic grocery run. Local market options, walkable errands, and a visible food scene all factor into nutrition conversations grounded in how patients actually live — not idealized dietary templates.
 

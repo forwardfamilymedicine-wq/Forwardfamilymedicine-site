@@ -27,7 +27,7 @@ Radnor Township's diverse, achievement-oriented community includes many resident
 
 Forward Family Medicine, located within Radnor Township in Wayne, integrates lifestyle medicine into every DPC membership. Your physician uses evidence-based nutrition, activity, sleep, and stress interventions as first-line clinical tools — and has the visit time to actually deliver them.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 

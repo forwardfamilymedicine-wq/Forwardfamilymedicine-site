@@ -27,7 +27,7 @@ Malvern's professional community — including many who work in pharmaceutical, 
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership. For Malvern patients, telehealth makes nutrition and lifestyle coaching accessible without every visit requiring a drive to Wayne.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 

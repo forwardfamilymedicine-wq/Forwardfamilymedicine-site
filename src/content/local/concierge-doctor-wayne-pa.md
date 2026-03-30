@@ -39,7 +39,7 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 - **Same-day appointments** for acute concerns
 - **30–60 minute visits** when your situation calls for it
 - **Proactive follow-up** — we reach out, not just the other way around
-- **Whole-person, prevention-first approach** including lifestyle medicine. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- **Whole-person, prevention-first approach** including lifestyle medicine. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - **One predictable monthly fee** — no copays, no billing surprises
 - **A physician who knows your history** without you having to re-explain it
 

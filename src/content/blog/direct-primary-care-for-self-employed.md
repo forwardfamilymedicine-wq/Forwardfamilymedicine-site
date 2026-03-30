@@ -58,7 +58,7 @@ For a self-employed person whose time is genuinely valuable, that access is wort
 DPC + HDHP is particularly compelling for:
 
 - **Solo freelancers and consultants** who buy insurance on the individual market
-- **Self-employed individuals with chronic conditions** like diabetes, hypertension, or hypothyroidism who need regular primary care contact — and who want a physician who treats root causes, not just numbers. At Forward Family Medicine, every membership includes integrated board-certified Lifestyle Medicine with Dr. Lieberman at no additional cost. For a self-employed person paying out-of-pocket, getting clinical nutrition and lifestyle medicine included in your primary care membership — rather than paying separately for it — is a significant value difference.
+- **Self-employed individuals with chronic conditions** like diabetes, hypertension, or hypothyroidism who need regular primary care contact — and who want a physician who treats root causes, not just numbers. At Forward Family Medicine, every membership includes integrated board-eligible Lifestyle Medicine with Dr. Lieberman at no additional cost. For a self-employed person paying out-of-pocket, getting clinical nutrition and lifestyle medicine included in your primary care membership — rather than paying separately for it — is a significant value difference.
 - **Small business owners** who want a better healthcare benefit for themselves (and potentially their small team)
 - **Couples where one or both partners are self-employed**
 - **People who have historically deferred care** because traditional primary care felt too slow, too expensive, or too inaccessible

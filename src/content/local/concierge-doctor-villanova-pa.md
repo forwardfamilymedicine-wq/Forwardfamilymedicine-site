@@ -34,7 +34,7 @@ Forward Family Medicine — just 1 mile from Villanova — offers the same-day a
 - Closest concierge-style DPC practice to Villanova
 - Same-day appointments available
 - Direct line to Dr. David Bigley, DO and Dr. Philip Lieberman, MD — call, text, or message
-- Unhurried visits, proactive prevention, lifestyle medicine integration. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Unhurried visits, proactive prevention, lifestyle medicine integration. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Predictable flat monthly fee — no billing surprises
 - Family plans available
 

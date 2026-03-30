@@ -74,7 +74,7 @@ The decision comes down to what you actually value and what you'll use. Paying f
 
 Forward Family Medicine practices the DPC model — straightforward, transparent membership-based primary care without insurance billing for primary care services. We believe this is the right structure for most patients seeking better primary care: it aligns physician and patient incentives, eliminates administrative friction, and makes excellent care genuinely accessible.
 
-What distinguishes Forward Family Medicine from other DPC practices on the Main Line is board-certified Lifestyle Medicine — included in every membership at no additional cost. Dr. Lieberman is dual-certified in Family Medicine and Lifestyle Medicine, with pre-medical training in culinary arts and nutrition science. If you're comparing DPC practices by price alone, that clinical depth is worth factoring into the equation.
+What distinguishes Forward Family Medicine from other DPC practices on the Main Line is board-eligible Lifestyle Medicine — included in every membership at no additional cost. Dr. Lieberman is board-eligible in Family Medicine and Lifestyle Medicine, with pre-medical training in culinary arts and nutrition science. If you're comparing DPC practices by price alone, that clinical depth is worth factoring into the equation.
 
 Our [concierge medicine](/concierge-medicine) and [direct primary care](/direct-primary-care) pages explain the full scope of what membership includes. If you're trying to decide which model is right for you, we're happy to have that conversation directly — no obligation, no pressure.
 

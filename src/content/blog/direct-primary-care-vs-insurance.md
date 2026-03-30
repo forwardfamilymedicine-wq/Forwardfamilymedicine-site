@@ -28,7 +28,7 @@ The problem is that the insurance billing system has expanded to cover routine p
 
 ### What Direct Primary Care Does
 
-DPC removes insurance from the primary care equation entirely. You pay your doctor a flat monthly fee — typically $75–$200 per month for adults depending on the practice and what's included. At Forward Family Medicine, individual membership is $200/month, which includes integrated board-certified Lifestyle Medicine — something most DPC practices do not offer and that substantially changes the value equation for anyone managing a chronic condition. In exchange, you get:
+DPC removes insurance from the primary care equation entirely. You pay your doctor a flat monthly fee — typically $75–$200 per month for adults depending on the practice and what's included. At Forward Family Medicine, individual membership is $200/month, which includes integrated board-eligible Lifestyle Medicine — something most DPC practices do not offer and that substantially changes the value equation for anyone managing a chronic condition. In exchange, you get:
 
 - Unlimited primary care visits with no per-visit fees
 - Same-day or next-day appointment availability

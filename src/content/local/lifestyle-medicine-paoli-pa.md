@@ -27,7 +27,7 @@ Paoli is a Chester County community near Paoli Hospital, known for its community
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership — personalized nutrition, activity, sleep, and stress management as clinical tools. Telehealth makes these conversations accessible from Paoli without the drive for every visit.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
@@ -70,7 +70,7 @@ Yes — telehealth is included and works well for nutrition and lifestyle coachi
 
 ## Lifestyle Medicine and Life in Paoli
 
-Paoli Hospital's presence makes Paoli a hub for healthcare access across western Chester County — and Forward Family Medicine works with that geography deliberately. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, coordinates specialist referrals to Paoli Hospital and Main Line Health facilities when members need specialty care. Lifestyle medicine doesn't operate in isolation from the conventional medical system; it's integrated with it, and with the specialist relationships a DPC practice actively manages on behalf of its members.
+Paoli Hospital's presence makes Paoli a hub for healthcare access across western Chester County — and Forward Family Medicine works with that geography deliberately. Dr. Philip Lieberman, dual board-eligible in Family Medicine and Lifestyle Medicine, coordinates specialist referrals to Paoli Hospital and Main Line Health facilities when members need specialty care. Lifestyle medicine doesn't operate in isolation from the conventional medical system; it's integrated with it, and with the specialist relationships a DPC practice actively manages on behalf of its members.
 
 The Great Valley Corporate Center, just south of Paoli, draws a substantial professional population into the area — executives, engineers, and knowledge workers with demanding schedules and the metabolic consequences that often follow: disrupted sleep, chronic low-grade stress, limited time for structured activity. These are exactly the patterns that lifestyle medicine is designed to interrupt before they compound into chronic disease over a decade.
 

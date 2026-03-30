@@ -27,7 +27,7 @@ Berwyn is a residential Chester County community on Lancaster Avenue, just east 
 
 Forward Family Medicine integrates lifestyle medicine into every DPC membership — meaning your physician uses evidence-based nutrition, activity, sleep, and stress counseling as clinical tools, not add-ons. For Berwyn patients, this means a 3-mile drive to a practice that approaches your health differently.
 
-Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
 [What is lifestyle medicine? →](/lifestyle-medicine)
 
@@ -70,7 +70,7 @@ Absolutely. Phone and video visits are included and work especially well for nut
 
 ## Lifestyle Medicine and Life in Berwyn
 
-Berwyn's proximity to the Chester Valley Trail is more than a geographic convenience — it represents the kind of active community baseline that lifestyle medicine builds on. Dr. Philip Lieberman, dual board-certified in Family Medicine and Lifestyle Medicine, starts with what patients are already doing. If you're running or cycling the trail on weekends, that's a foundation. The clinical conversation is about extending that into the rest of the week and managing the factors that undermine it: sleep, recovery, nutrition, stress load.
+Berwyn's proximity to the Chester Valley Trail is more than a geographic convenience — it represents the kind of active community baseline that lifestyle medicine builds on. Dr. Philip Lieberman, dual board-eligible in Family Medicine and Lifestyle Medicine, starts with what patients are already doing. If you're running or cycling the trail on weekends, that's a foundation. The clinical conversation is about extending that into the rest of the week and managing the factors that undermine it: sleep, recovery, nutrition, stress load.
 
 Berwyn's walkable downtown and farmers market culture create natural touchpoints for nutrition conversations grounded in how people actually shop and eat. These aren't abstract dietary recommendations — they're practical adjustments rooted in your real food environment.
 
