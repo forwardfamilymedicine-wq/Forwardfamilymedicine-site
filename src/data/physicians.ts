@@ -106,7 +106,7 @@ export const physicians: Physician[] = [
     honorificPrefix: "Dr.",
     jobTitle: "Family Medicine Physician",
     description:
-      "Dr. Philip Lieberman is a board-certified family medicine physician at Forward Family Medicine, a Direct Primary Care practice in Wayne, PA. He focuses on relationship-based primary care, lifestyle medicine, and whole-person health.",
+      "Dr. Philip Lieberman is a dual board-eligible physician — Family Medicine and Lifestyle Medicine — at Forward Family Medicine, a Direct Primary Care practice in Wayne, PA. He focuses on relationship-based primary care, lifestyle medicine, and whole-person health.",
     medicalSpecialty: [
       "Family Medicine",
       "Lifestyle Medicine",

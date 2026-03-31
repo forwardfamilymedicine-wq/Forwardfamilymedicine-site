@@ -106,7 +106,7 @@ We proudly serve patients in Wayne, Berwyn, Devon, Malvern, Paoli, Radnor, Villa
 > **Image placeholder:** `/src/assets/staff/dr-david-bigley.jpg`
 > *Alt text: Dr. David Bigley DO, Founder of Forward Family Medicine, Wayne PA*
 
-Forward Family Medicine was founded by **Dr. Bigley and Dr. Lieberman**, a board-certified family physician with [X] years of experience caring for patients on the Main Line. After years in a traditional practice, Dr. Bigley and Dr. Lieberman chose the Direct Primary Care model to return medicine to what it's supposed to be: a trusted doctor who has time for you.
+Forward Family Medicine was founded by **Dr. Bigley and Dr. Lieberman**, physicians who left the traditional insurance model to build a practice centered on time, relationship, and genuine preventive care. After years in a traditional practice, they chose the Direct Primary Care model to return medicine to what it's supposed to be: a trusted doctor who has time for you.
 
 **[Meet the team →](/about)**
 

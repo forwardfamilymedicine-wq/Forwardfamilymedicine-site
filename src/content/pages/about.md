@@ -5,7 +5,7 @@ keywords:
   - about Forward Family Medicine
   - Wayne PA family doctor
   - DPC physician Main Line PA
-  - board-certified family medicine Wayne
+  - board-eligible family medicine Wayne
   - physician-led primary care Pennsylvania
   - preventive medicine doctor Wayne PA
 canonical: "https://forwardfamilymedicine.com/about"
@@ -38,9 +38,9 @@ The Direct Primary Care model offered a different path — one where the doctor-
 ## Meet Dr. Bigley and Dr. Lieberman
 
 > **Image placeholder:** `/src/assets/staff/dr-forward-headshot.jpg`
-> *Alt text: Dr. Bigley and Dr. Lieberman, board-certified family physician, Forward Family Medicine Wayne PA*
+> *Alt text: Dr. Philip Lieberman, MD — dual board-eligible Family Medicine and Lifestyle Medicine physician, Forward Family Medicine Wayne PA*
 
-**Dr. [Full Name], MD** — Board-Certified Family Medicine
+**Dr. David Bigley, DO** — Family Medicine | Founder
 
 - Medical degree: [School], [Year]
 - Residency: [Program], [Year]

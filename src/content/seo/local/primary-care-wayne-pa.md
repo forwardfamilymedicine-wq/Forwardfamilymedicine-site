@@ -86,7 +86,7 @@ Our Wayne-based practice offers the full scope of family medicine:
 
 ## About the Practice
 
-Forward Family Medicine was founded by Dr. Bigley and Dr. Lieberman, a board-certified family physician with [X] years of experience. After years in traditional primary care, Dr. Bigley and Dr. Lieberman chose the Direct Primary Care model to return to what medicine is supposed to be: a physician with time for every patient.
+Forward Family Medicine was founded by Dr. Bigley and Dr. Lieberman, two physicians who left traditional primary care to build a practice where every patient gets unhurried, relationship-centered medicine. They chose the Direct Primary Care model to return to what medicine is supposed to be: a physician with time for every patient.
 
 Our practice is located in Wayne, PA, with convenient access for patients throughout the Philadelphia Main Line. We are currently accepting new members.
 

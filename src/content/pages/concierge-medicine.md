@@ -54,7 +54,7 @@ Traditional concierge medicine charges a premium retainer on top of — or inste
 | Insurance billing | Often still billed | Never — no insurance billing for primary care |
 | Visit length | 30–60 min | 1–2 hours |
 | Direct doctor access | Yes | Yes — phone, text, email directly |
-| Lifestyle Medicine | Rarely | Board-certified, in-person, every visit |
+| Lifestyle Medicine | Rarely | Board-eligible, in-person, every visit |
 
 Same experience. Lower overhead. Better medicine.
 
