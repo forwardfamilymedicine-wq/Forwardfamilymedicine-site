@@ -66,7 +66,7 @@ Lab work and medications are available at wholesale pricing. [See full services 
 **Office location:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
-**Email:** Information@forwardfamilymedicine.com
+**Email:** information@forwardfamilymedicine.com
 **Parking:** Free parking available on-site
 **SEPTA:** Wayne Station on the Paoli–Thorndale (R5) line is approximately 0.5 miles from our office — walkable for most patients
 **Telehealth:** All phone and video visits are included in membership. Many routine questions are handled without coming in at all.

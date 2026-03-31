@@ -65,7 +65,7 @@ Yes — telehealth is included and works well for nutrition and lifestyle coachi
 **Address:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
-**Email:** Information@forwardfamilymedicine.com
+**Email:** information@forwardfamilymedicine.com
 **Hours:** Monday–Friday, 8:00 AM – 5:00 PM
 
 ## Lifestyle Medicine and Life in Paoli

@@ -59,7 +59,7 @@ We schedule based on need, not volume. On a typical day, Dr. Bigley and Dr. Lieb
 ## Membership & Pricing
 
 **What does a membership cost?**
-We offer individual, family, and senior pricing. [See full membership details and pricing →](/membership)
+Individual membership is $200/month. Family membership starts at $175/person/month for two members and scales to $100/person/month for five or more. There is no enrollment fee. [See full membership details and pricing →](/membership)
 
 **What does the monthly membership include?**
 Your membership covers unlimited primary care visits (in-person, video, and phone), direct physician access, preventive care, chronic disease management, lifestyle medicine counseling, same-day/next-day scheduling, and minor in-office procedures. Labs and medications are available at wholesale/near-cost pricing as separate add-ons. [See full service list →](/services)
