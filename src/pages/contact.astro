@@ -220,12 +220,12 @@ const breadcrumb = {
 
   /* Map */
   .map-section {
-    height: 300px;
     position: relative;
+    overflow: visible;
   }
   .map-placeholder {
     width: 100%;
-    height: 100%;
+    height: 300px;
     background: var(--cream-200);
     display: flex;
     align-items: center;
@@ -251,6 +251,9 @@ const breadcrumb = {
   .map-overlay p {
     margin-bottom: 1rem;
     color: var(--ink-900);
+  }
+  .map-embed {
+    margin-bottom: 2rem;
   }
 
   @media (max-width: 900px) {
