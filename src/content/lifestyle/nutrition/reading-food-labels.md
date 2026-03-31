@@ -8,7 +8,7 @@ keywords:
   - food label guide
   - ultra-processed food identification
   - food marketing claims
-canonical: "https://forwardfamilymedicine.com/lifestyle/nutrition/reading-food-labels"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/nutrition/reading-food-labels"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

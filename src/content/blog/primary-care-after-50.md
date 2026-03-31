@@ -10,7 +10,7 @@ keywords:
 date: "2025-09-17"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/primary-care-after-50"
+canonical: "https://www.forwardfamilymedicine.com/blog/primary-care-after-50"
 ---
 
 

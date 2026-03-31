@@ -8,7 +8,7 @@ keywords:
   - cardio comparison
   - best cardio for health
   - interval training benefits
-canonical: "https://forwardfamilymedicine.com/lifestyle/physical-activity/hiit-vs-steady-state"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/physical-activity/hiit-vs-steady-state"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

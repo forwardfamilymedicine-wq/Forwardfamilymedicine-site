@@ -7,7 +7,7 @@
 export const SITE = {
   name: "Forward Family Medicine",
   tagline: "Direct Primary Care on the Philadelphia Main Line",
-  url: "https://forwardfamilymedicine.com",
+  url: "https://www.forwardfamilymedicine.com",
   description:
     "Forward Family Medicine is a Direct Primary Care practice in Wayne, PA serving patients across the Philadelphia Main Line with same-day access, direct physician contact, and lifestyle medicine-integrated care.",
 
@@ -54,14 +54,14 @@ export const SITE = {
 
   // Images
   logo: {
-    url: "https://forwardfamilymedicine.com/logo.png",
+    url: "https://www.forwardfamilymedicine.com/logo.png",
     width: 2411,
     height: 1071,
     alt: "Forward Family Medicine logo",
   },
 
   clinicImage: {
-    url: "https://forwardfamilymedicine.com/images/clinic-exterior.jpg",
+    url: "https://www.forwardfamilymedicine.com/images/clinic-exterior.jpg",
     width: 1200,
     height: 630,
     alt: "Forward Family Medicine clinic in Wayne, PA",
@@ -69,7 +69,7 @@ export const SITE = {
 
   // Default OG image for pages without a specific image
   defaultOGImage: {
-    url: "https://forwardfamilymedicine.com/logo.png",
+    url: "https://www.forwardfamilymedicine.com/logo.png",
     width: 2411,
     height: 1071,
     alt: "Forward Family Medicine — Direct Primary Care in Wayne, PA",

@@ -10,7 +10,7 @@ keywords:
 date: "2025-07-16"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/cholesterol-screening-when-to-start"
+canonical: "https://www.forwardfamilymedicine.com/blog/cholesterol-screening-when-to-start"
 ---
 
 

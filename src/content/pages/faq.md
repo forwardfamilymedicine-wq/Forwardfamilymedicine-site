@@ -10,7 +10,7 @@ keywords:
   - is direct primary care worth it
   - direct primary care cost Pennsylvania
   - concierge medicine questions Wayne PA
-canonical: "https://forwardfamilymedicine.com/faq"
+canonical: "https://www.forwardfamilymedicine.com/faq"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "FAQPage"

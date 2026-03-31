@@ -10,7 +10,7 @@ keywords:
 date: "2025-09-24"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/how-to-find-a-good-primary-care-doctor"
+canonical: "https://www.forwardfamilymedicine.com/blog/how-to-find-a-good-primary-care-doctor"
 ---
 
 

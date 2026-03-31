@@ -8,7 +8,7 @@ keywords:
   - personalized primary care doctor
   - doctor who listens Main Line PA
   - unhurried doctor visits
-canonical: "https://forwardfamilymedicine.com/patient-experience/find-doctor-who-spends-more-time-with-patients"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/find-doctor-who-spends-more-time-with-patients"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Patient Experience"

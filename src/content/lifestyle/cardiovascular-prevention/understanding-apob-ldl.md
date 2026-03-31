@@ -8,7 +8,7 @@ keywords:
   - what is ApoB
   - LDL particle number
   - advanced cholesterol testing
-canonical: "https://forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/understanding-apob-ldl"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/understanding-apob-ldl"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

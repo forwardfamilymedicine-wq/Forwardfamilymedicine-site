@@ -10,7 +10,7 @@ keywords:
 date: "2026-01-15"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/womens-preventive-health-guide"
+canonical: "https://www.forwardfamilymedicine.com/blog/womens-preventive-health-guide"
 ---
 
 

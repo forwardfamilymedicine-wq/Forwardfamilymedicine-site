@@ -10,7 +10,7 @@ keywords:
 date: "2025-04-09"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/anti-inflammatory-foods"
+canonical: "https://www.forwardfamilymedicine.com/blog/anti-inflammatory-foods"
 ---
 
 

@@ -8,7 +8,7 @@ keywords:
   - occupational burnout
   - chronic work stress
   - burnout vs depression
-canonical: "https://forwardfamilymedicine.com/lifestyle/stress-mental-health/burnout-recovery"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/stress-mental-health/burnout-recovery"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -10,7 +10,7 @@ keywords:
 date: "2025-03-19"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/is-preventive-care-worth-it"
+canonical: "https://www.forwardfamilymedicine.com/blog/is-preventive-care-worth-it"
 ---
 
 

@@ -10,7 +10,7 @@ keywords:
 date: "2025-11-26"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/primary-care-for-busy-professionals"
+canonical: "https://www.forwardfamilymedicine.com/blog/primary-care-for-busy-professionals"
 ---
 
 

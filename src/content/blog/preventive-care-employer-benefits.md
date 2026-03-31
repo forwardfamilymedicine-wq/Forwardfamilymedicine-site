@@ -10,7 +10,7 @@ keywords:
 date: "2026-02-04"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/direct-primary-care-employer-benefits"
+canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-employer-benefits"
 ---
 
 

@@ -10,7 +10,7 @@ keywords:
 date: "2025-07-02"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/alcohol-and-health-research"
+canonical: "https://www.forwardfamilymedicine.com/blog/alcohol-and-health-research"
 ---
 
 

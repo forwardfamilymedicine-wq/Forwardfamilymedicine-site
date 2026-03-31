@@ -329,7 +329,7 @@ All pages use `schemaType: "Article"`. The SEO component should render:
   "author": {
     "@type": "MedicalOrganization",
     "name": "Forward Family Medicine",
-    "url": "https://forwardfamilymedicine.com"
+    "url": "https://www.forwardfamilymedicine.com"
   },
   "publisher": {
     "@type": "MedicalOrganization",

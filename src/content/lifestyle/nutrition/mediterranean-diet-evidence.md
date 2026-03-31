@@ -8,7 +8,7 @@ keywords:
   - Mediterranean diet cardiovascular
   - Mediterranean diet benefits
   - Mediterranean diet what to eat
-canonical: "https://forwardfamilymedicine.com/lifestyle/nutrition/mediterranean-diet-evidence"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/nutrition/mediterranean-diet-evidence"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

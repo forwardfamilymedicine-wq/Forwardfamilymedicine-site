@@ -8,7 +8,7 @@ keywords:
   - getting started fitness
   - how to exercise regularly
   - exercise motivation
-canonical: "https://forwardfamilymedicine.com/lifestyle/physical-activity/getting-started-exercise"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/physical-activity/getting-started-exercise"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

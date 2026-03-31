@@ -10,7 +10,7 @@ keywords:
 date: "2025-11-12"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/direct-primary-care-for-self-employed"
+canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-for-self-employed"
 ---
 
 

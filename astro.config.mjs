@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://forwardfamilymedicine.com',
-  base: '/Forwardfamilymedicine-site',
+  site: 'https://www.forwardfamilymedicine.com',
+  base: '/',
   integrations: [sitemap()],
   vite: {
     server: {

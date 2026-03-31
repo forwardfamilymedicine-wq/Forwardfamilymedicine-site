@@ -8,7 +8,7 @@ keywords:
   - DPC Wayne Pennsylvania
   - doctor Wayne PA accepting patients
   - Philadelphia Main Line primary care
-canonical: "https://forwardfamilymedicine.com/local/primary-care-wayne-pa"
+canonical: "https://www.forwardfamilymedicine.com/local/primary-care-wayne-pa"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Local"

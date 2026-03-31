@@ -7,7 +7,7 @@ keywords:
   - family doctor Bryn Mawr PA
   - primary care Bryn Mawr PA
   - membership medicine Bryn Mawr Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-bryn-mawr-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-bryn-mawr-pa"
 location: "Bryn Mawr, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

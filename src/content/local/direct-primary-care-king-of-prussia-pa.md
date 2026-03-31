@@ -7,7 +7,7 @@ keywords:
   - family doctor King of Prussia PA
   - primary care KOP PA
   - membership medicine King of Prussia Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-king-of-prussia-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-king-of-prussia-pa"
 location: "King of Prussia, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

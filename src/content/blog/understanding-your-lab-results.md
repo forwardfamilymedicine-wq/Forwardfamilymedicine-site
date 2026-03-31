@@ -10,7 +10,7 @@ keywords:
 date: "2025-10-01"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/understanding-lab-results"
+canonical: "https://www.forwardfamilymedicine.com/blog/understanding-lab-results"
 ---
 
 

@@ -10,7 +10,7 @@ keywords:
 date: "2026-01-21"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/health-insurance-basics-patients"
+canonical: "https://www.forwardfamilymedicine.com/blog/health-insurance-basics-patients"
 ---
 
 

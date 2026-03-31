@@ -10,7 +10,7 @@ keywords:
 date: "2025-05-21"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/longevity-medicine-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/longevity-medicine-primary-care"
 ---
 
 

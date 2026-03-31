@@ -8,7 +8,7 @@ keywords:
   - board-eligible family medicine Wayne
   - physician-led primary care Pennsylvania
   - preventive medicine doctor Wayne PA
-canonical: "https://forwardfamilymedicine.com/about"
+canonical: "https://www.forwardfamilymedicine.com/about"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

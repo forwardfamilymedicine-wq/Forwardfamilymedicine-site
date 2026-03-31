@@ -8,7 +8,7 @@ keywords:
   - blood pressure lifestyle
   - cardiovascular risk reduction
   - heart disease lifestyle medicine
-canonical: "https://forwardfamilymedicine.com/lifestyle/cardiovascular-prevention"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/cardiovascular-prevention"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

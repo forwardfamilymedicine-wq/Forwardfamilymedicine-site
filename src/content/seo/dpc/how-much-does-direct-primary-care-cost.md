@@ -8,7 +8,7 @@ keywords:
   - DPC monthly fee
   - how much is DPC per month
   - direct primary care affordable
-canonical: "https://forwardfamilymedicine.com/dpc/how-much-does-direct-primary-care-cost"
+canonical: "https://www.forwardfamilymedicine.com/dpc/how-much-does-direct-primary-care-cost"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "DPC"

@@ -8,7 +8,7 @@ keywords:
   - nutrition counseling Wayne PA
   - chronic disease prevention Wayne PA
   - wellness medicine Wayne Pennsylvania
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-wayne-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-wayne-pa"
 location: "Wayne, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

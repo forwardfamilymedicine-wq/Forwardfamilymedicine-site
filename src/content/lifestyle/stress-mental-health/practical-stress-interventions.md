@@ -8,7 +8,7 @@ keywords:
   - practical stress reduction
   - CBT stress management
   - exercise for stress
-canonical: "https://forwardfamilymedicine.com/lifestyle/stress-mental-health/practical-stress-interventions"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/stress-mental-health/practical-stress-interventions"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

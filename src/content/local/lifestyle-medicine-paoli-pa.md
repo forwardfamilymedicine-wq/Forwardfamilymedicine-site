@@ -6,7 +6,7 @@ keywords:
   - preventive care Paoli Pennsylvania
   - wellness doctor Paoli PA
   - chronic disease prevention Paoli PA
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-paoli-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-paoli-pa"
 location: "Paoli, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

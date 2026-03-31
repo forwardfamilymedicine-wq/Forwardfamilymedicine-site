@@ -10,7 +10,7 @@ keywords:
 date: "2025-05-07"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/exercise-as-medicine"
+canonical: "https://www.forwardfamilymedicine.com/blog/exercise-as-medicine"
 ---
 
 

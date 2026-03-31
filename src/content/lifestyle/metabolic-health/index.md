@@ -7,7 +7,7 @@ keywords:
   - metabolic syndrome
   - prediabetes
   - metabolic health guide
-canonical: "https://forwardfamilymedicine.com/lifestyle/metabolic-health"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/metabolic-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

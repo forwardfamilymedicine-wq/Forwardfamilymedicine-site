@@ -8,7 +8,7 @@ keywords:
   - sleep and testosterone
   - sleep and weight gain hormones
   - leptin ghrelin sleep
-canonical: "https://forwardfamilymedicine.com/lifestyle/sleep-hormones/sleep-and-hormone-regulation"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/sleep-hormones/sleep-and-hormone-regulation"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

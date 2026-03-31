@@ -10,7 +10,7 @@ keywords:
 date: "2025-07-23"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/blood-pressure-monitoring-at-home"
+canonical: "https://www.forwardfamilymedicine.com/blog/blood-pressure-monitoring-at-home"
 ---
 
 

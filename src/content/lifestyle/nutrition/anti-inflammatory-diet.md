@@ -8,7 +8,7 @@ keywords:
   - chronic inflammation diet
   - reduce inflammation food
   - CRP diet
-canonical: "https://forwardfamilymedicine.com/lifestyle/nutrition/anti-inflammatory-diet"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/nutrition/anti-inflammatory-diet"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

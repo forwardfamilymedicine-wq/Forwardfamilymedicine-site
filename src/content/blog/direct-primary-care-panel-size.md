@@ -10,7 +10,7 @@ keywords:
 date: "2025-02-12"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/doctor-panel-size-affects-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/doctor-panel-size-affects-care"
 ---
 
 

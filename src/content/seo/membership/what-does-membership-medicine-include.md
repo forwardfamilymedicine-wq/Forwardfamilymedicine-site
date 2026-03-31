@@ -8,7 +8,7 @@ keywords:
   - what does direct primary care cover
   - DPC membership services
   - membership doctor what you get
-canonical: "https://forwardfamilymedicine.com/membership/what-does-membership-medicine-include"
+canonical: "https://www.forwardfamilymedicine.com/membership/what-does-membership-medicine-include"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Membership"

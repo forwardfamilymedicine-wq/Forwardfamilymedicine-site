@@ -8,7 +8,7 @@ keywords:
   - how to lower blood sugar prediabetes
   - prediabetes diet and exercise
   - prevent type 2 diabetes lifestyle
-canonical: "https://forwardfamilymedicine.com/lifestyle/can-you-reverse-prediabetes"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/can-you-reverse-prediabetes"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Lifestyle Medicine"

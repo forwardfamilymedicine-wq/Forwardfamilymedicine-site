@@ -6,7 +6,7 @@ keywords:
   - preventive care King of Prussia Pennsylvania
   - wellness doctor KOP PA
   - chronic disease prevention King of Prussia PA
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-king-of-prussia-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-king-of-prussia-pa"
 location: "King of Prussia, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

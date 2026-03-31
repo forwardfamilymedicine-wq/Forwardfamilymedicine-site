@@ -10,7 +10,7 @@ keywords:
 date: "2026-02-11"
 author: "Forward Family Medicine"
 category: "concierge-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/concierge-medicine-main-line-pa"
+canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-main-line-pa"
 ---
 
 

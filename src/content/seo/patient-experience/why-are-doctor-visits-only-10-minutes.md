@@ -8,7 +8,7 @@ keywords:
   - why doctors don't spend time with patients
   - short doctor appointments
   - why is healthcare so impersonal
-canonical: "https://forwardfamilymedicine.com/patient-experience/why-are-doctor-visits-only-10-minutes"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/why-are-doctor-visits-only-10-minutes"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Patient Experience"

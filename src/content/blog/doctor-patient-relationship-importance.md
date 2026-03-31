@@ -10,7 +10,7 @@ keywords:
 date: "2025-03-12"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/doctor-patient-relationship-importance"
+canonical: "https://www.forwardfamilymedicine.com/blog/doctor-patient-relationship-importance"
 ---
 
 

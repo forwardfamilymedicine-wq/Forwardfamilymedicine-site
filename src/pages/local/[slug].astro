@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const slug = entry.id.replace(/\.mdx?$/, '');
-const canonicalUrl = entry.data.canonical ?? `https://forwardfamilymedicine.com/local/${slug}`;
+const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.com/local/${slug}`;
 ---
 
 <MainLayout

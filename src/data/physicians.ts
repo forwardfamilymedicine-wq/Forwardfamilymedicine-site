@@ -85,7 +85,7 @@ export const physicians: Physician[] = [
     ],
     npi: "109-339-1021",
     image: {
-      url: "https://forwardfamilymedicine.com/images/dr-david-bigley.jpg",
+      url: "https://www.forwardfamilymedicine.com/images/dr-david-bigley.jpg",
       width: 800,
       height: 800,
       alt: "Dr. David Bigley — Family Medicine Physician, Forward Family Medicine Wayne PA",
@@ -135,7 +135,7 @@ export const physicians: Physician[] = [
     ],
     npi: "166-997-9316",
     image: {
-      url: "https://forwardfamilymedicine.com/images/dr-philip-lieberman.jpg",
+      url: "https://www.forwardfamilymedicine.com/images/dr-philip-lieberman.jpg",
       width: 800,
       height: 800,
       alt: "Dr. Philip Lieberman — Family Medicine Physician, Forward Family Medicine Wayne PA",

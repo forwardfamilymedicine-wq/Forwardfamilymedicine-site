@@ -10,7 +10,7 @@ keywords:
 date: "2025-10-08"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/managing-medications-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/managing-medications-primary-care"
 ---
 
 

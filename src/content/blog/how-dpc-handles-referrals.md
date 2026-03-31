@@ -10,7 +10,7 @@ keywords:
 date: "2026-01-07"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/specialist-referrals-direct-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/specialist-referrals-direct-primary-care"
 ---
 
 

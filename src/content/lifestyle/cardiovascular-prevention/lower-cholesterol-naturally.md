@@ -7,7 +7,7 @@ keywords:
   - cholesterol lifestyle changes
   - foods that lower cholesterol
   - lower cholesterol without medication
-canonical: "https://forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

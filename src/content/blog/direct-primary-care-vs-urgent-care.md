@@ -10,7 +10,7 @@ keywords:
 date: "2025-12-03"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/dpc-vs-urgent-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/dpc-vs-urgent-care"
 ---
 
 

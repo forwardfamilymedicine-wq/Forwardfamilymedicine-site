@@ -10,7 +10,7 @@ keywords:
   - boutique medicine Main Line
   - concierge medicine vs DPC
   - membership doctor Wayne PA
-canonical: "https://forwardfamilymedicine.com/concierge-medicine"
+canonical: "https://www.forwardfamilymedicine.com/concierge-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"

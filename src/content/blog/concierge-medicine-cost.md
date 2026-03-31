@@ -10,7 +10,7 @@ keywords:
 date: "2025-01-29"
 author: "Forward Family Medicine"
 category: "concierge-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/how-much-does-concierge-medicine-cost"
+canonical: "https://www.forwardfamilymedicine.com/blog/how-much-does-concierge-medicine-cost"
 ---
 
 

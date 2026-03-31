@@ -10,7 +10,7 @@ keywords:
 date: "2025-12-22"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/telehealth-primary-care-benefits"
+canonical: "https://www.forwardfamilymedicine.com/blog/telehealth-primary-care-benefits"
 ---
 
 

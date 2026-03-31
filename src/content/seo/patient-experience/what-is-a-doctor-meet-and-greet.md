@@ -8,7 +8,7 @@ keywords:
   - no obligation doctor consultation
   - how to interview a new doctor
   - meet and greet primary care
-canonical: "https://forwardfamilymedicine.com/patient-experience/what-is-a-doctor-meet-and-greet"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/what-is-a-doctor-meet-and-greet"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Patient Experience"

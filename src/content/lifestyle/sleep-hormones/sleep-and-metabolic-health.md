@@ -7,7 +7,7 @@ keywords:
   - sleep and weight gain
   - sleep insulin resistance
   - sleep and blood sugar
-canonical: "https://forwardfamilymedicine.com/lifestyle/sleep-hormones/sleep-and-metabolic-health"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/sleep-hormones/sleep-and-metabolic-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

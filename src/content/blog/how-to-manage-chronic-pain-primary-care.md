@@ -10,7 +10,7 @@ keywords:
 date: "2025-09-03"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/chronic-pain-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/chronic-pain-primary-care"
 ---
 
 

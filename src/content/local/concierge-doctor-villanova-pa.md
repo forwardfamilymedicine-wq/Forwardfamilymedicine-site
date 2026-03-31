@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Villanova Pennsylvania
   - VIP primary care Villanova PA
   - boutique medicine Villanova PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-villanova-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-villanova-pa"
 location: "Villanova, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

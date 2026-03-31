@@ -8,7 +8,7 @@ keywords:
   - self-employed doctor membership
   - independent contractor health insurance alternative
   - 1099 healthcare options
-canonical: "https://forwardfamilymedicine.com/membership/direct-primary-care-self-employed"
+canonical: "https://www.forwardfamilymedicine.com/membership/direct-primary-care-self-employed"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Membership"

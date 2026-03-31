@@ -7,7 +7,7 @@ keywords:
   - insulin resistance causes
   - how to reverse insulin resistance
   - insulin resistance diet
-canonical: "https://forwardfamilymedicine.com/lifestyle/metabolic-health/what-is-insulin-resistance"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/metabolic-health/what-is-insulin-resistance"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

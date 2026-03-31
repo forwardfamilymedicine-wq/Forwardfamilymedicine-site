@@ -10,7 +10,7 @@ keywords:
 date: "2025-03-26"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/annual-physical-what-to-expect"
+canonical: "https://www.forwardfamilymedicine.com/blog/annual-physical-what-to-expect"
 ---
 
 

@@ -6,7 +6,7 @@ keywords:
   - preventive care Haverford Pennsylvania
   - wellness doctor Haverford PA
   - chronic disease prevention Haverford PA
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-haverford-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-haverford-pa"
 location: "Haverford, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

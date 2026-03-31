@@ -8,7 +8,7 @@ keywords:
   - exercise lower blood pressure
   - blood pressure without medication
   - hypertension lifestyle
-canonical: "https://forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

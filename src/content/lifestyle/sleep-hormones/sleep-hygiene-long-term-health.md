@@ -7,7 +7,7 @@ keywords:
   - sleep hygiene tips
   - sleep habits health
   - better sleep practices
-canonical: "https://forwardfamilymedicine.com/lifestyle/sleep-hormones/sleep-hygiene-long-term-health"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/sleep-hormones/sleep-hygiene-long-term-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

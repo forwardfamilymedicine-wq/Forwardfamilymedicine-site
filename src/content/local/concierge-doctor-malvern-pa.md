@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Malvern Pennsylvania
   - boutique medicine Malvern PA
   - membership doctor Malvern PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-malvern-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

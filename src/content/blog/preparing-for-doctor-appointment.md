@@ -10,7 +10,7 @@ keywords:
 date: "2025-10-22"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/how-to-prepare-for-doctor-appointment"
+canonical: "https://www.forwardfamilymedicine.com/blog/how-to-prepare-for-doctor-appointment"
 ---
 
 

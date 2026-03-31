@@ -10,7 +10,7 @@ keywords:
 date: "2026-01-28"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/how-to-read-eob-explanation-of-benefits"
+canonical: "https://www.forwardfamilymedicine.com/blog/how-to-read-eob-explanation-of-benefits"
 ---
 
 

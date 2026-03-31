@@ -10,7 +10,7 @@ keywords:
 date: "2026-01-15"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/what-is-direct-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/what-is-direct-primary-care"
 ---
 
 

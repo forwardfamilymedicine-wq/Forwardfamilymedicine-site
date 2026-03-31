@@ -10,7 +10,7 @@ keywords:
   - membership primary care Pennsylvania
   - direct pay doctor Philadelphia Main Line
   - no insurance primary care Wayne PA
-canonical: "https://forwardfamilymedicine.com/direct-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"

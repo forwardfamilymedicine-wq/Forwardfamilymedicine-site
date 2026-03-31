@@ -7,7 +7,7 @@ keywords:
   - direct primary care value
   - DPC pros and cons
   - is membership medicine worth it
-canonical: "https://forwardfamilymedicine.com/dpc/is-direct-primary-care-worth-it"
+canonical: "https://www.forwardfamilymedicine.com/dpc/is-direct-primary-care-worth-it"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "DPC"

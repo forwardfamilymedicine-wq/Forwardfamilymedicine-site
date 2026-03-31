@@ -6,7 +6,7 @@ keywords:
   - lifestyle medicine definition
   - lifestyle medicine vs conventional medicine
   - ACLM lifestyle medicine
-canonical: "https://forwardfamilymedicine.com/lifestyle/lifestyle-medicine/what-is-lifestyle-medicine"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-medicine/what-is-lifestyle-medicine"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

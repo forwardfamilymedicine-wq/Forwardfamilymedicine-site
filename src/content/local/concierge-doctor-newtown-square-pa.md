@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Newtown Square Pennsylvania
   - boutique medicine Newtown Square PA
   - membership doctor Newtown Square PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-newtown-square-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-newtown-square-pa"
 location: "Newtown Square, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

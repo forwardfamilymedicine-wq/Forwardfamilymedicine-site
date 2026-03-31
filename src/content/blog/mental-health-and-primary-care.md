@@ -10,7 +10,7 @@ keywords:
 date: "2025-06-18"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/mental-health-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/mental-health-primary-care"
 ---
 
 

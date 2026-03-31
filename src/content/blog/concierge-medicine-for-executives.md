@@ -10,7 +10,7 @@ keywords:
 date: "2025-11-19"
 author: "Forward Family Medicine"
 category: "concierge-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/concierge-medicine-for-busy-professionals"
+canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-for-busy-professionals"
 ---
 
 

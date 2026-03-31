@@ -10,7 +10,7 @@ keywords:
   - acute care membership medicine
   - primary care for adults Wayne PA
   - family doctor services Pennsylvania
-canonical: "https://forwardfamilymedicine.com/services"
+canonical: "https://www.forwardfamilymedicine.com/services"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

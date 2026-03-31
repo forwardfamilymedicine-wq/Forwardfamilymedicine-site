@@ -8,7 +8,7 @@ keywords:
   - health savings account DPC
   - FSA DPC membership
   - DPC tax benefits
-canonical: "https://forwardfamilymedicine.com/membership/hsa-dpc-membership"
+canonical: "https://www.forwardfamilymedicine.com/membership/hsa-dpc-membership"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Membership"

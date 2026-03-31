@@ -10,7 +10,7 @@ keywords:
 date: "2025-01-22"
 author: "Forward Family Medicine"
 category: "concierge-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/dpc-vs-concierge-which-is-right-for-you"
+canonical: "https://www.forwardfamilymedicine.com/blog/dpc-vs-concierge-which-is-right-for-you"
 ---
 
 

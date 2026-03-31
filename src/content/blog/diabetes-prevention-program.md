@@ -10,7 +10,7 @@ keywords:
 date: "2025-04-30"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/diabetes-prevention-program"
+canonical: "https://www.forwardfamilymedicine.com/blog/diabetes-prevention-program"
 ---
 
 

@@ -6,7 +6,7 @@ keywords:
   - preventive care Malvern Pennsylvania
   - wellness doctor Malvern PA
   - chronic disease prevention Malvern PA
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-malvern-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

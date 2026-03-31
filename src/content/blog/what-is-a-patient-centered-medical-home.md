@@ -10,7 +10,7 @@ keywords:
 date: "2025-03-05"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/patient-centered-medical-home-vs-dpc"
+canonical: "https://www.forwardfamilymedicine.com/blog/patient-centered-medical-home-vs-dpc"
 ---
 
 

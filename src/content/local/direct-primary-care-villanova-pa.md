@@ -7,7 +7,7 @@ keywords:
   - family doctor Villanova PA
   - primary care Villanova PA
   - membership medicine Villanova Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-villanova-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-villanova-pa"
 location: "Villanova, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

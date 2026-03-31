@@ -10,7 +10,7 @@ keywords:
 date: "2025-10-29"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/doctor-meet-and-greet-what-to-expect"
+canonical: "https://www.forwardfamilymedicine.com/blog/doctor-meet-and-greet-what-to-expect"
 ---
 
 

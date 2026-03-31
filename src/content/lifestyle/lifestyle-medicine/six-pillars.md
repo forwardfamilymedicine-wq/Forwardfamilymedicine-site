@@ -6,7 +6,7 @@ keywords:
   - ACLM pillars
   - lifestyle medicine pillars
   - lifestyle medicine components
-canonical: "https://forwardfamilymedicine.com/lifestyle/lifestyle-medicine/six-pillars"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-medicine/six-pillars"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

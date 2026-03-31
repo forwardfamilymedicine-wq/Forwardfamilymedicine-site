@@ -10,7 +10,7 @@ keywords:
 date: "2026-01-15"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/why-patients-leave-their-doctors"
+canonical: "https://www.forwardfamilymedicine.com/blog/why-patients-leave-their-doctors"
 ---
 
 

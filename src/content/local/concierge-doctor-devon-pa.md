@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Devon Pennsylvania
   - boutique medicine Devon PA
   - membership doctor Devon PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-devon-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-devon-pa"
 location: "Devon, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

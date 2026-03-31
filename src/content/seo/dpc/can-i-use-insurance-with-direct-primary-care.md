@@ -8,7 +8,7 @@ keywords:
   - DPC with high deductible plan
   - do I need insurance with DPC
   - direct primary care and health insurance
-canonical: "https://forwardfamilymedicine.com/dpc/can-i-use-insurance-with-direct-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/dpc/can-i-use-insurance-with-direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "DPC"

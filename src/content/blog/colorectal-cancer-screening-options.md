@@ -10,7 +10,7 @@ keywords:
 date: "2025-08-06"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/colorectal-cancer-screening-options"
+canonical: "https://www.forwardfamilymedicine.com/blog/colorectal-cancer-screening-options"
 ---
 
 

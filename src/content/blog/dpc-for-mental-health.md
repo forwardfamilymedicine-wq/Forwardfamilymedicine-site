@@ -10,7 +10,7 @@ keywords:
 date: "2025-06-25"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/dpc-mental-health-gap"
+canonical: "https://www.forwardfamilymedicine.com/blog/dpc-mental-health-gap"
 ---
 
 

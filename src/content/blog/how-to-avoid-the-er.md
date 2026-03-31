@@ -10,7 +10,7 @@ keywords:
 date: "2025-12-10"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/how-to-avoid-unnecessary-er-visits"
+canonical: "https://www.forwardfamilymedicine.com/blog/how-to-avoid-unnecessary-er-visits"
 ---
 
 

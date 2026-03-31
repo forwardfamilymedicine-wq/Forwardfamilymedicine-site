@@ -6,7 +6,7 @@ keywords:
   - preventive care Ardmore Pennsylvania
   - wellness doctor Ardmore PA
   - chronic disease prevention Ardmore PA
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-ardmore-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-ardmore-pa"
 location: "Ardmore, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

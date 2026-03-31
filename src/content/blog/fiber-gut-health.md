@@ -10,7 +10,7 @@ keywords:
 date: "2025-04-02"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/fiber-gut-health"
+canonical: "https://www.forwardfamilymedicine.com/blog/fiber-gut-health"
 ---
 
 

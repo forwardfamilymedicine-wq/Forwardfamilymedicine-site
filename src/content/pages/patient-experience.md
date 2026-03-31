@@ -9,7 +9,7 @@ keywords:
   - doctor patient relationship Wayne PA
   - personalized care Main Line
   - unhurried doctor visits Wayne Pennsylvania
-canonical: "https://forwardfamilymedicine.com/patient-experience"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"

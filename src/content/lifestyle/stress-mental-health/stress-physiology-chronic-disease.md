@@ -8,7 +8,7 @@ keywords:
   - cortisol chronic disease
   - stress inflammation
   - HPA axis stress
-canonical: "https://forwardfamilymedicine.com/lifestyle/stress-mental-health/stress-physiology-chronic-disease"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/stress-mental-health/stress-physiology-chronic-disease"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

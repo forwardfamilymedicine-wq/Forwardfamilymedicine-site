@@ -6,7 +6,7 @@ keywords:
   - preventive care Media Pennsylvania
   - wellness doctor Media PA
   - chronic disease prevention Media Delaware County PA
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine-media-pa"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-media-pa"
 location: "Media, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -10,7 +10,7 @@ keywords:
 date: "2025-09-10"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/direct-primary-care-chronic-conditions"
+canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-chronic-conditions"
 ---
 
 

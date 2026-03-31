@@ -9,7 +9,7 @@ keywords:
 date: "2025-01-15"
 author: "Forward Family Medicine"
 category: "concierge-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/concierge-medicine-vs-direct-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-vs-direct-primary-care"
 ---
 
 

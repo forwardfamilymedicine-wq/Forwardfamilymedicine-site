@@ -6,7 +6,7 @@ keywords:
   - concierge medicine West Chester Pennsylvania
   - boutique medicine West Chester PA
   - membership doctor West Chester PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-west-chester-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

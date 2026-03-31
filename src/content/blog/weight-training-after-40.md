@@ -10,7 +10,7 @@ keywords:
 date: "2025-05-14"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/strength-training-after-40"
+canonical: "https://www.forwardfamilymedicine.com/blog/strength-training-after-40"
 ---
 
 

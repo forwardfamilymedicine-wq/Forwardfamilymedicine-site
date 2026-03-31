@@ -10,7 +10,7 @@ keywords:
 date: "2025-10-15"
 author: "Forward Family Medicine"
 category: "patient-experience"
-canonical: "https://forwardfamilymedicine.com/blog/when-to-get-second-medical-opinion"
+canonical: "https://www.forwardfamilymedicine.com/blog/when-to-get-second-medical-opinion"
 ---
 
 

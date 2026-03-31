@@ -8,7 +8,7 @@ keywords:
   - DPC same-day access
   - doctor available today Wayne PA
   - quick doctor appointment Main Line
-canonical: "https://forwardfamilymedicine.com/patient-experience/same-day-doctor-appointment"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/same-day-doctor-appointment"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Patient Experience"

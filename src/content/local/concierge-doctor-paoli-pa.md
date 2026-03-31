@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Paoli Pennsylvania
   - boutique medicine Paoli PA
   - membership doctor Paoli PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-paoli-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-paoli-pa"
 location: "Paoli, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

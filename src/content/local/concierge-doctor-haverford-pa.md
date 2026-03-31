@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Haverford Pennsylvania
   - boutique medicine Haverford PA
   - membership doctor Haverford PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-haverford-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-haverford-pa"
 location: "Haverford, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

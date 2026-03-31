@@ -10,7 +10,7 @@ keywords:
 date: "2025-02-26"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/proactive-vs-reactive-medicine"
+canonical: "https://www.forwardfamilymedicine.com/blog/proactive-vs-reactive-medicine"
 ---
 
 

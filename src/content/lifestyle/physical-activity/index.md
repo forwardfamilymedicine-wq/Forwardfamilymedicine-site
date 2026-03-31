@@ -8,7 +8,7 @@ keywords:
   - how much exercise
   - exercise guidelines
   - exercise longevity
-canonical: "https://forwardfamilymedicine.com/lifestyle/physical-activity"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/physical-activity"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

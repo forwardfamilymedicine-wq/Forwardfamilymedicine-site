@@ -8,7 +8,7 @@ keywords:
   - boutique medicine Wayne PA
   - membership doctor Wayne Pennsylvania
   - VIP primary care Wayne PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-wayne-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-wayne-pa"
 location: "Wayne, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

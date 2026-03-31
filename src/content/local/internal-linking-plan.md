@@ -137,13 +137,13 @@ This creates a hub-and-spoke structure that:
 
 All local pages use the pattern:
 ```
-https://forwardfamilymedicine.com/[page-type]-[town-slug]-pa
+https://www.forwardfamilymedicine.com/[page-type]-[town-slug]-pa
 ```
 
 Examples:
-- `https://forwardfamilymedicine.com/direct-primary-care-wayne-pa`
-- `https://forwardfamilymedicine.com/concierge-doctor-bryn-mawr-pa`
-- `https://forwardfamilymedicine.com/lifestyle-medicine-west-chester-pa`
+- `https://www.forwardfamilymedicine.com/direct-primary-care-wayne-pa`
+- `https://www.forwardfamilymedicine.com/concierge-doctor-bryn-mawr-pa`
+- `https://www.forwardfamilymedicine.com/lifestyle-medicine-west-chester-pa`
 
 No trailing slash. Canonical declared in frontmatter and rendered in `<link rel="canonical">` via the SEO component.
 

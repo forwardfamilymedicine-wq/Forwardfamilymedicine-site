@@ -8,7 +8,7 @@ keywords:
   - VO2max longevity
   - exercise aging
   - physical activity mortality
-canonical: "https://forwardfamilymedicine.com/lifestyle/physical-activity/exercise-for-longevity"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/physical-activity/exercise-for-longevity"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

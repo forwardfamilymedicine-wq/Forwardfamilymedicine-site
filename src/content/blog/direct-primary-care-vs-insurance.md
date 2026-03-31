@@ -9,7 +9,7 @@ keywords:
 date: "2025-02-05"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/direct-primary-care-vs-insurance"
+canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-vs-insurance"
 ---
 
 

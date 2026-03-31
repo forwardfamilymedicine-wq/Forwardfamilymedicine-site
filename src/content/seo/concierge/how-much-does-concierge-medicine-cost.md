@@ -8,7 +8,7 @@ keywords:
   - retainer medicine cost
   - boutique medicine price
   - concierge medicine vs DPC cost
-canonical: "https://forwardfamilymedicine.com/concierge/how-much-does-concierge-medicine-cost"
+canonical: "https://www.forwardfamilymedicine.com/concierge/how-much-does-concierge-medicine-cost"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Concierge"

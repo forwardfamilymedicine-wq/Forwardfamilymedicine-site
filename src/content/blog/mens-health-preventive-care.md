@@ -10,7 +10,7 @@ keywords:
 date: "2025-08-20"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/mens-health-preventive-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/mens-health-preventive-care"
 ---
 
 

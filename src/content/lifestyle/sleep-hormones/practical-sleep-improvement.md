@@ -8,7 +8,7 @@ keywords:
   - trouble sleeping solutions
   - insomnia natural remedies
   - CBT for insomnia
-canonical: "https://forwardfamilymedicine.com/lifestyle/sleep-hormones/practical-sleep-improvement"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/sleep-hormones/practical-sleep-improvement"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

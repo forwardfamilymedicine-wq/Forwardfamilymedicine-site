@@ -8,7 +8,7 @@ keywords:
   - employee healthcare DPC
   - alternative to group health insurance
   - DPC benefit plan small business
-canonical: "https://forwardfamilymedicine.com/membership/dpc-employer-benefit"
+canonical: "https://www.forwardfamilymedicine.com/membership/dpc-employer-benefit"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Membership"

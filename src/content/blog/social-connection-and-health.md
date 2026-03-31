@@ -10,7 +10,7 @@ keywords:
 date: "2025-07-30"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/social-connection-health"
+canonical: "https://www.forwardfamilymedicine.com/blog/social-connection-health"
 ---
 
 

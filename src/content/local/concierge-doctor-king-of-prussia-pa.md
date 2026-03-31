@@ -6,7 +6,7 @@ keywords:
   - concierge medicine King of Prussia Pennsylvania
   - boutique medicine KOP PA
   - membership doctor King of Prussia PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-king-of-prussia-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-king-of-prussia-pa"
 location: "King of Prussia, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -13,7 +13,7 @@ export interface Props {
 
 const { title, description, author, date, tags = [], featuredImage, slug } = Astro.props;
 
-const siteUrl = 'https://forwardfamilymedicine.com';
+const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/blog/${slug}`;
 const ogImage = featuredImage || `${siteUrl}/logo.png`;
 

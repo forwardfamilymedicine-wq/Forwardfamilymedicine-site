@@ -10,7 +10,7 @@ keywords:
 date: "2025-04-23"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/lifestyle-medicine-type-2-diabetes"
+canonical: "https://www.forwardfamilymedicine.com/blog/lifestyle-medicine-type-2-diabetes"
 ---
 
 

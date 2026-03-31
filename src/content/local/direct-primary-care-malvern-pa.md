@@ -7,7 +7,7 @@ keywords:
   - family doctor Malvern PA
   - primary care Malvern PA
   - membership medicine Malvern Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-malvern-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

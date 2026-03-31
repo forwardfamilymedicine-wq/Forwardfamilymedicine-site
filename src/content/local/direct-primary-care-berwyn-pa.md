@@ -7,7 +7,7 @@ keywords:
   - family doctor Berwyn PA
   - primary care Berwyn PA
   - membership medicine Berwyn Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-berwyn-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-berwyn-pa"
 location: "Berwyn, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

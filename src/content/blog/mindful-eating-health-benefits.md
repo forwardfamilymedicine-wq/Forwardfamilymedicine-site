@@ -10,7 +10,7 @@ keywords:
 date: "2025-04-16"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/mindful-eating-health-benefits"
+canonical: "https://www.forwardfamilymedicine.com/blog/mindful-eating-health-benefits"
 ---
 
 

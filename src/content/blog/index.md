@@ -8,7 +8,7 @@ keywords:
   - preventive health Main Line
   - family medicine Wayne PA blog
   - DPC education articles
-canonical: "https://forwardfamilymedicine.com/blog"
+canonical: "https://www.forwardfamilymedicine.com/blog"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Blog"
@@ -105,7 +105,7 @@ description: "[150–160 char meta description]"
 keywords:
   - [primary keyword]
   - [secondary keywords]
-canonical: "https://forwardfamilymedicine.com/blog/[slug]"
+canonical: "https://www.forwardfamilymedicine.com/blog/[slug]"
 date: "YYYY-MM-DD"
 author: "Dr. Bigley and Dr. Lieberman, Forward Family Medicine"
 schemaType: "Article"

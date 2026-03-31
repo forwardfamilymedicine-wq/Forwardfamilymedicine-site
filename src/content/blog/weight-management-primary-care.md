@@ -10,7 +10,7 @@ keywords:
 date: "2025-05-28"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/weight-management-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/blog/weight-management-primary-care"
 ---
 
 

@@ -10,7 +10,7 @@ keywords:
 date: "2025-11-05"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/direct-primary-care-for-families"
+canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-for-families"
 ---
 
 

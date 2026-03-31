@@ -9,7 +9,7 @@ keywords:
   - doctor who spends more time with patients
   - family medicine Wayne PA
   - preventive care Main Line Philadelphia
-canonical: "https://forwardfamilymedicine.com/"
+canonical: "https://www.forwardfamilymedicine.com/"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"
@@ -171,7 +171,7 @@ SCHEMA NOTE:
     name: "Forward Family Medicine"
     address: { streetAddress, addressLocality: "Wayne", addressRegion: "PA" }
     telephone: "[phone]"
-    url: "https://forwardfamilymedicine.com"
+    url: "https://www.forwardfamilymedicine.com"
     medicalSpecialty: ["Family Medicine", "Preventive Medicine", "Lifestyle Medicine"]
     priceRange: "$" (membership-based)
   Overlay: LocalBusiness (for Google Maps)

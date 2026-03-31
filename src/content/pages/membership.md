@@ -9,7 +9,7 @@ keywords:
   - no copay doctor Wayne PA
   - concierge medicine membership cost
   - how does DPC membership work
-canonical: "https://forwardfamilymedicine.com/membership"
+canonical: "https://www.forwardfamilymedicine.com/membership"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

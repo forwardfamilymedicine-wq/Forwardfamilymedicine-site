@@ -13,4 +13,4 @@ User-agent: SemrushBot
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://forwardfamilymedicine.com/sitemap.xml
+Sitemap: https://www.forwardfamilymedicine.com/sitemap-index.xml

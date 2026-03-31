@@ -8,7 +8,7 @@ keywords:
   - board certified lifestyle medicine
   - lifestyle medicine specialist
   - preventive medicine doctor
-canonical: "https://forwardfamilymedicine.com/lifestyle/what-is-a-lifestyle-medicine-doctor"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/what-is-a-lifestyle-medicine-doctor"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Lifestyle Medicine"

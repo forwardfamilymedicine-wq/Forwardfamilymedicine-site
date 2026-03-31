@@ -7,7 +7,7 @@ keywords:
   - family doctor Ardmore PA
   - primary care Ardmore PA
   - membership medicine Ardmore Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-ardmore-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-ardmore-pa"
 location: "Ardmore, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

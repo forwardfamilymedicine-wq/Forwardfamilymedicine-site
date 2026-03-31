@@ -10,7 +10,7 @@ keywords:
 date: "2025-06-04"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/sleep-and-weight-gain"
+canonical: "https://www.forwardfamilymedicine.com/blog/sleep-and-weight-gain"
 ---
 
 

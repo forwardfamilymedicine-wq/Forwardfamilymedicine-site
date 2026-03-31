@@ -10,7 +10,7 @@ keywords:
 date: "2025-02-19"
 author: "Forward Family Medicine"
 category: "direct-primary-care"
-canonical: "https://forwardfamilymedicine.com/blog/how-direct-primary-care-saves-money"
+canonical: "https://www.forwardfamilymedicine.com/blog/how-direct-primary-care-saves-money"
 ---
 
 

@@ -6,7 +6,7 @@ keywords:
   - concierge medicine Berwyn Pennsylvania
   - boutique medicine Berwyn PA
   - membership doctor Berwyn PA
-canonical: "https://forwardfamilymedicine.com/concierge-doctor-berwyn-pa"
+canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-berwyn-pa"
 location: "Berwyn, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -10,7 +10,7 @@ keywords:
 date: "2025-07-09"
 author: "Forward Family Medicine"
 category: "lifestyle-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/lifestyle-medicine-hypertension"
+canonical: "https://www.forwardfamilymedicine.com/blog/lifestyle-medicine-hypertension"
 ---
 
 

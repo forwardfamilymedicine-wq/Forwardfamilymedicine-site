@@ -8,7 +8,7 @@ keywords:
   - DASH diet blood pressure
   - exercise lower hypertension
   - reduce sodium blood pressure
-canonical: "https://forwardfamilymedicine.com/lifestyle/lifestyle-changes-lower-blood-pressure"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-changes-lower-blood-pressure"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 category: "Lifestyle Medicine"

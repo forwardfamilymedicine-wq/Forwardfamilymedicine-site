@@ -6,7 +6,7 @@ keywords:
   - can lifestyle changes replace medication
   - lifestyle medicine vs medication
   - when to use medication lifestyle medicine
-canonical: "https://forwardfamilymedicine.com/lifestyle/lifestyle-medicine/when-medical-treatment-needed"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-medicine/when-medical-treatment-needed"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

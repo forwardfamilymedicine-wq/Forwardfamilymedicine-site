@@ -10,7 +10,7 @@ keywords:
 date: "2025-08-13"
 author: "Forward Family Medicine"
 category: "preventive-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/preventive-screenings-in-your-40s"
+canonical: "https://www.forwardfamilymedicine.com/blog/preventive-screenings-in-your-40s"
 ---
 
 

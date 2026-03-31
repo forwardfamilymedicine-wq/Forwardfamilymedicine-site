@@ -96,7 +96,7 @@ const { schema } = Astro.props;
   "@context": "https://schema.org",
   "@type": ["MedicalOrganization", "LocalBusiness"],
   "name": "Forward Family Medicine",
-  "url": "https://forwardfamilymedicine.com",
+  "url": "https://www.forwardfamilymedicine.com",
   "telephone": "[PHONE]",
   "email": "[EMAIL]",
   "address": {
@@ -122,7 +122,7 @@ const { schema } = Astro.props;
   ],
   "medicalSpecialty": ["Family Medicine", "Preventive Medicine", "Lifestyle Medicine"],
   "priceRange": "$",
-  "image": "https://forwardfamilymedicine.com/assets/staff/dr-forward-headshot.jpg",
+  "image": "https://www.forwardfamilymedicine.com/assets/staff/dr-forward-headshot.jpg",
   "sameAs": [
     "[Google Business Profile URL]",
     "[Facebook URL]",
@@ -234,12 +234,12 @@ interface Props {
   "affiliation": {
     "@type": "MedicalOrganization",
     "name": "Forward Family Medicine",
-    "url": "https://forwardfamilymedicine.com"
+    "url": "https://www.forwardfamilymedicine.com"
   },
   "medicalSpecialty": "Family Medicine",
   "alumniOf": "[Medical School]",
-  "image": "https://forwardfamilymedicine.com/assets/staff/dr-forward-headshot.jpg",
-  "url": "https://forwardfamilymedicine.com/about"
+  "image": "https://www.forwardfamilymedicine.com/assets/staff/dr-forward-headshot.jpg",
+  "url": "https://www.forwardfamilymedicine.com/about"
 }
 ```
 
@@ -263,9 +263,9 @@ interface Props {
 **Example usage on a blog post:**
 ```astro
 <SchemaBreadcrumb items={[
-  { name: "Home", url: "https://forwardfamilymedicine.com/" },
-  { name: "Blog", url: "https://forwardfamilymedicine.com/blog" },
-  { name: "What Is Direct Primary Care?", url: "https://forwardfamilymedicine.com/blog/what-is-direct-primary-care" }
+  { name: "Home", url: "https://www.forwardfamilymedicine.com/" },
+  { name: "Blog", url: "https://www.forwardfamilymedicine.com/blog" },
+  { name: "What Is Direct Primary Care?", url: "https://www.forwardfamilymedicine.com/blog/what-is-direct-primary-care" }
 ]} />
 ```
 
@@ -327,7 +327,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://forwardfamilymedicine.com',
+  site: 'https://www.forwardfamilymedicine.com',
   integrations: [sitemap()],
 });
 ```

@@ -10,7 +10,7 @@ keywords:
 date: "2025-01-07"
 author: "Forward Family Medicine"
 category: "concierge-medicine"
-canonical: "https://forwardfamilymedicine.com/blog/what-is-concierge-medicine"
+canonical: "https://www.forwardfamilymedicine.com/blog/what-is-concierge-medicine"
 ---
 
 

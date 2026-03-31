@@ -8,7 +8,7 @@ keywords:
   - Mediterranean diet diabetes
   - foods that lower blood sugar
   - glycemic index diet
-canonical: "https://forwardfamilymedicine.com/lifestyle/metabolic-health/diet-strategies-blood-sugar"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/metabolic-health/diet-strategies-blood-sugar"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

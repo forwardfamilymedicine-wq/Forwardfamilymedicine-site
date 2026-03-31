@@ -7,7 +7,7 @@ keywords:
   - vegan diet health benefits
   - vegetarian diet research
   - plant-based diet chronic disease
-canonical: "https://forwardfamilymedicine.com/lifestyle/nutrition/plant-based-eating-health"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/nutrition/plant-based-eating-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

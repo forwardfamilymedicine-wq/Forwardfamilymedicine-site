@@ -22,7 +22,7 @@ draft: true
 title: "Direct Primary Care: Pros and Cons"
 description: "An honest look at what DPC does well and where its limitations lie — so you can decide if it's the right choice for your healthcare needs."
 keywords: [direct primary care pros cons, DPC advantages disadvantages, is DPC right for me, DPC benefits limitations]
-canonical: "https://forwardfamilymedicine.com/dpc/direct-primary-care-pros-cons"
+canonical: "https://www.forwardfamilymedicine.com/dpc/direct-primary-care-pros-cons"
 category: "DPC"
 schemaType: "Article"
 linksTo: ["/direct-primary-care", "/membership", "/faq"]
@@ -57,7 +57,7 @@ _Those with employer-subsidized $0-copay coverage, those primarily needing speci
 title: "DPC vs. Urgent Care: What's the Difference?"
 description: "DPC members rarely need urgent care. Here's how DPC compares to urgent care for acute illness — and when urgent care or the ER is still the right choice."
 keywords: [DPC vs urgent care, direct primary care urgent care, avoid urgent care DPC, same-day care DPC]
-canonical: "https://forwardfamilymedicine.com/dpc/direct-primary-care-vs-urgent-care"
+canonical: "https://www.forwardfamilymedicine.com/dpc/direct-primary-care-vs-urgent-care"
 category: "DPC"
 schemaType: "Article"
 linksTo: ["/services", "/membership", "/patient-experience"]
@@ -84,7 +84,7 @@ DPC members have same-day access to their own physician for most acute concerns 
 title: "Is Direct Primary Care Good for Families?"
 description: "Family DPC memberships give every household member the same physician, same-day access, and one monthly fee. Here's what families should know before enrolling."
 keywords: [direct primary care for families, DPC family membership, family doctor DPC, DPC with children, family medicine DPC]
-canonical: "https://forwardfamilymedicine.com/dpc/direct-primary-care-for-families"
+canonical: "https://www.forwardfamilymedicine.com/dpc/direct-primary-care-for-families"
 category: "DPC"
 schemaType: "Article"
 linksTo: ["/membership", "/services", "/become-a-patient"]
@@ -111,7 +111,7 @@ _Same-day sick visits, no copay per visit, consistent physician, pediatric care 
 title: "Can Medicare Patients Use Direct Primary Care?"
 description: "Medicare beneficiaries can join a DPC practice as cash-pay members. Here's how DPC and Medicare work together — and what Medicare covers vs. what DPC covers."
 keywords: [direct primary care Medicare, DPC and Medicare, Medicare DPC membership, seniors DPC, Medicare primary care]
-canonical: "https://forwardfamilymedicine.com/dpc/direct-primary-care-and-medicare"
+canonical: "https://www.forwardfamilymedicine.com/dpc/direct-primary-care-and-medicare"
 category: "DPC"
 schemaType: "Article"
 linksTo: ["/membership", "/faq", "/direct-primary-care"]
@@ -137,7 +137,7 @@ _Access, relationship, longer visits, proactive preventive care_
 title: "DPC + Health Sharing Ministries: How They Work Together"
 description: "Many DPC members pair their membership with a health sharing ministry instead of traditional insurance. Here's how the combination works, what it covers, and what to consider."
 keywords: [DPC health sharing ministry, direct primary care health sharing, DPC Sedera, DPC Liberty HealthShare, health sharing DPC combination]
-canonical: "https://forwardfamilymedicine.com/dpc/dpc-and-health-sharing"
+canonical: "https://www.forwardfamilymedicine.com/dpc/dpc-and-health-sharing"
 category: "DPC"
 schemaType: "Article"
 linksTo: ["/membership", "/direct-primary-care", "/faq"]
@@ -168,7 +168,7 @@ _Not insurance, eligibility requirements, coverage limitations_
 title: "Is Concierge Medicine Worth It?"
 description: "For patients who value access, relationship, and prevention, concierge-style medicine consistently delivers better outcomes and lower total cost than the traditional insurance model."
 keywords: [is concierge medicine worth it, concierge medicine value, concierge doctor worth the money, boutique medicine worth it]
-canonical: "https://forwardfamilymedicine.com/concierge/is-concierge-medicine-worth-it"
+canonical: "https://www.forwardfamilymedicine.com/concierge/is-concierge-medicine-worth-it"
 category: "Concierge"
 schemaType: "Article"
 linksTo: ["/membership", "/patient-experience", "/concierge-medicine", "/become-a-patient"]
@@ -194,7 +194,7 @@ For patients who value access, time with their doctor, and proactive prevention,
 title: "Concierge Medicine vs. Direct Primary Care: What's the Difference?"
 description: "Both offer smaller panels and direct access. The difference is in billing model, price, and accessibility. A plain-language comparison of DPC and concierge medicine."
 keywords: [concierge medicine vs DPC, concierge vs direct primary care, DPC vs concierge, difference concierge medicine DPC]
-canonical: "https://forwardfamilymedicine.com/concierge/concierge-medicine-vs-direct-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/concierge/concierge-medicine-vs-direct-primary-care"
 category: "Concierge"
 schemaType: "Article"
 linksTo: ["/concierge-medicine", "/direct-primary-care", "/membership"]
@@ -219,7 +219,7 @@ Concierge medicine and DPC share the same core benefits — smaller panels, dire
 title: "The Benefits of Concierge Medicine"
 description: "Same-day access, direct doctor contact, longer visits, proactive prevention, and a physician who knows your full history — the documented benefits of concierge-style care."
 keywords: [benefits of concierge medicine, concierge doctor benefits, advantages concierge medicine, why choose concierge medicine]
-canonical: "https://forwardfamilymedicine.com/concierge/benefits-of-concierge-medicine"
+canonical: "https://www.forwardfamilymedicine.com/concierge/benefits-of-concierge-medicine"
 category: "Concierge"
 schemaType: "Article"
 linksTo: ["/concierge-medicine", "/patient-experience", "/membership"]
@@ -246,7 +246,7 @@ The core benefits of concierge medicine are: same-day appointment access, direct
 title: "Does Concierge Medicine Work with Insurance?"
 description: "In DPC-style concierge practices, health insurance is kept for hospital and specialist care. Here's exactly how concierge medicine and insurance coexist."
 keywords: [concierge medicine insurance, does concierge doctor take insurance, concierge medicine health insurance, retainer medicine and insurance]
-canonical: "https://forwardfamilymedicine.com/concierge/concierge-medicine-and-insurance"
+canonical: "https://www.forwardfamilymedicine.com/concierge/concierge-medicine-and-insurance"
 category: "Concierge"
 schemaType: "Article"
 linksTo: ["/membership", "/faq", "/direct-primary-care"]
@@ -271,7 +271,7 @@ In DPC-style concierge practices like Forward Family Medicine, health insurance 
 title: "Is Concierge Medicine a Good Fit for Seniors?"
 description: "Seniors on Medicare can use DPC-style concierge practices for primary care while Medicare covers hospital and specialist needs. Here's what seniors should know."
 keywords: [concierge medicine seniors, concierge doctor Medicare, senior concierge medicine, elderly DPC, primary care for seniors]
-canonical: "https://forwardfamilymedicine.com/concierge/concierge-medicine-for-seniors"
+canonical: "https://www.forwardfamilymedicine.com/concierge/concierge-medicine-for-seniors"
 category: "Concierge"
 schemaType: "Article"
 linksTo: ["/membership", "/faq", "/direct-primary-care"]
@@ -301,7 +301,7 @@ Seniors with Medicare are excellent candidates for DPC-style concierge medicine.
 title: "How to Find a Doctor Who Actually Listens"
 description: "DPC and concierge practices are specifically designed to give physicians time to listen. Here's what to look for when searching for a more attentive physician."
 keywords: [find a doctor who listens, doctor who takes time, attentive primary care doctor, doctor who pays attention]
-canonical: "https://forwardfamilymedicine.com/patient-experience/find-doctor-who-listens"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/find-doctor-who-listens"
 category: "Patient Experience"
 schemaType: "Article"
 linksTo: ["/patient-experience", "/direct-primary-care", "/become-a-patient"]
@@ -327,7 +327,7 @@ A physician who listens is a structural feature of the right practice model — 
 title: "What Does 'Direct Access to Your Doctor' Mean?"
 description: "Direct doctor access means calling, texting, or messaging your own physician — not an answering service. Here's what that looks like in practice at a DPC practice."
 keywords: [direct access to doctor, call your doctor directly, text your doctor, physician direct contact, no call center doctor]
-canonical: "https://forwardfamilymedicine.com/patient-experience/direct-access-to-your-doctor"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/direct-access-to-your-doctor"
 category: "Patient Experience"
 schemaType: "Article"
 linksTo: ["/patient-experience", "/membership", "/become-a-patient"]
@@ -352,7 +352,7 @@ Direct access means you have the physician's personal contact information — ph
 title: "How to Switch Primary Care Doctors"
 description: "Switching primary care doctors is simpler than most people think. Here's a step-by-step guide — including how to transfer your records and what to ask a new physician."
 keywords: [how to switch primary care doctors, how to change doctors, switch to new primary care physician, transfer medical records new doctor]
-canonical: "https://forwardfamilymedicine.com/patient-experience/how-to-switch-primary-care-doctors"
+canonical: "https://www.forwardfamilymedicine.com/patient-experience/how-to-switch-primary-care-doctors"
 category: "Patient Experience"
 schemaType: "Article"
 linksTo: ["/become-a-patient", "/patient-experience", "/membership"]
@@ -383,7 +383,7 @@ Switching primary care doctors involves three steps: choosing a new physician, s
 title: "Is Paying a Monthly Fee for Your Doctor Worth It?"
 description: "When you factor in copays, deductibles, and the value of time saved, most DPC members find their monthly membership costs the same or less — and delivers far more."
 keywords: [is monthly doctor fee worth it, monthly fee for doctor, DPC membership value, is DPC subscription worth it]
-canonical: "https://forwardfamilymedicine.com/membership/is-monthly-doctor-fee-worth-it"
+canonical: "https://www.forwardfamilymedicine.com/membership/is-monthly-doctor-fee-worth-it"
 category: "Membership"
 schemaType: "Article"
 linksTo: ["/membership", "/direct-primary-care", "/become-a-patient"]
@@ -408,7 +408,7 @@ Yes — for most patients, a monthly DPC membership fee costs less in total heal
 title: "Do I Still Need Health Insurance with a DPC Membership?"
 description: "Yes — DPC covers primary care but not hospital, emergency, or specialist costs. Here's how to intelligently pair DPC with health insurance."
 keywords: [do I need insurance with DPC, DPC without insurance, health insurance DPC membership, is DPC a replacement for insurance]
-canonical: "https://forwardfamilymedicine.com/membership/do-i-need-insurance-with-dpc"
+canonical: "https://www.forwardfamilymedicine.com/membership/do-i-need-insurance-with-dpc"
 category: "Membership"
 schemaType: "Article"
 linksTo: ["/membership", "/direct-primary-care", "/faq"]
@@ -434,7 +434,7 @@ Yes. A DPC membership provides comprehensive primary care but does not replace h
 title: "Can I Get Primary Care Without Health Insurance?"
 description: "DPC membership makes high-quality primary care accessible and affordable without traditional health insurance. Here's how it works for uninsured patients."
 keywords: [primary care without insurance, doctor without insurance, uninsured primary care, affordable primary care no insurance, DPC uninsured]
-canonical: "https://forwardfamilymedicine.com/membership/primary-care-without-insurance"
+canonical: "https://www.forwardfamilymedicine.com/membership/primary-care-without-insurance"
 category: "Membership"
 schemaType: "Article"
 linksTo: ["/membership", "/become-a-patient", "/direct-primary-care"]
@@ -460,7 +460,7 @@ DPC membership is one of the most effective ways to access high-quality primary 
 title: "How Small Businesses Use Direct Primary Care"
 description: "DPC memberships for employees reduce sick days, lower total healthcare spend, and provide a tangible benefit your team will actually use."
 keywords: [DPC small business, direct primary care small employer, employee health benefit DPC, small business healthcare DPC]
-canonical: "https://forwardfamilymedicine.com/membership/dpc-for-small-businesses"
+canonical: "https://www.forwardfamilymedicine.com/membership/dpc-for-small-businesses"
 category: "Membership"
 schemaType: "Article"
 linksTo: ["/membership", "/become-a-patient", "/membership/dpc-employer-benefit"]
@@ -490,7 +490,7 @@ Small businesses (5–50 employees) are increasingly offering DPC memberships as
 title: "How to Lower Cholesterol Without Medication"
 description: "Diet changes, exercise, and weight management can significantly reduce LDL cholesterol — sometimes enough to delay or avoid statins. Here's what works."
 keywords: [lower cholesterol without medication, natural cholesterol reduction, cholesterol diet lifestyle, reduce LDL naturally, cholesterol and exercise]
-canonical: "https://forwardfamilymedicine.com/lifestyle/lower-cholesterol-without-medication"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/lower-cholesterol-without-medication"
 category: "Lifestyle Medicine"
 schemaType: "Article"
 linksTo: ["/lifestyle-medicine", "/services", "/become-a-patient"]
@@ -518,7 +518,7 @@ _Reduce saturated fat, increase soluble fiber, add plant sterols, Mediterranean/
 title: "How Sleep Affects Chronic Disease Risk"
 description: "Poor sleep is linked to increased risk of diabetes, hypertension, obesity, and cardiovascular disease. Here's what the evidence shows and what to do about it."
 keywords: [sleep and chronic disease, sleep deprivation health risks, sleep and diabetes, sleep and heart disease, poor sleep consequences]
-canonical: "https://forwardfamilymedicine.com/lifestyle/sleep-and-chronic-disease"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/sleep-and-chronic-disease"
 category: "Lifestyle Medicine"
 schemaType: "Article"
 linksTo: ["/lifestyle-medicine", "/services", "/conditions/insomnia-without-medication"]
@@ -545,7 +545,7 @@ Consistently sleeping less than 6–7 hours per night is independently associate
 title: "Exercise as Medicine: What Your Doctor Wants You to Know"
 description: "Regular physical activity is one of the most powerful interventions in medicine for chronic disease prevention and treatment. Here's the evidence and a practical guide."
 keywords: [exercise as medicine, physical activity chronic disease, exercise prescription medicine, benefits of exercise primary care, exercise and health]
-canonical: "https://forwardfamilymedicine.com/lifestyle/exercise-as-medicine"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/exercise-as-medicine"
 category: "Lifestyle Medicine"
 schemaType: "Article"
 linksTo: ["/lifestyle-medicine", "/services", "/become-a-patient"]
@@ -571,7 +571,7 @@ Regular physical activity reduces risk of type 2 diabetes by 30–50%, cardiovas
 title: "How Your Primary Care Doctor Can Help with Weight Loss"
 description: "Your primary care physician can provide evidence-based, sustainable weight management support — not just referrals and pamphlets. Here's what to expect."
 keywords: [weight loss primary care doctor, medical weight management, doctor help weight loss, weight management primary care, obesity treatment primary care]
-canonical: "https://forwardfamilymedicine.com/lifestyle/weight-loss-primary-care"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle/weight-loss-primary-care"
 category: "Lifestyle Medicine"
 schemaType: "Article"
 linksTo: ["/lifestyle-medicine", "/services", "/become-a-patient"]

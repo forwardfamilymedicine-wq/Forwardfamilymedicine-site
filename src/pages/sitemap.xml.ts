@@ -8,7 +8,7 @@
  * Then configure in astro.config.mjs:
  *   import sitemap from '@astrojs/sitemap';
  *   export default defineConfig({
- *     site: 'https://forwardfamilymedicine.com',
+ *     site: 'https://www.forwardfamilymedicine.com',
  *     integrations: [sitemap()],
  *   });
  *

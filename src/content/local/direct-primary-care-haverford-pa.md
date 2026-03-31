@@ -7,7 +7,7 @@ keywords:
   - family doctor Haverford PA
   - primary care Haverford PA
   - membership medicine Haverford Pennsylvania
-canonical: "https://forwardfamilymedicine.com/direct-primary-care-haverford-pa"
+canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-haverford-pa"
 location: "Haverford, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

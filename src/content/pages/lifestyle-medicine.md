@@ -10,7 +10,7 @@ keywords:
   - holistic primary care Main Line
   - root cause medicine Wayne Pennsylvania
   - lifestyle medicine physician Philadelphia
-canonical: "https://forwardfamilymedicine.com/lifestyle-medicine"
+canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"
