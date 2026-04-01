@@ -101,6 +101,10 @@ const breadcrumbSchema = {
           <p>Schedule a free, no-obligation meet and greet with Dr. Bigley or Dr. Lieberman. No pressure, no commitment — just a conversation.</p>
           <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
         </div>
+        <aside class="medical-disclaimer" aria-label="Educational disclaimer">
+          <p class="disclaimer-label">Educational Disclaimer</p>
+          <p>The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
+        </aside>
       </div>
     </div>
   </article>
@@ -147,4 +151,25 @@ const breadcrumbSchema = {
   }
   .post-cta-block h3 { margin-bottom: 0.75rem; }
   .post-cta-block p { margin-bottom: 1.25rem; }
+  .medical-disclaimer {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--cream-100, #f7f5f0);
+    border-left: 3px solid var(--green-300);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .disclaimer-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--green-400);
+    margin-bottom: 0.4rem;
+  }
+  .medical-disclaimer p:last-child {
+    font-size: 0.8rem;
+    color: var(--ink-400, #888);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
 </style>
