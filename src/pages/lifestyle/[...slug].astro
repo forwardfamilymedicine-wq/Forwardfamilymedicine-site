@@ -31,6 +31,10 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
         <span>{entry.data.title}</span>
       </nav>
       <Content />
+      <aside class="medical-disclaimer" aria-label="Educational disclaimer">
+        <p class="disclaimer-label">Educational Disclaimer</p>
+        <p>The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
+      </aside>
     </div>
   </article>
 </MainLayout>
@@ -55,4 +59,25 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .prose-page :global(strong) { color: #222; }
   .prose-page :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
   .prose-page :global(blockquote) { border-left: 4px solid var(--green-300); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: var(--cream-100); color: var(--ink-700); }
+  .medical-disclaimer {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--cream-100, #f7f5f0);
+    border-left: 3px solid var(--green-300);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .disclaimer-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--green-400);
+    margin-bottom: 0.4rem;
+  }
+  .medical-disclaimer p:last-child {
+    font-size: 0.8rem;
+    color: var(--ink-400, #888);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
 </style>
