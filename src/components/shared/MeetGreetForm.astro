@@ -1,6 +1,7 @@
 ---
 // Meet & Greet interest form — Google Sheets via Apps Script
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
+const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 ---
 
 <div class="form-wrap card">
@@ -226,9 +227,8 @@ const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
   }
 </style>
 
-<script is:inline define:vars={{ CONTACT_EMAIL }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL }}>
   (function() {
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHmO1sVRzNtt3DKTzTMaqLUr-FMIHMbuDmDdc9W8rH3kMthCGhp2rodaBXm4eUP2c/exec';
 
   const form            = document.getElementById('meetgreet-form');
   const errorEl         = document.getElementById('form-error');
