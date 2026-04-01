@@ -138,7 +138,7 @@ DPC membership makes high-quality primary care affordable for people without emp
 Insurance does not cover DPC or concierge membership fees. Some high-end concierge practices still bill insurance for the actual visit services (on top of the retainer). DPC practices do not bill insurance at all for covered services.
 
 **Can I use my HSA for concierge medicine fees?**
-HSA eligibility for DPC/concierge membership fees is a nuanced IRS question. Some circumstances allow it; others don't. Consult a tax advisor and see our [HSA and DPC guide →](/membership/hsa-dpc-membership).
+HSA eligibility for DPC/concierge membership fees is a nuanced IRS question. Some circumstances allow it; others don't. Consult a tax advisor and see our [FAQ →](/faq).
 
 **Is the DPC model as good as traditional concierge medicine?**
 For most primary care needs, yes — and often better. DPC practices typically have the same or smaller panel sizes, the same direct access model, and often more robust lifestyle medicine and chronic disease management. The ultra-premium traditional concierge model adds amenities (house calls, certain cosmetic services) that go beyond primary care scope.

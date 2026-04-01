@@ -133,7 +133,7 @@ We believe that knowing what your healthcare costs shouldn't require a calculato
 ## Frequently Asked Questions
 
 **Is DPC membership tax-deductible?**
-DPC membership fees may qualify as a deductible medical expense if you itemize. They may also be reimbursable through an HRA or eligible for HSA use, depending on IRS guidance and your specific plan. Consult a tax advisor — the rules have evolved and vary by situation. [More on HSA and DPC →](/membership/hsa-dpc-membership)
+DPC membership fees may qualify as a deductible medical expense if you itemize. They may also be reimbursable through an HRA or eligible for HSA use, depending on IRS guidance and your specific plan. Consult a tax advisor — the rules have evolved and vary by situation. [More on HSA and DPC →](/faq)
 
 **Are there any hidden fees?**
 Reputable DPC practices have no hidden fees. You'll know your monthly rate, enrollment fee, and approximate lab costs before you sign anything. Ask us for a cost breakdown at your Meet & Greet.
@@ -142,7 +142,7 @@ Reputable DPC practices have no hidden fees. You'll know your monthly rate, enro
 The membership is like any subscription — it covers availability, not just usage. The value is having your doctor there when you need them. Most members find they use it more than they expected once access is this easy.
 
 **Is the pricing lower than what I'd pay without insurance?**
-Almost certainly. Uninsured patients in traditional practices pay full rack rates for everything. DPC membership + wholesale lab pricing is specifically designed to be affordable for uninsured patients. [More on primary care without insurance →](/membership/primary-care-without-insurance)
+Almost certainly. Uninsured patients in traditional practices pay full rack rates for everything. DPC membership + wholesale lab pricing is specifically designed to be affordable for uninsured patients. More on primary care without insurance is covered at your Meet & Greet — [schedule a free consultation →](/become-a-patient).
 
 ---
 

@@ -103,7 +103,7 @@ Self-employed individuals often defer routine care because scheduling around a b
 When you're employed, your employer's HR system is a backup resource for navigating healthcare. When you're self-employed, you're on your own. Having a physician you can call directly — who knows your history and can advocate for you — is more valuable without that institutional backup.
 
 ### Tax Strategy Alignment
-Self-employed individuals can deduct health insurance premiums on Schedule C. When you pair a deductible HDHP with DPC, you maximize the premium deduction while minimizing premium cost. Your DPC membership may be deductible as a medical expense if you itemize (consult a tax advisor). [More on HSA and DPC →](/membership/hsa-dpc-membership)
+Self-employed individuals can deduct health insurance premiums on Schedule C. When you pair a deductible HDHP with DPC, you maximize the premium deduction while minimizing premium cost. Your DPC membership may be deductible as a medical expense if you itemize (consult a tax advisor). [More on HSA and DPC →](/faq)
 
 ---
 
@@ -137,7 +137,7 @@ The membership covers *availability* — the fact that your physician is there w
 Yes — family plans are available. This is often a major cost advantage: covering a family under a DPC membership typically costs less than a family COBRA plan or ACA family premium.
 
 **Do you work with small business owners who want DPC for their employees too?**
-Yes. We offer employer group memberships for small and mid-size businesses. [Learn more →](/membership/dpc-employer-benefit)
+Yes. We offer employer group memberships for small and mid-size businesses. [Learn more →](/for-businesses)
 
 ---
 

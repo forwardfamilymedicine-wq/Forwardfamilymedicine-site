@@ -106,7 +106,7 @@ But if you're consistently leaving appointments with unresolved concerns or feel
 ## Frequently Asked Questions
 
 **Are there doctors who spend more time with patients?**
-Yes — Direct Primary Care and concierge medicine practices specifically limit panel sizes to make longer visits standard. [How to find one →](/patient-experience/find-doctor-who-spends-more-time-with-patients)
+Yes — Direct Primary Care and concierge medicine practices specifically limit panel sizes to make longer visits standard. [Learn how DPC works →](/direct-primary-care)
 
 **Is my rushed doctor a bad doctor?**
 Not necessarily. Most primary care physicians went into medicine wanting to spend more time with patients. The insurance billing model forces a pace that conflicts with good care. Many physicians choose DPC precisely to escape this constraint.
