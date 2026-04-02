@@ -137,13 +137,15 @@ const faqs = [
   <section class="form-section section" id="request">
     <div class="container">
       <MeetGreetForm />
-      <div class="enroll-direct">
-        <p class="enroll-direct-label">Ready to enroll now?</p>
-        <p class="enroll-direct-sub">If you've already done your research and are ready to join, you can skip the Meet &amp; Greet and enroll directly online.</p>
+      <div class="enroll-direct card">
+        <p class="enroll-direct-eyebrow">Already decided?</p>
+        <h2 class="enroll-direct-heading">Ready to Enroll Now</h2>
+        <p class="enroll-direct-sub">If you've done your research and are ready to join, you can enroll directly online — no Meet &amp; Greet required.</p>
         <div class="enroll-direct-btns">
-          <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
-          <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
+          <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-primary enroll-btn" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
+          <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-primary enroll-btn" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
         </div>
+        <p class="enroll-direct-note">Questions before enrolling? <a href="/contact">Contact us</a> or <a href="#request">request a Meet &amp; Greet above</a>.</p>
       </div>
     </div>
   </section>
@@ -214,31 +216,54 @@ const faqs = [
   }
   .enroll-direct {
     max-width: 680px;
-    margin: 1.5rem auto 0;
-    padding: 1.5rem 1.75rem;
-    border-top: 1px solid var(--cream-300);
+    margin: 2.5rem auto 0;
+    padding: 2.5rem 2.75rem;
     text-align: center;
+    background: var(--cream-200);
+    border: 1px solid var(--cream-300);
   }
-  .enroll-direct-label {
-    font-size: 1rem;
+  .enroll-direct-eyebrow {
+    font-size: 0.78rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--green-400);
+    margin-bottom: 0.5rem;
+  }
+  .enroll-direct-heading {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
     color: var(--ink-900);
-    margin-bottom: 0.35rem;
   }
   .enroll-direct-sub {
-    font-size: 0.875rem;
-    color: var(--ink-400);
-    margin-bottom: 1.25rem;
-    max-width: 480px;
+    font-size: 0.95rem;
+    color: var(--ink-500);
+    margin-bottom: 1.75rem;
+    max-width: 460px;
     margin-left: auto;
     margin-right: auto;
   }
   .enroll-direct-btns {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 1.25rem;
   }
+  .enroll-btn {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+  }
+  .enroll-direct-note {
+    font-size: 0.82rem;
+    color: var(--ink-400);
+    margin: 0;
+  }
+  .enroll-direct-note a {
+    color: var(--green-400);
+    text-decoration: none;
+  }
+  .enroll-direct-note a:hover { text-decoration: underline; }
 
   @media (max-width: 860px) {
     .steps-grid { grid-template-columns: 1fr 1fr; }
