@@ -137,6 +137,14 @@ const faqs = [
   <section class="form-section section" id="request">
     <div class="container">
       <MeetGreetForm />
+      <div class="enroll-direct">
+        <p class="enroll-direct-label">Ready to enroll now?</p>
+        <p class="enroll-direct-sub">If you've already done your research and are ready to join, you can skip the Meet &amp; Greet and enroll directly online.</p>
+        <div class="enroll-direct-btns">
+          <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
+          <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -203,6 +211,33 @@ const faqs = [
 
   .form-section {
     background: var(--cream-100);
+  }
+  .enroll-direct {
+    max-width: 680px;
+    margin: 1.5rem auto 0;
+    padding: 1.5rem 1.75rem;
+    border-top: 1px solid var(--cream-300);
+    text-align: center;
+  }
+  .enroll-direct-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-900);
+    margin-bottom: 0.35rem;
+  }
+  .enroll-direct-sub {
+    font-size: 0.875rem;
+    color: var(--ink-400);
+    margin-bottom: 1.25rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .enroll-direct-btns {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 860px) {

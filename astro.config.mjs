@@ -4,6 +4,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.forwardfamilymedicine.com',
   base: '/',
+  redirects: {
+    '/what-to-expect': '/become-a-patient',
+  },
   integrations: [sitemap()],
   vite: {
     server: {
