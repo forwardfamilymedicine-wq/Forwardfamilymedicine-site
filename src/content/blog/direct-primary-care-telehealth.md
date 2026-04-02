@@ -38,6 +38,8 @@ A physician who knows you can:
 - **Follow up** — a DPC telehealth visit doesn't end the relationship. Your physician will check in, review test results, and continue the conversation
 - **Integrate the telehealth visit into your ongoing care** — what happened during your telehealth visit is part of your record and informs future care
 
+For a broader look at when virtual visits work well versus when in-person care is necessary, see our guide to [telehealth and primary care](/blog/telehealth-primary-care-benefits/).
+
 ### How DPC Telehealth Access Works
 
 Different DPC practices structure telehealth access differently, but most offer some combination of:

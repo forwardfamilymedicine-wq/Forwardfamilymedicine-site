@@ -50,6 +50,16 @@ There's also a philosophical difference. DPC practices are explicitly outside th
 
 At Forward Family Medicine, we don't think of DPC and concierge as a tradeoff. Every member receives what the industry would call a concierge experience — a panel capped at 250 patients, a doctor who picks up the phone, 1–2 hour visits, and direct access by phone, text, and email. We've simply structured it without the insurance billing overhead that inflates the traditional concierge retainer. The result is a concierge-quality experience at a DPC price point.
 
+## Which Is Right for You?
+
+**When DPC Is the Better Choice**
+
+DPC is the cleaner, simpler, more affordable option for most patients. If you primarily want affordable access to excellent primary care, a physician who has time for you, direct communication without phone trees or portal delays, and freedom from surprise bills for primary care services — DPC delivers all of this at a lower cost and with less complexity. The absence of insurance billing is a feature, not a limitation: it's what makes the model financially sustainable for the physician and affordable for the patient.
+
+**When Concierge Medicine Might Make Sense**
+
+Concierge medicine may be worth the higher price if you want comprehensive executive health assessments and advanced diagnostics as part of your annual care, have complex insurance relationships that benefit from continued insurance billing (particularly a rich employer-sponsored plan), or value specific service add-ons like executive physicals or coordinated specialist networks. The decision comes down to what you actually value and what you'll use. Paying for concierge services you don't need is less sensible than a DPC membership that covers what you actually use with room to spare.
+
 ## How Forward Family Medicine Helps
 
 Forward Family Medicine is a Direct Primary Care practice, which means we've structured everything around the flat-monthly-membership model. No insurance billing for primary care, no per-visit charges on top of your fee, and no surprise bills for routine care. Our membership covers the primary care services you actually need.

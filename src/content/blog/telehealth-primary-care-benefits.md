@@ -61,6 +61,8 @@ In a Direct Primary Care practice, telehealth isn't a workaround or a separate s
 
 Direct messaging — another feature standard in most DPC practices — extends this further. Many concerns that would otherwise require an appointment can be handled through an asynchronous message exchange: a quick question about a medication interaction, an update on a symptom, a request to review a recent specialist note. This kind of communication is only useful when the person on the other end knows who you are.
 
+For a deeper look at how telehealth works specifically within a DPC membership, see our guide to [DPC telehealth and virtual visits](/blog/direct-primary-care-telehealth/).
+
 ## How Forward Family Medicine Helps
 
 Telehealth visits are included in every Forward Family Medicine membership at no additional cost — the same direct access to your physician, no extra fee, no scheduling friction. Phone, video, and secure message access are built into the model.
