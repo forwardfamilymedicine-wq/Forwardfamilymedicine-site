@@ -310,13 +310,17 @@ const breadcrumb = {
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 0.75rem;
+    min-width: 0;
   }
-  .biz-contact-icon { font-size: 1.1rem; }
+  .biz-contact-icon { font-size: 1.1rem; flex-shrink: 0; }
   .biz-contact-item a {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--green-300);
     text-decoration: none;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
   .biz-contact-item a:hover { text-decoration: underline; }
   .biz-note {
