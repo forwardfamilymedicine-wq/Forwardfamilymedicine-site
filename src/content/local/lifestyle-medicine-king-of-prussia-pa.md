@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "King of Prussia patients can reach our Wayne lifestyle medicine practice in under 20 minutes via Route 202. KOP's large workforce population often presents with exactly the conditions lifestyle medicine is most effective for: metabolic syndrome, stress-related illness, sleep disorders, and cardiovascular risk factors tied to sedentary professional life."
+nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
 
 # Lifestyle Medicine Near King of Prussia, PA

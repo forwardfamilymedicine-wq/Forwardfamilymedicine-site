@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Haverford patients interested in lifestyle medicine are typically 20–25 minutes from our Wayne office on Lancaster Avenue. Haverford's community of established professionals and families has found lifestyle medicine valuable for managing the chronic conditions — stress, sleep disruption, metabolic issues — that accumulate over demanding careers and busy family schedules."
+nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
 
 # Lifestyle Medicine Near Haverford, PA

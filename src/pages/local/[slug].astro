@@ -30,6 +30,14 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
         <span>{entry.data.location ?? 'Nearby'}</span>
       </nav>
       <Content />
+      {(entry.data.localNote || entry.data.nearbyNeighborhoods) && (
+        <div class="local-callout">
+          {entry.data.localNote && <p class="local-note">{entry.data.localNote}</p>}
+          {entry.data.nearbyNeighborhoods && (
+            <p class="nearby">Also serving patients from {entry.data.nearbyNeighborhoods}.</p>
+          )}
+        </div>
+      )}
     </div>
   </article>
 </MainLayout>
@@ -54,4 +62,22 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .prose-page :global(strong) { color: #222; }
   .prose-page :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
   .prose-page :global(blockquote) { border-left: 4px solid var(--green-300); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: var(--cream-100); color: var(--ink-700); }
+  .local-callout {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--cream-100);
+    border-left: 4px solid var(--green-300);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .local-note {
+    font-size: 0.95rem;
+    color: var(--ink-700);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  .nearby {
+    font-size: 0.88rem;
+    color: var(--ink-400);
+    margin: 0;
+  }
 </style>

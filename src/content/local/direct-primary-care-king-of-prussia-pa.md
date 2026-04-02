@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "King of Prussia patients typically reach our Wayne office in under 20 minutes via Route 202 or Route 30. KOP's large professional population includes many who've tried insurance-based primary care and found 15-minute appointments and 3-week waits don't match the quality of care they're looking for."
+nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
 
 # Direct Primary Care Near King of Prussia, PA

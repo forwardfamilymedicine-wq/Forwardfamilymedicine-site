@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Newtown Square residents are typically 20 minutes from our Wayne office via Route 252 North or West Chester Pike. Newtown Square's family-friendly communities and established professional households are well-suited to the DPC model — predictable costs, unlimited access, and a doctor who knows you."
+nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
 # Direct Primary Care Near Newtown Square, PA

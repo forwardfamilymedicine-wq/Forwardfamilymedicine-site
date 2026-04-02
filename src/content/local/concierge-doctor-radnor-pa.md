@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Radnor Township residents looking for what concierge practices offer — a physician who has time, who's accessible, and who knows you — will find our practice already embedded in their community on Old Eagle School Road in Wayne. We're designed to deliver that experience without the exclusivity pricing."
+nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
 
 # Concierge Doctor Near Radnor, PA

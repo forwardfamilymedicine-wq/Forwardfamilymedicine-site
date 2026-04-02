@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "King of Prussia's professional community includes many who've considered concierge medicine and wondered whether the premium price is justified. Our Wayne office is under 20 minutes away, and we offer the full concierge experience — panel-capped, unhurried, directly accessible — at a membership rate designed for real families, not just high-net-worth patients."
+nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
 
 # Concierge Doctor Near King of Prussia, PA

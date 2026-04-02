@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Villanova's community of professionals and university families is exactly the demographic that has traditionally driven concierge medicine adoption. Our Wayne office is 3–4 miles east on Lancaster Avenue — close enough that you don't need to choose between concierge-quality care and convenience."
+nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 ---
 
 # Concierge Doctor Near Villanova, PA

@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Devon residents are a short drive from our Wayne practice via Lancaster Avenue or Route 30. Devon's community of active families and health-conscious professionals is well-suited to lifestyle medicine's focus on nutrition, movement, sleep, and stress — the foundations of long-term health that conventional medicine rarely has time to address."
+nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 ---
 
 # Lifestyle Medicine Near Devon, PA

@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Media residents interested in the concierge medicine model often discover that the 30-minute drive to our Wayne office compares favorably to the typical concierge practice's annual retainer. We've structured our membership to be genuinely accessible while delivering on every core concierge promise: access, attention, and continuity."
+nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
 # Concierge Doctor Near Media, PA

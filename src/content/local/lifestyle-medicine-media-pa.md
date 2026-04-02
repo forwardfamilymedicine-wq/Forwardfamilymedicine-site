@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Media patients seeking lifestyle medicine can reach our Wayne practice in approximately 30 minutes via Route 252. Media's active, community-oriented residents — many of whom already prioritize healthy living — are often looking for a physician who can help them translate those lifestyle priorities into measurable clinical outcomes."
+nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
 # Lifestyle Medicine Near Media, PA

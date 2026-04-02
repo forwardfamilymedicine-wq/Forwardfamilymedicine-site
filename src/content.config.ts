@@ -47,6 +47,8 @@ const local = defineCollection({
   schema: baseSchema.extend({
     location: z.string().optional(),
     category: z.string().optional(),
+    localNote: z.string().optional(),
+    nearbyNeighborhoods: z.string().optional(),
   }),
 });
 

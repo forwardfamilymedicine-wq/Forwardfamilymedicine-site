@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "West Chester patients are typically 25–30 minutes from our Wayne office via Route 30 or the Pennsylvania Turnpike. Our West Chester members often come to us after outgrowing the conventional primary care model and wanting a doctor who has time for the whole picture — not just today's chief complaint."
+nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
 ---
 
 # Direct Primary Care Near West Chester, PA

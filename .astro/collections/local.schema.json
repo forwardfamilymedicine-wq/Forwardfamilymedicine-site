@@ -58,6 +58,12 @@
     "category": {
       "type": "string"
     },
+    "localNote": {
+      "type": "string"
+    },
+    "nearbyNeighborhoods": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

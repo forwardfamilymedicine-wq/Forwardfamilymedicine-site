@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Haverford patients who've looked into concierge medicine often find the retainer pricing puts it out of reach for most families. Our Wayne office is a 20–25 minute drive, and our DPC model delivers the same core concierge promises — direct physician access, extended visits, no copays — within a family-budget membership structure."
+nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
 
 # Concierge Doctor Near Haverford, PA

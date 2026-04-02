@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Ardmore residents seeking lifestyle medicine are approximately 20 minutes from our Wayne office on Lancaster Avenue. Ardmore's community includes many residents managing chronic conditions like hypertension, prediabetes, or high cholesterol who want more than medication management — they want a physician who will work with them on the underlying lifestyle factors."
+nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
 
 # Lifestyle Medicine Near Ardmore, PA

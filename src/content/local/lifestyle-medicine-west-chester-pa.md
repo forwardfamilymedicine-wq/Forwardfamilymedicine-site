@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "West Chester residents interested in lifestyle medicine can reach our Wayne practice in 25–30 minutes via Route 30. West Chester's diverse, growing community includes many residents who have been waiting for a physician who treats nutrition, sleep, and movement as legitimate clinical interventions — not just wellness suggestions."
+nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
 ---
 
 # Lifestyle Medicine Near West Chester, PA

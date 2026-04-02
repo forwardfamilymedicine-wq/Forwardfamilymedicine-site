@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Haverford residents are roughly 20–25 minutes from our Wayne office on Lancaster Avenue. Our Haverford members often cite the same reason for making the drive: they wanted a physician with genuine time for them, and that's not something distance tends to stand in the way of."
+nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
 
 # Direct Primary Care Near Haverford, PA

@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Newtown Square residents interested in lifestyle medicine will find our Wayne office approximately 20 minutes north via Route 252. Newtown Square's established family communities are well-suited to lifestyle medicine's long-term approach — working with patients over years rather than encounters to build genuine, durable health."
+nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
 # Lifestyle Medicine Near Newtown Square, PA

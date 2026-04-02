@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Berwyn patients who've researched concierge medicine often discover that our Wayne office — just 2 miles east on Lancaster Avenue — offers a comparable experience at a meaningfully lower cost. The absence of insurance billing is what keeps our membership fees accessible without sacrificing the quality of care."
+nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 ---
 
 # Concierge Doctor Near Berwyn, PA

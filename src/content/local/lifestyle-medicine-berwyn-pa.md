@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Berwyn patients interested in lifestyle medicine will find our Wayne office just 2 miles east on Lancaster Avenue. Berwyn's mix of young families and established residents has shown strong interest in the kind of preventive, whole-person care that lifestyle medicine delivers — addressing root causes rather than managing symptoms indefinitely."
+nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 ---
 
 # Lifestyle Medicine Near Berwyn, PA

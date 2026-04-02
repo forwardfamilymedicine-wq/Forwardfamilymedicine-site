@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Malvern patients interested in concierge medicine often discover that DPC delivers the core benefits — same-day access, direct physician communication, extended visits — without the insurance billing layer that inflates traditional concierge retainer pricing. Our Wayne office is 15 minutes east via Route 30."
+nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
 ---
 
 # Concierge Doctor Near Malvern, PA

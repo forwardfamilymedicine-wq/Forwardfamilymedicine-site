@@ -19,6 +19,8 @@ linksTo:
   - "/direct-primary-care"
   - "/become-a-patient"
   - "/services"
+localNote: "Wayne residents benefit from our location right in the heart of the Main Line — no commute to a health system. Our practice is a 5-minute walk or drive from most Wayne neighborhoods and a short walk from Wayne Station on the Paoli–Thorndale line."
+nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 ---
 
 # Direct Primary Care in Wayne, PA

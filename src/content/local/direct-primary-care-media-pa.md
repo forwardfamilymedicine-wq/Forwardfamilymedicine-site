@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Media residents are roughly 30 minutes from our Wayne office via Route 252 or I-476. We serve a number of Media-area patients who've decided the commute is worth it for a practice model that actually makes primary care feel like care — not a transaction."
+nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
 # Direct Primary Care Near Media, PA

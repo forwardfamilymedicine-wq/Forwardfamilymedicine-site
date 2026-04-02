@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Devon residents interested in concierge-style care will find our Wayne office just minutes away via Lancaster Avenue or Route 30. We've designed our practice to deliver the access and attention of traditional concierge medicine without the premium retainer that has historically made that model inaccessible for most families."
+nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 ---
 
 # Concierge Doctor Near Devon, PA

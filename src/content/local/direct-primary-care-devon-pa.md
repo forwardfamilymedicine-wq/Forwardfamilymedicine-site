@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Devon residents are a short drive from our Wayne office via Lancaster Avenue or Route 30. Many of our Devon members appreciate the ability to handle primary care needs close to home without navigating a large hospital system."
+nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 ---
 
 # Direct Primary Care Near Devon, PA

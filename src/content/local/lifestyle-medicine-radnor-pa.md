@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Radnor Township residents have the advantage of our practice being located within their own community on Old Eagle School Road in Wayne. Our lifestyle medicine approach resonates strongly with Radnor's health-conscious families who want preventive care that goes beyond annual blood work."
+nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
 
 # Lifestyle Medicine Near Radnor, PA

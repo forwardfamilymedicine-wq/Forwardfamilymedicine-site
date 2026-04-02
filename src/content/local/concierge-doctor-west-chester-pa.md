@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "West Chester patients considering concierge medicine can find our Wayne practice 25–30 minutes east via Route 30. What distinguishes our approach from traditional concierge practices is structural: we've removed insurance billing entirely, which eliminates the overhead that forces concierge retainer prices to stay high."
+nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
 ---
 
 # Concierge Doctor Near West Chester, PA

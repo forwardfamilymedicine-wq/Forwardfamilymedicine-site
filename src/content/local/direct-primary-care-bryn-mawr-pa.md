@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Bryn Mawr patients are typically 15–20 minutes from our Wayne office along Lancaster Avenue — a straightforward commute on one of the Main Line's primary corridors. Bryn Mawr's concentration of college faculty, healthcare professionals, and young families makes direct primary care a natural fit for residents who value accessible, relationship-based medicine."
+nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 ---
 
 # Direct Primary Care Near Bryn Mawr, PA

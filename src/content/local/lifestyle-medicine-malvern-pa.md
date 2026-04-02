@@ -15,6 +15,8 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Malvern patients interested in lifestyle medicine are roughly 15 minutes east of our Wayne practice. Malvern's growing professional population includes many residents managing the chronic health effects of demanding careers — and who want a physician prepared to address those effects systematically, not just symptom by symptom."
+nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
 ---
 
 # Lifestyle Medicine Near Malvern, PA

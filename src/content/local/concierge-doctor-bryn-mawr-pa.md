@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Bryn Mawr has historically been a hub for established Main Line professionals who expect excellent service — including from their physicians. Our Wayne office is a 15–20 minute drive along Lancaster Avenue, and our practice delivers the access and personal attention that defines concierge care at a price point that makes it practical rather than exclusive."
+nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 ---
 
 # Concierge Doctor Near Bryn Mawr, PA

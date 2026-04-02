@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Paoli patients are about 10 minutes west on Route 30 or Lancaster Avenue from our Wayne office — a quick drive along one of the Main Line's main corridors. Many Paoli families have found that trading a longer commute to a large health system for a shorter one to a DPC practice is a worthwhile exchange."
+nearbyNeighborhoods: "Devon, Malvern, Berwyn, and Frazer"
 ---
 
 # Direct Primary Care Near Paoli, PA

@@ -17,6 +17,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Wayne residents looking for the concierge medicine experience will find our practice directly in the community — no commute needed. Our location on Old Eagle School Road is central to Wayne and walkable from Wayne Station on the Paoli–Thorndale line."
+nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 ---
 
 # Concierge Doctor in Wayne, PA

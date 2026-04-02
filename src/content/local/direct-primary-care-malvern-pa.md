@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Malvern residents are roughly 15 minutes west of our Wayne practice along Route 30. The growing Malvern and Great Valley area has a strong population of professionals who appreciate knowing their doctor will be available — not just accessible through a portal — when they need care."
+nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
 ---
 
 # Direct Primary Care Near Malvern, PA

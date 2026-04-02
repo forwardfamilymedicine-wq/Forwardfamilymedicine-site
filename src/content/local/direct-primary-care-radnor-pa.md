@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Radnor Township residents and Wayne share the same community, and our practice is located within Radnor Township on Old Eagle School Road. Many Radnor residents consider our office their neighborhood doctor — convenient, personal, and entirely focused on primary care."
+nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
 
 # Direct Primary Care Near Radnor, PA

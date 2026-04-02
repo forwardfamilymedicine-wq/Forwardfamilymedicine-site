@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Ardmore patients can reach our Wayne office in about 20 minutes via Lancaster Avenue or the Paoli–Thorndale SEPTA line. Ardmore's mix of young professionals and established families has found DPC appealing as a way to get the kind of primary care time and attention that's increasingly rare in larger practice settings."
+nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
 
 # Direct Primary Care Near Ardmore, PA

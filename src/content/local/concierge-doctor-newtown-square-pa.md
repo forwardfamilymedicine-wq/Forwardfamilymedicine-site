@@ -15,6 +15,8 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/become-a-patient"
+localNote: "Newtown Square patients seeking concierge-style medicine will find our Wayne office approximately 20 minutes north via Route 252. Our practice panel is intentionally capped — we limit patients per physician to ensure same-day availability and the kind of attention that makes concierge medicine worth pursuing."
+nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
 # Concierge Doctor Near Newtown Square, PA

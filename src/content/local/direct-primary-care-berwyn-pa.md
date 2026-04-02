@@ -16,6 +16,8 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/become-a-patient"
+localNote: "Berwyn patients appreciate that our Wayne office is just 2 miles east on Lancaster Avenue — an easy drive or a quick stop on the Paoli–Thorndale SEPTA line. We serve many Berwyn families who want Main Line-quality primary care without the large health system feel."
+nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 ---
 
 # Direct Primary Care Near Berwyn, PA
