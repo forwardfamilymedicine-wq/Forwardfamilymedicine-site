@@ -6,8 +6,6 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/faq', label: 'FAQ' },
   { href: '/membership', label: 'Membership' },
-  { href: '/new-patients', label: 'New Patients' },
-  { href: '/for-businesses', label: 'For Businesses' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -16,6 +14,12 @@ const servicesChildren = [
   { href: '/direct-primary-care', label: 'Direct Primary Care' },
   { href: '/lifestyle-medicine', label: 'Lifestyle Medicine' },
   { href: '/concierge-medicine', label: 'Concierge Medicine' },
+  { href: '/for-businesses', label: 'For Businesses' },
+];
+
+const newPatientsChildren = [
+  { href: '/patient-experience', label: 'What to Expect' },
+  { href: '/become-a-patient', label: 'Become a Patient' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -24,6 +28,7 @@ const isActive = (href: string) => {
   return currentPath.startsWith(href);
 };
 const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].some(h => currentPath.startsWith(h));
+const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.href)].some(h => currentPath.startsWith(h));
 ---
 
 <header class="site-header" role="banner">
@@ -36,10 +41,12 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
         <a href="https://patient.sigmamd.com" class="utility-link" target="_blank" rel="noopener noreferrer">Patient Portal</a>
         <span class="utility-divider" aria-hidden="true">|</span>
         <div class="signup-dropdown-parent">
-          <button class="utility-link signup-btn">Sign Up ▾</button>
+          <button class="utility-link signup-btn">Get Started ▾</button>
           <ul class="signup-dropdown-menu">
-            <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Individual Membership</a></li>
-            <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Family Membership</a></li>
+            <li class="signup-primary"><a href="/new-patients">Schedule Free Meet &amp; Greet</a></li>
+            <li class="signup-divider" role="separator" aria-hidden="true"></li>
+            <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Enroll — Individual</a></li>
+            <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Enroll — Family</a></li>
           </ul>
         </div>
       </div>
@@ -69,20 +76,42 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
           </li>
 
           <!-- Services dropdown -->
-          <li class="has-dropdown services-parent">
-            <a href="/services">
-              Services <span style="font-size:1rem; margin-left:0.2rem;">▾</span>
+          <li class={`has-dropdown services-parent${isServicesActive ? ' active-parent' : ''}`}>
+            <a href="/services" class={isServicesActive ? 'active' : ''}>
+              Services <span class="caret">▾</span>
             </a>
-            <ul style="position:absolute; top:100%; left:0; display:none; background:var(--cream-50); box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:6px; min-width:200px; z-index:1001; padding:0.5rem 0; list-style:none;">
-              <li><a href="/direct-primary-care">Direct Primary Care</a></li>
-              <li><a href="/lifestyle-medicine">Lifestyle Medicine</a></li>
-              <li><a href="/concierge-medicine">Concierge Medicine</a></li>
+            <ul class="dropdown">
+              {servicesChildren.map(child => (
+                <li>
+                  <a
+                    href={child.href}
+                    class={isActive(child.href) ? 'active' : ''}
+                  >{child.label}</a>
+                </li>
+              ))}
             </ul>
           </li>
 
-          <!-- FAQ through Contact; For Businesses hidden at mid breakpoint -->
+          <!-- New Patients dropdown -->
+          <li class={`has-dropdown new-patients-parent${isNewPatientsActive ? ' active-parent' : ''}`}>
+            <a href="/new-patients" class={isNewPatientsActive ? 'active' : ''}>
+              New Patients <span class="caret">▾</span>
+            </a>
+            <ul class="dropdown">
+              {newPatientsChildren.map(child => (
+                <li>
+                  <a
+                    href={child.href}
+                    class={isActive(child.href) ? 'active' : ''}
+                  >{child.label}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          <!-- FAQ, Membership, Blog, Contact -->
           {navLinks.slice(2).map(link => (
-            <li class={link.href === '/for-businesses' ? 'hide-mid' : ''}>
+            <li>
               <a
                 href={link.href}
                 class={isActive(link.href) ? 'active' : ''}
@@ -121,11 +150,21 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
 
       <!-- Services with children in mobile -->
       <li>
-        <a href="/services">Services</a>
-        <ul class="pl-4 mt-1 space-y-1">
-          <li><a href="/direct-primary-care" class="block py-1">Direct Primary Care</a></li>
-          <li><a href="/lifestyle-medicine" class="block py-1">Lifestyle Medicine</a></li>
-          <li><a href="/concierge-medicine" class="block py-1">Concierge Medicine</a></li>
+        <a href="/services" class={isServicesActive ? 'active' : ''}>Services</a>
+        <ul class="mobile-sub">
+          {servicesChildren.map(child => (
+            <li><a href={child.href} class={isActive(child.href) ? 'active' : ''}>{child.label}</a></li>
+          ))}
+        </ul>
+      </li>
+
+      <!-- New Patients with children in mobile -->
+      <li>
+        <a href="/new-patients" class={isNewPatientsActive ? 'active' : ''}>New Patients</a>
+        <ul class="mobile-sub">
+          {newPatientsChildren.map(child => (
+            <li><a href={child.href} class={isActive(child.href) ? 'active' : ''}>{child.label}</a></li>
+          ))}
         </ul>
       </li>
 
@@ -253,6 +292,20 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     background: var(--cream-200);
     color: var(--green-400);
   }
+  .signup-primary a {
+    color: var(--green-500) !important;
+    font-weight: 700 !important;
+  }
+  .signup-primary a:hover {
+    background: var(--green-50, #eef6f1) !important;
+    color: var(--green-500) !important;
+  }
+  .signup-divider {
+    height: 1px;
+    background: var(--ink-100);
+    margin: 0.25rem 0.75rem;
+    display: block;
+  }
 
   /* ── Tier 2: Main nav bar ─────────────────────────────── */
   .main-nav-bar {
@@ -324,8 +377,6 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     line-height: 1;
   }
 
-  /* Services dropdown */
-  li.services-parent:hover ul { display: block !important; }
   .has-dropdown { position: relative; }
   .has-dropdown::after {
     content: '';
@@ -511,24 +562,34 @@ const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].som
     nav.hidden = expanded;
   });
 
-  // Services dropdown — click/touch toggle
-  const servicesParent = document.querySelector('.has-dropdown') as HTMLElement | null;
-  const servicesLink = servicesParent?.querySelector(':scope > a') as HTMLAnchorElement | null;
+  // Generic dropdown toggle handler
+  function initDropdown(parentSelector: string) {
+    const parent = document.querySelector(parentSelector) as HTMLElement | null;
+    const link = parent?.querySelector(':scope > a') as HTMLAnchorElement | null;
+    if (!parent || !link) return;
 
-  servicesLink?.addEventListener('click', (e) => {
-    const isOpen = servicesParent!.classList.contains('open');
-    if (!isOpen) {
-      e.preventDefault();
-      servicesParent!.classList.add('open');
-    }
-    // If already open, allow navigation to /services
-  });
+    link.addEventListener('click', (e) => {
+      const isOpen = parent.classList.contains('open');
+      if (!isOpen) {
+        e.preventDefault();
+        // Close any other open dropdowns
+        document.querySelectorAll('.has-dropdown.open').forEach(el => {
+          if (el !== parent) el.classList.remove('open');
+        });
+        parent.classList.add('open');
+      }
+      // If already open, allow navigation to parent href
+    });
 
-  document.addEventListener('click', (e) => {
-    if (!servicesParent?.contains(e.target as Node)) {
-      servicesParent?.classList.remove('open');
-    }
-  });
+    document.addEventListener('click', (e) => {
+      if (!parent.contains(e.target as Node)) {
+        parent.classList.remove('open');
+      }
+    });
+  }
+
+  initDropdown('.services-parent');
+  initDropdown('.new-patients-parent');
 
   // Sign Up dropdown — click/touch toggle
   const signupParent = document.querySelector('.signup-dropdown-parent') as HTMLElement | null;
