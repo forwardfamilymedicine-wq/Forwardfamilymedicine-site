@@ -80,7 +80,7 @@ Forward Family Medicine uses the Direct Primary Care model specifically to solve
 By removing insurance billing entirely and replacing per-visit revenue with a flat monthly membership, we eliminate the financial pressure to see 25 patients a day. Our physician maintains a patient panel of **under 600 members** — roughly one-quarter of a traditional primary care panel.
 
 The result is structural, not aspirational:
-- **30–60 minute appointments** when your situation requires it
+- **Appointments up to 1–2 hours** when your situation requires it
 - **Same-day scheduling** — your problem doesn't wait two weeks
 - **No documentation treadmill** during your appointment — your doctor is talking to you, not a screen
 - **Proactive follow-through** — we notice things between visits and reach out
@@ -121,6 +121,6 @@ Primary care reform is slow and contested. The DPC model is growing rapidly as b
 
 ## The Bottom Line
 
-Doctor visits are short because insurance-based practices are financially required to see as many patients as possible. Direct Primary Care removes that pressure by replacing per-visit billing with a monthly membership — making 30–60 minute appointments structurally viable, not a rare luxury.
+Doctor visits are short because insurance-based practices are financially required to see as many patients as possible. Direct Primary Care removes that pressure by replacing per-visit billing with a monthly membership — making 1–2 hour appointments structurally viable, not a rare luxury.
 
 **[Learn how DPC works →](/direct-primary-care)** | **[Schedule a Meet & Greet →](/become-a-patient)**

@@ -34,7 +34,7 @@ Forward Family Medicine is located in Wayne — within Radnor Township — and o
 - Located within Radnor Township in Wayne
 - Direct physician access — call, text, or message Dr. David Bigley, DO and Dr. Philip Lieberman, MD
 - Same-day and next-day appointments
-- 30–60 minute visits when needed
+- Visits up to 1–2 hours when needed
 - Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee — no billing surprises
 

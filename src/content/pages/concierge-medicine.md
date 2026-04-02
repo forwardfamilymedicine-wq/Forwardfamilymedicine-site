@@ -34,7 +34,7 @@ The core promise of concierge medicine is simple: **a doctor with time for you.*
 - Small patient panel — your doctor knows you by name and history
 - Same-day or next-day appointment availability
 - Direct phone, text, or email access to your physician
-- Longer, more thorough appointments (30–60 minutes)
+- Longer, more thorough appointments (up to 1–2 hours)
 - Proactive, prevention-focused care — not just reactive sick visits
 - Coordination with specialists and advocacy on your behalf
 - 24/7 or after-hours urgent access to your own physician

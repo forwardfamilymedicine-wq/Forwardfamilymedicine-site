@@ -96,7 +96,7 @@ From day one, you can reach Dr. Bigley and Dr. Lieberman directly by phone, text
 | | Forward Family Medicine | Traditional Insurance |
 |---|---|---|
 | Monthly cost | Flat membership fee | Premiums + copays + deductibles |
-| Visit time | 30–60 min typical | 7–15 min typical |
+| Visit time | 1–2 hours | 7–15 min typical |
 | Doctor access | Direct (phone/text/message) | Via scheduling + call center |
 | Wait for appointment | Same or next day | Days to weeks |
 | Lab costs | Wholesale (near cost) | Billed at insurance rates |

@@ -83,7 +83,7 @@ We handle the full range of primary care needs.
 Members reach their doctor directly — by phone, text, or secure message — without going through a call center. Same-day and next-day appointments are the norm, not the exception.
 
 ### Relationship — A Doctor Who Knows You
-With a smaller patient panel, your physician has the time to understand your full picture: your history, your goals, your family, and your life. Visits run 30–60 minutes when you need them to.
+With a smaller patient panel, your physician has the time to understand your full picture: your history, your goals, your family, and your life. Visits run 1–2 hours when you need them to.
 
 ### Prevention & Lifestyle — Getting Ahead of Disease
 We go beyond treating symptoms. Our lifestyle medicine approach addresses the root causes of chronic illness — nutrition, movement, sleep, and stress — so you can feel better now and avoid problems later.

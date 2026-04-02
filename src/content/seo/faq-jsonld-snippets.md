@@ -84,7 +84,7 @@ draft: true
       "name": "How is Direct Primary Care different from traditional primary care?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In traditional primary care, physicians see 20–30 patients per day because revenue is based on visit volume. In DPC, revenue comes from monthly memberships, so physicians see 8–12 patients per day. This results in same-day access, 30–60 minute appointments, direct physician contact, and proactive preventive care."
+        "text": "In traditional primary care, physicians see 20–30 patients per day because revenue is based on visit volume. In DPC, revenue comes from monthly memberships, so physicians see 8–12 patients per day. This results in same-day access, appointments up to 1–2 hours, direct physician contact, and proactive preventive care."
       }
     },
     {
@@ -288,7 +288,7 @@ draft: true
       "name": "How does Direct Primary Care give physicians more time with patients?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In a DPC practice, revenue comes from monthly membership fees rather than per-visit billing. This allows the physician to maintain a smaller patient panel (400–600 vs. 2,000+) and see 8–12 patients per day instead of 25+. The result is structurally more time per patient — typically 30–60 minutes when needed."
+        "text": "In a DPC practice, revenue comes from monthly membership fees rather than per-visit billing. This allows the physician to maintain a smaller patient panel (400–600 vs. 2,000+) and see 8–12 patients per day instead of 25+. The result is structurally more time per patient — typically 1–2 hours when needed."
       }
     },
     {

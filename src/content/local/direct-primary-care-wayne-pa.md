@@ -39,7 +39,7 @@ Direct Primary Care (DPC) is a membership-based model in which patients pay a fl
 - **Same-day appointments** for sick visits, acute concerns, and urgent questions
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - **Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD** by phone, text, or secure message
-- **Longer visits** — 30–60 minutes when you need them, not 10-minute slots
+- **Longer visits** — up to 1–2 hours when you need them, not 10-minute slots
 - **Lifestyle medicine integrated** into every membership — nutrition, sleep, activity, stress. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - **Wholesale lab pricing** — dramatically less than standard billed rates
 - **Whole-family memberships** available — one physician for everyone

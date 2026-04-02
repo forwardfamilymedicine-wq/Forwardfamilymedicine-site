@@ -34,7 +34,7 @@ Forward Family Medicine delivers the essential concierge medicine experience —
 - Just 3 miles from Berwyn — SEPTA and Route 30 accessible
 - Same-day appointments available
 - Direct line to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone and text
-- Unhurried 30–60 minute visits when needed
+- Unhurried visits — up to 1–2 hours when needed
 - Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Whole-family plans available
 

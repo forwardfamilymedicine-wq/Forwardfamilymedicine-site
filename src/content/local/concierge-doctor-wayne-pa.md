@@ -37,7 +37,7 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 
 - **You reach Dr. David Bigley, DO and Dr. Philip Lieberman, MD directly** — not a call center
 - **Same-day appointments** for acute concerns
-- **30–60 minute visits** when your situation calls for it
+- **Visits up to 1–2 hours** when your situation calls for it
 - **Proactive follow-up** — we reach out, not just the other way around
 - **Whole-person, prevention-first approach** including lifestyle medicine. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - **One predictable monthly fee** — no copays, no billing surprises

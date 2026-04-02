@@ -32,7 +32,7 @@ DPC removes insurance from the primary care equation entirely. You pay your doct
 
 - Unlimited primary care visits with no per-visit fees
 - Same-day or next-day appointment availability
-- Longer appointments (30–60 minutes vs. the national average of 7 minutes)
+- Longer appointments (up to 1–2 hours vs. the national average of 7 minutes)
 - Direct communication with your physician via text, phone, or video
 - Wholesale-priced labs and medications in many practices
 
