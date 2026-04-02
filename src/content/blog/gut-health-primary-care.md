@@ -8,7 +8,7 @@ keywords:
   - leaky gut primary care
   - gut health symptoms
 date: "2025-08-27"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/gut-health-primary-care"
 ---

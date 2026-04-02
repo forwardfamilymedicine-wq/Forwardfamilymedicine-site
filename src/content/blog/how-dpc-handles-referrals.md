@@ -8,7 +8,7 @@ keywords:
   - DPC and specialists
   - primary care referral process DPC
 date: "2026-01-07"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/specialist-referrals-direct-primary-care"
 ---

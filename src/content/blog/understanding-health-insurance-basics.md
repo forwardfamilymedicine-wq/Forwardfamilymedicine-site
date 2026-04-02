@@ -8,7 +8,7 @@ keywords:
   - health insurance explained
   - health insurance terms
 date: "2026-01-21"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/health-insurance-basics-patients"
 ---

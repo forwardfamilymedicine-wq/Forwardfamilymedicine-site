@@ -8,7 +8,7 @@ keywords:
   - inflammatory foods to avoid
   - best foods for inflammation
 date: "2025-04-09"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/anti-inflammatory-foods"
 ---

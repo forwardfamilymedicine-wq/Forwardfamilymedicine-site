@@ -8,7 +8,7 @@ keywords:
   - doctor checkups after 50
   - age 50 health
 date: "2025-09-17"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/primary-care-after-50"
 ---

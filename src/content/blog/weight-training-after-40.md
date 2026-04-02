@@ -8,7 +8,7 @@ keywords:
   - muscle loss after 40
   - why to lift weights over 40
 date: "2025-05-14"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/strength-training-after-40"
 ---

@@ -8,7 +8,7 @@ keywords:
   - DPC membership HSA
   - health savings account DPC
 date: "2026-01-14"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-hsa"
 ---

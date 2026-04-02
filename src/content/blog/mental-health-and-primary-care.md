@@ -8,7 +8,7 @@ keywords:
   - mental health doctor
   - primary care mental health treatment
 date: "2025-06-18"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/mental-health-primary-care"
 ---

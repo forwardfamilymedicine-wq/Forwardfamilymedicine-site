@@ -8,7 +8,7 @@ keywords:
   - non-opioid pain management
   - primary care for chronic pain
 date: "2025-09-03"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/chronic-pain-primary-care"
 ---

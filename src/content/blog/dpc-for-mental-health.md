@@ -8,7 +8,7 @@ keywords:
   - mental health DPC
   - behavioral health primary care
 date: "2025-06-25"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/dpc-mental-health-gap"
 ---

@@ -8,7 +8,7 @@ keywords:
   - managing chronic conditions DPC
   - chronic care DPC membership
 date: "2025-09-10"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-chronic-conditions"
 ---

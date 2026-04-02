@@ -8,7 +8,7 @@ keywords:
   - women's annual exam what to expect
   - female health checkup
 date: "2026-01-15"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/womens-preventive-health-guide"
 ---

@@ -8,7 +8,7 @@ keywords:
   - DPC meet and greet
   - how to choose a primary care doctor
 date: "2025-10-29"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/doctor-meet-and-greet-what-to-expect"
 ---

@@ -8,7 +8,7 @@ keywords:
   - preventive care 40 year old
   - annual checkup 40s
 date: "2025-08-13"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/preventive-screenings-in-your-40s"
 ---

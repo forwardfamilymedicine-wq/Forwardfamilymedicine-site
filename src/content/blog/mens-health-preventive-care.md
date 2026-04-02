@@ -8,7 +8,7 @@ keywords:
   - what tests do men need
   - male health checkup
 date: "2025-08-20"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/mens-health-preventive-care"
 ---

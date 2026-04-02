@@ -8,7 +8,7 @@ keywords:
   - understanding insurance statement
   - EOB vs bill
 date: "2026-01-28"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/how-to-read-eob-explanation-of-benefits"
 ---

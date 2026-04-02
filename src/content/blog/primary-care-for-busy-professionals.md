@@ -8,7 +8,7 @@ keywords:
   - professional healthcare
   - no time for doctor
 date: "2025-11-26"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/primary-care-for-busy-professionals"
 ---

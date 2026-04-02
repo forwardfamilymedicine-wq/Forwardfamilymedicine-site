@@ -7,7 +7,7 @@ keywords:
   - difference between concierge and DPC
   - concierge medicine cost vs DPC
 date: "2025-01-15"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "concierge-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-vs-direct-primary-care"
 ---

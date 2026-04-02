@@ -8,7 +8,7 @@ keywords:
   - cortisol and health
   - stress physiology
 date: "2025-06-11"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/chronic-stress-and-disease"
 ---

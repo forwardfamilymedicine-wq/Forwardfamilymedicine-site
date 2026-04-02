@@ -8,7 +8,7 @@ keywords:
   - same day telemedicine primary care
   - DPC remote access
 date: "2025-12-17"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-telehealth"
 ---

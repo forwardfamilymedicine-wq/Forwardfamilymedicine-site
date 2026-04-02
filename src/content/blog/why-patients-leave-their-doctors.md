@@ -8,7 +8,7 @@ keywords:
   - unhappy with primary care
   - leave your doctor
 date: "2026-01-15"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/why-patients-leave-their-doctors"
 ---

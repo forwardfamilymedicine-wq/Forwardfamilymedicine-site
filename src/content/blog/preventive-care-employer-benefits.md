@@ -8,7 +8,7 @@ keywords:
   - DPC health benefits
   - DPC as employee benefit
 date: "2026-02-04"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-employer-benefits"
 ---

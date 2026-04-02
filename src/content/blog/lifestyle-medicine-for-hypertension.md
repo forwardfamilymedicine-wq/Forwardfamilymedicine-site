@@ -8,7 +8,7 @@ keywords:
   - lifestyle treatment high blood pressure
   - diet exercise blood pressure
 date: "2025-07-09"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/lifestyle-medicine-hypertension"
 ---

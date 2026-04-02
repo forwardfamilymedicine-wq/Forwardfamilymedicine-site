@@ -8,7 +8,7 @@ keywords:
   - DPC panel size
   - why primary care is rushed
 date: "2025-02-12"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/doctor-panel-size-affects-care"
 ---

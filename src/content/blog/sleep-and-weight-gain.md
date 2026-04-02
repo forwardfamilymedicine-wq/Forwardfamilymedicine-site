@@ -8,7 +8,7 @@ keywords:
   - how sleep affects metabolism
   - sleep and appetite hormones
 date: "2025-06-04"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/sleep-and-weight-gain"
 ---

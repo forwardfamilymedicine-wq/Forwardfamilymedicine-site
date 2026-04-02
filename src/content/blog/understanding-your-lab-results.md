@@ -8,7 +8,7 @@ keywords:
   - normal lab values
   - CBC metabolic panel explained
 date: "2025-10-01"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/understanding-lab-results"
 ---

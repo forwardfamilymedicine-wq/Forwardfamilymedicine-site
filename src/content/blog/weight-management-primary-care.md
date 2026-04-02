@@ -8,7 +8,7 @@ keywords:
   - weight loss primary care
   - physician weight management
 date: "2025-05-28"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/weight-management-primary-care"
 ---

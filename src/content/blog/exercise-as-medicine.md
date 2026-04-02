@@ -8,7 +8,7 @@ keywords:
   - why exercise is important
   - exercise better than medication
 date: "2025-05-07"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/exercise-as-medicine"
 ---

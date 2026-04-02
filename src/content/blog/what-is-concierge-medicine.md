@@ -8,7 +8,7 @@ keywords:
   - how does concierge medicine work
   - concierge medicine membership
 date: "2025-01-07"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "concierge-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/what-is-concierge-medicine"
 ---

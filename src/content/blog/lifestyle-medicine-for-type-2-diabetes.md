@@ -8,7 +8,7 @@ keywords:
   - diabetes diet exercise
   - lifestyle changes diabetes management
 date: "2025-04-23"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/lifestyle-medicine-type-2-diabetes"
 ---

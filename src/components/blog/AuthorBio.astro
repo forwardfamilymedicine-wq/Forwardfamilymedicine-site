@@ -1,0 +1,88 @@
+---
+import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
+---
+
+<aside class="author-bio" aria-label="About the author">
+  <div class="author-bio-inner">
+    <img
+      src={drBigleyPhoto.src}
+      alt="Dr. David Bigley, DO — Founder & Physician, Forward Family Medicine"
+      class="author-photo"
+      width="72"
+      height="72"
+      loading="lazy"
+    />
+    <div class="author-bio-text">
+      <p class="author-bio-label">About the Author</p>
+      <p class="author-bio-name">David Bigley, DO</p>
+      <p class="author-bio-title">Founder &amp; Physician, Forward Family Medicine</p>
+      <p class="author-bio-desc">Dr. Bigley founded Forward Family Medicine to practice medicine the way it was meant to be — with time, trust, and a genuine relationship with every patient.</p>
+      <a href="/about/" class="author-bio-link">Read full bio →</a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .author-bio {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--cream-200, #f0ede6);
+    border: 1px solid var(--ink-100, #e8e4dc);
+    border-radius: var(--radius, 8px);
+  }
+  .author-bio-inner {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .author-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--green-200, #c8ddd0);
+  }
+  .author-bio-text {
+    flex: 1;
+  }
+  .author-bio-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--green-400, #3a7a56);
+    margin-bottom: 0.2rem;
+  }
+  .author-bio-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-900, #1a1a1a);
+    margin-bottom: 0.1rem;
+  }
+  .author-bio-title {
+    font-size: 0.8rem;
+    color: var(--ink-400, #888);
+    margin-bottom: 0.6rem;
+  }
+  .author-bio-desc {
+    font-size: 0.875rem;
+    color: var(--ink-600, #555);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .author-bio-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--green-400, #3a7a56);
+    text-decoration: none;
+  }
+  .author-bio-link:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 480px) {
+    .author-bio-inner {
+      flex-direction: column;
+    }
+  }
+</style>

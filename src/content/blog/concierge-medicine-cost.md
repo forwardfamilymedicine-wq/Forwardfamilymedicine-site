@@ -8,7 +8,7 @@ keywords:
   - concierge medicine membership fee
   - affordable concierge medicine
 date: "2025-01-29"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "concierge-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/how-much-does-concierge-medicine-cost"
 ---

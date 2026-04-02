@@ -8,7 +8,7 @@ keywords:
   - knowing your doctor
   - longitudinal care
 date: "2025-03-12"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/doctor-patient-relationship-importance"
 ---

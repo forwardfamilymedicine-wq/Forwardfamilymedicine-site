@@ -8,7 +8,7 @@ keywords:
   - self-employed healthcare options
   - DPC health insurance alternative
 date: "2025-11-12"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-for-self-employed"
 ---

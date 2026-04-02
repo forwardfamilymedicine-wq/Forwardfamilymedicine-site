@@ -8,7 +8,7 @@ keywords:
   - patient-centered care
   - patient centered medical home explained
 date: "2025-03-05"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/patient-centered-medical-home-vs-dpc"
 ---

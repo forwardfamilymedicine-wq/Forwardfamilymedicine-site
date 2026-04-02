@@ -8,7 +8,7 @@ keywords:
   - fiber intake chronic disease
   - fiber and microbiome
 date: "2025-04-02"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/fiber-gut-health"
 ---

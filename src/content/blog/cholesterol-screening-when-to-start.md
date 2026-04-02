@@ -8,7 +8,7 @@ keywords:
   - when to start cholesterol testing
   - cholesterol check how often
 date: "2025-07-16"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/cholesterol-screening-when-to-start"
 ---

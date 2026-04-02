@@ -8,7 +8,7 @@ keywords:
   - why friendship matters for health
   - loneliness epidemic
 date: "2025-07-30"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/social-connection-health"
 ---

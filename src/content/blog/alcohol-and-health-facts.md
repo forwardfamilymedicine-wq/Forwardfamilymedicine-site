@@ -8,7 +8,7 @@ keywords:
   - alcohol cancer risk
   - moderate drinking health
 date: "2025-07-02"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/alcohol-and-health-research"
 ---

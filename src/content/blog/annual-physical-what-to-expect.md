@@ -8,7 +8,7 @@ keywords:
   - annual wellness visit
   - physical exam what to expect
 date: "2025-03-26"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/annual-physical-what-to-expect"
 ---

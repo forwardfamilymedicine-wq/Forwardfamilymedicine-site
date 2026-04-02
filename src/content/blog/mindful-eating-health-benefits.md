@@ -8,7 +8,7 @@ keywords:
   - mindfulness and eating
   - intuitive eating evidence
 date: "2025-04-16"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "lifestyle-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/mindful-eating-health-benefits"
 ---

@@ -8,7 +8,7 @@ keywords:
   - primary care for professionals
   - executive health care
 date: "2025-11-19"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "concierge-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-for-busy-professionals"
 ---

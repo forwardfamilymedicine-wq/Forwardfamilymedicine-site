@@ -8,7 +8,7 @@ keywords:
   - second opinion cancer diagnosis
   - should I get a second opinion
 date: "2025-10-15"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/when-to-get-second-medical-opinion"
 ---

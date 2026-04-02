@@ -8,7 +8,7 @@ keywords:
   - family membership primary care
   - DPC family plan
 date: "2025-11-05"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-for-families"
 ---

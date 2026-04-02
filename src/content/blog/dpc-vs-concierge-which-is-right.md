@@ -8,7 +8,7 @@ keywords:
   - choosing between DPC and concierge
   - concierge medicine or DPC
 date: "2025-01-22"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "concierge-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/dpc-vs-concierge-which-is-right-for-you"
 ---

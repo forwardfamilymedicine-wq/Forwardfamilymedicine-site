@@ -8,7 +8,7 @@ keywords:
   - Main Line concierge doctor
   - concierge medicine Radnor Villanova
 date: "2026-02-11"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "concierge-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-main-line-pa"
 ---

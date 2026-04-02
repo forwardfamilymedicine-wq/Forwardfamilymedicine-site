@@ -8,7 +8,7 @@ keywords:
   - keeping track of medications
   - medication list for doctor
 date: "2025-10-08"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/managing-medications-primary-care"
 ---

@@ -8,7 +8,7 @@ keywords:
   - telehealth vs in person doctor
   - online doctor visit
 date: "2025-12-22"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/telehealth-primary-care-benefits"
 ---

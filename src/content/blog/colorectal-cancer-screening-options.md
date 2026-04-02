@@ -8,7 +8,7 @@ keywords:
   - when to start colon cancer screening
   - colorectal screening age 45
 date: "2025-08-06"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/colorectal-cancer-screening-options"
 ---

@@ -8,7 +8,7 @@ keywords:
   - value of annual checkup
   - preventive medicine evidence
 date: "2025-03-19"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/is-preventive-care-worth-it"
 ---

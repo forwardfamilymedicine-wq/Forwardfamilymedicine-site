@@ -8,7 +8,7 @@ keywords:
   - blood pressure readings at home
   - at home BP monitoring
 date: "2025-07-23"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/blood-pressure-monitoring-at-home"
 ---

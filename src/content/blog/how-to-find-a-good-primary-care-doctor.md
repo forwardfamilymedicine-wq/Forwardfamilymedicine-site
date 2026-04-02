@@ -8,7 +8,7 @@ keywords:
   - best primary care doctor near me
   - how to pick a doctor
 date: "2025-09-24"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "patient-experience"
 canonical: "https://www.forwardfamilymedicine.com/blog/how-to-find-a-good-primary-care-doctor"
 ---

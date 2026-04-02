@@ -10,7 +10,7 @@ keywords:
   - DPC education articles
 canonical: "https://www.forwardfamilymedicine.com/blog"
 date: "2026-01-01"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 schemaType: "Blog"
 ---
 

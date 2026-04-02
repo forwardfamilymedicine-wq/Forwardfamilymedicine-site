@@ -8,7 +8,7 @@ keywords:
   - proactive primary care
   - why healthcare is reactive
 date: "2025-02-26"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "direct-primary-care"
 canonical: "https://www.forwardfamilymedicine.com/blog/proactive-vs-reactive-medicine"
 ---

@@ -1,5 +1,6 @@
 ---
 import MainLayout from './MainLayout.astro';
+import AuthorBio from '../components/blog/AuthorBio.astro';
 
 export interface Props {
   title: string;
@@ -95,6 +96,7 @@ const breadcrumbSchema = {
         <div class="post-body prose">
           <slot />
         </div>
+        <AuthorBio />
         <div class="post-cta-block card">
           <p class="text-muted" style="font-size:0.9rem; margin-bottom:0.5rem;">Forward Family Medicine</p>
           <h3>Ready to experience medicine the way it should be?</h3>

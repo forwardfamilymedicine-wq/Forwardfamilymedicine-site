@@ -8,7 +8,7 @@ keywords:
   - prediabetes program
   - how to prevent diabetes
 date: "2025-04-30"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/diabetes-prevention-program"
 ---

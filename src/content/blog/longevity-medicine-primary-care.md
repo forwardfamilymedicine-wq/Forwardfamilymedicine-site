@@ -8,7 +8,7 @@ keywords:
   - lifespan vs healthspan
   - longevity doctor
 date: "2025-05-21"
-author: "Forward Family Medicine"
+author: "David Bigley, DO"
 category: "preventive-medicine"
 canonical: "https://www.forwardfamilymedicine.com/blog/longevity-medicine-primary-care"
 ---
