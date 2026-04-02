@@ -25,6 +25,7 @@ const slug = entry.id.replace(/\.mdx?$/, '');
   tags={entry.data.keywords}
   featuredImage={entry.data.image}
   slug={slug}
+  category={entry.data.category}
 >
   <Content />
 </BlogLayout>

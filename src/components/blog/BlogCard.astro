@@ -1,15 +1,24 @@
 ---
+const CATEGORY_LABELS: Record<string, string> = {
+  'direct-primary-care': 'Direct Primary Care',
+  'lifestyle-medicine': 'Lifestyle Medicine',
+  'preventive-medicine': 'Preventive Care',
+  'patient-experience': 'Patient Experience',
+  'concierge-medicine': 'Concierge Medicine',
+};
+
 export interface Props {
   title: string;
   description: string;
   author: string;
   date: string;
   slug: string;
-  tags?: string[];
+  category?: string;
   featuredImage?: string;
 }
 
-const { title, description, author, date, slug, tags = [], featuredImage } = Astro.props;
+const { title, description, author, date, slug, category, featuredImage } = Astro.props;
+const categoryLabel = category ? (CATEGORY_LABELS[category] ?? category) : null;
 
 const dateObj = new Date(date);
 const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -31,9 +40,9 @@ const dateISO = dateObj.toISOString();
     </a>
   )}
   <div class="card-body">
-    {tags.length > 0 && (
+    {categoryLabel && (
       <div class="card-tags">
-        {tags.slice(0, 2).map(t => <span class="tag">{t}</span>)}
+        <a href={`/blog/category/${category}`} class="tag cat-tag">{categoryLabel}</a>
       </div>
     )}
     <h3><a href={`/blog/${slug}`}>{title}</a></h3>
@@ -92,6 +101,11 @@ const dateISO = dateObj.toISOString();
     white-space: nowrap;
     letter-spacing: 0.03em;
   }
+  .cat-tag {
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .cat-tag:hover { background: var(--green-200); color: var(--green-600, var(--green-500)); }
   .card-body h3 {
     font-size: 1.1rem;
     margin-bottom: 0.6rem;

@@ -3,6 +3,14 @@ import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import BlogCard from '../../components/blog/BlogCard.astro';
 
+const CATEGORY_LABELS: Record<string, string> = {
+  'direct-primary-care': 'Direct Primary Care',
+  'lifestyle-medicine': 'Lifestyle Medicine',
+  'preventive-medicine': 'Preventive Care',
+  'patient-experience': 'Patient Experience',
+  'concierge-medicine': 'Concierge Medicine',
+};
+
 const entries = await getCollection('blog');
 const posts = entries
   .filter(e => !e.data.draft)
@@ -11,6 +19,8 @@ const posts = entries
     const bDate = b.data.date ? new Date(b.data.date).getTime() : 0;
     return bDate - aDate;
   });
+
+const allCategories = Object.entries(CATEGORY_LABELS);
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -43,6 +53,17 @@ const breadcrumb = {
     </div>
   </section>
 
+  <section class="cat-nav-section" style="background: var(--cream-200); border-bottom: 1px solid var(--cream-300);">
+    <div class="container">
+      <nav class="cat-tabs" aria-label="Blog categories">
+        <a href="/blog" class="cat-tab active" aria-current="page">All</a>
+        {allCategories.map(([slug, display]) => (
+          <a href={`/blog/category/${slug}`} class="cat-tab">{display}</a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
   <section class="blog-grid-section section">
     <div class="container">
       {posts.length > 0 ? (
@@ -54,7 +75,7 @@ const breadcrumb = {
               author={post.data.author ?? 'Forward Family Medicine'}
               date={post.data.date ?? new Date().toISOString()}
               slug={post.id.replace(/\.mdx?$/, '')}
-              tags={post.data.keywords}
+              category={post.data.category}
               featuredImage={post.data.image}
             />
           ))}
@@ -110,6 +131,30 @@ const breadcrumb = {
     margin-bottom: 1.5rem;
   }
   .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .cat-nav-section { padding: 0; }
+  .cat-tabs {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+  }
+  .cat-tab {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink-500);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .cat-tab:hover { color: var(--green-400); background: var(--green-50); }
+  .cat-tab.active {
+    color: var(--green-500);
+    background: var(--green-50);
+    border-bottom: 2px solid var(--green-400);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  }
   .post-count {
     display: inline-block;
     margin-top: 0.75rem;

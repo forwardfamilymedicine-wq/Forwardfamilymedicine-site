@@ -2,6 +2,14 @@
 import MainLayout from './MainLayout.astro';
 import AuthorBio from '../components/blog/AuthorBio.astro';
 
+const CATEGORY_LABELS: Record<string, string> = {
+  'direct-primary-care': 'Direct Primary Care',
+  'lifestyle-medicine': 'Lifestyle Medicine',
+  'preventive-medicine': 'Preventive Care',
+  'patient-experience': 'Patient Experience',
+  'concierge-medicine': 'Concierge Medicine',
+};
+
 export interface Props {
   title: string;
   description: string;
@@ -10,9 +18,11 @@ export interface Props {
   tags?: string[];
   featuredImage?: string;
   slug: string;
+  category?: string;
 }
 
-const { title, description, author, date, tags = [], featuredImage, slug } = Astro.props;
+const { title, description, author, date, tags = [], featuredImage, slug, category } = Astro.props;
+const categoryLabel = category ? (CATEGORY_LABELS[category] ?? category) : null;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/blog/${slug}`;
@@ -82,9 +92,9 @@ const breadcrumbSchema = {
           <span>{title}</span>
         </nav>
         <header class="post-header">
-          {tags.length > 0 && (
+          {categoryLabel && (
             <div class="post-tags">
-              {tags.map(tag => <span class="badge">{tag}</span>)}
+              <a href={`/blog/category/${category}`} class="badge cat-badge">{categoryLabel}</a>
             </div>
           )}
           <h1>{title}</h1>
@@ -136,6 +146,11 @@ const breadcrumbSchema = {
   .breadcrumb a { color: var(--green-300); text-decoration: none; }
   .breadcrumb a:hover { text-decoration: underline; }
   .post-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .cat-badge {
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .cat-badge:hover { background: var(--green-300); color: white; }
   .post-header { margin-bottom: 2.5rem; }
   .post-header h1 { margin-bottom: 0.75rem; }
   .post-meta { color: var(--ink-500); font-size: 0.9rem; }
