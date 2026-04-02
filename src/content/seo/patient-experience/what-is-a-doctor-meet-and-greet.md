@@ -87,7 +87,7 @@ Come prepared — this is your interview as much as theirs.
 **About the membership:**
 - What exactly is included in the monthly fee?
 - Are there any services that cost extra?
-- What's the enrollment fee and cancellation policy?
+- What's the cancellation policy?
 - Are there family plans?
 
 **About the physician:**

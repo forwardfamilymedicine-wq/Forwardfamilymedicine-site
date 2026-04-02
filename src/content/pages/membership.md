@@ -69,8 +69,7 @@ Your monthly membership covers the full spectrum of primary care:
 | Family | 2 adults + up to 3 children | $[X]/month |
 | Employer Group | 5+ employees | Contact us |
 
-*One-time enrollment fee: $[X] per individual / $[X] per family.*
-*Annual commitment or month-to-month options available.*
+*No enrollment fee. Annual commitment or month-to-month options available.*
 
 **[Contact us for exact pricing →](/become-a-patient)**
 

@@ -99,7 +99,7 @@ We also explain the broader landscape of [concierge medicine](/concierge-medicin
 ## FAQ
 
 **Q: Is there a one-time enrollment fee on top of the monthly membership?**
-A: Some DPC practices charge a one-time enrollment fee; others don't. It's worth asking upfront. At Forward Family Medicine, visit [/membership](/membership) for current fee structure details.
+A: Some DPC practices charge a one-time enrollment fee; others don't. At Forward Family Medicine, there is no enrollment fee. [See membership details →](/membership)
 
 **Q: Does the concierge or DPC fee cover prescriptions?**
 A: Most DPC practices do not include prescriptions in the membership fee, but many have access to wholesale medication pricing through dispensaries or programs that can dramatically reduce what patients pay — sometimes to just a few dollars per medication. Ask about this when evaluating any DPC practice.

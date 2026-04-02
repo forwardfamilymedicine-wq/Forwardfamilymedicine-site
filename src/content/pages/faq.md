@@ -33,7 +33,7 @@ Forward Family Medicine is a Direct Primary Care (DPC) practice in Wayne, PA. We
 We are located in Wayne, Pennsylvania, on the Philadelphia Main Line. [See our location and contact info →](/contact)
 
 **Who is the physician at Forward Family Medicine?**
-Dr. Bigley is the founder of Forward Family Medicine and a board-certified family physician who built this practice to deliver medicine the way it was always meant to be practiced — with time, relationship, and genuine focus on prevention. Dr. Lieberman is board-eligible in both Family Medicine and Lifestyle Medicine. [Meet the team →](/about)
+Dr. Bigley is the founder of Forward Family Medicine, a board-certified Family Medicine physician, and a Doctor of Osteopathic Medicine (DO). Dr. Lieberman is board-eligible in both Family Medicine and Lifestyle Medicine. [Meet the team →](/about)
 
 **Are you currently accepting new patients?**
 Yes — we are actively enrolling new members. Our patient panel is intentionally small, so we encourage you to [schedule a Meet & Greet →](/contact) before we reach capacity.

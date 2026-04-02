@@ -81,7 +81,7 @@ Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main
 No. While we're located in Wayne, we welcome members from throughout the Main Line and Delaware County. Telehealth visits make membership practical for patients who live a bit farther away.
 
 **What's the membership fee for Wayne patients?**
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership). There is a one-time enrollment fee.
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership). There is no enrollment fee.
 
 **How is Direct Primary Care different from my current doctor in Wayne?**
 Traditional practices bill insurance per visit and typically see 20–30 patients a day. DPC practices like Forward Family Medicine cap their panel and bill a flat monthly fee — giving your physician the time and availability to truly know and serve you. [Learn more →](/direct-primary-care)

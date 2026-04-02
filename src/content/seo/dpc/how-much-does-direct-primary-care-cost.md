@@ -113,7 +113,7 @@ The combination of DPC + HDHP often costs the same or less as a PPO — while de
 
 ## How Forward Family Medicine Approaches Pricing
 
-At Forward Family Medicine in Wayne, PA, our pricing is designed to be genuinely accessible to families on the Main Line. We offer individual, family, and senior plans with transparent, flat monthly rates and a one-time enrollment fee.
+At Forward Family Medicine in Wayne, PA, our pricing is designed to be genuinely accessible to families on the Main Line. We offer individual, family, and senior plans with transparent, flat monthly rates and no enrollment fee.
 
 We believe that knowing what your healthcare costs shouldn't require a calculator. Your membership fee is your primary care cost. Labs and medications are charged at cost — and we're happy to quote in advance.
 
@@ -136,7 +136,7 @@ We believe that knowing what your healthcare costs shouldn't require a calculato
 DPC membership fees may qualify as a deductible medical expense if you itemize. They may also be reimbursable through an HRA or eligible for HSA use, depending on IRS guidance and your specific plan. Consult a tax advisor — the rules have evolved and vary by situation. [More on HSA and DPC →](/faq)
 
 **Are there any hidden fees?**
-Reputable DPC practices have no hidden fees. You'll know your monthly rate, enrollment fee, and approximate lab costs before you sign anything. Ask us for a cost breakdown at your Meet & Greet.
+Reputable DPC practices have no hidden fees. You'll know your monthly rate and approximate lab costs before you sign anything. At Forward Family Medicine, there is no enrollment fee. Ask us for a cost breakdown at your Meet & Greet.
 
 **What if I have a month where I don't use the practice at all?**
 The membership is like any subscription — it covers availability, not just usage. The value is having your doctor there when you need them. Most members find they use it more than they expected once access is this easy.

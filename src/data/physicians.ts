@@ -55,7 +55,7 @@ export const physicians: Physician[] = [
     honorificPrefix: "Dr.",
     jobTitle: "Family Medicine Physician",
     description:
-      "Dr. David Bigley is a board-certified family medicine physician and founder of Forward Family Medicine, a Direct Primary Care practice in Wayne, PA. He specializes in preventive care, holistic medicine, lifestyle medicine, and chronic disease management.",
+      "Dr. David Bigley is the founder of Forward Family Medicine, a board-certified Family Medicine physician, and a Doctor of Osteopathic Medicine (DO). He specializes in preventive care, holistic medicine, lifestyle medicine, and chronic disease management.",
     medicalSpecialty: [
       "Family Medicine",
       "Lifestyle Medicine",

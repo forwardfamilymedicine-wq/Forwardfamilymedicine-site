@@ -92,7 +92,7 @@ From day one of membership, you have direct access to Dr. Bigley and Dr. Lieberm
 | Family | 2 adults + up to 3 children | $[X]/month |
 | Employer Group | 5+ employees | Contact us |
 
-*One-time enrollment fee applies. Annual commitment or month-to-month options available.*
+*No enrollment fee. Annual commitment or month-to-month options available.*
 
 **[See full membership details →](/membership)**
 
