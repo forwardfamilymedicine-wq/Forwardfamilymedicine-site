@@ -90,9 +90,6 @@ Visits are as long as they need to be. A medication refill or a quick concern mi
 ### Between Visits
 You can reach Dr. Bigley and Dr. Lieberman by text, message, or phone for any clinical question. Lab results are reviewed with you directly — not just released to a portal without explanation. Follow-up is proactive: if a concern needs monitoring, we reach out to you, not the other way around.
 
-> **Image placeholder:** `/src/assets/stock/patient-visit-warmth.jpg`
-> *Alt text: Patient and physician in a relaxed, warm conversation — Forward Family Medicine Wayne PA*
-
 ---
 
 ## Appointments That Feel Different
@@ -103,7 +100,7 @@ At Forward Family Medicine, a typical appointment looks like this:
 
 **You arrive.** The office is quiet and familiar. The staff know your name.
 
-**The visit starts on time.** Dr. Bigley and Dr. Lieberman has reviewed your chart before you walk in — you don't need to repeat your history from scratch.
+**The visit starts on time.** Dr. Bigley and Dr. Lieberman have reviewed your chart before you walk in — you don't need to repeat your history from scratch.
 
 **You have time to talk.** All of your questions get answered. If something comes up mid-visit that needs more time, we make room for it.
 
@@ -123,9 +120,6 @@ For families, the DPC experience means:
 - No scrambling to find a sick-day appointment
 - A doctor who notices patterns across the family and connects the dots
 
-> **Image placeholder:** `/src/assets/stock/family-visit.jpg`
-> *Alt text: Family at a well-child visit at Forward Family Medicine, Wayne PA*
-
 ---
 
 ## For People with Chronic Conditions
@@ -140,14 +134,14 @@ Many members with chronic conditions report better lab values, fewer complicatio
 
 ## Real Member Experiences
 
-> *"I called at 8am about my daughter's ear infection and had an appointment by 9:15. By 10am we were home with a prescription and she was already feeling better. That's what primary care is supposed to be."*
-> — **Karen L., Wayne PA** *(placeholder)*
+> *"I've never had a doctor pick up the phone personally when I called. Dr. Bigley does — every time. That alone is worth everything."*
+> — **D.W.**, Forward Family Medicine Patient
 
-> *"I've been managing my blood pressure and diabetes for years. What changed when I joined was having a doctor who actually calls me to check in — not just waiting for me to show up for labs."*
-> — **Thomas B., Berwyn PA** *(placeholder)*
+> *"When I needed a specialist, they didn't just give me a name. They called ahead, explained my case, and made sure I got in quickly. I felt like I had someone fighting for me."*
+> — **P.H.**, Forward Family Medicine Patient
 
-> *"I was between jobs and didn't have insurance for a few months. The membership fee actually made primary care MORE accessible for me during that time. I saw my doctor more, not less."*
-> — **Priya S., Devon PA** *(placeholder)*
+> *"Dr. Lieberman didn't just tell me to lose weight — he built a real plan with me, based on what I actually eat and how I actually live. Three months later, my A1C is down significantly."*
+> — **R.M.**, Forward Family Medicine Patient
 
 ---
 
@@ -165,13 +159,13 @@ That's not a marketing line. It's the structural result of a smaller patient pan
 Yes — meaningfully so. The most consistent feedback from members is that they had forgotten what it felt like to have a doctor who knows them and has time for them. The DPC model makes this structurally possible in a way that traditional insurance-based medicine cannot.
 
 **What if I need to be seen quickly and my doctor is unavailable?**
-Dr. Bigley and Dr. Lieberman builds same-day capacity into the schedule every day. For true emergencies, we direct you to the appropriate care setting. For urgent-but-not-emergency concerns when Dr. Bigley and Dr. Lieberman is unavailable, we have a coverage plan in place and will communicate it to you clearly.
+Dr. Bigley and Dr. Lieberman build same-day capacity into the schedule every day. For true emergencies, we direct you to the appropriate care setting. For urgent-but-not-emergency concerns when Dr. Bigley and Dr. Lieberman are unavailable, we have a coverage plan in place and will communicate it to you clearly.
 
 **Can I still see specialists I've been seeing for years?**
 Yes. Your DPC membership is for primary care. Your specialist relationships remain completely intact. We coordinate with your specialists and can serve as a communication hub.
 
 **Is the office accessible and easy to get to?**
-Yes. We're located in [address placeholder], with convenient parking. [See directions →](/become-a-patient#location)
+Yes. We're located at 295 Old Eagle School Road, Wayne, PA 19087, with convenient parking. [See directions →](/become-a-patient#location)
 
 **How do I communicate between visits — what platform do you use?**
 We use a HIPAA-compliant messaging platform for secure communication. Details are provided at enrollment. In practice, most members use a combination of text, direct call, and portal message — whatever works best for them.
