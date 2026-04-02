@@ -7,7 +7,12 @@ export default defineConfig({
   redirects: {
     '/what-to-expect': '/become-a-patient',
   },
-  integrations: [sitemap({ filter: (page) => !page.includes('/home/') && !page.endsWith('/home') })],
+  integrations: [sitemap({
+    filter: (page) =>
+      !page.endsWith('/patient-experience/') &&
+      !page.endsWith('/home/') &&
+      page !== 'https://www.forwardfamilymedicine.com/home'
+  })],
   vite: {
     server: {
       host: true,

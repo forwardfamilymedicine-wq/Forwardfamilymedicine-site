@@ -27,6 +27,10 @@
       "default": false,
       "type": "boolean"
     },
+    "noindex": {
+      "default": false,
+      "type": "boolean"
+    },
     "schemaType": {
       "type": "string"
     },
