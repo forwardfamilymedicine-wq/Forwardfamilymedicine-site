@@ -1,6 +1,7 @@
 ---
 title: "The Patient Experience | Forward Family Medicine Wayne, PA"
 description: "What is it really like to be a patient at Forward Family Medicine? From your first Meet & Greet to years of trusted care — here's what membership looks like in practice."
+noindex: true
 keywords:
   - patient experience DPC Wayne PA
   - what to expect Forward Family Medicine

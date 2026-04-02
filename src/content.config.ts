@@ -9,6 +9,7 @@ const baseSchema = z.object({
   date: z.string().optional(),
   author: z.string().optional(),
   draft: z.boolean().optional().default(false),
+  noindex: z.boolean().optional().default(false),
   schemaType: z.string().optional(),
   image: z.string().optional(),
   imageAlt: z.string().optional(),

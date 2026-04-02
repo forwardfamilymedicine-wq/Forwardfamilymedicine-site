@@ -7,7 +7,7 @@ export default defineConfig({
   redirects: {
     '/what-to-expect': '/become-a-patient',
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/home/') && !page.endsWith('/home') })],
   vite: {
     server: {
       host: true,

@@ -73,7 +73,7 @@ const schemas = [orgSchema, ...(Array.isArray(schema) ? schema : schema ? [schem
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
-  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  {noindex && <meta name="robots" content="noindex, follow" />}
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
