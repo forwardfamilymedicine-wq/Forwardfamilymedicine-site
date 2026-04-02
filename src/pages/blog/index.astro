@@ -39,6 +39,7 @@ const breadcrumb = {
         Evidence-based articles from Dr. Bigley and Dr. Lieberman — on Direct Primary Care,
         Lifestyle Medicine, nutrition, sleep, chronic disease, and living well on the Main Line.
       </p>
+      <p class="post-count">{posts.length} articles</p>
     </div>
   </section>
 
@@ -109,6 +110,15 @@ const breadcrumb = {
     margin-bottom: 1.5rem;
   }
   .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .post-count {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-400);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
   .blog-grid-section {
     background: var(--cream-100);
   }
