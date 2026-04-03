@@ -68,7 +68,7 @@ Your membership covers unlimited primary care visits (in-person, video, and phon
 No. Once you are a member, there are no additional fees for covered visits. The only charges beyond your membership are for labs, medications, and immunizations — all priced at cost.
 
 **Is there a long-term commitment?**
-We offer both month-to-month and annual membership options. Month-to-month plans require 30 days' written notice to cancel. Annual plans include a modest discount.
+We offer both month-to-month and annual membership options. All memberships include a 6-month minimum commitment from your enrollment date. After that period, month-to-month plans require 30 days' written notice to cancel. Annual plans include a modest discount.
 
 **Is there an enrollment fee?**
 At Forward Family Medicine, there is no enrollment fee.

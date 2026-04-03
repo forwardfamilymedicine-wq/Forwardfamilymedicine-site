@@ -50,7 +50,7 @@ Traditional concierge medicine charges a premium retainer on top of — or inste
 | | Traditional Concierge | Forward Family Medicine |
 |---|---|---|
 | Patient panel size | 300–600 patients | ~250 patients per physician |
-| Monthly cost | $150–$500+/month | $200/month individual; family rates from $175 down to $100/person/month |
+| Monthly cost | $400+/month | $200/month individual; family rates from $175 down to $100/person/month |
 | Insurance billing | Often still billed | Never — no insurance billing for primary care |
 | Visit length | 30–60 min | 1–2 hours |
 | Direct doctor access | Yes | Yes — phone, text, email directly |

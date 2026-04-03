@@ -141,7 +141,7 @@ Many members with chronic conditions report better lab values, fewer complicatio
 > *"When I needed a specialist, they didn't just give me a name. They called ahead, explained my case, and made sure I got in quickly. I felt like I had someone fighting for me."*
 > — **P.H.**, Forward Family Medicine Patient
 
-> *"Dr. Lieberman didn't just tell me to lose weight — he built a real plan with me, based on what I actually eat and how I actually live. Three months later, my A1C is down significantly."*
+> *"Dr. Lieberman actually understood how I eat and how I live — and built a plan around that. Three months later, my A1C is down significantly."*
 > — **R.M.**, Forward Family Medicine Patient
 
 ---
