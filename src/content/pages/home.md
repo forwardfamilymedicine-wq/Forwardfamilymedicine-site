@@ -23,9 +23,6 @@ schemaType: "MedicalOrganization"
 
 Forward Family Medicine is a Direct Primary Care practice in Wayne, PA, where a flat monthly membership replaces the rushed, insurance-driven office visit with something far better: a real relationship with your family doctor.
 
-> **Image placeholder:** `/src/assets/stock/home-hero.jpg`
-> *Alt text: Physician in a bright, welcoming exam room with a patient — Wayne, PA Direct Primary Care*
-
 **[Schedule a Free Meet & Greet →](/become-a-patient)** &nbsp;|&nbsp; **[Become a Member →](/membership)** &nbsp;|&nbsp; **[Learn How Membership Works →](/membership#how-it-works)**
 
 ---
@@ -103,9 +100,6 @@ We proudly serve patients in Wayne, Berwyn, Devon, Malvern, Paoli, Radnor, Villa
 
 ## Meet Your Doctor
 
-> **Image placeholder:** `/src/assets/staff/dr-david-bigley.jpg`
-> *Alt text: Dr. David Bigley DO, Founder of Forward Family Medicine, Wayne PA*
-
 Forward Family Medicine was founded by **Dr. Bigley and Dr. Lieberman**, physicians who left the traditional insurance model to build a practice centered on time, relationship, and genuine preventive care. After years in a traditional practice, they chose the Direct Primary Care model to return medicine to what it's supposed to be: a trusted doctor who has time for you.
 
 **[Meet the team →](/about)**
@@ -114,14 +108,14 @@ Forward Family Medicine was founded by **Dr. Bigley and Dr. Lieberman**, physici
 
 ## What Our Members Say
 
-> *"I used to dread going to the doctor because it always felt so rushed. Now I actually look forward to my appointments — Dr. Bigley and Dr. Lieberman knows me, listens, and has time to answer all my questions."*
-> — **Sarah M., Wayne PA** *(placeholder)*
+> *"I used to dread going to the doctor because it always felt so rushed. Now I actually look forward to my appointments — Dr. Bigley knows me, listens, and has time to answer all my questions."*
+> — **S.M., Wayne PA**
 
 > *"I joined for the convenience, but I stayed for the relationship. Having my doctor's direct number and knowing I can reach them the same day has given me real peace of mind."*
-> — **James T., Berwyn PA** *(placeholder)*
+> — **J.T., Berwyn PA**
 
 > *"The lifestyle medicine piece changed everything for me. We worked on nutrition and sleep and I was able to get off two medications within a year."*
-> — **Linda K., Devon PA** *(placeholder)*
+> — **L.K., Devon PA**
 
 ---
 

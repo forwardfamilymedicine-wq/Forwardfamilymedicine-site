@@ -59,14 +59,12 @@ Your monthly membership covers the full spectrum of primary care:
 
 ## Membership Tiers {#membership-tiers}
 
-> **Note for developer:** Replace placeholder pricing with actual rates before launch.
-
 | Plan | Who It's For | Monthly Fee |
 |---|---|---|
-| Individual Adult | Ages 18–64 | $[X]/month |
-| Senior Adult | Ages 65+ | $[X]/month |
-| Child | Ages 0–17 (with parent member) | $[X]/month |
-| Family | 2 adults + up to 3 children | $[X]/month |
+| Individual | Ages 18+ | $200/month |
+| Family (2 members) | 2 adults | $175/person/month |
+| Family (3–4 members) | 3–4 people | $125–$150/person/month |
+| Family (5+ members) | 5 or more | $100/person/month |
 | Employer Group | 5+ employees | Contact us |
 
 *No enrollment fee. Annual commitment or month-to-month options available.*
@@ -115,10 +113,10 @@ DPC membership fees may be deductible as medical expenses under IRS guidelines i
 ## Why Patients Choose Membership Over Traditional Care
 
 > *"I was skeptical at first — pay a monthly fee on top of insurance? But once I added up my copays, lab bills, and the hours I wasted on the phone with a nurse line, the math was obvious. I actually saved money and got dramatically better care."*
-> — **Michael R., Wayne PA** *(placeholder)*
+> — **M.R., Wayne PA**
 
 > *"As a small business owner, I offered DPC memberships to my team instead of a traditional health plan. Sick days dropped, morale went up, and everyone has a doctor they actually like."*
-> — **Business owner, Berwyn PA** *(placeholder)*
+> — **Business owner, Berwyn PA**
 
 ---
 

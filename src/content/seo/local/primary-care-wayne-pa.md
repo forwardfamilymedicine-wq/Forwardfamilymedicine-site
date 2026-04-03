@@ -134,7 +134,7 @@ Yes. We are currently enrolling new members. Because we intentionally limit our 
 We do not bill insurance for primary care services. Your monthly membership fee covers all included primary care. Most members keep health insurance (often a high-deductible plan) for specialist, hospital, and emergency coverage.
 
 **How far is the practice from downtown Wayne?**
-We are located at [address placeholder] in Wayne, PA, within easy reach of Route 30, 202, and the Paoli-Thorndale SEPTA rail line. [Get directions →](/become-a-patient#location)
+We are located at 295 Old Eagle School Road in Wayne, PA, within easy reach of Route 30, 202, and the Paoli-Thorndale SEPTA rail line. [Get directions →](/become-a-patient#location)
 
 **What's the best primary care option in Wayne, PA for someone with a chronic condition?**
 The DPC model is particularly well-suited to chronic disease management because unlimited visits and direct physician access mean your condition gets the continuous, attentive management it needs. Most of our members with chronic conditions report better control and fewer acute events. [Learn more →](/direct-primary-care)

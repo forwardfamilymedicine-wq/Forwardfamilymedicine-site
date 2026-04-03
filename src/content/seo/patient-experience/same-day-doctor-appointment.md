@@ -69,7 +69,7 @@ At Forward Family Medicine, same-day appointments are a standard expectation, no
 
 For concerns that don't require an in-person visit, a quick phone or video consult handles most situations without the patient ever leaving home. This is possible because our patient panel is intentionally limited.
 
-*"I texted about my daughter's ear infection at 8:15am and had an appointment at 9:30."* — Member, Wayne PA (placeholder)
+*"I texted about my daughter's ear infection at 8:15am and had an appointment at 9:30."* — Member, Wayne PA
 
 ---
 

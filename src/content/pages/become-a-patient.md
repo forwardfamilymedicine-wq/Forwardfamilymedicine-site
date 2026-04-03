@@ -40,13 +40,12 @@ A 20-minute conversation — in person or via video — with Dr. Bigley and Dr. 
 
 **No paperwork. No commitment. Just a conversation.**
 
-> **Scheduling widget placeholder:**
-> `[EMBED: Calendly or practice scheduling widget]`
->
-> Or contact us directly:
-> - **Phone:** [phone number placeholder]
-> - **Email:** [email placeholder]
-> - **Office hours:** [hours placeholder]
+Contact us to schedule your free Meet & Greet:
+- **Phone:** [(215) 645-7044](tel:+12156457044)
+- **Email:** [information@forwardfamilymedicine.com](mailto:information@forwardfamilymedicine.com)
+- **Office hours:** Monday–Friday, 8:00 AM – 5:00 PM
+
+Or [fill out the request form on our New Patients page →](/new-patients#request)
 
 ---
 
@@ -58,7 +57,7 @@ If you decide to become a member, enrollment is simple and takes about 10 minute
 2. Set up your monthly membership billing (ACH bank transfer or credit card)
 3. Sign the membership agreement — a plain-language document explaining exactly what's included
 
-> **Enrollment form link placeholder:** `[LINK: Patient enrollment portal]`
+Enroll online at our patient portal — [Individual Membership](https://forwardfamilymedicine.sigmamd.com/signup/individual-membership) or [Family Membership](https://forwardfamilymedicine.sigmamd.com/signup/family-membership).
 
 ---
 
@@ -86,10 +85,10 @@ From day one of membership, you have direct access to Dr. Bigley and Dr. Lieberm
 
 | Plan | Who It's For | Monthly Fee |
 |---|---|---|
-| Individual Adult | Ages 18–64 | $[X]/month |
-| Senior Adult | Ages 65+ | $[X]/month |
-| Child | Ages 0–17 (with parent member) | $[X]/month |
-| Family | 2 adults + up to 3 children | $[X]/month |
+| Individual Adult | Ages 18+ | $200/month |
+| Family (2 members) | 2 adults | $175/person/month |
+| Family (3–4 members) | 3–4 people | $125–$150/person/month |
+| Family (5+ members) | 5 or more | $100/person/month |
 | Employer Group | 5+ employees | Contact us |
 
 *No enrollment fee. Annual commitment or month-to-month options available.*
@@ -127,9 +126,6 @@ Most patients find the transition takes one or two weeks from enrollment to firs
 
 ## Serving Wayne, PA and the Main Line
 
-> **Image placeholder:** `/src/assets/local/wayne-pa-main-line.jpg`
-> *Alt text: Walkable downtown Wayne, PA — Philadelphia Main Line community*
-
 Wayne, Pennsylvania is a vibrant Philadelphia Main Line community known for its walkable downtown, excellent schools, and family-friendly neighborhoods. Many residents choose personalized primary care that prioritizes prevention, longer visits, and strong doctor–patient relationships — which is the focus of Forward Family Medicine.
 
 We serve Wayne, Berwyn, Devon, Malvern, Paoli, Radnor, Villanova, Newtown Square, and surrounding communities.
@@ -139,18 +135,18 @@ We serve Wayne, Berwyn, Devon, Malvern, Paoli, Radnor, Villanova, Newtown Square
 ## Practice Location & Directions {#location}
 
 **Forward Family Medicine**
-[Street Address]
-Wayne, PA [Zip Code]
+295 Old Eagle School Road
+Wayne, PA 19087
 
-> **Map embed placeholder:** `[EMBED: Google Maps iframe]`
+[Get directions on Google Maps →](https://maps.app.goo.gl/gCh92gYRPvsbTdjh6)
 
-**Parking:** [Parking details placeholder]
+**Parking:** Free parking is available on-site.
 
-**Public transit:** [SEPTA/rail access details placeholder]
+**Public transit:** A short drive or rideshare from Wayne Station on the Paoli–Thorndale SEPTA line.
 
 **Office hours:**
-- Monday – Friday: [hours]
-- Saturday: [hours or "Closed"]
+- Monday – Friday: 8:00 AM – 5:00 PM
+- Saturday: Closed
 - After-hours urgent access: available to members
 
 ---
@@ -173,10 +169,10 @@ Benefits for employers:
 
 Have a question that isn't answered here? We're happy to help.
 
-- **Phone:** [phone number placeholder]
-- **Email:** [email placeholder]
-- **Secure message:** [portal link placeholder]
-- **Mailing address:** [address placeholder]
+- **Phone:** [(215) 645-7044](tel:+12156457044)
+- **Email:** [information@forwardfamilymedicine.com](mailto:information@forwardfamilymedicine.com)
+- **Secure message:** Available through your member portal after enrollment
+- **Mailing address:** 295 Old Eagle School Road, Wayne, PA 19087
 
 ---
 

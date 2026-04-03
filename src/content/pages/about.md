@@ -30,35 +30,25 @@ Dr. Bigley and Dr. Lieberman practiced traditional family medicine for [X] years
 
 The Direct Primary Care model offered a different path — one where the doctor-patient relationship, not the billing code, is the center of care. Forward Family Medicine opened in Wayne, PA as a membership-based practice to give Main Line families exactly that: a physician who is genuinely available, genuinely present, and genuinely invested in their health.
 
-> **Image placeholder:** `/src/assets/staff/dr-forward-office.jpg`
-> *Alt text: Dr. Bigley and Dr. Lieberman at desk in the Forward Family Medicine office, Wayne PA*
-
 ---
 
 ## Meet Dr. Bigley and Dr. Lieberman
 
-> **Image placeholder:** `/src/assets/staff/dr-forward-headshot.jpg`
-> *Alt text: Dr. Philip Lieberman, MD — dual board-eligible Family Medicine and Lifestyle Medicine physician, Forward Family Medicine Wayne PA*
-
 **Dr. David Bigley, DO** — Family Medicine | Founder
 
-- Medical degree: [School], [Year]
-- Residency: [Program], [Year]
-- Board certification: American Board of Family Medicine
-- Additional training: [Lifestyle Medicine / Integrative Medicine / other — placeholder]
+- Medical degree: DO — Philadelphia College of Osteopathic Medicine (PCOM)
+- Residency: Family Medicine — Christiana Care, Delaware
+- Board certification: American Board of Family Medicine (ABFM)
 - Member: American Academy of Family Physicians (AAFP), DPC Alliance
 
-Dr. Bigley and Dr. Lieberman grew up in [region], has lived on the Main Line for [X] years, and treats patients across all ages — from young children to older adults. Outside the office, Dr. Bigley and Dr. Lieberman [brief personal detail — e.g., "is an avid cyclist and practices what they preach when it comes to lifestyle medicine"].
+Dr. Bigley treats patients across all ages — from young children to older adults — and founded Forward Family Medicine to offer the kind of primary care that simply isn't possible in an insurance-based practice. Outside the office, he finds solace in the outdoors, hiking through nature's trails, nurturing his creative side in the pottery studio or garden, and loves exploring the world and nature alongside his wife and son.
 
 **Philosophy of care:**
-*"I became a doctor to build real relationships with patients and help them live healthier, longer lives. The DPC model lets me do exactly that — without the rushing, the red tape, or the revolving door."* — Dr. Bigley and Dr. Lieberman
+*"I became a doctor to build real relationships with patients and help them live healthier, longer lives. The DPC model lets me do exactly that — without the rushing, the red tape, or the revolving door."* — Dr. Bigley
 
 ---
 
 ## Meet the Team
-
-> **Image placeholder:** `/src/assets/staff/team-photo.jpg`
-> *Alt text: The Forward Family Medicine care team, Wayne PA*
 
 Our small, dedicated team keeps the practice running smoothly so that your experience — from scheduling to follow-up — feels personal and unhurried.
 
