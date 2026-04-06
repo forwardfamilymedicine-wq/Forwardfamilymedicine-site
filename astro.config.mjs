@@ -8,6 +8,8 @@ export default defineConfig({
     '/what-to-expect': '/become-a-patient',
     '/blog/dpc-vs-concierge-which-is-right': '/blog/concierge-medicine-vs-direct-primary-care',
     '/blog/dpc-vs-concierge-which-is-right/': '/blog/concierge-medicine-vs-direct-primary-care',
+    '/faqs': { status: 301, destination: '/faq/' },
+    '/home/': { status: 301, destination: '/' },
   },
   integrations: [sitemap({
     filter: (page) =>
