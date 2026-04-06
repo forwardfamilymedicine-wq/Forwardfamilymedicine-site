@@ -23,61 +23,614 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   description={entry.data.description}
   canonical={canonicalUrl}
 >
-  <article class="prose-page">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="local-page">
+    <!-- local-content starts hidden to prevent FOUC while JS restructures the DOM -->
+    <div class="local-content">
+      <nav class="local-breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span>
         <span>{entry.data.location ?? 'Nearby'}</span>
       </nav>
       <Content />
-      {(entry.data.localNote || entry.data.nearbyNeighborhoods) && (
-        <div class="local-callout">
-          {entry.data.localNote && <p class="local-note">{entry.data.localNote}</p>}
-          {entry.data.nearbyNeighborhoods && (
-            <p class="nearby">Also serving patients from {entry.data.nearbyNeighborhoods}.</p>
-          )}
-        </div>
-      )}
     </div>
-  </article>
+
+    {(entry.data.localNote || entry.data.nearbyNeighborhoods) && (
+      <div id="local-extra">
+        {entry.data.localNote && <p class="local-note">{entry.data.localNote}</p>}
+        {entry.data.nearbyNeighborhoods && (
+          <p class="nearby-text">Also serving patients from {entry.data.nearbyNeighborhoods}.</p>
+        )}
+      </div>
+    )}
+  </div>
 </MainLayout>
 
-<style>
-  .breadcrumb {
+<!-- Inline script: runs synchronously after the content div is parsed, before first paint.
+     Groups Markdown-rendered elements by h2 headings into styled section wrappers. -->
+<script is:inline>
+(function () {
+  var content = document.querySelector('.local-content');
+  if (!content) return;
+  var extra = document.getElementById('local-extra');
+
+  /* ── Section classifier ──────────────────────────────────────────────── */
+  function classify(text) {
+    var t = text.toLowerCase().trim();
+    if (t.startsWith('about '))                                              return 'section-about';
+    if (t.startsWith('why '))                                                return 'section-why';
+    if (t.includes('service'))                                               return 'section-services';
+    if (t.includes('practical') || t.includes('contact & practice') || t === 'contact') return 'section-info';
+    if (t.includes('frequently asked') || t === 'faq')                      return 'section-faq';
+    if (t.includes('get started') || t.includes('ready to') ||
+        t.includes('take the first') || t.includes('start living') ||
+        /^experience /.test(t))                                              return 'section-cta';
+    return 'section-explainer';
+  }
+
+  /* ── Group children by h2 boundaries ────────────────────────────────── */
+  var children = Array.from(content.children); // elements only
+  var heroEls = [];
+  var sectionGroups = [];
+  var current = null;
+  var foundH2 = false;
+
+  for (var i = 0; i < children.length; i++) {
+    var el = children[i];
+    if (el.tagName === 'H2') {
+      foundH2 = true;
+      if (current) sectionGroups.push(current);
+      current = { type: classify(el.textContent || ''), els: [el] };
+    } else if (!foundH2) {
+      heroEls.push(el);
+    } else if (current) {
+      current.els.push(el);
+    }
+  }
+  if (current) sectionGroups.push(current);
+
+  /* ── Stats strip markup (injected after About section) ───────────────── */
+  var statsHTML =
+    '<div class="local-stats-strip">' +
+      '<div class="lp-container">' +
+        '<div class="local-stats-grid">' +
+          '<div class="local-stat">' +
+            '<span class="local-stat-num">~250</span>' +
+            '<span class="local-stat-label">Max patients per physician</span>' +
+          '</div>' +
+          '<div class="local-stat">' +
+            '<span class="local-stat-num">1&#8211;2 hr</span>' +
+            '<span class="local-stat-label">Visit length</span>' +
+          '</div>' +
+          '<div class="local-stat">' +
+            '<span class="local-stat-num">$200/mo</span>' +
+            '<span class="local-stat-label">Individual membership</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+  /* ── Rebuild the DOM ─────────────────────────────────────────────────── */
+  content.innerHTML = '';
+
+  // Hero wrapper (breadcrumb + h1)
+  var heroSection = document.createElement('div');
+  heroSection.className = 'section-hero';
+  var heroContainer = document.createElement('div');
+  heroContainer.className = 'lp-container';
+  heroEls.forEach(function (el) { heroContainer.appendChild(el); });
+  heroSection.appendChild(heroContainer);
+  content.appendChild(heroSection);
+
+  var ctaFound = false;
+
+  for (var j = 0; j < sectionGroups.length; j++) {
+    var group = sectionGroups[j];
+    var section = document.createElement('section');
+    section.className = 'local-section ' + group.type;
+    var container = document.createElement('div');
+    container.className = 'lp-container';
+
+    if (group.type === 'section-info') {
+      // Info sections: h2 outside the card, contact details inside a card div
+      container.appendChild(group.els[0]);
+      var card = document.createElement('div');
+      card.className = 'info-card';
+      for (var k = 1; k < group.els.length; k++) {
+        card.appendChild(group.els[k]);
+      }
+      container.appendChild(card);
+    } else {
+      group.els.forEach(function (el) { container.appendChild(el); });
+    }
+
+    // Pull #local-extra (localNote + nearby) into the CTA section
+    if (group.type === 'section-cta' && extra) {
+      ctaFound = true;
+      Array.from(extra.children).forEach(function (el) { container.appendChild(el); });
+      extra.remove();
+    }
+
+    section.appendChild(container);
+    content.appendChild(section);
+
+    // Inject stats strip immediately after the About section
+    if (group.type === 'section-about') {
+      var statsDiv = document.createElement('div');
+      statsDiv.innerHTML = statsHTML;
+      content.appendChild(statsDiv.firstElementChild);
+    }
+  }
+
+  // Fallback: if no CTA section matched, append extra to last section
+  if (!ctaFound && extra && extra.children.length > 0) {
+    var lastContainer = content.querySelector('.local-section:last-child .lp-container');
+    if (lastContainer) {
+      Array.from(extra.children).forEach(function (el) { lastContainer.appendChild(el); });
+    }
+    extra.remove();
+  }
+
+  /* ── FAQ accordion ───────────────────────────────────────────────────── */
+  document.querySelectorAll('.section-faq').forEach(function (faqSection) {
+    var container = faqSection.querySelector('.lp-container') || faqSection;
+    var paragraphs = Array.from(container.querySelectorAll('p'));
+
+    paragraphs.forEach(function (p) {
+      // A FAQ question paragraph: first element child is <strong> and text ends with ?
+      var firstChild = p.children[0];
+      if (!firstChild || firstChild.tagName !== 'STRONG') return;
+      var qText = firstChild.textContent.trim();
+      if (!qText.endsWith('?')) return;
+
+      // Build answer HTML: clone p, remove the question strong, keep the rest
+      var answerClone = p.cloneNode(true);
+      var strongInClone = answerClone.querySelector('strong');
+      if (strongInClone) strongInClone.remove();
+      var answerHtml = answerClone.innerHTML.replace(/^\s*\n?\s*/, ''); // trim leading whitespace
+
+      var item = document.createElement('div');
+      item.className = 'faq-item-local';
+      item.innerHTML =
+        '<button class="faq-q-btn" aria-expanded="false">' +
+          '<span>' + qText + '</span>' +
+          '<span class="faq-toggle" aria-hidden="true">+</span>' +
+        '</button>' +
+        '<div class="faq-a" hidden>' +
+          '<p>' + answerHtml + '</p>' +
+        '</div>';
+
+      p.replaceWith(item);
+
+      var btn = item.querySelector('.faq-q-btn');
+      var answer = item.querySelector('.faq-a');
+      btn.addEventListener('click', function () {
+        var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isExpanded));
+        answer.hidden = isExpanded;
+        btn.querySelector('.faq-toggle').textContent = isExpanded ? '+' : '×';
+      });
+    });
+  });
+
+  // Reveal content (FOUC guard: content was hidden until DOM restructuring finished)
+  content.classList.add('ready');
+})();
+</script>
+
+<style is:global>
+  /* ── FOUC guard ────────────────────────────────────────────────── */
+  .local-content          { visibility: hidden; }
+  .local-content.ready    { visibility: visible; }
+
+  /* ── Shared container ──────────────────────────────────────────── */
+  .lp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 40px);
+  }
+
+  /* ── Shared section padding ────────────────────────────────────── */
+  .local-section {
+    padding: clamp(48px, 7vw, 72px) 0;
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     HERO  (breadcrumb + h1)  ─ cream bg
+     ════════════════════════════════════════════════════════════════ */
+  .section-hero {
+    background: var(--cream-100);
+    padding: clamp(40px, 6vw, 64px) 0 0;
+  }
+  .local-breadcrumb {
+    display: block;
     font-size: 0.85rem;
     color: var(--ink-300);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
   }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .prose-page {
-    padding: 4rem 0;
+  .local-breadcrumb a {
+    color: var(--green-300);
+    text-decoration: none;
   }
-  .prose-page :global(h1) { font-size: 2.25rem; margin-bottom: 1rem; color: var(--ink-900); }
-  .prose-page :global(h2) { font-size: 1.6rem; margin: 2rem 0 0.75rem; color: var(--ink-900); }
-  .prose-page :global(h3) { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
-  .prose-page :global(p) { margin-bottom: 1rem; line-height: 1.75; color: var(--ink-700); }
-  .prose-page :global(ul), .prose-page :global(ol) { margin: 0.5rem 0 1rem 1.5rem; }
-  .prose-page :global(li) { margin-bottom: 0.4rem; line-height: 1.7; color: var(--ink-700); }
-  .prose-page :global(a) { color: var(--green-300); text-decoration: underline; }
-  .prose-page :global(strong) { color: #222; }
-  .prose-page :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
-  .prose-page :global(blockquote) { border-left: 4px solid var(--green-300); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: var(--cream-100); color: var(--ink-700); }
-  .local-callout {
-    margin-top: 2.5rem;
-    padding: 1.25rem 1.5rem;
+  .local-breadcrumb a:hover { text-decoration: underline; }
+
+  .section-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink-900);
+    margin-bottom: 0;
+    padding-bottom: clamp(32px, 5vw, 48px);
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     ABOUT  ─ cream bg (hero continuation)
+     ════════════════════════════════════════════════════════════════ */
+  .section-about {
     background: var(--cream-100);
-    border-left: 4px solid var(--green-300);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   }
-  .local-note {
-    font-size: 0.95rem;
+  .section-about h2 {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-400);
+    margin-bottom: 1rem;
+  }
+  .section-about p {
+    color: var(--ink-700);
+    line-height: 1.75;
+    max-width: 720px;
+    margin-bottom: 1rem;
+  }
+  .section-about p:last-child { margin-bottom: 0; }
+
+  /* ════════════════════════════════════════════════════════════════
+     STATS STRIP  ─ sage green
+     ════════════════════════════════════════════════════════════════ */
+  .local-stats-strip {
+    background: var(--green-300);
+    padding: clamp(28px, 4vw, 44px) 0;
+  }
+  .local-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .local-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+  }
+  .local-stat:last-child { border-right: none; }
+  .local-stat-num {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+  .local-stat-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+  }
+  @media (max-width: 420px) {
+    .local-stat { padding: 0.6rem 0.4rem; }
+    .local-stat-num { font-size: 1.4rem; }
+    .local-stat-label { font-size: 0.7rem; }
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     EXPLAINER  (What Is / Concierge-Style / Prevention-First)  ─ white
+     ════════════════════════════════════════════════════════════════ */
+  .section-explainer {
+    background: #ffffff;
+  }
+  .section-explainer h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--ink-900);
+    padding-left: 1rem;
+    border-left: 4px solid var(--green-300);
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+  .section-explainer p {
+    color: var(--ink-700);
+    line-height: 1.75;
+    max-width: 720px;
+    margin-bottom: 1rem;
+  }
+  .section-explainer p:last-child { margin-bottom: 0; }
+  .section-explainer a {
+    color: var(--green-300);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .section-explainer strong { color: var(--ink-900); }
+
+  /* ════════════════════════════════════════════════════════════════
+     WHY SECTION  ─ cream
+     ════════════════════════════════════════════════════════════════ */
+  .section-why {
+    background: var(--cream-200);
+  }
+  .section-why h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--ink-900);
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+  .section-why ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 760px;
+  }
+  .section-why li {
+    position: relative;
+    padding: 0.7rem 0 0.7rem 2rem;
+    color: var(--ink-700);
+    line-height: 1.65;
+    border-bottom: 1px solid var(--cream-300);
+  }
+  .section-why li:last-child { border-bottom: none; }
+  .section-why li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    color: var(--green-400);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .section-why li strong { color: var(--ink-900); }
+
+  /* ════════════════════════════════════════════════════════════════
+     SERVICES  ─ white, 2-col grid list
+     ════════════════════════════════════════════════════════════════ */
+  .section-services {
+    background: #ffffff;
+  }
+  .section-services h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--ink-900);
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+  .section-services p {
     color: var(--ink-700);
     line-height: 1.7;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
-  .nearby {
-    font-size: 0.88rem;
-    color: var(--ink-400);
+  .section-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.45rem 2.5rem;
+  }
+  .section-services li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--ink-700);
+    line-height: 1.6;
+    font-size: 0.97rem;
+  }
+  .section-services li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    color: var(--green-300);
+    font-size: 0.5rem;
+  }
+  .section-services a {
+    color: var(--green-300);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  @media (max-width: 580px) {
+    .section-services ul { grid-template-columns: 1fr; }
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     PRACTICAL INFO  ─ cream, bordered card
+     ════════════════════════════════════════════════════════════════ */
+  .section-info {
+    background: var(--cream-200);
+  }
+  .section-info h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--ink-900);
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+  .info-card {
+    background: #ffffff;
+    border: 1px solid var(--cream-300);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    max-width: 660px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  /* Markdown collapses consecutive bold-label lines into one <p> with embedded \n.
+     white-space: pre-line preserves those newlines so each label:value pair
+     renders on its own line without changing any source text. */
+  .info-card p {
+    white-space: pre-line;
+    color: var(--ink-700);
+    line-height: 1.65;
+    margin-bottom: 0.65rem;
+    font-size: 0.97rem;
+  }
+  .info-card p:last-child { margin-bottom: 0; }
+  .info-card strong {
+    color: var(--ink-900);
+    font-weight: 600;
+  }
+  .info-card a {
+    color: var(--green-300);
+    text-decoration: underline;
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     FAQ  ─ light cream, accordion
+     ════════════════════════════════════════════════════════════════ */
+  .section-faq {
+    background: var(--cream-100);
+  }
+  .section-faq h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--ink-900);
+    margin-bottom: 2rem;
+    line-height: 1.25;
+  }
+  /* Any non-accordion paragraphs (intro text above FAQs) */
+  .section-faq > .lp-container > p,
+  .section-faq .lp-container > p {
+    color: var(--ink-700);
+    line-height: 1.75;
+    max-width: 720px;
+    margin-bottom: 1rem;
+  }
+  .faq-item-local {
+    border-top: 1px solid var(--cream-300);
+    max-width: 800px;
+  }
+  .faq-item-local:last-child {
+    border-bottom: 1px solid var(--cream-300);
+  }
+  .faq-q-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 0;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.15s;
+  }
+  .faq-q-btn:hover { color: var(--green-400); }
+  .faq-q-btn[aria-expanded="true"] .faq-toggle {
+    transform: rotate(45deg);
+    color: var(--green-500);
+  }
+  .faq-toggle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    flex-shrink: 0;
+    color: var(--green-400);
+    transition: transform 0.2s;
+    line-height: 1;
+    display: inline-block;
+  }
+  .faq-a {
+    padding-bottom: 1.15rem;
+  }
+  .faq-a p {
+    color: var(--ink-700);
+    line-height: 1.7;
     margin: 0;
+  }
+  .faq-a a {
+    color: var(--green-300);
+    text-decoration: underline;
+  }
+  .faq-a strong {
+    color: var(--ink-900);
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     CTA  ─ sage green
+     ════════════════════════════════════════════════════════════════ */
+  .section-cta {
+    background: var(--green-500);
+    text-align: center;
+  }
+  .section-cta h2 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .section-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 1.25rem;
+    font-size: 1rem;
+  }
+  .section-cta strong { color: #ffffff; }
+  /* CTA links become button-style */
+  .section-cta strong > a,
+  .section-cta p > strong > a {
+    display: inline-block;
+    margin: 0.4rem 0.5rem;
+    padding: 0.8rem 1.75rem;
+    background: #ffffff;
+    color: var(--green-500) !important;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .section-cta strong > a:hover,
+  .section-cta p > strong > a:hover {
+    background: var(--cream-200);
+  }
+  /* localNote and nearby inside the CTA */
+  .section-cta .local-note {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    max-width: 600px;
+    margin-top: 1.5rem;
+  }
+  .section-cta .nearby-text {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     GENERIC / editorial sections  ─ white
+     ════════════════════════════════════════════════════════════════ */
+  .section-explainer.section-generic,
+  .local-section:not(.section-about):not(.section-why):not(.section-services):not(.section-info):not(.section-faq):not(.section-cta):not(.section-explainer) {
+    background: #ffffff;
+  }
+  .section-generic h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    color: var(--ink-900);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+  .section-generic p {
+    color: var(--ink-700);
+    line-height: 1.75;
+    max-width: 720px;
+    margin-bottom: 1rem;
   }
 </style>

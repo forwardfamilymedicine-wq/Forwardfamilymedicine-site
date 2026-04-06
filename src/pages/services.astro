@@ -55,13 +55,13 @@ const faqs = [
   schema={[breadcrumb, clinicSchema]}
 >
   <!-- Page hero -->
-  <section class="page-hero section" style="background: var(--cream-100);">
+  <section class="page-hero section hero-section">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Services</span>
       </nav>
       <span class="section-label">What We Offer</span>
-      <h1>Services Designed Around You, Not Your Insurance</h1>
+      <h1 class="hero-h1">Services Designed Around You, Not Your Insurance</h1>
       <div class="divider"></div>
       <p class="section-intro">
         At Forward Family Medicine, every membership includes three things at once: the financial
@@ -72,8 +72,33 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Stats strip -->
+  <section class="stats-strip">
+    <div class="container">
+      <p class="stats-eyebrow">Why DPC Changes Everything</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num">7 min</span>
+          <span class="stat-label">Average traditional appointment</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1–2 hrs</span>
+          <span class="stat-label">FFM appointment</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2,000+</span>
+          <span class="stat-label">Patients per doctor in traditional care</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">~250</span>
+          <span class="stat-label">Patients per physician at FFM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DPC -->
-  <section class="service-detail section" id="dpc">
+  <section class="service-detail section dpc-section" id="dpc">
     <div class="container">
       <div class="service-detail-inner">
         <div class="service-detail-content">
@@ -121,26 +146,7 @@ const faqs = [
           </div>
         </div>
         <div class="service-detail-aside">
-          <div class="card aside-card">
-            <h4>Why DPC Changes Everything</h4>
-            <div class="aside-stat">
-              <span class="aside-num">7 min</span>
-              <span>Average traditional appointment</span>
-            </div>
-            <div class="aside-stat">
-              <span class="aside-num">1–2 hrs</span>
-              <span>FFM appointment</span>
-            </div>
-            <div class="aside-stat">
-              <span class="aside-num">2,000+</span>
-              <span>Patients per doctor in traditional care</span>
-            </div>
-            <div class="aside-stat">
-              <span class="aside-num">~250</span>
-              <span>Patients per physician at FFM</span>
-            </div>
-          </div>
-          <div class="card aside-card" style="margin-top:1.25rem; background: linear-gradient(135deg,var(--green-50),var(--cream-200)); border:2px solid var(--green-300);">
+          <div class="card aside-card" style="background: linear-gradient(135deg,var(--green-50),var(--cream-200)); border:2px solid var(--green-300);">
             <h4>Lifestyle Medicine Included</h4>
             <p style="font-size:0.9rem; color:var(--ink-700); margin-bottom:1rem;">Every DPC membership includes access to Dr. Lieberman's Lifestyle Medicine practice. Nutrition, movement, sleep, and stress — treated as medicine.</p>
             <a href="/lifestyle-medicine" class="btn btn-primary" style="font-size:0.85rem; padding:0.6rem 1.25rem;">Learn More →</a>
@@ -151,7 +157,7 @@ const faqs = [
   </section>
 
   <!-- Lifestyle Medicine teaser -->
-  <section class="service-detail section" style="background: var(--cream-200);" id="lifestyle-medicine">
+  <section class="service-detail section lm-section" id="lifestyle-medicine">
     <div class="container">
       <span class="section-label">Our Differentiator</span>
       <h2>Lifestyle Medicine</h2>
@@ -173,7 +179,7 @@ const faqs = [
           <a href="/lifestyle-medicine" class="btn btn-primary">View Full Lifestyle Medicine Page →</a>
         </div>
         <div>
-          <ul class="prose-list">
+          <ul class="dot-list">
             <li>Comprehensive lifestyle assessment</li>
             <li>Personalized nutrition guidance — culinary-informed, practical</li>
             <li>Physical activity planning</li>
@@ -188,7 +194,7 @@ const faqs = [
   </section>
 
   <!-- Concierge -->
-  <section class="service-detail section" id="concierge">
+  <section class="service-detail section concierge-section" id="concierge">
     <div class="container">
       <span class="section-label">Premium Care</span>
       <h2>Concierge Medicine</h2>
@@ -213,6 +219,109 @@ const faqs = [
 </MainLayout>
 
 <style>
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .hero-section {
+    background: var(--cream-100);
+  }
+  .hero-h1 {
+    font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Stats strip ─────────────────────────────────────────── */
+  .stats-strip {
+    background: var(--green-300);
+    padding: clamp(36px, 6vw, 60px) 0;
+  }
+  .stats-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 1.5rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .stat-item:last-child {
+    border-right: none;
+  }
+  .stat-num {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.4;
+  }
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-item {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat-item:nth-child(2n) {
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  }
+
+  /* ── DPC section ─────────────────────────────────────────── */
+  .dpc-section {
+    background: #ffffff;
+  }
+
+  /* ── Lifestyle Medicine section ──────────────────────────── */
+  .lm-section {
+    background: var(--cream-200);
+  }
+  .dot-list {
+    list-style: none;
+    padding: 0;
+  }
+  .dot-list li {
+    padding: 0.5rem 0 0.5rem 1.75rem;
+    position: relative;
+    line-height: 1.55;
+  }
+  .dot-list li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: var(--green-300);
+    font-size: 0.65rem;
+    top: 0.7rem;
+  }
+
+  /* ── Concierge section ───────────────────────────────────── */
+  .concierge-section {
+    background: #ffffff;
+  }
+
+  /* ── Breadcrumb ──────────────────────────────────────────── */
   .breadcrumb {
     font-size: 0.85rem;
     color: var(--ink-300);
@@ -221,6 +330,7 @@ const faqs = [
   .breadcrumb a { color: var(--green-300); text-decoration: none; }
   .breadcrumb a:hover { text-decoration: underline; }
 
+  /* ── DPC layout ──────────────────────────────────────────── */
   .service-detail-inner {
     display: grid;
     grid-template-columns: 1fr 320px;
@@ -235,29 +345,6 @@ const faqs = [
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
-  }
-  .aside-card h4 {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-  .aside-stat {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--cream-300);
-  }
-  .aside-stat:last-child { border-bottom: none; }
-  .aside-num {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--ink-900);
-    flex-shrink: 0;
-  }
-  .aside-stat span:last-child {
-    font-size: 0.85rem;
-    color: var(--ink-300);
   }
 
   @media (max-width: 900px) {
