@@ -92,9 +92,9 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
 
       <div class="plans-grid">
         <!-- Individual -->
-        <div class="plan-card card">
+        <div class="plan-card card featured-plan">
           <div class="plan-header">
-            <span class="plan-badge">Individual</span>
+            <span class="plan-badge plan-badge-featured">Most Popular</span>
             <h3>Individual Membership</h3>
             <div class="plan-price">$200<span class="plan-price-unit">/month</span></div>
             <p class="plan-tagline">Primary care plus board-eligible lifestyle medicine — for you, personally.</p>
@@ -123,7 +123,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
         </div>
 
         <!-- Family -->
-        <div class="plan-card card featured-plan">
+        <div class="plan-card card">
           <div class="plan-header">
             <span class="plan-badge plan-badge-accent">Family</span>
             <h3>Family Membership</h3>
@@ -155,7 +155,8 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           <div class="plan-header">
             <span class="plan-badge">Employer</span>
             <h3>Employer / Business</h3>
-            <div class="plan-price">Contact us<span class="plan-price-unit"> for pricing</span></div>
+            <div class="plan-price employer-price">Custom Plan</div>
+            <p class="employer-price-note">Priced per employee per month — built around your team size and structure.</p>
             <p class="plan-tagline">Better healthcare for your team — simpler than traditional insurance and genuinely more valuable.</p>
           </div>
           <ul class="prose-list plan-features">
@@ -204,6 +205,9 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
       <div class="divider"></div>
       <div class="included-grid">
         <div class="included-category">
+          <div class="included-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+          </div>
           <h3>Primary Care</h3>
           <ul class="prose-list">
             <li>Annual physicals and wellness exams</li>
@@ -215,6 +219,9 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           </ul>
         </div>
         <div class="included-category">
+          <div class="included-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
           <h3>Access &amp; Convenience</h3>
           <ul class="prose-list">
             <li>Same-day and next-day appointments</li>
@@ -225,6 +232,9 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           </ul>
         </div>
         <div class="included-category">
+          <div class="included-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
           <h3>Lifestyle Medicine</h3>
           <ul class="prose-list">
             <li>Comprehensive lifestyle assessment</li>
@@ -236,6 +246,9 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           </ul>
         </div>
         <div class="included-category">
+          <div class="included-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
           <h3>Cost Savings</h3>
           <ul class="prose-list">
             <li>Wholesale lab pricing — CBC: $2 | CMP: $2 | Lipid panel: $3 | ApoB: $7 | Thyroid panel: $7</li>
@@ -325,6 +338,10 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     background: #fdf0e6;
     color: #b86a30;
   }
+  .plan-badge-featured {
+    background: var(--green-500);
+    color: white;
+  }
   .plan-header h3 {
     margin-bottom: 0.5rem;
   }
@@ -401,6 +418,18 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     flex-shrink: 0;
   }
 
+  .employer-price {
+    font-size: 1.4rem;
+    color: var(--ink-700);
+  }
+  .employer-price-note {
+    font-size: 0.82rem;
+    color: var(--ink-400);
+    margin-top: -0.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
   /* Included grid */
   .included-grid {
     display: grid;
@@ -413,6 +442,10 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     border-radius: var(--radius);
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
+  }
+  .included-icon {
+    color: var(--green-400);
+    margin-bottom: 0.6rem;
   }
   .included-category h3 {
     font-size: 1.05rem;
