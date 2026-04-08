@@ -115,6 +115,10 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           <div class="plan-cta">
             <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn btn-primary plan-btn">Enroll as Individual</a>
             <a href="/contact" class="plan-greet-link">Or start with a free meet &amp; greet →</a>
+            <div class="panel-notice">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Panel size is capped at ~250 patients per physician. Spots fill — we recommend reaching out early.
+            </div>
           </div>
         </div>
 
@@ -380,6 +384,22 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
     transition: color 0.15s;
   }
   .plan-greet-link:hover { color: var(--green-400); }
+  .panel-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--ink-500);
+    background: var(--cream-200);
+    border: 1px solid var(--cream-300);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    margin-top: 1rem;
+  }
+  .panel-notice svg {
+    color: var(--green-400);
+    flex-shrink: 0;
+  }
 
   /* Included grid */
   .included-grid {

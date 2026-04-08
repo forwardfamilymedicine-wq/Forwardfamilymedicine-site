@@ -19,10 +19,18 @@ export interface Props {
   featuredImage?: string;
   slug: string;
   category?: string;
+  readingTime?: number;
 }
 
-const { title, description, author, date, tags = [], featuredImage, slug, category } = Astro.props;
+const { title, description, author, date, tags = [], featuredImage, slug, category, readingTime } = Astro.props;
 const categoryLabel = category ? (CATEGORY_LABELS[category] ?? category) : null;
+
+const authorDisplay: Record<string, string> = {
+  'Dr. Philip Lieberman': 'Dr. Philip Lieberman, DO — Board-Eligible Family Medicine & Lifestyle Medicine',
+  'Dr. David Bigley': 'Dr. David Bigley, DO — Board-Certified Family Medicine',
+  'David Bigley, DO': 'Dr. David Bigley, DO — Board-Certified Family Medicine',
+};
+const authorLabel = authorDisplay[author] ?? author;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/blog/${slug}`;
@@ -99,8 +107,8 @@ const breadcrumbSchema = {
           )}
           <h1>{title}</h1>
           <p class="post-meta">
-            By <strong>{author}</strong> &middot;
-            <time datetime={dateISO}>{dateFormatted}</time>
+            By <strong>{authorLabel}</strong> &middot;
+            <time datetime={dateISO}>{dateFormatted}</time>{readingTime && <> &middot; <span class="reading-time">{readingTime} min read</span></>}
           </p>
         </header>
         <div class="post-body prose">
@@ -154,6 +162,10 @@ const breadcrumbSchema = {
   .post-header { margin-bottom: 2.5rem; }
   .post-header h1 { margin-bottom: 0.75rem; }
   .post-meta { color: var(--ink-500); font-size: 0.9rem; }
+  .reading-time {
+    color: var(--ink-300);
+    font-style: normal;
+  }
   .prose h2 { margin: 2.5rem 0 1rem; }
   .prose h3 { margin: 2rem 0 0.75rem; }
   .prose ul, .prose ol { margin: 1rem 0 1rem 1.5rem; }

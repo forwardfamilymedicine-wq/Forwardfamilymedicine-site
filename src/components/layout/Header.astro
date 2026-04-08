@@ -18,7 +18,7 @@ const servicesChildren = [
 ];
 
 const newPatientsChildren = [
-  { href: '/become-a-patient', label: 'Become a Patient' },
+  { href: '/new-patients', label: 'Become a Patient' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -42,7 +42,7 @@ const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.
         <div class="signup-dropdown-parent">
           <button class="utility-link signup-btn">Get Started ▾</button>
           <ul class="signup-dropdown-menu">
-            <li class="signup-primary"><a href="/new-patients">Schedule Free Meet &amp; Greet</a></li>
+            <li class="signup-primary"><a href="/contact">Schedule Free Meet &amp; Greet</a></li>
             <li class="signup-divider" role="separator" aria-hidden="true"></li>
             <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Enroll — Individual</a></li>
             <li><a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Enroll — Family</a></li>
@@ -144,6 +144,7 @@ const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.
   <!-- ── Mobile nav drawer (content unchanged) ── -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
     <ul>
+      <li><a href="https://patient.sigmamd.com" target="_blank" rel="noopener noreferrer">Patient Portal</a></li>
       <li><a href="/" class={isActive('/') ? 'active' : ''}>Home</a></li>
       <li><a href="/about" class={isActive('/about') ? 'active' : ''}>About</a></li>
 
@@ -179,7 +180,6 @@ const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.
     <div class="mobile-portal-links">
       <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
       <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
-      <a href="https://patient.sigmamd.com" target="_blank" rel="noopener noreferrer">Patient Portal Login</a>
     </div>
   </nav>
 
