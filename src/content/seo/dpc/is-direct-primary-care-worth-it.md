@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/patient-experience"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Is Direct Primary Care Worth It?
@@ -65,7 +65,7 @@ At Forward Family Medicine, we designed our membership pricing to be genuinely a
 
 When you factor in what most of our members were spending in copays, urgent care visits, and delayed care (when something small became something bigger), the value becomes clear quickly.
 
-We offer a free Meet & Greet before any commitment so you can ask these exact questions with your own numbers in hand. [Schedule a Meet & Greet →](/become-a-patient)
+We offer a free Meet & Greet before any commitment so you can ask these exact questions with your own numbers in hand. [Schedule a Meet & Greet →](/new-patients)
 
 ---
 
@@ -121,7 +121,7 @@ If your employer-sponsored insurance covers primary care at very low cost and yo
 Yes. Forward Family Medicine offers month-to-month membership with 30 days' notice to cancel. Start a Meet & Greet and ask about our current enrollment options.
 
 **How do I know if Forward Family Medicine specifically is worth it for me?**
-Schedule a free, no-obligation Meet & Greet. Bring your questions, your concerns, and your skepticism. We'll give you honest answers. [Schedule here →](/become-a-patient)
+Schedule a free, no-obligation Meet & Greet. Bring your questions, your concerns, and your skepticism. We'll give you honest answers. [Schedule here →](/new-patients)
 
 ---
 
@@ -129,4 +129,4 @@ Schedule a free, no-obligation Meet & Greet. Bring your questions, your concerns
 
 Direct Primary Care is worth it for most patients who value relationship, access, and prevention — and who are honest about what traditional primary care is actually costing them in money, time, and health outcomes. For families, individuals with chronic conditions, and self-employed patients, the math usually works out clearly in DPC's favor.
 
-**[Learn more about our membership →](/membership)** | **[Schedule a free Meet & Greet →](/become-a-patient)**
+**[Learn more about our membership →](/membership)** | **[Schedule a free Meet & Greet →](/new-patients)**

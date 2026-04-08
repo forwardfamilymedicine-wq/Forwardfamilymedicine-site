@@ -47,7 +47,7 @@ _Those with employer-subsidized $0-copay coverage, those primarily needing speci
 
 **## FAQ** (3 questions)
 
-**## Internal links:** /direct-primary-care, /membership, /become-a-patient
+**## Internal links:** /direct-primary-care, /membership, /new-patients
 
 ---
 
@@ -87,7 +87,7 @@ keywords: [direct primary care for families, DPC family membership, family docto
 canonical: "https://www.forwardfamilymedicine.com/dpc/direct-primary-care-for-families"
 category: "DPC"
 schemaType: "Article"
-linksTo: ["/membership", "/services", "/become-a-patient"]
+linksTo: ["/membership", "/services", "/new-patients"]
 ```
 
 **H1:** Is Direct Primary Care Good for Families?
@@ -171,7 +171,7 @@ keywords: [is concierge medicine worth it, concierge medicine value, concierge d
 canonical: "https://www.forwardfamilymedicine.com/concierge/is-concierge-medicine-worth-it"
 category: "Concierge"
 schemaType: "Article"
-linksTo: ["/membership", "/patient-experience", "/concierge-medicine", "/become-a-patient"]
+linksTo: ["/membership", "/patient-experience", "/concierge-medicine", "/new-patients"]
 ```
 
 **H1:** Is Concierge Medicine Worth It?
@@ -304,7 +304,7 @@ keywords: [find a doctor who listens, doctor who takes time, attentive primary c
 canonical: "https://www.forwardfamilymedicine.com/patient-experience/find-doctor-who-listens"
 category: "Patient Experience"
 schemaType: "Article"
-linksTo: ["/patient-experience", "/direct-primary-care", "/become-a-patient"]
+linksTo: ["/patient-experience", "/direct-primary-care", "/new-patients"]
 ```
 
 **H1:** How to Find a Doctor Who Actually Listens
@@ -330,7 +330,7 @@ keywords: [direct access to doctor, call your doctor directly, text your doctor,
 canonical: "https://www.forwardfamilymedicine.com/patient-experience/direct-access-to-your-doctor"
 category: "Patient Experience"
 schemaType: "Article"
-linksTo: ["/patient-experience", "/membership", "/become-a-patient"]
+linksTo: ["/patient-experience", "/membership", "/new-patients"]
 ```
 
 **H1:** What Does "Direct Access to Your Doctor" Really Mean?
@@ -355,7 +355,7 @@ keywords: [how to switch primary care doctors, how to change doctors, switch to 
 canonical: "https://www.forwardfamilymedicine.com/patient-experience/how-to-switch-primary-care-doctors"
 category: "Patient Experience"
 schemaType: "Article"
-linksTo: ["/become-a-patient", "/patient-experience", "/membership"]
+linksTo: ["/new-patients", "/patient-experience", "/membership"]
 ```
 
 **H1:** How to Switch Primary Care Doctors (It's Easier Than You Think)
@@ -386,7 +386,7 @@ keywords: [is monthly doctor fee worth it, monthly fee for doctor, DPC membershi
 canonical: "https://www.forwardfamilymedicine.com/membership/is-monthly-doctor-fee-worth-it"
 category: "Membership"
 schemaType: "Article"
-linksTo: ["/membership", "/direct-primary-care", "/become-a-patient"]
+linksTo: ["/membership", "/direct-primary-care", "/new-patients"]
 ```
 
 **H1:** Is Paying a Monthly Fee for Your Doctor Worth It?
@@ -437,7 +437,7 @@ keywords: [primary care without insurance, doctor without insurance, uninsured p
 canonical: "https://www.forwardfamilymedicine.com/membership/primary-care-without-insurance"
 category: "Membership"
 schemaType: "Article"
-linksTo: ["/membership", "/become-a-patient", "/direct-primary-care"]
+linksTo: ["/membership", "/new-patients", "/direct-primary-care"]
 ```
 
 **H1:** Primary Care Without Insurance: What Your Options Are
@@ -463,7 +463,7 @@ keywords: [DPC small business, direct primary care small employer, employee heal
 canonical: "https://www.forwardfamilymedicine.com/membership/dpc-for-small-businesses"
 category: "Membership"
 schemaType: "Article"
-linksTo: ["/membership", "/become-a-patient", "/membership/dpc-employer-benefit"]
+linksTo: ["/membership", "/new-patients", "/membership/dpc-employer-benefit"]
 ```
 
 **H1:** How Small Businesses Are Using Direct Primary Care
@@ -493,7 +493,7 @@ keywords: [lower cholesterol without medication, natural cholesterol reduction, 
 canonical: "https://www.forwardfamilymedicine.com/lifestyle/lower-cholesterol-without-medication"
 category: "Lifestyle Medicine"
 schemaType: "Article"
-linksTo: ["/lifestyle-medicine", "/services", "/become-a-patient"]
+linksTo: ["/lifestyle-medicine", "/services", "/new-patients"]
 ```
 
 **H1:** How to Lower Cholesterol Without Medication
@@ -548,7 +548,7 @@ keywords: [exercise as medicine, physical activity chronic disease, exercise pre
 canonical: "https://www.forwardfamilymedicine.com/lifestyle/exercise-as-medicine"
 category: "Lifestyle Medicine"
 schemaType: "Article"
-linksTo: ["/lifestyle-medicine", "/services", "/become-a-patient"]
+linksTo: ["/lifestyle-medicine", "/services", "/new-patients"]
 ```
 
 **H1:** Exercise as Medicine: The Evidence and a Practical Guide
@@ -574,7 +574,7 @@ keywords: [weight loss primary care doctor, medical weight management, doctor he
 canonical: "https://www.forwardfamilymedicine.com/lifestyle/weight-loss-primary-care"
 category: "Lifestyle Medicine"
 schemaType: "Article"
-linksTo: ["/lifestyle-medicine", "/services", "/become-a-patient"]
+linksTo: ["/lifestyle-medicine", "/services", "/new-patients"]
 ```
 
 **H1:** How Your Primary Care Doctor Can Help with Weight Loss
@@ -808,10 +808,10 @@ Telehealth visits handle a wide range of primary care needs effectively — pres
 2. Expanded Quick Answer (3–4 sentences max, answer-first)
 3. Each H2 section expanded to 100–200 words
 4. 2–4 FAQ Q&As at the end
-5. CTA linking to `/become-a-patient` and one pillar page
+5. CTA linking to `/new-patients` and one pillar page
 6. Disclaimer if medical advice content: *"This article is for educational purposes only and does not constitute personalized medical advice. Please consult your physician for guidance specific to your health situation."*
 
 **Internal link requirement per page:**
-- At least one link to `/membership` or `/become-a-patient`
+- At least one link to `/membership` or `/new-patients`
 - At least one link to the relevant pillar page
 - No more than 5 internal links total per page

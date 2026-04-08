@@ -23,7 +23,7 @@ schemaType: "MedicalOrganization"
 
 Forward Family Medicine is a Direct Primary Care practice in Wayne, PA, where a flat monthly membership replaces the rushed, insurance-driven office visit with something far better: a real relationship with your family doctor.
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** &nbsp;|&nbsp; **[Become a Member →](/membership)** &nbsp;|&nbsp; **[Learn How Membership Works →](/membership#how-it-works)**
+**[Schedule a Free Meet & Greet →](/new-patients)** &nbsp;|&nbsp; **[Become a Member →](/membership)** &nbsp;|&nbsp; **[Learn How Membership Works →](/membership#how-it-works)**
 
 ---
 
@@ -49,7 +49,7 @@ Forward Family Medicine runs on a simple model: you pay one flat monthly fee, an
 | Unlimited visits | Copays and deductibles |
 | Direct doctor access | Long hold times |
 | Wholesale labs & medications | Surprise bills |
-| Longer, unhurried appointments | 7-minute office visits |
+| Longer, unhurried appointments | 7–12 minute office visits |
 
 Most members pair their DPC membership with a high-deductible health plan or health-sharing plan for specialist and hospital coverage — keeping total healthcare costs lower than traditional insurance alone.
 
@@ -134,13 +134,13 @@ Members typically get same-day or next-day appointments. Many questions can be h
 Yes. Chronic disease management is a core part of what we do. Conditions like diabetes, hypertension, thyroid disorders, and high cholesterol are well-suited to the DPC model because ongoing care is fully included in your membership.
 
 **How do I get started?**
-Schedule a free Meet & Greet — a no-obligation conversation with Dr. Bigley and Dr. Lieberman to see if Forward Family Medicine is the right fit. [Schedule now →](/become-a-patient)
+Schedule a free Meet & Greet — a no-obligation conversation with Dr. Bigley and Dr. Lieberman to see if Forward Family Medicine is the right fit. [Schedule now →](/new-patients)
 
 ---
 
 ## Ready to Experience Primary Care That Puts You First?
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** — No commitment required
+**[Schedule a Free Meet & Greet →](/new-patients)** — No commitment required
 
 **[Explore Membership →](/membership)** — Learn what's included and how pricing works
 
@@ -151,7 +151,7 @@ Schedule a free Meet & Greet — a no-obligation conversation with Dr. Bigley an
 <!--
 INTERNAL LINKING MAP (home.md):
   Outbound links from this page:
-    /become-a-patient   — CTA buttons (multiple)
+    /new-patients   — CTA buttons (multiple)
     /membership         — membership section + CTA
     /services           — services snapshot
     /direct-primary-care — FAQ + CTA

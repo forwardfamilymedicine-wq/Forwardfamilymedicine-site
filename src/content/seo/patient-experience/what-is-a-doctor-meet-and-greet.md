@@ -14,7 +14,7 @@ author: "Forward Family Medicine"
 category: "Patient Experience"
 schemaType: "Article"
 linksTo:
-  - "/become-a-patient"
+  - "/new-patients"
   - "/patient-experience"
   - "/membership"
 ---
@@ -23,7 +23,7 @@ linksTo:
 
 ## Quick Answer
 
-**A doctor Meet & Greet is a short, free, no-obligation appointment — typically 15–20 minutes — where you can meet a physician, see the practice, ask questions, and decide whether it's the right fit before committing to becoming a patient.** It's a standard offering at Direct Primary Care and concierge medicine practices, and it's the recommended first step before joining any membership-based practice.
+**A doctor Meet & Greet is a short, free, no-obligation appointment — typically 30 minutes — where you can meet a physician, see the practice, ask questions, and decide whether it's the right fit before committing to becoming a patient.** It's a standard offering at Direct Primary Care and concierge medicine practices, and it's the recommended first step before joining any membership-based practice.
 
 ---
 
@@ -63,7 +63,7 @@ Dr. Bigley and Dr. Lieberman meets with you directly (not a patient coordinator)
 
 We will tell you honestly if our practice is not the right fit. We'd rather a prospective patient find the right care than join a practice that doesn't meet their needs.
 
-**[Schedule your free Meet & Greet →](/become-a-patient)**
+**[Schedule your free Meet & Greet →](/new-patients)**
 
 ---
 
@@ -100,10 +100,10 @@ Come prepared — this is your interview as much as theirs.
 ## Practical Tips
 
 - **Bring a list of your current medications and conditions.** Even in a non-clinical conversation, it helps you get specific answers about whether your situation fits the practice.
-- **Ask the questions that matter most to you first.** You may have 20 minutes — know your priorities.
+- **Ask the questions that matter most to you first.** You may have 30 minutes — know your priorities.
 - **Notice the intangibles.** Is the physician making eye contact? Do they seem genuinely interested? Does the office feel organized and calm? These tell you something.
 - **Don't feel obligated to decide immediately.** It's appropriate to say "I'd like to think about it" and follow up. A practice worth joining won't pressure you.
-- **Compare two or three practices if you're uncertain.** The Meet & Greet makes this easy — it's free and takes 20 minutes.
+- **Compare two or three practices if you're uncertain.** The Meet & Greet makes this easy — it's free and takes 30 minutes.
 
 ---
 
@@ -127,4 +127,4 @@ Absolutely. If you're considering a family plan, it makes sense to bring your pa
 
 A doctor Meet & Greet is the right first step before joining any DPC or concierge practice. It's free, low-commitment, and designed to answer exactly the questions you should be asking before making a long-term healthcare decision.
 
-**[Schedule your free Meet & Greet at Forward Family Medicine →](/become-a-patient)**
+**[Schedule your free Meet & Greet at Forward Family Medicine →](/new-patients)**

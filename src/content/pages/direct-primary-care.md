@@ -30,7 +30,7 @@ In a Direct Primary Care (DPC) practice, patients pay a flat monthly membership 
 1. Patients pay a predictable monthly membership fee directly to their physician ($200/month for individuals, less per person for families — reflecting a smaller panel and deeper level of care)
 2. The practice does **not** bill insurance for primary care services
 3. Patients receive **unlimited visits**, direct doctor access, and often **wholesale labs and medications**
-4. The physician maintains a **smaller patient panel** — at FFM, capped at 250 patients per physician, versus 2,000+ in traditional practices
+4. The physician maintains a **smaller patient panel** — at FFM, capped at 250 patients per physician, versus 2,000–3,000 in traditional practices
 
 The result: your doctor has time for you.
 
@@ -40,7 +40,7 @@ The result: your doctor has time for you.
 
 Traditional insurance-based primary care creates a structural problem: physicians are paid per visit, and payers (insurance companies) reimburse more for procedures than for thinking, listening, and preventing disease. To cover overhead, a primary care physician in a traditional practice needs to see 20–30 patients per day.
 
-In that environment, appointments get compressed to 10–15 minutes. Preventive conversations get cut short. Chronic conditions get managed reactively. And patients feel like a number.
+In that environment, appointments get compressed to 7–12 minutes. Preventive conversations get cut short. Chronic conditions get managed reactively. And patients feel like a number.
 
 DPC solves this by removing insurance billing from primary care entirely. The practice revenue comes from membership fees, so the physician's incentive is aligned with the patient's health — not with billing volume.
 
@@ -78,10 +78,10 @@ DPC solves this by removing insurance billing from primary care entirely. The pr
 | | Direct Primary Care | Traditional Primary Care |
 |---|---|---|
 | Payment | Monthly membership fee | Insurance + copays + deductibles |
-| Visit length | 1–2 hours | 10–15 min (typical) |
+| Visit length | 1–2 hours | 7–12 min (typical) |
 | Doctor access | Direct (call/text/message) | Via scheduling + nurse line |
 | Wait for appointment | Same or next day | Days to weeks |
-| Patient panel size | ~250 patients per physician (at FFM) | 1,500–2,500 patients |
+| Patient panel size | ~250 patients per physician (at FFM) | 2,000–3,000 patients |
 | After-hours access | Your own doctor | Answering service / urgent care |
 | Preventive focus | Central to every visit | Often squeezed out |
 
@@ -91,7 +91,7 @@ DPC solves this by removing insurance billing from primary care entirely. The pr
 
 The distinction most practices draw between DPC and concierge medicine doesn't apply at Forward Family Medicine. Every member receives what the industry calls a "concierge experience" — a physician who knows you, a panel capped at 250 patients, same-day access, and unhurried appointments — delivered through the DPC financial model: no insurance billing, predictable monthly pricing, and a deliberate focus on keeping your total cost of healthcare as low as possible.
 
-Most DPC practices run panels of 400–600 patients. We cap ours at 250 — because that's what it actually takes to practice the way we believe medicine should be practiced.
+Most DPC practices run panels of 300–600 patients. We cap ours at 250 — because that's what it actually takes to practice the way we believe medicine should be practiced.
 
 **[Learn more about our concierge medicine features →](/concierge-medicine)**
 
@@ -170,13 +170,13 @@ DPC is recognized and legal in all 50 states. Many states have passed specific D
 It covers the vast majority of what most people need from a primary care physician. You only pay extra for labs, medications, and immunizations — and even then, at cost.
 
 **How do I know if this practice is a good fit before joining?**
-That's exactly what our free Meet & Greet is for. [Schedule one here →](/become-a-patient)
+That's exactly what our free Meet & Greet is for. [Schedule one here →](/new-patients)
 
 ---
 
 ## Take the Next Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)**
+**[Schedule a Free Meet & Greet →](/new-patients)**
 See the practice, meet Dr. Bigley and Dr. Lieberman, and ask all your DPC questions — no obligation.
 
 **[Explore Membership Plans →](/membership)**
@@ -190,7 +190,7 @@ INTERNAL LINKING MAP (direct-primary-care.md):
     /services             — what DPC covers
     /concierge-medicine   — DPC vs concierge section
     /membership           — pricing + what's included
-    /become-a-patient     — CTA + FAQ
+    /new-patients     — CTA + FAQ
 
   Inbound (pages that should link here):
     home.md              — FAQ + CTA

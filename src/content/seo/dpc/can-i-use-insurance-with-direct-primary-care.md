@@ -17,7 +17,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/faq"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Can I Use Insurance with Direct Primary Care?
@@ -118,7 +118,7 @@ We do not require you to drop your insurance. We do not bill your insurance for 
 
 At your Meet & Greet, we're happy to walk through your current insurance situation and give you a realistic picture of total cost under different scenarios.
 
-[Schedule a Meet & Greet →](/become-a-patient) | [See membership details →](/membership)
+[Schedule a Meet & Greet →](/new-patients) | [See membership details →](/membership)
 
 ---
 
@@ -142,4 +142,4 @@ For most individuals not receiving employer-subsidized insurance: an HDHP (indiv
 
 You absolutely can use insurance with Direct Primary Care — and you should. DPC handles primary care comprehensively; insurance handles the rest. The most financially effective combination for most patients is DPC + HDHP + HSA, which typically costs less than a traditional PPO while delivering better primary care.
 
-**[See how our membership works →](/membership)** | **[Schedule a Meet & Greet →](/become-a-patient)**
+**[See how our membership works →](/membership)** | **[Schedule a Meet & Greet →](/new-patients)**

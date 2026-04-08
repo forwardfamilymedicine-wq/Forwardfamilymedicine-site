@@ -31,7 +31,7 @@ While every DPC practice is a little different, most memberships include:
 
 - **Unlimited office visits** — sick visits, follow-ups, physicals, and preventive care
 - **Same-day or next-day appointments** — because your doctor has a smaller patient panel
-- **Longer appointment times** — 1 to 2 hours at Forward Family Medicine, compared to the 7–10 minutes typical in traditional care
+- **Longer appointment times** — 1 to 2 hours at Forward Family Medicine, compared to the 7–12 minutes typical in traditional care
 - **Direct communication** — text, phone, or email your doctor directly
 - **After-hours access** — reach a real physician when you need one, not a nurse line
 - **Telehealth visits** — included in your membership, no separate fee
@@ -44,7 +44,7 @@ This is where a lot of confusion happens, so let's be direct:
 
 **DPC is not health insurance.** It does not cover hospitalization, emergency care, specialist visits, imaging, or surgery. If you're enrolled in a DPC practice, you still need health insurance — or some coverage — for anything beyond primary care.
 
-**DPC is not concierge medicine.** Concierge medicine charges a retainer fee on top of billing your insurance. DPC eliminates insurance billing entirely and is typically far more affordable than concierge practices, which can cost $300–$500/month or more.
+**DPC is not concierge medicine.** Concierge medicine charges a retainer fee on top of billing your insurance. DPC eliminates insurance billing entirely and is typically far more affordable than concierge practices, which can cost $400+/month or more.
 
 **DPC is not a restricted network.** You're not locked out of using your insurance elsewhere. Your insurance handles hospitals, specialists, and emergencies. Your DPC practice handles everything primary care.
 

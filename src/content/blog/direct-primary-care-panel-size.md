@@ -101,5 +101,5 @@ A: Not necessarily. DPC physicians trade high volume for predictable, stable mem
 **Q: What happens when a DPC practice's panel fills up?**
 A: Most DPC practices maintain a waitlist once they reach capacity. This is actually a feature, not a bug — it means the practice is committed to the panel limit rather than overriding it for revenue reasons. If you're interested in a DPC practice, it's worth joining a waitlist or enrolling before the panel closes.
 
-**Q: Is a 400–600 patient panel actually enough to run a practice?**
+**Q: Is a 300–600 patient panel actually enough to run a practice?**
 A: Yes, when funded by membership fees. At $100–$200/month per adult member and 250–500 members, a DPC practice generates $300,000–$1.2M/year depending on panel size and membership rate. With leaner overhead — no billing staff, no insurance contracts — this supports a well-run practice delivering meaningfully better care than the fee-for-service model.

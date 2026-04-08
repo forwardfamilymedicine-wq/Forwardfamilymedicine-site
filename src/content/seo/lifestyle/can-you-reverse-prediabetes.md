@@ -16,7 +16,7 @@ schemaType: "Article"
 linksTo:
   - "/lifestyle-medicine"
   - "/services"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Can You Reverse Prediabetes? What the Evidence Shows
@@ -140,7 +140,7 @@ No. For most patients, lifestyle intervention alone is first-line treatment — 
 It's never too late to benefit from lifestyle intervention. Type 2 diabetes management also involves the same lifestyle pillars — and some patients with early type 2 diabetes achieve meaningful A1C reduction, sometimes sufficient to reduce or eliminate medication. Talk to your doctor about what's realistic for your situation.
 
 **Is Forward Family Medicine equipped to help me manage prediabetes?**
-Yes — this is exactly the kind of ongoing, lifestyle-integrated management that the DPC model handles well. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — this is exactly the kind of ongoing, lifestyle-integrated management that the DPC model handles well. [Schedule a Meet & Greet →](/new-patients)
 
 ---
 
@@ -148,6 +148,6 @@ Yes — this is exactly the kind of ongoing, lifestyle-integrated management tha
 
 Prediabetes is reversible for many people through structured lifestyle change — modest weight loss, regular physical activity, improved nutrition, and better sleep. The evidence is clear and the window is real. The most important step is getting your numbers measured, making a plan, and having a physician who will monitor your progress and adjust the approach.
 
-**[Learn about lifestyle medicine at Forward Family Medicine →](/lifestyle-medicine)** | **[Schedule a Meet & Greet →](/become-a-patient)**
+**[Learn about lifestyle medicine at Forward Family Medicine →](/lifestyle-medicine)** | **[Schedule a Meet & Greet →](/new-patients)**
 
 > *This article is for educational purposes only and does not constitute personalized medical advice. Please consult your physician for guidance specific to your health situation.*

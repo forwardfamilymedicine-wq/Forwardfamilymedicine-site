@@ -158,7 +158,7 @@ Absolutely not. We work incrementally. Small, sustainable changes over time are 
 
 ## Start Your Lifestyle Medicine Journey
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)**
+**[Schedule a Free Meet & Greet →](/new-patients)**
 See how lifestyle medicine fits into your care plan.
 
 **[Explore Membership →](/membership)**
@@ -170,7 +170,7 @@ Lifestyle medicine counseling is included in every membership.
 INTERNAL LINKING MAP (lifestyle-medicine.md):
   Outbound:
     /membership           — "included in membership" references
-    /become-a-patient     — CTAs
+    /new-patients     — CTAs
 
   Inbound (pages that should link here):
     home.md              — "prevention & lifestyle" pillar

@@ -17,14 +17,14 @@ linksTo:
   - "/direct-primary-care"
   - "/membership"
   - "/patient-experience"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Why Are Doctor Visits Only 10 Minutes?
 
 ## Quick Answer
 
-**Doctor visits are so short because traditional medical practices are structured around insurance billing — and insurance billing rewards volume over time.** A typical primary care physician must see 20–30 patients per day to cover overhead costs (staff, rent, malpractice, billing software), which compresses each appointment to 10–15 minutes. This isn't a failure of individual physicians — it's the predictable output of a payment model that makes time a liability.
+**Doctor visits are so short because traditional medical practices are structured around insurance billing — and insurance billing rewards volume over time.** A typical primary care physician must see 20–30 patients per day to cover overhead costs (staff, rent, malpractice, billing software), which compresses each appointment to 7–12 minutes. This isn't a failure of individual physicians — it's the predictable output of a payment model that makes time a liability.
 
 ---
 
@@ -123,4 +123,4 @@ Primary care reform is slow and contested. The DPC model is growing rapidly as b
 
 Doctor visits are short because insurance-based practices are financially required to see as many patients as possible. Direct Primary Care removes that pressure by replacing per-visit billing with a monthly membership — making 1–2 hour appointments structurally viable, not a rare luxury.
 
-**[Learn how DPC works →](/direct-primary-care)** | **[Schedule a Meet & Greet →](/become-a-patient)**
+**[Learn how DPC works →](/direct-primary-care)** | **[Schedule a Meet & Greet →](/new-patients)**

@@ -44,7 +44,7 @@ Your monthly membership covers the full spectrum of primary care:
 - Medication management and refills
 
 ### Lifestyle Medicine
-- Personalized nutrition, movement, sleep, and stress counseling
+- Personalized nutrition, movement, sleep, and stress counseling (with Dr. Lieberman, dual board-eligible in Family Medicine & Lifestyle Medicine)
 - Health coaching integrated into your care plan
 - Behavioral health support and care coordination
 - [Learn more about lifestyle medicine →](/lifestyle-medicine)
@@ -69,14 +69,16 @@ Your monthly membership covers the full spectrum of primary care:
 
 *No enrollment fee. Annual commitment or month-to-month options available.*
 
-**[Contact us for exact pricing →](/become-a-patient)**
+*Children under 26 may be added to a family membership at the applicable per-person family rate. Contact us with questions about pediatric pricing.*
+
+**[Contact us for exact pricing →](/new-patients)**
 
 ---
 
 ## How Membership Works {#how-it-works}
 
 ### Step 1 — Schedule a Free Meet & Greet
-A 20-minute, no-obligation conversation with Dr. Bigley and Dr. Lieberman to ask questions, tour the practice, and decide if Forward Family Medicine is right for you.
+A 30-minute, no-obligation conversation with Dr. Lieberman (or Dr. Bigley, if available) to ask questions, tour the practice, and decide if Forward Family Medicine is right for you.
 
 ### Step 2 — Enroll & Complete Your Health History
 Enrollment takes about 10 minutes online. You'll complete a health history form and we'll request records from your previous provider.
@@ -123,7 +125,7 @@ DPC membership fees may be deductible as medical expenses under IRS guidelines i
 ## Frequently Asked Questions
 
 **Is there a long-term commitment?**
-We offer both month-to-month and annual membership options. Annual plans include a modest discount.
+We offer both month-to-month and annual membership options.
 
 **What happens if I need to see a specialist?**
 We coordinate specialist referrals for you and stay in communication with consulting physicians. Specialist visits and procedures are billed separately through your insurance.
@@ -135,7 +137,7 @@ Many of our members use HSA or FSA funds for eligible expenses (labs, medication
 You can reach Dr. Bigley and Dr. Lieberman by phone or message no matter where you are. For emergencies, always go to the nearest emergency room.
 
 **Is this available for employer groups?**
-Yes. We work with small and medium-sized employers to offer DPC memberships as a benefit. [Contact us for employer pricing →](/become-a-patient#employer)
+Yes. We work with small and medium-sized employers to offer DPC memberships as a benefit. [Contact us for employer pricing →](/new-patients#employer)
 
 **How do I cancel?**
 Members may cancel with 30 days' written notice. There are no long-term contracts required for our month-to-month plan.
@@ -144,9 +146,9 @@ Members may cancel with 30 days' written notice. There are no long-term contract
 
 ## Ready to Get Started?
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** — Ask all your questions before committing
+**[Schedule a Free Meet & Greet →](/new-patients)** — Ask all your questions before committing
 
-**[Become a Member →](/become-a-patient#enroll)** — Join Forward Family Medicine today
+**[Become a Member →](/new-patients#enroll)** — Join Forward Family Medicine today
 
 **[Compare DPC to Traditional Care →](/direct-primary-care)** — Learn more about the model
 
@@ -156,7 +158,7 @@ Members may cancel with 30 days' written notice. There are no long-term contract
 INTERNAL LINKING MAP (membership.md):
   Outbound:
     /lifestyle-medicine    — lifestyle medicine section
-    /become-a-patient      — multiple CTAs throughout
+    /new-patients      — multiple CTAs throughout
     /direct-primary-care   — comparison + FAQ
 
   Inbound (every page should link to /membership):

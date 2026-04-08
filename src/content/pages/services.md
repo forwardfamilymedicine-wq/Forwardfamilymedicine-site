@@ -113,6 +113,8 @@ Chronic disease management thrives in the DPC model — because managing a condi
 
 ## Lifestyle Medicine
 
+*Lifestyle Medicine at Forward Family Medicine is provided by Dr. Philip Lieberman, who is dual board-eligible in Family Medicine and Lifestyle Medicine. It is integrated into every membership at no additional cost.*
+
 - Personalized nutrition counseling
 - Physical activity prescription and guidance
 - Sleep optimization and insomnia management
@@ -214,7 +216,7 @@ We prescribe controlled substances for appropriate clinical indications (e.g., A
 We order imaging and work to find cost-effective options for our members. We can direct you to facilities with transparent, competitive cash pricing when insurance does not cover it.
 
 **What's the best way to know if you can help with my specific condition?**
-[Schedule a free Meet & Greet →](/become-a-patient) and ask us directly. We are happy to tell you what falls within our scope and how we'd approach your care.
+[Schedule a free Meet & Greet →](/new-patients) and ask us directly. We are happy to tell you what falls within our scope and how we'd approach your care.
 
 ---
 
@@ -222,7 +224,7 @@ We order imaging and work to find cost-effective options for our members. We can
 
 **[See Membership Plans →](/membership)**
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)**
+**[Schedule a Free Meet & Greet →](/new-patients)**
 
 ---
 
@@ -231,7 +233,7 @@ INTERNAL LINKING MAP (services.md):
   Outbound:
     /lifestyle-medicine   — lifestyle medicine section
     /membership           — pricing CTA
-    /become-a-patient     — CTAs + FAQ
+    /new-patients     — CTAs + FAQ
 
   Inbound (pages that should link here):
     home.md              — "services snapshot"

@@ -15,7 +15,7 @@ category: "DPC"
 schemaType: "Article"
 linksTo:
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
   - "/direct-primary-care"
   - "/faq"
 ---
@@ -142,7 +142,7 @@ Reputable DPC practices have no hidden fees. You'll know your monthly rate and a
 The membership is like any subscription — it covers availability, not just usage. The value is having your doctor there when you need them. Most members find they use it more than they expected once access is this easy.
 
 **Is the pricing lower than what I'd pay without insurance?**
-Almost certainly. Uninsured patients in traditional practices pay full rack rates for everything. DPC membership + wholesale lab pricing is specifically designed to be affordable for uninsured patients. More on primary care without insurance is covered at your Meet & Greet — [schedule a free consultation →](/become-a-patient).
+Almost certainly. Uninsured patients in traditional practices pay full rack rates for everything. DPC membership + wholesale lab pricing is specifically designed to be affordable for uninsured patients. More on primary care without insurance is covered at your Meet & Greet — [schedule a free consultation →](/new-patients).
 
 ---
 
@@ -150,4 +150,4 @@ Almost certainly. Uninsured patients in traditional practices pay full rack rate
 
 Direct Primary Care typically costs $70–$150/month, covers all primary care, and can reduce total healthcare spending when paired with a high-deductible plan. The best way to understand your specific cost is to request pricing directly — then compare it to what you spent on primary care last year.
 
-**[View membership plans and pricing →](/membership)** | **[Schedule a free consultation →](/become-a-patient)**
+**[View membership plans and pricing →](/membership)** | **[Schedule a free consultation →](/new-patients)**

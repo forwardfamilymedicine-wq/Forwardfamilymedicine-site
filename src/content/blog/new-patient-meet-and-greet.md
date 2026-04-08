@@ -21,7 +21,7 @@ A doctor meet-and-greet is a brief, no-obligation conversation with a physician 
 
 Choosing a primary care physician is one of the most consequential healthcare decisions you'll make — and in the traditional system, you typically make it with almost no information. You search your insurance directory, check that the practice is accepting new patients, maybe read a few online reviews, and show up hoping for the best. The relationship forms (or doesn't) over repeated visits, and switching doctors is a friction-filled process most people avoid even when the fit isn't right.
 
-Direct primary care practices often do something different: they offer a free meet-and-greet appointment before you enroll. This is a short (typically 20–30 minute) conversation with the physician where you can ask questions, describe your health situation, understand the practice model, and assess whether this is a person you could see managing your health over the long term. There's no clinical exam, no charges, and no obligation.
+Direct primary care practices often do something different: they offer a free meet-and-greet appointment before you enroll. This is a short (typically 30-minute) conversation with the physician where you can ask questions, describe your health situation, understand the practice model, and assess whether this is a person you could see managing your health over the long term. There's no clinical exam, no charges, and no obligation.
 
 This is relatively rare in American medicine. Its existence in DPC practices reflects a philosophy that the patient-physician relationship is foundational — not a transaction — and that both parties benefit from choosing each other intentionally.
 
@@ -70,7 +70,7 @@ A DPC physician who knows their practice well should be able to answer these que
 
 ## How Forward Family Medicine Helps
 
-The Forward Family Medicine meet-and-greet is a free, 20-minute conversation — in person or by video — with Dr. Bigley and/or Dr. Lieberman. No paperwork, no commitment, no credit card. It's a genuine opportunity to understand how the practice works, ask about your specific situation, and evaluate whether the fit is right.
+The Forward Family Medicine meet-and-greet is a free, 30-minute conversation — in person or by video — with Dr. Bigley and/or Dr. Lieberman. No paperwork, no commitment, no credit card. It's a genuine opportunity to understand how the practice works, ask about your specific situation, and evaluate whether the fit is right.
 
 A few questions worth asking: How does the panel cap of approximately 250 patients affect your access? What does integrated Lifestyle Medicine actually look like in practice? And what's included in the membership versus what's billed separately? See current pricing at [/membership](/membership).
 
@@ -95,7 +95,7 @@ A: At Forward Family Medicine, yes — completely. There's no clinical examinati
 A: Complex patients often benefit most from DPC's additional access and continuity. The meet-and-greet is precisely the right time to describe your health situation in detail and ask the physician directly whether your needs are within the practice's scope. A good DPC physician will give you an honest answer about what they can and can't manage effectively.
 
 **Q: How long does a typical meet-and-greet last?**
-A: At Forward Family Medicine, 20 minutes. This is enough time for meaningful conversation but not for a clinical evaluation. If you have extensive questions or a complex history, consider writing them down in advance to use the time efficiently.
+A: At Forward Family Medicine, 30 minutes. This is enough time for meaningful conversation but not for a clinical evaluation. If you have extensive questions or a complex history, consider writing them down in advance to use the time efficiently.
 
 **Q: What if I enroll and it's not the right fit?**
 A: DPC practices typically operate on a month-to-month membership with no long-term contract. If the relationship isn't working for any reason, you're not locked in. That flexibility is intentional — it keeps the practice accountable to the quality of your experience.

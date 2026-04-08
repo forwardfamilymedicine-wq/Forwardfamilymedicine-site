@@ -32,7 +32,7 @@ DPC removes insurance from the primary care equation entirely. You pay your doct
 
 - Unlimited primary care visits with no per-visit fees
 - Same-day or next-day appointment availability
-- Longer appointments (up to 1–2 hours vs. the national average of 7 minutes)
+- Longer appointments (up to 1–2 hours vs. the national average of 7–12 minutes)
 - Direct communication with your physician via text, phone, or video
 - Wholesale-priced labs and medications in many practices
 
@@ -43,7 +43,7 @@ No claims. No prior authorizations. No explanation-of-benefits letters in the ma
 | | Traditional Primary Care | Direct Primary Care |
 |---|---|---|
 | **Payment model** | Copays + deductibles per visit | Flat monthly membership fee |
-| **Average visit length** | 7–10 minutes | 1–2 hours |
+| **Average visit length** | 7–12 minutes | 1–2 hours |
 | **Typical panel size** | 2,000–3,000 patients | typically 300–600 patients; Forward Family Medicine caps at ~250 |
 | **Same-day access** | Rarely available | Standard |
 | **After-hours access** | Nurse line or urgent care | Direct to your physician |
@@ -104,4 +104,4 @@ A: Most DPC practices do not bill insurance for office visits — that's by desi
 A: Specialist visits are handled through your health insurance, just as they would be in any other primary care arrangement. A good DPC physician will help coordinate that referral, communicate with the specialist on your behalf, and follow up on the results — which is actually better care coordination than most traditionally insured patients receive.
 
 **Q: Is DPC + HDHP legal under the ACA?**
-A: Yes. Having a DPC membership alongside an ACA-compliant high-deductible health plan is perfectly legal. In fact, several states have passed legislation explicitly clarifying that DPC memberships do not disqualify a patient from contributing to an HSA, though federal law on the HSA question is still evolving. Consult a tax advisor for current guidance specific to your situation.
+A: Yes. Having a DPC membership alongside an ACA-compliant high-deductible health plan is perfectly legal. In fact, several states have passed legislation explicitly clarifying that DPC memberships do not disqualify a patient from contributing to an HSA, though the Primary Care Enhancement Act (effective January 1, 2026) has clarified that DPC membership fees are HSA-eligible when paired with a qualifying HDHP. Confirm current eligibility with your plan administrator.

@@ -36,14 +36,14 @@ We are located in Wayne, Pennsylvania, on the Philadelphia Main Line. [See our l
 Dr. Bigley is the founder of Forward Family Medicine, a board-certified Family Medicine physician, and a Doctor of Osteopathic Medicine (DO). Dr. Lieberman is board-eligible in both Family Medicine and Lifestyle Medicine. [Meet the team →](/about)
 
 **Are you currently accepting new patients?**
-Yes — we are actively enrolling new members. Our patient panel is intentionally small, so we encourage you to [schedule a Meet & Greet →](/contact) before we reach capacity.
+Dr. Lieberman is actively accepting new patients. Dr. Bigley is not currently accepting new patients. If you'd like to connect with Dr. Lieberman, [schedule a free Meet & Greet →](/contact).
 
 ---
 
 ## About Direct Primary Care
 
 **What is Direct Primary Care (DPC)?**
-Direct Primary Care is a membership-based model of primary care in which patients pay a flat monthly fee directly to their physician — bypassing insurance for primary care services. In exchange, members receive unlimited visits, direct physician access, and longer appointments. The physician maintains a small patient panel — at Forward Family Medicine, capped at 250 patients per physician, versus 2,000+ in traditional practices — which is what makes personalized, accessible care possible. [Full DPC explainer →](/direct-primary-care)
+Direct Primary Care is a membership-based model of primary care in which patients pay a flat monthly fee directly to their physician — bypassing insurance for primary care services. In exchange, members receive unlimited visits, direct physician access, and longer appointments. The physician maintains a small patient panel — at Forward Family Medicine, capped at 250 patients per physician, versus 2,000–3,000 in traditional practices — which is what makes personalized, accessible care possible. [Full DPC explainer →](/direct-primary-care)
 
 **How is DPC different from concierge medicine?**
 Both models offer smaller panels, direct access, and longer visits. The key difference: traditional concierge medicine typically charges a higher annual retainer and may still bill insurance. DPC does not bill insurance for primary care and charges a lower flat monthly fee — making it more accessible. [See the full comparison →](/concierge-medicine)
@@ -68,8 +68,7 @@ Your membership covers unlimited primary care visits (in-person, video, and phon
 No. Once you are a member, there are no additional fees for covered visits. The only charges beyond your membership are for labs, medications, and immunizations — all priced at cost.
 
 **Is there a long-term commitment?**
-We offer both month-to-month and annual membership options. All memberships include a 6-month minimum commitment from your enrollment date. After that period, month-to-month plans require 30 days' written notice to cancel. Annual plans include a modest discount.
-
+We offer both month-to-month and annual membership options. All memberships include a 6-month minimum commitment from your enrollment date. After that period, month-to-month plans require 30 days' written notice to cancel. 
 **Is there an enrollment fee?**
 At Forward Family Medicine, there is no enrollment fee.
 
@@ -112,7 +111,10 @@ Monday–Friday, 8:00 AM – 5:00 PM For urgent matters, members have after-hour
 Always call 911 or go to the nearest emergency room for life-threatening emergencies. Your DPC membership is for primary care — not emergency or hospital care.
 
 **Do you offer telehealth visits?**
-Yes. Phone and video visits are included in your membership. Many concerns — prescription refills, minor illness, result review, follow-up — can be handled without coming in.
+Yes. Phone and video visits are included in your membership. Many concerns — prescription refills, minor illness, result review, follow-up — can be handled without coming in. Video visits are conducted through SigmaMD, our patient portal platform.
+
+**What happens if my physician is unavailable?**
+Forward Family Medicine is a two-physician practice. Both Dr. Bigley and Dr. Lieberman are familiar with all members and have access to your full health history. If your primary physician is unavailable, the other physician provides coverage. For planned absences, we communicate proactively so your care is uninterrupted.
 
 ---
 
@@ -141,7 +143,7 @@ We perform a range of minor procedures: EKGs, ear lavage, wound care, joint inje
 ## Lifestyle Medicine
 
 **What is lifestyle medicine and is it included in my membership?**
-Lifestyle medicine uses evidence-based behavioral interventions — nutrition, physical activity, sleep, stress management — to prevent and treat chronic disease. It is integrated into every membership at no additional cost. [Learn more →](/lifestyle-medicine)
+Lifestyle medicine uses evidence-based behavioral interventions — nutrition, physical activity, sleep, stress management — to prevent and treat chronic disease. It is provided by Dr. Lieberman, who is dual board-eligible in Family Medicine and Lifestyle Medicine, and is integrated into every membership at no additional cost. [Learn more →](/lifestyle-medicine)
 
 **Do you have a specific diet you recommend?**
 We don't prescribe one-size-fits-all diets. We use evidence-based guidance — drawing on Mediterranean, DASH, whole-food plant-based, and other well-studied approaches — tailored to your health goals and preferences.
@@ -154,7 +156,7 @@ We don't prescribe one-size-fits-all diets. We use evidence-based guidance — d
 The first step is a free, no-obligation Meet & Greet with Dr. Bigley and Dr. Lieberman. [Schedule yours here →](/contact)
 
 **What happens at the Meet & Greet?**
-It's a 20-minute conversation — in person or by video — where you can ask questions, learn about the practice, and decide whether Forward Family Medicine is right for you. No pressure, no commitment.
+It's a 30-minute conversation — in person or by video — where you can ask questions, learn about the office, meet the doctors, and decide whether Forward Family Medicine is right for you. No pressure, no commitment.
 
 **How long does enrollment take?**
 Online enrollment takes about 10 minutes. Your first comprehensive visit is typically scheduled within the first week or two of enrollment.
@@ -187,6 +189,6 @@ SCHEMA NOTE:
 
 INTERNAL LINKING MAP (faq.md):
   Outbound: nearly every section links to /about, /membership, /services, /direct-primary-care,
-            /concierge-medicine, /lifestyle-medicine, /become-a-patient
+            /concierge-medicine, /lifestyle-medicine, /new-patients
   Inbound: all pages should link here for "have more questions" CTAs
 -->

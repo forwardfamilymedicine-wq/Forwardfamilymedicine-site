@@ -28,7 +28,7 @@ Forward Family Medicine was built on a simple conviction: primary care works bes
 
 Dr. Bigley and Dr. Lieberman practiced traditional family medicine for [X] years and watched, year after year, as administrative burden and insurance constraints squeezed the time available for patients. A 15-minute appointment slot was never enough to do right by someone with diabetes, a new diagnosis, or a child who needed more than a quick look.
 
-The Direct Primary Care model offered a different path — one where the doctor-patient relationship, not the billing code, is the center of care. Forward Family Medicine opened in Wayne, PA as a membership-based practice to give Main Line families exactly that: a physician who is genuinely available, genuinely present, and genuinely invested in their health.
+The Direct Primary Care model offered a different path — one where the doctor-patient relationship, not the billing code, is the center of care. Forward Family Medicine opened in Wayne, PA in 2024 as a membership-based practice to give Main Line families exactly that: a physician who is genuinely available, genuinely present, and genuinely invested in their health.
 
 ---
 
@@ -92,7 +92,7 @@ We are proud to be part of the Wayne community and to serve families across the 
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting new patients?**
-Yes — we are currently accepting new members. We intentionally keep our panel small, so we encourage you to reach out before we reach capacity. [Schedule a free Meet & Greet →](/become-a-patient)
+Yes — we are currently accepting new members. We intentionally keep our panel small, so we encourage you to reach out before we reach capacity. [Schedule a free Meet & Greet →](/new-patients)
 
 **Do you see children and adults?**
 Yes. We care for patients of all ages, from newborns and children to adults and seniors.
@@ -101,7 +101,7 @@ Yes. We care for patients of all ages, from newborns and children to adults and 
 The DPC model is well suited to complex, chronic cases because we have the time to manage them properly. We also coordinate with specialists and facilitate referrals when needed.
 
 **Are you affiliated with a hospital?**
-We maintain admitting privileges and referral relationships with local hospitals and specialists. [Contact us](/become-a-patient) for details on our hospital affiliations.
+We maintain admitting privileges and referral relationships with local hospitals and specialists. [Contact us](/new-patients) for details on our hospital affiliations.
 
 ---
 
@@ -109,7 +109,7 @@ We maintain admitting privileges and referral relationships with local hospitals
 
 The best way to see if Forward Family Medicine is the right fit is a free, no-obligation Meet & Greet with Dr. Bigley and Dr. Lieberman.
 
-**[Schedule Your Free Meet & Greet →](/become-a-patient)**
+**[Schedule Your Free Meet & Greet →](/new-patients)**
 
 ---
 
@@ -117,7 +117,7 @@ The best way to see if Forward Family Medicine is the right fit is a free, no-ob
 INTERNAL LINKING MAP (about.md):
   Outbound:
     /lifestyle-medicine   — lifestyle medicine approach section
-    /become-a-patient     — CTA + FAQ
+    /new-patients     — CTA + FAQ
     /direct-primary-care  — implicit, can add inline reference
 
   Inbound (pages that should link here):

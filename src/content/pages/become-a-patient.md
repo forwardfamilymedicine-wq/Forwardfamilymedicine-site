@@ -9,7 +9,7 @@ keywords:
   - new patients Wayne PA family doctor
   - start membership Forward Family Medicine
   - DPC sign up Wayne Pennsylvania
-canonical: "https://www.forwardfamilymedicine.com/become-a-patient"
+canonical: "https://www.forwardfamilymedicine.com/new-patients"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

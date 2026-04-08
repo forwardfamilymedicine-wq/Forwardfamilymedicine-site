@@ -41,7 +41,7 @@ Before you become a member, we invite you to a free, no-obligation Meet & Greet 
 
 Most prospective members say the Meet & Greet answered questions they didn't even know they had. Many leave having already decided to join.
 
-> **[Schedule your free Meet & Greet →](/become-a-patient)**
+> **[Schedule your free Meet & Greet →](/new-patients)**
 
 ---
 
@@ -166,7 +166,7 @@ Dr. Bigley and Dr. Lieberman build same-day capacity into the schedule every day
 Yes. Your DPC membership is for primary care. Your specialist relationships remain completely intact. We coordinate with your specialists and can serve as a communication hub.
 
 **Is the office accessible and easy to get to?**
-Yes. We're located at 295 Old Eagle School Road, Wayne, PA 19087, with convenient parking. [See directions →](/become-a-patient#location)
+Yes. We're located at 295 Old Eagle School Road, Wayne, PA 19087, with convenient parking. [See directions →](/new-patients#location)
 
 **How do I communicate between visits — what platform do you use?**
 We use a HIPAA-compliant messaging platform for secure communication. Details are provided at enrollment. In practice, most members use a combination of text, direct call, and portal message — whatever works best for them.
@@ -177,7 +177,7 @@ We use a HIPAA-compliant messaging platform for secure communication. Details ar
 
 The best way to understand what membership at Forward Family Medicine looks like is to come in for a free Meet & Greet.
 
-**[Schedule Your Free Meet & Greet →](/become-a-patient)**
+**[Schedule Your Free Meet & Greet →](/new-patients)**
 
 **[See Membership Plans →](/membership)**
 
@@ -186,7 +186,7 @@ The best way to understand what membership at Forward Family Medicine looks like
 <!--
 INTERNAL LINKING MAP (patient-experience.md):
   Outbound:
-    /become-a-patient     — multiple CTAs
+    /new-patients     — multiple CTAs
     /membership           — pricing reference
     /services             — implicit reference to service breadth
 

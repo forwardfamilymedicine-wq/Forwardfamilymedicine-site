@@ -1,6 +1,6 @@
 ---
 title: "Can You Use an HSA with Direct Primary Care? What You Need to Know"
-description: "DPC membership fees are not currently HSA-eligible, but labs, medications, and procedures often are. Here's the full picture on HSA and DPC — and the strategy that works."
+description: "As of January 1, 2026, DPC membership fees are HSA-eligible under the Primary Care Enhancement Act. Here's what that means for your DPC + HDHP + HSA strategy."
 keywords:
   - HSA direct primary care
   - can you use HSA for DPC
@@ -28,6 +28,8 @@ But the DPC-HSA relationship has a catch that's worth understanding clearly.
 The IRS determines what counts as a "qualified medical expense" eligible for HSA reimbursement. In general, insurance premiums are not eligible (with some exceptions), while direct medical expenses are. DPC membership fees fall into a gray zone — they're not insurance premiums, but they're also not a fee-for-service medical expense.
 
 The IRS issued guidance (Notice 2004-23) stating that amounts paid to a DPC-type provider that covers multiple services are generally not HSA-qualified expenses. The reasoning: because DPC covers a broad range of primary care services for a flat fee, it functions more like a prepaid health plan than a direct medical expense — and prepaid health plan fees are not HSA-eligible.
+
+*Note: The following section reflects the pre-2026 regulatory environment and is preserved for historical context. As of January 1, 2026, DPC membership fees are HSA-eligible under the Primary Care Enhancement Act.*
 
 **The practical takeaway:** Do not assume your DPC membership fee can be paid with HSA funds without consulting a tax advisor. The mainstream interpretation is that it cannot, and using HSA funds for ineligible expenses creates a tax liability plus penalty.
 
@@ -89,12 +91,12 @@ For a full picture of what's included in membership and what might be billed sep
 - **Don't conflate FSA rules with HSA rules** — flexible spending accounts have different rules and a use-it-or-lose-it feature. HSAs carry over indefinitely and are more flexible.
 - **Ask your DPC practice for itemized receipts** for any services that may be HSA-eligible — labs, medications, procedures — so you have proper documentation.
 - **Track HSA contributions against the annual limit** — excess contributions are subject to tax and penalty.
-- **Stay informed on legislative changes** — the DPC-HSA legislation landscape is evolving, and what's not eligible today may become eligible in the future.
+- **As of January 1, 2026, the Primary Care Enhancement Act has resolved this question** — DPC membership fees are now HSA-eligible when paired with a qualifying HDHP. Confirm current eligibility with your plan administrator.
 
 ## FAQ
 
-**Q: Why can't DPC membership fees be paid with an HSA?**
-A: Under IRS Notice 2004-23 and related guidance, DPC membership fees are generally not considered "qualified medical expenses" because they function more like a prepaid health plan than a direct fee for a specific medical service. The IRS draws a distinction between paying for a specific medical service and paying for the right to access future services — and DPC memberships are classified as the latter.
+**Q: Were DPC membership fees previously ineligible for HSA reimbursement?**
+A: Yes — prior to January 1, 2026, DPC membership fees were generally not considered "qualified medical expenses" under IRS Notice 2004-23. The IRS drew a distinction between paying for a specific medical service and paying for the right to access future services, classifying DPC memberships as the latter. The Primary Care Enhancement Act, effective January 1, 2026, resolved this by explicitly making DPC membership fees HSA-eligible when paired with a qualifying HDHP.
 
 **Q: Can I use a Flexible Spending Account (FSA) for DPC membership fees?**
 A: The same basic analysis applies to FSAs as to HSAs — DPC membership fees are generally not considered qualified expenses under IRS rules. However, individual FSA plans may have different rules depending on how the plan administrator interprets the guidelines. Check with your FSA plan administrator directly.

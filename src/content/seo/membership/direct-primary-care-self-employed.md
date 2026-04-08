@@ -16,7 +16,7 @@ schemaType: "Article"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
   - "/faq"
 ---
 
@@ -145,6 +145,6 @@ Yes. We offer employer group memberships for small and mid-size businesses. [Lea
 
 Direct Primary Care is one of the smartest healthcare moves a self-employed person can make: predictable costs, real access, no insurance middleman for routine care, and a physician who is genuinely available when you need them.
 
-**[See membership pricing →](/membership)** | **[Schedule a free Meet & Greet →](/become-a-patient)**
+**[See membership pricing →](/membership)** | **[Schedule a free Meet & Greet →](/new-patients)**
 
 > *This article is for educational purposes. Consult a tax advisor and insurance professional for advice specific to your situation.*

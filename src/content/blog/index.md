@@ -144,7 +144,7 @@ Each post should follow this structure for SEO and AI-search optimization:
 **A:** ...
 
 ## The Bottom Line
-[1–2 sentence conclusion + CTA linking to relevant pillar page or /become-a-patient]
+[1–2 sentence conclusion + CTA linking to relevant pillar page or /new-patients]
 ```
 
 ---
@@ -153,7 +153,7 @@ Each post should follow this structure for SEO and AI-search optimization:
 
 Every blog post should include:
 1. **One link to the relevant pillar page** (e.g., lifestyle medicine posts → `/lifestyle-medicine`)
-2. **One link to `/membership` or `/become-a-patient`** as a CTA
+2. **One link to `/membership` or `/new-patients`** as a CTA
 3. **One or two links to related posts** once the cluster builds out
 4. **No more than 4–5 internal links per post** to keep link equity focused
 

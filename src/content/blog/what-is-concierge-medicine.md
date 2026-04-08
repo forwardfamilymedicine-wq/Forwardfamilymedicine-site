@@ -19,11 +19,11 @@ Concierge medicine is a model of primary care where patients pay a membership fe
 
 ## Explanation
 
-If you've ever left a doctor's appointment feeling rushed, confused, or like you barely had time to explain what was wrong, you're not alone. The average primary care visit in a traditional insurance-based practice lasts just 15 to 18 minutes — and that includes time for documentation, prescription management, and anything else on the agenda. It's not that physicians don't care. It's that the system they work within makes genuine connection nearly impossible.
+If you've ever left a doctor's appointment feeling rushed, confused, or like you barely had time to explain what was wrong, you're not alone. The average primary care visit in a traditional insurance-based practice lasts just 7 to 12 minutes — and that includes time for documentation, prescription management, and anything else on the agenda. It's not that physicians don't care. It's that the system they work within makes genuine connection nearly impossible.
 
 Concierge medicine is a direct response to that frustration.
 
-**The core idea is simple:** patients pay a regular membership fee — monthly or annually — and in return, they get more. More time with their doctor. More access. More continuity. Instead of a physician managing 1,500 to 2,500 patients, a concierge or DPC doctor typically cares for a panel of 300 to 600 patients — compared to 1,500–2,500 in a conventional practice. At Forward Family Medicine, we cap at approximately 250 patients per physician, which is what makes genuine same-day access structurally reliable. That smaller panel is what makes everything else possible.
+**The core idea is simple:** patients pay a regular membership fee — monthly or annually — and in return, they get more. More time with their doctor. More access. More continuity. Instead of a physician managing 2,000 to 3,000 patients, a concierge or DPC doctor typically cares for a panel of 300 to 600 patients — compared to 2,000–3,000 in a conventional practice. At Forward Family Medicine, we cap at approximately 250 patients per physician, which is what makes genuine same-day access structurally reliable. That smaller panel is what makes everything else possible.
 
 **What patients typically receive in a concierge practice:**
 

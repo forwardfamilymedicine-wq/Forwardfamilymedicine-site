@@ -37,7 +37,7 @@ The core promise of concierge medicine is simple: **a doctor with time for you.*
 - Longer, more thorough appointments (up to 1–2 hours)
 - Proactive, prevention-focused care — not just reactive sick visits
 - Coordination with specialists and advocacy on your behalf
-- 24/7 or after-hours urgent access to your own physician
+- After-hours urgent access to your own physician (for true clinical urgency)
 
 Forward Family Medicine offers all of these — built on the Direct Primary Care (DPC) model.
 
@@ -118,7 +118,7 @@ Most patients who have experienced both traditional and concierge-style care say
 We do not bill insurance for primary care services. Your monthly membership fee covers all included services. You should maintain health insurance for specialist, hospital, and emergency care.
 
 **How small is the patient panel really?**
-We keep our panel purposefully limited to ensure every member receives the attention they deserve. Once the panel is full, we maintain a waitlist. We encourage prospective members to [reach out early →](/become-a-patient).
+We keep our panel purposefully limited to ensure every member receives the attention they deserve. Once the panel is full, we maintain a waitlist. We encourage prospective members to [reach out early →](/new-patients).
 
 **Can I keep my current insurance and add this membership?**
 Yes. Most members combine our DPC membership with their existing insurance (or switch to a high-deductible plan) for specialist and hospital coverage.
@@ -130,7 +130,7 @@ We work collaboratively with specialist physicians and large health systems. You
 
 ## Experience Concierge-Style Care on the Main Line
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)**
+**[Schedule a Free Meet & Greet →](/new-patients)**
 No commitment — just a conversation to see if it's the right fit.
 
 **[See Membership Plans & Pricing →](/membership)**
@@ -144,7 +144,7 @@ INTERNAL LINKING MAP (concierge-medicine.md):
   Outbound:
     /direct-primary-care  — DPC distinction section + CTA
     /membership           — pricing + plans
-    /become-a-patient     — CTAs
+    /new-patients     — CTAs
 
   Inbound (pages that should link here):
     home.md              — "concierge" keyword mentions

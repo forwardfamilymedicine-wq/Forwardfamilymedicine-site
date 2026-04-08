@@ -17,7 +17,7 @@ linksTo:
   - "/services"
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # What Does a Membership Medicine Plan Include?
@@ -204,4 +204,4 @@ Primary care mental health — screening, medication management for depression a
 
 A membership medicine plan includes the full scope of primary care: unlimited visits, direct physician access, preventive care, chronic disease management, lifestyle medicine, acute care, and care coordination — all for one flat monthly fee. Labs, medications, and specialist/hospital care are the main costs outside membership.
 
-**[See full membership details and pricing →](/membership)** | **[Schedule a free Meet & Greet →](/become-a-patient)**
+**[See full membership details and pricing →](/membership)** | **[Schedule a free Meet & Greet →](/new-patients)**

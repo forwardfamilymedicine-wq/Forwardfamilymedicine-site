@@ -17,14 +17,14 @@ linksTo:
   - "/membership"
   - "/concierge-medicine"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # How Much Does Concierge Medicine Cost?
 
 ## Quick Answer
 
-**Traditional concierge medicine retainers typically cost $1,500–$6,000+ per year ($125–$500/month).** Direct Primary Care practices, which deliver the same concierge-style experience (same-day access, direct physician contact, longer visits), typically charge $70–$150/month — making them the more accessible alternative for most families. Both models may also have enrollment fees and per-service charges for labs, imaging, and medications outside the membership.
+**Traditional concierge medicine retainers typically cost $400+/month ($4,800+/year).** Direct Primary Care practices, which deliver the same concierge-style experience (same-day access, direct physician contact, longer visits), typically charge $70–$150/month — making them the more accessible alternative for most families. Both models may also have enrollment fees and per-service charges for labs, imaging, and medications outside the membership.
 
 ---
 
@@ -67,7 +67,7 @@ DPC is not technically "concierge medicine" in the traditional sense, but it del
 | Traditional concierge (high retainer) | $125–$500+ | $1,500–$6,000+ | Often yes (on top of retainer) | 50–300 |
 | Mid-tier concierge | $75–$200 | $900–$2,400 | Sometimes | 200–600 |
 | Direct Primary Care (DPC) | $70–$150 | $840–$1,800 | No | 400–600 |
-| Traditional primary care | $0 membership fee | $0 + copays/deductibles | Yes | 1,500–2,500+ |
+| Traditional primary care | $0 membership fee | $0 + copays/deductibles | Yes | 2,000–3,000+ |
 
 ---
 
@@ -104,7 +104,7 @@ What you get at Forward Family Medicine:
 
 We offer transparent pricing — you know exactly what your membership costs before you enroll, and you can request a lab pricing sheet to compare.
 
-[See membership plans →](/membership) | [Schedule a free Meet & Greet →](/become-a-patient)
+[See membership plans →](/membership) | [Schedule a free Meet & Greet →](/new-patients)
 
 ---
 

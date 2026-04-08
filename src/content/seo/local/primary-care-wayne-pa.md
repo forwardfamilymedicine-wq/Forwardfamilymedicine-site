@@ -14,7 +14,7 @@ author: "Forward Family Medicine"
 category: "Local"
 schemaType: "MedicalOrganization"
 linksTo:
-  - "/become-a-patient"
+  - "/new-patients"
   - "/membership"
   - "/direct-primary-care"
   - "/about"
@@ -90,7 +90,7 @@ Forward Family Medicine was founded by Dr. Bigley and Dr. Lieberman, two physici
 
 Our practice is located in Wayne, PA, with convenient access for patients throughout the Philadelphia Main Line. We are currently accepting new members.
 
-[Meet Dr. Bigley and Dr. Lieberman →](/about) | [Schedule a free Meet & Greet →](/become-a-patient)
+[Meet Dr. Bigley and Dr. Lieberman →](/about) | [Schedule a free Meet & Greet →](/new-patients)
 
 ---
 
@@ -128,13 +128,13 @@ Forward Family Medicine's Wayne office serves patients from across the Philadelp
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting new patients in Wayne, PA?**
-Yes. We are currently enrolling new members. Because we intentionally limit our panel size, we encourage you to reach out soon. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. We are currently enrolling new members. Because we intentionally limit our panel size, we encourage you to reach out soon. [Schedule a Meet & Greet →](/new-patients)
 
 **Do you take insurance for Wayne, PA patients?**
 We do not bill insurance for primary care services. Your monthly membership fee covers all included primary care. Most members keep health insurance (often a high-deductible plan) for specialist, hospital, and emergency coverage.
 
 **How far is the practice from downtown Wayne?**
-We are located at 295 Old Eagle School Road in Wayne, PA, within easy reach of Route 30, 202, and the Paoli-Thorndale SEPTA rail line. [Get directions →](/become-a-patient#location)
+We are located at 295 Old Eagle School Road in Wayne, PA, within easy reach of Route 30, 202, and the Paoli-Thorndale SEPTA rail line. [Get directions →](/new-patients#location)
 
 **What's the best primary care option in Wayne, PA for someone with a chronic condition?**
 The DPC model is particularly well-suited to chronic disease management because unlimited visits and direct physician access mean your condition gets the continuous, attentive management it needs. Most of our members with chronic conditions report better control and fewer acute events. [Learn more →](/direct-primary-care)
@@ -143,7 +143,7 @@ The DPC model is particularly well-suited to chronic disease management because 
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)**
+**[Schedule a Free Meet & Greet →](/new-patients)**
 No commitment required. Meet Dr. Bigley and Dr. Lieberman, see the practice, and ask all your questions.
 
 **[Learn About Our Membership →](/membership)**

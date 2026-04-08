@@ -25,7 +25,7 @@ draft: true
 | Services | `/services` | 0.8 | MedicalOrganization |
 | Patient Experience | `/patient-experience` | 0.7 | Article + FAQPage |
 | FAQ | `/faq` | 0.8 | FAQPage |
-| Become a Patient | `/become-a-patient` | 0.9 | MedicalOrganization |
+| Become a Patient | `/new-patients` | 0.9 | MedicalOrganization |
 | Blog Index | `/blog` | 0.7 | Blog |
 | Blog Posts | `/blog/[slug]` | 0.6–0.8 | BlogPosting / Article |
 
@@ -137,7 +137,7 @@ draft: true
 - H2: Lifestyle Medicine
 - H2: Getting Started
 
-### `/become-a-patient` — Become a Patient
+### `/new-patients` — Become a Patient
 - **H1:** Become a Patient at Forward Family Medicine
 - H2: How to Get Started
 - H2: Membership Plans at a Glance
@@ -157,7 +157,7 @@ draft: true
 
 | Target Page | Links From |
 |---|---|
-| `/become-a-patient` | All pages (primary CTA) |
+| `/new-patients` | All pages (primary CTA) |
 | `/membership` | All pages (secondary CTA) |
 | `/direct-primary-care` | home, faq, concierge-medicine, blog cluster |
 | `/lifestyle-medicine` | home, about, membership, services, faq, blog cluster |
@@ -169,7 +169,7 @@ draft: true
 - DPC explainer posts → `/direct-primary-care`
 - Concierge medicine posts → `/concierge-medicine`
 - Local Wayne/Main Line posts → `/` (home)
-- All blog posts → `/become-a-patient` (CTA)
+- All blog posts → `/new-patients` (CTA)
 
 ---
 
@@ -214,7 +214,7 @@ src/content/pages/lifestyle-medicine.md → pages/lifestyle-medicine.astro   →
 src/content/pages/services.md        → pages/services.astro  → /services
 src/content/pages/patient-experience.md → pages/patient-experience.astro  → /patient-experience
 src/content/pages/faq.md             → pages/faq.astro       → /faq
-src/content/pages/become-a-patient.md → pages/become-a-patient.astro → /become-a-patient
+src/content/pages/new-patients.md → pages/new-patients.astro → /new-patients
 src/content/blog/index.md            → pages/blog/index.astro → /blog
 src/content/blog/*.md                → pages/blog/[slug].astro → /blog/[slug]
 ```

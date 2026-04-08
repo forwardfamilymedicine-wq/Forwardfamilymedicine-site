@@ -22,7 +22,7 @@ The terms "concierge medicine" and "direct primary care" get used interchangeabl
 
 **Traditional Concierge Medicine**
 
-Traditional concierge medicine emerged in the late 1990s, pioneered by practices catering to high-net-worth patients who wanted more than standard insurance-based care could provide. The model works like this: patients pay an annual or monthly retainer fee — typically ranging from $150 to $500 per month, or $1,500 to $6,000 or more per year — in exchange for enhanced services and access. That retainer buys the VIP experience: same-day appointments, the physician's personal cell number, unhurried visits, house calls in some cases, and a doctor who genuinely knows you.
+Traditional concierge medicine emerged in the late 1990s, pioneered by practices catering to high-net-worth patients who wanted more than standard insurance-based care could provide. The model works like this: patients pay an annual or monthly retainer fee — typically $400+/month or more — in exchange for enhanced services and access. That retainer buys the VIP experience: same-day appointments, the physician's personal cell number, unhurried visits, house calls in some cases, and a doctor who genuinely knows you.
 
 The key detail: most traditional concierge practices still accept and bill insurance. The retainer covers the "access and amenity" layer; insurance is still billed for the actual clinical services rendered at each visit. This means the practice maintains all the billing infrastructure, coding staff, and administrative burden of a conventional practice — it's just layered on top of the retainer. For the physician, this is financially stable but operationally complex. For patients, it means the retainer is genuinely an additional cost on top of existing insurance premiums and copays.
 
@@ -34,7 +34,7 @@ Because DPC practices opt out of insurance billing entirely, they eliminate the 
 
 **The experience for patients is remarkably similar.** In both models, you get:
 
-- A physician with a small patient panel (typically 300–600 patients in DPC generally, though at Forward Family Medicine we cap our panel at 250 patients per physician — smaller than the DPC average, which is what makes same-day access consistently reliable — versus 1,500–2,500 in conventional practices)
+- A physician with a small patient panel (typically 300–600 patients in DPC generally, though at Forward Family Medicine we cap our panel at 250 patients per physician — smaller than the DPC average, which is what makes same-day access consistently reliable — versus 2,000–3,000 in conventional practices)
 - Same-day or next-day appointment availability
 - Extended visits with time to actually talk
 - Direct physician access by phone, text, or email

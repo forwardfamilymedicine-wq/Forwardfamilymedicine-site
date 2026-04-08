@@ -15,7 +15,7 @@ category: "Membership"
 schemaType: "Article"
 linksTo:
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
   - "/direct-primary-care"
 ---
 
@@ -88,7 +88,7 @@ Forward Family Medicine works with small and mid-size employers in Wayne, PA and
 - Employers currently offering no health benefit who want to start with something meaningful
 - Businesses already offering an HDHP who want to add a primary care layer
 
-[Contact us to discuss employer pricing →](/become-a-patient#employer)
+[Contact us to discuss employer pricing →](/new-patients#employer)
 
 ---
 
@@ -138,6 +138,6 @@ Some employer HRAs may reimburse DPC membership fees. The IRS rules here are nua
 
 DPC as an employer benefit delivers meaningful, accessible primary care for employees at a cost that beats traditional group insurance when combined intelligently with a lean insurance plan. For small businesses looking to provide genuine healthcare value, DPC is one of the most cost-effective options available.
 
-**[Contact us to discuss employer memberships →](/become-a-patient#employer)**
+**[Contact us to discuss employer memberships →](/new-patients#employer)**
 
 > *This article is for informational purposes. Consult a benefits advisor, CPA, and employment attorney when structuring employee benefit plans.*

@@ -17,7 +17,7 @@ linksTo:
   - "/direct-primary-care"
   - "/patient-experience"
   - "/about"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # How to Find a Doctor Who Spends More Time With You
@@ -112,13 +112,13 @@ Before switching to any new practice, ask these directly:
 In a DPC practice, yes. With a panel of 400–600 patients and a revenue model not tied to visit volume, same-day callbacks are standard. In a traditional practice seeing 25 patients, that's structurally very hard to maintain consistently.
 
 **Does Forward Family Medicine accept patients from outside Wayne, PA?**
-We primarily serve patients in Wayne and surrounding Main Line communities who can come in for visits when needed. Telehealth is available for members. [Learn more about our service area →](/become-a-patient)
+We primarily serve patients in Wayne and surrounding Main Line communities who can come in for visits when needed. Telehealth is available for members. [Learn more about our service area →](/new-patients)
 
 **What if I need a specialist — will my DPC doctor know about that?**
 Yes. One of the key differences in a DPC practice is care coordination: your physician stays in the loop with your specialists, reviews their notes, and helps interpret what you're being told. You're not managing those relationships alone.
 
 **How do I start the process of finding and switching to a DPC doctor?**
-The first step is a Meet & Greet — a free, no-obligation conversation to see if the practice is a good fit. [Schedule yours →](/become-a-patient)
+The first step is a Meet & Greet — a free, no-obligation conversation to see if the practice is a good fit. [Schedule yours →](/new-patients)
 
 ---
 
@@ -126,4 +126,4 @@ The first step is a Meet & Greet — a free, no-obligation conversation to see i
 
 If you want a doctor who has time for you, you need a practice structured to make time possible. Direct Primary Care and concierge medicine practices intentionally limit their panel sizes — and that single structural decision changes everything about the experience.
 
-**[Learn how DPC works →](/direct-primary-care)** | **[Meet your potential physician →](/about)** | **[Schedule a free Meet & Greet →](/become-a-patient)**
+**[Learn how DPC works →](/direct-primary-care)** | **[Meet your potential physician →](/about)** | **[Schedule a free Meet & Greet →](/new-patients)**

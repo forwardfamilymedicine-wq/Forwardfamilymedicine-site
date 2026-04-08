@@ -16,7 +16,7 @@ schemaType: "Article"
 linksTo:
   - "/lifestyle-medicine"
   - "/about"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # What Is a Lifestyle Medicine Doctor?
@@ -129,7 +129,7 @@ For some patients with some conditions, yes — particularly early-stage metabol
 Yes. Lifestyle medicine is integrated into every membership. Dr. Bigley and Dr. Lieberman uses the principles and evidence base of lifestyle medicine in clinical practice with every patient. [Learn more →](/lifestyle-medicine)
 
 **Where can I find a board-certified lifestyle medicine physician?**
-Search the ACLM provider directory at lifestylemedicine.org. In Wayne, PA, Forward Family Medicine offers lifestyle medicine-integrated DPC care. [Schedule a Meet & Greet →](/become-a-patient)
+Search the ACLM provider directory at lifestylemedicine.org. In Wayne, PA, Forward Family Medicine offers lifestyle medicine-integrated DPC care. [Schedule a Meet & Greet →](/new-patients)
 
 ---
 
@@ -137,6 +137,6 @@ Search the ACLM provider directory at lifestylemedicine.org. In Wayne, PA, Forwa
 
 A lifestyle medicine doctor uses the same evidence standards as any conventional physician — but treats behavioral factors (nutrition, activity, sleep, stress) as core clinical tools rather than afterthoughts. In the context of DPC, where visit time actually exists for these conversations, lifestyle medicine can be transformative for patients with chronic disease.
 
-**[Learn how we practice lifestyle medicine →](/lifestyle-medicine)** | **[Schedule a free Meet & Greet →](/become-a-patient)**
+**[Learn how we practice lifestyle medicine →](/lifestyle-medicine)** | **[Schedule a free Meet & Greet →](/new-patients)**
 
 > *This article is for educational purposes only and does not constitute personalized medical advice.*

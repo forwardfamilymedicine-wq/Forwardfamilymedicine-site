@@ -16,7 +16,7 @@ schemaType: "Article"
 linksTo:
   - "/lifestyle-medicine"
   - "/services"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Lifestyle Changes That Lower Blood Pressure
@@ -145,6 +145,6 @@ Home monitoring is valuable and encouraged. Use a validated arm cuff, measure at
 
 Lifestyle changes — the DASH diet, sodium reduction, weight loss, aerobic exercise, and alcohol moderation — can lower blood pressure by 15–25+ mmHg when applied together. For patients with early or mild hypertension, this can be sufficient to avoid or delay medication. For all patients with hypertension, lifestyle is the foundation of treatment.
 
-**[Learn about lifestyle medicine at our practice →](/lifestyle-medicine)** | **[Schedule a Meet & Greet →](/become-a-patient)**
+**[Learn about lifestyle medicine at our practice →](/lifestyle-medicine)** | **[Schedule a Meet & Greet →](/new-patients)**
 
 > *This article is for educational purposes only and does not constitute personalized medical advice. Please consult your physician before making changes to your blood pressure treatment plan.*

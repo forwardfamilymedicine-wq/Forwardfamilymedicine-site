@@ -17,7 +17,7 @@ linksTo:
   - "/patient-experience"
   - "/direct-primary-care"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # How to Get a Same-Day Doctor Appointment
@@ -106,4 +106,4 @@ Reputable DPC practices have clear coverage plans for when the physician is unav
 
 Same-day doctor access in a traditional practice is a matter of luck. In a DPC practice, it's a structural feature of the model. If reliable, same-day access to your own physician matters to you, a DPC membership is the most dependable way to get it.
 
-**[Learn about DPC membership →](/membership)** | **[Schedule a Meet & Greet →](/become-a-patient)**
+**[Learn about DPC membership →](/membership)** | **[Schedule a Meet & Greet →](/new-patients)**

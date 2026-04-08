@@ -55,7 +55,7 @@ draft: true
       "name": "How do I get started with Forward Family Medicine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Schedule a free, no-obligation Meet & Greet with Dr. Bigley and Dr. Lieberman — a 20-minute conversation to ask questions and see if the practice is the right fit. Visit forwardfamilymedicine.com/become-a-patient to schedule."
+        "text": "Schedule a free, no-obligation Meet & Greet with Dr. Bigley and Dr. Lieberman — a 20-minute conversation to ask questions and see if the practice is the right fit. Visit forwardfamilymedicine.com/new-patients to schedule."
       }
     }
   ]
@@ -108,7 +108,7 @@ draft: true
       "name": "How do I know if Direct Primary Care is right for me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DPC works well for patients who value access, relationship, and prevention — especially those with chronic conditions, families, and self-employed individuals. The best way to evaluate fit is a free Meet & Greet with the physician. Schedule one at forwardfamilymedicine.com/become-a-patient."
+        "text": "DPC works well for patients who value access, relationship, and prevention — especially those with chronic conditions, families, and self-employed individuals. The best way to evaluate fit is a free Meet & Greet with the physician. Schedule one at forwardfamilymedicine.com/new-patients."
       }
     }
   ]
@@ -432,7 +432,7 @@ draft: true
 
 ---
 
-## 10. `/become-a-patient` — Conversion Page
+## 10. `/new-patients` — Conversion Page
 
 ```json
 {
@@ -511,7 +511,7 @@ const faqs = [
 3. `/membership` — High conversion page; FAQ schema boosts SERPs
 4. `/direct-primary-care` — Core educational page; FAQ schema captures voice search
 5. `/lifestyle-medicine` — Blog traffic driver
-6. `/become-a-patient` — Conversion page; FAQ schema addresses last-minute objections
+6. `/new-patients` — Conversion page; FAQ schema addresses last-minute objections
 7. All cluster SEO pages — implement after core pages
 
 ### Validation

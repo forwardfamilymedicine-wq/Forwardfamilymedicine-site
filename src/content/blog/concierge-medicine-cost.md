@@ -15,7 +15,7 @@ canonical: "https://www.forwardfamilymedicine.com/blog/how-much-does-concierge-m
 
 
 ## Quick Answer
-Traditional concierge medicine typically costs $150 to $500 per month (or $1,500 to $6,000+ per year) and may still bill insurance on top of the retainer. Direct Primary Care practices typically charge $75–$200 per month depending on what's included. At Forward Family Medicine, individual membership is $200/month and covers unlimited primary care plus integrated board-eligible Lifestyle Medicine — a clinical service most DPC practices do not offer.
+Traditional concierge medicine typically costs $400+/month (or $4,800+/year) and may still bill insurance on top of the retainer. Direct Primary Care practices typically charge $75–$200 per month depending on what's included. At Forward Family Medicine, individual membership is $200/month and covers unlimited primary care plus integrated board-eligible Lifestyle Medicine — a clinical service most DPC practices do not offer.
 
 ## Explanation
 
@@ -23,7 +23,7 @@ Cost is usually the first question patients have about concierge medicine — an
 
 **Traditional Concierge Medicine: What You're Paying**
 
-Traditional concierge practices — the kind that originated in the late 1990s as a premium offering for affluent patients — typically charge a retainer fee ranging from $1,500 to $6,000 or more per year. In practice, that works out to roughly $150 to $500 per month. High-end practices in major metropolitan areas can charge considerably more.
+Traditional concierge practices — the kind that originated in the late 1990s as a premium offering for affluent patients — typically charge a retainer fee of $400+/month (or $4,800+/year), with high-end practices charging significantly more. High-end practices in major metropolitan areas can charge considerably more.
 
 Critically, most traditional concierge practices still accept health insurance. The retainer buys you the enhanced access layer: the physician's personal number, same-day appointments, longer visits, and the relationship. But when you actually come in for care, the practice bills your insurance for the visit just like any conventional office would. That means you're paying the retainer *and* your insurance premiums *and* your copays and deductibles.
 
