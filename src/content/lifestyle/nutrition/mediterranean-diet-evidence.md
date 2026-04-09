@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/cardiovascular-prevention/diet-exercise-heart-health"
   - "/lifestyle/metabolic-health/diet-strategies-blood-sugar"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # The Mediterranean Diet: What the Evidence Actually Shows
@@ -130,7 +130,7 @@ The Mediterranean diet does not require expensive imported ingredients or cookin
 
 ## How Forward Family Medicine Can Help
 
-The Mediterranean diet has the strongest evidence base of any dietary pattern, but translating evidence into a personalized plan that fits your health history, food preferences, cultural background, and schedule is where individual guidance makes the difference. If you'd like to discuss incorporating a Mediterranean dietary approach into your care plan, we'd welcome the conversation. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+The Mediterranean diet has the strongest evidence base of any dietary pattern, but translating evidence into a personalized plan that fits your health history, food preferences, cultural background, and schedule is where individual guidance makes the difference. If you'd like to discuss incorporating a Mediterranean dietary approach into your care plan, we'd welcome the conversation. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

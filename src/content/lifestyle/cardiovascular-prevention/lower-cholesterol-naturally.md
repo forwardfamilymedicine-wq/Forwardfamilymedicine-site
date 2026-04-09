@@ -23,7 +23,7 @@ linksTo:
   - "/lifestyle/nutrition"
   - "/lifestyle/nutrition/mediterranean-diet-evidence"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # How to Lower Cholesterol Naturally: Evidence-Based Strategies
@@ -198,7 +198,7 @@ For patients with modestly elevated LDL and low-to-intermediate cardiovascular r
 
 If you'd like individual guidance on your cholesterol and a lifestyle plan tailored to your specific numbers and risk profile, we're here to help. At Forward Family Medicine, we take time to go beyond the standard lipid panel — measuring ApoB, reviewing your diet and activity patterns, and working with you to implement the strategies most likely to make a difference for you specifically.
 
-Explore [Forward Family Medicine membership](/membership) or [become a patient](/become-a-patient) to get started.
+Explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients) to get started.
 
 ---
 

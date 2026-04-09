@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Malvern patients interested in concierge medicine often discover that DPC delivers the core benefits — same-day access, direct physician communication, extended visits — without the insurance billing layer that inflates traditional concierge retainer pricing. Our Wayne office is 15 minutes east via Route 30."
 nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
 ---
@@ -53,7 +53,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Malvern, PA?**
-Forward Family Medicine in Wayne, PA is 10 miles east and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne, PA is 10 miles east and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs. [Schedule a Meet & Greet →](/new-patients)
 
 **What does membership cost for Malvern patients?**
 Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
@@ -71,4 +71,4 @@ For follow-up visits, prescription refills, lab result reviews, and minor illnes
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

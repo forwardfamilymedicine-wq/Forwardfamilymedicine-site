@@ -28,7 +28,7 @@ linksTo:
   - "/lifestyle/nutrition"
   - "/lifestyle/physical-activity"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Metabolic Health: The Complete Guide
@@ -276,7 +276,7 @@ What this looks like in practice:
 
 **Lifestyle-first, medication-smart.** We are not reflexively opposed to medications — metformin, GLP-1 agonists, and others have important roles. But we lead with lifestyle because the evidence is clear: in most cases of prediabetes and early metabolic syndrome, lifestyle change is more powerful than medication and produces no side effects.
 
-If you'd like individual guidance on your metabolic health — whether you've been told you have prediabetes, metabolic syndrome, or just want to understand your numbers better — we'd welcome the opportunity to work with you. Learn about our [membership model](/membership) or take the next step to [become a patient](/become-a-patient).
+If you'd like individual guidance on your metabolic health — whether you've been told you have prediabetes, metabolic syndrome, or just want to understand your numbers better — we'd welcome the opportunity to work with you. Learn about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
 
 ---
 

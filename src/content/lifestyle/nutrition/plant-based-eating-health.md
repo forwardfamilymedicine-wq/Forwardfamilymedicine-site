@@ -26,7 +26,7 @@ linksTo:
   - "/lifestyle/cardiovascular-prevention"
   - "/lifestyle/metabolic-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Plant-Based Eating and Health: What the Evidence Shows
@@ -135,7 +135,7 @@ Practical entry points:
 
 ## How Forward Family Medicine Can Help
 
-A shift toward plant-forward eating can meaningfully improve cardiovascular risk, blood sugar control, and weight — but some transitions require attention to nutrient status and, in some cases, medication adjustments. If you'd like individual guidance on incorporating plant-based eating into your health plan, including lab monitoring and personalized nutritional recommendations, we would be glad to help. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+A shift toward plant-forward eating can meaningfully improve cardiovascular risk, blood sugar control, and weight — but some transitions require attention to nutrient status and, in some cases, medication adjustments. If you'd like individual guidance on incorporating plant-based eating into your health plan, including lab monitoring and personalized nutritional recommendations, we would be glad to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

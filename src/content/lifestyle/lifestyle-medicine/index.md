@@ -26,7 +26,7 @@ linksTo:
   - "/lifestyle/nutrition"
   - "/lifestyle/physical-activity"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
   - "/direct-primary-care"
 ---
 
@@ -188,7 +188,7 @@ In practice, this means:
 
 We do not promise that lifestyle medicine will eliminate every medication or reverse every condition. We do practice it because the evidence is compelling, the approach is consistent with good medicine, and our patients deserve care that treats the causes of their conditions, not only the consequences.
 
-If you'd like individual guidance on integrating lifestyle medicine into your care, we invite you to explore our [membership options](/membership) or [become a patient](/become-a-patient).
+If you'd like individual guidance on integrating lifestyle medicine into your care, we invite you to explore our [membership options](/membership) or [become a patient](/new-patients).
 
 ---
 

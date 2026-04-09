@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/physical-activity/strength-training-metabolic-health"
   - "/lifestyle/cardiovascular-prevention"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Exercise for Longevity: What the Research Shows About Living Longer
@@ -146,7 +146,7 @@ The body's capacity to adapt to exercise stimulus — to build cardiovascular fi
 
 If you'd like individual guidance on building an exercise plan oriented around your long-term health and longevity — taking into account your current fitness, your health history, and your specific goals — we'd be glad to help. At Forward Family Medicine, we approach physical activity as a clinical priority, and our direct primary care model gives us the time and continuity to work with you on it meaningfully.
 
-Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

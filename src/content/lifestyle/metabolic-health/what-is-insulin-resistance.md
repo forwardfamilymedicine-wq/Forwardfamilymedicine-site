@@ -23,7 +23,7 @@ linksTo:
   - "/lifestyle/metabolic-health/diet-strategies-blood-sugar"
   - "/lifestyle/physical-activity"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # What Is Insulin Resistance? Causes, Signs, and What to Do
@@ -154,7 +154,7 @@ If you'd like individual guidance on insulin resistance — whether you've been 
 
 At Forward Family Medicine, we take a thorough approach to metabolic assessment, including fasting insulin and HOMA-IR testing that most standard practices don't routinely offer. We build individualized plans that are realistic, evidence-based, and built around your specific situation — not a generic handout.
 
-Learn more about our [membership model](/membership) or take the next step to [become a patient](/become-a-patient).
+Learn more about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
 
 ---
 

@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "West Chester patients are typically 25–30 minutes from our Wayne office via Route 30 or the Pennsylvania Turnpike. Our West Chester members often come to us after outgrowing the conventional primary care model and wanting a doctor who has time for the whole picture — not just today's chief complaint."
 nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
 ---
@@ -67,7 +67,7 @@ Approximately 14 miles northeast via Route 202. Drive time is typically 25–35 
 Absolutely — and we strongly encourage it. Phone and video visits are included in all memberships. For follow-ups, prescription questions, lab review, and many acute concerns, telehealth eliminates the need to drive.
 
 **Is Forward Family Medicine accepting new patients from West Chester?**
-Yes. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes. [Schedule a Meet & Greet →](/become-a-patient)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

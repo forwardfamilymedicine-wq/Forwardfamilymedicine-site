@@ -28,7 +28,7 @@ linksTo:
   - "/lifestyle/stress-mental-health"
   - "/lifestyle/metabolic-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Sleep and Hormones: The Complete Guide
@@ -213,7 +213,7 @@ When sleep problems are present, we approach them systematically: ruling out und
 
 For patients with confirmed sleep disorders, we coordinate with sleep medicine specialists and ensure that treatment is followed through, not just ordered. CPAP therapy for sleep apnea, for example, is only effective if it is being used correctly — we help patients troubleshoot adherence and track response.
 
-If you'd like individual guidance on your sleep — whether you're struggling with insomnia, suspect sleep apnea, or simply want to optimize your sleep as part of a broader health strategy — we're here to help. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient).
+If you'd like individual guidance on your sleep — whether you're struggling with insomnia, suspect sleep apnea, or simply want to optimize your sleep as part of a broader health strategy — we're here to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients).
 
 ---
 

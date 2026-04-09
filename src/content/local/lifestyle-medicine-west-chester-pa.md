@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "West Chester residents interested in lifestyle medicine can reach our Wayne practice in 25–30 minutes via Route 30. West Chester's diverse, growing community includes many residents who have been waiting for a physician who treats nutrition, sleep, and movement as legitimate clinical interventions — not just wellness suggestions."
 nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
 ---
@@ -76,4 +76,4 @@ Prediabetes, diabetes, hypertension, high cholesterol, obesity, metabolic syndro
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

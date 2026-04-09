@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Bryn Mawr has historically been a hub for established Main Line professionals who expect excellent service — including from their physicians. Our Wayne office is a 15–20 minute drive along Lancaster Avenue, and our practice delivers the access and personal attention that defines concierge care at a price point that makes it practical rather than exclusive."
 nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 ---
@@ -53,7 +53,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Bryn Mawr, PA?**
-Forward Family Medicine in Wayne, 5 miles west, offers concierge-style DPC care. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne, 5 miles west, offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients)
 
 **How much does concierge care cost near Bryn Mawr?**
 Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
@@ -71,4 +71,4 @@ Yes — phone and video visits are included.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

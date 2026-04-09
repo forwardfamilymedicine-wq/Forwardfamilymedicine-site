@@ -16,7 +16,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Wayne residents have direct access to our lifestyle medicine practice without any commute — our office on Old Eagle School Road is centrally located within the community. Wayne's active, health-conscious population makes it a natural fit for evidence-based lifestyle medicine: residents here are already asking the right questions about prevention, nutrition, and long-term health."
 nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 ---
@@ -90,4 +90,4 @@ No. Members from Berwyn, Devon, Villanova, Radnor, and surrounding Main Line com
 
 ## Start Living Better — With a Doctor Who Supports It
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Learn About Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Learn About Lifestyle Medicine →](/lifestyle-medicine)**

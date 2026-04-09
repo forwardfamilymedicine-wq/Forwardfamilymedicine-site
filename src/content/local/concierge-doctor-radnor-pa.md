@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Radnor Township residents looking for what concierge practices offer — a physician who has time, who's accessible, and who knows you — will find our practice already embedded in their community on Old Eagle School Road in Wayne. We're designed to deliver that experience without the exclusivity pricing."
 nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
@@ -59,7 +59,7 @@ Yes — Forward Family Medicine is located within Radnor Township in Wayne, PA, 
 Individual membership starting at $200/month; family plans from $175/person/month — significantly less than traditional concierge annual retainers. [See pricing →](/membership)
 
 **Is the practice currently accepting Radnor patients?**
-Yes. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -71,4 +71,4 @@ Yes. [Schedule a Meet & Greet →](/become-a-patient)
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

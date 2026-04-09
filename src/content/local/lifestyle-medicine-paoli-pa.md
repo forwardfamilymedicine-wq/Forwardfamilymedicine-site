@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Paoli residents can reach our Wayne lifestyle medicine practice in about 10 minutes via Route 30 or Lancaster Avenue. Paoli's family-oriented community is a good fit for the lifestyle medicine model, which works particularly well when patients can integrate health changes gradually over time with consistent physician support."
 nearbyNeighborhoods: "Devon, Malvern, Berwyn, and Frazer"
 ---
@@ -80,4 +80,4 @@ Duportail House park and the natural trail access in East Whiteland offer the ki
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

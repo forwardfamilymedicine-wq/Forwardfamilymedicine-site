@@ -17,7 +17,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
   - "/services"
 localNote: "Wayne residents benefit from our location right in the heart of the Main Line — no commute to a health system. Our practice is a 5-minute walk or drive from most Wayne neighborhoods and a short walk from Wayne Station on the Paoli–Thorndale line."
 nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
@@ -77,7 +77,7 @@ Lab work and medications are available at wholesale pricing. [See full services 
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine located in Wayne, PA?**
-Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main Line. We serve Wayne residents as well as patients from surrounding communities including Berwyn, Devon, Villanova, Radnor, and beyond. [Get directions →](/become-a-patient#location)
+Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main Line. We serve Wayne residents as well as patients from surrounding communities including Berwyn, Devon, Villanova, Radnor, and beyond. [Get directions →](/new-patients#location)
 
 **Do I need to live in Wayne to be a member?**
 No. While we're located in Wayne, we welcome members from throughout the Main Line and Delaware County. Telehealth visits make membership practical for patients who live a bit farther away.
@@ -89,10 +89,10 @@ No. While we're located in Wayne, we welcome members from throughout the Main Li
 Traditional practices bill insurance per visit and typically see 20–30 patients a day. DPC practices like Forward Family Medicine cap their panel and bill a flat monthly fee — giving your physician the time and availability to truly know and serve you. [Learn more →](/direct-primary-care)
 
 **Can I tour the practice before deciding?**
-Absolutely. Our free Meet & Greet is a no-obligation 20-minute conversation where you can see the practice and ask all your questions. [Schedule yours →](/become-a-patient)
+Absolutely. Our free Meet & Greet is a no-obligation 20-minute conversation where you can see the practice and ask all your questions. [Schedule yours →](/new-patients)
 
 ## Ready to Get Started?
 
 Forward Family Medicine is Wayne's Direct Primary Care practice — built to give you the access, time, and relationship you deserve from your doctor.
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

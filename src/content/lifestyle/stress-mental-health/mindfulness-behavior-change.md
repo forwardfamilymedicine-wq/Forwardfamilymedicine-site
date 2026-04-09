@@ -23,7 +23,7 @@ linksTo:
   - "/lifestyle/stress-mental-health/practical-stress-interventions"
   - "/lifestyle/sleep-hormones/practical-sleep-improvement"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Mindfulness and Behavior Change: The Evidence and the Practice
@@ -113,7 +113,7 @@ This doesn't mean mindfulness is off-limits for people with serious mental illne
 
 Mindfulness is one component of a broader approach to stress, mental health, and lifestyle change — and the right combination of tools looks different for every person. If you'd like individual guidance on where mindfulness fits in your health picture, or how to integrate it with other interventions you're working on, we'd be glad to talk through it with you.
 
-[Become a member](/membership) or [become a patient](/become-a-patient) to access personalized care that takes your mental and physical health seriously together.
+[Become a member](/membership) or [become a patient](/new-patients) to access personalized care that takes your mental and physical health seriously together.
 
 ## FAQ
 

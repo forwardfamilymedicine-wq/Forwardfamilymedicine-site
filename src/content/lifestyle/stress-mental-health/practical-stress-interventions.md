@@ -26,7 +26,7 @@ linksTo:
   - "/lifestyle/physical-activity"
   - "/lifestyle/sleep-hormones"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Practical Stress Interventions: What Actually Works
@@ -119,7 +119,7 @@ Seeking professional support is not a sign that self-management failed. It is cl
 
 Stress is one of the most common drivers of the health concerns our patients bring to us — and it's also one that responds remarkably well to structured, evidence-based intervention. If you'd like individual guidance on building a stress management plan, evaluating whether your symptoms warrant further assessment, or integrating these strategies with your overall health goals, we're here to help.
 
-[Become a member](/membership) or [become a patient](/become-a-patient) to access care that takes the full picture of your health seriously.
+[Become a member](/membership) or [become a patient](/new-patients) to access care that takes the full picture of your health seriously.
 
 ## FAQ
 

@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Ardmore patients considering concierge medicine are often surprised to find that our DPC model delivers everything they're looking for — same-day access, a physician who picks up the phone, extended visits — at a fraction of traditional concierge pricing. Our Wayne office is a 20-minute drive along the Main Line corridor."
 nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
@@ -53,7 +53,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Ardmore, PA?**
-Forward Family Medicine in Wayne is 6 miles from Ardmore and offers concierge-style DPC care. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne is 6 miles from Ardmore and offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients)
 
 **What does concierge care cost near Ardmore?**
 Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
@@ -71,4 +71,4 @@ Yes — the Paoli–Thorndale (R5) line runs from Ardmore to Wayne directly.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

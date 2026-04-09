@@ -23,7 +23,7 @@ linksTo:
   - "/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally"
   - "/lifestyle/cardiovascular-prevention/diet-exercise-heart-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Understanding ApoB and LDL: A Patient-Friendly Explanation
@@ -152,7 +152,7 @@ The main clinical implication of elevated Lp(a) is to intensify other risk facto
 
 If you'd like individual guidance on whether ApoB testing is appropriate for you, or if you've received a concerning ApoB result and want help understanding what it means and what to do next, we're here to help. At Forward Family Medicine, we routinely incorporate ApoB into cardiovascular risk assessments for patients where it adds information — and we take time to explain what the numbers mean and how to act on them.
 
-Explore [Forward Family Medicine membership](/membership) or [become a patient](/become-a-patient) to get started.
+Explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients) to get started.
 
 ---
 

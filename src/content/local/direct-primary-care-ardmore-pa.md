@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Ardmore patients can reach our Wayne office in about 20 minutes via Lancaster Avenue or the Paoli–Thorndale SEPTA line. Ardmore's mix of young professionals and established families has found DPC appealing as a way to get the kind of primary care time and attention that's increasingly rare in larger practice settings."
 nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
@@ -66,7 +66,7 @@ About 6 miles west on Lancaster Avenue. Drive time is roughly 12–14 minutes. A
 Absolutely. Phone and video visits are included for all members, reducing the need for in-person trips for follow-ups and minor concerns.
 
 **Is Forward Family Medicine accepting new patients from Ardmore?**
-Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/b
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

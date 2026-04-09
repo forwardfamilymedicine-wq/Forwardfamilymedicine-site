@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Malvern residents are roughly 15 minutes west of our Wayne practice along Route 30. The growing Malvern and Great Valley area has a strong population of professionals who appreciate knowing their doctor will be available — not just accessible through a portal — when they need care."
 nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
 ---
@@ -67,7 +67,7 @@ Approximately 10 miles east on Route 30. Drive time is typically 18–22 minutes
 Absolutely — and we encourage it. Phone and video visits are included in all memberships, making many routine visits convenient without traveling to Wayne.
 
 **Is Forward Family Medicine accepting new patients from Malvern?**
-Yes. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes. [Schedule a Meet & Greet →](/become-a-patient)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

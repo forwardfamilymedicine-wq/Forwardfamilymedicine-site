@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Newtown Square patients seeking concierge-style medicine will find our Wayne office approximately 20 minutes north via Route 252. Our practice panel is intentionally capped — we limit patients per physician to ensure same-day availability and the kind of attention that makes concierge medicine worth pursuing."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
@@ -54,7 +54,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Newtown Square, PA?**
-Forward Family Medicine in Wayne is 7–8 miles north and offers concierge-style DPC care. Telehealth is included and handles most routine visits. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne is 7–8 miles north and offers concierge-style DPC care. Telehealth is included and handles most routine visits. [Schedule a Meet & Greet →](/new-patients)
 
 **How is DPC different from traditional concierge medicine?**
 Traditional concierge typically charges a retainer of $1,500–$6,000+ per year and may still bill insurance on top. DPC replaces insurance billing with a lower, flat monthly fee and delivers the same quality of access and relationship. [Full comparison →](/concierge-medicine)
@@ -72,4 +72,4 @@ Individual membership starting at $200/month; family plans from $175/person/mont
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

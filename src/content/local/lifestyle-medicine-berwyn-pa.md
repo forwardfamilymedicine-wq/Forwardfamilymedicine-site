@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Berwyn patients interested in lifestyle medicine will find our Wayne office just 2 miles east on Lancaster Avenue. Berwyn's mix of young families and established residents has shown strong interest in the kind of preventive, whole-person care that lifestyle medicine delivers — addressing root causes rather than managing symptoms indefinitely."
 nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 ---
@@ -80,4 +80,4 @@ A significant share of Berwyn patients work in the Daylesford and Paoli business
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Explore Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Explore Lifestyle Medicine →](/lifestyle-medicine)**

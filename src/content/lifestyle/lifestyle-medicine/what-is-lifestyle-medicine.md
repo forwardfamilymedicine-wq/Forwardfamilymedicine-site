@@ -19,7 +19,7 @@ linksTo:
   - "/lifestyle/lifestyle-medicine"
   - "/lifestyle/lifestyle-medicine/six-pillars"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # What Is Lifestyle Medicine? A Patient's Guide
@@ -122,7 +122,7 @@ If you'd like individual guidance on what lifestyle medicine can do for your hea
 
 At Forward Family Medicine, lifestyle medicine is integrated into how we practice primary care. Our direct primary care membership model gives us the time to conduct real lifestyle assessments, build individualized plans with you, and follow up over the months it takes for meaningful change to take hold. We don't rush through visits, and we don't manage conditions in isolation from the behaviors that drive them.
 
-Explore our [membership options](/membership) or [become a patient](/become-a-patient) to get started.
+Explore our [membership options](/membership) or [become a patient](/new-patients) to get started.
 
 ---
 

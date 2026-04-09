@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Bryn Mawr patients interested in lifestyle medicine can reach our Wayne office in 15–20 minutes along Lancaster Avenue. Bryn Mawr's educated, health-aware community — including many college-affiliated residents — has been particularly receptive to evidence-based approaches to prevention and chronic condition management."
 nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 ---
@@ -80,4 +80,4 @@ The walkable character of Bryn Mawr — compact streets, accessible transit, a f
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

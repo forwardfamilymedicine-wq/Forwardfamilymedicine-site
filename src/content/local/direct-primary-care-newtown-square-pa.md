@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Newtown Square residents are typically 20 minutes from our Wayne office via Route 252 North or West Chester Pike. Newtown Square's family-friendly communities and established professional households are well-suited to the DPC model — predictable costs, unlimited access, and a doctor who knows you."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
@@ -67,7 +67,7 @@ Approximately 7–8 miles north, typically a 18–22 minute drive via Route 252 
 Yes — phone and video visits are included in all memberships. Most routine follow-ups, prescription questions, and minor illness concerns can be handled without a drive to Wayne.
 
 **Is Forward Family Medicine accepting new patients from Newtown Square?**
-Yes. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes. [Schedule a Meet & Greet →](/become-a-patient)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

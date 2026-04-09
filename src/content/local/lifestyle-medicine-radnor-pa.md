@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Radnor Township residents have the advantage of our practice being located within their own community on Old Eagle School Road in Wayne. Our lifestyle medicine approach resonates strongly with Radnor's health-conscious families who want preventive care that goes beyond annual blood work."
 nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
@@ -72,4 +72,4 @@ Yes. Chronic stress drives cortisol elevation, worsens blood pressure and blood 
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

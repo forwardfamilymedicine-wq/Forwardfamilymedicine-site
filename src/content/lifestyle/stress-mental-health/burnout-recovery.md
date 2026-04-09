@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/stress-mental-health/practical-stress-interventions"
   - "/lifestyle/sleep-hormones"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Burnout: Signs, Health Consequences, and Recovery Strategies
@@ -150,7 +150,7 @@ Seeking professional help for burnout is not an admission that you couldn't hand
 
 Burnout is one of the most common health concerns among working professionals in our community, and it's one that benefits enormously from a physician who actually has time to understand your full situation — your work, your family obligations, your health history, and your goals. If you'd like individual guidance on evaluating burnout, addressing its physical health consequences, or building a realistic recovery plan, we'd be glad to help.
 
-[Become a member](/membership) or [become a patient](/become-a-patient) to access the kind of comprehensive, unhurried care that burnout recovery actually requires.
+[Become a member](/membership) or [become a patient](/new-patients) to access the kind of comprehensive, unhurried care that burnout recovery actually requires.
 
 ## FAQ
 

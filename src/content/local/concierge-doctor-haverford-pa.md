@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Haverford patients who've looked into concierge medicine often find the retainer pricing puts it out of reach for most families. Our Wayne office is a 20–25 minute drive, and our DPC model delivers the same core concierge promises — direct physician access, extended visits, no copays — within a family-budget membership structure."
 nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
@@ -53,7 +53,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Haverford, PA?**
-Forward Family Medicine in Wayne is 5–6 miles from Haverford. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne is 5–6 miles from Haverford. [Schedule a Meet & Greet →](/new-patients)
 
 **What does concierge care cost near Haverford?**
 Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
@@ -71,4 +71,4 @@ Yes — phone and video visits included.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

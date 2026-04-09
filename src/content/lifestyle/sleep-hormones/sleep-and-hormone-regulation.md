@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/metabolic-health"
   - "/lifestyle/stress-mental-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Sleep and Hormone Regulation: How Poor Sleep Disrupts Your Body
@@ -141,7 +141,7 @@ This is not to say that individual hormonal disorders don't exist and don't warr
 
 If you'd like individual guidance on how sleep may be affecting your hormonal health — or if you're experiencing fatigue, weight changes, low libido, or recovery difficulties that may be related to sleep — we'd welcome the conversation. We evaluate sleep as a primary component of metabolic and hormonal health, not a footnote.
 
-Learn more about [our membership model](/membership) or [become a patient](/become-a-patient).
+Learn more about [our membership model](/membership) or [become a patient](/new-patients).
 
 ---
 

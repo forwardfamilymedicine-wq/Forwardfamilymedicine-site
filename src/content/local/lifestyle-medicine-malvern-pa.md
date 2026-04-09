@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Malvern patients interested in lifestyle medicine are roughly 15 minutes east of our Wayne practice. Malvern's growing professional population includes many residents managing the chronic health effects of demanding careers — and who want a physician prepared to address those effects systematically, not just symptom by symptom."
 nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
 ---
@@ -72,4 +72,4 @@ Yes — telehealth is included and particularly useful for Malvern patients to r
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

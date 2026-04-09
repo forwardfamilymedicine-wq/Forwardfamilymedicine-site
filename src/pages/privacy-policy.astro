@@ -1,0 +1,93 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Privacy Policy | Forward Family Medicine"
+  description="Privacy policy for Forward Family Medicine — how we collect, use, and protect your personal information."
+>
+  <section class="page-hero section" style="background: var(--cream-100);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Privacy Policy</span>
+      </nav>
+      <h1>Privacy Policy</h1>
+      <p class="effective-date">Effective Date: January 1, 2026</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--cream-50);">
+    <div class="container prose-container">
+
+      <h2>Information We Collect</h2>
+      <p>
+        When you submit a form on our website, we may collect personal information including your name, email address, phone number, date of birth, and health-related information submitted through our contact and enrollment forms.
+      </p>
+
+      <h2>How We Use Your Information</h2>
+      <p>
+        We use the information you provide to respond to your inquiries, schedule consultations, and support enrollment in our practice. We do not use your information for marketing purposes beyond direct follow-up related to your inquiry.
+      </p>
+
+      <h2>How Your Information Is Transmitted</h2>
+      <p>
+        Form submissions on this website are sent via a secure Google Apps Script endpoint. Submitted data is not stored on this website. It is transmitted directly to our practice for review and follow-up.
+      </p>
+
+      <h2>Third Parties</h2>
+      <p>
+        We do not sell or share your personal information with third parties, except as required to provide care. For example, once you enroll as a patient, your information will be managed within our electronic health record (EHR) platform, SigmaMD, which maintains its own privacy and security practices.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have questions about this privacy policy or how your information is handled, please contact us at <a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a>.
+      </p>
+
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--ink-300);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .page-hero h1 { margin-bottom: 0.5rem; }
+
+  .effective-date {
+    font-size: 0.9rem;
+    color: var(--ink-500);
+    margin: 0;
+  }
+
+  .prose-container {
+    max-width: 720px;
+  }
+  .prose-container h2 {
+    font-size: 1.25rem;
+    color: var(--ink-900);
+    margin: 2rem 0 0.6rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ink-100);
+  }
+  .prose-container h2:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .prose-container p {
+    color: var(--ink-700);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+    font-size: 0.97rem;
+  }
+  .prose-container a {
+    color: var(--green-300);
+    text-decoration: underline;
+  }
+</style>

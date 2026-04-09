@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Haverford patients interested in lifestyle medicine are typically 20–25 minutes from our Wayne office on Lancaster Avenue. Haverford's community of established professionals and families has found lifestyle medicine valuable for managing the chronic conditions — stress, sleep disruption, metabolic issues — that accumulate over demanding careers and busy family schedules."
 nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
@@ -79,4 +79,4 @@ The professional and academic community around Haverford College tends to bring 
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

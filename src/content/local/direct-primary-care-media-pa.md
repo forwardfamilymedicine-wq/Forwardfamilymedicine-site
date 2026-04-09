@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Media residents are roughly 30 minutes from our Wayne office via Route 252 or I-476. We serve a number of Media-area patients who've decided the commute is worth it for a practice model that actually makes primary care feel like care — not a transaction."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
@@ -67,7 +67,7 @@ Approximately 12 miles north. Drive time is typically 25–30 minutes via Route 
 Yes — phone and video visits are included in all memberships. Follow-ups, prescription management, lab result reviews, and many acute concerns can be handled without the drive.
 
 **Is Forward Family Medicine accepting new patients from Media?**
-Yes. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes. [Schedule a Meet & Greet →](/become-a-patient)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

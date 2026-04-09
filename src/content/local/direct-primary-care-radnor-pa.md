@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Radnor Township residents and Wayne share the same community, and our practice is located within Radnor Township on Old Eagle School Road. Many Radnor residents consider our office their neighborhood doctor — convenient, personal, and entirely focused on primary care."
 nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
@@ -59,13 +59,13 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Forward Family Medicine is located within Radnor Township (Wayne). Many of our members are Radnor Township residents from across the township.
 
 **Is Forward Family Medicine accepting new Radnor patients?**
-Yes — we are currently enrolling new members. Panel size is limited, so we encourage early enrollment. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — we are currently enrolling new members. Panel size is limited, so we encourage early enrollment. [Schedule a Meet & Greet →](/new-patients)
 
 **How does DPC differ from Radnor area practices affiliated with large health systems?**
 Large health system practices operate on high-volume schedules. Our DPC model limits panel size to give every member same-day access and a physician who knows them deeply. [Learn more →](/direct-primary-care)
 
 **What's the best way to try this before committing?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Bigley and Dr. Lieberman. [Schedule here →](/become-a-patient)
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Bigley and Dr. Lieberman. [Schedule here →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -77,4 +77,4 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

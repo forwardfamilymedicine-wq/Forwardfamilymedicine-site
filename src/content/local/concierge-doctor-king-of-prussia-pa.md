@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "King of Prussia's professional community includes many who've considered concierge medicine and wondered whether the premium price is justified. Our Wayne office is under 20 minutes away, and we offer the full concierge experience — panel-capped, unhurried, directly accessible — at a membership rate designed for real families, not just high-net-worth patients."
 nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
@@ -54,7 +54,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near King of Prussia, PA?**
-Forward Family Medicine in Wayne, PA is 7 miles south and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs without the commute. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne, PA is 7 miles south and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs without the commute. [Schedule a Meet & Greet →](/new-patients)
 
 **How does DPC differ from traditional concierge medicine?**
 Both offer direct physician access and longer visits. Traditional concierge practices often bill insurance on top of the retainer fee; DPC replaces insurance billing entirely with a flat monthly fee — typically much lower than concierge retainers. [Full comparison →](/concierge-medicine)
@@ -75,4 +75,4 @@ King of Prussia has no direct rail connection to Wayne. Telehealth is fully incl
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Newtown Square residents interested in lifestyle medicine will find our Wayne office approximately 20 minutes north via Route 252. Newtown Square's established family communities are well-suited to lifestyle medicine's long-term approach — working with patients over years rather than encounters to build genuine, durable health."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
@@ -73,4 +73,4 @@ Yes — telehealth is included and recommended for routine lifestyle coaching, f
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

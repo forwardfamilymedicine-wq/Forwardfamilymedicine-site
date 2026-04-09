@@ -29,7 +29,7 @@ linksTo:
   - "/lifestyle/nutrition"
   - "/lifestyle/physical-activity"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Cardiovascular Prevention: The Complete Guide
@@ -263,7 +263,7 @@ Here is what that looks like in practice:
 
 **Ongoing partnership.** Cardiovascular prevention is not a one-time conversation. It is a process that unfolds over years. As your risk profile changes, your plan should change too. DPC membership makes that kind of longitudinal relationship possible.
 
-If you'd like individual guidance on your cardiovascular risk and a plan tailored to your health history, we invite you to explore [Forward Family Medicine membership](/membership) or [become a patient](/become-a-patient).
+If you'd like individual guidance on your cardiovascular risk and a plan tailored to your health history, we invite you to explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients).
 
 ---
 

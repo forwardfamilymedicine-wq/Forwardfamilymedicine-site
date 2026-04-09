@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Media patients seeking lifestyle medicine can reach our Wayne practice in approximately 30 minutes via Route 252. Media's active, community-oriented residents — many of whom already prioritize healthy living — are often looking for a physician who can help them translate those lifestyle priorities into measurable clinical outcomes."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
@@ -76,4 +76,4 @@ Prediabetes, hypertension, high cholesterol, metabolic syndrome, obesity, stress
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

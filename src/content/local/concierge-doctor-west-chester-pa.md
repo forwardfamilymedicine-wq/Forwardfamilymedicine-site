@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "West Chester patients considering concierge medicine can find our Wayne practice 25–30 minutes east via Route 30. What distinguishes our approach from traditional concierge practices is structural: we've removed insurance billing entirely, which eliminates the overhead that forces concierge retainer prices to stay high."
 nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
 ---
@@ -54,7 +54,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near West Chester, PA?**
-Forward Family Medicine in Wayne is 14 miles northeast and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne is 14 miles northeast and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/new-patients)
 
 **Is DPC the same as concierge medicine?**
 DPC delivers the same experience — direct access, longer visits, a physician who knows you — but through a lower-cost flat monthly fee rather than a high annual retainer. Many patients find DPC is better value than traditional concierge. [See the comparison →](/concierge-medicine)
@@ -75,4 +75,4 @@ Given the 14-mile distance and Route 202 traffic, telehealth is genuinely valuab
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

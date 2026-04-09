@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Media residents interested in the concierge medicine model often discover that the 30-minute drive to our Wayne office compares favorably to the typical concierge practice's annual retainer. We've structured our membership to be genuinely accessible while delivering on every core concierge promise: access, attention, and continuity."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
@@ -54,7 +54,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Media, PA?**
-Forward Family Medicine in Wayne is 12 miles north and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/become-a-patient)
+Forward Family Medicine in Wayne is 12 miles north and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/new-patients)
 
 **How does DPC compare to traditional concierge medicine?**
 Traditional concierge practices typically charge $1,500–$6,000+ per year in retainer fees and often still bill insurance. DPC replaces insurance billing with a flat monthly fee that delivers the same quality of access and relationship — typically at a fraction of the cost. [See comparison →](/concierge-medicine)
@@ -72,4 +72,4 @@ Individual membership starting at $200/month; family plans from $175/person/mont
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

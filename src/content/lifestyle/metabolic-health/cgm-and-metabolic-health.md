@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/metabolic-health/what-is-insulin-resistance"
   - "/lifestyle/metabolic-health/diet-strategies-blood-sugar"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # CGM and Metabolic Health: How Continuous Glucose Monitoring Helps
@@ -136,7 +136,7 @@ CGM is a genuinely useful tool, but it's worth understanding what it doesn't do.
 
 If you'd like individual guidance on whether CGM is appropriate for you and how to make sense of the data it produces, we're here for that conversation. We use CGM as part of our metabolic assessment toolbox — particularly for patients with prediabetes, metabolic syndrome, or significant cardiovascular risk who want a more granular picture of their glucose patterns.
 
-If you'd like to work with a provider who takes metabolic health seriously — using CGM where it's useful, pairing the data with dietary and lifestyle guidance, and following you through the process of interpreting and acting on what you find — learn more about our [membership model](/membership) or take the next step to [become a patient](/become-a-patient).
+If you'd like to work with a provider who takes metabolic health seriously — using CGM where it's useful, pairing the data with dietary and lifestyle guidance, and following you through the process of interpreting and acting on what you find — learn more about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
 
 ---
 

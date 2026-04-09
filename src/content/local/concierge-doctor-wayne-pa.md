@@ -16,7 +16,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Wayne residents looking for the concierge medicine experience will find our practice directly in the community — no commute needed. Our location on Old Eagle School Road is central to Wayne and walkable from Wayne Station on the Paoli–Thorndale line."
 nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 ---
@@ -80,8 +80,8 @@ Large health system practices typically operate on high-volume schedules with ce
 Individual membership starting at $200/month; family plans from $175/person/month — far less than traditional concierge retainer models. [See pricing →](/membership)
 
 **Can I schedule a visit before committing?**
-Yes — our free Meet & Greet is exactly for that. [Schedule here →](/become-a-patient)
+Yes — our free Meet & Greet is exactly for that. [Schedule here →](/new-patients)
 
 ## Experience Concierge Medicine in Wayne
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

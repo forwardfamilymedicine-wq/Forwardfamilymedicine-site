@@ -27,7 +27,7 @@ linksTo:
   - "/lifestyle/nutrition"
   - "/lifestyle/physical-activity"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # How to Reverse Prediabetes: Evidence-Based Strategies
@@ -174,7 +174,7 @@ If you'd like individual guidance on reversing prediabetes, we're here for that 
 
 At Forward Family Medicine, we assess your full metabolic picture, build a specific intervention plan around your situation and preferences, and follow your progress closely enough to adjust when needed. We use CGM where it's useful, take detailed dietary and lifestyle histories, and treat prediabetes reversal as a genuine clinical goal rather than a "watch and wait" situation.
 
-Learn more about our [membership model](/membership) or take the next step to [become a patient](/become-a-patient).
+Learn more about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
 
 ---
 

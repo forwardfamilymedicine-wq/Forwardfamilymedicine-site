@@ -23,7 +23,7 @@ linksTo:
   - "/lifestyle/physical-activity"
   - "/lifestyle/nutrition"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Diet and Exercise for Heart Health: A Practical Guide
@@ -192,7 +192,7 @@ Consistency over months and years matters far more than any particular week of p
 
 If you'd like individual guidance on combining diet and exercise for your specific cardiovascular risk profile, we're here to help. We take time to understand your current habits, lab results, and lifestyle, and to work with you on realistic changes that produce meaningful results over time.
 
-Explore [Forward Family Medicine membership](/membership) or [become a patient](/become-a-patient) to get started.
+Explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients) to get started.
 
 ---
 

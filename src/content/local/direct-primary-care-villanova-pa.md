@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Villanova residents are just 3–4 miles from our Wayne office along Lancaster Avenue, making visits simple and convenient. Our practice draws many Villanova University-area families and professionals who want a primary care physician who genuinely knows them — not just their insurance card."
 nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 ---
@@ -63,7 +63,7 @@ Yes — Villanova is less than a mile from our Wayne office. It's one of our mos
 Approximately 1 mile. A 3–5 minute drive via Lancaster Avenue, or one SEPTA stop on the Paoli–Thorndale line.
 
 **Is Forward Family Medicine accepting new patients from Villanova?**
-Yes — we are currently accepting new members. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — we are currently accepting new members. [Schedule a Meet & Greet →](/new-patients)
 
 **What makes DPC different from practices near Villanova University?**
 Most practices near the university run on traditional insurance billing schedules. Forward Family Medicine's DPC model keeps our panel smaller, giving you same-day access and a physician who genuinely knows your history. [Learn more →](/direct-primary-care)
@@ -78,4 +78,4 @@ Most practices near the university run on traditional insurance billing schedule
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

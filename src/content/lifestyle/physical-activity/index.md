@@ -30,7 +30,7 @@ linksTo:
   - "/lifestyle/cardiovascular-prevention"
   - "/lifestyle/stress-mental-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Physical Activity and Health: The Complete Guide
@@ -246,7 +246,7 @@ At Forward Family Medicine, physical activity is not an afterthought in the marg
 
 As a direct primary care practice, we have the time and relationship depth to work with you on exercise the way it deserves to be addressed — understanding your history, your barriers, your current fitness level, and your goals, then developing a plan that is specific to you rather than generic.
 
-If you'd like individual guidance on building a physical activity plan that fits your health, your life, and your goals, we'd welcome the opportunity to work with you. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+If you'd like individual guidance on building a physical activity plan that fits your health, your life, and your goals, we'd welcome the opportunity to work with you. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

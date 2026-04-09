@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/stress-mental-health"
   - "/lifestyle/stress-mental-health/practical-stress-interventions"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Practical Sleep Improvement Strategies: A Step-by-Step Guide
@@ -135,7 +135,7 @@ Wearable devices (Oura Ring, Apple Watch, Fitbit) are useful for tracking consis
 
 Sleep problems are among the most common concerns our patients bring to us — and they are also among the most modifiable. If you'd like individual guidance on assessing your sleep, ruling out sleep disorders, or getting started with CBT-I or other evidence-based interventions, we're here to help.
 
-[Become a member](/membership) or [become a patient](/become-a-patient) to access personalized care that treats sleep as the health priority it is.
+[Become a member](/membership) or [become a patient](/new-patients) to access personalized care that treats sleep as the health priority it is.
 
 ## FAQ
 

@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/physical-activity/zone-2-training"
   - "/lifestyle/stress-mental-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Getting Started with Exercise: A Beginner's Guide to Building a Sustainable Habit
@@ -179,7 +179,7 @@ A few evidence-informed principles for the long term:
 
 If you'd like individual guidance on starting an exercise routine safely — particularly if you have health conditions, past injuries, or have tried and struggled before — we'd be glad to help. Starting from where you are, not from where a generic program assumes you are, is exactly the kind of individualized approach that direct primary care makes possible.
 
-If you'd like support in building a physical activity plan that fits your health and your life, learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+If you'd like support in building a physical activity plan that fits your health and your life, learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

@@ -29,7 +29,7 @@ linksTo:
   - "/lifestyle/cardiovascular-prevention"
   - "/lifestyle/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Nutrition for Long-Term Health: The Complete Guide
@@ -269,7 +269,7 @@ We do not take a dogmatic position on any single dietary ideology. We do not pre
 
 For patients managing specific conditions — cardiovascular disease, type 2 diabetes, metabolic syndrome, autoimmune disease — we work to apply the best available dietary evidence to your individual situation. We interpret relevant lab work (lipid panels, blood glucose, insulin, inflammatory markers, micronutrient levels) in the context of your full clinical picture.
 
-If you'd like individual nutrition guidance as part of a comprehensive primary care relationship, learn more about [our membership model](/membership) or [become a patient](/become-a-patient).
+If you'd like individual nutrition guidance as part of a comprehensive primary care relationship, learn more about [our membership model](/membership) or [become a patient](/new-patients).
 
 ---
 

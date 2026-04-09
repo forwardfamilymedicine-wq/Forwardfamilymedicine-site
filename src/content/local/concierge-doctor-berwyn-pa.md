@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Berwyn patients who've researched concierge medicine often discover that our Wayne office — just 2 miles east on Lancaster Avenue — offers a comparable experience at a meaningfully lower cost. The absence of insurance billing is what keeps our membership fees accessible without sacrificing the quality of care."
 nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 ---
@@ -55,7 +55,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Berwyn, PA?**
-Yes — Forward Family Medicine in Wayne offers concierge-style DPC care just 3 miles from Berwyn. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — Forward Family Medicine in Wayne offers concierge-style DPC care just 3 miles from Berwyn. [Schedule a Meet & Greet →](/new-patients)
 
 **How much does concierge medicine cost for Berwyn patients?**
 Individual membership starting at $200/month; family plans from $175/person/month — far below traditional concierge retainer pricing. [See pricing →](/membership)
@@ -73,4 +73,4 @@ Yes — all phone and video visits are included in membership.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

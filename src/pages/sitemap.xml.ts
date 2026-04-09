@@ -49,7 +49,7 @@ const corePages = [
   { slug: "services", priority: PRIORITIES.core, changefreq: CHANGEFREQ.core },
   { slug: "patient-experience", priority: PRIORITIES.core, changefreq: CHANGEFREQ.core },
   { slug: "faq", priority: PRIORITIES.core, changefreq: CHANGEFREQ.core },
-  { slug: "become-a-patient", priority: PRIORITIES.core, changefreq: CHANGEFREQ.core },
+  { slug: "new-patients", priority: PRIORITIES.core, changefreq: CHANGEFREQ.core },
   { slug: "blog", priority: "0.7", changefreq: "weekly" },
 ];
 

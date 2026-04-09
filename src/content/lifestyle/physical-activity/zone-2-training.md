@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/physical-activity/hiit-vs-steady-state"
   - "/lifestyle/metabolic-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Zone 2 Training: What It Is, Why It Matters, and How to Do It
@@ -157,7 +157,7 @@ For general health, the practical translation: a weekly program of three to four
 
 Zone 2 training is a concept that sounds straightforward but can be surprisingly difficult to implement correctly without guidance — particularly around finding the right intensity, understanding why going slowly is actually the goal, and fitting it into a complete training program.
 
-If you'd like individual guidance on building a training program around Zone 2 principles — or understanding how your exercise approach relates to your metabolic and cardiovascular health — we'd be glad to help. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+If you'd like individual guidance on building a training program around Zone 2 principles — or understanding how your exercise approach relates to your metabolic and cardiovascular health — we'd be glad to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

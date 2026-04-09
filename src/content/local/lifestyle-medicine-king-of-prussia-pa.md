@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "King of Prussia patients can reach our Wayne lifestyle medicine practice in under 20 minutes via Route 202. KOP's large workforce population often presents with exactly the conditions lifestyle medicine is most effective for: metabolic syndrome, stress-related illness, sleep disorders, and cardiovascular risk factors tied to sedentary professional life."
 nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
@@ -76,4 +76,4 @@ Prediabetes and diabetes, hypertension, high cholesterol, obesity, metabolic syn
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

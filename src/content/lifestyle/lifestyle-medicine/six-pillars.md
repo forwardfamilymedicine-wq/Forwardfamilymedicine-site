@@ -26,7 +26,7 @@ linksTo:
   - "/lifestyle/sleep-hormones"
   - "/lifestyle/stress-mental-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # The Six Pillars of Lifestyle Medicine Explained
@@ -139,7 +139,7 @@ If you'd like individual guidance on applying the six pillars to your health, we
 
 At Forward Family Medicine, we assess all six pillars as part of comprehensive care — not as a checklist, but as a genuine clinical evaluation of the behavioral factors driving your health. Our direct primary care membership model gives us the time to do this well: to understand your circumstances, develop a realistic plan with you, and follow up over the months it takes for change to take hold.
 
-Explore our [membership options](/membership) or [become a patient](/become-a-patient) to get started.
+Explore our [membership options](/membership) or [become a patient](/new-patients) to get started.
 
 ---
 

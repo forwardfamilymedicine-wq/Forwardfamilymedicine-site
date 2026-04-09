@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "King of Prussia patients typically reach our Wayne office in under 20 minutes via Route 202 or Route 30. KOP's large professional population includes many who've tried insurance-based primary care and found 15-minute appointments and 3-week waits don't match the quality of care they're looking for."
 nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
@@ -66,7 +66,7 @@ Approximately 7 miles south via Route 202 or the Blue Route (I-476). Drive time 
 Yes — phone and video visits are fully included in all memberships, making most routine and follow-up care accessible without a drive.
 
 **Is Forward Family Medicine accepting new patients from King of Prussia?**
-Yes. [Schedule a Meet & Greet →](/become-a-patient)
+Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes. [Schedule a Meet & Greet →](/become-a-patient)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

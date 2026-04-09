@@ -22,7 +22,7 @@ linksTo:
   - "/lifestyle/sleep-hormones/practical-sleep-improvement"
   - "/lifestyle/stress-mental-health"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Sleep Hygiene and Long-Term Health: Why It Matters More Than You Think
@@ -133,7 +133,7 @@ If you have been practicing good sleep hygiene consistently for several weeks an
 
 If you'd like individual guidance on improving your sleep — whether you're not sure where to start, have tried sleep hygiene without success, or want to make sure you don't have an underlying sleep disorder — we're here to help. We take a comprehensive, evidence-based approach to sleep as a clinical priority, not an afterthought.
 
-Learn more about [our membership model](/membership) or [become a patient](/become-a-patient). For more detailed strategies, see our guide on [Practical Sleep Improvement](/lifestyle/sleep-hormones/practical-sleep-improvement).
+Learn more about [our membership model](/membership) or [become a patient](/new-patients). For more detailed strategies, see our guide on [Practical Sleep Improvement](/lifestyle/sleep-hormones/practical-sleep-improvement).
 
 ---
 

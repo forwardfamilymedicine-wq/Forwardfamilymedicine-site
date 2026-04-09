@@ -14,7 +14,7 @@ The Knowledge Library uses a pillar + cluster model:
 - **7 pillar pages** (2,500–4,000 words each): comprehensive topic hubs that rank for broad queries and link out to all cluster articles in their category
 - **30 cluster articles** (1,000–1,500 words each): targeted articles addressing specific questions within each pillar topic; they link back to their pillar and to related pillars
 
-Every page links to `/membership` and `/become-a-patient` via a "How Forward Family Medicine Can Help" section.
+Every page links to `/membership` and `/new-patients` via a "How Forward Family Medicine Can Help" section.
 
 ---
 
@@ -35,7 +35,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `lifestyle-medicine-vs-conventional.md` | `/lifestyle/lifestyle-medicine/lifestyle-medicine-vs-conventional` | lifestyle vs conventional medicine, lifestyle vs functional medicine | 1,000–1,500 |
 | `patient-success-stories.md` | `/lifestyle/lifestyle-medicine/patient-success-stories` | lifestyle medicine results, lifestyle medicine case studies | 1,000–1,500 |
 
-**Pillar links to:** all 5 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/cardiovascular-prevention`, `/lifestyle/sleep-hormones`, `/lifestyle/stress-mental-health`, `/lifestyle/nutrition`, `/lifestyle/physical-activity`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 5 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/cardiovascular-prevention`, `/lifestyle/sleep-hormones`, `/lifestyle/stress-mental-health`, `/lifestyle/nutrition`, `/lifestyle/physical-activity`, `/membership`, `/new-patients`
 
 ---
 
@@ -55,7 +55,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `cgm-and-metabolic-health.md` | `/lifestyle/metabolic-health/cgm-and-metabolic-health` | CGM metabolic health, continuous glucose monitor non-diabetic | 1,000–1,500 |
 | `diet-strategies-blood-sugar.md` | `/lifestyle/metabolic-health/diet-strategies-blood-sugar` | diet for blood sugar control, foods that lower blood sugar | 1,000–1,500 |
 
-**Pillar links to:** all 4 cluster articles + `/lifestyle/lifestyle-medicine`, `/lifestyle/nutrition`, `/lifestyle/physical-activity`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 4 cluster articles + `/lifestyle/lifestyle-medicine`, `/lifestyle/nutrition`, `/lifestyle/physical-activity`, `/membership`, `/new-patients`
 
 ---
 
@@ -75,7 +75,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `understanding-apob-ldl.md` | `/lifestyle/cardiovascular-prevention/understanding-apob-ldl` | ApoB cholesterol, ApoB vs LDL, what is ApoB | 1,000–1,500 |
 | `blood-pressure-lifestyle.md` | `/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle` | lower blood pressure naturally, DASH diet blood pressure | 1,000–1,500 |
 
-**Pillar links to:** all 4 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/nutrition`, `/lifestyle/physical-activity`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 4 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/nutrition`, `/lifestyle/physical-activity`, `/membership`, `/new-patients`
 
 ---
 
@@ -95,7 +95,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `practical-sleep-improvement.md` | `/lifestyle/sleep-hormones/practical-sleep-improvement` | how to improve sleep, CBT for insomnia, insomnia treatment | 1,000–1,500 |
 | `sleep-and-metabolic-health.md` | `/lifestyle/sleep-hormones/sleep-and-metabolic-health` | sleep and metabolism, sleep deprivation diabetes, sleep weight gain | 1,000–1,500 |
 
-**Pillar links to:** all 4 cluster articles + `/lifestyle/stress-mental-health`, `/lifestyle/metabolic-health`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 4 cluster articles + `/lifestyle/stress-mental-health`, `/lifestyle/metabolic-health`, `/membership`, `/new-patients`
 
 ---
 
@@ -115,7 +115,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `practical-stress-interventions.md` | `/lifestyle/stress-mental-health/practical-stress-interventions` | stress management techniques, how to reduce stress, CBT stress | 1,000–1,500 |
 | `burnout-recovery.md` | `/lifestyle/stress-mental-health/burnout-recovery` | burnout symptoms, burnout recovery, occupational burnout | 1,000–1,500 |
 
-**Pillar links to:** all 4 cluster articles + `/lifestyle/sleep-hormones`, `/lifestyle/physical-activity`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 4 cluster articles + `/lifestyle/sleep-hormones`, `/lifestyle/physical-activity`, `/membership`, `/new-patients`
 
 ---
 
@@ -135,7 +135,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `reading-food-labels.md` | `/lifestyle/nutrition/reading-food-labels` | how to read food labels, nutrition facts label, food label guide | 1,000–1,500 |
 | `mediterranean-diet-evidence.md` | `/lifestyle/nutrition/mediterranean-diet-evidence` | Mediterranean diet evidence, PREDIMED, Mediterranean diet cardiovascular | 1,000–1,500 |
 
-**Pillar links to:** all 4 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/cardiovascular-prevention`, `/lifestyle/lifestyle-medicine`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 4 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/cardiovascular-prevention`, `/lifestyle/lifestyle-medicine`, `/membership`, `/new-patients`
 
 ---
 
@@ -156,7 +156,7 @@ Every page links to `/membership` and `/become-a-patient` via a "How Forward Fam
 | `zone-2-training.md` | `/lifestyle/physical-activity/zone-2-training` | zone 2 training, zone 2 cardio, aerobic base training | 1,000–1,500 |
 | `hiit-vs-steady-state.md` | `/lifestyle/physical-activity/hiit-vs-steady-state` | HIIT vs steady state cardio, high intensity interval training | 1,000–1,500 |
 
-**Pillar links to:** all 5 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/cardiovascular-prevention`, `/lifestyle/stress-mental-health`, `/membership`, `/become-a-patient`
+**Pillar links to:** all 5 cluster articles + `/lifestyle/metabolic-health`, `/lifestyle/cardiovascular-prevention`, `/lifestyle/stress-mental-health`, `/membership`, `/new-patients`
 
 ---
 
@@ -253,7 +253,7 @@ Cluster articles can link to closely related cluster articles in the same or adj
 Each pillar page must link to all cluster articles in its category. This creates the hub-and-spoke structure that concentrates authority in the pillar.
 
 ### All Pages → Conversion (required)
-Every page must link to `/membership` and `/become-a-patient` via the "How Forward Family Medicine Can Help" section.
+Every page must link to `/membership` and `/new-patients` via the "How Forward Family Medicine Can Help" section.
 
 ---
 

@@ -25,7 +25,7 @@ linksTo:
   - "/lifestyle/metabolic-health"
   - "/lifestyle/metabolic-health/what-is-insulin-resistance"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Strength Training and Metabolic Health: Why Muscle Is Your Metabolic Organ
@@ -168,7 +168,7 @@ Start lighter than you think necessary. The first two weeks are about learning t
 
 If you'd like individual guidance on incorporating strength training into your health plan — particularly if you have diabetes, prediabetes, cardiovascular disease, or are returning from injury — we'd be glad to help you build a safe and effective approach.
 
-At Forward Family Medicine, metabolic health is a core focus, and resistance training is one of our most commonly recommended interventions. If you'd like personalized guidance, learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+At Forward Family Medicine, metabolic health is a core focus, and resistance training is one of our most commonly recommended interventions. If you'd like personalized guidance, learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

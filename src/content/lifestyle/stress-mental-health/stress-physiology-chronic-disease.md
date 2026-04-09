@@ -25,7 +25,7 @@ linksTo:
   - "/lifestyle/metabolic-health"
   - "/lifestyle/cardiovascular-prevention"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Stress Physiology and Chronic Disease: How Stress Makes You Sick
@@ -159,7 +159,7 @@ Treating anxiety or depression as problems that belong only to the psychiatrist 
 
 If you'd like individual guidance on understanding your stress burden and its potential health consequences, Forward Family Medicine can help. We take time — in appointments that are not rushed — to assess stress as a physiological risk factor alongside the other elements of your health. We can evaluate relevant biomarkers, discuss evidence-based interventions that fit your life, and coordinate with mental health specialists when needed.
 
-Explore [membership at Forward Family Medicine](/membership) or [become a patient](/become-a-patient) to experience primary care designed to address what actually drives your health.
+Explore [membership at Forward Family Medicine](/membership) or [become a patient](/new-patients) to experience primary care designed to address what actually drives your health.
 
 ---
 

@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Villanova's community of professionals and university families is exactly the demographic that has traditionally driven concierge medicine adoption. Our Wayne office is 3–4 miles east on Lancaster Avenue — close enough that you don't need to choose between concierge-quality care and convenience."
 nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 ---
@@ -53,7 +53,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Villanova, PA?**
-Yes — Forward Family Medicine in Wayne is just 1 mile away and offers concierge-style DPC care. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — Forward Family Medicine in Wayne is just 1 mile away and offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients)
 
 **Is concierge medicine affordable near Villanova?**
 Forward Family Medicine uses the DPC model — Individual membership starting at $200/month; family plans from $175/person/month, far below traditional concierge retainer fees. [See pricing →](/membership)
@@ -71,4 +71,4 @@ Yes — phone and video visits are included in all memberships.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

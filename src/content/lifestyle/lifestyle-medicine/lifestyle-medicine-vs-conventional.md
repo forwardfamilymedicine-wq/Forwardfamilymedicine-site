@@ -20,7 +20,7 @@ linksTo:
   - "/concierge-medicine"
   - "/direct-primary-care"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Lifestyle Medicine vs. Conventional Medicine: Key Differences
@@ -104,7 +104,7 @@ If you'd like individual guidance on how a lifestyle medicine approach might dif
 
 At Forward Family Medicine, we practice lifestyle medicine as part of comprehensive primary care. Our membership model gives us the time to work with you on the behavioral dimensions of your health in ways the conventional system rarely allows. We use medications when they are indicated, and we take behavioral change seriously as a clinical intervention — not background advice.
 
-Explore our [membership options](/membership) or [become a patient](/become-a-patient).
+Explore our [membership options](/membership) or [become a patient](/new-patients).
 
 ---
 

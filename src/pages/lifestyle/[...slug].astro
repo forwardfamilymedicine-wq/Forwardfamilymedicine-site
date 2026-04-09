@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import AuthorBio from '../../components/blog/AuthorBio.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('lifestyle');
@@ -16,6 +17,19 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const slug = entry.id.replace(/\.mdx?$/, '').replace(/\/index$/, '');
 const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.com/lifestyle/${slug}`;
+
+const dateObj = entry.data.date ? new Date(entry.data.date) : null;
+const dateFormatted = dateObj?.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const dateISO = dateObj?.toISOString();
+
+const authorDisplay: Record<string, string> = {
+  'Dr. Philip Lieberman': 'Dr. Philip Lieberman, DO — Board-Eligible Family Medicine & Lifestyle Medicine',
+  'Dr. David Bigley': 'Dr. David Bigley, DO — Board-Certified Family Medicine',
+  'David Bigley, DO': 'Dr. David Bigley, DO — Board-Certified Family Medicine',
+};
+const author = entry.data.author;
+const authorLabel = author ? (authorDisplay[author] ?? author) : null;
+
 ---
 
 <MainLayout
@@ -23,42 +37,76 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   description={entry.data.description}
   canonical={canonicalUrl}
 >
-  <article class="prose-page">
+  <article class="blog-post">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span>
-        <a href="/lifestyle-medicine">Lifestyle Medicine</a> <span aria-hidden="true">›</span>
-        <span>{entry.data.title}</span>
-      </nav>
-      <Content />
-      <aside class="medical-disclaimer" aria-label="Educational disclaimer">
-        <p class="disclaimer-label">Educational Disclaimer</p>
-        <p>The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
-      </aside>
+      <div class="post-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true"> › </span>
+          <a href="/lifestyle-medicine">Lifestyle Medicine</a> <span aria-hidden="true"> › </span>
+          <a href="/lifestyle">Library</a> <span aria-hidden="true"> › </span>
+          <span>{entry.data.title}</span>
+        </nav>
+        <header class="post-header">
+          <h1>{entry.data.title}</h1>
+          {authorLabel && dateISO && (
+            <p class="post-meta">
+              By <strong>{authorLabel}</strong> &middot;
+              <time datetime={dateISO}>{dateFormatted}</time>
+            </p>
+          )}
+        </header>
+        <div class="post-body prose">
+          <Content />
+        </div>
+        <AuthorBio />
+        <div class="post-cta-block card">
+          <p class="text-muted" style="font-size:0.9rem; margin-bottom:0.5rem;">Forward Family Medicine</p>
+          <h3>Ready to experience medicine the way it should be?</h3>
+          <p>Schedule a free, no-obligation meet and greet with Dr. Bigley or Dr. Lieberman. No pressure, no commitment — just a conversation.</p>
+          <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+        </div>
+        <aside class="medical-disclaimer" aria-label="Educational disclaimer">
+          <p class="disclaimer-label">Educational Disclaimer</p>
+          <p>The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
+        </aside>
+      </div>
     </div>
   </article>
 </MainLayout>
 
 <style>
+  .post-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+  }
   .breadcrumb {
     font-size: 0.85rem;
     color: var(--ink-300);
     margin-bottom: 2rem;
   }
   .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .prose-page {
-    padding: 4rem 0;
+  .breadcrumb a:hover { text-decoration: underline; }
+  .post-header { margin-bottom: 2.5rem; }
+  .post-header h1 { margin-bottom: 0.75rem; }
+  .post-meta { color: var(--ink-500); font-size: 0.9rem; }
+  .prose h2 { margin: 2.5rem 0 1rem; }
+  .prose h3 { margin: 2rem 0 0.75rem; }
+  .prose ul, .prose ol { margin: 1rem 0 1rem 1.5rem; }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose p { margin-bottom: 1.25rem; }
+  .prose strong { color: var(--ink-900); }
+  .prose :global(a) { color: var(--green-300); text-decoration: underline; }
+  .prose :global(blockquote) { border-left: 4px solid var(--green-300); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: var(--cream-100); color: var(--ink-700); }
+  .prose :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  .post-cta-block {
+    margin-top: 3rem;
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, var(--green-50) 0%, var(--cream-200) 100%);
+    border-radius: var(--radius);
   }
-  .prose-page :global(h1) { font-size: 2.25rem; margin-bottom: 1rem; color: var(--ink-900); }
-  .prose-page :global(h2) { font-size: 1.6rem; margin: 2rem 0 0.75rem; color: var(--ink-900); }
-  .prose-page :global(h3) { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
-  .prose-page :global(p) { margin-bottom: 1rem; line-height: 1.75; color: var(--ink-700); }
-  .prose-page :global(ul), .prose-page :global(ol) { margin: 0.5rem 0 1rem 1.5rem; }
-  .prose-page :global(li) { margin-bottom: 0.4rem; line-height: 1.7; color: var(--ink-700); }
-  .prose-page :global(a) { color: var(--green-300); text-decoration: underline; }
-  .prose-page :global(strong) { color: #222; }
-  .prose-page :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
-  .prose-page :global(blockquote) { border-left: 4px solid var(--green-300); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: var(--cream-100); color: var(--ink-700); }
+  .post-cta-block h3 { margin-bottom: 0.75rem; }
+  .post-cta-block p { margin-bottom: 1.25rem; }
   .medical-disclaimer {
     margin-top: 2rem;
     padding: 1rem 1.25rem;

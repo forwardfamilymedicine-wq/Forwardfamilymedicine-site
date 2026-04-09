@@ -28,7 +28,7 @@ linksTo:
   - "/lifestyle/sleep-hormones"
   - "/lifestyle/physical-activity"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Stress and Mental Health: The Complete Guide
@@ -199,7 +199,7 @@ At Forward Family Medicine, we consider stress and mental health integral to the
 
 In practice, this means we take time to understand your stress load and its sources. We discuss evidence-based interventions in the context of your actual life and constraints. We monitor stress-related biomarkers (blood pressure, inflammatory markers, cortisol rhythm when relevant). We coordinate appropriately with therapists, psychologists, and psychiatrists when clinical mental health conditions require specialist support. And we stay involved as a consistent presence across the arc of your care.
 
-If you'd like individual guidance on managing stress as part of your overall health, we'd encourage you to explore [membership at Forward Family Medicine](/membership) or [become a patient](/become-a-patient). This is exactly the kind of care that DPC was designed to provide.
+If you'd like individual guidance on managing stress as part of your overall health, we'd encourage you to explore [membership at Forward Family Medicine](/membership) or [become a patient](/new-patients). This is exactly the kind of care that DPC was designed to provide.
 
 ---
 

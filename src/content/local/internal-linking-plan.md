@@ -21,7 +21,7 @@ author: "Forward Family Medicine"
 Each DPC location page links to:
 - `/direct-primary-care` — the main DPC explainer (primary destination)
 - `/membership` — pricing and enrollment
-- `/become-a-patient` — conversion CTA
+- `/new-patients` — conversion CTA
 - `/services` — service menu (inline reference)
 
 ### Type 2: `concierge-doctor-[town]-pa.md`
@@ -29,7 +29,7 @@ Each DPC location page links to:
 Each concierge location page links to:
 - `/concierge-medicine` — the main concierge vs. DPC comparison page (primary destination)
 - `/membership` — pricing and enrollment
-- `/become-a-patient` — conversion CTA
+- `/new-patients` — conversion CTA
 - `/services` — service menu (inline reference)
 
 ### Type 3: `lifestyle-medicine-[town]-pa.md`
@@ -37,7 +37,7 @@ Each concierge location page links to:
 Each lifestyle location page links to:
 - `/lifestyle-medicine` — the main lifestyle medicine pillar page (primary destination)
 - `/membership` — pricing and enrollment
-- `/become-a-patient` — conversion CTA
+- `/new-patients` — conversion CTA
 - `/services` — service menu (inline reference)
 
 ---
@@ -70,7 +70,7 @@ Every local page includes these mandatory outbound links (via `linksTo` frontmat
 | Link Target | Purpose | Pages That Link To It |
 |-------------|---------|----------------------|
 | `/membership` | Conversion path — pricing, tiers, enrollment | All 42 local pages |
-| `/become-a-patient` | Primary CTA — Meet & Greet scheduling | All 42 local pages |
+| `/new-patients` | Primary CTA — Meet & Greet scheduling | All 42 local pages |
 | `/direct-primary-care` | DPC pillar page | All 14 DPC pages |
 | `/concierge-medicine` | Concierge pillar page | All 14 concierge pages |
 | `/lifestyle-medicine` | Lifestyle pillar page | All 14 lifestyle pages |
@@ -86,7 +86,7 @@ Local pages should be linked from:
 2. **`/concierge-medicine`** — Regional availability section linking to concierge pages
 3. **`/lifestyle-medicine`** — Local access section linking to lifestyle pages
 4. **`/membership`** — "Patients from across the region" section
-5. **`/become-a-patient`** — "Serving these communities" list with links
+5. **`/new-patients`** — "Serving these communities" list with links
 6. **Blog posts** — Posts about DPC, Main Line, or Chester/Delaware/Montgomery County should link to relevant local pages
 7. **`/services`** — "Our service area" note with links to key town pages
 
@@ -107,7 +107,7 @@ This cross-linking strengthens topical clusters around each town name and increa
 
 ## "Communities We Serve" Hub Page
 
-**Recommended: Create `/communities` or a section on `/become-a-patient`**
+**Recommended: Create `/communities` or a section on `/new-patients`**
 
 A hub page or section should:
 - List all 14 towns with brief descriptions and links to their DPC pages

@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Devon residents are a short drive from our Wayne office via Lancaster Avenue or Route 30. Many of our Devon members appreciate the ability to handle primary care needs close to home without navigating a large hospital system."
 nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 ---
@@ -66,7 +66,7 @@ Approximately 3 miles east on Lancaster Avenue. Drive time is typically under 10
 Absolutely. Phone and video visits are included for all members.
 
 **Is Forward Family Medicine accepting new Devon patients?**
-Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/b
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

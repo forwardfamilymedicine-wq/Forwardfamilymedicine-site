@@ -14,7 +14,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Devon residents interested in concierge-style care will find our Wayne office just minutes away via Lancaster Avenue or Route 30. We've designed our practice to deliver the access and attention of traditional concierge medicine without the premium retainer that has historically made that model inaccessible for most families."
 nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 ---
@@ -53,7 +53,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Devon, PA?**
-Yes — Forward Family Medicine in Wayne is 3 miles from Devon. [Schedule a Meet & Greet →](/become-a-patient)
+Yes — Forward Family Medicine in Wayne is 3 miles from Devon. [Schedule a Meet & Greet →](/new-patients)
 
 **How much does concierge medicine cost for Devon patients?**
 Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
@@ -71,4 +71,4 @@ Yes — phone and video visits are included.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**

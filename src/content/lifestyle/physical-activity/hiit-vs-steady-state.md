@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/physical-activity/exercise-for-longevity"
   - "/lifestyle/cardiovascular-prevention"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # HIIT vs. Steady-State Cardio: What the Evidence Shows
@@ -187,7 +187,7 @@ This structure provides approximately 135–150 minutes of Zone 2 work per week 
 
 Choosing the right balance of exercise intensities for your health goals, fitness level, and any existing health conditions is something a physician who knows you well can help with meaningfully. The generic comparison of HIIT and steady-state cardio matters less than finding the specific approach that you will do consistently, safely, and in a way that aligns with your long-term health priorities.
 
-If you'd like individual guidance on building an exercise program that's right for your situation — whether you're starting from scratch or optimizing an existing routine — we'd be glad to help. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+If you'd like individual guidance on building an exercise program that's right for your situation — whether you're starting from scratch or optimizing an existing routine — we'd be glad to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

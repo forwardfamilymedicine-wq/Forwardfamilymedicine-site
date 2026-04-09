@@ -15,7 +15,7 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
-  - "/become-a-patient"
+  - "/new-patients"
 localNote: "Berwyn patients appreciate that our Wayne office is just 2 miles east on Lancaster Avenue — an easy drive or a quick stop on the Paoli–Thorndale SEPTA line. We serve many Berwyn families who want Main Line-quality primary care without the large health system feel."
 nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 ---
@@ -67,7 +67,7 @@ Approximately 3 miles west on Lancaster Avenue. Drive time is typically under 10
 Absolutely. Phone and video visits are included in all memberships. Berwyn patients frequently use telehealth for routine follow-ups, prescription refills, and minor concerns.
 
 **Is Forward Family Medicine accepting new patients from Berwyn?**
-Yes — we are currently enrolling new members. [Schedule a free Meet & Greet →](/become-a-patient)
+Yes — we are currently enrolling new members. [Schedule a free Meet & Greet →](/new-patients)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes — we are currently enrolling new members. [Schedule a free Meet & Greet �
 
 ## Ready to Get Started?
 
-**[Schedule a Free Meet & Greet →](/become-a-patient)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**

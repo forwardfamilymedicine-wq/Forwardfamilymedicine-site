@@ -24,7 +24,7 @@ linksTo:
   - "/lifestyle/nutrition"
   - "/lifestyle/nutrition/mediterranean-diet-evidence"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # Diet Strategies for Blood Sugar Control: What the Evidence Shows
@@ -148,7 +148,7 @@ Rather than overhauling your entire diet at once, start here:
 
 Diet changes that affect blood glucose can sometimes require medication adjustments — particularly if you take insulin or other glucose-lowering medications. Working with a physician who understands your full picture is important.
 
-If you'd like individual guidance on blood sugar management, including personalized dietary recommendations, metabolic testing, and coordination with any medications you may be taking, we'd welcome the opportunity to work with you. Learn more about [our membership model](/membership) or [become a patient](/become-a-patient) today.
+If you'd like individual guidance on blood sugar management, including personalized dietary recommendations, metabolic testing, and coordination with any medications you may be taking, we'd welcome the opportunity to work with you. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
 
 ---
 

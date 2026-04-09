@@ -20,7 +20,7 @@ linksTo:
   - "/lifestyle/metabolic-health"
   - "/lifestyle/cardiovascular-prevention"
   - "/membership"
-  - "/become-a-patient"
+  - "/new-patients"
 ---
 
 # When Medication Is Still Needed — And How Lifestyle Medicine Fits
@@ -112,7 +112,7 @@ If you'd like individual guidance on how lifestyle changes might affect your med
 
 At Forward Family Medicine, we work with patients on both the lifestyle dimensions of their health and the clinical decisions about medication — together, in an ongoing relationship, with the time to do it well.
 
-Explore our [membership options](/membership) or [become a patient](/become-a-patient).
+Explore our [membership options](/membership) or [become a patient](/new-patients).
 
 ---
 
