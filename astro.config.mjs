@@ -15,6 +15,7 @@ export default defineConfig({
     filter: (page) =>
       !page.endsWith('/patient-experience/') &&
       !page.endsWith('/home/') &&
+      !page.endsWith('/become-a-patient/') &&
       page !== 'https://www.forwardfamilymedicine.com/home'
   })],
   vite: {
