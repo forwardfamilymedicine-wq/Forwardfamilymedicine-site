@@ -69,9 +69,9 @@ export const SITE = {
 
   // Default OG image for pages without a specific image
   defaultOGImage: {
-    url: "https://www.forwardfamilymedicine.com/logo.png",
-    width: 2411,
-    height: 1071,
+    url: "https://www.forwardfamilymedicine.com/images/og-image.png",
+    width: 1200,
+    height: 630,
     alt: "Forward Family Medicine — Direct Primary Care in Wayne, PA",
   },
 
