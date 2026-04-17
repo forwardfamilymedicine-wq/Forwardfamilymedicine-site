@@ -214,6 +214,72 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ── Wellness Collective Teaser ───────────────────────── -->
+  <section class="wc-teaser">
+    <div class="container">
+      <div class="wc-teaser__grid">
+
+        <div class="wc-teaser__left">
+          <div class="wc-teaser__badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="var(--green-500)" stroke-width="1.25"/><polyline points="4,7 6,9.5 10,4.5" stroke="var(--green-500)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Included in every membership
+          </div>
+          <p class="wc-teaser__eyebrow">The Wellness Collective</p>
+          <h2 class="wc-teaser__heading">
+            Care that extends beyond our office.
+          </h2>
+          <p class="wc-teaser__body">
+            Membership at Forward Family Medicine includes access to the
+            Main Line Wellness Collective — a curated network of best-in-class
+            local providers across physical therapy, nutrition, fitness, mental
+            health, dermatology, sleep medicine, and more.
+          </p>
+          <p class="wc-teaser__body">
+            Every provider has been personally vetted by your physician. When
+            you need a referral, we match you, make the connection, and
+            coordinate your care — so nothing falls through the cracks.
+          </p>
+          <a href="/wellness-collective" class="wc-teaser__link">
+            See the full Collective
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="wc-teaser__cards">
+          <div class="wc-teaser__card">
+            <div class="wc-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Physician-vetted</h4>
+            <p>Every partner is individually reviewed — not sourced from a database.</p>
+          </div>
+          <div class="wc-teaser__card">
+            <div class="wc-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h4>Priority access</h4>
+            <p>Collective partners reserve availability for FFM members.</p>
+          </div>
+          <div class="wc-teaser__card">
+            <div class="wc-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Coordinated care</h4>
+            <p>Your physician communicates directly with every referral partner.</p>
+          </div>
+          <div class="wc-teaser__card">
+            <div class="wc-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4>Member pricing</h4>
+            <p>Many partners offer preferred rates exclusively for our members.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <FAQSection faqs={faqs} headline="Questions About Our Services" />
   <CTABanner />
 </MainLayout>
@@ -349,6 +415,136 @@ const faqs = [
 
   @media (max-width: 900px) {
     .service-detail-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Wellness Collective Teaser ──────────────────────────── */
+  .wc-teaser {
+    background: var(--cream-200);
+    padding: var(--section-pad) 0;
+    border-top: 1px solid var(--cream-300);
+  }
+  .wc-teaser__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .wc-teaser__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    background: rgba(63,99,68,0.08);
+    border: 1px solid rgba(63,99,68,0.2);
+    border-radius: 40px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--green-500);
+    margin-bottom: 16px;
+  }
+  .wc-teaser__eyebrow {
+    font-size: 0.73rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-500);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .wc-teaser__eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--green-500);
+    flex-shrink: 0;
+  }
+  .wc-teaser__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    color: var(--ink-900);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .wc-teaser__body {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.82;
+    color: var(--ink-700);
+    margin-bottom: 12px;
+  }
+  .wc-teaser__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--green-500);
+    text-decoration: none;
+    border-bottom: 1px solid var(--green-200);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s, gap 0.2s;
+  }
+  .wc-teaser__link:hover {
+    color: var(--green-400);
+    border-color: var(--green-500);
+    gap: 12px;
+  }
+  .wc-teaser__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .wc-teaser__card {
+    background: #ffffff;
+    border: 1px solid var(--cream-300);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  }
+  .wc-teaser__card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--green-300);
+  }
+  .wc-teaser__card-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--green-50);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .wc-teaser__card h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink-900);
+    margin-bottom: 5px;
+  }
+  .wc-teaser__card p {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--ink-500);
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .wc-teaser__grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .wc-teaser__cards {
       grid-template-columns: 1fr;
     }
   }

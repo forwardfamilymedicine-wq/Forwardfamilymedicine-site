@@ -1,0 +1,1076 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+
+const faqs = [
+  {
+    q: "Is the Wellness Collective an extra cost?",
+    a: "No. Access to the Collective is included in your standard FFM membership. There is no separate enrollment, no additional monthly fee, and no referral charge. The only costs are what individual Collective providers charge for their services — many of which offer preferred pricing for our members.",
+  },
+  {
+    q: "How are providers chosen for the network?",
+    a: "Every Collective partner is individually vetted by Dr. Bigley or Dr. Lieberman — not sourced from an insurance directory. We evaluate for clinical credentials, a one-on-one care model, and alignment with a proactive, prevention-focused philosophy. High-volume or impersonal practices are not included, regardless of their general reputation.",
+  },
+  {
+    q: "Can I still see providers outside the Collective?",
+    a: "Yes, absolutely. The Collective is a benefit, not a restriction. If you have a provider you already trust, your physician will coordinate with them directly. The Collective is most useful when you don't yet have an established relationship in a given category.",
+  },
+  {
+    q: "Do Collective providers accept insurance?",
+    a: "It varies by provider. Many of the highest-quality Collective partners — particularly in physical therapy, chiropractic, nutrition, and fitness — operate on a cash-pay or hybrid model. Your physician will always clarify payment structure before making a referral. Some providers offer superbills for out-of-network reimbursement.",
+  },
+  {
+    q: "Will the network grow over time?",
+    a: "Yes. The Collective is a living resource. As FFM grows, we continue to evaluate and add partners across new categories and geographies on the Main Line. If there's a category or area you'd like to see represented, let us know — member feedback directly shapes who we recruit next.",
+  },
+];
+---
+
+<MainLayout
+  title="The Main Line Wellness Collective | Forward Family Medicine"
+  description="A physician-curated network of best-in-class wellness and specialty providers on the Main Line — included in every Forward Family Medicine membership."
+  canonical="https://www.forwardfamilymedicine.com/wellness-collective"
+>
+
+  <!-- ─── Breadcrumb ─────────────────────────────────────────── -->
+  <nav class="wc-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span aria-hidden="true"> › </span>
+      <a href="/services">Services</a>
+      <span aria-hidden="true"> › </span>
+      <span>Wellness Collective</span>
+    </div>
+  </nav>
+
+  <!-- ─── 1. HERO ───────────────────────────────────────────── -->
+  <section class="wc-hero section wc-reveal">
+    <div class="wc-hero-pattern" aria-hidden="true"></div>
+    <div class="container wc-hero-inner">
+      <div class="wc-hero-content">
+        <span class="section-label">A Member Benefit of Forward Family Medicine</span>
+        <h1>Care that extends <em>beyond our walls</em></h1>
+        <p class="wc-hero-sub">The Main Line Wellness Collective is a physician-curated network of best-in-class wellness and specialty providers — personally vetted by your doctor and available exclusively to Forward Family Medicine members, at no extra cost.</p>
+        <div class="wc-hero-ctas">
+          <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+          <a href="#what-it-is" class="wc-ghost-link">Learn how it works</a>
+        </div>
+      </div>
+      <div class="wc-botanical" aria-hidden="true">
+        <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="240" cy="240" r="72" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
+          <circle cx="240" cy="240" r="136" stroke="rgba(62,99,68,0.14)" stroke-width="1" stroke-dasharray="7 5"/>
+          <circle cx="240" cy="240" r="196" stroke="rgba(62,99,68,0.09)" stroke-width="1" stroke-dasharray="4 6"/>
+          <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(0 240 240)"/>
+          <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(60 240 240)"/>
+          <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(120 240 240)"/>
+          <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(180 240 240)"/>
+          <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(240 240 240)"/>
+          <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(300 240 240)"/>
+          <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(0 240 240)"/>
+          <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(60 240 240)"/>
+          <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(120 240 240)"/>
+          <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(180 240 240)"/>
+          <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(240 240 240)"/>
+          <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(300 240 240)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. WHAT IT IS ─────────────────────────────────────── -->
+  <section class="section wc-what wc-reveal" id="what-it-is">
+    <div class="container wc-what-inner">
+      <div class="wc-what-left">
+        <span class="badge">The Collective</span>
+        <h2 style="margin-top:1rem;">A referral network <em>built differently.</em></h2>
+        <p class="wc-body-text">Most referrals work the same way: your doctor prints a name and a phone number, and you're on your own. The Wellness Collective is the opposite of that.</p>
+        <p class="wc-body-text">Every provider in the network has been personally evaluated by Dr. Bigley or Dr. Lieberman — not sourced from an insurance directory or recommendation platform. We selected for clinical depth, a one-on-one care model, and a philosophy that aligns with how we practice: preventive, personalized, unhurried.</p>
+        <p class="wc-body-text">When you need care beyond our office, we identify the right partner for your specific situation, make a direct introduction, and share your clinical context — so your new provider understands you before you walk in the door.</p>
+      </div>
+      <div class="wc-what-right">
+        <div class="wc-diff-card">
+          <p class="wc-diff-title">What makes this different</p>
+          <ul class="wc-check-list">
+            <li>
+              <span class="wc-check-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="var(--green-500)"/><polyline points="5,9 8,12 13,6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Every provider is independently vetted — not from a hospital network list
+            </li>
+            <li>
+              <span class="wc-check-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="var(--green-500)"/><polyline points="5,9 8,12 13,6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Most partners are small, independent, or cash-based practices — the same model as DPC
+            </li>
+            <li>
+              <span class="wc-check-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="var(--green-500)"/><polyline points="5,9 8,12 13,6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              We make the introduction directly, with your clinical context included
+            </li>
+            <li>
+              <span class="wc-check-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="var(--green-500)"/><polyline points="5,9 8,12 13,6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Many partners offer priority scheduling and preferred rates for FFM members
+            </li>
+            <li>
+              <span class="wc-check-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="var(--green-500)"/><polyline points="5,9 8,12 13,6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Access is reserved for members — this is not a public directory
+            </li>
+            <li>
+              <span class="wc-check-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="var(--green-500)"/><polyline points="5,9 8,12 13,6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Your physician stays informed as your care progresses
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. WHY IT MATTERS ─────────────────────────────────── -->
+  <section class="section wc-why wc-reveal">
+    <div class="container">
+      <div class="wc-section-header wc-centered">
+        <span class="section-label">Why It Matters</span>
+        <h2>Better coordination. <em>Better outcomes.</em></h2>
+        <p class="section-intro">Integrated, coordinated care produces meaningfully better health outcomes than fragmented care. The Collective is our practical response to that evidence.</p>
+      </div>
+      <div class="wc-why-grid">
+        <div class="wc-why-card">
+          <div class="wc-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Vetted, not random</h3>
+          <p>Every Collective partner has been personally evaluated — so your first appointment doesn't begin with uncertainty about who you're seeing.</p>
+        </div>
+        <div class="wc-why-card">
+          <div class="wc-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>No time wasted</h3>
+          <p>Priority scheduling and direct physician communication mean less time waiting and re-explaining — more time on recovery and progress.</p>
+        </div>
+        <div class="wc-why-card">
+          <div class="wc-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>A team around you</h3>
+          <p>Rather than separate providers working in silos, the Collective functions as a coordinated team — all connected through your physician at the center.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. WHAT MEMBERS RECEIVE ───────────────────────────── -->
+  <section class="section wc-members wc-reveal">
+    <div class="container wc-members-inner">
+      <div class="wc-members-left">
+        <span class="wc-members-label">Included in Membership</span>
+        <h2 class="wc-members-h2">What members <em>receive.</em></h2>
+        <p class="wc-members-desc">Access to the Wellness Collective is part of your Forward Family Medicine membership. There is no enrollment, no additional fee, and no separate sign-up.</p>
+        <div class="wc-gold-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(212,169,106,1)" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Included with every FFM membership
+        </div>
+      </div>
+      <div class="wc-members-right">
+        <ol class="wc-numbered-list">
+          <li>
+            <span class="wc-num">01</span>
+            <div>
+              <h4 class="wc-num-h4">Physician-curated referrals</h4>
+              <p class="wc-num-p">Your physician personally identifies the right partner based on your clinical needs — not a general search.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wc-num">02</span>
+            <div>
+              <h4 class="wc-num-h4">Priority scheduling</h4>
+              <p class="wc-num-p">Collective partners hold availability for FFM members, so you get in faster than a general patient would.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wc-num">03</span>
+            <div>
+              <h4 class="wc-num-h4">Preferred member rates</h4>
+              <p class="wc-num-p">Many partners — especially cash-based and independent practices — offer preferred pricing for our members.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wc-num">04</span>
+            <div>
+              <h4 class="wc-num-h4">Direct physician communication</h4>
+              <p class="wc-num-p">We contact Collective providers directly — sharing your history and goals before your first appointment.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wc-num">05</span>
+            <div>
+              <h4 class="wc-num-h4">Closed-loop follow-up</h4>
+              <p class="wc-num-p">After your appointment, we follow up and review progress at your next visit. Your care doesn't get handed off.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. AREAS OF CARE ──────────────────────────────────── -->
+  <section class="section wc-areas wc-reveal">
+    <div class="container">
+      <div class="wc-section-header">
+        <span class="section-label">Areas of Care</span>
+        <h2>Eight categories. <em>One physician-led network.</em></h2>
+        <p class="section-intro">The Collective spans the full range of wellness and specialty care — organized around how your health actually works.</p>
+      </div>
+      <div class="wc-areas-grid">
+        <div class="wc-area-card">
+          <div class="wc-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v5l-3 3"/><path d="M12 12l3 3"/><path d="M9 17l-2 3"/><path d="M15 17l2 3"/></svg>
+          </div>
+          <h3>Movement &amp; Rehabilitation</h3>
+          <p class="wc-area-subtitle">Restoring and protecting function</p>
+          <div class="wc-tags">
+            <span class="wc-tag">Physical Therapy</span>
+            <span class="wc-tag">Chiropractic Care</span>
+            <span class="wc-tag">Manual Therapy</span>
+          </div>
+        </div>
+        <div class="wc-area-card">
+          <div class="wc-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Performance &amp; Vitality</h3>
+          <p class="wc-area-subtitle">Strength, fitness, and metabolic health</p>
+          <div class="wc-tags">
+            <span class="wc-tag">Personal Training</span>
+            <span class="wc-tag">Fitness Coaching</span>
+            <span class="wc-tag">Registered Dietitians</span>
+            <span class="wc-tag">Nutrition Therapy</span>
+          </div>
+        </div>
+        <div class="wc-area-card">
+          <div class="wc-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          </div>
+          <h3>Mind &amp; Recovery</h3>
+          <p class="wc-area-subtitle">Sleep, mental health, and restoration</p>
+          <div class="wc-tags">
+            <span class="wc-tag">Mental Health Therapy</span>
+            <span class="wc-tag">Sleep Medicine</span>
+            <span class="wc-tag">Acupuncture</span>
+            <span class="wc-tag">Detox &amp; Recovery</span>
+          </div>
+        </div>
+        <div class="wc-area-card">
+          <div class="wc-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Skin &amp; Integrative Health</h3>
+          <p class="wc-area-subtitle">Specialized skin and aesthetic care</p>
+          <div class="wc-tags">
+            <span class="wc-tag">Dermatology</span>
+            <span class="wc-tag">Cosmetic Dermatology</span>
+            <span class="wc-tag">Aesthetics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. HOW IT WORKS ───────────────────────────────────── -->
+  <section class="section wc-how wc-reveal">
+    <div class="container">
+      <div class="wc-section-header">
+        <span class="section-label">How It Works</span>
+        <h2>Three steps. <em>No guesswork.</em></h2>
+      </div>
+      <div class="wc-steps">
+        <div class="wc-connector" aria-hidden="true"></div>
+        <div class="wc-step">
+          <div class="wc-step-circle">
+            <span class="wc-step-num" aria-hidden="true">1</span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Discuss with your physician</h3>
+          <p>Mention a concern, a goal, or something you want addressed outside primary care. Your physician assesses what kind of partner makes sense.</p>
+        </div>
+        <div class="wc-step">
+          <div class="wc-step-circle">
+            <span class="wc-step-num" aria-hidden="true">2</span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Get matched and connected</h3>
+          <p>We identify the right Collective partner for your situation and make a direct introduction — with your clinical context shared upfront.</p>
+        </div>
+        <div class="wc-step">
+          <div class="wc-step-circle">
+            <span class="wc-step-num" aria-hidden="true">3</span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Receive coordinated care</h3>
+          <p>Your physician stays informed throughout. Progress is reviewed at your next visit. Nothing gets lost between providers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. COORDINATED BY DESIGN ─────────────────────────── -->
+  <section class="section wc-orbit-section wc-reveal">
+    <div class="container wc-orbit-inner">
+      <div class="wc-orbit-wrap">
+        <div class="wc-orbit">
+          <!-- Center -->
+          <div class="wc-orbit-center">
+            <span>Your</span>
+            <span>physician</span>
+          </div>
+          <!-- Rings -->
+          <div class="wc-ring wc-ring-inner" aria-hidden="true"></div>
+          <div class="wc-ring wc-ring-outer" aria-hidden="true"></div>
+          <!-- Inner ring nodes (N/E/S/W at 110px) -->
+          <div class="wc-node wc-node-top" aria-label="Physical Therapy">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <span>PT</span>
+          </div>
+          <div class="wc-node wc-node-right" aria-label="Fitness">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Fitness</span>
+          </div>
+          <div class="wc-node wc-node-bottom" aria-label="Sleep Medicine">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span>Sleep</span>
+          </div>
+          <div class="wc-node wc-node-left" aria-label="Dermatology">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <span>Derm</span>
+          </div>
+          <!-- Outer ring nodes (NE/SE/SW/NW at 119px) -->
+          <div class="wc-node wc-node-ne" aria-label="Acupuncture">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Acup.</span>
+          </div>
+          <div class="wc-node wc-node-se" aria-label="Mental Health">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Mental</span>
+          </div>
+          <div class="wc-node wc-node-sw" aria-label="Chiropractic">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            <span>Chiro</span>
+          </div>
+          <div class="wc-node wc-node-nw" aria-label="Nutrition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h4v4H3zM10 3h4v4h-4zM17 3h4v4h-4zM3 10h4v4H3zM10 10h4v4h-4zM17 10h4v4h-4zM3 17h4v4H3zM10 17h4v4h-4zM17 17h4v4h-4z"/></svg>
+            <span>Nutrition</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wc-orbit-right">
+        <span class="badge">Coordinated by Design</span>
+        <h2 style="margin-top:1rem;">Your physician remains at <em>the center.</em></h2>
+        <div class="wc-integration-list">
+          <div class="wc-integration-item">
+            <span class="wc-dot" aria-hidden="true"></span>
+            <p><strong>Direct communication.</strong> When we refer you to a Collective provider, we communicate directly — clinician to clinician — ensuring your care goals and clinical history are understood from day one.</p>
+          </div>
+          <div class="wc-integration-item">
+            <span class="wc-dot" aria-hidden="true"></span>
+            <p><strong>Closed-loop follow-up.</strong> After your appointment, we follow up with your Collective provider and review progress at your next visit. Your care is not handed off — it's coordinated.</p>
+          </div>
+          <div class="wc-integration-item">
+            <span class="wc-dot" aria-hidden="true"></span>
+            <p><strong>An evolving network.</strong> As the Collective grows and your needs change, your physician continuously refines referral recommendations. Member feedback directly shapes who we recruit next.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 8. FAQ ─────────────────────────────────────────────── -->
+  <FAQSection
+    faqs={faqs}
+    headline="Frequently Asked Questions"
+    label="Common Questions"
+  />
+
+  <!-- ─── 9. CTA ─────────────────────────────────────────────── -->
+  <CTABanner
+    headline="One membership. A whole network of care."
+    subhead="Start with a free, no-obligation meet and greet — meet the team, see the office, and ask every question you have. No pressure."
+    btnText="Schedule a Free Meet & Greet"
+    btnHref="/contact"
+    btn2Text="View membership details"
+    btn2Href="/membership"
+  />
+
+</MainLayout>
+
+<style>
+  /* ─── Breadcrumb ────────────────────────────────────────── */
+  .wc-breadcrumb {
+    background: var(--cream-100);
+    border-bottom: 1px solid var(--cream-300);
+    padding: 0.65rem 0;
+    font-size: 0.83rem;
+    color: var(--ink-300);
+  }
+  .wc-breadcrumb a {
+    color: var(--green-300);
+    text-decoration: none;
+  }
+  .wc-breadcrumb a:hover { text-decoration: underline; }
+  .wc-breadcrumb span:last-child { color: var(--ink-500); }
+
+  /* ─── Scroll reveal ─────────────────────────────────────── */
+  .wc-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .wc-reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── Hero ──────────────────────────────────────────────── */
+  .wc-hero {
+    background:
+      radial-gradient(ellipse at 20% 55%, rgba(63,99,68,0.12) 0%, transparent 58%),
+      radial-gradient(ellipse at 82% 18%, rgba(63,99,68,0.07) 0%, transparent 48%),
+      var(--cream-50);
+    position: relative;
+    overflow: hidden;
+  }
+  .wc-hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='3' fill='none' stroke='%233F6344' stroke-width='0.8'/%3E%3Cline x1='20' y1='13' x2='20' y2='16' stroke='%233F6344' stroke-width='0.8'/%3E%3Cline x1='20' y1='24' x2='20' y2='27' stroke='%233F6344' stroke-width='0.8'/%3E%3Cline x1='13' y1='20' x2='16' y2='20' stroke='%233F6344' stroke-width='0.8'/%3E%3Cline x1='24' y1='20' x2='27' y2='20' stroke='%233F6344' stroke-width='0.8'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+  }
+  .wc-hero-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    align-items: center;
+    gap: 3rem;
+  }
+  .wc-hero-content {
+    max-width: 680px;
+  }
+  .wc-hero-content h1 {
+    margin: 0.6rem 0 1.25rem;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+  }
+  .wc-hero-content h1 em {
+    color: var(--green-500);
+    font-style: italic;
+  }
+  .wc-hero-sub {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--ink-500);
+    margin-bottom: 2rem;
+  }
+  .wc-hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .wc-ghost-link {
+    font-family: var(--font-body);
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: var(--green-400);
+    text-decoration: none;
+    border-bottom: 1px solid var(--green-200);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .wc-ghost-link:hover {
+    color: var(--green-500);
+    border-color: var(--green-400);
+  }
+  .wc-botanical {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    opacity: 0.42;
+    flex-shrink: 0;
+    animation: wc-float 18s ease-in-out infinite alternate;
+  }
+  .wc-botanical svg {
+    width: 100%;
+    height: 100%;
+  }
+  @keyframes wc-float {
+    0%   { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-12px) rotate(3deg); }
+  }
+
+  /* ─── Shared type helpers ───────────────────────────────── */
+  .wc-body-text {
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.84;
+    color: var(--ink-500);
+    margin-bottom: 1.1rem;
+  }
+  .wc-section-header { margin-bottom: 2.5rem; }
+  .wc-section-header h2 em,
+  .wc-what-left h2 em,
+  .wc-orbit-right h2 em {
+    color: var(--green-500);
+    font-style: italic;
+  }
+  .wc-centered { text-align: center; }
+  .wc-centered .section-intro { margin: 0.75rem auto 0; }
+
+  /* ─── What It Is ────────────────────────────────────────── */
+  .wc-what { background: #ffffff; }
+  .wc-what-inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .wc-diff-card {
+    background: var(--cream-50);
+    border: 1px solid var(--cream-200);
+    border-radius: var(--radius);
+    padding: 36px;
+  }
+  .wc-diff-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink-900);
+    margin-bottom: 1.25rem;
+  }
+  .wc-check-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .wc-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.88rem;
+    color: var(--ink-700);
+    line-height: 1.55;
+  }
+  .wc-check-icon { flex-shrink: 0; margin-top: 1px; }
+
+  /* ─── Why It Matters ────────────────────────────────────── */
+  .wc-why { background: var(--warm-50); }
+  .wc-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .wc-why-card {
+    background: #ffffff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wc-why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .wc-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--green-100);
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+  .wc-why-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: var(--ink-900);
+  }
+  .wc-why-card p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--ink-500);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ─── What Members Receive ──────────────────────────────── */
+  .wc-members {
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(167,204,169,0.08) 0%, transparent 55%),
+      var(--green-500);
+  }
+  .wc-members-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .wc-members-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-200);
+    margin-bottom: 0.75rem;
+  }
+  .wc-members-h2 {
+    color: #ffffff;
+    font-weight: 300;
+    margin-bottom: 1.1rem;
+  }
+  .wc-members-h2 em {
+    color: var(--green-200);
+    font-style: italic;
+  }
+  .wc-members-desc {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  .wc-gold-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(184,135,58,0.14);
+    border: 1px solid rgba(184,135,58,0.28);
+    color: rgba(212,169,106,1);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+  }
+  .wc-numbered-list {
+    list-style: none;
+    padding: 0;
+    background: rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.09);
+    overflow: hidden;
+  }
+  .wc-numbered-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.35rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .wc-numbered-list li:last-child { border-bottom: none; }
+  .wc-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--green-300);
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 3px;
+    min-width: 2rem;
+  }
+  .wc-num-h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+  }
+  .wc-num-p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ─── Areas of Care ─────────────────────────────────────── */
+  .wc-areas { background: var(--cream-50); }
+  .wc-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .wc-area-card {
+    background: #ffffff;
+    border: 1px solid var(--cream-200);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s, border-top-color 0.2s;
+    border-top: 2px solid transparent;
+    overflow: hidden;
+  }
+  .wc-area-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green-500), var(--green-300));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .wc-area-card:hover::before { opacity: 1; }
+  .wc-area-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .wc-area-card .wc-icon-box { margin-bottom: 0.85rem; }
+  .wc-area-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink-900);
+    margin-bottom: 0.3rem;
+  }
+  .wc-area-subtitle {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green-400);
+    margin-bottom: 0.9rem;
+  }
+  .wc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .wc-tag {
+    display: inline-block;
+    background: var(--cream-50);
+    border: 1px solid var(--cream-300);
+    border-radius: 40px;
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--ink-700);
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ─── How It Works ──────────────────────────────────────── */
+  .wc-how { background: #ffffff; }
+  .wc-steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .wc-connector {
+    position: absolute;
+    top: 35px;
+    left: calc(16.666% + 34px);
+    right: calc(16.666% + 34px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--green-200), var(--green-400), var(--green-200));
+    z-index: 0;
+  }
+  .wc-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .wc-step-circle {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    background: var(--cream-50);
+    border: 2px solid var(--green-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--green-400);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+  }
+  .wc-step-circle:hover,
+  .wc-step:hover .wc-step-circle {
+    background: var(--green-500);
+    border-color: var(--green-500);
+    color: #ffffff;
+  }
+  .wc-step-num {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background: rgba(184,135,58,0.9);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .wc-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink-900);
+    margin-bottom: 0.6rem;
+  }
+  .wc-step p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.87rem;
+    color: var(--ink-500);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 240px;
+  }
+
+  /* ─── Coordinated by Design ─────────────────────────────── */
+  .wc-orbit-section {
+    background: #ffffff;
+    border-top: 1px solid var(--cream-200);
+  }
+  .wc-orbit-inner {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .wc-orbit-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wc-orbit {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+  }
+  .wc-orbit-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 118px;
+    height: 118px;
+    background: var(--green-500);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.3;
+    text-align: center;
+    box-shadow:
+      0 0 0 12px rgba(63,99,68,0.10),
+      0 0 0 24px rgba(63,99,68,0.05);
+    z-index: 2;
+  }
+  .wc-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px dashed rgba(90,136,96,0.35);
+  }
+  .wc-ring-inner {
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: orbit-spin 26s linear infinite;
+  }
+  .wc-ring-outer {
+    width: 338px;
+    height: 338px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: orbit-spin-rev 42s linear infinite;
+  }
+  @keyframes orbit-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  @keyframes orbit-spin-rev {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(-360deg); }
+  }
+  /* Node base */
+  .wc-node {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background: #ffffff;
+    border: 1px solid var(--cream-300);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    z-index: 3;
+  }
+  .wc-node span {
+    font-family: var(--font-body);
+    font-size: 0.54rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-500);
+    line-height: 1;
+  }
+  /* Inner ring (110px from center, 27px = half node size) */
+  .wc-node-top    { top: calc(50% - 137px); left: calc(50% - 27px); }
+  .wc-node-right  { top: calc(50% - 27px);  left: calc(50% + 83px);  }
+  .wc-node-bottom { top: calc(50% + 83px);  left: calc(50% - 27px);  }
+  .wc-node-left   { top: calc(50% - 27px);  left: calc(50% - 137px); }
+  /* Outer ring (119px from center, diagonal) */
+  .wc-node-ne { top: calc(50% - 146px); left: calc(50% + 92px);  }
+  .wc-node-se { top: calc(50% + 92px);  left: calc(50% + 92px);  }
+  .wc-node-sw { top: calc(50% + 92px);  left: calc(50% - 146px); }
+  .wc-node-nw { top: calc(50% - 146px); left: calc(50% - 146px); }
+
+  /* Right column */
+  .wc-orbit-right h2 em { color: var(--green-500); font-style: italic; }
+  .wc-integration-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+  }
+  .wc-integration-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .wc-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green-500);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .wc-integration-item p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: var(--ink-500);
+    line-height: 1.75;
+    margin: 0;
+  }
+  .wc-integration-item p strong {
+    font-weight: 600;
+    color: var(--ink-900);
+  }
+
+  /* ─── Mobile ─────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .wc-botanical { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    .wc-hero-inner {
+      grid-template-columns: 1fr;
+    }
+    .wc-what-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .wc-why-grid {
+      grid-template-columns: 1fr;
+    }
+    .wc-members-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .wc-areas-grid {
+      grid-template-columns: 1fr;
+    }
+    .wc-steps {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .wc-connector { display: none; }
+    .wc-step { align-items: flex-start; text-align: left; }
+    .wc-step p { max-width: none; }
+    .wc-orbit-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .wc-orbit {
+      max-width: 300px;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+    }
+    .wc-orbit-center {
+      width: 90px;
+      height: 90px;
+      font-size: 0.78rem;
+    }
+    .wc-ring-inner  { width: 165px; height: 165px; }
+    .wc-ring-outer  { width: 254px; height: 254px; }
+    .wc-node-top    { top: calc(50% - 110px); left: calc(50% - 27px); }
+    .wc-node-right  { top: calc(50% - 27px);  left: calc(50% + 55px); }
+    .wc-node-bottom { top: calc(50% + 55px);  left: calc(50% - 27px); }
+    .wc-node-left   { top: calc(50% - 27px);  left: calc(50% - 110px); }
+    .wc-node-ne { top: calc(50% - 115px); left: calc(50% + 60px); }
+    .wc-node-se { top: calc(50% + 60px);  left: calc(50% + 60px); }
+    .wc-node-sw { top: calc(50% + 60px);  left: calc(50% - 115px); }
+    .wc-node-nw { top: calc(50% - 115px); left: calc(50% - 115px); }
+  }
+</style>
+
+<script>
+  // ─── Scroll reveal ────────────────────────────────────────
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('wc-reveal--visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.10 }
+  );
+
+  document.querySelectorAll('.wc-reveal').forEach((el) => {
+    revealObserver.observe(el);
+  });
+</script>
