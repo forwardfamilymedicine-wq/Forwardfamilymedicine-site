@@ -76,21 +76,25 @@ const faqs = [
   <section class="stats-strip">
     <div class="container">
       <p class="stats-eyebrow">Why DPC Changes Everything</p>
+      <h2 class="stats-heading">DPC vs. Traditional Care</h2>
       <div class="stats-compare">
-        <!-- Column headers -->
+        <!-- Column headers — FFM first -->
         <div class="stats-col-headers">
+          <div class="stats-col-header stats-col-header--ffm">
+            Forward Family Medicine
+            <span class="stats-col-sub">Your Care</span>
+          </div>
           <div class="stats-col-header stats-col-header--trad">Traditional Care</div>
-          <div class="stats-col-header stats-col-header--ffm">Forward Family Medicine</div>
         </div>
         <!-- Row: Appointment time -->
         <div class="stats-row">
           <p class="stats-row-label">Average Appointment Time</p>
           <div class="stats-row-cells">
-            <div class="stats-cell stats-cell--trad">
-              <span class="stats-val stats-val--trad">7 min</span>
-            </div>
             <div class="stats-cell stats-cell--ffm">
-              <span class="stats-val stats-val--ffm">1–2 hrs</span>
+              <span class="stats-val stats-val--ffm">1–2 hr visits</span>
+            </div>
+            <div class="stats-cell stats-cell--trad">
+              <span class="stats-val stats-val--trad">7 min visits</span>
             </div>
           </div>
         </div>
@@ -98,11 +102,12 @@ const faqs = [
         <div class="stats-row">
           <p class="stats-row-label">Patients Per Doctor</p>
           <div class="stats-row-cells">
-            <div class="stats-cell stats-cell--trad">
-              <span class="stats-val stats-val--trad">2,000–3,000</span>
-            </div>
             <div class="stats-cell stats-cell--ffm">
-              <span class="stats-val stats-val--ffm">~250</span>
+              <span class="stats-val stats-val--ffm">~250 patients</span>
+              <span class="stats-callout">10× fewer patients per doctor</span>
+            </div>
+            <div class="stats-cell stats-cell--trad">
+              <span class="stats-val stats-val--trad">2,000–3,000 patients</span>
             </div>
           </div>
         </div>
@@ -323,9 +328,18 @@ const faqs = [
     color: rgba(255,255,255,0.75);
     margin-bottom: 1.5rem;
   }
+  .stats-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1.75rem;
+  }
   /* Comparison table */
   .stats-compare {
     max-width: 680px;
+    margin-inline: auto;
   }
   /* Column header row */
   .stats-col-headers {
@@ -333,27 +347,39 @@ const faqs = [
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-bottom: 0.5rem;
-    padding: 0 0 0 calc(0px);
+    align-items: stretch;
   }
   .stats-col-header {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 0.4rem 1rem;
-    border-radius: 4px;
+    padding: 0.65rem 1rem 0.6rem;
+    border-radius: 6px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
   }
   .stats-col-header--trad {
-    color: rgba(255,255,255,0.5);
-    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.12);
     background: rgba(255,255,255,0.04);
   }
   .stats-col-header--ffm {
     color: var(--green-100);
-    border: 1px solid rgba(167,204,169,0.35);
-    background: rgba(167,204,169,0.10);
+    border: 1px solid rgba(167,204,169,0.5);
+    border-top: 2px solid var(--green-100);
+    background: rgba(167,204,169,0.14);
+  }
+  .stats-col-sub {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: rgba(167,204,169,0.7);
+    text-transform: uppercase;
   }
   /* Each metric row */
   .stats-row {
@@ -377,12 +403,14 @@ const faqs = [
     gap: 1rem;
   }
   .stats-cell {
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
     border-radius: 6px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 0.45rem;
   }
   .stats-cell--trad {
     background: rgba(255,255,255,0.05);
@@ -406,6 +434,18 @@ const faqs = [
     font-size: clamp(1.9rem, 4vw, 2.75rem);
     font-weight: 700;
     color: var(--green-100);
+  }
+  .stats-callout {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--green-100);
+    background: rgba(167,204,169,0.15);
+    border: 1px solid rgba(167,204,169,0.3);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    white-space: nowrap;
   }
   @media (max-width: 480px) {
     .stats-compare {
