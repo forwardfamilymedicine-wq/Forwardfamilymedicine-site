@@ -76,22 +76,35 @@ const faqs = [
   <section class="stats-strip">
     <div class="container">
       <p class="stats-eyebrow">Why DPC Changes Everything</p>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-num">7 min</span>
-          <span class="stat-label">Average traditional appointment</span>
+      <div class="stats-compare">
+        <!-- Column headers -->
+        <div class="stats-col-headers">
+          <div class="stats-col-header stats-col-header--trad">Traditional Care</div>
+          <div class="stats-col-header stats-col-header--ffm">Forward Family Medicine</div>
         </div>
-        <div class="stat-item">
-          <span class="stat-num">1–2 hrs</span>
-          <span class="stat-label">FFM appointment</span>
+        <!-- Row: Appointment time -->
+        <div class="stats-row">
+          <p class="stats-row-label">Average Appointment Time</p>
+          <div class="stats-row-cells">
+            <div class="stats-cell stats-cell--trad">
+              <span class="stats-val stats-val--trad">7 min</span>
+            </div>
+            <div class="stats-cell stats-cell--ffm">
+              <span class="stats-val stats-val--ffm">1–2 hrs</span>
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <span class="stat-num">2,000–3,000</span>
-          <span class="stat-label">Patients per doctor in traditional care</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">~250</span>
-          <span class="stat-label">Patients per physician at FFM</span>
+        <!-- Row: Patients per doctor -->
+        <div class="stats-row">
+          <p class="stats-row-label">Patients Per Doctor</p>
+          <div class="stats-row-cells">
+            <div class="stats-cell stats-cell--trad">
+              <span class="stats-val stats-val--trad">2,000–3,000</span>
+            </div>
+            <div class="stats-cell stats-cell--ffm">
+              <span class="stats-val stats-val--ffm">~250</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -310,48 +323,93 @@ const faqs = [
     color: rgba(255,255,255,0.75);
     margin-bottom: 1.5rem;
   }
-  .stats-grid {
+  /* Comparison table */
+  .stats-compare {
+    max-width: 680px;
+  }
+  /* Column header row */
+  .stats-col-headers {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0 0 calc(0px);
   }
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.25rem 1rem;
-    border-right: 1px solid rgba(255,255,255,0.2);
-  }
-  .stat-item:last-child {
-    border-right: none;
-  }
-  .stat-num {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 2.75rem);
+  .stats-col-header {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
     font-weight: 700;
-    color: #ffffff;
-    line-height: 1.1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .stats-col-header--trad {
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
+  }
+  .stats-col-header--ffm {
+    color: var(--green-100);
+    border: 1px solid rgba(167,204,169,0.35);
+    background: rgba(167,204,169,0.10);
+  }
+  /* Each metric row */
+  .stats-row {
+    margin-bottom: 1.75rem;
+  }
+  .stats-row:last-child {
+    margin-bottom: 0;
+  }
+  .stats-row-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
     margin-bottom: 0.5rem;
   }
-  .stat-label {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.78);
-    line-height: 1.4;
+  .stats-row-cells {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
-  @media (max-width: 640px) {
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .stat-item {
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-    .stat-item:nth-child(2n) {
-      border-left: 1px solid rgba(255,255,255,0.2);
-    }
-    .stat-item:nth-last-child(-n+2) {
-      border-bottom: none;
+  .stats-cell {
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .stats-cell--trad {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .stats-cell--ffm {
+    background: rgba(167,204,169,0.12);
+    border: 1px solid rgba(167,204,169,0.3);
+  }
+  .stats-val {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    display: block;
+  }
+  .stats-val--trad {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 400;
+    color: rgba(255,255,255,0.45);
+  }
+  .stats-val--ffm {
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--green-100);
+  }
+  @media (max-width: 480px) {
+    .stats-compare {
+      max-width: 100%;
     }
   }
 
