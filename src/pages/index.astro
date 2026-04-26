@@ -58,6 +58,10 @@ const faqs = [
     a: 'DPC is a membership model where you pay a flat monthly fee directly to your doctor — no insurance involved. You get unlimited primary care access, longer appointments, same-day availability, and a genuine care relationship. Think of it as your primary care doctor, always available, always on your side.',
   },
   {
+    q: 'Do I need the Clarity Program to get great care here?',
+    a: 'No. Standard membership is the practice\'s foundation — long visits, same-day access, direct physician contact, and Lifestyle Medicine are all included. The Clarity Program is an optional, separate annual program for members who want a structured year-long diagnostic and prevention system on top of their membership. Most members do not enroll in Clarity, and the standard of care is the same either way.',
+  },
+  {
     q: 'Is this the same as insurance?',
     a: 'No. Direct Primary Care covers your day-to-day primary care needs. We recommend pairing it with a high-deductible health plan for hospital stays, surgeries, and specialist care.',
   },
@@ -90,7 +94,8 @@ const breadcrumb = {
 
 <MainLayout
   title="Direct Primary Care Wayne PA | Forward Family Medicine"
-  description="The Main Line's only Direct Primary Care practice with in-person, board-eligible Lifestyle Medicine. No insurance. Same-day access. Wayne, PA — serving the Main Line and Chester County."
+  description="Wayne, PA's Direct Primary Care practice on the Main Line. Flat monthly membership, same-day access, 1–2 hour visits, and direct physician contact — with Lifestyle Medicine included. No insurance required."
+  canonical="https://www.forwardfamilymedicine.com/"
   schema={breadcrumb}
 >
   <HeroSection />
@@ -112,88 +117,14 @@ const breadcrumb = {
 
   <LifestyleMedTeaser />
 
-  <!-- Clarity Program -->
-  <section class="clarity-home-section">
-    <div class="clarity-home-container">
-      <div class="clarity-home-grid">
-        <!-- Left: editorial -->
-        <div class="clarity-home-left">
-          <p class="clarity-home-eyebrow">The Clarity Program</p>
-          <h2 class="clarity-home-h2">A physician-led health operating system. Built here, on the Main Line.</h2>
-          <p class="clarity-home-body">Most healthcare is reactive by design — it waits for something to go wrong. The Clarity Program runs a different way: continuous monitoring, structured diagnostics, and a physician who reads everything together and acts on what changes.</p>
-          <p class="clarity-home-body">It's not a menu of tests. It's a closed-loop system — bloodwork, imaging, real-time glucose monitoring, gut health, and physical performance data, all flowing to a physician who tracks your trend line across time.</p>
-          <p class="clarity-home-body clarity-home-body--price"><strong>$9,600 per year</strong>, paid annually. Includes full FFM membership. HSA-eligible. No enrollment fee.</p>
-          <div class="clarity-home-ctas">
-            <a href="/clarity/" class="clarity-home-btn-dark">Learn more about Clarity</a>
-            <a href="/new-patients/?source=clarity" class="clarity-home-btn-ghost">Schedule an inquiry call →</a>
-          </div>
-        </div>
-        <!-- Right: module list -->
-        <div class="clarity-home-right">
-          <div class="clarity-home-modules">
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">Whole-body MRI (Prenuvo)</span>
-                <span class="clarity-home-module-freq">Annual</span>
-              </div>
-              <p class="clarity-home-module-desc">Full-body screening for early cancer, vascular anomalies, and organ pathology — no radiation.</p>
-            </div>
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">Advanced biomarker panels</span>
-                <span class="clarity-home-module-freq">4× / year</span>
-              </div>
-              <p class="clarity-home-module-desc">ApoB, Lp(a), NMR LipoProfile, hsCRP, homocysteine, fasting insulin, HbA1c, DHEA-S, testosterone, thyroid, ferritin, and more.</p>
-            </div>
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">Gut microbiome panel</span>
-                <span class="clarity-home-module-freq">Annual</span>
-              </div>
-              <p class="clarity-home-module-desc">Comprehensive stool analysis with physician interpretation and a concrete dietary action plan.</p>
-            </div>
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">Continuous glucose monitoring</span>
-                <span class="clarity-home-module-freq">2× 14-day runs</span>
-              </div>
-              <p class="clarity-home-module-desc">Real-time metabolic response to food, stress, and sleep — reviewed with your physician.</p>
-            </div>
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">DEXA body composition</span>
-                <span class="clarity-home-module-freq">Annual</span>
-              </div>
-              <p class="clarity-home-module-desc">Lean mass, visceral fat, and bone density — the metrics that predict metabolic and structural health.</p>
-            </div>
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">VO₂ max testing</span>
-                <span class="clarity-home-module-freq">Annual</span>
-              </div>
-              <p class="clarity-home-module-desc">The single strongest predictor of longevity, quantified and tracked year over year.</p>
-            </div>
-            <div class="clarity-home-module">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">Coronary calcium score (CAC)</span>
-                <span class="clarity-home-module-freq">Baseline + as indicated</span>
-              </div>
-              <p class="clarity-home-module-desc">Direct measure of calcified plaque burden — the most predictive test for heart attack risk.</p>
-            </div>
-            <div class="clarity-home-module clarity-home-module--included">
-              <div class="clarity-home-module-top">
-                <span class="clarity-home-module-name">Full FFM membership</span>
-                <span class="clarity-home-module-freq">Included</span>
-              </div>
-              <p class="clarity-home-module-desc">Unlimited primary care, same-day access, lifestyle medicine, and direct physician contact — the foundation everything else builds on.</p>
-            </div>
-          </div>
-          <div class="clarity-home-module-ctas">
-            <a href="/clarity/" class="clarity-home-module-btn">See the full program</a>
-            <p class="clarity-home-module-footnote">Questions? Start with a <a href="/new-patients/" class="clarity-home-module-link">free meet and greet →</a></p>
-          </div>
-        </div>
-      </div>
+  <!-- Clarity Program teaser -->
+  <section class="clarity-teaser-section">
+    <div class="clarity-teaser-container">
+      <p class="clarity-teaser-eyebrow">For Members Who Want to Go Deeper</p>
+      <h3 class="clarity-teaser-h3">The Clarity Program</h3>
+      <p class="clarity-teaser-body">Some of our members want more than excellent primary care — they want a structured, year-long diagnostic program built around prevention: whole-body imaging, advanced biomarkers, continuous metabolic and performance data, all read by a physician who tracks how everything moves over time.</p>
+      <p class="clarity-teaser-body">We built The Clarity Program for those members. It's an optional, separate program — not a required upgrade, and not the standard of care here. Standard membership remains the foundation, and it remains complete on its own.</p>
+      <a href="/clarity/" class="clarity-teaser-link">Learn about the Clarity Program →</a>
     </div>
   </section>
 
@@ -232,171 +163,61 @@ const breadcrumb = {
     margin-top: 2.5rem;
   }
 
-  /* Clarity home section */
-  .clarity-home-section {
-    background: var(--cream-50);
-    border-top: 1px solid var(--cream-200);
-    border-bottom: 1px solid var(--cream-200);
-    padding: var(--section-pad) 0;
+  /* Clarity teaser */
+  .clarity-teaser-section {
+    background: var(--cream-100);
+    padding: calc(var(--section-pad) * 0.5) 0;
   }
-  .clarity-home-container {
+  .clarity-teaser-container {
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 clamp(20px, 5vw, 48px);
+    text-align: center;
   }
-  .clarity-home-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-    align-items: start;
-  }
-  .clarity-home-eyebrow {
-    font-size: 0.68rem;
+  .clarity-teaser-eyebrow {
+    font-size: 0.625rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--green-500);
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.65rem;
   }
-  .clarity-home-h2 {
+  .clarity-teaser-h3 {
     font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
     font-weight: 300;
-    line-height: 1.25;
     color: var(--ink-900);
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.25rem;
+    line-height: 1.25;
   }
-  .clarity-home-body {
-    font-size: 0.98rem;
+  .clarity-teaser-body {
+    font-size: 0.95rem;
     font-weight: 300;
     line-height: 1.75;
     color: var(--ink-500);
-    margin: 0 0 0.9rem;
+    max-width: 540px;
+    margin: 0 auto 0.85rem;
   }
-  .clarity-home-body--price {
-    color: var(--ink-700);
-    font-weight: 300;
-  }
-  .clarity-home-body--price strong {
-    font-weight: 500;
-    color: var(--ink-900);
-  }
-  .clarity-home-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 1.75rem;
-  }
-  .clarity-home-btn-dark {
+  .clarity-teaser-link {
     display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 600;
-    background: var(--ink-900);
-    color: #fff;
-    border: 2px solid var(--ink-900);
-    border-radius: var(--radius-sm);
-    padding: 0.65rem 1.3rem;
-    text-decoration: none;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-  .clarity-home-btn-dark:hover { background: #1a1a1a; border-color: #1a1a1a; }
-  .clarity-home-btn-ghost {
-    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--ink-500);
-    text-decoration: none;
-    transition: color 0.15s;
-    white-space: nowrap;
-  }
-  .clarity-home-btn-ghost:hover { color: var(--ink-900); }
-
-  /* Module list */
-  .clarity-home-modules {
-    border: 1px solid var(--cream-200);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 1rem;
-  }
-  .clarity-home-module {
-    padding: 0.9rem 1.1rem;
-    border-bottom: 1px solid var(--cream-200);
-  }
-  .clarity-home-module:last-child { border-bottom: none; }
-  .clarity-home-module--included {
-    background: var(--cream-100);
-  }
-  .clarity-home-module-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 0.25rem;
-  }
-  .clarity-home-module-name {
-    font-family: var(--font-heading);
-    font-size: 0.98rem;
-    font-weight: 700;
-    color: var(--ink-900);
-    line-height: 1.3;
-  }
-  .clarity-home-module-freq {
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: #8C6D3F;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .clarity-home-module-desc {
-    font-size: 0.8rem;
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--ink-500);
-    margin: 0;
-  }
-  .clarity-home-module-ctas {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-  }
-  .clarity-home-module-btn {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    background: var(--green-500);
-    color: #fff;
-    border: 2px solid var(--green-500);
-    border-radius: var(--radius-sm);
-    padding: 0.6rem 1.2rem;
-    text-decoration: none;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-  .clarity-home-module-btn:hover { background: #3D6B55; border-color: #3D6B55; }
-  .clarity-home-module-footnote {
-    font-size: 0.83rem;
-    color: var(--ink-500);
-    margin: 0;
-  }
-  .clarity-home-module-link {
     color: var(--green-500);
-    text-decoration: none;
-    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.2s, color 0.15s;
   }
-  .clarity-home-module-link:hover { color: #3D6B55; }
+  .clarity-teaser-link:hover {
+    color: #3D6B55;
+    text-decoration-color: currentColor;
+  }
 
   @media (max-width: 860px) {
     .services-grid,
     .testimonials-grid {
       grid-template-columns: 1fr;
-    }
-    .clarity-home-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
     }
   }
 </style>
