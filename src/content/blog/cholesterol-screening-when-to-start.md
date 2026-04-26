@@ -89,3 +89,9 @@ A: Yes, for the vast majority of patients. Statins are among the most studied me
 
 **Q: My parents both had high cholesterol. Does that mean I will too?**
 A: Genetics play a meaningful role in cholesterol levels — familial hypercholesterolemia is a specific inherited condition that causes very high LDL from birth and significantly elevates heart disease risk if untreated. But even without a formal diagnosis, a family history of high cholesterol or early heart disease is a strong reason to start screening early and monitor more frequently. It is not destiny, but it is information worth acting on.
+
+<div style="margin-top: 3rem; padding: 1.75rem 2rem; background: var(--cream-100); border-left: 3px solid var(--green-500); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+  <p style="font-weight: 500; color: var(--ink-900); margin-bottom: 0.5rem;">Track these markers longitudinally with physician oversight.</p>
+  <p style="font-size: 0.9rem; color: var(--ink-500); font-weight: 300; margin-bottom: 1rem; line-height: 1.7;">The Clarity Program includes ApoB, Lp(a), NMR LipoProfile, and fasting insulin across four physician-reviewed draws per year — alongside whole-body MRI, DEXA, and VO₂ max testing.</p>
+  <a href="/clarity/" style="font-size: 0.9rem; color: var(--green-500); font-weight: 500;">See the full program →</a>
+</div>

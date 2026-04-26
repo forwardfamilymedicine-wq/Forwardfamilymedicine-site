@@ -2,6 +2,7 @@
 // Meet & Greet interest form — Google Sheets via Apps Script
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
 const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
+// source is resolved client-side from ?source= query param (static output mode)
 ---
 
 <div class="form-wrap card">
@@ -112,6 +113,8 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 
     <!-- Honeypot field — hidden from real users, bots fill it in -->
     <input type="text" id="company" name="company" autocomplete="off" style="display:none" tabindex="-1" aria-hidden="true">
+    <!-- Source tracking — populated client-side from ?source= query param -->
+    <input type="hidden" name="source" value="standard" />
 
     <button type="submit" class="btn btn-accent submit-btn" id="submit-btn">
       Request My Free Meet &amp; Greet
@@ -236,6 +239,15 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
   }
 </style>
 
+<script>
+  // Populate source field from ?source= query param at page load
+  const sourceParam = new URLSearchParams(window.location.search).get('source');
+  if (sourceParam) {
+    const sourceInput = document.querySelector('input[name="source"]') as HTMLInputElement | null;
+    if (sourceInput) sourceInput.value = sourceParam;
+  }
+</script>
+
 <script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL }}>
   (function() {
 
@@ -267,6 +279,7 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
     const referral   = form.querySelector('#referral').value;
     const message    = form.querySelector('#message').value.trim();
     const company    = form.querySelector('#company')?.value || '';
+    const source     = form.querySelector('[name="source"]')?.value || 'standard';
 
     if (!firstName || !lastName || !email || !phone || !interest) {
       if (errorEl) {
@@ -303,6 +316,7 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
           referrer:  document.referrer,
           userAgent: navigator.userAgent,
           company,
+          source,
           loadTime:  formLoadTime,
         }),
       });
