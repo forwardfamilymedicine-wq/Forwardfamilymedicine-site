@@ -59,7 +59,7 @@ const faqSchema = schema ? {
             aria-labelledby={`faq-q-${i}`}
             hidden
           >
-            <p>{faq.a}</p>
+            <p set:html={faq.a}></p>
           </div>
         </div>
       ))}
