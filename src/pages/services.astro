@@ -300,15 +300,66 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Clarity cross-link -->
-  <div style="background: var(--cream-200); padding: 0 0 var(--section-pad); border-top: none;">
+  <!-- ── Clarity Program Teaser ──────────────────────────── -->
+  <section class="clarity-teaser">
     <div class="container">
-      <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--ink-500); font-weight: 300;">
-        For an integrated executive health program that brings all three together
-        — <a href="/clarity/" style="color: var(--green-500); font-weight: 400;">see the Clarity Program →</a>
-      </p>
+      <div class="clarity-teaser__grid">
+
+        <div class="clarity-teaser__left">
+          <div class="clarity-teaser__badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L2 3.8V7c0 2.8 2.1 5.2 5 5.9 2.9-.7 5-3.1 5-5.9V3.8L7 1z" stroke="var(--ink-500)" stroke-width="1.15" stroke-linejoin="round"/></svg>
+            Premium executive health program
+          </div>
+          <p class="clarity-teaser__eyebrow">The Clarity Program</p>
+          <h2 class="clarity-teaser__heading">
+            An operating system for your health.
+          </h2>
+          <p class="clarity-teaser__body">
+            Clarity is our integrated executive health program — built for members who want the full picture. It combines whole-body imaging, advanced biomarker testing, fitness and body composition analysis, and longitudinal physician guidance into a single, coordinated program.
+          </p>
+          <p class="clarity-teaser__body">
+            Where most executive physicals end with a thick PDF and a handshake, Clarity is a year-round relationship. We measure what matters, track it over time, and translate every result into action.
+          </p>
+          <a href="/clarity/" class="clarity-teaser__link">
+            Explore the Clarity Program
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="clarity-teaser__cards">
+          <div class="clarity-teaser__card">
+            <div class="clarity-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h4>Whole-body imaging</h4>
+            <p>Annual Prenuvo MRI, biennial DEXA, and coronary calcium scoring on the right cadence.</p>
+          </div>
+          <div class="clarity-teaser__card">
+            <div class="clarity-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>Advanced biomarkers</h4>
+            <p>Three physician-curated lab panels per year — built around what changes management.</p>
+          </div>
+          <div class="clarity-teaser__card">
+            <div class="clarity-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h4>Performance metrics</h4>
+            <p>VO₂ max, body composition, and continuous glucose data integrated into your plan.</p>
+          </div>
+          <div class="clarity-teaser__card">
+            <div class="clarity-teaser__card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+            </div>
+            <h4>Physician-led synthesis</h4>
+            <p>Every result is interpreted by your physician — not handed back as raw data.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </section>
 
   <FAQSection faqs={faqs} headline="Questions About Our Services" />
   <CTABanner />
@@ -661,6 +712,136 @@ const faqs = [
   }
   @media (max-width: 480px) {
     .wc-teaser__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Clarity Program Teaser ──────────────────────────────── */
+  .clarity-teaser {
+    background: var(--cream-50);
+    padding: var(--section-pad) 0;
+    border-top: 1px solid var(--cream-300);
+  }
+  .clarity-teaser__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .clarity-teaser__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    background: rgba(15, 25, 20, 0.06);
+    border: 1px solid rgba(15, 25, 20, 0.12);
+    border-radius: 40px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-700);
+    margin-bottom: 16px;
+  }
+  .clarity-teaser__eyebrow {
+    font-size: 0.73rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-700);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .clarity-teaser__eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--ink-300);
+    flex-shrink: 0;
+  }
+  .clarity-teaser__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    color: var(--ink-900);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .clarity-teaser__body {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.82;
+    color: var(--ink-700);
+    margin-bottom: 12px;
+  }
+  .clarity-teaser__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-900);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-300);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s, gap 0.2s;
+  }
+  .clarity-teaser__link:hover {
+    color: var(--green-500);
+    border-color: var(--green-400);
+    gap: 12px;
+  }
+  .clarity-teaser__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .clarity-teaser__card {
+    background: #ffffff;
+    border: 1px solid var(--cream-300);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  }
+  .clarity-teaser__card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--ink-300);
+  }
+  .clarity-teaser__card-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--cream-100);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .clarity-teaser__card h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink-900);
+    margin-bottom: 5px;
+  }
+  .clarity-teaser__card p {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--ink-500);
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .clarity-teaser__grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .clarity-teaser__cards {
       grid-template-columns: 1fr;
     }
   }
