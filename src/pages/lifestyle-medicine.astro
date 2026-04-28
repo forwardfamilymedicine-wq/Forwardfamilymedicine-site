@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 import drLiebermanPhoto from '../assets/staff/dr-philip-lieberman.jpg';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -47,7 +48,8 @@ const faqs = [
   schema={[breadcrumb]}
 >
   <!-- Hero -->
-  <section class="lm-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-200) 100%);">
+  <section class="lm-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-200) 100%); position: relative; overflow: hidden;">
+    <BotanicalGraphic variant="triadic" class="lm-botanical" />
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Lifestyle Medicine</span>
@@ -301,6 +303,19 @@ const faqs = [
 </MainLayout>
 
 <style>
+  .lm-botanical {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 360px;
+    height: 360px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media (max-width: 860px) {
+    .lm-botanical { display: none; }
+  }
   .breadcrumb {
     font-size: 0.85rem;
     color: var(--ink-300);

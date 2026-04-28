@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -96,6 +97,7 @@ const faqs = [
 
     <!-- SECTION 1 — HERO -->
     <section class="clarity-hero">
+      <BotanicalGraphic variant="layered" class="clarity-botanical" />
       <div class="clarity-container clarity-hero__grid">
         <div class="clarity-hero__text">
           <p class="clarity-eyebrow">The Clarity Program · Forward Family Medicine</p>
@@ -830,6 +832,21 @@ const faqs = [
   .clarity-hero {
     background: var(--cream-50);
     padding: var(--section-pad) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .clarity-botanical {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+    height: 420px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  @media (max-width: 860px) {
+    .clarity-botanical { display: none; }
   }
   .clarity-hero__grid {
     display: grid;

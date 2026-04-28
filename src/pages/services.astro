@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -56,6 +57,7 @@ const faqs = [
 >
   <!-- Page hero -->
   <section class="page-hero section hero-section">
+    <BotanicalGraphic variant="compass" class="services-botanical" />
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Services</span>
@@ -316,6 +318,21 @@ const faqs = [
   /* ── Hero ─────────────────────────────────────────────────── */
   .hero-section {
     background: var(--cream-100);
+    position: relative;
+    overflow: hidden;
+  }
+  .services-botanical {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  @media (max-width: 860px) {
+    .services-botanical { display: none; }
   }
   .hero-h1 {
     font-size: clamp(2.4rem, 5.5vw, 3.75rem);

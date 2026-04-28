@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -50,7 +51,8 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   schema={breadcrumb}
 >
   <!-- Hero -->
-  <section class="membership-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);">
+  <section class="membership-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%); position: relative; overflow: hidden;">
+    <BotanicalGraphic variant="quartet" class="membership-botanical" />
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Membership</span>
@@ -302,6 +304,19 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
 </MainLayout>
 
 <style>
+  .membership-botanical {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 380px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media (max-width: 860px) {
+    .membership-botanical { display: none; }
+  }
   .breadcrumb {
     font-size: 0.85rem;
     color: var(--ink-300);

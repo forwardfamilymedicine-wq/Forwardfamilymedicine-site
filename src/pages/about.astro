@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import drBigleyPhoto from '../assets/staff/dr-david-bigley.jpg';
 import drLiebermanPhoto from '../assets/staff/dr-philip-lieberman.jpg';
 import ritamariePhoto from '../assets/staff/ritamarie-smedile.jpg';
@@ -57,7 +58,8 @@ const physicianSchema = [
   schema={[breadcrumb, ...physicianSchema]}
 >
   <!-- Page hero -->
-  <section class="about-hero section">
+  <section class="about-hero section" style="position: relative; overflow: hidden;">
+    <BotanicalGraphic variant="starlet" class="about-botanical" />
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>About</span>
@@ -323,6 +325,19 @@ const physicianSchema = [
 <style>
   .about-hero {
     background: var(--cream-100);
+  }
+  .about-botanical {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 380px;
+    opacity: 0.22;
+    pointer-events: none;
+  }
+  @media (max-width: 860px) {
+    .about-botanical { display: none; }
   }
   .breadcrumb {
     font-size: 0.85rem;

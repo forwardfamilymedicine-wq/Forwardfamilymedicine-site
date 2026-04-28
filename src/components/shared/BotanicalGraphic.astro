@@ -1,0 +1,139 @@
+---
+interface Props {
+  variant: 'bloom' | 'compass' | 'triadic' | 'layered' | 'quartet' | 'starlet';
+  class?: string;
+}
+const { variant, class: className } = Astro.props;
+---
+
+<div class:list={['botanical-graphic', className]} aria-hidden="true">
+  {variant === 'bloom' && (
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="72" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
+      <circle cx="240" cy="240" r="136" stroke="rgba(62,99,68,0.14)" stroke-width="1" stroke-dasharray="7 5"/>
+      <circle cx="240" cy="240" r="196" stroke="rgba(62,99,68,0.09)" stroke-width="1" stroke-dasharray="4 6"/>
+      <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)"/>
+      <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(60 240 240)"/>
+      <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(120 240 240)"/>
+      <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(240 240 240)"/>
+      <ellipse cx="240" cy="128" rx="11" ry="30" fill="rgba(62,99,68,0.13)" transform="rotate(300 240 240)"/>
+      <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)"/>
+      <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(60 240 240)"/>
+      <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(120 240 240)"/>
+      <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(240 240 240)"/>
+      <ellipse cx="240" cy="52" rx="13" ry="34" fill="rgba(184,135,58,0.16)" transform="rotate(300 240 240)"/>
+    </svg>
+  )}
+  {variant === 'compass' && (
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="64" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
+      <circle cx="240" cy="240" r="148" stroke="rgba(62,99,68,0.13)" stroke-width="1" stroke-dasharray="6 6"/>
+      <circle cx="240" cy="240" r="210" stroke="rgba(62,99,68,0.08)" stroke-width="1" stroke-dasharray="3 7"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(45 240 240)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(90 240 240)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(135 240 240)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(225 240 240)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(270 240 240)"/>
+      <ellipse cx="240" cy="118" rx="9" ry="28" fill="rgba(62,99,68,0.13)" transform="rotate(315 240 240)"/>
+      <ellipse cx="240" cy="40" rx="11" ry="38" fill="rgba(184,135,58,0.16)"/>
+      <ellipse cx="240" cy="40" rx="11" ry="38" fill="rgba(184,135,58,0.16)" transform="rotate(90 240 240)"/>
+      <ellipse cx="240" cy="40" rx="11" ry="38" fill="rgba(184,135,58,0.16)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="40" rx="11" ry="38" fill="rgba(184,135,58,0.16)" transform="rotate(270 240 240)"/>
+    </svg>
+  )}
+  {variant === 'triadic' && (
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="72" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
+      <circle cx="240" cy="240" r="146" stroke="rgba(62,99,68,0.13)" stroke-width="1" stroke-dasharray="7 5"/>
+      <circle cx="240" cy="240" r="208" stroke="rgba(62,99,68,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+      <ellipse cx="240" cy="116" rx="14" ry="40" fill="rgba(62,99,68,0.14)"/>
+      <ellipse cx="240" cy="116" rx="14" ry="40" fill="rgba(62,99,68,0.14)" transform="rotate(120 240 240)"/>
+      <ellipse cx="240" cy="116" rx="14" ry="40" fill="rgba(62,99,68,0.14)" transform="rotate(240 240 240)"/>
+      <ellipse cx="240" cy="44" rx="12" ry="36" fill="rgba(184,135,58,0.16)" transform="rotate(60 240 240)"/>
+      <ellipse cx="240" cy="44" rx="12" ry="36" fill="rgba(184,135,58,0.16)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="44" rx="12" ry="36" fill="rgba(184,135,58,0.16)" transform="rotate(300 240 240)"/>
+    </svg>
+  )}
+  {variant === 'layered' && (
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="58" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
+      <circle cx="240" cy="240" r="118" stroke="rgba(62,99,68,0.14)" stroke-width="1" stroke-dasharray="7 5"/>
+      <circle cx="240" cy="240" r="180" stroke="rgba(62,99,68,0.10)" stroke-width="1" stroke-dasharray="4 6"/>
+      <circle cx="240" cy="240" r="228" stroke="rgba(62,99,68,0.06)" stroke-width="1" stroke-dasharray="2 8"/>
+      <ellipse cx="240" cy="160" rx="7" ry="20" fill="rgba(62,99,68,0.16)"/>
+      <ellipse cx="240" cy="160" rx="7" ry="20" fill="rgba(62,99,68,0.16)" transform="rotate(60 240 240)"/>
+      <ellipse cx="240" cy="160" rx="7" ry="20" fill="rgba(62,99,68,0.16)" transform="rotate(120 240 240)"/>
+      <ellipse cx="240" cy="160" rx="7" ry="20" fill="rgba(62,99,68,0.16)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="160" rx="7" ry="20" fill="rgba(62,99,68,0.16)" transform="rotate(240 240 240)"/>
+      <ellipse cx="240" cy="160" rx="7" ry="20" fill="rgba(62,99,68,0.16)" transform="rotate(300 240 240)"/>
+      <ellipse cx="240" cy="84" rx="9" ry="26" fill="rgba(184,135,58,0.14)" transform="rotate(30 240 240)"/>
+      <ellipse cx="240" cy="84" rx="9" ry="26" fill="rgba(184,135,58,0.14)" transform="rotate(90 240 240)"/>
+      <ellipse cx="240" cy="84" rx="9" ry="26" fill="rgba(184,135,58,0.14)" transform="rotate(150 240 240)"/>
+      <ellipse cx="240" cy="84" rx="9" ry="26" fill="rgba(184,135,58,0.14)" transform="rotate(210 240 240)"/>
+      <ellipse cx="240" cy="84" rx="9" ry="26" fill="rgba(184,135,58,0.14)" transform="rotate(270 240 240)"/>
+      <ellipse cx="240" cy="84" rx="9" ry="26" fill="rgba(184,135,58,0.14)" transform="rotate(330 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(30 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(60 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(90 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(120 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(150 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(180 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(210 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(240 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(270 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(300 240 240)"/>
+      <circle cx="240" cy="34" r="4" fill="rgba(62,99,68,0.18)" transform="rotate(330 240 240)"/>
+    </svg>
+  )}
+  {variant === 'quartet' && (
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="68" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
+      <circle cx="240" cy="240" r="142" stroke="rgba(62,99,68,0.13)" stroke-width="1" stroke-dasharray="6 6"/>
+      <circle cx="240" cy="240" r="206" stroke="rgba(62,99,68,0.08)" stroke-width="1" stroke-dasharray="3 7"/>
+      <ellipse cx="240" cy="100" rx="14" ry="44" fill="rgba(184,135,58,0.16)"/>
+      <ellipse cx="240" cy="100" rx="14" ry="44" fill="rgba(184,135,58,0.16)" transform="rotate(90 240 240)"/>
+      <ellipse cx="240" cy="100" rx="14" ry="44" fill="rgba(184,135,58,0.16)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="100" rx="14" ry="44" fill="rgba(184,135,58,0.16)" transform="rotate(270 240 240)"/>
+      <ellipse cx="240" cy="98" rx="6" ry="14" fill="rgba(62,99,68,0.18)" transform="rotate(45 240 240)"/>
+      <ellipse cx="240" cy="98" rx="6" ry="14" fill="rgba(62,99,68,0.18)" transform="rotate(135 240 240)"/>
+      <ellipse cx="240" cy="98" rx="6" ry="14" fill="rgba(62,99,68,0.18)" transform="rotate(225 240 240)"/>
+      <ellipse cx="240" cy="98" rx="6" ry="14" fill="rgba(62,99,68,0.18)" transform="rotate(315 240 240)"/>
+    </svg>
+  )}
+  {variant === 'starlet' && (
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="3" fill="rgba(184,135,58,0.32)"/>
+      <circle cx="240" cy="240" r="80" stroke="rgba(62,99,68,0.18)" stroke-width="1" stroke-dasharray="3 5"/>
+      <circle cx="240" cy="240" r="160" stroke="rgba(62,99,68,0.10)" stroke-width="1" stroke-dasharray="3 7"/>
+      <circle cx="240" cy="240" r="220" stroke="rgba(62,99,68,0.06)" stroke-width="1" stroke-dasharray="2 9"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(30 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(60 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(90 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(120 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(150 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(180 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(210 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(240 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(270 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(300 240 240)"/>
+      <ellipse cx="240" cy="120" rx="5" ry="15" fill="rgba(62,99,68,0.14)" transform="rotate(330 240 240)"/>
+    </svg>
+  )}
+</div>
+
+<style>
+  .botanical-graphic {
+    display: block;
+  }
+  .botanical-graphic svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
