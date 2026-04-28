@@ -130,10 +130,14 @@ const { variant, class: className } = Astro.props;
 <style>
   .botanical-graphic {
     display: block;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    pointer-events: none;
   }
   .botanical-graphic svg {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 </style>
