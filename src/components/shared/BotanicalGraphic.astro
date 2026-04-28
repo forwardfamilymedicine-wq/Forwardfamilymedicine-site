@@ -2,11 +2,12 @@
 interface Props {
   variant: 'bloom' | 'compass' | 'triadic' | 'layered' | 'quartet' | 'starlet';
   class?: string;
+  position?: 'overlay' | 'inline';
 }
-const { variant, class: className } = Astro.props;
+const { variant, class: className, position = 'overlay' } = Astro.props;
 ---
 
-<div class:list={['botanical-graphic', className]} aria-hidden="true">
+<div class:list={['botanical-graphic', `botanical-graphic--${position}`, className]} aria-hidden="true">
   {variant === 'bloom' && (
     <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="240" cy="240" r="72" stroke="rgba(62,99,68,0.22)" stroke-width="1.2"/>
@@ -129,9 +130,6 @@ const { variant, class: className } = Astro.props;
 
 <style>
   .botanical-graphic {
-    display: block;
-    width: 100%;
-    max-width: 480px;
     aspect-ratio: 1 / 1;
     pointer-events: none;
   }
@@ -139,5 +137,23 @@ const { variant, class: className } = Astro.props;
     display: block;
     width: 100%;
     height: 100%;
+  }
+  .botanical-graphic--overlay {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+    width: clamp(280px, 32vw, 420px);
+    z-index: 0;
+  }
+  .botanical-graphic--inline {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+  }
+  @media (max-width: 860px) {
+    .botanical-graphic--overlay {
+      display: none;
+    }
   }
 </style>
