@@ -36,7 +36,7 @@ We are located in Wayne, Pennsylvania, on the Philadelphia Main Line. [See our l
 Dr. Bigley is the founder of Forward Family Medicine, a board-certified Family Medicine physician, and a Doctor of Osteopathic Medicine (DO). Dr. Lieberman is board-eligible in both Family Medicine and Lifestyle Medicine. [Meet the team →](/about)
 
 **Are you currently accepting new patients?**
-Dr. Lieberman is actively accepting new patients. Dr. Bigley is not currently accepting new patients. If you'd like to connect with Dr. Lieberman, [schedule a free Meet & Greet →](/contact).
+Our panel is intentionally capped at ~250 patients per physician, so we encourage you to [schedule a free Meet & Greet →](/contact) before spots fill.
 
 ---
 
