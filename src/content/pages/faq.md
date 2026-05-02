@@ -73,7 +73,7 @@ We offer both month-to-month and annual membership options. All memberships incl
 At Forward Family Medicine, there is no enrollment fee.
 
 **Can I use my HSA or FSA for membership fees?**
-HSA/FSA eligibility for DPC membership fees depends on your specific plan and applicable tax rules. Many health-related expenses at our practice (labs, medications, procedures) are eligible for HSA/FSA reimbursement. Please consult your benefits administrator or tax advisor.
+HSA rules for Direct Primary Care changed in 2026, and the answer depends on your specific plan and how your membership is structured. We're happy to walk through the details with you at a [Meet & Greet](/contact). Labs, medications, and in-office procedures at our practice are HSA- and FSA-eligible regardless of membership treatment.
 
 **Do you offer employer group memberships?**
 Yes. We work with small and mid-size employers to offer DPC memberships as a health benefit. [Contact us to discuss employer options →](/for-businesses)
