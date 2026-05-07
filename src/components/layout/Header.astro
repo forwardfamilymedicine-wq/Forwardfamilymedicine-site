@@ -30,6 +30,8 @@ const isActive = (href: string) => {
 };
 const isServicesActive = ['/services', ...servicesChildren.map(c => c.href)].some(h => currentPath.startsWith(h));
 const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.href)].some(h => currentPath.startsWith(h));
+const isTeamActive = currentPath.startsWith('/meet-the-team');
+const isLocationsActive = currentPath.startsWith('/locations');
 ---
 
 <header class="site-header" role="banner">
@@ -74,6 +76,12 @@ const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.
         <ul>
           <li>
             <a href="/about" class={isActive('/about') ? 'active' : ''} aria-current={isActive('/about') ? 'page' : undefined}>About</a>
+          </li>
+          <li>
+            <a href="/meet-the-team" class={isTeamActive ? 'active' : ''} aria-current={isTeamActive ? 'page' : undefined}>Meet the Team</a>
+          </li>
+          <li>
+            <a href="/locations" class={isLocationsActive ? 'active' : ''} aria-current={isLocationsActive ? 'page' : undefined}>Locations</a>
           </li>
 
           <!-- Services dropdown -->
@@ -149,6 +157,8 @@ const isNewPatientsActive = ['/new-patients', ...newPatientsChildren.map(c => c.
       <li><a href="https://patient.sigmamd.com" target="_blank" rel="noopener noreferrer">Patient Portal</a></li>
       <li><a href="/" class={isActive('/') ? 'active' : ''}>Home</a></li>
       <li><a href="/about" class={isActive('/about') ? 'active' : ''}>About</a></li>
+      <li><a href="/meet-the-team" class={isTeamActive ? 'active' : ''}>Meet the Team</a></li>
+      <li><a href="/locations" class={isLocationsActive ? 'active' : ''}>Locations</a></li>
 
       <!-- Services with children in mobile -->
       <li>

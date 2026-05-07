@@ -6,10 +6,17 @@ export default defineConfig({
   base: '/',
   redirects: {
     '/what-to-expect': '/new-patients/',
-    '/blog/dpc-vs-concierge-which-is-right': '/blog/concierge-medicine-vs-direct-primary-care',
     '/blog/dpc-vs-concierge-which-is-right/': '/blog/concierge-medicine-vs-direct-primary-care',
     '/faqs': { status: 301, destination: '/faq/' },
     '/home/': { status: 301, destination: '/' },
+    '/providers': '/meet-the-team',
+    '/providers/': '/meet-the-team/',
+    '/providers/david-bigley-do': '/meet-the-team/david-bigley-do',
+    '/providers/david-bigley-do/': '/meet-the-team/david-bigley-do/',
+    '/providers/philip-lieberman-md': '/meet-the-team/philip-lieberman-md',
+    '/providers/philip-lieberman-md/': '/meet-the-team/philip-lieberman-md/',
+    '/providers/brian-landi-do': '/meet-the-team/brian-landi-do',
+    '/providers/brian-landi-do/': '/meet-the-team/brian-landi-do/',
   },
   integrations: [sitemap({
     filter: (page) =>

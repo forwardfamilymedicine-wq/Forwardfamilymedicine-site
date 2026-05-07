@@ -1,0 +1,225 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const allLocations = await getCollection('locations');
+const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+
+const siteUrl = 'https://www.forwardfamilymedicine.com';
+const canonicalUrl = `${siteUrl}/locations/`;
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": canonicalUrl },
+  ],
+};
+---
+
+<MainLayout
+  title="Our Locations | Forward Family Medicine"
+  description="Forward Family Medicine serves Wayne, PA and is expanding to West Chester and Malvern in August 2026. Direct Primary Care on the Main Line and in Chester County."
+  canonical={canonicalUrl}
+  schema={breadcrumb}
+>
+  <!-- Hero -->
+  <section class="locations-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-100) 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Locations</span>
+      </nav>
+      <span class="section-label">Where We Practice</span>
+      <h1>Our Locations</h1>
+      <div class="divider"></div>
+      <p class="section-intro">
+        Forward Family Medicine is rooted in Wayne, PA and expanding to Chester County in 2026.
+        Every location brings the same small-panel, relationship-based care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Location cards -->
+  <section class="locations-list-section section" style="background: var(--cream-100);">
+    <div class="container">
+      <div class="locations-list">
+        {locations.map((location) => {
+          const d = location.data;
+          const isOpen = d.status === 'open';
+          const openingLabel = d.openingDate
+            ? new Date(d.openingDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+            : 'August 2026';
+          const hasAddress = d.addressStreet && d.addressZip;
+
+          return (
+            <article class={`location-card card${isOpen ? '' : ' coming-soon-card'}`}>
+              <div class="location-card-header">
+                <div>
+                  <span class={`status-badge ${d.status}`}>
+                    {isOpen ? 'Now Open' : `Coming ${openingLabel}`}
+                  </span>
+                  <h2 class="location-card-name">
+                    Forward Family Medicine — {d.name}
+                  </h2>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="location-icon" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+
+              <p class="location-card-desc">{d.description}</p>
+
+              {hasAddress && (
+                <div class="location-card-address">
+                  <span>{d.addressStreet}</span>
+                  <span>{d.addressCity}, {d.addressState} {d.addressZip}</span>
+                </div>
+              )}
+
+              {d.phone && (
+                <div class="location-card-phone">
+                  <a href={`tel:${d.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{d.phone}</a>
+                </div>
+              )}
+
+              <div class="location-card-footer">
+                <a href={`/locations/${d.slug}/`} class={`btn ${isOpen ? 'btn-outline' : 'btn-secondary'}`}>
+                  {isOpen ? 'View Location →' : 'Learn More →'}
+                </a>
+                {isOpen && (
+                  <a href="/contact" class="btn btn-accent">Schedule a Visit →</a>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--ink-300);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--green-400); }
+
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--green-300);
+    border-radius: 2px;
+    margin: 1.25rem 0;
+  }
+
+  /* Location list */
+  .locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 760px;
+  }
+
+  /* Card */
+  .location-card {
+    padding: 2rem;
+    transition: box-shadow 0.2s;
+  }
+  .location-card:hover { box-shadow: var(--shadow-md); }
+  .coming-soon-card { border-left: 4px solid var(--cream-300); }
+
+  .location-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .location-icon { color: var(--green-300); flex-shrink: 0; }
+
+  .status-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .status-badge.open {
+    background: var(--green-100);
+    color: var(--green-500);
+  }
+  .status-badge.coming-soon {
+    background: var(--cream-300);
+    color: var(--ink-700);
+  }
+
+  .location-card-name {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--ink-900);
+    margin: 0;
+  }
+
+  .location-card-desc {
+    color: var(--ink-500);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .location-card-address {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: var(--ink-700);
+    margin-bottom: 0.4rem;
+  }
+
+  .location-card-phone {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .location-card-phone a {
+    color: var(--green-400);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .location-card-phone a:hover { color: var(--green-500); }
+
+  .location-card-footer {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+  .location-card-footer .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+  }
+
+  /* btn-secondary fallback if not defined globally */
+  .btn-secondary {
+    background: var(--cream-200);
+    color: var(--ink-900);
+    border: 1px solid var(--cream-300);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+  .btn-secondary:hover { background: var(--cream-300); }
+
+  @media (max-width: 600px) {
+    .location-card { padding: 1.25rem; }
+    .location-card-footer { flex-direction: column; }
+  }
+</style>
