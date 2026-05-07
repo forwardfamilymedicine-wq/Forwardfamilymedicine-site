@@ -1,62 +1,75 @@
 ---
-import ProviderCard from '../shared/ProviderCard.astro';
-import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
-import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
-import ritamariePhoto from '../../assets/staff/ritamarie-smedile.jpg';
+import { getCollection } from 'astro:content';
 
-const providers = [
-  {
-    name: 'Dr. David Bigley',
-    credentials: 'DO — Family Medicine | Board-Certified',
-    role: 'Physician, Founder',
-    photo: drBigleyPhoto.src,
-    photoAlt: 'Dr. David Bigley DO, Founder of Forward Family Medicine, Wayne PA',
-    tagline: 'Whole-person osteopathic medicine — built on truly knowing his patients. Dr. Bigley left the insurance-based model to practice the way he always believed medicine should be: with time, trust, and genuine relationship.',
-    badges: ['DO', 'Family Medicine', 'PCOM'],
-    href: '/about#dr-bigley',
-  },
-  {
-    name: 'Dr. Philip Lieberman',
-    credentials: 'MD — Family Medicine + Lifestyle Medicine',
-    role: 'Physician',
-    photo: drLiebermanPhoto.src,
-    photoAlt: 'Dr. Philip Lieberman MD, Family Medicine and Lifestyle Medicine Physician at Forward Family Medicine',
-    tagline: 'Dual board-eligible in Family Medicine and Lifestyle Medicine, with a culinary arts background that makes nutrition advice actually practical. The only physician of his kind on the Main Line.',
-    badges: ['MD', 'Family Medicine', 'Lifestyle Medicine', 'U.S. Navy'],
-    href: '/about#dr-lieberman',
-  },
-  {
-    name: 'Ritamarie Smedile',
-    credentials: 'PhD, RN',
-    role: 'Clinical Operations & Wellness',
-    photo: ritamariePhoto.src,
-    photoAlt: 'Ritamarie Smedile PhD RN, Clinical Operations and Wellness at Forward Family Medicine',
-    tagline: 'Over a decade of maternal health, reproductive wellness, and integrative care. Ritamarie works closely with our physicians to support FFM members with wellness visits, health education, and care coordination.',
-    badges: ['PhD', 'RN', 'Maternal Health'],
-    href: '/about#ritamarie',
-  },
-];
+const providers = (await getCollection('providers'))
+  .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 ---
 
 <section class="team-teaser section" aria-label="Meet the team">
   <div class="container">
     <div class="team-header text-center">
       <span class="section-label">Your Care Team</span>
-      <h2 class="section-title">Meet the Doctors</h2>
+      <h2 class="section-title">Meet the Team</h2>
       <p class="section-intro" style="margin:0 auto;">
-        Two physicians who left the insurance model to build something better —
-        a practice where every patient gets the time, attention, and expertise they deserve.
+        Three physicians, two locations, one philosophy: small panels, real visit
+        lengths, and primary care that genuinely knows you. Click any card to read
+        their full bio.
       </p>
     </div>
 
     <div class="team-grid">
-      {providers.map(p => (
-        <ProviderCard {...p} />
-      ))}
+      {providers.map((member) => {
+        const d = member.data;
+        const isPanelFull = !d.acceptingNewPatients;
+        const isFuture = d.acceptingNewPatientsStartDate
+          && new Date(d.acceptingNewPatientsStartDate) > new Date();
+        const openingLabel = d.acceptingNewPatientsStartDate
+          ? new Date(d.acceptingNewPatientsStartDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+          : null;
+        return (
+          <article class={`provider-card card${isPanelFull ? ' panel-full' : ''}`}>
+            <div class="provider-card-photo-wrap">
+              {d.photo ? (
+                <img src={d.photo.src} width={d.photo.width} height={d.photo.height}
+                  alt={d.photoAlt || d.name} class="provider-card-photo" loading="lazy" />
+              ) : (
+                <div class="provider-card-photo provider-card-photo--placeholder"
+                  role="img" aria-label="Photo coming soon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+              )}
+              {isPanelFull && !isFuture && <span class="panel-badge panel-badge--full">Panel Full</span>}
+              {isFuture && <span class="panel-badge panel-badge--future">Joining {openingLabel}</span>}
+            </div>
+            <div class="provider-card-body">
+              <h3 class="provider-card-name">{d.name}, {d.credentials}</h3>
+              <p class="provider-card-title">{d.title}</p>
+              {d.specialties?.length > 0 && (
+                <div class="specialty-chips">
+                  {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
+                </div>
+              )}
+              <div class="board-line">
+                <span class={`board-badge ${d.boardStatus}`}>
+                  {d.boardStatus === 'board-certified' ? 'Board-Certified' : 'Board-Eligible'}
+                </span>
+              </div>
+              <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
+                Meet Dr. {d.name.split(' ').pop()} →
+              </a>
+            </div>
+          </article>
+        );
+      })}
     </div>
 
-    <div class="team-cta text-center">
-      <a href="/about" class="btn btn-outline">Read Full Bios →</a>
+    <div class="team-footer text-center">
+      <a href="/meet-the-team/" class="team-all-link">+ Meet our wellness team →</a>
     </div>
   </div>
 </section>
@@ -74,18 +87,48 @@ const providers = [
     gap: 2rem;
     margin-bottom: 2.5rem;
   }
-  .team-cta {
-    margin-top: 2rem;
+  .team-footer {
+    margin-top: 1.5rem;
   }
+  .team-all-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--green-400);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .team-all-link:hover { color: var(--green-500); }
+
+  .provider-card { display: flex; flex-direction: column; overflow: hidden; transition: box-shadow 0.2s; }
+  .provider-card:hover { box-shadow: var(--shadow-md); }
+  .provider-card.panel-full { opacity: 0.85; }
+
+  .provider-card-photo-wrap { position: relative; overflow: hidden; background: var(--cream-200); }
+  .provider-card-photo { width: 100%; height: 300px; object-fit: cover; display: block; }
+  .provider-card-photo--placeholder { display: flex; align-items: center; justify-content: center; background: var(--cream-200); color: var(--ink-300); height: 300px; }
+
+  .panel-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.7rem; border-radius: 999px; }
+  .panel-badge--full { background: var(--cream-300); color: var(--ink-700); }
+  .panel-badge--future { background: var(--green-100); color: var(--green-500); }
+
+  .provider-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+  .provider-card-name { font-size: 1.25rem; color: var(--ink-900); margin: 0; }
+  .provider-card-title { font-size: 0.9rem; color: var(--ink-500); margin: 0; font-family: var(--font-body); }
+
+  .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600; }
+
+  .board-line { margin-top: 0.1rem; }
+  .board-badge { font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.65rem; border-radius: 999px; }
+  .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
+  .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
+
+  .provider-card-cta { margin-top: auto; padding-top: 0.7rem; padding-bottom: 0.7rem; font-size: 0.9rem; text-align: center; }
 
   @media (max-width: 860px) {
-    .team-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+    .team-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 540px) {
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
+    .team-grid { grid-template-columns: 1fr; }
   }
 </style>
