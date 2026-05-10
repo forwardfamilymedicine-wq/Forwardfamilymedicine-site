@@ -27,7 +27,7 @@ education:
     year: null
   - degree: "Doctor of Medicine"
     institution: "Thomas Jefferson University"
-    year: null
+    year: 2018
   - degree: "Family Medicine Residency"
     institution: "Abington Family Medicine"
     year: null
@@ -35,7 +35,7 @@ notableExperience:
   - label: "U.S. Navy Primary Care Physician"
   - label: "Developed Lifestyle Medicine curriculum"
     description: "Built a comprehensive curriculum at Abington Family Medicine residency that enabled fellow residents to qualify for board certification through the American College of Lifestyle Medicine."
-npi: ""
+npi: "1669979316"
 sameAs: []
 acceptingNewPatients: true
 displayOrder: 2

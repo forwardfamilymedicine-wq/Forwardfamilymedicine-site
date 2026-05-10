@@ -21,11 +21,11 @@ education:
     year: null
   - degree: "Doctor of Osteopathic Medicine"
     institution: "Philadelphia College of Osteopathic Medicine"
-    year: null
+    year: 2021
   - degree: "Family Medicine Residency"
     institution: "Christiana Care, Delaware"
-    year: null
-npi: ""
+    year: 2024
+npi: "1093391021"
 sameAs: []
 acceptingNewPatients: false
 acceptingNewPatientsNote: "Dr. Bigley's panel is currently full. New members are warmly welcomed by Dr. Lieberman in Wayne and Dr. Landi in West Chester / Malvern (beginning August 2026)."

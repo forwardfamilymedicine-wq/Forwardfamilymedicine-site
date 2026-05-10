@@ -128,6 +128,7 @@ const locations = defineCollection({
     photoAlts: z.array(z.string()).optional().default([]),
     latitude: z.number().optional(),
     longitude: z.number().optional(),
+    mapEmbedUrl: z.string().optional(),
     providers: z.array(z.string()).optional().default([]),
     description: z.string(),
     displayOrder: z.number(),

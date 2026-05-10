@@ -1,105 +1,99 @@
 ---
-export interface Props {
-  name: string;
-  credentials: string;
-  role: string;
-  photo: string;
-  photoAlt: string;
-  tagline: string;
-  badges?: string[];
-  href?: string;
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  provider: CollectionEntry<'providers'> | CollectionEntry<'team'>;
 }
 
-const { name, credentials, role, photo, photoAlt, tagline, badges = [], href } = Astro.props;
+const { provider } = Astro.props;
+const d = provider.data as any;
+const isPhysician = provider.collection === 'providers';
+const isPanelFull = isPhysician && !d.acceptingNewPatients;
+const isFuture = isPhysician && d.acceptingNewPatientsStartDate
+  && new Date(d.acceptingNewPatientsStartDate) > new Date();
+const openingLabel = d.acceptingNewPatientsStartDate
+  ? new Date(d.acceptingNewPatientsStartDate).toLocaleDateString(
+      'en-US', { month: 'long', year: 'numeric' })
+  : null;
 ---
 
-<div class="provider-card card">
-  <div class="provider-photo">
-    <img
-      src={photo}
-      alt={photoAlt}
-      loading="lazy"
-      width="300"
-      height="350"
-    />
-  </div>
-  <div class="provider-body">
-    <h3 class="provider-name">{name}</h3>
-    <p class="provider-creds">{credentials}</p>
-    <p class="provider-role text-muted" style="font-size:0.85rem; margin-bottom:0.75rem;">{role}</p>
-    {badges.length > 0 && (
-      <div class="provider-badges">
-        {badges.map(b => <span class="badge badge-accent">{b}</span>)}
+<article class={`provider-card card${isPanelFull ? ' panel-full' : ''}`}>
+  <div class="provider-card-photo-wrap">
+    {d.photo ? (
+      <img
+        src={d.photo.src}
+        width={d.photo.width}
+        height={d.photo.height}
+        alt={d.photoAlt || d.name}
+        class="provider-card-photo"
+        loading="lazy"
+      />
+    ) : (
+      <div class="provider-card-photo provider-card-photo--placeholder"
+        role="img" aria-label="Photo coming soon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
       </div>
     )}
-    <p class="provider-tagline">{tagline}</p>
-    {href && (
-      <a href={href} class="provider-link">Read full bio →</a>
-    )}
+    {isPanelFull && !isFuture && <span class="panel-badge panel-badge--full">Panel Full</span>}
+    {isFuture && <span class="panel-badge panel-badge--future">Joining {openingLabel}</span>}
   </div>
-</div>
+
+  <div class="provider-card-body">
+    <h3 class="provider-card-name">{d.name}, {d.credentials}</h3>
+    <p class="provider-card-title">{d.title}</p>
+
+    {d.specialties?.length > 0 && (
+      <div class="specialty-chips">
+        {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
+      </div>
+    )}
+
+    {isPhysician && d.boardStatus && (
+      <div class="board-line">
+        <span class={`board-badge ${d.boardStatus}`}>
+          {d.boardStatus === 'board-certified' ? 'Board-Certified' : 'Board-Eligible'}
+        </span>
+      </div>
+    )}
+
+    <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
+      Meet {isPhysician ? `Dr. ${d.name.split(' ').pop()}` : d.name.split(' ')[0]} →
+    </a>
+  </div>
+</article>
 
 <style>
-  .provider-card {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .provider-photo {
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    background: var(--cream-200);
-    max-height: 280px;
-  }
-  .provider-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    border: none;
-    outline: none;
-    transition: transform 0.4s ease;
-  }
-  .provider-card:hover .provider-photo img {
-    transform: scale(1.03);
-  }
-  .provider-body {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .provider-name {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-  }
-  .provider-creds {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--green-400);
-    margin-bottom: 0.25rem;
-  }
-  .provider-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-  }
-  .provider-tagline {
-    font-size: 0.9rem;
-    color: var(--ink-700);
-    line-height: 1.6;
-    flex: 1;
-    margin-bottom: 0.75rem;
-  }
-  .provider-link {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--green-300);
-    text-decoration: none;
-    margin-top: auto;
-    transition: color 0.15s;
-  }
-  .provider-link:hover { color: var(--green-400); }
+  .provider-card { display: flex; flex-direction: column; overflow: hidden; transition: box-shadow 0.2s; flex: 0 1 calc(33.333% - 1.334rem); min-width: 280px; max-width: 360px; }
+  .provider-card:hover { box-shadow: var(--shadow-md); }
+  .provider-card.panel-full { opacity: 0.85; }
+
+  .provider-card-photo-wrap { position: relative; overflow: hidden; background: var(--cream-200); }
+  .provider-card-photo { width: 100%; height: 300px; object-fit: cover; display: block; }
+  .provider-card-photo--placeholder { display: flex; align-items: center; justify-content: center; background: var(--cream-200); color: var(--ink-300); height: 300px; }
+
+  .panel-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.7rem; border-radius: 999px; }
+  .panel-badge--full { background: var(--cream-300); color: var(--ink-700); }
+  .panel-badge--future { background: var(--green-100); color: var(--green-500); }
+
+  .provider-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+  .provider-card-name { font-size: 1.25rem; color: var(--ink-900); margin: 0; }
+  .provider-card-title { font-size: 0.9rem; color: var(--ink-500); margin: 0; font-family: var(--font-body); }
+
+  .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600; }
+
+  .board-line { margin-top: 0.1rem; }
+  .board-badge { font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.65rem; border-radius: 999px; }
+  .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
+  .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
+
+  .provider-card-cta { margin-top: auto; padding-top: 0.7rem; padding-bottom: 0.7rem; font-size: 0.9rem; text-align: center; }
+
+  @media (max-width: 860px) { .provider-card { flex: 0 1 calc(50% - 1rem); } }
+  @media (max-width: 540px) { .provider-card { flex-basis: 100%; max-width: 100%; } }
 </style>

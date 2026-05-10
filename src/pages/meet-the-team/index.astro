@@ -1,13 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import ProviderCard from '../../components/shared/ProviderCard.astro';
 
 const allProviders = await getCollection('providers');
 const allTeam = await getCollection('team');
 
 const members = [
-  ...allProviders.map(e => ({ ...e, _type: 'physician' as const })),
-  ...allTeam.map(e => ({ ...e, _type: 'team' as const })),
+  ...allProviders,
+  ...allTeam,
 ].sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
@@ -50,54 +51,7 @@ const breadcrumb = {
   <section class="providers-grid-section section" style="background: var(--cream-100);">
     <div class="container">
       <div class="providers-grid">
-        {members.map((member) => {
-          const d = member.data as any;
-          const isPhysician = member._type === 'physician';
-          const isPanelFull = isPhysician && !d.acceptingNewPatients;
-          const isFuture = isPhysician && d.acceptingNewPatientsStartDate && new Date(d.acceptingNewPatientsStartDate) > new Date();
-          const openingLabel = d.acceptingNewPatientsStartDate
-            ? new Date(d.acceptingNewPatientsStartDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
-            : null;
-
-          return (
-            <article class={`provider-card card${isPanelFull ? ' panel-full' : ''}`}>
-              <div class="provider-card-photo-wrap">
-                {d.photo ? (
-                  <img src={d.photo.src} width={d.photo.width} height={d.photo.height} alt={d.photoAlt || d.name} class="provider-card-photo" loading="lazy" />
-                ) : (
-                  <div class="provider-card-photo provider-card-photo--placeholder" role="img" aria-label="Photo coming soon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  </div>
-                )}
-                {isPanelFull && <span class="panel-badge panel-badge--full">Panel Full</span>}
-                {isFuture && <span class="panel-badge panel-badge--future">Joining {openingLabel}</span>}
-              </div>
-
-              <div class="provider-card-body">
-                <h2 class="provider-card-name">{d.name}, {d.credentials}</h2>
-                <p class="provider-card-title">{d.title}</p>
-
-                {d.specialties?.length > 0 && (
-                  <div class="specialty-chips">
-                    {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
-                  </div>
-                )}
-
-                {isPhysician && (
-                  <div class="board-line">
-                    <span class={`board-badge ${d.boardStatus}`}>
-                      {d.boardStatus === 'board-certified' ? 'Board-Certified' : 'Board-Eligible'}
-                    </span>
-                  </div>
-                )}
-
-                <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
-                  Meet {isPhysician ? `Dr. ${d.name.split(' ').pop()}` : d.name.split(' ')[0]} →
-                </a>
-              </div>
-            </article>
-          );
-        })}
+        {members.map(m => <ProviderCard provider={m} />)}
       </div>
     </div>
   </section>
@@ -119,33 +73,5 @@ const breadcrumb = {
   .breadcrumb a:hover { color: var(--green-400); }
   .divider { width: 48px; height: 3px; background: var(--green-300); border-radius: 2px; margin: 1.25rem 0; }
 
-  .providers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-top: 1rem; }
-
-  .provider-card { display: flex; flex-direction: column; overflow: hidden; transition: box-shadow 0.2s; }
-  .provider-card:hover { box-shadow: var(--shadow-md); }
-  .provider-card.panel-full { opacity: 0.85; }
-
-  .provider-card-photo-wrap { position: relative; overflow: hidden; background: var(--cream-200); }
-  .provider-card-photo { width: 100%; height: 300px; object-fit: cover; display: block; }
-  .provider-card-photo--placeholder { display: flex; align-items: center; justify-content: center; background: var(--cream-200); color: var(--ink-300); height: 300px; }
-
-  .panel-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.7rem; border-radius: 999px; }
-  .panel-badge--full { background: var(--cream-300); color: var(--ink-700); }
-  .panel-badge--future { background: var(--green-100); color: var(--green-500); }
-
-  .provider-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
-  .provider-card-name { font-size: 1.25rem; color: var(--ink-900); margin: 0; }
-  .provider-card-title { font-size: 0.9rem; color: var(--ink-500); margin: 0; font-family: var(--font-body); }
-
-  .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600; }
-
-  .board-line { margin-top: 0.1rem; }
-  .board-badge { font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.65rem; border-radius: 999px; }
-  .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
-  .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
-
-  .provider-card-cta { margin-top: auto; padding-top: 0.7rem; padding-bottom: 0.7rem; font-size: 0.9rem; text-align: center; }
-
-  @media (max-width: 600px) { .providers-grid { grid-template-columns: 1fr; } }
+  .providers-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem; }
 </style>

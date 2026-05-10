@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import ProviderCard from '../../components/shared/ProviderCard.astro';
 
 export async function getStaticPaths() {
   const locations = await getCollection('locations');
@@ -13,6 +14,12 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
+
+const allProviders = await getCollection('providers');
+const locationProviders = (data.providers || [])
+  .map((slug: string) => allProviders.find(p => p.data.slug === slug))
+  .filter(Boolean)
+  .sort((a: any, b: any) => a.data.displayOrder - b.data.displayOrder);
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/locations/${data.slug}/`;
@@ -126,79 +133,112 @@ const openingLabel = data.openingDate
           )}
         </div>
 
-        {data.status === 'open' && (
-          <div class="hero-cta-block">
-            <a href="/contact" class="btn btn-accent">Schedule a Meet &amp; Greet →</a>
-          </div>
-        )}
+        <div class="hero-cta-block">
+          {data.status === 'open' ? (
+            <a href="/contact/" class="btn btn-accent">Schedule a Meet &amp; Greet →</a>
+          ) : (
+            <a
+              href={`/contact/?subject=${encodeURIComponent(`Join the ${data.name} Patient List`)}`}
+              class="btn btn-accent"
+            >Join the {data.name} Patient List →</a>
+          )}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Hours (open locations only) -->
-  {data.status === 'open' && data.hours && data.hours.length > 0 && (
-    <section class="hours-section section" style="background: var(--cream-50); padding-top: 3rem; padding-bottom: 3rem;">
+  <!-- Visit Us: address, hours, and map — shown whenever any location data exists -->
+  {(data.addressStreet || (data.hours && data.hours.length > 0) || data.mapEmbedUrl) && (
+    <section class="location-visit section" style="background: var(--cream-100);">
       <div class="container">
-        <h2 class="section-title" style="font-size:1.4rem;">Office Hours</h2>
-        <table class="hours-table">
-          <tbody>
-            {data.hours.map((h: any) => (
-              <tr>
-                <td class="hours-day">{h.day}</td>
-                <td class="hours-time">{h.open} – {h.close}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div class="visit-grid">
+          <div class="visit-info">
+            <h2>Visit Us</h2>
+            {data.addressStreet && (
+              <div class="visit-address">
+                <strong>{data.name}</strong>
+                <address>
+                  {data.addressStreet}<br />
+                  {data.addressCity}, {data.addressState} {data.addressZip}
+                </address>
+                {data.phone && <p><a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a></p>}
+              </div>
+            )}
+
+            {data.hours && data.hours.length > 0 && (
+              <Fragment>
+                <h3>Office Hours</h3>
+                <table class="hours-table">
+                  <tbody>
+                    {data.hours.map((h: any) => (
+                      <tr>
+                        <td>{h.day}</td>
+                        <td>{h.open} – {h.close}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </Fragment>
+            )}
+          </div>
+
+          {data.mapEmbedUrl && (
+            <div class="visit-map">
+              <iframe
+                src={data.mapEmbedUrl}
+                title={`Map showing ${data.name} location`}
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   )}
 
   <!-- Physicians -->
-  {data.providers && data.providers.length > 0 && (
+  {locationProviders.length > 0 && (
     <section class="providers-section section" style="background: var(--cream-100);">
       <div class="container">
         <span class="section-label">Care Team</span>
         <h2 class="section-title">Physicians at This Location</h2>
-        <div class="provider-links">
-          {data.providers.map((providerSlug: string) => (
-            <a href={`/meet-the-team/${providerSlug}/`} class="provider-link-card">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <div>
-                <span class="provider-link-name">
-                  {providerSlug.replace(/-(do|md)$/, '').split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-                </span>
-                <span class="provider-link-action">View full bio →</span>
-              </div>
-            </a>
-          ))}
+        <div class="provider-cards-grid">
+          {locationProviders.map((p: any) => <ProviderCard provider={p} />)}
         </div>
       </div>
     </section>
   )}
 
-  <!-- Main content (body from markdown) -->
-  <section class="location-content section" style="background: var(--cream-50);">
-    <div class="container">
-      <div class="prose location-prose">
-        <Content />
-      </div>
-
-      {data.status === 'coming-soon' && (
-        <!-- PLACEHOLDER: Email capture / waitlist form — wire up tomorrow -->
-        <div class="waitlist-placeholder" id="waitlist">
-          <!-- TODO: Replace this div with the waitlist form component when ready. -->
-          <div class="callout" style="border: 2px dashed var(--cream-300); background: var(--cream-100); padding: 2rem; border-radius: var(--radius); text-align: center; margin-top: 2rem;">
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Join the Patient List</h3>
-            <p style="color: var(--ink-500); max-width: 420px; margin: 0 auto 1rem;">
-              Be the first to know when scheduling opens at our {data.name} location.
-            </p>
-            <a href="/contact" class="btn btn-accent">Contact Us to Express Interest →</a>
+  <!-- Main content (body from markdown) — suppressed when body is empty -->
+  {(entry.body?.trim().length > 0 || data.status === 'coming-soon') && (
+    <section class="location-content section" style="background: var(--cream-50);">
+      <div class="container">
+        {entry.body?.trim().length > 0 && (
+          <div class="prose location-prose">
+            <Content />
           </div>
-        </div>
-      )}
-    </div>
-  </section>
+        )}
+
+        {data.status === 'coming-soon' && (
+          <div class="waitlist-placeholder" id="waitlist">
+            <div class="callout" style="border: 2px dashed var(--cream-300); background: var(--cream-100); padding: 2rem; border-radius: var(--radius); text-align: center; margin-top: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Join the Patient List</h3>
+              <p style="color: var(--ink-500); max-width: 420px; margin: 0 auto 1rem;">
+                Be the first to know when scheduling opens. We'll email you with
+                early-access details before the location is open to the public.
+              </p>
+              <a
+                href={`/contact/?subject=${encodeURIComponent(`Join the ${data.name} Patient List`)}`}
+                class="btn btn-accent"
+              >Join the {data.name} Patient List →</a>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
 
   <!-- Photos (if any) -->
   {data.photos && data.photos.length > 0 && (
@@ -234,11 +274,10 @@ const openingLabel = data.openingDate
   .breadcrumb a:hover { color: var(--green-400); }
 
   .location-hero-inner {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 2rem;
-    flex-wrap: wrap;
+    align-items: center;
   }
 
   .status-badge {
@@ -296,65 +335,77 @@ const openingLabel = data.openingDate
   .phone-block a:hover { color: var(--green-500); }
 
   .hero-cta-block {
-    display: flex;
-    align-items: center;
-    padding-top: 0.5rem;
+    align-self: center;
   }
 
-  /* Hours */
+  /* Visit Us */
+  .location-visit {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .visit-info h2 {
+    font-size: 1.6rem;
+    margin: 0 0 1rem 0;
+  }
+  .visit-info h3 {
+    font-size: 1.15rem;
+    color: var(--ink-900);
+    margin: 1.75rem 0 0.75rem 0;
+    font-weight: 700;
+  }
+  .visit-address {
+    line-height: 1.6;
+    color: var(--ink-700);
+  }
+  .visit-address address {
+    font-style: normal;
+    margin: 0.5rem 0;
+  }
+  .visit-address a {
+    color: var(--green-400);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .visit-address a:hover {
+    color: var(--green-500);
+    text-decoration: underline;
+  }
   .hours-table {
+    width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
-    max-width: 360px;
   }
-  .hours-table tr { border-bottom: 1px solid var(--cream-200); }
-  .hours-table tr:last-child { border-bottom: none; }
-  .hours-day {
-    padding: 0.55rem 2rem 0.55rem 0;
-    font-weight: 600;
-    color: var(--ink-900);
-    white-space: nowrap;
-  }
-  .hours-time {
-    padding: 0.55rem 0;
-    color: var(--ink-500);
-  }
-
-  /* Provider links */
-  .provider-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    max-width: 480px;
-    margin-top: 1.5rem;
-  }
-  .provider-link-card {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    padding: 1rem 1.25rem;
-    background: var(--cream-50);
-    border: 1px solid var(--cream-300);
+  .hours-table tr { border-bottom: 1px solid var(--cream-300); }
+  .hours-table tr:last-child { border-bottom: 0; }
+  .hours-table td { padding: 0.55rem 0; }
+  .hours-table td:first-child { font-weight: 600; color: var(--ink-900); width: 6rem; padding-right: 0.75rem; }
+  .hours-table td:last-child { text-align: left; color: var(--ink-700); }
+  .visit-map {
+    aspect-ratio: 4 / 3;
     border-radius: var(--radius);
-    text-decoration: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  .provider-link-card:hover {
-    border-color: var(--green-300);
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
   }
-  .provider-link-card svg { color: var(--green-400); flex-shrink: 0; }
-  .provider-link-name {
+  .visit-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
     display: block;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--ink-900);
   }
-  .provider-link-action {
-    display: block;
-    font-size: 0.82rem;
-    color: var(--green-400);
-    margin-top: 0.1rem;
+
+  /* Provider cards grid */
+  .provider-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
   }
 
   /* Prose */
@@ -391,7 +442,15 @@ const openingLabel = data.openingDate
     box-shadow: var(--shadow-sm);
   }
 
+  @media (max-width: 768px) {
+    .visit-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .visit-map { aspect-ratio: 16 / 9; }
+  }
+
   @media (max-width: 700px) {
-    .location-hero-inner { flex-direction: column; }
+    .location-hero-inner { grid-template-columns: 1fr; }
   }
 </style>

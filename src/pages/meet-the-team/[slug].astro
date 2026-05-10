@@ -118,14 +118,22 @@ const breadcrumb = {
             d.acceptingNewPatients ? (
               <div class="accepting-banner accepting">
                 {d.acceptingNewPatientsStartDate && new Date(d.acceptingNewPatientsStartDate) > new Date() ? (
-                  <span>
-                    <strong>Accepting patients starting {new Date(d.acceptingNewPatientsStartDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</strong>
-                    {d.acceptingNewPatientsNote && <span class="accepting-note"> — {d.acceptingNewPatientsNote}</span>}
-                  </span>
+                  <Fragment>
+                    <span>
+                      <strong>Accepting patients starting {new Date(d.acceptingNewPatientsStartDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</strong>
+                      {d.acceptingNewPatientsNote && <span class="accepting-note"> — {d.acceptingNewPatientsNote}</span>}
+                    </span>
+                    <a
+                      href={`/contact/?subject=${encodeURIComponent(`Join Dr. ${d.name.split(' ').pop()}'s Patient List`)}`}
+                      class="btn btn-accent"
+                    >Join Dr. {d.name.split(' ').pop()}'s Patient List →</a>
+                  </Fragment>
                 ) : (
-                  <span><strong>Now accepting new patients</strong></span>
+                  <Fragment>
+                    <span><strong>Now accepting new patients</strong></span>
+                    <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet →</a>
+                  </Fragment>
                 )}
-                <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet →</a>
               </div>
             ) : (
               <div class="accepting-banner full">

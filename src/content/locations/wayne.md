@@ -27,6 +27,7 @@ photos: []
 photoAlts: []
 latitude: 40.0440
 longitude: -75.3944
+mapEmbedUrl: "https://www.google.com/maps?q=295+Old+Eagle+School+Road,+Wayne,+PA+19087&output=embed"
 providers:
   - "david-bigley-do"
   - "philip-lieberman-md"
@@ -34,10 +35,3 @@ description: "Our flagship location on the Main Line, serving Wayne, Berwyn, Bry
 displayOrder: 1
 ---
 
-## Visit Us
-
-<!-- PLACEHOLDER: Description of the Wayne office, parking, accessibility, neighborhood. -->
-
-## Physicians Practicing Here
-
-<!-- This section is auto-rendered from the providers frontmatter — no body content needed unless template requires. -->
