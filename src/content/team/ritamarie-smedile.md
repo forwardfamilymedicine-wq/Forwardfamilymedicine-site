@@ -20,8 +20,7 @@ education:
   - degree: "Registered Nurse"
     institution: ""
     year: null
-acceptingNewClients: true
-scopeDisclaimer: "Ritamarie is a registered nurse and is not a prescribing provider. She does not serve as a primary care physician. FFM memberships are established with Dr. Bigley or Dr. Lieberman."
+scopeDisclaimer: "Ritamarie is a registered nurse and is not a prescribing provider. She does not serve as a primary care physician. FFM memberships are established with Dr. Bigley, Dr. Lieberman, or Dr. Landi."
 displayOrder: 4
 ---
 

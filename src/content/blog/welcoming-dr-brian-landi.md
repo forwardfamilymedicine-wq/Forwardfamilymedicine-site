@@ -19,9 +19,9 @@ Dr. Landi earned his Doctor of Osteopathic Medicine at the Philadelphia College 
 
 Outside of medicine, Dr. Landi is a six-time triathlete (which tells you something about his relationship with discipline and follow-through), a woodworker, and a cook — the kind of person who pays attention to detail, builds things to last, and feeds people well.
 
-## A new location: West Chester / Malvern
+## Two new locations: West Chester and Malvern
 
-Beginning in August 2026, Forward Family Medicine will operate a second location serving the Chester County corridor. We're finalizing the exact address now and will share specifics soon — the office will land in either West Chester or Malvern, putting us roughly 10–15 minutes from Concordville and Glen Mills, 15–20 minutes from Kennett Square and Exton, and easily reachable from the Route 202 / Route 30 corridor.
+Beginning in August 2026, Forward Family Medicine will operate two new Chester County locations — one in West Chester at 1450 Boot Rd Ste 300A, and one in Malvern at 301 Lindenwood Dr Ste 206. Together they serve the broader Route 202 / Route 30 corridor, putting us within 10–15 minutes of Concordville, Glen Mills, Berwyn, and Paoli, and within 15–20 minutes of Kennett Square and Exton.
 
 For families in West Chester, Malvern, Paoli, Berwyn, Exton, Glen Mills, Concordville, Kennett Square, and the surrounding Chester County communities, this means the same Forward Family Medicine experience — direct access to your physician, hour-long visits, transparent membership pricing, no insurance hassles — closer to home.
 
