@@ -30,11 +30,6 @@ const EXCLUDE = [
   '!**/sitemap-architecture.md',
 ];
 
-const pages = defineCollection({
-  loader: glob({ pattern: ['**/*.md', ...EXCLUDE], base: './src/content/pages' }),
-  schema: baseSchema,
-});
-
 const blog = defineCollection({
   loader: glob({ pattern: ['**/*.{md,mdx}', ...EXCLUDE], base: './src/content/blog' }),
   schema: baseSchema.extend({
@@ -158,4 +153,4 @@ const team = defineCollection({
   }),
 });
 
-export const collections = { pages, blog, local, seo, lifestyle, providers, locations, team };
+export const collections = { blog, local, seo, lifestyle, providers, locations, team };
