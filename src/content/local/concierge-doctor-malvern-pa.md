@@ -1,11 +1,12 @@
 ---
-title: "Concierge Doctor Near Malvern, PA | Forward Family Medicine"
-description: "Malvern, PA patients are 10 miles from Forward Family Medicine's concierge-style DPC practice in Wayne — same-day access, direct physician contact, telehealth included."
+title: "Concierge Doctor in Malvern, PA | Forward Family Medicine"
+description: "Concierge-style primary care in Malvern, PA with Dr. Brian Landi at 301 Lindenwood Dr Ste 206. Direct physician access, 1–2 hour visits, transparent membership. Opening August 2026."
 keywords:
   - concierge doctor Malvern PA
   - concierge medicine Malvern Pennsylvania
-  - boutique medicine Malvern PA
+  - direct access physician Malvern PA
   - membership doctor Malvern PA
+  - private practice Malvern PA
 canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
@@ -14,56 +15,66 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
+  - "/menopause"
+  - "/locations/malvern"
   - "/new-patients"
-localNote: "Malvern patients interested in concierge medicine often discover that DPC delivers the core benefits — same-day access, direct physician communication, extended visits — without the insurance billing layer that inflates traditional concierge retainer pricing. Our Wayne office is 15 minutes east via Route 30."
-nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
+localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr Ste 206 in August 2026 — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
 ---
 
-# Concierge Doctor Near Malvern, PA
+# Concierge Doctor in Malvern, PA
 
 ## About Malvern, PA
 
-Malvern is a Chester County community with a growing corporate corridor and residential neighborhoods that attract professionals seeking quality of life. The DPC concierge model resonates with Malvern's busy professional population — they want a physician who is genuinely available, not one they struggle to reach between work commitments.
+Malvern is a Chester County borough with a strong professional community, a historic downtown, and easy access to the Route 30 / Route 202 corridor. Many Malvern residents are accustomed to high-quality service and have either tried, considered, or wished for concierge-level care — direct access to their physician, time that isn't rushed, attention that isn't divided across thirty patients a day. Forward Family Medicine — with a new Malvern office at 301 Lindenwood Dr Ste 206 opening August 2026 — delivers that experience at Direct Primary Care pricing.
 
-## Concierge-Style Care, 10 Miles Away
+## Concierge Experience, DPC Pricing
 
-Forward Family Medicine in Wayne delivers the concierge medicine experience — same-day access, direct physician contact, longer visits — through a DPC membership. Telehealth makes the 10-mile distance irrelevant for most routine care.
-
-[Compare DPC and traditional concierge →](/concierge-medicine)
+Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
 
 ## Why Malvern Patients Choose This Practice
 
-- 10 miles east of Malvern — Route 30 or SEPTA
-- Same-day and next-day appointments
-- Direct physician access by phone and text
-- Telehealth included for routine care — reduces travel
-- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
-- Flat monthly membership
+- **In-person care in Malvern** — 301 Lindenwood Dr Ste 206, opening August 2026
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner
+- Direct line to your physician by phone, text, or message — not an answering service
+- 1–2 hour visits, scheduled to actually solve problems
+- Same-day and next-day availability for acute concerns
+- ~250-patient panel — roughly half the DPC industry average, a fraction of traditional primary care
+- No concierge retainer, no insurance billing for routine care
+- Menopause-care expertise on site — comprehensive perimenopause and menopause management
 
-## Services
+## What's Included
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Direct physician access · Same-day scheduling · Wholesale labs · Menopause care · Chronic disease management · Preventive screenings · Specialist coordination
 
-## Practical Information
+[Full services →](/services) | [Membership plans →](/membership)
 
-**Distance:** ~10 miles east via Route 30
-**SEPTA:** Malvern → Wayne Station (~30 min, Paoli–Thorndale R5)
-**Telehealth:** All phone and video visits included — highly recommended for Malvern patients for routine care
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+
+## Practical Information for Malvern Patients
+
+**Location:** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
+**Telehealth:** Phone and video visits included for established patients
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and West Chester (Dr. Landi)
 
 ## Frequently Asked Questions
 
-**Is there a concierge doctor near Malvern, PA?**
-Forward Family Medicine in Wayne, PA is 10 miles east and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs. [Schedule a Meet & Greet →](/new-patients)
+**Is this true concierge medicine?**
+Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
 
-**What does membership cost for Malvern patients?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+**Who is the physician at the Malvern office?**
+Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
-**How does telehealth help Malvern patients specifically?**
-For follow-up visits, prescription refills, lab result reviews, and minor illness questions, telehealth is fully functional and included — meaning Malvern patients rarely need to make the trip to Wayne for routine care.
+**Are you accepting Malvern patients?**
+Yes — Dr. Landi's patient list is open now. Join to be invited first when scheduling opens August 2026. [Join the patient list →](/contact/?subject=Join%20the%20Malvern%20Patient%20List)
+
+**What's the best way to evaluate the practice before committing?**
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
@@ -71,4 +82,4 @@ For follow-up visits, prescription refills, lab result reviews, and minor illnes
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Join the Patient List →](/contact/?subject=Join%20the%20Malvern%20Patient%20List)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

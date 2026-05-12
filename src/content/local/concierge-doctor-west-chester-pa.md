@@ -1,11 +1,12 @@
 ---
-title: "Concierge Doctor Near West Chester, PA | Forward Family Medicine"
-description: "West Chester, PA patients are 14 miles from Forward Family Medicine's concierge-style DPC practice in Wayne — same-day access, direct physician contact, telehealth included."
+title: "Concierge Doctor in West Chester, PA | Forward Family Medicine"
+description: "Concierge-style primary care in West Chester, PA with Dr. Brian Landi at 1450 Boot Rd Ste 300A. Direct physician access, 1–2 hour visits, transparent membership. Opening August 2026."
 keywords:
   - concierge doctor West Chester PA
   - concierge medicine West Chester Pennsylvania
-  - boutique medicine West Chester PA
+  - direct access physician West Chester PA
   - membership doctor West Chester PA
+  - private practice West Chester PA
 canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
@@ -14,60 +15,66 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/concierge-medicine"
   - "/membership"
+  - "/menopause"
+  - "/locations/west-chester"
   - "/new-patients"
-localNote: "West Chester patients considering concierge medicine can find our Wayne practice 25–30 minutes east via Route 30. What distinguishes our approach from traditional concierge practices is structural: we've removed insurance billing entirely, which eliminates the overhead that forces concierge retainer prices to stay high."
-nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
+localNote: "Forward Family Medicine is opening a West Chester office at 1450 Boot Rd Ste 300A in August 2026 — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
-# Concierge Doctor Near West Chester, PA
+# Concierge Doctor in West Chester, PA
 
 ## About West Chester, PA
 
-West Chester's blend of professional households, a university community, and a growing population of families who've chosen Chester County for its quality of life creates a patient base that expects quality — including in their healthcare. Concierge-style medicine speaks to that expectation: a physician who knows you, is genuinely reachable, and has time to address your concerns properly. Forward Family Medicine delivers that experience through a DPC membership, 14 miles northeast in Wayne.
+West Chester is the Chester County seat — a vibrant borough with a thriving downtown, West Chester University at its core, and easy connections via Route 202 and Route 322 to greater Philadelphia and Lancaster County. West Chester residents range from university faculty and healthcare professionals to long-established families and business owners — many of whom are accustomed to high standards in the services they choose, including their relationship with primary care. Forward Family Medicine — with a new West Chester office at 1450 Boot Rd Ste 300A opening August 2026 — delivers concierge-level experience at Direct Primary Care pricing.
 
-## Concierge-Style Care, Accessible by Telehealth
+## Concierge Experience, DPC Pricing
 
-Forward Family Medicine provides the concierge medicine experience — same-day access, direct physician contact, unhurried visits — at a DPC membership price. For West Chester patients, telehealth means the 14-mile distance rarely matters for routine care.
-
-[Compare DPC and traditional concierge →](/concierge-medicine)
+Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
 
 ## Why West Chester Patients Choose This Practice
 
-- 14 miles northeast via Route 202
-- Same-day and next-day appointments
-- Direct physician access by phone and text
-- Telehealth fully included — most routine care handled remotely
-- Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
-- Flat monthly fee — no retainer, no insurance surprises
+- **In-person care in West Chester** — 1450 Boot Rd Ste 300A, opening August 2026
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner
+- Direct line to your physician by phone, text, or message — not an answering service
+- 1–2 hour visits, scheduled to actually solve problems
+- Same-day and next-day availability for acute concerns
+- ~250-patient panel — roughly half the DPC industry average, a fraction of traditional primary care
+- No concierge retainer, no insurance billing for routine care
+- Menopause-care expertise on site — comprehensive perimenopause and menopause management
 
-## Services
+## What's Included
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Direct physician access · Same-day scheduling · Wholesale labs · Menopause care · Chronic disease management · Preventive screenings · Specialist coordination
 
-## Practical Information
+[Full services →](/services) | [Membership plans →](/membership)
 
-**Distance:** ~14 miles northeast via Route 202 north
-**Drive time:** ~25–35 minutes
-**SEPTA:** No direct rail — telehealth strongly recommended
-**Telehealth:** All phone and video visits included — the primary access point for West Chester members
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+
+## Practical Information for West Chester Patients
+
+**Location:** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
+**Telehealth:** Phone and video visits included for established patients
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
 
 ## Frequently Asked Questions
 
-**Is there a concierge doctor near West Chester, PA?**
-Forward Family Medicine in Wayne is 14 miles northeast and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/new-patients)
+**Is this true concierge medicine?**
+Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
 
-**Is DPC the same as concierge medicine?**
-DPC delivers the same experience — direct access, longer visits, a physician who knows you — but through a lower-cost flat monthly fee rather than a high annual retainer. Many patients find DPC is better value than traditional concierge. [See the comparison →](/concierge-medicine)
+**Who is the physician at the West Chester office?**
+Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
-**What does membership cost for West Chester patients?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+**Are you accepting West Chester patients?**
+Yes — Dr. Landi's patient list is open now. Join to be invited first when scheduling opens August 2026. [Join the patient list →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)
 
-**How does telehealth work for West Chester patients specifically?**
-Given the 14-mile distance and Route 202 traffic, telehealth is genuinely valuable for West Chester members. Phone and video visits are fully included and handle follow-ups, prescription refills, lab results, and many acute concerns without requiring a drive.
+**What's the best way to evaluate the practice before committing?**
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
@@ -75,4 +82,4 @@ Given the 14-mile distance and Route 202 traffic, telehealth is genuinely valuab
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Join the Patient List →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
