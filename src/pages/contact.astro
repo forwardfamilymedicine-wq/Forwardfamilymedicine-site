@@ -106,24 +106,25 @@ const breadcrumb = {
           </ul>
         </div>
 
-        <div class="card contact-info-card" style="margin-top:1.25rem;">
-          <h3>Ready to Enroll?</h3>
-          <p style="font-size:0.9rem; color:var(--ink-700); margin-bottom:1rem;">If you've already met with us and are ready to join, enroll directly online:</p>
-          <div style="display:flex; flex-direction:column; gap:0.75rem;">
-            <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll as Individual</a>
-            <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-accent" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll Your Family</a>
-            <a href="https://patient.sigmamd.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="text-align:center;">Patient Portal Login</a>
+        <div class="enroll-row">
+          <div class="card contact-info-card">
+            <h3>What Happens After You Submit</h3>
+            <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--ink-700); line-height:1.8;">
+              <li>We review your request</li>
+              <li>We reach out within 24 hours to schedule</li>
+              <li>You come in for your free meet &amp; greet</li>
+              <li>You decide — no pressure, no obligation</li>
+            </ol>
           </div>
-        </div>
-
-        <div class="card contact-info-card" style="margin-top:1.25rem;">
-          <h3>What Happens After You Submit</h3>
-          <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--ink-700); line-height:1.8;">
-            <li>We review your request</li>
-            <li>We reach out within 24 hours to schedule</li>
-            <li>You come in for your free meet &amp; greet</li>
-            <li>You decide — no pressure, no obligation</li>
-          </ol>
+          <div class="card contact-info-card">
+            <h3>Ready to Enroll?</h3>
+            <p style="font-size:0.9rem; color:var(--ink-700); margin-bottom:1rem;">If you've already met with us and are ready to join, enroll directly online:</p>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll as Individual</a>
+              <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-accent" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll Your Family</a>
+              <a href="https://patient.sigmamd.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="text-align:center;">Patient Portal Login</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -253,6 +254,22 @@ const breadcrumb = {
   }
   .map-embed {
     margin-bottom: 2rem;
+  }
+
+  .enroll-row {
+    margin-top: 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .enroll-row {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+    .enroll-row > .card {
+      height: 100%;
+    }
   }
 
   @media (max-width: 900px) {
