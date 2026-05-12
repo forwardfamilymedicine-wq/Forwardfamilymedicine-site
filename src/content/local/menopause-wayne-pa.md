@@ -28,7 +28,7 @@ nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 
 Wayne, Pennsylvania is a vibrant Philadelphia Main Line community known for its walkable downtown, excellent schools, and professional households that expect more from their healthcare. Forward Family Medicine's flagship practice at 295 Old Eagle School Road sits at the center of that community — offering longer visits, direct physician access, and comprehensive primary care that treats every stage of women's health as a first-class priority.
 
-Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Paoli–Thorndale SEPTA rail line and a strong, diverse professional community. Residents range from young families and dual-income professionals to established Radnor Township households and university faculty. For women in their 40s and 50s navigating perimenopause and menopause alongside demanding careers and family responsibilities, the standard 15-minute primary care visit has long felt inadequate — which is exactly why Forward Family Medicine's model exists.
+Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Paoli–Thorndale SEPTA rail line and a strong, diverse professional community. Residents range from young families and dual-income professionals to established Radnor Township households and healthcare professionals. For women in their 40s and 50s navigating perimenopause and menopause alongside demanding careers and family responsibilities, the standard 15-minute primary care visit has long felt inadequate — which is exactly why Forward Family Medicine's model exists.
 
 ## Menopause Care at Forward Family Medicine
 

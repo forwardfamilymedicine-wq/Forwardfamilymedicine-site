@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 
 ## About Newtown Square, PA
 
-Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3 — including SAP's North American headquarters. Newtown Square residents value efficiency and quality in how they manage their time, including their healthcare. For women in midlife managing demanding careers and family responsibilities, perimenopause and menopause care that's integrated, unhurried, and evidence-based is exactly what Forward Family Medicine delivers — across three offices all within about 20 minutes.
+Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. Newtown Square residents value efficiency and quality in how they manage their time, including their healthcare. For women in midlife managing demanding careers and family responsibilities, perimenopause and menopause care that's integrated, unhurried, and evidence-based is exactly what Forward Family Medicine delivers — across three offices all within about 20 minutes.
 
 ## Menopause Care at Forward Family Medicine
 

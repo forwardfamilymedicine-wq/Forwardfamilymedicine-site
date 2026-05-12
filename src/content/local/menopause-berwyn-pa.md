@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 
 ## About Berwyn, PA
 
-Berwyn is a quiet, residential Chester County community just east of Wayne on Lancaster Avenue — known for its charming neighborhoods, excellent Tredyffrin-Easttown schools, and easy access to both downtown Philadelphia and Chester County. Berwyn sits at the edge of the Main Line with a distinctly neighborhood feel, and many of its residents in their 40s and 50s are managing perimenopause or menopause while navigating busy professional and family lives. Finding a physician who treats this transition with real depth — not a rushed mention at the end of a standard visit — is what drives many Berwyn women to Forward Family Medicine.
+Berwyn is a quiet, residential Chester County community just west of Wayne on Lancaster Avenue — known for its charming neighborhoods, excellent Tredyffrin-Easttown schools, and easy access to both downtown Philadelphia and Chester County. Berwyn sits at the edge of the Main Line with a distinctly neighborhood feel, and many of its residents in their 40s and 50s are managing perimenopause or menopause while navigating busy professional and family lives. Finding a physician who treats this transition with real depth — not a rushed mention at the end of a standard visit — is what drives many Berwyn women to Forward Family Medicine.
 
 ## Menopause Care at Forward Family Medicine
 
