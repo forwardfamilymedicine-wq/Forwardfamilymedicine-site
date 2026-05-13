@@ -74,7 +74,7 @@ Forward Family Medicine in Wayne is the nearest DPC practice for most Paoli resi
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
-**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Get Started Today
 

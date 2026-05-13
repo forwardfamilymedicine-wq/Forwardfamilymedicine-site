@@ -72,7 +72,7 @@ Lab work and medications are available at wholesale pricing. [See full services 
 **Parking:** Free parking available on-site
 **SEPTA:** Wayne Station on the Paoli–Thorndale (R5) line is approximately 0.5 miles from our office — walkable for most patients
 **Telehealth:** All phone and video visits are included in membership. Many routine questions are handled without coming in at all.
-**Office hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Office hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Frequently Asked Questions
 
