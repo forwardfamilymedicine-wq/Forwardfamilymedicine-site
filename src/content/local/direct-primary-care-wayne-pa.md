@@ -77,7 +77,7 @@ Lab work and medications are available at wholesale pricing. [See full services 
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine located in Wayne, PA?**
-Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main Line. We serve Wayne residents as well as patients from surrounding communities including Berwyn, Devon, Villanova, Radnor, and beyond. [Get directions →](/new-patients#location)
+Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main Line. We serve Wayne residents as well as patients from surrounding communities including Berwyn, Devon, Villanova, Radnor, and beyond. [Get directions →](/locations/wayne/)
 
 **Do I need to live in Wayne to be a member?**
 No. While we're located in Wayne, we welcome members from throughout the Main Line and Delaware County. Telehealth visits make membership practical for patients who live a bit farther away.
