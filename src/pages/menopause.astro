@@ -6,7 +6,7 @@ import CTABanner from '../components/shared/CTABanner.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 
 const allProviders = await getCollection('providers');
-const landi = allProviders.find(p => p.id === 'brian-landi-do.md');
+const landi = allProviders.find(p => p.id === 'brian-landi-do');
 const d = landi?.data;
 
 const breadcrumb = {
@@ -118,7 +118,6 @@ const faqs = [
         </div>
         <div class="lm-hero-credential card">
           <div class="credential-header">
-            {/* TODO: Replace with Landi headshot once shot — import drLandiPhoto from '../assets/staff/dr-brian-landi.jpg' */}
             {d?.photo ? (
               <img
                 src={d.photo.src}

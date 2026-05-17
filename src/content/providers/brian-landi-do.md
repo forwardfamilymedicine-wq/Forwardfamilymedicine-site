@@ -3,6 +3,7 @@ name: "Brian Landi"
 credentials: "DO"
 slug: "brian-landi-do"
 title: "Family Medicine Physician"
+photo: ../../assets/staff/dr-brian-landi.jpg
 photoAlt: "Dr. Brian Landi, DO — Family Medicine Physician, Forward Family Medicine"
 specialties:
   - "Family Medicine"

@@ -5,7 +5,7 @@ date: "2026-05-04"
 author: "Dr. David Bigley"
 category: "patient-experience"
 keywords: ["team", "west chester pa", "malvern pa", "chester county", "menopause", "direct primary care"]
-# TODO: Add image: /images/staff/dr-brian-landi.jpg when headshot is shot
+image: "/images/staff/dr-brian-landi.jpg"
 draft: false
 ---
 
@@ -13,7 +13,7 @@ When we started Forward Family Medicine, the plan was always to bring this kind 
 
 ## Welcoming Dr. Brian Landi, DO
 
-Dr. Brian Landi joins Forward Family Medicine this month and will begin seeing patients at our new Chester County location in August 2026. He is a board-certified family physician through the American Osteopathic Board of Family Physicians (AOBFP) and brings a clinical interest in midlife health and women's wellness, with certification through The Menopause Society on the way (his MSCP exam is scheduled for June 2026).
+Dr. Brian Landi has joined Forward Family Medicine and will begin seeing patients at our new Chester County location in August 2026. He is a board-certified family physician through the American Osteopathic Board of Family Physicians (AOBFP) and brings a clinical interest in midlife health and women's wellness, with certification through The Menopause Society on the way (his MSCP exam is scheduled for June 2026).
 
 Dr. Landi earned his Doctor of Osteopathic Medicine at the Philadelphia College of Osteopathic Medicine and trained at ChristianaCare, where he served as Chief Resident — a role that signals both clinical excellence and a real commitment to leadership and patient advocacy. Before joining us, he practiced at a large hospital system, where he ran into the same wall most thoughtful primary care physicians eventually hit: not enough time, too many checklists, and patients who deserved better than seven-minute appointments could provide. He chose direct primary care for the same reason every physician here did — to recover the time and attention that real medicine actually requires.
 
