@@ -534,21 +534,33 @@ const breadcrumb = {
       submitBtn.textContent = 'Sending…';
 
       try {
+        // Fold all business fields into message so the Apps Script receives them
+        const msgLines = [
+          `Business inquiry from ${name} at ${companyName}.`,
+          `Employees: ${employees}`,
+        ];
+        if (coverage) msgLines.push(`Current coverage: ${coverage}`);
+        if (message)  { msgLines.push('', '---', '', message); }
+        msgLines.push('', '---', `Reply-to: ${email}`);
+
         const res = await fetch(SCRIPT_URL, {
           method:  'POST',
           headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify({
-            subject:     'Business Inquiry',
-            name,
-            companyName,
+            firstName:  name,
+            lastName:   '',
             email,
-            employees,
-            coverage,
-            message,
-            page:      window.location.href,
-            referrer:  document.referrer,
-            userAgent: navigator.userAgent,
-            loadTime:  formLoadTime,
+            phone:      '',
+            interest:   'Employer / Business membership',
+            familySize: '',
+            referral:   '',
+            message:    msgLines.join('\n'),
+            page:       window.location.href,
+            referrer:   document.referrer,
+            userAgent:  navigator.userAgent,
+            company:    '',
+            source:     'business',
+            loadTime:   formLoadTime,
           }),
         });
 
