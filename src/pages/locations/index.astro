@@ -5,14 +5,38 @@ import MainLayout from '../../layouts/MainLayout.astro';
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 
-const siteUrl = 'https://www.forwardfamilymedicine.com';
+const providersBySlug: Record<string, { name: string; title: string; href: string; photo: string }[]> = {
+  'wayne': [
+    { name: 'Dr. David Bigley, DO',     title: 'Board-Certified Family Medicine', href: '/meet-the-team/david-bigley-do/',     photo: '/images/staff/dr-david-bigley.jpg' },
+    { name: 'Dr. Philip Lieberman, MD', title: 'Lifestyle Medicine',               href: '/meet-the-team/philip-lieberman-md/', photo: '/images/staff/dr-philip-lieberman.jpg' },
+    { name: 'Ritamarie Smedile, RN',    title: 'Registered Nurse',                 href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
+  ],
+  'west-chester': [
+    { name: 'Dr. Brian Landi, DO',   title: 'Board-Certified Family Medicine', href: '/meet-the-team/brian-landi-do/',      photo: '/images/staff/dr-brian-landi.jpg' },
+    { name: 'Ritamarie Smedile, RN', title: 'Registered Nurse',                href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
+  ],
+  'malvern': [
+    { name: 'Dr. Brian Landi, DO',   title: 'Board-Certified Family Medicine', href: '/meet-the-team/brian-landi-do/',      photo: '/images/staff/dr-brian-landi.jpg' },
+    { name: 'Ritamarie Smedile, RN', title: 'Registered Nurse',                href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
+  ],
+};
+
+const neighborhoodsBySlug: Record<string, string[]> = {
+  'wayne':        ['Wayne', 'Radnor', 'Villanova', 'Bryn Mawr', 'Devon', 'Berwyn', 'Paoli', 'Strafford', 'Haverford', 'Ardmore'],
+  'west-chester': ['West Chester', 'Chester Springs', 'Downingtown', 'Exton', 'Lionville', 'Kennett Square', 'Coatesville'],
+  'malvern':      ['Malvern', 'Paoli', 'Berwyn', 'Chester Springs', 'Exton', 'Phoenixville', 'Lionville', 'Glen Mills'],
+};
+
+const siteUrl      = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/locations/`;
+
+const mapsEmbedId  = '1aRjs-zprTfSvCx30Nr8CY8__vwDsakQ';
 
 const breadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 1, "name": "Home",      "item": siteUrl },
     { "@type": "ListItem", "position": 2, "name": "Locations", "item": canonicalUrl },
   ],
 };
@@ -36,61 +60,128 @@ const breadcrumb = {
       <h1>Our Locations</h1>
       <div class="divider"></div>
       <p class="section-intro">
-        Forward Family Medicine is rooted in Wayne, PA and expanding to Chester County in 2026.
-        Every location brings the same small-panel, relationship-based care.
+        Forward Family Medicine is rooted in Wayne, PA and expanding to West Chester and Malvern in August 2026.
+        Every location delivers the same small-panel, relationship-based Direct Primary Care.
       </p>
     </div>
   </section>
 
-  <!-- Location cards -->
-  <section class="locations-list-section section" style="background: var(--cream-100);">
+  <!-- Multi-location map (David's Google My Maps — all three pins) -->
+  <section class="locations-map-section" aria-label="Office locations map">
     <div class="container">
-      <div class="locations-list">
-        {locations.map((location) => {
-          const d = location.data;
-          const isOpen = d.status === 'open';
-          const openingLabel = d.openingDate
-            ? new Date(d.openingDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
-            : 'August 2026';
-          const hasAddress = d.addressStreet && d.addressZip;
+      <div class="locations-map-wrapper">
+        <iframe
+          src={`https://www.google.com/maps/d/embed?mid=${mapsEmbedId}`}
+          width="100%"
+          height="420"
+          style="border: 0; border-radius: 8px;"
+          loading="lazy"
+          title="Forward Family Medicine locations — Wayne, West Chester, Malvern"
+        ></iframe>
+        <p class="map-link">
+          <a
+            href={`https://www.google.com/maps/d/viewer?mid=${mapsEmbedId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View larger map →
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location cards — equal 3-column grid -->
+  <section class="locations-cards-section section" style="background: var(--cream-100);">
+    <div class="container">
+      <div class="locations-grid">
+        {locations.map(location => {
+          const d            = location.data;
+          const isOpen       = d.status === 'open';
+          const providers    = providersBySlug[d.slug]     ?? [];
+          const neighborhoods = neighborhoodsBySlug[d.slug] ?? [];
 
           return (
-            <article class={`location-card card${isOpen ? '' : ' coming-soon-card'}`}>
-              <div class="location-card-header">
-                <div>
-                  <span class={`status-badge ${d.status}`}>
-                    {isOpen ? 'Now Open' : `Coming ${openingLabel}`}
-                  </span>
-                  <h2 class="location-card-name">
-                    Forward Family Medicine — {d.name}
-                  </h2>
+            <article class="location-card card">
+
+              {/* Status badge */}
+              <span class={`status-badge ${isOpen ? 'badge-open' : 'badge-soon'}`}>
+                {isOpen ? 'Now Open' : 'Opening August 2026'}
+              </span>
+
+              {/* Name */}
+              <h2 class="location-name">{d.name}</h2>
+
+              {/* Description */}
+              <p class="location-desc">{d.description}</p>
+
+              {/* Address */}
+              {d.addressStreet && (
+                <div class="detail-block">
+                  <span class="detail-label">Address</span>
+                  <address class="detail-address">
+                    {d.addressStreet}<br />{d.addressCity}, {d.addressState} {d.addressZip}
+                  </address>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="location-icon" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              )}
+
+              {/* Phone */}
+              {d.phone && (
+                <div class="detail-block">
+                  <span class="detail-label">Phone</span>
+                  <a href={`tel:${d.phone.replace(/\D/g, '')}`} class="detail-phone">{d.phone}</a>
+                </div>
+              )}
+
+              {/* Hours */}
+              <div class="detail-block">
+                <span class="detail-label">Hours</span>
+                <span class="detail-value">Mon–Fri &nbsp;7:30 AM – 5:30 PM</span>
               </div>
 
-              <p class="location-card-desc">{d.description}</p>
-
-              {hasAddress && (
-                <div class="location-card-address">
-                  <span>{d.addressStreet}</span>
-                  <span>{d.addressCity}, {d.addressState} {d.addressZip}</span>
+              {/* Areas served */}
+              {neighborhoods.length > 0 && (
+                <div class="detail-block">
+                  <span class="detail-label">Areas Served</span>
+                  <ul class="neighborhood-tags" aria-label={`Neighborhoods served by ${d.name} office`}>
+                    {neighborhoods.map(n => <li class="neighborhood-tag">{n}</li>)}
+                  </ul>
                 </div>
               )}
 
-              {d.phone && (
-                <div class="location-card-phone">
-                  <a href={`tel:${d.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{d.phone}</a>
+              {/* Care team */}
+              {providers.length > 0 && (
+                <div class="providers-section">
+                  <span class="detail-label">Care Team</span>
+                  <ul class="providers-list" aria-label={`Providers at ${d.name}`}>
+                    {providers.map(p => (
+                      <li>
+                        <a href={p.href} class="provider-chip">
+                          <img src={p.photo} alt={p.name} width="40" height="40" loading="lazy" />
+                          <span class="chip-info">
+                            <span class="chip-name">{p.name}</span>
+                            <span class="chip-title">{p.title}</span>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 
-              <div class="location-card-footer">
-                <a href={`/locations/${d.slug}/`} class={`btn ${isOpen ? 'btn-outline' : 'btn-secondary'}`}>
-                  {isOpen ? 'View Location →' : 'Learn More →'}
-                </a>
-                {isOpen && (
-                  <a href="/contact" class="btn btn-accent">Schedule a Visit →</a>
+              {/* CTAs */}
+              <div class="card-footer">
+                <a href={`/locations/${d.slug}/`} class="btn btn-outline">View Details →</a>
+                {isOpen ? (
+                  <a href="/contact/" class="btn btn-accent">Schedule a Visit →</a>
+                ) : (
+                  <a
+                    href={`/contact/?subject=${encodeURIComponent(`Join Dr. Landi's ${d.name} Patient List`)}&source=locations-${d.slug}`}
+                    class="btn btn-accent"
+                  >Join Dr. Landi's List →</a>
                 )}
               </div>
+
             </article>
           );
         })}
@@ -100,6 +191,7 @@ const breadcrumb = {
 </MainLayout>
 
 <style>
+  /* ── Breadcrumb ─────────────────────────────── */
   .breadcrumb {
     font-size: 0.85rem;
     color: var(--ink-300);
@@ -119,107 +211,200 @@ const breadcrumb = {
     margin: 1.25rem 0;
   }
 
-  /* Location list */
-  .locations-list {
-    display: flex;
-    flex-direction: column;
+  /* ── Map section ────────────────────────────── */
+  .locations-map-section {
+    background: var(--cream-200);
+    padding: 2rem 0 1.5rem;
+  }
+  .locations-map-wrapper {
+    width: 100%;
+  }
+  .locations-map-wrapper iframe {
+    display: block;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+  }
+  .map-link {
+    font-size: 0.82rem;
+    text-align: right;
+    margin-top: 0.4rem;
+  }
+  .map-link a {
+    color: var(--green-400);
+    text-decoration: none;
+  }
+  .map-link a:hover { text-decoration: underline; }
+
+  /* ── Locations grid ─────────────────────────── */
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: 760px;
+    align-items: start;
   }
 
-  /* Card */
+  /* ── Card ───────────────────────────────────── */
   .location-card {
-    padding: 2rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     transition: box-shadow 0.2s;
   }
   .location-card:hover { box-shadow: var(--shadow-md); }
-  .coming-soon-card { border-left: 4px solid var(--cream-300); }
 
-  .location-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
-  }
-  .location-icon { color: var(--green-300); flex-shrink: 0; }
-
+  /* ── Status badges ──────────────────────────── */
   .status-badge {
     display: inline-block;
-    font-size: 0.75rem;
+    align-self: flex-start;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     border-radius: 999px;
     padding: 0.2rem 0.75rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
   }
-  .status-badge.open {
+  .badge-open {
     background: var(--green-100);
     color: var(--green-500);
   }
-  .status-badge.coming-soon {
-    background: var(--cream-300);
-    color: var(--ink-700);
-  }
-
-  .location-card-name {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  .badge-soon {
+    background: var(--warm-100);
     color: var(--ink-900);
-    margin: 0;
   }
 
-  .location-card-desc {
+  /* ── Name & description ─────────────────────── */
+  .location-name {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--ink-900);
+    margin: 0 0 0.6rem;
+    line-height: 1.25;
+  }
+  .location-desc {
+    font-size: 0.9rem;
     color: var(--ink-500);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 0.75rem;
+    line-height: 1.65;
+    margin: 0 0 1rem;
   }
 
-  .location-card-address {
+  /* ── Detail blocks ──────────────────────────── */
+  .detail-block {
     display: flex;
     flex-direction: column;
-    font-size: 0.9rem;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .detail-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-300);
+  }
+  .detail-address {
+    font-style: normal;
+    font-size: 0.88rem;
     color: var(--ink-700);
-    margin-bottom: 0.4rem;
+    line-height: 1.5;
   }
-
-  .location-card-phone {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-  }
-  .location-card-phone a {
+  .detail-phone {
+    font-size: 0.88rem;
+    font-weight: 600;
     color: var(--green-400);
     text-decoration: none;
-    font-weight: 600;
   }
-  .location-card-phone a:hover { color: var(--green-500); }
+  .detail-phone:hover { color: var(--green-500); }
+  .detail-value {
+    font-size: 0.88rem;
+    color: var(--ink-700);
+  }
 
-  .location-card-footer {
+  /* ── Neighborhood tags ──────────────────────── */
+  .neighborhood-tags {
     display: flex;
-    gap: 0.75rem;
     flex-wrap: wrap;
-    margin-top: 1.25rem;
+    gap: 0.3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.2rem 0 0;
   }
-  .location-card-footer .btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.25rem;
-  }
-
-  /* btn-secondary fallback if not defined globally */
-  .btn-secondary {
+  .neighborhood-tag {
+    font-size: 0.73rem;
+    padding: 0.18rem 0.55rem;
     background: var(--cream-200);
-    color: var(--ink-900);
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.15s;
+    color: var(--ink-700);
+    border-radius: 999px;
+    white-space: nowrap;
   }
-  .btn-secondary:hover { background: var(--cream-300); }
 
-  @media (max-width: 600px) {
-    .location-card { padding: 1.25rem; }
-    .location-card-footer { flex-direction: column; }
+  /* ── Providers ──────────────────────────────── */
+  .providers-section {
+    margin-top: 0.25rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--ink-100);
+  }
+  .providers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.45rem 0 0;
+  }
+  .provider-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--ink-900);
+    transition: color 0.15s;
+  }
+  .provider-chip:hover { color: var(--green-400); }
+  .provider-chip img {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 2px solid var(--cream-200);
+    flex-shrink: 0;
+  }
+  .chip-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .chip-name {
+    font-size: 0.83rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .chip-title {
+    font-size: 0.7rem;
+    color: var(--ink-400);
+  }
+
+  /* ── Card footer ────────────────────────────── */
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1.1rem;
+    margin-top: 1.1rem;
+    border-top: 1px solid var(--ink-100);
+  }
+  .card-footer .btn {
+    font-size: 0.875rem;
+    padding: 0.6rem 1rem;
+    text-align: center;
+  }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 900px) {
+    .locations-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .locations-grid { grid-template-columns: 1fr; }
+    .locations-map-wrapper iframe { height: 320px; }
+    .card-footer { flex-direction: column; }
   }
 </style>
