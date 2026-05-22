@@ -1,0 +1,334 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const providers = await getCollection('providers');
+  const team = await getCollection('team');
+  return [
+    ...providers.map(entry => ({
+      params: { slug: entry.data.slug },
+      props: { entry, type: 'physician' as const },
+    })),
+    ...team.map(entry => ({
+      params: { slug: entry.data.slug },
+      props: { entry, type: 'team' as const },
+    })),
+  ];
+}
+
+const { entry, type } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const d = data as any;
+const isPhysician = type === 'physician';
+
+const siteUrl = 'https://www.forwardfamilymedicine.com';
+const canonicalUrl = `${siteUrl}/meet-the-team/${d.slug}/`;
+const credentialedName = `${d.name}, ${d.credentials}`;
+const pageTitle = `${credentialedName} | Forward Family Medicine`;
+
+const cityMap: Record<string, string> = {
+  'wayne': 'Wayne, PA',
+  'west-chester': 'West Chester, PA',
+  'malvern': 'Malvern, PA',
+};
+const locationSlugs: string[] = d.locations || ['wayne'];
+const cityNames = locationSlugs.map((s: string) => cityMap[s] || s);
+const cityString = cityNames.length === 1
+  ? cityNames[0]
+  : cityNames.length === 2
+    ? `${cityNames[0]} and ${cityNames[1]}`
+    : `${cityNames.slice(0, -1).join(', ')}, and ${cityNames[cityNames.length - 1]}`;
+
+const pageDescription = isPhysician
+  ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in ${cityString}. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
+  : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in ${cityString}.`;
+
+const memberSchema = isPhysician ? {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": credentialedName,
+  "honorificSuffix": d.credentials,
+  "jobTitle": d.title,
+  "image": d.photo ? `${siteUrl}${d.photo.src}` : undefined,
+  "medicalSpecialty": d.specialties,
+  "url": canonicalUrl,
+  "worksFor": { "@type": "MedicalBusiness", "name": "Forward Family Medicine", "url": siteUrl },
+  "alumniOf": d.education.filter((e: any) => e.institution).map((e: any) => ({ "@type": "CollegeOrUniversity", "name": e.institution })),
+  "memberOf": d.additionalCertifications?.length > 0
+    ? d.additionalCertifications.map((cert: any) => ({ "@type": "Organization", "name": cert.organization }))
+    : undefined,
+  "identifier": d.npi ? { "@type": "PropertyValue", "propertyID": "NPI", "value": d.npi } : undefined,
+  "sameAs": d.sameAs?.length > 0 ? d.sameAs : undefined,
+} : {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": credentialedName,
+  "honorificSuffix": d.credentials,
+  "jobTitle": d.title,
+  "image": d.photo ? `${siteUrl}${d.photo.src}` : undefined,
+  "knowsAbout": d.specialties,
+  "url": canonicalUrl,
+  "worksFor": { "@type": "Organization", "name": "Forward Family Medicine", "url": siteUrl },
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "Meet the Team", "item": `${siteUrl}/meet-the-team/` },
+    { "@type": "ListItem", "position": 3, "name": credentialedName, "item": canonicalUrl },
+  ],
+};
+---
+
+<MainLayout title={pageTitle} description={pageDescription} canonical={canonicalUrl} schema={[memberSchema, breadcrumb]}>
+
+  <section class="provider-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-100) 100%);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/meet-the-team/">Meet the Team</a>
+        <span aria-hidden="true">›</span>
+        <span>{credentialedName}</span>
+      </nav>
+
+      <div class="provider-hero-grid">
+        <div class="provider-hero-photo">
+          {d.photo ? (
+            <img src={d.photo.src} width={d.photo.width} height={d.photo.height} alt={d.photoAlt || credentialedName} class="provider-headshot" loading="eager" />
+          ) : (
+            <div class="provider-headshot provider-headshot--placeholder" role="img" aria-label="Photo coming soon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Photo coming soon</span>
+            </div>
+          )}
+        </div>
+
+        <div class="provider-hero-info">
+          <h1>{credentialedName}</h1>
+          <p class="provider-title">{d.title}</p>
+          <div class="divider"></div>
+
+          {d.specialties?.length > 0 && (
+            <div class="specialty-chips">
+              {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
+            </div>
+          )}
+
+          {isPhysician && (
+            <div class="board-status">
+              <span class={`board-badge ${d.boardStatus}`}>
+                {d.boardStatus === 'board-certified' ? '✓ Board-Certified' : '✓ Board-Eligible'}
+              </span>
+              <span class="board-detail">{d.boardSpecialties.join(', ')}</span>
+            </div>
+          )}
+
+          {isPhysician && (
+            d.acceptingNewPatients ? (
+              <div class="accepting-banner accepting">
+                {d.acceptingNewPatientsStartDate && new Date(d.acceptingNewPatientsStartDate) > new Date() ? (
+                  <Fragment>
+                    <span>
+                      <strong>Accepting patients starting {new Date(d.acceptingNewPatientsStartDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</strong>
+                      {d.acceptingNewPatientsNote && <span class="accepting-note"> — {d.acceptingNewPatientsNote}</span>}
+                    </span>
+                    <a
+                      href={`/contact/?subject=${encodeURIComponent(`Join Dr. ${d.name.split(' ').pop()}'s Patient List`)}`}
+                      class="btn btn-accent"
+                    >Join Dr. {d.name.split(' ').pop()}'s Patient List →</a>
+                  </Fragment>
+                ) : (
+                  <Fragment>
+                    <span><strong>Now accepting new patients</strong></span>
+                    <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet →</a>
+                  </Fragment>
+                )}
+              </div>
+            ) : (
+              <div class="accepting-banner full">
+                <strong>Panel currently full</strong>
+                {d.acceptingNewPatientsNote && <p class="accepting-note">{d.acceptingNewPatientsNote}</p>}
+              </div>
+            )
+          )}
+
+          {!isPhysician && d.acceptingNewClients !== undefined && (
+            <div class={`accepting-banner ${d.acceptingNewClients ? 'accepting' : 'full'}`}>
+              {d.acceptingNewClients
+                ? <span><strong>Now accepting new clients</strong></span>
+                : <strong>Not currently accepting new clients</strong>
+              }
+              {d.acceptingNewClientsNote && <p class="accepting-note">{d.acceptingNewClientsNote}</p>}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="provider-bio section" style="background: var(--cream-50);">
+    <div class="container provider-bio-grid">
+
+      <div class="bio-main prose">
+        {!isPhysician && d.scopeDisclaimer && (
+          <aside class="scope-disclaimer-callout" role="note">
+            <p><strong>Important:</strong> {d.scopeDisclaimer}</p>
+          </aside>
+        )}
+        <Content />
+      </div>
+
+      <aside class="bio-sidebar">
+
+        {d.education?.length > 0 && (
+          <div class="sidebar-card">
+            <h3>Education &amp; Training</h3>
+            <ul class="edu-list">
+              {d.education.map((e: any) => (
+                <li class="edu-item">
+                  <span class="edu-credential">
+                    {e.degree
+                      ? (e.field ? `${e.degree} — ${e.field}` : e.degree)
+                      : e.residency ? `${e.residency} Residency` : ''}
+                  </span>
+                  {e.institution && <span class="edu-institution">{e.institution}</span>}
+                  {e.year && <span class="edu-year">{e.year}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {d.notableExperience?.length > 0 && (
+          <div class="sidebar-card">
+            <h3>Notable Experience</h3>
+            <ul class="edu-list">
+              {d.notableExperience.map((item: any) => (
+                <li class="edu-item">
+                  <span class="edu-credential">{item.label}</span>
+                  {item.description && <p class="edu-institution">{item.description}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {isPhysician && d.additionalCertifications?.length > 0 && (
+          <div class="sidebar-card">
+            <h3>Certifications</h3>
+            <ul class="edu-list">
+              {d.additionalCertifications.map((cert: any) => (
+                <li class="edu-item">
+                  <span class="edu-credential">{cert.name}</span>
+                  <span class="edu-institution">{cert.organization}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {d.locations?.length > 0 && (
+          <div class="sidebar-card">
+            <h3>Practices At</h3>
+            <ul class="location-list">
+              {d.locations.map((locSlug: string) => (
+                <li>
+                  <a href={`/locations/${locSlug}/`} class="location-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>{locSlug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {isPhysician && d.npi && (
+          <div class="sidebar-card sidebar-card--small">
+            <span class="sidebar-label">NPI Number</span>
+            <span class="sidebar-value">{d.npi}</span>
+          </div>
+        )}
+
+        <div class="sidebar-cta">
+          {(isPhysician ? d.acceptingNewPatients : d.acceptingNewClients) ? (
+            <a href="/contact" class="btn btn-accent" style="width:100%; text-align:center; display:block;">
+              {isPhysician ? 'Schedule a Meet & Greet' : 'Contact Us'}
+            </a>
+          ) : (
+            <a href="/meet-the-team/" class="btn btn-outline" style="width:100%; text-align:center; display:block;">
+              Meet All Providers
+            </a>
+          )}
+        </div>
+
+      </aside>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--ink-300); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--green-400); }
+
+  .provider-hero-grid { display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: start; }
+  .provider-headshot { width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; box-shadow: var(--shadow-md); background: var(--cream-200); }
+  .provider-headshot--placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; background: var(--cream-200); color: var(--ink-300); font-size: 0.85rem; aspect-ratio: 4 / 5; }
+  .provider-title { font-size: 1.1rem; color: var(--ink-500); margin-top: 0.5rem; margin-bottom: 0; font-family: var(--font-body); }
+  .divider { width: 48px; height: 3px; background: var(--green-300); border-radius: 2px; margin: 1.25rem 0; }
+
+  .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.25rem 0.85rem; font-size: 0.82rem; font-weight: 600; }
+
+  .board-status { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .board-badge { font-size: 0.82rem; font-weight: 700; padding: 0.2rem 0.75rem; border-radius: 999px; }
+  .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
+  .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
+  .board-detail { font-size: 0.85rem; color: var(--ink-500); }
+
+  .accepting-banner { border-radius: var(--radius-sm); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; }
+  .accepting-banner.accepting { background: var(--green-50); border: 1px solid var(--green-200); color: var(--green-500); }
+  .accepting-banner.full { background: var(--cream-200); border: 1px solid var(--cream-300); color: var(--ink-700); }
+  .accepting-note { font-size: 0.85rem; color: var(--ink-500); }
+
+  .scope-disclaimer-callout { background: var(--green-50); border-left: 4px solid var(--green-300); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin-bottom: 1.75rem; color: var(--ink-700); }
+  .scope-disclaimer-callout p { margin: 0; line-height: 1.6; font-size: 1rem; }
+
+  .provider-bio-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+
+  .prose :global(h2) { font-size: clamp(1.25rem, 3vw, 1.6rem); margin-top: 2.5rem; margin-bottom: 0.75rem; color: var(--ink-900); }
+  .prose :global(h3) { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--ink-900); }
+  .prose :global(p) { color: var(--ink-700); line-height: 1.8; margin-bottom: 1rem; }
+  .prose :global(ul), .prose :global(ol) { padding-left: 1.5rem; color: var(--ink-700); margin-bottom: 1rem; }
+  .prose :global(li) { margin-bottom: 0.25rem; }
+
+  .sidebar-card { background: var(--cream-50); border: 1px solid var(--cream-300); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; }
+  .sidebar-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-300); margin-bottom: 0.9rem; font-family: var(--font-body); font-weight: 700; }
+  .sidebar-card--small { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; }
+  .sidebar-label { font-size: 0.8rem; color: var(--ink-300); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .sidebar-value { font-size: 0.85rem; color: var(--ink-700); font-family: monospace; }
+
+  .edu-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .edu-item { display: flex; flex-direction: column; gap: 0.1rem; }
+  .edu-credential { font-size: 0.9rem; font-weight: 700; color: var(--ink-900); }
+  .edu-institution { font-size: 0.85rem; color: var(--ink-500); }
+  .edu-year { font-size: 0.8rem; color: var(--ink-300); }
+
+  .location-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .location-link { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--green-400); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+  .location-link:hover { color: var(--green-500); }
+  .sidebar-cta { margin-top: 0.5rem; }
+
+  @media (max-width: 900px) {
+    .provider-hero-grid { grid-template-columns: 1fr; }
+    .provider-hero-photo { max-width: 280px; }
+    .provider-bio-grid { grid-template-columns: 1fr; }
+    .bio-sidebar { order: -1; }
+  }
+</style>

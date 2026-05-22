@@ -23,7 +23,7 @@ const dateFormatted = dateObj?.toLocaleDateString('en-US', { year: 'numeric', mo
 const dateISO = dateObj?.toISOString();
 
 const authorDisplay: Record<string, string> = {
-  'Dr. Philip Lieberman': 'Dr. Philip Lieberman, DO — Board-Eligible Family Medicine & Lifestyle Medicine',
+  'Dr. Philip Lieberman': 'Dr. Philip Lieberman, MD — Board-Eligible Family Medicine & Lifestyle Medicine',
   'Dr. David Bigley': 'Dr. David Bigley, DO — Board-Certified Family Medicine',
   'David Bigley, DO': 'Dr. David Bigley, DO — Board-Certified Family Medicine',
 };
@@ -62,7 +62,7 @@ const authorLabel = author ? (authorDisplay[author] ?? author) : null;
         <div class="post-cta-block card">
           <p class="text-muted" style="font-size:0.9rem; margin-bottom:0.5rem;">Forward Family Medicine</p>
           <h3>Ready to experience medicine the way it should be?</h3>
-          <p>Schedule a free, no-obligation meet and greet with Dr. Bigley or Dr. Lieberman. No pressure, no commitment — just a conversation.</p>
+          <p>Schedule a free, no-obligation meet and greet with one of our physicians. No pressure, no commitment — just a conversation.</p>
           <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
         </div>
         <aside class="medical-disclaimer" aria-label="Educational disclaimer">

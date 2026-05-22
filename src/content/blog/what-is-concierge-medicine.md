@@ -23,7 +23,7 @@ If you've ever left a doctor's appointment feeling rushed, confused, or like you
 
 Concierge medicine is a direct response to that frustration.
 
-**The core idea is simple:** patients pay a regular membership fee — monthly or annually — and in return, they get more. More time with their doctor. More access. More continuity. Instead of a physician managing 2,000 to 3,000 patients, a concierge or DPC doctor typically cares for a panel of 300 to 600 patients — compared to 2,000–3,000 in a conventional practice. At Forward Family Medicine, we cap at approximately 250 patients per physician, which is what makes genuine same-day access structurally reliable. That smaller panel is what makes everything else possible.
+**The core idea is simple:** patients pay a regular membership fee — monthly or annually — and in return, they get more. More time with their doctor. More access. More continuity. Instead of a physician managing 2,000 to 3,000 patients, a concierge or DPC doctor typically cares for a panel of 400 to 600 patients — compared to 2,000–3,000 in a conventional practice. At Forward Family Medicine, we cap at approximately 250 patients per physician, which is what makes genuine same-day access structurally reliable. That smaller panel is what makes everything else possible.
 
 **What patients typically receive in a concierge practice:**
 

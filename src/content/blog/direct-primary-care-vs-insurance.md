@@ -44,7 +44,7 @@ No claims. No prior authorizations. No explanation-of-benefits letters in the ma
 |---|---|---|
 | **Payment model** | Copays + deductibles per visit | Flat monthly membership fee |
 | **Average visit length** | 7–12 minutes | 1–2 hours |
-| **Typical panel size** | 2,000–3,000 patients | typically 300–600 patients; Forward Family Medicine caps at ~250 |
+| **Typical panel size** | 2,000–3,000 patients | typically 400–600 patients; Forward Family Medicine caps at ~250 |
 | **Same-day access** | Rarely available | Standard |
 | **After-hours access** | Nurse line or urgent care | Direct to your physician |
 | **Insurance billing** | Required | None |

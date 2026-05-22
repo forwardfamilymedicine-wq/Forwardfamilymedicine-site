@@ -1,5 +1,5 @@
 ---
-import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
+import ffmTeamPhoto from '../../assets/staff/ffm-team.jpg';
 ---
 
 <section class="hero" aria-label="Hero">
@@ -36,20 +36,13 @@ import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-image-wrap">
         <img
-          src={drLiebermanPhoto.src}
-          alt="Dr. Philip Lieberman, MD — Forward Family Medicine"
+          src={ffmTeamPhoto.src}
+          alt="The Forward Family Medicine team at our Wayne, PA practice — Dr. David Bigley, Dr. Philip Lieberman, Dr. Brian Landi, and Ritamarie Smedile PhD RN"
           loading="eager"
           width="560"
-          height="640"
+          height="379"
           class="hero-img"
         />
-        <div class="hero-badge">
-          <span class="badge-icon" style="color: var(--green-400);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span>
-          <div>
-            <strong>Dual Board-Eligible</strong>
-            <span>Family &amp; Lifestyle Medicine</span>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -131,31 +124,6 @@ import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
     box-shadow: var(--shadow-lg);
     max-height: 560px;
   }
-  .hero-badge {
-    position: absolute;
-    bottom: -1rem;
-    left: -1.5rem;
-    background: var(--cream-50);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    padding: 0.9rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    max-width: 240px;
-  }
-  .badge-icon { font-size: 1.5rem; }
-  .hero-badge strong {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--ink-900);
-    line-height: 1.2;
-  }
-  .hero-badge span {
-    font-size: 0.75rem;
-    color: var(--ink-300);
-  }
-
   @media (max-width: 768px) {
     .hero-inner {
       grid-template-columns: 1fr;
@@ -165,10 +133,6 @@ import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
     }
     .hero-img {
       max-height: 320px;
-    }
-    .hero-badge {
-      bottom: -0.5rem;
-      left: 0.5rem;
     }
   }
 </style>

@@ -52,7 +52,7 @@ This is where a lot of confusion happens, so let's be direct:
 
 In a traditional primary care practice, your doctor may be responsible for 2,000 to 3,000 patients. To keep the lights on, they need to see 20–30 patients every single day. That math leaves very little time per patient — which is why appointments feel rushed, why it takes weeks to get a routine visit, and why your doctor sometimes seems like a stranger.
 
-DPC practices cap their panels at 300–600 patients per physician generally; Forward Family Medicine caps at approximately 250 patients per physician. Because the practice is funded by membership fees rather than insurance reimbursement, the doctor has no incentive to overbook. The result: longer visits, faster access, and a physician who actually knows your health history.
+DPC practices cap their panels at 400–600 patients per physician generally; Forward Family Medicine caps at approximately 250 patients per physician. Because the practice is funded by membership fees rather than insurance reimbursement, the doctor has no incentive to overbook. The result: longer visits, faster access, and a physician who actually knows your health history.
 
 ### Who Is DPC For?
 

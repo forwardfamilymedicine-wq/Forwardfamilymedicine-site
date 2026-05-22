@@ -66,7 +66,7 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 **Email:** information@forwardfamilymedicine.com
 **Parking:** Free parking available on-site
 **Telehealth:** All visits can be conducted by phone or video when appropriate. Great for follow-ups, prescription questions, or minor acute concerns.
-**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Frequently Asked Questions
 

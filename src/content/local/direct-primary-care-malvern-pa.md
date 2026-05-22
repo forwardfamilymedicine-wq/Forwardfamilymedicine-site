@@ -1,12 +1,12 @@
 ---
-title: "Direct Primary Care Near Malvern, PA | Forward Family Medicine"
-description: "Malvern, PA patients are 10 miles from Forward Family Medicine's Direct Primary Care practice in Wayne — same-day access, direct physician contact, and one flat monthly membership fee."
+title: "Direct Primary Care in Malvern, PA | Forward Family Medicine"
+description: "Direct Primary Care in Malvern, PA with Dr. Brian Landi at 301 Lindenwood Dr Ste 206. Unlimited visits, same-day access, flat monthly fee. Opening August 2026."
 keywords:
   - direct primary care Malvern PA
   - DPC Malvern Pennsylvania
   - family doctor Malvern PA
   - primary care Malvern PA
-  - membership medicine Malvern Pennsylvania
+  - membership medicine Malvern PA
 canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
@@ -15,68 +15,71 @@ schemaType: "MedicalOrganization"
 linksTo:
   - "/membership"
   - "/direct-primary-care"
+  - "/menopause"
+  - "/locations/malvern"
   - "/new-patients"
-localNote: "Malvern residents are roughly 15 minutes west of our Wayne practice along Route 30. The growing Malvern and Great Valley area has a strong population of professionals who appreciate knowing their doctor will be available — not just accessible through a portal — when they need care."
-nearbyNeighborhoods: "Paoli, Devon, Frazer, and Exton"
+localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr Ste 206 in August 2026 — Direct Primary Care led by Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. Malvern residents now have in-person DPC without the drive east to Wayne."
+nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
 ---
 
-# Direct Primary Care Near Malvern, PA
+# Direct Primary Care in Malvern, PA
 
 ## About Malvern, PA
 
-Malvern is a Chester County borough with a growing community, excellent schools, and a business corridor along Route 30 and Route 202. Home to corporate campuses (including major tech and pharmaceutical companies) as well as established residential neighborhoods, Malvern attracts professionals and families who value quality. For Malvern residents seeking primary care that matches those standards — accessible, personalized, and prevention-focused — Forward Family Medicine in Wayne is a 10-mile drive east.
+Malvern is a Chester County borough at the intersection of a historic downtown, a strong professional community, and the Route 30 / Route 202 corridor. Malvern residents are healthcare-aware, often work in demanding professional or technical roles, and increasingly find that volume-driven insurance-based primary care doesn't match how they want to manage their own health. Forward Family Medicine — with a new Malvern office at 301 Lindenwood Dr Ste 206 opening August 2026 — is built specifically for this community: small panel size, real visit length, direct physician access, no insurance overhead.
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
 
 ## Why Malvern Patients Choose Forward Family Medicine
 
-- **10 miles east** of Malvern on Route 30 — a quick commute
-- Same-day and next-day appointments
-- Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
-- Longer visits — not a rushed 10-minute slot
-- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
-- Telehealth reduces in-office visits for routine care
+- **In-person care in Malvern** — 301 Lindenwood Dr Ste 206, opening August 2026
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner
+- Same-day and next-day availability for acute concerns
+- ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
+- Direct access to your physician by phone, text, or message
+- 1–2 hour visits when your health requires real conversation
 - Family memberships available
+- Menopause-care expertise on site — increasingly hard to find in primary care
 
 ## Services Included in Membership
 
-Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
+Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Menopause care · Procedures · Prescription management · Specialist coordination
 
 [Full services →](/services) | [Membership plans →](/membership)
+
 **Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
 ## Practical Information for Malvern Patients
 
-**Distance from Malvern:** Approximately 10 miles east on Route 30
-**Drive time:** ~18–22 minutes
-**SEPTA:** Malvern Station on the Paoli–Thorndale (R5) line — approximately 7–8 stops from Wayne Station (~30 minutes)
-**Telehealth:** All phone and video visits are included — ideal for Malvern patients to reduce travel for follow-ups, prescription questions, and routine care
+**Location:** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
+**Telehealth:** Phone and video visits included in membership for established patients
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and West Chester (Dr. Landi)
 
 ## Frequently Asked Questions
 
-**Do patients from Malvern come to Forward Family Medicine?**
-Yes — Malvern is about 10 miles from Wayne. We have members from Malvern and the surrounding Chester County communities, many of whom use telehealth for routine care to reduce travel.
+**Is Forward Family Medicine accepting Malvern patients?**
+Yes — Dr. Landi's patient list is open now. Joining the list gets you the first invitations once scheduling opens August 2026. [Join the Malvern patient list →](/contact/?subject=Join%20the%20Malvern%20Patient%20List)
 
-**How far is Forward Family Medicine from Malvern, PA?**
-Approximately 10 miles east on Route 30. Drive time is typically 18–22 minutes. Malvern Station on the Paoli–Thorndale (R5) line is approximately 7–8 stops from Wayne Station.
+**Who is the physician at the Malvern office?**
+Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
-**Can Malvern patients use telehealth to reduce travel?**
-Absolutely — and we encourage it. Phone and video visits are included in all memberships, making many routine visits convenient without traveling to Wayne.
+**How is DPC different from traditional primary care in Malvern?**
+Traditional practices operate on high-volume schedules — typically 20–30 patients per physician per day. Our DPC model caps the panel at ~250 patients per physician, which is what enables genuine same-day access and visits long enough to actually solve problems. [Learn more →](/direct-primary-care)
 
-**Is Forward Family Medicine accepting new patients from Malvern?**
-Yes. [Schedule a Meet & Greet →](/new-patients)
+**What's the best way to try the practice before committing?**
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
-**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
-## Get Started Today
+## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Join the Patient List →](/contact/?subject=Join%20the%20Malvern%20Patient%20List)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

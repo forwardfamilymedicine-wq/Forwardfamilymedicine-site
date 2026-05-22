@@ -67,7 +67,7 @@ Yes — the Paoli–Thorndale (R5) line runs from Ardmore to Wayne directly.
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
-**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Get Started
 

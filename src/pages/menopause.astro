@@ -1,0 +1,561 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+
+const allProviders = await getCollection('providers');
+const landi = allProviders.find(p => p.id === 'brian-landi-do');
+const d = landi?.data;
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.forwardfamilymedicine.com" },
+    { "@type": "ListItem", "position": 2, "name": "Menopause Care", "item": "https://www.forwardfamilymedicine.com/menopause" }
+  ]
+};
+
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": d ? `${d.name}, ${d.credentials}` : "Dr. Brian Landi, DO",
+  "identifier": d?.npi ?? "1578213062",
+  "medicalSpecialty": "Menopause",
+  "worksFor": {
+    "@type": "MedicalOrganization",
+    "name": "Forward Family Medicine",
+    "url": "https://www.forwardfamilymedicine.com"
+  },
+  "workLocation": [
+    {
+      "@type": "MedicalClinic",
+      "name": "Forward Family Medicine — West Chester",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1450 Boot Rd STE 300A",
+        "addressLocality": "West Chester",
+        "addressRegion": "PA",
+        "postalCode": "19380"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "name": "Forward Family Medicine — Malvern",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "301 Lindenwood Dr Suite 206",
+        "addressLocality": "Malvern",
+        "addressRegion": "PA",
+        "postalCode": "19355"
+      }
+    }
+  ]
+};
+
+const faqs = [
+  {
+    q: 'What does menopause care at Forward Family Medicine include?',
+    a: 'Comprehensive symptom assessment, hormone and metabolic labs when indicated, HRT consultation and prescribing when appropriate, non-hormonal symptom management, cardiovascular and bone health risk assessment, and integration with the rest of your primary care. The full scope of the transition — not a 15-minute slice.',
+  },
+  {
+    q: 'Is menopause care covered in my DPC membership?',
+    a: "Yes. Menopause care is part of how Dr. Landi practices primary care — it's included at no additional cost. Labs and any prescribed medications are at wholesale or near-cost pricing, separate from the membership fee.",
+  },
+  {
+    q: 'Do I need to keep seeing my gynecologist for HRT?',
+    a: "Not necessarily. Dr. Landi can prescribe and manage hormone therapy directly when it's appropriate. For procedural gynecology or specialty issues outside the scope of primary care, we coordinate referrals to GYN partners directly. Many patients find that primary care–based menopause management eliminates the need for a separate ongoing relationship.",
+  },
+  {
+    q: 'When is the right time to start menopause care?',
+    a: "Earlier than most patients are told. Symptoms often begin in perimenopause — typically the early forties, sometimes earlier — years before periods stop. If you're noticing changes in sleep, mood, cycles, or energy that feel different from baseline, that's the right time to have the conversation. We don't wait for menopause itself to start the workup.",
+  },
+  {
+    q: 'Where is Dr. Landi located?',
+    a: 'Dr. Landi sees patients at our Chester County locations — West Chester (1450 Boot Rd Ste 300A) and Malvern (301 Lindenwood Dr Ste 206). He is not at the Wayne office; Dr. Bigley and Dr. Lieberman remain there.',
+  },
+  {
+    q: 'Can menopause visits be done by telehealth?',
+    a: 'Yes — many menopause check-ins, follow-ups, and HRT titration conversations work well by phone or video. Initial intake and any visit requiring physical examination is in-person.',
+  },
+  {
+    q: "I'm not in West Chester or Malvern. Can I still see Dr. Landi?",
+    a: 'Yes. Members can be seen at any of our locations, and telehealth makes ongoing care accessible regardless of where you live. The Chester County offices are most convenient if you\'re in West Chester, Malvern, Exton, Glen Mills, Concordville, Kennett Square, or surrounding communities.',
+  },
+];
+---
+
+<MainLayout
+  title="Menopause Care | Forward Family Medicine | West Chester + Malvern, PA"
+  description="Evidence-based menopause care in West Chester and Malvern, PA. Menopause Society Certified Practitioner, 1–2 hour visits, included in DPC membership."
+  schema={[breadcrumb, physicianSchema]}
+>
+  <!-- Hero -->
+  <section class="lm-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-200) 100%); position: relative; overflow: hidden;">
+    <BotanicalGraphic variant="quartet" class="lm-botanical" />
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Menopause Care</span>
+      </nav>
+      <div class="lm-hero-inner">
+        <div class="lm-hero-content">
+          <span class="section-label">Menopause + Midlife Women's Health</span>
+          <h1>Menopause Care, Built Into Your Primary Care</h1>
+          <div class="divider"></div>
+          <p class="lm-lead">
+            Perimenopause and menopause unfold over four to ten years. The average primary care visit is fifteen minutes. The math doesn't work.
+          </p>
+          <p>
+            At Forward Family Medicine, menopause care is delivered by Dr. Brian Landi, DO — a
+            board-certified family physician with Menopause Society Certified Practitioner
+            credentialing — across visits long enough to actually walk through what's happening,
+            what your options are, and what you want to do about it. No outside referral. No
+            separate appointment. Included in your membership.
+          </p>
+          <a href="/contact" class="btn btn-accent" style="margin-top:0.5rem;">Schedule a Free Meet &amp; Greet</a>
+        </div>
+        <div class="lm-hero-credential card">
+          <div class="credential-header">
+            {d?.photo ? (
+              <img
+                src={d.photo.src}
+                alt={d.photoAlt}
+                loading="eager"
+                width="120"
+                height="140"
+                class="credential-photo"
+              />
+            ) : (
+              <div class="credential-photo credential-photo--placeholder" role="img" aria-label="Dr. Brian Landi — photo coming soon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+            )}
+            <div>
+              <strong>{d ? `${d.name}, ${d.credentials}` : 'Dr. Brian Landi, DO'}</strong>
+              <span>Menopause Society Certified Practitioner</span>
+            </div>
+          </div>
+          <ul class="credential-badges">
+            <li class="badge badge-accent">Menopause Society Certified Practitioner (MSCP)</li>
+            <li class="badge badge-accent">Family Medicine Board-Certified (AOBFP)</li>
+            <li class="badge">Direct Primary Care Model</li>
+            <li class="badge">West Chester + Malvern Locations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiator -->
+  <section class="lm-diff section" style="background: var(--green-500);">
+    <div class="container lm-diff-inner">
+      <div class="lm-diff-text">
+        <span class="section-label" style="color: var(--green-400);">Why Menopause Care Falls Through the Cracks</span>
+        <h2 style="color: white;">Few Practices on the Main Line Are Built for This</h2>
+        <p style="color: rgba(255,255,255,0.85);">
+          Menopause care has historically fallen between two stools. Primary care physicians don't
+          have the appointment length to do it well. Gynecologists are often booked for procedures
+          and surgical follow-ups, with limited windows for the slow, iterative conversations
+          menopause management actually requires. The result is millions of women managing a
+          four-to-ten-year transition with fragmented advice, conflicting messages about HRT, and
+          symptoms attributed to age or stress.
+        </p>
+        <p style="color: rgba(255,255,255,0.85);">
+          At Forward Family Medicine, menopause care isn't an add-on or a referral. It's primary
+          care done with enough time to do it right — by a physician who trained for it.
+        </p>
+      </div>
+      <div class="lm-diff-stats">
+        <div class="diff-stat">
+          <span class="diff-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <strong>15 min</strong>
+          <span>average primary care visit, nationally</span>
+        </div>
+        <div class="diff-stat">
+          <span class="diff-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span>
+          <strong>1–2 hr</strong>
+          <span>visit length at Forward Family Medicine</span>
+        </div>
+        <div class="diff-stat">
+          <span class="diff-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </span>
+          <strong>4–10 yrs</strong>
+          <span>typical perimenopause + menopause span</span>
+        </div>
+        <div class="diff-stat">
+          <span class="diff-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </span>
+          <strong>Included</strong>
+          <span>menopause care in every DPC membership</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="lm-included section">
+    <div class="container">
+      <span class="section-label">What Menopause Care Looks Like Here</span>
+      <h2>The Full Scope, Not a 15-Minute Slice</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div>
+          <p>
+            Menopause is not one symptom — it's a metabolic, hormonal, cardiovascular, skeletal,
+            and cognitive transition. Treating it well requires assessing all of those systems
+            together, over time, and acting on the ones that need attention.
+          </p>
+          <p>
+            At Forward Family Medicine, menopause care is structured around the full scope of the
+            transition. Whether you're navigating early perimenopause, evaluating HRT, or focused
+            on post-menopausal cardiovascular and bone health, your physician is set up to do the
+            work — not refer it out.
+          </p>
+        </div>
+        <div>
+          <ul class="prose-list">
+            <li>Comprehensive symptom assessment — sleep, mood, cognition, cycle changes, vasomotor symptoms, urogenital changes, libido, weight</li>
+            <li>Lab workup — hormone panels, lipids, thyroid, glucose, ApoB when clinically indicated</li>
+            <li>HRT consultation — evidence-based shared decision-making, prescribing when appropriate</li>
+            <li>Non-hormonal symptom management — for women who can't or prefer not to use HRT</li>
+            <li>Bone health — risk assessment, DEXA coordination, osteoporosis prevention</li>
+            <li>Cardiovascular risk — lipids, blood pressure, advanced markers when indicated, prevention strategy</li>
+            <li>Sleep, mood, weight — addressed clinically, not deflected to lifestyle handouts</li>
+            <li>Referral coordination — direct introduction to GYN, endocrinology, or other specialists when needed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who benefits -->
+  <section class="lm-who section" style="background: var(--cream-200);">
+    <div class="container">
+      <span class="section-label">Who This Is For</span>
+      <h2>Four Common Reasons Patients Find Their Way Here</h2>
+      <div class="divider"></div>
+      <div class="who-grid">
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+          <h3>You're in perimenopause and the symptoms don't add up</h3>
+          <p>Sleep is off, mood is unpredictable, cycles are changing, you're gaining weight you don't recognize, and your last visit gave you fifteen minutes and a vitamin D recommendation. Perimenopause requires a proper workup and a longitudinal plan — not a single visit and a guess.</p>
+        </div>
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h3>You're considering HRT and want a real conversation about it</h3>
+          <p>The evidence on hormone therapy has shifted significantly since the early 2000s. Most current data supports HRT for the right candidates — but the decision depends on your timing, symptoms, risk profile, and preferences. That conversation takes more than fifteen minutes.</p>
+        </div>
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <h3>You're post-menopause and want to age well</h3>
+          <p>Menopause accelerates bone loss, cardiovascular risk, and metabolic changes. The decade after menopause is when prevention pays the most. Cardiovascular and bone health screening, strength training, and risk-factor management — done together, longitudinally — are how the post-menopause years go differently.</p>
+        </div>
+        <div class="who-card card">
+          <span class="who-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+          </span>
+          <h3>Your current primary care doctor doesn't have the training for this</h3>
+          <p>Menopause was a single lecture in most medical school curricula until very recently. A physician with Menopause Society Certified Practitioner credentialing has trained specifically in evidence-based menopause management — and a DPC practice has the visit length to actually use that training.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dr. Landi's Story -->
+  <section class="lieberman-story section">
+    <div class="container">
+      <span class="section-label">Dr. Landi's Story</span>
+      <h2>A Different Kind of Family Physician</h2>
+      <div class="divider"></div>
+      <div class="story-inner grid-2">
+        <div>
+          <blockquote class="story-quote">
+            <p>
+              Most primary care visits give you fifteen minutes for symptoms that have been building
+              for years. Dr. Landi chose direct primary care to recover the time medicine actually
+              requires. His clinical interest in midlife women's health pushed him toward Menopause
+              Society credentialing because the standard primary care training simply doesn't go
+              deep enough.
+            </p>
+            <p>
+              The result is a family physician who can sit with you in the exam room for an hour,
+              walk through the full picture of where you are in the transition, and build a plan
+              that integrates symptoms, hormones, cardiovascular and bone health, and the lifestyle
+              factors that compound or counteract them.
+            </p>
+          </blockquote>
+        </div>
+        <div>
+          <h3>Dr. Landi's Path</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>BS — Pennsylvania State University</strong>
+                <span>Foundation in the sciences</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>DO — Philadelphia College of Osteopathic Medicine (2022)</strong>
+                <span>Whole-person, hands-on medical training</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Family Medicine Residency — ChristianaCare (2025)</strong>
+                <span>Comprehensive primary care across all ages and conditions</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Chief Resident — ChristianaCare</strong>
+                <span>Selected for clinical excellence and leadership</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Board-Certified — AOBFP</strong>
+                <span>American Osteopathic Board of Family Physicians</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Menopause Society Certified Practitioner (MSCP)</strong>
+                <span>Evidence-based credential through The Menopause Society</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Joined Forward Family Medicine — August 2026</strong>
+                <span>West Chester and Malvern locations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} headline="Menopause Care FAQs" label="FAQ" />
+
+  <CTABanner
+    headline="Schedule a Meet &amp; Greet with Dr. Landi"
+    subhead="20 minutes, no obligation. Available at West Chester or Malvern."
+    btnText="Schedule Now"
+    btnHref="/contact"
+  />
+</MainLayout>
+
+<style>
+  .lm-hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .lm-hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--ink-300);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+
+  .lm-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 3rem;
+    align-items: start;
+  }
+  .lm-lead {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .lm-hero-credential {
+    padding: 1.75rem;
+  }
+  .credential-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .credential-photo {
+    width: 72px;
+    height: 88px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .credential-photo--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream-200);
+    color: var(--ink-300);
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .credential-header strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--ink-900);
+    margin-bottom: 0.25rem;
+  }
+  .credential-header span {
+    font-size: 0.8rem;
+    color: var(--ink-300);
+  }
+  .credential-badges {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .credential-badges li {
+    display: inline-block;
+  }
+
+  /* Diff strip */
+  .lm-diff-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .lm-diff-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .diff-stat {
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .diff-icon { display: block; margin-bottom: 0.3rem; color: rgba(255,255,255,0.85); }
+  .diff-stat strong {
+    color: white;
+    font-size: 0.95rem;
+  }
+  .diff-stat span {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.82rem;
+  }
+
+  /* Who grid */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .who-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .who-icon { display: block; margin-bottom: 0.5rem; color: var(--green-400); }
+  .who-card h3 { font-size: 1.05rem; }
+  .who-card p { font-size: 0.9rem; color: var(--ink-700); margin: 0; }
+
+  /* Story */
+  .story-quote {
+    background: linear-gradient(135deg, var(--green-50), var(--cream-200));
+    border-left: 4px solid var(--green-300);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.75rem;
+    font-style: italic;
+    color: var(--ink-700);
+    line-height: 1.8;
+    margin: 0;
+  }
+  .story-quote p { margin-bottom: 1rem; }
+  .story-quote p:last-child { margin: 0; }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--cream-300);
+  }
+  .timeline-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.75rem 0;
+    position: relative;
+  }
+  .timeline-dot {
+    width: 18px;
+    height: 18px;
+    background: var(--green-300);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+  .timeline-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--ink-900);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-item span {
+    font-size: 0.85rem;
+    color: var(--ink-500);
+  }
+
+  @media (max-width: 900px) {
+    .lm-hero-inner { grid-template-columns: 1fr; }
+    .lm-diff-inner { grid-template-columns: 1fr; }
+    .lm-diff-stats { grid-template-columns: 1fr 1fr; }
+    .who-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .lm-diff-stats { grid-template-columns: 1fr; }
+  }
+</style>

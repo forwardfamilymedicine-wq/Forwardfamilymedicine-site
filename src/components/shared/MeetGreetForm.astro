@@ -239,12 +239,16 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
   }
 </style>
 
-<script>
-  // Populate source field from ?source= query param at page load
+<script is:inline>
   const sourceParam = new URLSearchParams(window.location.search).get('source');
   if (sourceParam) {
-    const sourceInput = document.querySelector('input[name="source"]') as HTMLInputElement | null;
+    const sourceInput = document.querySelector('input[name="source"]');
     if (sourceInput) sourceInput.value = sourceParam;
+  }
+  const subjectParam = new URLSearchParams(window.location.search).get('subject');
+  if (subjectParam) {
+    const messageInput = document.querySelector('textarea[name="message"]');
+    if (messageInput && !messageInput.value) messageInput.value = `Re: ${subjectParam}\n\n`;
   }
 </script>
 

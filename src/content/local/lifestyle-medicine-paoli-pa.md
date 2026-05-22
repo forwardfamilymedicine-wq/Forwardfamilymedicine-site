@@ -68,7 +68,7 @@ Yes — telehealth is included and works well for nutrition and lifestyle coachi
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
-**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Lifestyle Medicine and Life in Paoli
 

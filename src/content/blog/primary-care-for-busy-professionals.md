@@ -83,7 +83,7 @@ We're located in Wayne, PA, at the center of the Main Line, and serve profession
 ## FAQ
 
 **Q: Can I really get a same-day appointment with a DPC physician, or is that mostly marketing?**
-A: In a well-run DPC practice with an appropriate panel size (300–600 patients in DPC generally; Forward Family Medicine caps at approximately 250 patients per physician), same-day and next-day availability is genuinely standard, not exceptional. It's achievable because the physician isn't trying to serve 2,000 patients. Ask any prospective DPC practice what their current typical wait time for a routine appointment is — the answer will tell you whether the promise matches reality.
+A: In a well-run DPC practice with an appropriate panel size (400–600 patients in DPC generally; Forward Family Medicine caps at approximately 250 patients per physician), same-day and next-day availability is genuinely standard, not exceptional. It's achievable because the physician isn't trying to serve 2,000 patients. Ask any prospective DPC practice what their current typical wait time for a routine appointment is — the answer will tell you whether the promise matches reality.
 
 **Q: How long does a typical DPC appointment last?**
 A: Most DPC practices schedule appointments at 1 to 2 hours, with flexibility based on complexity. Annual physicals typically receive longer slots. The key difference from conventional practice isn't just that visits are longer — it's that the physician isn't running behind schedule from a packed waiting room, so the time you're booked for is generally the time you get.

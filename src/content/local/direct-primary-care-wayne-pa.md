@@ -72,12 +72,12 @@ Lab work and medications are available at wholesale pricing. [See full services 
 **Parking:** Free parking available on-site
 **SEPTA:** Wayne Station on the Paoli–Thorndale (R5) line is approximately 0.5 miles from our office — walkable for most patients
 **Telehealth:** All phone and video visits are included in membership. Many routine questions are handled without coming in at all.
-**Office hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Office hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine located in Wayne, PA?**
-Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main Line. We serve Wayne residents as well as patients from surrounding communities including Berwyn, Devon, Villanova, Radnor, and beyond. [Get directions →](/new-patients#location)
+Yes. Our practice is located in Wayne, Pennsylvania — on the Philadelphia Main Line. We serve Wayne residents as well as patients from surrounding communities including Berwyn, Devon, Villanova, Radnor, and beyond. [Get directions →](/locations/wayne/)
 
 **Do I need to live in Wayne to be a member?**
 No. While we're located in Wayne, we welcome members from throughout the Main Line and Delaware County. Telehealth visits make membership practical for patients who live a bit farther away.

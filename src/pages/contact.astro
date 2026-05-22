@@ -1,6 +1,10 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
+import { getCollection } from 'astro:content';
+
+const locations = (await getCollection('locations'))
+  .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -14,7 +18,7 @@ const breadcrumb = {
 
 <MainLayout
   title="Schedule a Meet & Greet | Forward Family Medicine Wayne PA"
-  description="Schedule a free meet and greet at Forward Family Medicine in Wayne, PA. No obligation, no commitment. Meet Dr. Bigley and Dr. Lieberman and see if we're the right fit for you."
+  description="Schedule a free meet and greet at Forward Family Medicine. No obligation, no commitment. Meet our physicians in Wayne, West Chester, or Malvern, PA and see if we're the right fit for you."
   schema={breadcrumb}
 >
   <!-- Hero -->
@@ -41,6 +45,15 @@ const breadcrumb = {
       <!-- Form -->
       <div class="contact-form-col">
         <MeetGreetForm />
+        <div class="card contact-info-card" style="margin-top:1.25rem;">
+          <h3>What Happens After You Submit</h3>
+          <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--ink-700); line-height:1.8;">
+            <li>We review your request</li>
+            <li>We reach out within 24 hours to schedule</li>
+            <li>You come in for your free meet &amp; greet</li>
+            <li>You decide — no pressure, no obligation</li>
+          </ol>
+        </div>
       </div>
 
       <!-- Info -->
@@ -50,9 +63,9 @@ const breadcrumb = {
           <h3>Practice Information</h3>
 
           <div class="info-item">
-            <span class="info-icon" aria-hidden="true">📍</span>
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <strong>Address</strong>
+              <strong>Wayne</strong>
               <address style="font-style:normal;">
                 295 Old Eagle School Road<br />
                 Wayne, PA 19087
@@ -61,7 +74,31 @@ const breadcrumb = {
           </div>
 
           <div class="info-item">
-            <span class="info-icon" aria-hidden="true">📞</span>
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>West Chester</strong>
+              <address style="font-style:normal;">
+                1450 Boot Rd Ste 300A<br />
+                West Chester, PA 19380
+              </address>
+              <span style="font-size:0.8rem; font-style:italic; color:var(--ink-500);">Coming August 2026</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>Malvern</strong>
+              <address style="font-style:normal;">
+                301 Lindenwood Dr Ste 206<br />
+                Malvern, PA 19355
+              </address>
+              <span style="font-size:0.8rem; font-style:italic; color:var(--ink-500);">Coming August 2026</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
               <strong>Phone</strong>
               <a href="tel:+12156457044">(215) 645-7044</a>
@@ -69,7 +106,7 @@ const breadcrumb = {
           </div>
 
           <div class="info-item">
-            <span class="info-icon" aria-hidden="true">📠</span>
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
             <div>
               <strong>Fax</strong>
               <a href="tel:+12154498854">(215) 449-8854</a>
@@ -77,7 +114,7 @@ const breadcrumb = {
           </div>
 
           <div class="info-item">
-            <span class="info-icon" aria-hidden="true">✉️</span>
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <div>
               <strong>Email</strong>
               <a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a>
@@ -85,7 +122,7 @@ const breadcrumb = {
           </div>
 
           <div class="info-item">
-            <span class="info-icon" aria-hidden="true">🕐</span>
+            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 12"/></svg>
             <div>
               <strong>Office Hours</strong>
               <span>Monday–Friday: 7:30 AM – 5:30 PM</span>
@@ -115,46 +152,62 @@ const breadcrumb = {
             <a href="https://patient.sigmamd.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="text-align:center;">Patient Portal Login</a>
           </div>
         </div>
-
-        <div class="card contact-info-card" style="margin-top:1.25rem;">
-          <h3>What Happens After You Submit</h3>
-          <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--ink-700); line-height:1.8;">
-            <li>We review your request</li>
-            <li>We reach out within 24 hours to schedule</li>
-            <li>You come in for your free meet &amp; greet</li>
-            <li>You decide — no pressure, no obligation</li>
-          </ol>
-        </div>
       </div>
 
     </div>
   </section>
 
-  <section class="map-section">
-    <div class="map-placeholder">
-      <div class="map-overlay">
-        <p><strong>295 Old Eagle School Road, Wayne, PA 19087</strong></p>
-        <a
-          href="https://maps.app.goo.gl/gCh92gYRPvsbTdjh6"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary"
-        >
-          Get Directions →
-        </a>
+  <section class="contact-locations section">
+    <div class="container">
+      <span class="section-label">Visit Us</span>
+      <h2>Our Locations</h2>
+      <div class="divider"></div>
+      <p class="section-intro" style="margin-bottom:2.5rem;">
+        Wayne (open) and Chester County (West Chester and Malvern, opening August 2026). Each location offers the same Forward Family Medicine experience.
+      </p>
+
+      <div class="locations-cards-grid">
+        {locations.map(loc => {
+          const d = loc.data;
+          const isOpen = d.status === 'open';
+          const isFuture = !isOpen && d.openingDate;
+          const openingLabel = isFuture
+            ? (() => { const [y, m] = d.openingDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })()
+            : null;
+          return (
+            <article class={`location-card${isOpen ? '' : ' coming-soon'}`}>
+              {isOpen ? (
+                <span class="location-card-badge open">Now Open</span>
+              ) : (
+                <span class="location-card-badge future">Opening {openingLabel}</span>
+              )}
+              <h3>{d.name}</h3>
+              <address class="location-card-address">
+                {d.addressStreet}<br />
+                {d.addressCity}, {d.addressState} {d.addressZip}
+              </address>
+              {d.phone && (
+                <p class="location-card-phone">
+                  <a href={`tel:${d.phone.replace(/\D/g, '')}`}>{d.phone}</a>
+                </p>
+              )}
+              {d.mapEmbedUrl && (
+                <div class="location-card-map">
+                  <iframe
+                    src={d.mapEmbedUrl}
+                    title={`Map showing ${d.name} location`}
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              )}
+              <a href={`/locations/${d.slug}/`} class="location-card-link">
+                View {d.name} location →
+              </a>
+            </article>
+          );
+        })}
       </div>
-    </div>
-    <div class="map-embed" style="width:100%; border-radius:12px; overflow:hidden; margin-top:1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.10);">
-      <iframe
-        src="https://maps.google.com/maps?q=295+Old+Eagle+School+Road,+Wayne,+PA+19087&output=embed"
-        width="100%"
-        height="360"
-        style="border:0; display:block;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Forward Family Medicine location">
-      </iframe>
     </div>
   </section>
 </MainLayout>
@@ -217,45 +270,116 @@ const breadcrumb = {
     line-height: 1.5;
   }
 
-  /* Map */
-  .map-section {
-    position: relative;
-    overflow: visible;
+  /* Locations grid */
+  .contact-locations {
+    background: var(--cream-100);
   }
-  .map-placeholder {
-    width: 100%;
-    height: 300px;
-    background: var(--cream-200);
+
+  .locations-cards-grid {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
+    gap: 2rem;
+    margin-top: 1rem;
   }
-  .map-placeholder::before {
-    content: '📍';
-    font-size: 4rem;
-    position: absolute;
-    opacity: 0.15;
-  }
-  .map-overlay {
-    position: relative;
-    z-index: 1;
-    background: white;
-    padding: 1.5rem 2rem;
+
+  .location-card {
+    flex: 0 1 calc(33.333% - 1.334rem);
+    min-width: 280px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    background: var(--cream-50);
+    border: 1px solid var(--cream-300);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    text-align: center;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
   }
-  .map-overlay p {
+
+  .location-card.coming-soon {
+    opacity: 0.92;
+  }
+
+  .location-card-badge {
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
     margin-bottom: 1rem;
+  }
+  .location-card-badge.open {
+    background: var(--green-100);
+    color: var(--green-500);
+  }
+  .location-card-badge.future {
+    background: var(--cream-200);
+    color: var(--ink-700);
+  }
+
+  .location-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
     color: var(--ink-900);
   }
-  .map-embed {
-    margin-bottom: 2rem;
+
+  .location-card-address {
+    font-style: normal;
+    color: var(--ink-700);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+    font-size: 0.92rem;
+  }
+
+  .location-card-phone {
+    margin: 0 0 1rem 0;
+    font-size: 0.92rem;
+  }
+  .location-card-phone a {
+    color: var(--green-400);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .location-card-phone a:hover {
+    color: var(--green-500);
+    text-decoration: underline;
+  }
+
+  .location-card-map {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .location-card-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .location-card-link {
+    margin-top: auto;
+    color: var(--green-400);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .location-card-link:hover {
+    color: var(--green-500);
+    text-decoration: underline;
   }
 
   @media (max-width: 900px) {
     .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 860px) {
+    .location-card { flex: 0 1 calc(50% - 1rem); }
+  }
+  @media (max-width: 540px) {
+    .location-card { flex-basis: 100%; max-width: 100%; }
   }
 </style>

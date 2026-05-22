@@ -1,11 +1,12 @@
 ---
-title: "Lifestyle Medicine Near West Chester, PA | Forward Family Medicine"
-description: "West Chester, PA patients are 14 miles from Forward Family Medicine's lifestyle medicine-integrated DPC practice in Wayne — prevention and chronic disease management included in membership, telehealth available."
+title: "Lifestyle Medicine in West Chester, PA | Forward Family Medicine"
+description: "Lifestyle medicine-integrated primary care in West Chester, PA with Dr. Brian Landi at 1450 Boot Rd Ste 300A. Nutrition, movement, sleep, and stress as clinical tools. Opening August 2026."
 keywords:
   - lifestyle medicine West Chester PA
   - preventive care West Chester Pennsylvania
   - wellness doctor West Chester PA
   - chronic disease prevention West Chester PA
+  - nutrition doctor West Chester PA
 canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
@@ -13,67 +14,71 @@ author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"
 linksTo:
   - "/lifestyle-medicine"
+  - "/menopause"
   - "/membership"
+  - "/locations/west-chester"
   - "/new-patients"
-localNote: "West Chester residents interested in lifestyle medicine can reach our Wayne practice in 25–30 minutes via Route 30. West Chester's diverse, growing community includes many residents who have been waiting for a physician who treats nutrition, sleep, and movement as legitimate clinical interventions — not just wellness suggestions."
-nearbyNeighborhoods: "Malvern, Exton, Downingtown, and Chester Springs"
+localNote: "Forward Family Medicine is opening a West Chester office at 1450 Boot Rd Ste 300A in August 2026 — primary care with lifestyle medicine integrated into every visit, led by Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
+nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
-# Lifestyle Medicine Near West Chester, PA
+# Lifestyle Medicine in West Chester, PA
 
 ## About West Chester, PA
 
-West Chester residents — from university faculty and local business owners to corporate professionals commuting to the Route 202 corridor — are increasingly looking for healthcare that addresses how they live, not just how they feel when they're sick. Forward Family Medicine's lifestyle medicine-integrated approach treats nutrition, activity, sleep, and stress as clinical priorities, 14 miles northeast in Wayne.
+West Chester is the Chester County seat — a borough with a thriving downtown, West Chester University, and a community that includes university faculty, healthcare professionals, business owners, and long-established families. Many West Chester residents already understand that lifestyle factors — nutrition, movement, sleep, stress — drive the majority of chronic disease. The challenge is finding a primary care physician with the time and training to integrate those factors into a real clinical plan, not just generic advice. Forward Family Medicine — with a new West Chester office at 1450 Boot Rd Ste 300A opening August 2026 — is built for exactly this.
 
-## Lifestyle Medicine Accessible from West Chester — Including by Telehealth
+## Lifestyle Medicine, Integrated Into Primary Care
 
-Forward Family Medicine includes lifestyle medicine in every DPC membership. Evidence-based behavioral counseling and chronic disease prevention are integrated into ongoing care — not a separate referral or add-on service. Telehealth makes most lifestyle consultations accessible for West Chester patients without requiring the drive to Wayne.
+Lifestyle medicine works best as part of your primary care relationship, not as a separate referral. At Forward Family Medicine, Dr. Brian Landi practices integrated primary care — meaning nutrition, exercise, sleep, and stress are part of how he evaluates your health and builds your care plan, every visit. 1–2 hour visit lengths are what makes that depth possible.
 
-Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
-
-[What is lifestyle medicine? →](/lifestyle-medicine)
+For patients who want dedicated specialty consultation with a dual-board-eligible Lifestyle Medicine physician, Dr. Philip Lieberman practices at our Wayne office and is accessible to West Chester patients by telehealth. [What is lifestyle medicine? →](/lifestyle-medicine)
 
 ## Why West Chester Patients Choose This Approach
 
-- Lifestyle medicine included in membership at no extra cost
-- Personalized guidance for nutrition, activity, sleep, and stress
-- Chronic disease management with lifestyle interventions at the center
-- Prevention-focused: address risk before disease establishes
-- Telehealth for follow-ups and coaching check-ins
+- **In-person care in West Chester** — 1450 Boot Rd Ste 300A, opening August 2026
+- Lifestyle medicine integrated into every primary care visit
+- Evidence-based nutrition guidance — beyond generic handouts
+- Chronic disease management with lifestyle at the center
+- Sleep and stress taken seriously as clinical levers
+- Access to Dr. Lieberman's dual-board Lifestyle Medicine specialty consultation via telehealth or at Wayne
+- Menopause-care expertise on site (Dr. Landi is a Menopause Society Certified Practitioner) — particularly relevant for midlife metabolic and cardiovascular optimization
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Menopause care · Unlimited visits · Direct physician access [Full services →](/services)
 
-## Practical Information
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
 
-**Distance:** ~14 miles northeast via Route 202 north
-**Drive time:** ~25–35 minutes
-**SEPTA:** No direct rail — telehealth recommended for West Chester lifestyle consultations
-**Telehealth:** Video and phone consultations included — practical for regular lifestyle coaching without the Route 202 commute
+## Practical Information for West Chester Patients
+
+**Location:** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
+**Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and Malvern (Dr. Landi)
 
 ## Frequently Asked Questions
 
-**Is lifestyle medicine available near West Chester, PA?**
-Yes — Forward Family Medicine in Wayne includes lifestyle medicine in every membership, 14 miles northeast via Route 202. Telehealth makes it accessible for most consultations.
+**How is lifestyle medicine integrated at the West Chester office?**
+Dr. Landi practices primary care with lifestyle factors built in — every visit considers nutrition, movement, sleep, and stress alongside conventional clinical assessment. Visit lengths of 1–2 hours allow for the depth this requires.
 
-**Is lifestyle medicine covered in the membership fee?**
-Yes — completely included. [See membership →](/membership)
+**Can I see Dr. Lieberman for dedicated lifestyle medicine consultation?**
+Yes. Dr. Lieberman, who holds dual board eligibility in Family Medicine and Lifestyle Medicine, practices at our Wayne office and is accessible to West Chester members by telehealth. Members can also schedule visits at the Wayne office (about 30 minutes east).
 
-**Can West Chester patients do lifestyle consultations by video?**
-Yes — telehealth is fully included and is the recommended approach for West Chester patients given the distance. Video and phone visits handle most nutrition consultations, lifestyle reviews, and follow-up appointments.
+**Is lifestyle medicine covered in my membership?**
+Yes — completely included, at every FFM location. [See membership →](/membership)
 
-**What conditions does lifestyle medicine address?**
-Prediabetes, diabetes, hypertension, high cholesterol, obesity, metabolic syndrome, stress-related health problems, and sleep dysfunction — all addressed through evidence-based behavioral interventions as part of your ongoing care.
+**What about menopause-specific care?**
+Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menopause care — symptom management, HRT consultation, cardiovascular and bone health monitoring — is part of his practice and included in your membership. [Learn more →](/menopause)
 
 ## Contact & Practice Information
 
-**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
-**Hours:** Monday–Friday, 8:00 AM – 5:00 PM
+**Hours:** Monday–Friday, 7:30 AM – 5:30 PM
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Join the Patient List →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)** | **[Menopause Care →](/menopause)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

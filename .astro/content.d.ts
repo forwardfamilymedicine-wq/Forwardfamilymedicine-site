@@ -144,11 +144,19 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"pages": Record<string, {
+"locations": Record<string, {
   id: string;
   body?: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">;
+  collection: "locations";
+  data: InferEntrySchema<"locations">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"providers": Record<string, {
+  id: string;
+  body?: string;
+  collection: "providers";
+  data: InferEntrySchema<"providers">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -157,6 +165,14 @@ declare module 'astro:content' {
   body?: string;
   collection: "seo";
   data: InferEntrySchema<"seo">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"team": Record<string, {
+  id: string;
+  body?: string;
+  collection: "team";
+  data: InferEntrySchema<"team">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

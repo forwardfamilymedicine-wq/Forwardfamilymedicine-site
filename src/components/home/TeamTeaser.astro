@@ -1,62 +1,29 @@
 ---
+import { getCollection } from 'astro:content';
 import ProviderCard from '../shared/ProviderCard.astro';
-import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
-import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
-import ritamariePhoto from '../../assets/staff/ritamarie-smedile.jpg';
 
-const providers = [
-  {
-    name: 'Dr. David Bigley',
-    credentials: 'DO — Family Medicine | Board-Certified',
-    role: 'Physician, Founder',
-    photo: drBigleyPhoto.src,
-    photoAlt: 'Dr. David Bigley DO, Founder of Forward Family Medicine, Wayne PA',
-    tagline: 'Whole-person osteopathic medicine — built on truly knowing his patients. Dr. Bigley left the insurance-based model to practice the way he always believed medicine should be: with time, trust, and genuine relationship.',
-    badges: ['DO', 'Family Medicine', 'PCOM'],
-    href: '/about#dr-bigley',
-  },
-  {
-    name: 'Dr. Philip Lieberman',
-    credentials: 'MD — Family Medicine + Lifestyle Medicine',
-    role: 'Physician',
-    photo: drLiebermanPhoto.src,
-    photoAlt: 'Dr. Philip Lieberman MD, Family Medicine and Lifestyle Medicine Physician at Forward Family Medicine',
-    tagline: 'Dual board-eligible in Family Medicine and Lifestyle Medicine, with a culinary arts background that makes nutrition advice actually practical. The only physician of his kind on the Main Line.',
-    badges: ['MD', 'Family Medicine', 'Lifestyle Medicine', 'U.S. Navy'],
-    href: '/about#dr-lieberman',
-  },
-  {
-    name: 'Ritamarie Smedile',
-    credentials: 'PhD, RN',
-    role: 'Clinical Operations & Wellness',
-    photo: ritamariePhoto.src,
-    photoAlt: 'Ritamarie Smedile PhD RN, Clinical Operations and Wellness at Forward Family Medicine',
-    tagline: 'Over a decade of maternal health, reproductive wellness, and integrative care. Ritamarie works closely with our physicians to support FFM members with wellness visits, health education, and care coordination.',
-    badges: ['PhD', 'RN', 'Maternal Health'],
-    href: '/about#ritamarie',
-  },
-];
+const providers = (await getCollection('providers'))
+  .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 ---
 
 <section class="team-teaser section" aria-label="Meet the team">
   <div class="container">
     <div class="team-header text-center">
       <span class="section-label">Your Care Team</span>
-      <h2 class="section-title">Meet the Doctors</h2>
+      <h2 class="section-title">Meet the Team</h2>
       <p class="section-intro" style="margin:0 auto;">
-        Two physicians who left the insurance model to build something better —
-        a practice where every patient gets the time, attention, and expertise they deserve.
+        Three physicians, three locations, one philosophy: small panels, real visit
+        lengths, and primary care that genuinely knows you. Click any card to read
+        their full bio.
       </p>
     </div>
 
     <div class="team-grid">
-      {providers.map(p => (
-        <ProviderCard {...p} />
-      ))}
+      {providers.map(p => <ProviderCard provider={p} />)}
     </div>
 
-    <div class="team-cta text-center">
-      <a href="/about" class="btn btn-outline">Read Full Bios →</a>
+    <div class="team-footer text-center">
+      <a href="/meet-the-team/" class="team-all-link">+ Meet our wellness team →</a>
     </div>
   </div>
 </section>
@@ -74,18 +41,25 @@ const providers = [
     gap: 2rem;
     margin-bottom: 2.5rem;
   }
-  .team-cta {
-    margin-top: 2rem;
+  .team-footer {
+    margin-top: 1.5rem;
   }
+  .team-all-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--green-400);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .team-all-link:hover { color: var(--green-500); }
+
+  /* Override component flex sizing — grid handles width here */
+  .team-grid :global(.provider-card) { max-width: none; min-width: 0; flex: unset; }
 
   @media (max-width: 860px) {
-    .team-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+    .team-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 540px) {
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
+    .team-grid { grid-template-columns: 1fr; }
   }
 </style>
