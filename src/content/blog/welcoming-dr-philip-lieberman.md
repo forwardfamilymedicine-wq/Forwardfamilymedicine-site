@@ -2,7 +2,7 @@
 title: "Welcoming Dr. Philip Lieberman to Forward Family Medicine"
 description: "Forward Family Medicine welcomes Dr. Philip Lieberman, MD, dual board-eligible in Family Medicine and Lifestyle Medicine, to our Wayne, PA practice."
 date: "2025-12-15"
-author: "Dr. David Bigley"
+author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["team", "lifestyle medicine", "wayne pa", "direct primary care"]
 image: "/images/staff/dr-philip-lieberman.jpg"

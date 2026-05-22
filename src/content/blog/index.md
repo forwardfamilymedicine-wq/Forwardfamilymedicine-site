@@ -107,7 +107,7 @@ keywords:
   - [secondary keywords]
 canonical: "https://www.forwardfamilymedicine.com/blog/[slug]"
 date: "YYYY-MM-DD"
-author: "Dr. Bigley and Dr. Lieberman, Forward Family Medicine"
+author: "David Bigley, DO"
 schemaType: "Article"
 pillar: "[which pillar page this supports]"
 relatedPosts:
@@ -161,7 +161,7 @@ Every blog post should include:
 
 ## Editorial Guidelines
 
-- **Voice:** Warm, direct, physician-led. Write as if Dr. Bigley and Dr. Lieberman is explaining this to a patient in the office.
+- **Voice:** Warm, direct, physician-led. Write as if Dr. Bigley is explaining this to a patient in the office. (All published posts are attributed to Dr. Bigley individually.)
 - **Reading level:** Aim for ~8th grade reading level. Use plain language.
 - **Length:** 800–1,500 words per post for standard explainers; 1,500–2,500 for comprehensive pillar-support pieces.
 - **AI-search optimization:** Include a clear "short answer" section near the top that directly answers the page title as a question. Use H2 headings that are natural questions. Include a short FAQ section at the end.

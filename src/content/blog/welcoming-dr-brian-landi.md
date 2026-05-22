@@ -2,7 +2,7 @@
 title: "Welcoming Dr. Brian Landi to Forward Family Medicine — Expanding to West Chester and Malvern"
 description: "Forward Family Medicine welcomes Dr. Brian Landi, DO, board-certified family physician with menopause specialty training, joining a new Chester County location in August 2026."
 date: "2026-05-04"
-author: "Dr. David Bigley"
+author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["team", "west chester pa", "malvern pa", "chester county", "menopause", "direct primary care"]
 image: "/images/staff/dr-brian-landi.jpg"
@@ -31,7 +31,7 @@ You can read more on our [West Chester location page](/locations/west-chester/) 
 
 Some of you reading this may know Dr. Landi from his work at a large Delaware County hospital system. If you're searching to learn where he's gone next, you've found the right place. Dr. Landi will see patients at Forward Family Medicine starting August 2026, and we are accepting names on his patient list now. Joining the list does not commit you to membership — it simply ensures you receive the first invitations to schedule a free Meet & Greet once he's open for visits.
 
-If Forward Family Medicine is your first introduction to direct primary care, here's what's different. Most primary care today is built around insurance: short visits, packed schedules, and a system that rewards volume over relationships. Direct primary care works on a flat monthly membership fee instead of insurance billing for routine care. That single structural change unlocks everything else — appointments long enough to actually talk through what's going on (typically an hour for a new patient visit), direct access to your physician by phone, text, or video when you need it, and a panel small enough that your doctor genuinely knows you. You keep your insurance for things like specialists, hospitals, imaging, and prescriptions; the membership covers the relationship with your primary care doctor.
+If Forward Family Medicine is your first introduction to direct primary care, here's what's different. Most primary care today is built around insurance: short visits, packed schedules, and a system that rewards volume over relationships. Direct primary care works on a flat monthly membership fee instead of insurance billing for routine care. That single structural change unlocks everything else — appointments long enough to actually talk through what's going on (typically 1–2 hours for a new patient visit), direct access to your physician by phone, text, or video when you need it, and a panel small enough that your doctor genuinely knows you. You keep your insurance for things like specialists, hospitals, imaging, and prescriptions; the membership covers the relationship with your primary care doctor.
 
 For most patients coming from a traditional practice, the biggest adjustment isn't the cost or the structure — it's getting used to the idea that you can actually reach your doctor when you need to, and that visits don't have to feel rushed. It's the way primary care used to work, before insurance reshaped it.
 

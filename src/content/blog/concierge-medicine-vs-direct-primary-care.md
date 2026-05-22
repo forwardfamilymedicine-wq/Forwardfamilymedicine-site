@@ -34,7 +34,7 @@ Because DPC practices opt out of insurance billing entirely, they eliminate the 
 
 **The experience for patients is remarkably similar.** In both models, you get:
 
-- A physician with a small patient panel (typically 300–600 patients in DPC generally, though at Forward Family Medicine we cap our panel at 250 patients per physician — smaller than the DPC average, which is what makes same-day access consistently reliable — versus 2,000–3,000 in conventional practices)
+- A physician with a small patient panel (typically 400–600 patients in DPC generally, though at Forward Family Medicine we cap our panel at 250 patients per physician — smaller than the DPC average, which is what makes same-day access consistently reliable — versus 2,000–3,000 in conventional practices)
 - Same-day or next-day appointment availability
 - Extended visits with time to actually talk
 - Direct physician access by phone, text, or email

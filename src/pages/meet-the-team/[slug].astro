@@ -27,9 +27,23 @@ const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/meet-the-team/${d.slug}/`;
 const credentialedName = `${d.name}, ${d.credentials}`;
 const pageTitle = `${credentialedName} | Forward Family Medicine`;
+
+const cityMap: Record<string, string> = {
+  'wayne': 'Wayne, PA',
+  'west-chester': 'West Chester, PA',
+  'malvern': 'Malvern, PA',
+};
+const locationSlugs: string[] = d.locations || ['wayne'];
+const cityNames = locationSlugs.map((s: string) => cityMap[s] || s);
+const cityString = cityNames.length === 1
+  ? cityNames[0]
+  : cityNames.length === 2
+    ? `${cityNames[0]} and ${cityNames[1]}`
+    : `${cityNames.slice(0, -1).join(', ')}, and ${cityNames[cityNames.length - 1]}`;
+
 const pageDescription = isPhysician
-  ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in Wayne, PA. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
-  : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in Wayne, PA.`;
+  ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in ${cityString}. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
+  : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in ${cityString}.`;
 
 const memberSchema = isPhysician ? {
   "@context": "https://schema.org",

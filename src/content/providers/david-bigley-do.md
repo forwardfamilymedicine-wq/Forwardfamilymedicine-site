@@ -25,6 +25,8 @@ education:
   - degree: "Family Medicine Residency"
     institution: "Christiana Care, Delaware"
     year: 2024
+notableExperience:
+  - label: "Board-Certified through the American Osteopathic Board of Family Physicians (AOBFP)"
 npi: "1093391021"
 sameAs: []
 acceptingNewPatients: false
