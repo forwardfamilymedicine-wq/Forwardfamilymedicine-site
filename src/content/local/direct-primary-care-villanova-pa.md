@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 
 # Direct Primary Care Near Villanova, PA
 
-## About Villanova, PA
-
-Villanova is one of the most prestigious addresses on the Philadelphia Main Line — home to Villanova University, established residential neighborhoods, and a community that values quality in everything it chooses. Residents include university faculty, executives, and multigenerational families who expect exceptional care from their physicians. Villanova sits just one mile from Forward Family Medicine in Wayne, making access as convenient as it comes.
-
 ## What Is Direct Primary Care?
 
 Direct Primary Care (DPC) replaces insurance billing with a flat monthly membership — covering unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. No per-visit charges. [Full DPC overview →](/direct-primary-care)
+
+## About Villanova, PA
+
+Villanova is one of the most prestigious addresses on the Philadelphia Main Line — home to Villanova University, established residential neighborhoods, and a community that values quality in everything it chooses. Residents include university faculty, executives, and multigenerational families who expect exceptional care from their physicians. Villanova sits just one mile from Forward Family Medicine in Wayne, making access as convenient as it comes.
 
 ## Why Villanova Patients Choose Forward Family Medicine
 

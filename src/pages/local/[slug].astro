@@ -4,18 +4,62 @@ import MainLayout from '../../layouts/MainLayout.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('local');
+  const allProviders = await getCollection('providers');
   return entries
     .filter(entry => !entry.data.draft)
     .map(entry => ({
       params: { slug: entry.id.replace(/\.mdx?$/, '') },
-      props: { entry },
+      props: { entry, allProviders },
     }));
 }
 
-const { entry } = Astro.props;
+const { entry, allProviders } = Astro.props;
 const { Content } = await render(entry);
 const slug = entry.id.replace(/\.mdx?$/, '');
 const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.com/local/${slug}`;
+
+// Derive location slug ("Malvern, PA" → "malvern", "King of Prussia, PA" → "king-of-prussia")
+const locationSlug = entry.data.location
+  ? entry.data.location.toLowerCase().replace(/,\s*pa$/, '').trim().replace(/\s+/g, '-')
+  : '';
+
+// Provider image: slug → /images/staff/dr-{base}.jpg
+// All three headshots omit the credential suffix and use a dr- prefix.
+// e.g. "brian-landi-do" → "/images/staff/dr-brian-landi.jpg"
+// None of the provider slugs match /images/staff/{slug}.jpg directly — REPORTED.
+function providerPhoto(provSlug: string) {
+  return `/images/staff/dr-${provSlug.replace(/-(?:do|md|pa|np|rn)$/i, '')}.jpg`;
+}
+
+// Find providers whose locations array includes this page's location slug
+const matchedProviders = locationSlug
+  ? allProviders.filter(p => p.data.locations.includes(locationSlug))
+  : [];
+
+// Build hero card data — always defined (team fallback for 0 or 2+ provider matches)
+const heroProvider = matchedProviders.length === 1
+  ? (() => {
+      const p = matchedProviders[0];
+      const cred = p.data.slug === 'brian-landi-do'
+        ? 'DO — board-certified family physician & Menopause Society Certified Practitioner'
+        : `${p.data.credentials} — ${p.data.boardStatus === 'board-certified' ? 'board-certified' : 'board-eligible'} ${(p.data.boardSpecialties[0] ?? 'family medicine').toLowerCase()} physician`;
+      return {
+        isTeam: false,
+        name: `Dr. ${p.data.name}`,
+        cred,
+        photo: providerPhoto(p.data.slug),
+        href: `/meet-the-team/${p.data.slug}/`,
+        linkLabel: 'Full bio →',
+      };
+    })()
+  : {
+      isTeam: true,
+      name: 'Our Physicians',
+      cred: 'Direct Primary Care · Wayne · Malvern · West Chester',
+      photo: '/images/staff/ffm-team.jpg',
+      href: '/meet-the-team/',
+      linkLabel: 'Meet the Team →',
+    };
 ---
 
 <MainLayout
@@ -41,6 +85,47 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
         )}
       </div>
     )}
+
+    {entry.data.mapEmbedUrl && (
+      <div id="local-map">
+        <iframe
+          src={entry.data.mapEmbedUrl}
+          width="100%"
+          height="380"
+          style="border:0;border-radius:12px;display:block;"
+          loading="lazy"
+          title={`Forward Family Medicine — ${entry.data.location ?? 'office'} map`}
+        ></iframe>
+        <div class="map-info-card">
+          <p class="map-info-location">{entry.data.location}</p>
+          {locationSlug && (
+            <a class="map-info-link" href={`/locations/${locationSlug}/`}>Office details →</a>
+          )}
+        </div>
+      </div>
+    )}
+
+    <!-- Hero provider/team card — JS moves this into the two-column hero grid -->
+    <div
+      id="hero-provider-card"
+      class={heroProvider.isTeam ? 'hero-card hero-card--team' : 'hero-card hero-card--individual'}
+    >
+      <img
+        src={heroProvider.photo}
+        alt={heroProvider.isTeam
+          ? 'Forward Family Medicine physician team'
+          : `${heroProvider.name} — Forward Family Medicine`}
+        class="hero-card-photo"
+        width={heroProvider.isTeam ? 280 : 140}
+        height={heroProvider.isTeam ? 160 : 140}
+        loading="eager"
+      />
+      <div class="hero-card-body">
+        <p class="hero-card-name">{heroProvider.name}</p>
+        <p class="hero-card-cred">{heroProvider.cred}</p>
+        <a href={heroProvider.href} class="hero-card-link">{heroProvider.linkLabel}</a>
+      </div>
+    </div>
   </div>
 </MainLayout>
 
@@ -67,7 +152,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   }
 
   /* ── Group children by h2 boundaries ────────────────────────────────── */
-  var children = Array.from(content.children); // elements only
+  var children = Array.from(content.children);
   var heroEls = [];
   var sectionGroups = [];
   var current = null;
@@ -111,12 +196,33 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   /* ── Rebuild the DOM ─────────────────────────────────────────────────── */
   content.innerHTML = '';
 
-  // Hero wrapper (breadcrumb + h1)
+  // Hero: two-column grid (text left, provider/team card right)
   var heroSection = document.createElement('div');
   heroSection.className = 'section-hero';
   var heroContainer = document.createElement('div');
-  heroContainer.className = 'lp-container';
-  heroEls.forEach(function (el) { heroContainer.appendChild(el); });
+  heroContainer.className = 'lp-container hero-grid';
+
+  var heroLeft = document.createElement('div');
+  heroLeft.className = 'hero-left';
+  heroEls.forEach(function (el) { heroLeft.appendChild(el); });
+
+  // Add CTA button if hero content (excluding breadcrumb nav) has no existing links
+  var heroHasLink = Array.from(heroLeft.children).some(function (child) {
+    return !child.classList.contains('local-breadcrumb') && !!child.querySelector('a');
+  });
+  if (!heroHasLink) {
+    var heroBtn = document.createElement('a');
+    heroBtn.href = '/contact/?subject=Join%20the%20Patient%20List';
+    heroBtn.className = 'hero-cta-btn';
+    heroBtn.textContent = 'Join the Patient List →';
+    heroLeft.appendChild(heroBtn);
+  }
+
+  heroContainer.appendChild(heroLeft);
+
+  var heroCard = document.getElementById('hero-provider-card');
+  if (heroCard) { heroContainer.appendChild(heroCard); }
+
   heroSection.appendChild(heroContainer);
   content.appendChild(heroSection);
 
@@ -152,11 +258,22 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     section.appendChild(container);
     content.appendChild(section);
 
-    // Inject stats strip immediately after the About section
+    // After About: inject stats strip, then map band immediately after (if mapEmbedUrl set)
     if (group.type === 'section-about') {
       var statsDiv = document.createElement('div');
       statsDiv.innerHTML = statsHTML;
       content.appendChild(statsDiv.firstElementChild);
+
+      var mapEl = document.getElementById('local-map');
+      if (mapEl) {
+        var mapSection = document.createElement('section');
+        mapSection.className = 'local-section section-map';
+        var mapContainer = document.createElement('div');
+        mapContainer.className = 'lp-container';
+        mapContainer.appendChild(mapEl);
+        mapSection.appendChild(mapContainer);
+        content.appendChild(mapSection);
+      }
     }
   }
 
@@ -175,17 +292,15 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     var paragraphs = Array.from(container.querySelectorAll('p'));
 
     paragraphs.forEach(function (p) {
-      // A FAQ question paragraph: first element child is <strong> and text ends with ?
       var firstChild = p.children[0];
       if (!firstChild || firstChild.tagName !== 'STRONG') return;
       var qText = firstChild.textContent.trim();
       if (!qText.endsWith('?')) return;
 
-      // Build answer HTML: clone p, remove the question strong, keep the rest
       var answerClone = p.cloneNode(true);
       var strongInClone = answerClone.querySelector('strong');
       if (strongInClone) strongInClone.remove();
-      var answerHtml = answerClone.innerHTML.replace(/^\s*\n?\s*/, ''); // trim leading whitespace
+      var answerHtml = answerClone.innerHTML.replace(/^\s*\n?\s*/, '');
 
       var item = document.createElement('div');
       item.className = 'faq-item-local';
@@ -211,7 +326,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     });
   });
 
-  // Reveal content (FOUC guard: content was hidden until DOM restructuring finished)
+  // Reveal content (FOUC guard)
   content.classList.add('ready');
 })();
 </script>
@@ -234,17 +349,27 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   }
 
   /* ════════════════════════════════════════════════════════════════
-     HERO  (breadcrumb + h1)  ─ cream bg
+     HERO  ─ two-column: text left, provider/team card right
      ════════════════════════════════════════════════════════════════ */
   .section-hero {
     background: var(--cream-100);
-    padding: clamp(40px, 6vw, 64px) 0 0;
+    padding: clamp(40px, 6vw, 64px) 0;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(260px, 340px);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
   .local-breadcrumb {
     display: block;
     font-size: 0.85rem;
     color: var(--ink-300);
-    margin-bottom: 1.5rem;
     text-decoration: none;
   }
   .local-breadcrumb a {
@@ -252,23 +377,105 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     text-decoration: none;
   }
   .local-breadcrumb a:hover { text-decoration: underline; }
-
   .section-hero h1 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
     font-weight: 700;
     line-height: 1.15;
     color: var(--ink-900);
-    margin-bottom: 0;
-    padding-bottom: clamp(32px, 5vw, 48px);
+    margin: 0;
+  }
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--green-400);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .hero-cta-btn:hover { background: var(--green-500); }
+
+  /* ── Hero provider / team card ─────────────────────────────────── */
+  .hero-card {
+    background: #fff;
+    border: 1px solid var(--cream-300);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.65rem;
+  }
+  .hero-card--individual .hero-card-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .hero-card--team .hero-card-photo {
+    width: 100%;
+    max-width: 280px;
+    height: 160px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .hero-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .hero-card-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink-900);
+    margin: 0;
+    line-height: 1.2;
+  }
+  .hero-card-cred {
+    font-size: 0.82rem;
+    color: var(--ink-700);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 280px;
+  }
+  .hero-card-link {
+    display: inline-block;
+    font-size: 0.88rem;
+    color: var(--green-300);
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 820px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-card {
+      max-width: 360px;
+      margin: 0 auto;
+    }
   }
 
   /* ════════════════════════════════════════════════════════════════
-     ABOUT  ─ cream bg (hero continuation)
+     ABOUT  ─ cream bg
      ════════════════════════════════════════════════════════════════ */
   .section-about {
     background: var(--cream-100);
   }
+  .section-about .lp-container { max-width: 820px; }
   .section-about h2 {
     font-family: var(--font-body);
     font-size: 0.78rem;
@@ -281,7 +488,6 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .section-about p {
     color: var(--ink-700);
     line-height: 1.75;
-    max-width: 720px;
     margin-bottom: 1rem;
   }
   .section-about p:last-child { margin-bottom: 0; }
@@ -326,11 +532,63 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   }
 
   /* ════════════════════════════════════════════════════════════════
-     EXPLAINER  (What Is / Concierge-Style / Prevention-First)  ─ white
+     MAP BAND  ─ cream, two-column: iframe + info card
+     ════════════════════════════════════════════════════════════════ */
+  .section-map {
+    background: var(--cream-200);
+    padding: clamp(40px, 6vw, 60px) 0;
+  }
+  #local-map {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 260px);
+    gap: 2rem;
+    align-items: start;
+  }
+  #local-map iframe {
+    display: block;
+    width: 100%;
+    min-height: 360px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+  }
+  .map-info-card {
+    background: #fff;
+    border: 1px solid var(--cream-300);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  .map-info-location {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-900);
+    margin: 0 0 0.75rem;
+    line-height: 1.25;
+  }
+  .map-info-link {
+    display: inline-block;
+    color: var(--green-300);
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 700px) {
+    #local-map {
+      grid-template-columns: 1fr;
+    }
+    #local-map iframe {
+      min-height: 280px;
+    }
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     EXPLAINER  (What Is / Concierge-Style)  ─ white
      ════════════════════════════════════════════════════════════════ */
   .section-explainer {
     background: #ffffff;
   }
+  .section-explainer .lp-container { max-width: 820px; }
   .section-explainer h2 {
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
@@ -343,7 +601,6 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .section-explainer p {
     color: var(--ink-700);
     line-height: 1.75;
-    max-width: 720px;
     margin-bottom: 1rem;
   }
   .section-explainer p:last-child { margin-bottom: 0; }
@@ -360,6 +617,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .section-why {
     background: var(--cream-200);
   }
+  .section-why .lp-container { max-width: 820px; }
   .section-why h2 {
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
@@ -371,11 +629,10 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     list-style: none;
     padding: 0;
     margin: 0;
-    max-width: 760px;
   }
   .section-why li {
     position: relative;
-    padding: 0.7rem 0 0.7rem 2rem;
+    padding: 0.85rem 0 0.85rem 2.25rem;
     color: var(--ink-700);
     line-height: 1.65;
     border-bottom: 1px solid var(--cream-300);
@@ -385,7 +642,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     content: '✓';
     position: absolute;
     left: 0;
-    top: 0.7rem;
+    top: 0.85rem;
     color: var(--green-400);
     font-weight: 700;
     font-size: 1rem;
@@ -489,6 +746,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .section-faq {
     background: var(--cream-100);
   }
+  .section-faq .lp-container { max-width: 820px; }
   .section-faq h2 {
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
@@ -496,17 +754,15 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     margin-bottom: 2rem;
     line-height: 1.25;
   }
-  /* Any non-accordion paragraphs (intro text above FAQs) */
   .section-faq > .lp-container > p,
   .section-faq .lp-container > p {
     color: var(--ink-700);
     line-height: 1.75;
-    max-width: 720px;
     margin-bottom: 1rem;
   }
   .faq-item-local {
     border-top: 1px solid var(--cream-300);
-    max-width: 800px;
+    max-width: 780px;
   }
   .faq-item-local:last-child {
     border-bottom: 1px solid var(--cream-300);
@@ -517,7 +773,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.15rem 0;
+    padding: 1.25rem 0;
     background: none;
     border: none;
     font-family: var(--font-body);
@@ -543,7 +799,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     display: inline-block;
   }
   .faq-a {
-    padding-bottom: 1.15rem;
+    padding-bottom: 1.25rem;
   }
   .faq-a p {
     color: var(--ink-700);
@@ -580,7 +836,6 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
     font-size: 1rem;
   }
   .section-cta strong { color: #ffffff; }
-  /* CTA links become button-style */
   .section-cta strong > a,
   .section-cta p > strong > a {
     display: inline-block;
@@ -598,7 +853,6 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
   .section-cta p > strong > a:hover {
     background: var(--cream-200);
   }
-  /* localNote and nearby inside the CTA */
   .section-cta .local-note {
     font-size: 0.88rem;
     color: rgba(255, 255, 255, 0.75);
@@ -617,7 +871,7 @@ const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.
      GENERIC / editorial sections  ─ white
      ════════════════════════════════════════════════════════════════ */
   .section-explainer.section-generic,
-  .local-section:not(.section-about):not(.section-why):not(.section-services):not(.section-info):not(.section-faq):not(.section-cta):not(.section-explainer) {
+  .local-section:not(.section-about):not(.section-why):not(.section-services):not(.section-info):not(.section-faq):not(.section-cta):not(.section-explainer):not(.section-map) {
     background: #ffffff;
   }
   .section-generic h2 {

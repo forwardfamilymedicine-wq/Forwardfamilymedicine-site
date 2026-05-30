@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Exton, Phoenixville, Malvern, Downingtown, and Pottstown"
 
 # Concierge Doctor in Chester Springs, PA
 
-## About Chester Springs, PA
-
-Chester Springs spans several Chester County townships across the PA-100 and PA-401 corridors — equestrian properties, historic Yellow Springs Village, large lots, and a community that values quality and quiet over density. Residents here often find that concierge-style care — where your physician actually knows you, answers directly, and schedules you for a real conversation — is exactly what they've been looking for. Forward Family Medicine delivers that at DPC pricing, with our Malvern office about 15–20 minutes from most of Chester Springs.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Chester Springs, PA
+
+Chester Springs spans several Chester County townships across the PA-100 and PA-401 corridors — equestrian properties, historic Yellow Springs Village, large lots, and a community that values quality and quiet over density. Residents here often find that concierge-style care — where your physician actually knows you, answers directly, and schedules you for a real conversation — is exactly what they've been looking for. Forward Family Medicine delivers that at DPC pricing, with our Malvern office about 15–20 minutes from most of Chester Springs.
 
 ## Why Chester Springs Patients Choose This Practice
 

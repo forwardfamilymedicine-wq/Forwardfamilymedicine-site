@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 
 # Direct Primary Care Near Devon, PA
 
-## About Devon, PA
-
-Devon is a Chester County community nestled between Wayne and Paoli on Lancaster Avenue — home to the world-famous Devon Horse Show, leafy residential streets, and the Devon Yard mixed-use development that reflects the community's evolving, health-conscious character. Devon residents value authenticity and quality — and they're finding those same qualities in the DPC primary care model just a few minutes east.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. [Full DPC overview →](/direct-primary-care)
+
+## About Devon, PA
+
+Devon is a Chester County community nestled between Wayne and Paoli on Lancaster Avenue — home to the world-famous Devon Horse Show, leafy residential streets, and the Devon Yard mixed-use development that reflects the community's evolving, health-conscious character. Devon residents value authenticity and quality — and they're finding those same qualities in the DPC primary care model just a few minutes east.
 
 ## Why Devon Patients Choose Forward Family Medicine
 

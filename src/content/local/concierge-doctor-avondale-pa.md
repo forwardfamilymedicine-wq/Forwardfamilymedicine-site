@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hock
 
 # Concierge Doctor in Avondale, PA
 
-## About Avondale, PA
-
-Avondale is a small Chester County borough in Pennsylvania's southern mushroom-growing corridor — a community with strong roots in the agricultural industry, a large and established Hispanic population, and families who have been here for generations. Concierge-level healthcare — where your physician knows you, takes time for a real conversation, and is actually reachable when you need them — is what Forward Family Medicine delivers at a flat monthly DPC membership, without the $4,000+ retainer that puts traditional concierge practices out of reach. Our West Chester office is about 25–30 minutes north.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Avondale, PA
+
+Avondale is a small Chester County borough in Pennsylvania's southern mushroom-growing corridor — a community with strong roots in the agricultural industry, a large and established Hispanic population, and families who have been here for generations. Concierge-level healthcare — where your physician knows you, takes time for a real conversation, and is actually reachable when you need them — is what Forward Family Medicine delivers at a flat monthly DPC membership, without the $4,000+ retainer that puts traditional concierge practices out of reach. Our West Chester office is about 25–30 minutes north.
 
 ## Why Avondale Patients Choose This Practice
 

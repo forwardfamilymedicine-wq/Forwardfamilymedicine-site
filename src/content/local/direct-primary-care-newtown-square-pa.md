@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 
 # Direct Primary Care Near Newtown Square, PA
 
-## About Newtown Square, PA
-
-Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. SAP's North American headquarters, among others, anchors a professional community that values efficiency and quality. For Newtown Square residents seeking primary care that reflects those priorities — accessible, unhurried, and prevention-focused — Forward Family Medicine in Wayne is approximately 7–8 miles north.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care)
+
+## About Newtown Square, PA
+
+Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. SAP's North American headquarters, among others, anchors a professional community that values efficiency and quality. For Newtown Square residents seeking primary care that reflects those priorities — accessible, unhurried, and prevention-focused — Forward Family Medicine in Wayne is approximately 7–8 miles north.
 
 ## Why Newtown Square Patients Choose Forward Family Medicine
 

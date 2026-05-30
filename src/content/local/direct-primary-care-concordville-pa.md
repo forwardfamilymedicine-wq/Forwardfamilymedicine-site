@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 
 # Direct Primary Care in Concordville, PA
 
-## About Concordville, PA
-
-Concordville is a historic Delaware County community in Concord Township — settled by Quakers in the 17th century, anchored by the Concord Friends Meetinghouse (built 1728), and today a prosperous residential area at the junction of US Routes 1 and 322. The Painters Crossing commercial district and Concordville's proximity to both West Chester and Philadelphia make it a well-positioned community whose residents expect quality in the professional services they choose, including healthcare. Forward Family Medicine — with offices in West Chester (about 10–15 minutes) and Malvern (about 15–20 minutes) — is built for exactly that expectation.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Concordville, PA
+
+Concordville is a historic Delaware County community in Concord Township — settled by Quakers in the 17th century, anchored by the Concord Friends Meetinghouse (built 1728), and today a prosperous residential area at the junction of US Routes 1 and 322. The Painters Crossing commercial district and Concordville's proximity to both West Chester and Philadelphia make it a well-positioned community whose residents expect quality in the professional services they choose, including healthcare. Forward Family Medicine — with offices in West Chester (about 10–15 minutes) and Malvern (about 15–20 minutes) — is built for exactly that expectation.
 
 ## Why Concordville Patients Choose Forward Family Medicine
 

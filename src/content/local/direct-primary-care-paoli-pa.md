@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Devon, Malvern, Berwyn, and Frazer"
 
 # Direct Primary Care Near Paoli, PA
 
-## About Paoli, PA
-
-Paoli is the western anchor of the Philadelphia Main Line — a Chester County community with a strong residential character, Paoli Hospital, and easy access east toward Wayne and Philadelphia via Route 30 and the Paoli–Thorndale SEPTA line. Paoli residents span working families, healthcare professionals connected to Paoli Hospital, and longtime Chester County residents who take pride in their community and want healthcare that matches that standard.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care)
+
+## About Paoli, PA
+
+Paoli is the western anchor of the Philadelphia Main Line — a Chester County community with a strong residential character, Paoli Hospital, and easy access east toward Wayne and Philadelphia via Route 30 and the Paoli–Thorndale SEPTA line. Paoli residents span working families, healthcare professionals connected to Paoli Hospital, and longtime Chester County residents who take pride in their community and want healthcare that matches that standard.
 
 ## Why Paoli Patients Choose Forward Family Medicine
 

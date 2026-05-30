@@ -25,15 +25,15 @@ nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 
 # Direct Primary Care in Wayne, PA
 
+## What Is Direct Primary Care?
+
+Direct Primary Care (DPC) is a membership-based model in which patients pay a flat monthly fee directly to their physician — no insurance billing for primary care, no copays, no per-visit charges. In return, members receive unlimited primary care visits, same-day or next-day access, and a direct line to their physician.
+
 ## About Wayne, PA
 
 Wayne, Pennsylvania is a vibrant Philadelphia Main Line community known for its walkable downtown, excellent schools, and family-friendly neighborhoods. Many residents choose personalized primary care that prioritizes prevention, longer visits, and strong doctor–patient relationships — which is the focus of Forward Family Medicine.
 
 Wayne sits at the heart of the Main Line, anchored by Lancaster Avenue, the Paoli–Thorndale SEPTA rail line, and a strong sense of community. Residents range from young families and working professionals to longtime Radnor Township residents and faculty connected to nearby universities. For all of them, quality primary care close to home matters — and the traditional insurance-based model has left many feeling rushed and underserved.
-
-## What Is Direct Primary Care?
-
-Direct Primary Care (DPC) is a membership-based model in which patients pay a flat monthly fee directly to their physician — no insurance billing for primary care, no copays, no per-visit charges. In return, members receive unlimited primary care visits, same-day or next-day access, and a direct line to their physician.
 
 ## Why Wayne Patients Choose Forward Family Medicine
 

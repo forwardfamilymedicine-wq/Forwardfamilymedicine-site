@@ -24,13 +24,13 @@ nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 
 # Direct Primary Care in Kennett Square, PA
 
-## About Kennett Square, PA
-
-Kennett Square is the "Mushroom Capital of the World" — producing more than half of the nation's supply — and a Chester County borough with a revitalized downtown, a strong agricultural heritage, and a community that includes long-established families and newer residents drawn by Longwood Gardens and the borough's quality of life. Residents here navigate healthcare options that are often more limited than those in the northern Main Line corridor. Forward Family Medicine's West Chester office — about 15–20 minutes north — offers something genuinely different: a physician who knows you, same-day access, and visits long enough to actually address your health.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Kennett Square, PA
+
+Kennett Square is the "Mushroom Capital of the World" — producing more than half of the nation's supply — and a Chester County borough with a revitalized downtown, a strong agricultural heritage, and a community that includes long-established families and newer residents drawn by Longwood Gardens and the borough's quality of life. Residents here navigate healthcare options that are often more limited than those in the northern Main Line corridor. Forward Family Medicine's West Chester office — about 15–20 minutes north — offers something genuinely different: a physician who knows you, same-day access, and visits long enough to actually address your health.
 
 ## Why Kennett Square Patients Choose Forward Family Medicine
 

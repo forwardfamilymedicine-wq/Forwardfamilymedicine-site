@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 
 # Direct Primary Care Near King of Prussia, PA
 
-## About King of Prussia, PA
-
-King of Prussia is Montgomery County's major commercial and corporate hub — home to the KOP Mall, Valley Forge National Historical Park, and a dense concentration of corporate campuses. KOP's population includes a significant number of professionals and families who commute through or work in the area's business parks. With a fast-paced professional culture, King of Prussia residents often find traditional primary care — long waits, hard-to-reach physicians, rushed visits — particularly frustrating. Direct Primary Care offers a different model, just 7 miles south in Wayne.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale labs. No copays. [Full DPC overview →](/direct-primary-care)
+
+## About King of Prussia, PA
+
+King of Prussia is Montgomery County's major commercial and corporate hub — home to the KOP Mall, Valley Forge National Historical Park, and a dense concentration of corporate campuses. KOP's population includes a significant number of professionals and families who commute through or work in the area's business parks. With a fast-paced professional culture, King of Prussia residents often find traditional primary care — long waits, hard-to-reach physicians, rushed visits — particularly frustrating. Direct Primary Care offers a different model, just 7 miles south in Wayne.
 
 ## Why King of Prussia Patients Choose Forward Family Medicine
 

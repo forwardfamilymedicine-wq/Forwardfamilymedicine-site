@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Exton, Malvern, Downingtown, Phoenixville, and Frazer"
 
 # Concierge Doctor in Lionville, PA
 
-## About Lionville, PA
-
-Lionville is a Chester County community in Uwchlan Township — a close-knit suburb at the intersection of PA-100 and PA-113, with a professional, highly educated population and strong ties to the Downingtown Area School District. Lionville shares much of its character with neighboring Exton: dual-income professional households, families who invest in quality, and a community that hasn't found what it's looking for in standard primary care. Forward Family Medicine's Malvern office — about 10–12 minutes south on PA-100 — delivers the concierge experience at a flat monthly DPC membership.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Lionville, PA
+
+Lionville is a Chester County community in Uwchlan Township — a close-knit suburb at the intersection of PA-100 and PA-113, with a professional, highly educated population and strong ties to the Downingtown Area School District. Lionville shares much of its character with neighboring Exton: dual-income professional households, families who invest in quality, and a community that hasn't found what it's looking for in standard primary care. Forward Family Medicine's Malvern office — about 10–12 minutes south on PA-100 — delivers the concierge experience at a flat monthly DPC membership.
 
 ## Why Lionville Patients Choose This Practice
 

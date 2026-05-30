@@ -64,6 +64,9 @@
     "nearbyNeighborhoods": {
       "type": "string"
     },
+    "mapEmbedUrl": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

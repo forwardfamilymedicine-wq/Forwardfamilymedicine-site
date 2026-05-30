@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Exton, Malvern, Coatesville, Thorndale, and Parkesburg"
 
 # Concierge Doctor in Downingtown, PA
 
-## About Downingtown, PA
-
-Downingtown is a Chester County borough with SEPTA commuter rail access, a highly regarded school district, and a professional community that has come to expect quality in how they manage their lives. The Downingtown Area School District's nationally recognized STEM Academy draws families who plan ahead and invest in the long term — including in their healthcare. Many Downingtown residents have tried or considered concierge medicine but balked at the $4,000–$15,000 annual retainer. Forward Family Medicine — with offices in West Chester (about 10–12 minutes) and Malvern (about 15–18 minutes) — delivers the same experience at a flat monthly DPC membership.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Downingtown, PA
+
+Downingtown is a Chester County borough with SEPTA commuter rail access, a highly regarded school district, and a professional community that has come to expect quality in how they manage their lives. The Downingtown Area School District's nationally recognized STEM Academy draws families who plan ahead and invest in the long term — including in their healthcare. Many Downingtown residents have tried or considered concierge medicine but balked at the $4,000–$15,000 annual retainer. Forward Family Medicine — with offices in West Chester (about 10–12 minutes) and Malvern (about 15–18 minutes) — delivers the same experience at a flat monthly DPC membership.
 
 ## Why Downingtown Patients Choose This Practice
 

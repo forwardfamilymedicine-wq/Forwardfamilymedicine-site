@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 
 # Concierge Doctor in Concordville, PA
 
-## About Concordville, PA
-
-Concordville is a historic Delaware County community settled by Quakers in the 17th century — anchored by the Concord Friends Meetinghouse (built 1728) and today one of the more prosperous communities along the US-1 and US-322 corridor. Residents here share the Garnet Valley School District with neighboring Glen Mills, and a professional character that places high value on quality of service. The kind of healthcare where your physician knows you, answers directly, and has time for a real conversation fits this community's expectations exactly. Forward Family Medicine's West Chester office is about 10–15 minutes away.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Concordville, PA
+
+Concordville is a historic Delaware County community settled by Quakers in the 17th century — anchored by the Concord Friends Meetinghouse (built 1728) and today one of the more prosperous communities along the US-1 and US-322 corridor. Residents here share the Garnet Valley School District with neighboring Glen Mills, and a professional character that places high value on quality of service. The kind of healthcare where your physician knows you, answers directly, and has time for a real conversation fits this community's expectations exactly. Forward Family Medicine's West Chester office is about 10–15 minutes away.
 
 ## Why Concordville Patients Choose This Practice
 

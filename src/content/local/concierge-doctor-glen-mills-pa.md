@@ -24,13 +24,13 @@ nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 
 # Concierge Doctor in Glen Mills, PA
 
-## About Glen Mills, PA
-
-Glen Mills is an established Delaware County community with an affluent, highly educated population, the well-regarded Garnet Valley School District, and a median age that reflects a mature, settled professional base. Residents here have often sought or considered concierge-level primary care — the kind of relationship where your physician actually knows your history, answers your calls, and has time for a real conversation. Forward Family Medicine — with offices in West Chester (about 12–15 minutes) and Malvern (about 15–18 minutes) — delivers exactly that, without the traditional concierge retainer.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Glen Mills, PA
+
+Glen Mills is an established Delaware County community with an affluent, highly educated population, the well-regarded Garnet Valley School District, and a median age that reflects a mature, settled professional base. Residents here have often sought or considered concierge-level primary care — the kind of relationship where your physician actually knows your history, answers your calls, and has time for a real conversation. Forward Family Medicine — with offices in West Chester (about 12–15 minutes) and Malvern (about 15–18 minutes) — delivers exactly that, without the traditional concierge retainer.
 
 ## Why Glen Mills Patients Choose This Practice
 

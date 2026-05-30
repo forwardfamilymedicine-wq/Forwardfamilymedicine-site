@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 
 # Direct Primary Care Near Radnor, PA
 
-## About Radnor, PA
-
-Radnor Township is one of the Philadelphia Main Line's most distinguished communities — home to major corporate headquarters, excellent schools (Radnor School District), and diverse residential neighborhoods spanning Wayne, Villanova, Strafford, and St. Davids. Radnor residents include executives, professionals, academics, and established families who expect a high standard from every professional relationship — including their physician. Forward Family Medicine, located within Radnor Township in Wayne, is built precisely for this community.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no surprises. [Full DPC overview →](/direct-primary-care)
+
+## About Radnor, PA
+
+Radnor Township is one of the Philadelphia Main Line's most distinguished communities — home to major corporate headquarters, excellent schools (Radnor School District), and diverse residential neighborhoods spanning Wayne, Villanova, Strafford, and St. Davids. Radnor residents include executives, professionals, academics, and established families who expect a high standard from every professional relationship — including their physician. Forward Family Medicine, located within Radnor Township in Wayne, is built precisely for this community.
 
 ## Why Radnor Township Patients Choose Forward Family Medicine
 

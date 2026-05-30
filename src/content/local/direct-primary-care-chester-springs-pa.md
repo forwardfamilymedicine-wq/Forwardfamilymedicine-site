@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Exton, Phoenixville, Malvern, Downingtown, and Pottstown"
 
 # Direct Primary Care in Chester Springs, PA
 
-## About Chester Springs, PA
-
-Chester Springs is a Chester County community spread across West Pikeland, Charlestown, Upper Uwchlan, and surrounding townships — known for equestrian properties, large lots, historic Yellow Springs Village, and an outdoor-oriented lifestyle along the PA-100 and PA-401 corridors. Residents here tend toward a self-sufficient mindset and a high premium on quality over volume. The challenge has always been finding a primary care practice worthy of that expectation within reasonable distance. Forward Family Medicine's Malvern office — about 15–20 minutes away — offers the depth this community has been looking for.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Chester Springs, PA
+
+Chester Springs is a Chester County community spread across West Pikeland, Charlestown, Upper Uwchlan, and surrounding townships — known for equestrian properties, large lots, historic Yellow Springs Village, and an outdoor-oriented lifestyle along the PA-100 and PA-401 corridors. Residents here tend toward a self-sufficient mindset and a high premium on quality over volume. The challenge has always been finding a primary care practice worthy of that expectation within reasonable distance. Forward Family Medicine's Malvern office — about 15–20 minutes away — offers the depth this community has been looking for.
 
 ## Why Chester Springs Patients Choose Forward Family Medicine
 

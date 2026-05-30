@@ -15,7 +15,9 @@ locations:
 boardStatus: "board-certified"
 boardSpecialties:
   - "Family Medicine"
-additionalCertifications: []
+additionalCertifications:
+  - name: "Menopause Society Certified Practitioner"
+    organization: "The Menopause Society"
 education:
   - degree: "Bachelor of Science"
     institution: "Pennsylvania State University"
@@ -30,8 +32,8 @@ notableExperience:
   - label: "Chief Resident, ChristianaCare Family Medicine Residency"
   - label: "Six-time triathlete"
   - label: "Board-certified through the American Osteopathic Board of Family Physicians (AOBFP)"
-  - label: "Sitting for Menopause Society Certified Practitioner (MSCP) certification — June 2026"
-    description: "Certification offered through The Menopause Society, focused on evidence-based care for perimenopause, menopause, and midlife women's health."
+  - label: "Menopause Society Certified Practitioner (MSCP)"
+    description: "Credential awarded by The Menopause Society for demonstrated competency in evidence-based care for perimenopause, menopause, and midlife women's health."
 npi: "1578213062"
 sameAs:
   - "https://npiregistry.cms.hhs.gov/provider-view/1578213062"
@@ -46,7 +48,7 @@ Dr. Brian Landi is a board-certified family physician dedicated to delivering hi
 
 Dr. Landi believes the best medical care begins with time, attention, and trust. After practicing in an insurance-based system, he found himself rushed through visits and unable to give patients the care they actually needed. He chose direct primary care to recover that time — to practice medicine the way it was meant to be practiced, unhurried, deeply attentive, and focused on the whole person rather than a checklist of symptoms.
 
-He has a special clinical interest in midlife health and women's wellness and is sitting for the Menopause Society Certified Practitioner (MSCP) exam in June 2026, the certification offered through The Menopause Society. This advanced training allows him to provide evidence-based, compassionate guidance to patients navigating perimenopause, menopause, and healthy aging.
+He has a special clinical interest in midlife health and women's wellness and holds the Menopause Society Certified Practitioner (MSCP) credential, awarded by The Menopause Society. This certification reflects his commitment to providing evidence-based, compassionate guidance to patients navigating perimenopause, menopause, and healthy aging.
 
 Outside of medicine, Dr. Landi is a triathlete who has completed six triathlons. He enjoys traveling with his family, woodworking, and cooking — interests that reflect his appreciation for craftsmanship, discipline, curiosity about the world, and the simple joy of bringing people together.
 

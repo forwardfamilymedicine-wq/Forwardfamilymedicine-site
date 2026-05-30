@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Malvern, Spring City, Royersford, Collegeville, and Paoli"
 
 # Concierge Doctor in Phoenixville, PA
 
-## About Phoenixville, PA
-
-Phoenixville is a Chester County borough with a revitalized downtown, an arts and food scene centered on Bridge Street, and a creative professional community that has settled in one of the region's most distinctive small cities. Residents here tend to be independent thinkers who have already questioned why their healthcare doesn't work the way other professional services do — why their doctor is always rushed, why scheduling takes weeks, why their medical records don't tell a coherent story. Forward Family Medicine — with our Malvern office about 12–15 minutes away — answers all of those questions.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Phoenixville, PA
+
+Phoenixville is a Chester County borough with a revitalized downtown, an arts and food scene centered on Bridge Street, and a creative professional community that has settled in one of the region's most distinctive small cities. Residents here tend to be independent thinkers who have already questioned why their healthcare doesn't work the way other professional services do — why their doctor is always rushed, why scheduling takes weeks, why their medical records don't tell a coherent story. Forward Family Medicine — with our Malvern office about 12–15 minutes away — answers all of those questions.
 
 ## Why Phoenixville Patients Choose This Practice
 

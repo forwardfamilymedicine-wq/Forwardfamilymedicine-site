@@ -24,13 +24,13 @@ nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 
 # Concierge Doctor in Kennett Square, PA
 
-## About Kennett Square, PA
-
-Kennett Square is Chester County's southern borough — "Mushroom Capital of the World," home to one of the region's most revitalized downtowns, and a short drive from Longwood Gardens. Residents here include long-established families, agricultural professionals, and newer arrivals drawn by the community's character. Concierge-quality primary care has historically been concentrated in the northern Main Line corridor — Forward Family Medicine's West Chester office, about 15–20 minutes north of Kennett Square, changes that equation.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Kennett Square, PA
+
+Kennett Square is Chester County's southern borough — "Mushroom Capital of the World," home to one of the region's most revitalized downtowns, and a short drive from Longwood Gardens. Residents here include long-established families, agricultural professionals, and newer arrivals drawn by the community's character. Concierge-quality primary care has historically been concentrated in the northern Main Line corridor — Forward Family Medicine's West Chester office, about 15–20 minutes north of Kennett Square, changes that equation.
 
 ## Why Kennett Square Patients Choose This Practice
 

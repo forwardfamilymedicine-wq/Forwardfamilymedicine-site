@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Malvern, West Chester, Lionville, Downingtown, and Frazer"
 
 # Concierge Doctor in Exton, PA
 
-## About Exton, PA
-
-Exton is a Chester County community at the intersection of US Route 30 and PA Route 100 — anchored by the Eagleview planned community, West Pharmaceutical Services, and a professional workforce spanning technical, financial, and healthcare industries. Residents here are accustomed to quality and efficiency in how they manage their lives — and many have either sought, tried, or quietly wished for the kind of healthcare where their physician actually knows them, answers directly, and has time for a real conversation. Forward Family Medicine — with offices in Malvern (about 10 minutes from Exton) and West Chester (about 12–15 minutes) — delivers that experience at Direct Primary Care pricing.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Exton, PA
+
+Exton is a Chester County community at the intersection of US Route 30 and PA Route 100 — anchored by the Eagleview planned community, West Pharmaceutical Services, and a professional workforce spanning technical, financial, and healthcare industries. Residents here are accustomed to quality and efficiency in how they manage their lives — and many have either sought, tried, or quietly wished for the kind of healthcare where their physician actually knows them, answers directly, and has time for a real conversation. Forward Family Medicine — with offices in Malvern (about 10 minutes from Exton) and West Chester (about 12–15 minutes) — delivers that experience at Direct Primary Care pricing.
 
 ## Why Exton Patients Choose This Practice
 

@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hock
 
 # Direct Primary Care in Avondale, PA
 
-## About Avondale, PA
-
-Avondale is a Chester County borough in the southern part of the county — a community shaped by the regional mushroom industry, a strong Hispanic heritage centered around St. Rocco Church (the first National Hispanic Parish established by the Archdiocese of Philadelphia), and families who have built roots here over generations. Access to quality primary care at a reasonable cost is a real and practical concern for many Avondale residents. Forward Family Medicine's West Chester office — about 25–30 minutes north — offers same-day access, direct physician contact, and a flat monthly fee that replaces the per-visit billing model.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Avondale, PA
+
+Avondale is a Chester County borough in the southern part of the county — a community shaped by the regional mushroom industry, a strong Hispanic heritage centered around St. Rocco Church (the first National Hispanic Parish established by the Archdiocese of Philadelphia), and families who have built roots here over generations. Access to quality primary care at a reasonable cost is a real and practical concern for many Avondale residents. Forward Family Medicine's West Chester office — about 25–30 minutes north — offers same-day access, direct physician contact, and a flat monthly fee that replaces the per-visit billing model.
 
 ## Why Avondale Patients Choose Forward Family Medicine
 

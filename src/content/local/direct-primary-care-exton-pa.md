@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Malvern, West Chester, Lionville, Downingtown, and Frazer"
 
 # Direct Primary Care in Exton, PA
 
-## About Exton, PA
-
-Exton is a Chester County community at the crossroads of US Route 30 (Lincoln Highway) and PA Route 100 — a hub for professional and technical employment anchored by West Pharmaceutical Services and the Eagleview planned community. West Whiteland Township residents include a high concentration of professionals in technical, financial, and healthcare industries, many of whom are accustomed to quality service and have found that insurance-driven primary care doesn't match how they want to manage their health. Forward Family Medicine — with offices in Malvern (about 10 minutes from Exton) and West Chester (about 12–15 minutes) — is built for exactly this community: small panel, real visit length, direct physician access, no insurance overhead.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Exton, PA
+
+Exton is a Chester County community at the crossroads of US Route 30 (Lincoln Highway) and PA Route 100 — a hub for professional and technical employment anchored by West Pharmaceutical Services and the Eagleview planned community. West Whiteland Township residents include a high concentration of professionals in technical, financial, and healthcare industries, many of whom are accustomed to quality service and have found that insurance-driven primary care doesn't match how they want to manage their health. Forward Family Medicine — with offices in Malvern (about 10 minutes from Exton) and West Chester (about 12–15 minutes) — is built for exactly this community: small panel, real visit length, direct physician access, no insurance overhead.
 
 ## Why Exton Patients Choose Forward Family Medicine
 

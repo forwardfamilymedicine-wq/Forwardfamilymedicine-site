@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 
 # Direct Primary Care Near Haverford, PA
 
-## About Haverford, PA
-
-Haverford is a quiet, leafy Lower Merion Township community best known for Haverford College, its beautiful residential character, and a strong sense of community identity. Haverford residents — including college faculty, professionals, and families who chose the area for its pace and quality — expect thoughtful, relationship-based care from their physicians. Direct Primary Care at Forward Family Medicine, 5–6 miles west in Wayne, provides exactly that.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. [Full DPC overview →](/direct-primary-care)
+
+## About Haverford, PA
+
+Haverford is a quiet, leafy Lower Merion Township community best known for Haverford College, its beautiful residential character, and a strong sense of community identity. Haverford residents — including college faculty, professionals, and families who chose the area for its pace and quality — expect thoughtful, relationship-based care from their physicians. Direct Primary Care at Forward Family Medicine, 5–6 miles west in Wayne, provides exactly that.
 
 ## Why Haverford Patients Choose Forward Family Medicine
 

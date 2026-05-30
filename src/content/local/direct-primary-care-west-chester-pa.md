@@ -20,17 +20,18 @@ linksTo:
   - "/new-patients"
 localNote: "Forward Family Medicine is opening a West Chester office at 1450 Boot Rd Ste 300A in August 2026 — Direct Primary Care led by Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. West Chester residents now have in-person DPC in their own community."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
+mapEmbedUrl: "https://www.google.com/maps?q=1450+Boot+Rd+Ste+300A,+West+Chester,+PA+19380&output=embed"
 ---
 
 # Direct Primary Care in West Chester, PA
 
-## About West Chester, PA
-
-West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — all of whom share a high standard for the relationships they form with healthcare providers. Forward Family Medicine — with a new West Chester office at 1450 Boot Rd Ste 300A opening August 2026 — is built for this community: small panel size, real visit length, direct physician access, no insurance overhead.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About West Chester, PA
+
+West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — all of whom share a high standard for the relationships they form with healthcare providers. Forward Family Medicine — with a new West Chester office at 1450 Boot Rd Ste 300A opening August 2026 — is built for this community: small panel size, real visit length, direct physician access, no insurance overhead.
 
 ## Why West Chester Patients Choose Forward Family Medicine
 
@@ -74,7 +75,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380 — [office info →](/locations/west-chester)
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

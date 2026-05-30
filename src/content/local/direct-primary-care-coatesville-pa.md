@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 
 # Direct Primary Care in Coatesville, PA
 
-## About Coatesville, PA
-
-Coatesville is the only incorporated city in Chester County — a community with deep industrial roots in steel manufacturing, a diverse population, and a revitalization underway along its Route 30 corridor. The closure of Brandywine Hospital in 2022 left a significant gap in local healthcare access, and residents have since navigated more limited options for primary care. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a genuine alternative: a physician who knows you, same-day access when you need it, and visits built for real conversation, not a five-minute check-in.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Coatesville, PA
+
+Coatesville is the only incorporated city in Chester County — a community with deep industrial roots in steel manufacturing, a diverse population, and a revitalization underway along its Route 30 corridor. The closure of Brandywine Hospital in 2022 left a significant gap in local healthcare access, and residents have since navigated more limited options for primary care. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a genuine alternative: a physician who knows you, same-day access when you need it, and visits built for real conversation, not a five-minute check-in.
 
 ## Why Coatesville Patients Choose Forward Family Medicine
 

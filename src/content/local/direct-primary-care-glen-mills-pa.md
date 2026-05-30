@@ -24,13 +24,13 @@ nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 
 # Direct Primary Care in Glen Mills, PA
 
-## About Glen Mills, PA
-
-Glen Mills is an affluent, established Delaware County community in Concord and Thornbury Townships — known for the Garnet Valley School District, a highly educated professional population, and a mature suburban character that attracts families who plan ahead and stay. With a median age over 45 and more than half of residents holding bachelor's degrees or higher, Glen Mills households tend to be discerning about healthcare choices. Forward Family Medicine — with offices in West Chester (about 12–15 minutes) and Malvern (about 15–18 minutes) — offers the kind of primary care this community has been looking for.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Glen Mills, PA
+
+Glen Mills is an affluent, established Delaware County community in Concord and Thornbury Townships — known for the Garnet Valley School District, a highly educated professional population, and a mature suburban character that attracts families who plan ahead and stay. With a median age over 45 and more than half of residents holding bachelor's degrees or higher, Glen Mills households tend to be discerning about healthcare choices. Forward Family Medicine — with offices in West Chester (about 12–15 minutes) and Malvern (about 15–18 minutes) — offers the kind of primary care this community has been looking for.
 
 ## Why Glen Mills Patients Choose Forward Family Medicine
 

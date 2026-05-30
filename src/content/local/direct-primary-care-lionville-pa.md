@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Exton, Malvern, Downingtown, Phoenixville, and Frazer"
 
 # Direct Primary Care in Lionville, PA
 
-## About Lionville, PA
-
-Lionville is a Uwchlan Township community in Chester County — a close-knit, family-oriented suburb with strong Downingtown Area School District roots and a character that closely mirrors neighboring Exton. Situated at the intersection of PA-100 and PA-113, Lionville has a long history going back to the Uwchlan Meetinghouse, a Quaker meeting house used as a hospital during the American Revolutionary War. Today it's a professional, highly educated community of families and dual-income households who expect quality in the services they choose. Forward Family Medicine's Malvern office — about 10–12 minutes south — is built for exactly that.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Lionville, PA
+
+Lionville is a Uwchlan Township community in Chester County — a close-knit, family-oriented suburb with strong Downingtown Area School District roots and a character that closely mirrors neighboring Exton. Situated at the intersection of PA-100 and PA-113, Lionville has a long history going back to the Uwchlan Meetinghouse, a Quaker meeting house used as a hospital during the American Revolutionary War. Today it's a professional, highly educated community of families and dual-income households who expect quality in the services they choose. Forward Family Medicine's Malvern office — about 10–12 minutes south — is built for exactly that.
 
 ## Why Lionville Patients Choose Forward Family Medicine
 

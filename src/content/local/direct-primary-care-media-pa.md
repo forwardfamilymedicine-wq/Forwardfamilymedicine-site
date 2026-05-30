@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 
 # Direct Primary Care Near Media, PA
 
-## About Media, PA
-
-Media is Delaware County's "everybody's hometown" — a walkable borough with a distinctive Main Street, a strong sense of community, and a mix of long-established families and newcomers attracted by the borough's character and its position as Delaware County's seat. Media residents value genuine relationships, including with their physicians. Traditional primary care rarely delivers that: large panels, rushed visits, and physicians who rotate through. Direct Primary Care is designed differently. Forward Family Medicine is approximately 12 miles north in Wayne.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care)
+
+## About Media, PA
+
+Media is Delaware County's "everybody's hometown" — a walkable borough with a distinctive Main Street, a strong sense of community, and a mix of long-established families and newcomers attracted by the borough's character and its position as Delaware County's seat. Media residents value genuine relationships, including with their physicians. Traditional primary care rarely delivers that: large panels, rushed visits, and physicians who rotate through. Direct Primary Care is designed differently. Forward Family Medicine is approximately 12 miles north in Wayne.
 
 ## Why Media Patients Choose Forward Family Medicine
 

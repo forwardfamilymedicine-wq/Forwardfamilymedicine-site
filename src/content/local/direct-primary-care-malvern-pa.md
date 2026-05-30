@@ -20,17 +20,18 @@ linksTo:
   - "/new-patients"
 localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr Ste 206 in August 2026 — Direct Primary Care led by Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. Malvern residents now have in-person DPC without the drive east to Wayne."
 nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
+mapEmbedUrl: "https://www.google.com/maps?q=301+Lindenwood+Dr+Ste+206,+Malvern,+PA+19355&output=embed"
 ---
 
 # Direct Primary Care in Malvern, PA
 
-## About Malvern, PA
-
-Malvern is a Chester County borough at the intersection of a historic downtown, a strong professional community, and the Route 30 / Route 202 corridor. Malvern residents are healthcare-aware, often work in demanding professional or technical roles, and increasingly find that volume-driven insurance-based primary care doesn't match how they want to manage their own health. Forward Family Medicine — with a new Malvern office at 301 Lindenwood Dr Ste 206 opening August 2026 — is built specifically for this community: small panel size, real visit length, direct physician access, no insurance overhead.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Malvern, PA
+
+Malvern is a Chester County borough at the intersection of a historic downtown, a strong professional community, and the Route 30 / Route 202 corridor. Malvern residents are healthcare-aware, often work in demanding professional or technical roles, and increasingly find that volume-driven insurance-based primary care doesn't match how they want to manage their own health. Forward Family Medicine — with a new Malvern office at 301 Lindenwood Dr Ste 206 opening August 2026 — is built specifically for this community: small panel size, real visit length, direct physician access, no insurance overhead.
 
 ## Why Malvern Patients Choose Forward Family Medicine
 
@@ -74,7 +75,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355 — [office info →](/locations/malvern)
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Exton, Malvern, Coatesville, Thorndale, and Parkesburg"
 
 # Direct Primary Care in Downingtown, PA
 
-## About Downingtown, PA
-
-Downingtown is a Chester County borough on the US Route 30 corridor with commuter rail access via the SEPTA Paoli/Thorndale Line and a school district that draws professional families from across the region. The Downingtown Area School District — including its nationally recognized STEM Academy magnet — has made this community a destination for families who prioritize quality and long-term investment. Those same families often find that insurance-driven primary care leaves them with rushed appointments and a physician who barely knows their name. Forward Family Medicine — with offices in West Chester (about 10–12 minutes) and Malvern (about 15–18 minutes) — is built differently.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Downingtown, PA
+
+Downingtown is a Chester County borough on the US Route 30 corridor with commuter rail access via the SEPTA Paoli/Thorndale Line and a school district that draws professional families from across the region. The Downingtown Area School District — including its nationally recognized STEM Academy magnet — has made this community a destination for families who prioritize quality and long-term investment. Those same families often find that insurance-driven primary care leaves them with rushed appointments and a physician who barely knows their name. Forward Family Medicine — with offices in West Chester (about 10–12 minutes) and Malvern (about 15–18 minutes) — is built differently.
 
 ## Why Downingtown Patients Choose Forward Family Medicine
 

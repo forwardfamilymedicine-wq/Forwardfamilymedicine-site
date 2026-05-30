@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 
 # Direct Primary Care Near Bryn Mawr, PA
 
-## About Bryn Mawr, PA
-
-Bryn Mawr is a Lower Merion Township community with a distinctive identity: home to Bryn Mawr College, the Bryn Mawr Film Institute, a vibrant town center, and Bryn Mawr Hospital — one of the region's major medical centers. The community's mix of academics, healthcare professionals, and established Main Line families creates a patient population that appreciates evidence-based care, prevention, and a physician who is genuinely engaged. Forward Family Medicine's DPC practice in Wayne is just 5 miles west.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. [Full DPC overview →](/direct-primary-care)
+
+## About Bryn Mawr, PA
+
+Bryn Mawr is a Lower Merion Township community with a distinctive identity: home to Bryn Mawr College, the Bryn Mawr Film Institute, a vibrant town center, and Bryn Mawr Hospital — one of the region's major medical centers. The community's mix of academics, healthcare professionals, and established Main Line families creates a patient population that appreciates evidence-based care, prevention, and a physician who is genuinely engaged. Forward Family Medicine's DPC practice in Wayne is just 5 miles west.
 
 ## Why Bryn Mawr Patients Choose Forward Family Medicine
 

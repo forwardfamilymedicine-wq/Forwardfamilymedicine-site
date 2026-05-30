@@ -22,13 +22,13 @@ nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 
 # Direct Primary Care Near Ardmore, PA
 
-## About Ardmore, PA
-
-Ardmore is a diverse, walkable Lower Merion community that blends an urban-suburban feel with authentic Main Line character. Home to Suburban Square, easy SEPTA access, and a mix of longtime residents and newer professionals, Ardmore has a community energy distinct from its quieter Main Line neighbors. Ardmore residents who want primary care that's accessible, relationship-focused, and preventive find Forward Family Medicine — 6 miles west in Wayne — worth the easy trip.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. [Full DPC overview →](/direct-primary-care)
+
+## About Ardmore, PA
+
+Ardmore is a diverse, walkable Lower Merion community that blends an urban-suburban feel with authentic Main Line character. Home to Suburban Square, easy SEPTA access, and a mix of longtime residents and newer professionals, Ardmore has a community energy distinct from its quieter Main Line neighbors. Ardmore residents who want primary care that's accessible, relationship-focused, and preventive find Forward Family Medicine — 6 miles west in Wayne — worth the easy trip.
 
 ## Why Ardmore Patients Choose Forward Family Medicine
 

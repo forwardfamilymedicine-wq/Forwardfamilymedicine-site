@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 
 # Concierge Doctor in Coatesville, PA
 
-## About Coatesville, PA
-
-Coatesville is Chester County's only city — an industrial community with a steel-making heritage and a workforce that deserves the same quality of healthcare access as residents in higher-income parts of the county. The closure of Brandywine Hospital in 2022 reduced local healthcare options substantially, and finding a primary care physician who has time for a real conversation remains harder here than it should be. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a practical alternative: a physician who knows you, direct access, and a model built for people who are serious about their health.
-
 ## Concierge Experience, DPC Pricing
 
 Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+
+## About Coatesville, PA
+
+Coatesville is Chester County's only city — an industrial community with a steel-making heritage and a workforce that deserves the same quality of healthcare access as residents in higher-income parts of the county. The closure of Brandywine Hospital in 2022 reduced local healthcare options substantially, and finding a primary care physician who has time for a real conversation remains harder here than it should be. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a practical alternative: a physician who knows you, direct access, and a model built for people who are serious about their health.
 
 ## Why Coatesville Patients Choose This Practice
 

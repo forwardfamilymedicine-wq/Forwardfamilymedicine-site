@@ -24,13 +24,13 @@ nearbyNeighborhoods: "Malvern, Spring City, Royersford, Collegeville, and Paoli"
 
 # Direct Primary Care in Phoenixville, PA
 
-## About Phoenixville, PA
-
-Phoenixville is a revitalized Chester County borough at the junction of French Creek and the Schuylkill River — known for its arts scene, Bridge Street restaurant corridor, and a creative professional community that has made it one of the region's most energized small cities. The historic Colonial Theatre, the site of the filming of The Blob (1958), anchors a downtown that draws people from across Chester and Montgomery Counties. Phoenixville residents tend to be thoughtful about their choices and skeptical of systems that aren't built for them — which is exactly the kind of person Forward Family Medicine was designed for. Our Malvern office is about 12–15 minutes away.
-
 ## What Is Direct Primary Care?
 
 DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+
+## About Phoenixville, PA
+
+Phoenixville is a revitalized Chester County borough at the junction of French Creek and the Schuylkill River — known for its arts scene, Bridge Street restaurant corridor, and a creative professional community that has made it one of the region's most energized small cities. The historic Colonial Theatre, the site of the filming of The Blob (1958), anchors a downtown that draws people from across Chester and Montgomery Counties. Phoenixville residents tend to be thoughtful about their choices and skeptical of systems that aren't built for them — which is exactly the kind of person Forward Family Medicine was designed for. Our Malvern office is about 12–15 minutes away.
 
 ## Why Phoenixville Patients Choose Forward Family Medicine
 

@@ -44,6 +44,7 @@ const local = defineCollection({
     category: z.string().optional(),
     localNote: z.string().optional(),
     nearbyNeighborhoods: z.string().optional(),
+    mapEmbedUrl: z.string().optional(),
   }),
 });
 
