@@ -3,9 +3,10 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   provider: CollectionEntry<'providers'> | CollectionEntry<'team'>;
+  noLink?: boolean;
 }
 
-const { provider } = Astro.props;
+const { provider, noLink = false } = Astro.props;
 const d = provider.data as any;
 const isPhysician = provider.collection === 'providers';
 const isPanelFull = isPhysician && !d.acceptingNewPatients;
@@ -44,7 +45,7 @@ const openingLabel = d.acceptingNewPatientsStartDate
   </div>
 
   <div class="provider-card-body">
-    <h3 class="provider-card-name">{d.name}, {d.credentials}</h3>
+    <h3 class="provider-card-name">{d.name}{d.credentials ? `, ${d.credentials}` : ''}</h3>
     <p class="provider-card-title">{d.title}</p>
 
     {d.specialties?.length > 0 && (
@@ -61,9 +62,11 @@ const openingLabel = d.acceptingNewPatientsStartDate
       </div>
     )}
 
-    <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
-      Meet {isPhysician ? `Dr. ${d.name.split(' ').pop()}` : d.name.split(' ')[0]} →
-    </a>
+    {!noLink && (
+      <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
+        Meet {isPhysician ? `Dr. ${d.name.split(' ').pop()}` : d.name.split(' ')[0]} →
+      </a>
+    )}
   </div>
 </article>
 
