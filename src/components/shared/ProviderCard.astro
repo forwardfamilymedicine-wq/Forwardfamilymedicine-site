@@ -48,6 +48,8 @@ const openingLabel = d.acceptingNewPatientsStartDate
     <h3 class="provider-card-name">{d.name}{d.credentials ? `, ${d.credentials}` : ''}</h3>
     <p class="provider-card-title">{d.title}</p>
 
+    {d.descriptor && <p class="provider-card-descriptor">{d.descriptor}</p>}
+
     {d.specialties?.length > 0 && (
       <div class="specialty-chips">
         {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
@@ -86,6 +88,7 @@ const openingLabel = d.acceptingNewPatientsStartDate
   .provider-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
   .provider-card-name { font-size: 1.25rem; color: var(--ink-900); margin: 0; }
   .provider-card-title { font-size: 0.9rem; color: var(--ink-500); margin: 0; font-family: var(--font-body); }
+  .provider-card-descriptor { font-size: 0.85rem; color: var(--ink-500); margin: 0; line-height: 1.5; font-family: var(--font-body); }
 
   .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600; }
