@@ -1,0 +1,208 @@
+---
+// src/components/ConsentBanner.astro
+//
+// Opt-in analytics consent banner for Forward Family Medicine.
+//
+// BEHAVIOR (opt-in — stricter, PA-safer):
+//   - No choice yet -> banner shows, NO trackers load.
+//   - "Accept"      -> cookie set (1 year), GA4 loads now and on every page load.
+//   - "Decline"     -> cookie set (1 year), trackers never load.
+//   - "Manage choices" footer link (<a data-consent-reset>) re-opens the banner.
+//
+// CLARITY: not installed. Load path dormant unless CLARITY_ID is set.
+// ATTORNEY ITEMS (flagged, not blocking): (a) opt-in vs opt-out for GA4 in PA —
+// this does opt-in; (b) cookie lifetime (365 days).
+
+const GA4_ID = "G-8Z3EP3H07B";
+const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
+---
+
+<div
+  id="consent-banner"
+  class="consent"
+  hidden
+  role="dialog"
+  aria-live="polite"
+  aria-label="Cookie and analytics consent"
+>
+  <div class="consent__inner">
+    <p class="consent__text">
+      We use analytics to understand how visitors use our site. These tools don't
+      load unless you accept. See our <a href="/privacy-policy">Privacy Policy</a>.
+    </p>
+    <div class="consent__actions">
+      <button type="button" id="consent-decline" class="consent__btn consent__btn--ghost">
+        Decline
+      </button>
+      <button type="button" id="consent-accept" class="consent__btn consent__btn--solid">
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ GA4_ID, CLARITY_ID }}>
+  (function () {
+    var COOKIE = "ffm_consent";
+    var banner = document.getElementById("consent-banner");
+    var acceptBtn = document.getElementById("consent-accept");
+    var declineBtn = document.getElementById("consent-decline");
+
+    function getCookie(name) {
+      var m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+      return m ? decodeURIComponent(m[1]) : null;
+    }
+
+    function setCookie(name, value, days) {
+      var d = new Date();
+      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie =
+        name + "=" + encodeURIComponent(value) + ";expires=" + d.toUTCString() +
+        ";path=/;SameSite=Lax";
+    }
+
+    function loadGA4() {
+      if (!GA4_ID) return;
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", GA4_ID);
+    }
+
+    function loadClarity() {
+      if (!CLARITY_ID) return; // dormant unless a real ID is set
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", CLARITY_ID);
+    }
+
+    function loadTrackers() {
+      loadGA4();
+      loadClarity();
+    }
+
+    function hideBanner() { if (banner) banner.hidden = true; }
+    function showBanner() { if (banner) banner.hidden = false; }
+
+    var choice = getCookie(COOKIE);
+    if (choice === "accepted") {
+      loadTrackers();
+      hideBanner();
+    } else if (choice === "declined") {
+      hideBanner();
+    } else {
+      showBanner();
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", function () {
+        setCookie(COOKIE, "accepted", 365);
+        loadTrackers();
+        hideBanner();
+      });
+    }
+    if (declineBtn) {
+      declineBtn.addEventListener("click", function () {
+        setCookie(COOKIE, "declined", 365);
+        hideBanner();
+      });
+    }
+
+    document.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t && t.closest && t.closest("[data-consent-reset]")) {
+        e.preventDefault();
+        document.cookie = COOKIE + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        showBanner();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .consent {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 9999;
+    background: var(--cream-50);
+    border: 1px solid var(--green-200);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+    padding: 1rem 1.25rem;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .consent__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    justify-content: space-between;
+  }
+
+  .consent__text {
+    margin: 0;
+    flex: 1 1 320px;
+    color: var(--ink-900);
+    font-size: 0.925rem;
+    line-height: 1.5;
+  }
+
+  .consent__text a {
+    color: var(--green-500);
+    text-decoration: underline;
+  }
+
+  .consent__actions {
+    display: flex;
+    gap: 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  .consent__btn {
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .consent__btn--solid { background: var(--green-400); color: #fff; }
+  .consent__btn--solid:hover { background: var(--green-500); }
+
+  .consent__btn--ghost {
+    background: transparent;
+    color: var(--ink-700);
+    border-color: var(--ink-300);
+  }
+  .consent__btn--ghost:hover { border-color: var(--ink-500); }
+
+  .consent__btn:focus-visible {
+    outline: 2px solid var(--green-500);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 480px) {
+    .consent__inner { flex-direction: column; align-items: stretch; }
+    .consent__actions { justify-content: flex-end; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .consent__btn { transition: none; }
+  }
+</style>
