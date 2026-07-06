@@ -37,7 +37,7 @@ Newtown Square is a Delaware County community that has grown significantly over 
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, and message
 - Longer visits — your questions get answered
-- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-eligible in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
+- Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Telehealth reduces in-office visits for routine care
 - Family memberships available
 

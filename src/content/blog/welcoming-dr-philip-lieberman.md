@@ -1,6 +1,6 @@
 ---
 title: "Welcoming Dr. Philip Lieberman to Forward Family Medicine"
-description: "Forward Family Medicine welcomes Dr. Philip Lieberman, MD, dual board-eligible in Family Medicine and Lifestyle Medicine, to our Wayne, PA practice."
+description: "Forward Family Medicine welcomes Dr. Philip Lieberman, MD, dual board-certified in Family Medicine and Lifestyle Medicine, to our Wayne, PA practice."
 date: "2025-12-15"
 author: "David Bigley, DO"
 category: "patient-experience"
@@ -15,7 +15,7 @@ That vision needed a second physician who shared it. I'm thrilled to share that 
 
 ## Meet Dr. Philip Lieberman
 
-Dr. Philip Lieberman, MD, joins Forward Family Medicine this month at our Wayne, PA office. He is dual board-eligible in Family Medicine and Lifestyle Medicine — and his path to medicine is unlike any physician you've met.
+Dr. Philip Lieberman, MD, joins Forward Family Medicine this month at our Wayne, PA office. He is dual board-certified in Family Medicine and Lifestyle Medicine — and his path to medicine is unlike any physician you've met.
 
 Before medical school, Dr. Lieberman earned an Associate's Degree in Culinary Arts and a Bachelor of Science in Nutrition Science from Pennsylvania State University. That foundation in food, metabolism, and lifestyle is the kind of training most physicians never receive. He went on to earn his Doctor of Medicine from Thomas Jefferson University in Philadelphia, served as a primary care physician in the U.S. Navy, and completed residency training at Abington Family Medicine — where he didn't just learn lifestyle medicine, he developed a comprehensive curriculum that enabled fellow residents to qualify for board certification through the American College of Lifestyle Medicine.
 
