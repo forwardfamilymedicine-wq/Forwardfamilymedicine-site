@@ -1,0 +1,148 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+---
+
+<MainLayout
+  title="Careers | Forward Family Medicine — DPC & Lifestyle Medicine"
+  description="Forward Family Medicine is growing across the Main Line. We're always interested in connecting with family medicine physicians who want to practice with small panels, real relationships, and time to listen."
+>
+  <!-- Page hero -->
+  <section class="careers-hero section" style="position: relative; overflow: hidden;">
+    <BotanicalGraphic variant="starlet" class="careers-botanical" />
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Careers</span>
+      </nav>
+      <span class="section-label">Join Us</span>
+      <h1>Careers at Forward Family Medicine</h1>
+      <div class="divider"></div>
+      <p class="section-intro">
+        Forward Family Medicine is growing. We're always interested in connecting with
+        physicians who want to practice medicine the way it was meant to be practiced —
+        small panels, real relationships, and time to actually listen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why practice here -->
+  <section class="why-practice section" style="background: var(--cream-200);">
+    <div class="container">
+      <span class="section-label">Why Practice Here</span>
+      <h2>A Different Way to Practice Medicine</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div>
+          <p>
+            Our panels are capped at roughly 250 patients per physician — a fraction of
+            the 400–600 typical of direct primary care. That difference is the whole point:
+            it's what makes room for the kind of medicine most physicians trained to
+            practice but rarely get to.
+          </p>
+          <p>
+            There's no insurance billing, no RVUs, and no 15-minute visits. You practice
+            without the machinery that pulls attention away from the patient in front of you.
+          </p>
+          <p>
+            Lifestyle medicine is integrated into everyday primary care here — food,
+            movement, sleep, and stress as first-line tools, not a service bolted on
+            after the fact.
+          </p>
+        </div>
+        <div>
+          <div class="callout">
+            <strong>What that looks like day to day</strong>
+            <ul class="prose-list" style="margin-top:0.75rem;">
+              <li>~250-patient panel cap per physician</li>
+              <li>No insurance billing, no RVUs, no productivity quotas</li>
+              <li>Visits with real time — not a 15-minute clock</li>
+              <li>Lifestyle medicine woven into everyday care</li>
+              <li>Direct, continuous relationships with your patients</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- We're expanding -->
+  <section class="expanding section">
+    <div class="container">
+      <span class="section-label">We're Expanding</span>
+      <h2>Growing Across the Main Line — and Beyond</h2>
+      <div class="divider"></div>
+      <p>
+        We currently practice in Wayne, West Chester, and Malvern on the Main Line, and
+        we're actively exploring additional locations. Physicians interested in building
+        a panel at a new site are encouraged to reach out — we'd genuinely like to talk.
+      </p>
+    </div>
+  </section>
+
+  <!-- Who we're looking for -->
+  <section class="who-we-want section" style="background: var(--cream-200);">
+    <div class="container">
+      <span class="section-label">Who We're Looking For</span>
+      <h2>The Kind of Physician Who Fits Here</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div>
+          <p>
+            If you've been looking for a way to practice primary care that puts the
+            relationship first, we'd like to hear from you. The specifics we look for:
+          </p>
+        </div>
+        <div>
+          <div class="callout callout-accent">
+            <strong>What we look for</strong>
+            <ul class="prose-list" style="margin-top:0.75rem;">
+              <li>Board-certified or board-eligible in family medicine or internal medicine</li>
+              <li>Interest in lifestyle medicine a plus</li>
+              <li>Active medical license, or currently completing residency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="careers-cta section">
+    <div class="container">
+      <span class="section-label">Let's Talk</span>
+      <h2>Interested in Joining Us?</h2>
+      <div class="divider"></div>
+      <p>
+        We'd love to start a conversation. Reach out and tell us a little about
+        yourself and how you'd like to practice.
+      </p>
+      <a
+        href="mailto:information@forwardfamilymedicine.com"
+        class="btn btn-primary"
+        style="margin-top:1.25rem; display:inline-block;"
+      >Email us at information@forwardfamilymedicine.com</a>
+    </div>
+  </section>
+
+  <CTABanner />
+</MainLayout>
+
+<style>
+  .careers-hero {
+    background: var(--cream-100);
+    position: relative;
+    overflow: hidden;
+  }
+  .careers-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--ink-300);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+</style>
