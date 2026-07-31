@@ -64,7 +64,7 @@ Working tree status: Clean (one untracked binary: `src/assets/staff/ffm-team.jpg
   - Suggested fix: Replace all instances with "MSCP candidate (sitting for exam June 2026)" or equivalent future-tense framing. After July 2026 (when results are expected), update to confirmed-credential language if the exam is passed. Coordinate with David before doing a mass-update.
 
 - **src/pages/menopause.astro:77 (FAQ answer)** — FAQ exposes unconfirmed lease addresses for West Chester and Malvern to patients
-  - Current: `"Dr. Landi sees patients at our Chester County locations — West Chester (1450 Boot Rd Ste 300A) and Malvern (301 Lindenwood Dr Ste 206)."`
+  - Current: `"Dr. Landi sees patients at our Chester County locations — West Chester ([street address redacted]) and Malvern (301 Lindenwood Dr Ste 206)."`
   - Issue: Both addresses are in location content files with explicit `# TODO: Confirm exact address once lease is signed` comments. Presenting unconfirmed suite numbers to patients creates a wrong-address risk.
   - Suggested fix: Use city-only references until lease is finalized: `"West Chester and Malvern, PA (addresses confirmed upon lease signing, opening August 2026)."`
 
@@ -85,7 +85,7 @@ Working tree status: Clean (one untracked binary: `src/assets/staff/ffm-team.jpg
   - Suggested fix: Discuss with David. Options: (a) remove explicit rates and replace with "Contact us for family pricing," (b) confirm rates are finalized and update the reference fact. Do not resolve unilaterally.
 
 - **src/content/locations/west-chester.md:7** — Unconfirmed West Chester address with suite number published in content
-  - Current: `addressStreet: "1450 Boot Rd STE 300A"` (with `# TODO: Confirm exact address once lease is signed` comment on line 10)
+  - Current: `addressStreet: "[street address redacted]"` (with `# TODO: Confirm exact address once lease is signed` comment on line 10)
   - Issue: The audit instruction requires West Chester address/lease copy be "appropriately vague (no fabricated suite numbers)." A specific suite number from an unconfirmed lease is published in content and renders in JSON-LD, FAQ answers, and menopause page.
   - Suggested fix: Replace with `addressStreet: ""` (or omit field) until lease is signed. Remove suite numbers from all page copy and FAQ answers.
 
@@ -136,7 +136,7 @@ Working tree status: Clean (one untracked binary: `src/assets/staff/ffm-team.jpg
 ---
 
 - **src/pages/menopause.astro JSON-LD (lines 36–55)** — JSON-LD workLocation uses unconfirmed West Chester and Malvern addresses
-  - Current: JSON-LD `workLocation` blocks hard-code `"1450 Boot Rd STE 300A"` (West Chester) and `"301 Lindenwood Dr Suite 206"` (Malvern)
+  - Current: JSON-LD `workLocation` blocks hard-code `"[street address redacted]"` (West Chester) and `"301 Lindenwood Dr Suite 206"` (Malvern)
   - Issue: These are the same unconfirmed lease addresses. JSON-LD is indexed by Google and difficult to retract after indexing.
   - Suggested fix: Remove `streetAddress` fields from both `workLocation` objects until leases are confirmed. Keep city/state/postal code.
 

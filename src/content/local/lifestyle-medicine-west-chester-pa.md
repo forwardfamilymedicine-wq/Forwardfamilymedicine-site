@@ -1,6 +1,6 @@
 ---
 title: "Lifestyle Medicine in West Chester, PA | Forward Family Medicine"
-description: "Lifestyle medicine-integrated primary care in West Chester, PA with Dr. Brian Landi at 1450 Boot Rd Ste 300A. Nutrition, movement, sleep, and stress as clinical tools. Opening August 2026."
+description: "Lifestyle medicine-integrated primary care in West Chester, PA with Dr. Brian Landi. Nutrition, movement, sleep, and stress as clinical tools. Opening August 2026."
 keywords:
   - lifestyle medicine West Chester PA
   - preventive care West Chester Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/membership"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office at 1450 Boot Rd Ste 300A in August 2026 — primary care with lifestyle medicine integrated into every visit, led by Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
+localNote: "Forward Family Medicine is opening a West Chester office in August 2026 — primary care with lifestyle medicine integrated into every visit, led by Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concor
 
 ## About West Chester, PA
 
-West Chester is the Chester County seat — a borough with a thriving downtown, West Chester University, and a community that includes university faculty, healthcare professionals, business owners, and long-established families. Many West Chester residents already understand that lifestyle factors — nutrition, movement, sleep, stress — drive the majority of chronic disease. The challenge is finding a primary care physician with the time and training to integrate those factors into a real clinical plan, not just generic advice. Forward Family Medicine — with a new West Chester office at 1450 Boot Rd Ste 300A opening August 2026 — is built for exactly this.
+West Chester is the Chester County seat — a borough with a thriving downtown, West Chester University, and a community that includes university faculty, healthcare professionals, business owners, and long-established families. Many West Chester residents already understand that lifestyle factors — nutrition, movement, sleep, stress — drive the majority of chronic disease. The challenge is finding a primary care physician with the time and training to integrate those factors into a real clinical plan, not just generic advice. Forward Family Medicine — with a new West Chester office opening August 2026 — is built for exactly this.
 
 ## Lifestyle Medicine, Integrated Into Primary Care
 
@@ -36,7 +36,7 @@ For patients who want dedicated specialty consultation with a dual-board-certifi
 
 ## Why West Chester Patients Choose This Approach
 
-- **In-person care in West Chester** — 1450 Boot Rd Ste 300A, opening August 2026
+- **In-person care in West Chester** — opening August 2026
 - Lifestyle medicine integrated into every primary care visit
 - Evidence-based nutrition guidance — beyond generic handouts
 - Chronic disease management with lifestyle at the center
@@ -52,7 +52,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Menopause
 
 ## Practical Information for West Chester Patients
 
-**Location:** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**Location:** West Chester, PA 19380
 **Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
 **Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and Malvern (Dr. Landi)
@@ -73,7 +73,7 @@ Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menop
 
 ## Contact & Practice Information
 
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**West Chester Office (opening August 2026):** West Chester, PA 19380
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

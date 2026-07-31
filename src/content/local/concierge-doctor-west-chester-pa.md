@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in West Chester, PA | Forward Family Medicine"
-description: "Concierge-style primary care in West Chester, PA with Dr. Brian Landi at 1450 Boot Rd Ste 300A. Direct physician access, 1–2 hour visits, transparent membership. Opening August 2026."
+description: "Concierge-style primary care in West Chester, PA with Dr. Brian Landi. Direct physician access, 1–2 hour visits, transparent membership. Opening August 2026."
 keywords:
   - concierge doctor West Chester PA
   - concierge medicine West Chester Pennsylvania
@@ -18,9 +18,8 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office at 1450 Boot Rd Ste 300A in August 2026 — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine is opening a West Chester office in August 2026 — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
-mapEmbedUrl: "https://www.google.com/maps?q=1450+Boot+Rd+Ste+300A,+West+Chester,+PA+19380&output=embed"
 ---
 
 # Concierge Doctor in West Chester, PA
@@ -31,11 +30,11 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About West Chester, PA
 
-West Chester is the Chester County seat — a vibrant borough with a thriving downtown, West Chester University at its core, and easy connections via Route 202 and Route 322 to greater Philadelphia and Lancaster County. West Chester residents range from university faculty and healthcare professionals to long-established families and business owners — many of whom are accustomed to high standards in the services they choose, including their relationship with primary care. Forward Family Medicine — with a new West Chester office at 1450 Boot Rd Ste 300A opening August 2026 — delivers concierge-level experience at Direct Primary Care pricing.
+West Chester is the Chester County seat — a vibrant borough with a thriving downtown, West Chester University at its core, and easy connections via Route 202 and Route 322 to greater Philadelphia and Lancaster County. West Chester residents range from university faculty and healthcare professionals to long-established families and business owners — many of whom are accustomed to high standards in the services they choose, including their relationship with primary care. Forward Family Medicine — with a new West Chester office opening August 2026 — delivers concierge-level experience at Direct Primary Care pricing.
 
 ## Why West Chester Patients Choose This Practice
 
-- **In-person care in West Chester** — 1450 Boot Rd Ste 300A, opening August 2026
+- **In-person care in West Chester** — opening August 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -54,7 +53,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for West Chester Patients
 
-**Location:** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**Location:** West Chester, PA 19380
 **Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
 **Telehealth:** Phone and video visits included for established patients
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
@@ -75,7 +74,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380 — [office info →](/locations/west-chester)
+**West Chester Office (opening August 2026):** West Chester, PA 19380 — [office info →](/locations/west-chester)
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

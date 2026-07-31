@@ -34,7 +34,7 @@ Concordville is a historic Delaware County community settled by Quakers in the 1
 
 ## Why Concordville Patients Choose This Practice
 
-- **West Chester office ~10–15 min from Concordville** — 1450 Boot Rd Ste 300A, opening August 2026
+- **West Chester office ~10–15 min from Concordville** — opening August 2026
 - **Malvern office ~15–20 min** — 301 Lindenwood Dr Ste 206, opening August 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for Concordville Patients
 
-**Closest FFM office:** West Chester — 1450 Boot Rd Ste 300A, about 10–15 minutes via US-1 north to PA-202. Opening August 2026.
+**Closest FFM office:** West Chester — about 10–15 minutes via US-1 north to PA-202. Opening August 2026.
 **Also convenient:** Malvern — 301 Lindenwood Dr Ste 206, about 15–20 minutes via US-202 north. Opening August 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
 **Telehealth:** Phone and video visits included for established patients
@@ -76,7 +76,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 ## Contact & Practice Information
 
 **Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**West Chester Office (opening August 2026):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

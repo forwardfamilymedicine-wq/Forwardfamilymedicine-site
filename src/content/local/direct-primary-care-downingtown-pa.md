@@ -34,7 +34,7 @@ Downingtown is a Chester County borough on the US Route 30 corridor with commute
 
 ## Why Downingtown Patients Choose Forward Family Medicine
 
-- **West Chester office ~10–12 min from Downingtown** — 1450 Boot Rd Ste 300A, opening August 2026
+- **West Chester office ~10–12 min from Downingtown** — opening August 2026
 - **Malvern office ~15–18 min** — 301 Lindenwood Dr Ste 206, opening August 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Downingtown Patients
 
-**Closest FFM office:** West Chester — 1450 Boot Rd Ste 300A, about 10–12 minutes via PA-322 south. Opening August 2026.
+**Closest FFM office:** West Chester — about 10–12 minutes via PA-322 south. Opening August 2026.
 **Also convenient:** Malvern — 301 Lindenwood Dr Ste 206, about 15–18 minutes via US-30 east. Opening August 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-30 east — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
 **Telehealth:** Phone and video visits included in membership for established patients
@@ -76,7 +76,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 ## Contact & Practice Information
 
 **Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**West Chester Office (opening August 2026):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

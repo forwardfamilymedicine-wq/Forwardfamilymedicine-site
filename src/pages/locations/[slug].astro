@@ -30,7 +30,7 @@ const pageDescription = data.status === 'coming-soon'
   ? `Forward Family Medicine is opening a new Direct Primary Care location in ${data.name}, PA in ${data.openingDate ? new Date(data.openingDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '2026'}. Join the patient list.`
   : `Visit Forward Family Medicine in ${data.name}, PA. ${data.description}`;
 
-const hasAddress = data.addressStreet && data.addressZip;
+const hasAddress = data.addressZip;
 
 const locationSchema = {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@ const locationSchema = {
   ...(hasAddress ? {
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": data.addressStreet,
+      ...(data.addressStreet ? { "streetAddress": data.addressStreet } : {}),
       "addressLocality": data.addressCity,
       "addressRegion": data.addressState,
       "postalCode": data.addressZip,
@@ -119,7 +119,7 @@ const openingLabel = data.openingDate
             <div class="address-block">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <address style="font-style:normal;">
-                {data.addressStreet}<br />
+                {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
                 {data.addressCity}, {data.addressState} {data.addressZip}
               </address>
             </div>
@@ -148,17 +148,17 @@ const openingLabel = data.openingDate
   </section>
 
   <!-- Visit Us: address, hours, and map — shown whenever any location data exists -->
-  {(data.addressStreet || (data.hours && data.hours.length > 0) || data.mapEmbedUrl) && (
+  {(hasAddress || (data.hours && data.hours.length > 0) || data.mapEmbedUrl) && (
     <section class="location-visit section" style="background: var(--cream-100);">
       <div class="container">
         <div class="visit-grid">
           <div class="visit-info">
             <h2>Visit Us</h2>
-            {data.addressStreet && (
+            {hasAddress && (
               <div class="visit-address">
                 <strong>{data.name}</strong>
                 <address>
-                  {data.addressStreet}<br />
+                  {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
                   {data.addressCity}, {data.addressState} {data.addressZip}
                 </address>
                 {data.phone && <p><a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a></p>}

@@ -35,7 +35,7 @@ Exton is a Chester County community at the intersection of US Route 30 and PA Ro
 ## Why Exton Patients Choose This Practice
 
 - **Malvern office ~10 min from Exton** — 301 Lindenwood Dr Ste 206, opening August 2026
-- **West Chester office ~12–15 min** — 1450 Boot Rd Ste 300A, opening August 2026
+- **West Chester office ~12–15 min** — opening August 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Exton Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr Ste 206, about 10 minutes via local routes. Opening August 2026.
-**Also convenient:** West Chester — 1450 Boot Rd Ste 300A, about 12–15 minutes via PA-100 south. Opening August 2026.
+**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Opening August 2026.
 **Wayne option:** 295 Old Eagle School Road, about 17 minutes via US-30 east — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
 **Telehealth:** Phone and video visits included for established patients
 
@@ -76,7 +76,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 ## Contact & Practice Information
 
 **Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**West Chester Office (opening August 2026):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

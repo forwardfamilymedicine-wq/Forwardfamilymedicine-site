@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in West Chester, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care in West Chester, PA with Dr. Brian Landi at 1450 Boot Rd Ste 300A. Perimenopause management, HRT consultation, integrated into DPC membership. Opening August 2026."
+description: "Menopause Society Certified menopause care in West Chester, PA with Dr. Brian Landi. Perimenopause management, HRT consultation, integrated into DPC membership. Opening August 2026."
 keywords:
   - menopause care West Chester PA
   - perimenopause West Chester Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office at 1450 Boot Rd Ste 300A in August 2026 — Menopause Society Certified menopause care led by Dr. Brian Landi, DO. West Chester residents have in-person MSCP-certified menopause expertise in their own community."
+localNote: "Forward Family Medicine is opening a West Chester office in August 2026 — Menopause Society Certified menopause care led by Dr. Brian Landi, DO. West Chester residents have in-person MSCP-certified menopause expertise in their own community."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -26,11 +26,11 @@ nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concor
 
 ## About West Chester, PA
 
-West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — many of whom have found that menopause care in the traditional primary care setting means a brief conversation tucked into the final minutes of a standard appointment. Forward Family Medicine's West Chester office, opening August 2026 at 1450 Boot Rd Ste 300A, is built to offer something meaningfully different: Menopause Society Certified expertise, in-person, in this community.
+West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — many of whom have found that menopause care in the traditional primary care setting means a brief conversation tucked into the final minutes of a standard appointment. Forward Family Medicine's West Chester office, opening August 2026, is built to offer something meaningfully different: Menopause Society Certified expertise, in-person, in this community.
 
 ## Menopause Society Certified Care, On-Site in West Chester
 
-Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation in a 15-minute appointment — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine's West Chester office, opening August 2026 at 1450 Boot Rd Ste 300A, is built differently.
+Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation in a 15-minute appointment — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine's West Chester office, opening August 2026, is built differently.
 
 Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of a small number of family physicians in the region with dedicated specialty training in perimenopause and menopause management. At West Chester, every patient gets the depth this stage of life actually requires: 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and integration with the rest of your primary care. [Full menopause care overview →](/menopause)
 
@@ -46,7 +46,7 @@ Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of 
 
 ## Why West Chester Patients Choose This Practice
 
-- **In-person MSCP care in West Chester** — 1450 Boot Rd Ste 300A, opening August 2026
+- **In-person MSCP care in West Chester** — opening August 2026
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -64,7 +64,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for West Chester Patients
 
-**Location:** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**Location:** West Chester, PA 19380
 **Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
@@ -85,7 +85,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**West Chester Office (opening August 2026):** 1450 Boot Rd Ste 300A, West Chester, PA 19380
+**West Chester Office (opening August 2026):** West Chester, PA 19380
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

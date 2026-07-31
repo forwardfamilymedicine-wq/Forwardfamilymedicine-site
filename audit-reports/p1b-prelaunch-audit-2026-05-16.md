@@ -234,7 +234,7 @@ Either option is clearer than the current phrasing.
 - `src/content/locations/malvern.md:10` — `# TODO: Confirm exact address once lease is signed`
 
 **Addresses currently rendered on live pages:**
-- West Chester: `1450 Boot Rd STE 300A, West Chester, PA 19380`
+- West Chester: `[street address redacted], West Chester, PA 19380`
 - Malvern: `301 Lindenwood Dr Suite 206, Malvern, PA 19355`
 
 **Why flagged:** These addresses appear on the live contact page, location detail pages, local SEO pages, the site footer, and JSON-LD schema. If either lease is not signed or the address changes, these are published as canonical facts to Google and patients. The TODO comments confirm the data was entered speculatively.

@@ -3,12 +3,10 @@ name: "West Chester"
 slug: "west-chester"
 status: "coming-soon"
 openingDate: "2026-08-01"
-addressStreet: "1450 Boot Rd STE 300A"
+addressStreet: ""
 addressCity: "West Chester"
 addressState: "PA"
 addressZip: "19380"
-# TODO: Confirm exact address once lease is signed
-mapEmbedUrl: "https://www.google.com/maps?q=1450+Boot+Rd+STE+300A,+West+Chester,+PA+19380&output=embed"
 phone: "(215) 645-7044"
 hours:
   - day: "Monday"
