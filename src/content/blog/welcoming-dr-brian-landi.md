@@ -1,6 +1,6 @@
 ---
 title: "Welcoming Dr. Brian Landi to Forward Family Medicine — Expanding to West Chester and Malvern"
-description: "Forward Family Medicine welcomes Dr. Brian Landi, DO, board-certified family physician with menopause specialty training, joining a new Chester County location in August 2026."
+description: "Forward Family Medicine welcomes Dr. Brian Landi, DO, board-certified family physician with menopause specialty training, joining a new Chester County location in October 2026."
 date: "2026-05-04"
 author: "David Bigley, DO"
 category: "patient-experience"
@@ -13,7 +13,7 @@ When we started Forward Family Medicine, the plan was always to bring this kind 
 
 ## Welcoming Dr. Brian Landi, DO
 
-Dr. Brian Landi has joined Forward Family Medicine and will begin seeing patients at our new Chester County location in August 2026. He is a board-certified family physician through the American Osteopathic Board of Family Physicians (AOBFP) and brings a clinical interest in midlife health and women's wellness, with certification through The Menopause Society on the way (his MSCP exam is scheduled for June 2026).
+Dr. Brian Landi is joining Forward Family Medicine and will begin seeing patients at our new Chester County location in October 2026. He is a board-certified family physician through the American Osteopathic Board of Family Physicians (AOBFP) and brings a clinical interest in midlife health and women's wellness. He is a Menopause Society Certified Practitioner (MSCP), a credential awarded by The Menopause Society for demonstrated competency in evidence-based care for perimenopause, menopause, and midlife women's health.
 
 Dr. Landi earned his Doctor of Osteopathic Medicine at the Philadelphia College of Osteopathic Medicine and trained at ChristianaCare, where he served as Chief Resident — a role that signals both clinical excellence and a real commitment to leadership and patient advocacy. Before joining us, he practiced at a large hospital system, where he ran into the same wall most thoughtful primary care physicians eventually hit: not enough time, too many checklists, and patients who deserved better than seven-minute appointments could provide. He chose direct primary care for the same reason every physician here did — to recover the time and attention that real medicine actually requires.
 
@@ -21,7 +21,7 @@ Outside of medicine, Dr. Landi is a six-time triathlete (which tells you somethi
 
 ## Two new locations: West Chester and Malvern
 
-Beginning in August 2026, Forward Family Medicine will operate two new Chester County locations — one in West Chester, and one in Malvern at 301 Lindenwood Dr Ste 206. Together they serve the broader Route 202 / Route 30 corridor, putting us within 10–15 minutes of Concordville, Glen Mills, Berwyn, and Paoli, and within 15–20 minutes of Kennett Square and Exton.
+Beginning in October 2026, Forward Family Medicine will operate two new Chester County locations — one in West Chester, and one in Malvern at 301 Lindenwood Dr Ste 206. Together they serve the broader Route 202 / Route 30 corridor, putting us within 10–15 minutes of Concordville, Glen Mills, Berwyn, and Paoli, and within 15–20 minutes of Kennett Square and Exton.
 
 For families in West Chester, Malvern, Paoli, Berwyn, Exton, Glen Mills, Concordville, Kennett Square, and the surrounding Chester County communities, this means the same Forward Family Medicine experience — direct access to your physician, hour-long visits, transparent membership pricing, no insurance hassles — closer to home.
 
@@ -29,7 +29,7 @@ You can read more on our [West Chester location page](/locations/west-chester/) 
 
 ## A note for patients searching for Dr. Landi
 
-Some of you reading this may know Dr. Landi from his work at a large Delaware County hospital system. If you're searching to learn where he's gone next, you've found the right place. Dr. Landi will see patients at Forward Family Medicine starting August 2026, and we are accepting names on his patient list now. Joining the list does not commit you to membership — it simply ensures you receive the first invitations to schedule a free Meet & Greet once he's open for visits.
+Some of you reading this may know Dr. Landi from his work at a large Delaware County hospital system. If you're searching to learn where he's gone next, you've found the right place. Dr. Landi will see patients at Forward Family Medicine starting October 2026, and we are accepting names on his patient list now. Joining the list does not commit you to membership — it simply ensures you receive the first invitations to schedule a free Meet & Greet once he's open for visits.
 
 If Forward Family Medicine is your first introduction to direct primary care, here's what's different. Most primary care today is built around insurance: short visits, packed schedules, and a system that rewards volume over relationships. Direct primary care works on a flat monthly membership fee instead of insurance billing for routine care. That single structural change unlocks everything else — appointments long enough to actually talk through what's going on (typically 1–2 hours for a new patient visit), direct access to your physician by phone, text, or video when you need it, and a panel small enough that your doctor genuinely knows you. You keep your insurance for things like specialists, hospitals, imaging, and prescriptions; the membership covers the relationship with your primary care doctor.
 

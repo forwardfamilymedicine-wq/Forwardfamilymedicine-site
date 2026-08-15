@@ -34,8 +34,8 @@ Lionville is a Chester County community in Uwchlan Township — a close-knit sub
 
 ## Why Lionville Patients Choose This Practice
 
-- **Malvern office ~10–12 min from Lionville** — 301 Lindenwood Dr Ste 206, opening August 2026
-- **West Chester office ~15 min** — opening August 2026
+- **Malvern office ~10–12 min from Lionville** — 301 Lindenwood Dr Ste 206, opening October 2026
+- **West Chester office ~15 min** — opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -54,8 +54,8 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for Lionville Patients
 
-**Closest FFM office:** Malvern — 301 Lindenwood Dr Ste 206, about 10–12 minutes via PA-100 south. Opening August 2026.
-**Also convenient:** West Chester — about 15 minutes via PA-100 south to PA-322. Opening August 2026.
+**Closest FFM office:** Malvern — 301 Lindenwood Dr Ste 206, about 10–12 minutes via PA-100 south. Opening October 2026.
+**Also convenient:** West Chester — about 15 minutes via PA-100 south to PA-322. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20 minutes via PA-100 to US-30 east — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
 **Telehealth:** Phone and video visits included for established patients
 
@@ -68,15 +68,15 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Lionville patients?**
-Yes — Dr. Landi's patient list for Malvern and West Chester is open now. Join to be invited first when scheduling opens August 2026. [Join the patient list →](/contact/?subject=Join%20the%20Lionville%20Patient%20List)
+Yes — Dr. Landi's patient list for Malvern and West Chester is open now. Join to be invited first when scheduling opens October 2026. [Join the patient list →](/contact/?subject=Join%20the%20Lionville%20Patient%20List)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**West Chester Office (opening August 2026):** West Chester, PA 19380
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**West Chester Office (opening October 2026):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

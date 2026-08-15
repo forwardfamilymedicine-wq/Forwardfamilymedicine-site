@@ -131,10 +131,10 @@ const breadcrumb = {
           {isPhysician && (
             d.acceptingNewPatients ? (
               <div class="accepting-banner accepting">
-                {d.acceptingNewPatientsStartDate && new Date(d.acceptingNewPatientsStartDate) > new Date() ? (
+                {d.acceptingNewPatientsStartDate && (() => { const [y, m, day] = d.acceptingNewPatientsStartDate.split('-').map(Number); return new Date(y, m - 1, day) > new Date(); })() ? (
                   <Fragment>
                     <span>
-                      <strong>Accepting patients starting {new Date(d.acceptingNewPatientsStartDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</strong>
+                      <strong>Accepting patients starting {(() => { const [y, m] = d.acceptingNewPatientsStartDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })()}</strong>
                       {d.acceptingNewPatientsNote && <span class="accepting-note"> — {d.acceptingNewPatientsNote}</span>}
                     </span>
                     <a

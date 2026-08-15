@@ -67,10 +67,10 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for King of Prussia Patients
 
-**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 15 minutes via Route 202 south) and Malvern (301 Lindenwood Dr Ste 206, about 15 minutes via Route 202 south to Route 30 west) — both currently accessible, Malvern opening August 2026. Wayne accepting new patients with Dr. Lieberman now.
+**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 15 minutes via Route 202 south) and Malvern (301 Lindenwood Dr Ste 206, about 15 minutes via Route 202 south to Route 30 west) — both currently accessible, Malvern opening October 2026. Wayne accepting new patients with Dr. Lieberman now.
 **Specialty menopause consultation:** Dr. Landi at Malvern (about 15 minutes) or West Chester (about 25 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients — highly practical for KOP patients managing busy schedules
-**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening August 2026 (join Dr. Landi's patient list now to be invited)
+**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (join Dr. Landi's patient list now to be invited)
 
 ## Frequently Asked Questions
 
@@ -89,8 +89,8 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 ## Contact & Practice Information
 
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
-**West Chester Office (opening August 2026):** West Chester, PA 19380
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**West Chester Office (opening October 2026):** West Chester, PA 19380
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

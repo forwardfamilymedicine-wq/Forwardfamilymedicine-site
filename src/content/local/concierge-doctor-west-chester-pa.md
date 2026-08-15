@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in West Chester, PA | Forward Family Medicine"
-description: "Concierge-style primary care in West Chester, PA with Dr. Brian Landi. Direct physician access, 1–2 hour visits, transparent membership. Opening August 2026."
+description: "Concierge-style primary care in West Chester, PA with Dr. Brian Landi. Direct physician access, 1–2 hour visits, transparent membership. Opening October 2026."
 keywords:
   - concierge doctor West Chester PA
   - concierge medicine West Chester Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office in August 2026 — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -30,11 +30,11 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About West Chester, PA
 
-West Chester is the Chester County seat — a vibrant borough with a thriving downtown, West Chester University at its core, and easy connections via Route 202 and Route 322 to greater Philadelphia and Lancaster County. West Chester residents range from university faculty and healthcare professionals to long-established families and business owners — many of whom are accustomed to high standards in the services they choose, including their relationship with primary care. Forward Family Medicine — with a new West Chester office opening August 2026 — delivers concierge-level experience at Direct Primary Care pricing.
+West Chester is the Chester County seat — a vibrant borough with a thriving downtown, West Chester University at its core, and easy connections via Route 202 and Route 322 to greater Philadelphia and Lancaster County. West Chester residents range from university faculty and healthcare professionals to long-established families and business owners — many of whom are accustomed to high standards in the services they choose, including their relationship with primary care. Forward Family Medicine — with a new West Chester office opening October 2026 — delivers concierge-level experience at Direct Primary Care pricing.
 
 ## Why West Chester Patients Choose This Practice
 
-- **In-person care in West Chester** — opening August 2026
+- **In-person care in West Chester** — opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for West Chester Patients
 
 **Location:** West Chester, PA 19380
-**Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
+**Status:** Opening October 2026. Join the patient list now to be invited when scheduling opens.
 **Telehealth:** Phone and video visits included for established patients
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
 
@@ -67,14 +67,14 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting West Chester patients?**
-Yes — Dr. Landi's patient list is open now. Join to be invited first when scheduling opens August 2026. [Join the patient list →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)
+Yes — Dr. Landi's patient list is open now. Join to be invited first when scheduling opens October 2026. [Join the patient list →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**West Chester Office (opening August 2026):** West Chester, PA 19380 — [office info →](/locations/west-chester)
+**West Chester Office (opening October 2026):** West Chester, PA 19380 — [office info →](/locations/west-chester)
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

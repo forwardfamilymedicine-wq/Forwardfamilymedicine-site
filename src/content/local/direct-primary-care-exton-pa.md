@@ -34,8 +34,8 @@ Exton is a Chester County community at the crossroads of US Route 30 (Lincoln Hi
 
 ## Why Exton Patients Choose Forward Family Medicine
 
-- **Malvern office ~10 min from Exton** — 301 Lindenwood Dr Ste 206, opening August 2026
-- **West Chester office ~12–15 min** — opening August 2026
+- **Malvern office ~10 min from Exton** — 301 Lindenwood Dr Ste 206, opening October 2026
+- **West Chester office ~12–15 min** — opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -54,15 +54,15 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Exton Patients
 
-**Closest FFM office:** Malvern — 301 Lindenwood Dr Ste 206, about 10 minutes via local routes. Opening August 2026.
-**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Opening August 2026.
+**Closest FFM office:** Malvern — 301 Lindenwood Dr Ste 206, about 10 minutes via local routes. Opening October 2026.
+**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 17 minutes via US-30 east — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
 **Telehealth:** Phone and video visits included in membership for established patients
 
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting Exton patients?**
-Yes — Dr. Landi's patient list for Malvern and West Chester is open now. Joining the list gets you first invitations once scheduling opens August 2026. [Join the Exton patient list →](/contact/?subject=Join%20the%20Exton%20Patient%20List)
+Yes — Dr. Landi's patient list for Malvern and West Chester is open now. Joining the list gets you first invitations once scheduling opens October 2026. [Join the Exton patient list →](/contact/?subject=Join%20the%20Exton%20Patient%20List)
 
 **Who is the physician at the Malvern and West Chester offices?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
@@ -75,8 +75,8 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**West Chester Office (opening August 2026):** West Chester, PA 19380
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**West Chester Office (opening October 2026):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

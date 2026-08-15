@@ -1,6 +1,6 @@
 ---
 title: "Lifestyle Medicine in Malvern, PA | Forward Family Medicine"
-description: "Lifestyle medicine-integrated primary care in Malvern, PA with Dr. Brian Landi at 301 Lindenwood Dr Ste 206. Nutrition, movement, sleep, and stress as clinical tools. Opening August 2026."
+description: "Lifestyle medicine-integrated primary care in Malvern, PA with Dr. Brian Landi at 301 Lindenwood Dr Ste 206. Nutrition, movement, sleep, and stress as clinical tools. Opening October 2026."
 keywords:
   - lifestyle medicine Malvern PA
   - preventive care Malvern Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/membership"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr Ste 206 in August 2026 — primary care with lifestyle medicine integrated into every visit, led by Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
+localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr Ste 206 in October 2026 — primary care with lifestyle medicine integrated into every visit, led by Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
 nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
 ---
 
@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
 
 ## About Malvern, PA
 
-Malvern is a Chester County borough with a strong professional and health-aware community. Many Malvern residents already understand that lifestyle factors — nutrition, movement, sleep, stress — drive most of the chronic disease they see around them. The challenge is finding a primary care physician with the time and training to actually integrate those factors into a real clinical plan, not just hand out generic advice. Forward Family Medicine — with a new Malvern office at 301 Lindenwood Dr Ste 206 opening August 2026 — is built for exactly this.
+Malvern is a Chester County borough with a strong professional and health-aware community. Many Malvern residents already understand that lifestyle factors — nutrition, movement, sleep, stress — drive most of the chronic disease they see around them. The challenge is finding a primary care physician with the time and training to actually integrate those factors into a real clinical plan, not just hand out generic advice. Forward Family Medicine — with a new Malvern office at 301 Lindenwood Dr Ste 206 opening October 2026 — is built for exactly this.
 
 ## Lifestyle Medicine, Integrated Into Primary Care
 
@@ -36,7 +36,7 @@ For patients who want dedicated specialty consultation with a dual-board-certifi
 
 ## Why Malvern Patients Choose This Approach
 
-- **In-person care in Malvern** — 301 Lindenwood Dr Ste 206, opening August 2026
+- **In-person care in Malvern** — 301 Lindenwood Dr Ste 206, opening October 2026
 - Lifestyle medicine integrated into every primary care visit
 - Evidence-based nutrition guidance — beyond generic handouts
 - Chronic disease management with lifestyle at the center
@@ -53,7 +53,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Menopause
 ## Practical Information for Malvern Patients
 
 **Location:** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**Status:** Opening August 2026. Join the patient list now to be invited when scheduling opens.
+**Status:** Opening October 2026. Join the patient list now to be invited when scheduling opens.
 **Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and West Chester (Dr. Landi)
 
@@ -73,7 +73,7 @@ Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menop
 
 ## Contact & Practice Information
 
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

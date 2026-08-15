@@ -2,7 +2,7 @@
 name: "Malvern"
 slug: "malvern"
 status: "coming-soon"
-openingDate: "2026-08-01"
+openingDate: "2026-10-01"
 addressStreet: "301 Lindenwood Dr Suite #206"
 addressCity: "Malvern"
 addressState: "PA"
@@ -30,13 +30,13 @@ photos: []
 photoAlts: []
 providers:
   - "brian-landi-do"
-description: "Coming August 2026 — Direct Primary Care for Malvern, Paoli, and the western Main Line."
+description: "Coming October 2026 — Direct Primary Care for Malvern, Paoli, and the western Main Line."
 displayOrder: 3
 ---
 
 ## Now Forming
 
-Forward Family Medicine is opening a new location in Malvern in August 2026. Dr. Brian Landi, DO is leading this practice, bringing Direct Primary Care and a relationship-based approach to patients in Malvern, Paoli, and the western Main Line.
+Forward Family Medicine is opening a new location in Malvern in October 2026. Dr. Brian Landi, DO is leading this practice, bringing Direct Primary Care and a relationship-based approach to patients in Malvern, Paoli, and the western Main Line.
 
 ## Meet Your Physician
 

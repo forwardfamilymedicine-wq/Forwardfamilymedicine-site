@@ -67,7 +67,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 **Primary care location:** 295 Old Eagle School Road, Wayne, PA 19087
 **Currently accepting new patients with:** Dr. Lieberman
-**Specialty menopause consultation:** Dr. Landi at our West Chester and Malvern (301 Lindenwood Dr Ste 206) offices, opening August 2026, or via telehealth
+**Specialty menopause consultation:** Dr. Landi at our West Chester and Malvern (301 Lindenwood Dr Ste 206) offices, opening October 2026, or via telehealth
 **Telehealth:** Phone and video visits included for established patients
 
 ## Frequently Asked Questions
@@ -87,8 +87,8 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 ## Contact & Practice Information
 
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
-**West Chester Office (opening August 2026):** West Chester, PA 19380
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**West Chester Office (opening October 2026):** West Chester, PA 19380
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

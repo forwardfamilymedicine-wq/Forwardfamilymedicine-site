@@ -39,8 +39,8 @@ sameAs:
   - "https://npiregistry.cms.hhs.gov/provider-view/1578213062"
   - "https://www.doximity.com/pub/brian-landi-do"
 acceptingNewPatients: true
-acceptingNewPatientsStartDate: "2026-08-01"
-acceptingNewPatientsNote: "Dr. Landi joins Forward Family Medicine in August 2026. Join the patient list to be notified when scheduling opens."
+acceptingNewPatientsStartDate: "2026-10-01"
+acceptingNewPatientsNote: "Dr. Landi joins Forward Family Medicine in October 2026. Join the patient list to be notified when scheduling opens."
 displayOrder: 3
 ---
 

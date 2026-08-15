@@ -32,7 +32,7 @@ Downingtown is a Chester County borough on the Route 30 corridor with a strong p
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our West Chester office (about 10–12 minutes from Downingtown, opening August 2026) and Malvern office (about 15–18 minutes, opening August 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our West Chester office (about 10–12 minutes from Downingtown, opening October 2026) and Malvern office (about 15–18 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -46,8 +46,8 @@ Dr. Landi practices at our West Chester office (about 10–12 minutes from Downi
 
 ## Why Downingtown Patients Choose This Practice
 
-- **West Chester office ~10–12 min from Downingtown** — opening August 2026
-- **Malvern office ~15–18 min** — 301 Lindenwood Dr Ste 206, opening August 2026
+- **West Chester office ~10–12 min from Downingtown** — opening October 2026
+- **Malvern office ~15–18 min** — 301 Lindenwood Dr Ste 206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -65,8 +65,8 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Downingtown Patients
 
-**Closest FFM office:** West Chester — about 10–12 minutes via PA-322 south. Opening August 2026.
-**Also convenient:** Malvern — 301 Lindenwood Dr Ste 206, about 15–18 minutes via US-30 east. Opening August 2026.
+**Closest FFM office:** West Chester — about 10–12 minutes via PA-322 south. Opening October 2026.
+**Also convenient:** Malvern — 301 Lindenwood Dr Ste 206, about 15–18 minutes via US-30 east. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-30 east — Dr. Bigley and Dr. Lieberman provide menopause care as part of primary care there, currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 
@@ -76,7 +76,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 MSCP is a credential from the Menopause Society indicating dedicated training and ongoing competency in perimenopause and menopause care. It signals depth beyond what general primary care typically provides — formal evaluation of symptoms, evidence-based HRT decisions, and long-term cardiovascular and bone health planning.
 
 **Is Dr. Landi accepting Downingtown patients?**
-Yes — Dr. Landi's patient list for West Chester and Malvern is open now. Joining the list secures first invitations once scheduling opens August 2026. [Join the Downingtown patient list →](/contact/?subject=Join%20the%20Downingtown%20Patient%20List)
+Yes — Dr. Landi's patient list for West Chester and Malvern is open now. Joining the list secures first invitations once scheduling opens October 2026. [Join the Downingtown patient list →](/contact/?subject=Join%20the%20Downingtown%20Patient%20List)
 
 **Is menopause care included in my membership?**
 Yes — completely. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, and follow-ups are all part of your DPC membership. No per-visit charges, no separate fees.
@@ -86,8 +86,8 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**Malvern Office (opening August 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
-**West Chester Office (opening August 2026):** West Chester, PA 19380
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**West Chester Office (opening October 2026):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
