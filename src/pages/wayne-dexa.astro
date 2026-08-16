@@ -1,0 +1,419 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+
+const siteUrl = 'https://www.forwardfamilymedicine.com';
+const pageUrl = `${siteUrl}/wayne-dexa/`;
+const externalUrl = 'https://www.dexabodycomposition.com';
+
+const pageTitle = 'DEXA Scan in Wayne, PA | Body Composition & Bone Density | Wayne DEXA';
+const pageDescription =
+  'DEXA body composition and bone density scans in Wayne, PA — $250 per scan. Measure lean mass, visceral fat, and bone mineral density. Open to everyone.';
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "Wayne DEXA", "item": pageUrl }
+  ]
+};
+
+// Wayne DEXA is a separate, co-located business at the same street address as
+// Forward Family Medicine (distinct suite). It carries its own @id and its own
+// canonical site (sameAs) so search engines do not conflate it with the FFM
+// entity. The layout's org schema is suppressed on this page for the same reason.
+const wayneDexaSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": `${pageUrl}#business`,
+  "name": "Wayne DEXA",
+  "alternateName": "Wayne DEXA Body Composition",
+  "description": "DEXA body composition and bone density scanning in Wayne, PA. $250 per scan, open to the public — no membership, referral, or insurance required.",
+  "url": pageUrl,
+  "sameAs": [externalUrl],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "295 Old Eagle School Road, STE 2",
+    "addressLocality": "Wayne",
+    "addressRegion": "PA",
+    "postalCode": "19087",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.0440",
+    "longitude": "-75.3944"
+  },
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, credit card",
+  "isRelatedTo": {
+    "@type": "MedicalOrganization",
+    "@id": `${siteUrl}/#organization`,
+    "name": "Forward Family Medicine"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "DEXA Scanning",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "DEXA body composition and bone density scan",
+        "price": "250",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": externalUrl,
+        "itemOffered": {
+          "@type": "MedicalTest",
+          "name": "Dual-energy X-ray absorptiometry (DEXA) scan"
+        }
+      }
+    ]
+  }
+};
+
+const faqs = [
+  {
+    q: 'Do I need to be a Forward Family Medicine patient?',
+    a: 'No. Wayne DEXA is open to the public. Anyone can book a scan, with no membership or referral required.',
+  },
+  {
+    q: 'How much does a scan cost?',
+    a: "$250 per scan, a founding rate available for a limited time. It's a cash-pay service with no insurance billing and no hidden fees; payment is collected in full at booking.",
+  },
+  {
+    q: 'What does a DEXA scan measure?',
+    a: "Body fat and where it's distributed, lean muscle mass, an estimate of visceral fat, and bone mineral density: a fuller picture of your health than weight or BMI alone.",
+  },
+  {
+    q: 'How long does the scan take?',
+    a: 'The scan itself takes about ten minutes. Plan for roughly twenty to thirty minutes total for your visit.',
+  },
+  {
+    q: 'Is a DEXA scan safe?',
+    a: "Yes. A DEXA scan on the GE Lunar Prodigy delivers a very low effective dose of roughly 1 to 5 µSv. That is about the same as 3 to 15 hours of ordinary background radiation, and a small fraction of a chest X-ray or a transatlantic flight. As a precaution, scans aren't performed during pregnancy.",
+  },
+  {
+    q: 'Where is it located?',
+    a: 'At 295 Old Eagle School Road, STE 2, Wayne, PA, the same location as Forward Family Medicine.',
+  },
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={[breadcrumb, wayneDexaSchema]}
+  suppressOrgSchema={true}
+>
+  <div class="wd-page">
+
+    <!-- SECTION 1 — HERO -->
+    <section class="wd-hero">
+      <div class="wd-container wd-hero__inner">
+        <p class="wd-eyebrow">295 Old Eagle School Road, STE 2 · Wayne, PA</p>
+        <h1 class="wd-h1">Wayne DEXA Body Composition</h1>
+        <hr class="wd-rule" />
+        <p class="wd-hero__sub">Precise body composition and bone density scanning in Wayne, PA. <strong>$250 per scan (founding rate).</strong></p>
+        <div class="wd-hero__ctas">
+          <a href={externalUrl} class="wd-btn wd-btn--solid" target="_blank" rel="noopener noreferrer">Book a scan at dexabodycomposition.com →</a>
+          <a href="#what" class="wd-btn wd-btn--ghost">What a scan measures</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — WHAT A SCAN MEASURES -->
+    <section class="wd-section" id="what">
+      <div class="wd-container">
+        <p class="wd-lede">Wayne DEXA offers gold-standard DEXA (dual-energy X-ray absorptiometry) scanning for anyone who wants an accurate, objective picture of their body, not the rough estimate a scale or BMI provides. A complete scan takes about ten minutes.</p>
+
+        <h2 class="wd-h2">A DEXA scan measures three things with clinical precision.</h2>
+
+        <div class="wd-measures">
+          <div class="wd-measure">
+            <span class="wd-measure__num">01</span>
+            <h3 class="wd-h3">Body composition</h3>
+            <p>Lean muscle mass, fat mass, and how each is distributed across your body.</p>
+          </div>
+          <div class="wd-measure">
+            <span class="wd-measure__num">02</span>
+            <h3 class="wd-h3">Visceral fat</h3>
+            <p>The metabolically active fat around your organs that drives cardiovascular and metabolic risk.</p>
+          </div>
+          <div class="wd-measure">
+            <span class="wd-measure__num">03</span>
+            <h3 class="wd-h3">Bone mineral density</h3>
+            <p>The standard used to assess bone strength and screen for osteopenia and osteoporosis.</p>
+          </div>
+        </div>
+
+        <p class="wd-body wd-body--wide">Whether you're building strength, tracking a metabolic or weight-management goal, or monitoring bone health as you age, DEXA is the tool that tells you whether what you're doing is actually working, and in which direction you're trending over time.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — PRICE / ACCESS BAND -->
+    <section class="wd-band">
+      <div class="wd-container wd-band__inner">
+        <p class="wd-eyebrow wd-eyebrow--gold">Open to everyone</p>
+        <p class="wd-band__price">$250 <span>per scan</span></p>
+        <p class="wd-band__body">A founding rate available for a limited time. You don't need to be a Forward Family Medicine patient to book. It's a straightforward cash-pay service with transparent pricing and no insurance or referral required. Wayne DEXA measures and explains your results plainly; any decisions about your care remain yours to make with your own physician.</p>
+        <a href={externalUrl} class="wd-btn wd-btn--light" target="_blank" rel="noopener noreferrer">Book a scan at dexabodycomposition.com →</a>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — WHO IT'S FOR -->
+    <section class="wd-section wd-section--alt">
+      <div class="wd-container">
+        <h2 class="wd-h2">Who it's for</h2>
+        <ul class="wd-who">
+          <li><strong>People training seriously:</strong> strength, endurance, or physique athletes who want to track lean mass and fat changes accurately rather than guessing from the scale</li>
+          <li><strong>Anyone managing weight or metabolic health:</strong> to confirm you're losing fat and preserving muscle, not the reverse</li>
+          <li><strong>Adults monitoring bone health:</strong> postmenopausal women, older adults, and anyone with risk factors for osteoporosis who wants a baseline or ongoing tracking</li>
+          <li><strong>Longevity-minded patients:</strong> those who want objective, repeatable data to measure how their body is changing over time</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — WHY IT'S HERE -->
+    <section class="wd-section">
+      <div class="wd-container wd-why">
+        <div>
+          <h2 class="wd-h2">Why it's here</h2>
+        </div>
+        <div>
+          <p class="wd-body">Wayne DEXA and Forward Family Medicine are co-located and affiliated, sharing an address at 295 Old Eagle School Road, STE 2, in Wayne. For Forward Family Medicine members, that means body-composition and bone-density data can inform the care your physician provides. For everyone else, it's simple access to a scan that's often hard to find and overpriced elsewhere.</p>
+        </div>
+      </div>
+    </section>
+
+    <FAQSection faqs={faqs} headline="Frequently Asked Questions" />
+
+  </div>
+</MainLayout>
+
+<style>
+  /* ─── SCOPED SUB-BRAND PALETTE ──────────────────────────────
+     Wayne DEXA is a separate, co-located business. These tokens are
+     namespaced to .wd-page and must NOT be promoted to :root or
+     global.css — nothing else on the site uses them. */
+  .wd-page {
+    --wd-linen:     #F7F3EC;
+    --wd-sage:      #8FAB8E;
+    --wd-sage-dark: #4E6C50;
+    --wd-gold:      #B8873A;
+    --wd-forest:    #1E2D1F;
+
+    /* derived for legibility only — not brand colors */
+    --wd-ink:       #44513F;
+    --wd-line:      #E3DCCF;
+
+    font-family: var(--font-body);
+    color: var(--wd-ink);
+    background: var(--wd-linen);
+  }
+
+  .wd-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 48px);
+  }
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+  .wd-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wd-sage-dark);
+    margin: 0 0 1rem;
+  }
+  .wd-eyebrow--gold { color: var(--wd-gold); }
+
+  .wd-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.1rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--wd-forest);
+    margin: 0 0 1.25rem;
+  }
+
+  .wd-h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.4vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.22;
+    color: var(--wd-forest);
+    margin: 0 0 1.75rem;
+  }
+
+  .wd-h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--wd-forest);
+    margin: 0 0 0.5rem;
+  }
+
+  .wd-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--wd-ink);
+    margin: 0 0 1.25rem;
+  }
+  .wd-body:last-child { margin-bottom: 0; }
+  .wd-body--wide { max-width: 68ch; }
+
+  .wd-lede {
+    font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--wd-ink);
+    max-width: 64ch;
+    margin: 0 0 2.75rem;
+  }
+
+  .wd-rule {
+    width: 56px;
+    height: 3px;
+    background: var(--wd-gold);
+    border: 0;
+    margin: 0 0 1.75rem;
+  }
+
+  /* ─── BUTTONS ────────────────────────────────────────────── */
+  .wd-btn {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .wd-btn--solid {
+    background: var(--wd-forest);
+    color: var(--wd-linen);
+    border-color: var(--wd-forest);
+  }
+  .wd-btn--solid:hover { background: var(--wd-sage-dark); border-color: var(--wd-sage-dark); }
+  .wd-btn--ghost {
+    background: transparent;
+    color: var(--wd-forest);
+    border-color: var(--wd-sage);
+  }
+  .wd-btn--ghost:hover { border-color: var(--wd-forest); }
+  .wd-btn--light {
+    background: var(--wd-linen);
+    color: var(--wd-forest);
+    border-color: var(--wd-linen);
+  }
+  .wd-btn--light:hover { background: #fff; border-color: #fff; }
+
+  /* ─── SECTIONS ───────────────────────────────────────────── */
+  .wd-hero {
+    padding: clamp(56px, 9vw, 104px) 0 clamp(48px, 7vw, 80px);
+    background: var(--wd-linen);
+    border-bottom: 1px solid var(--wd-line);
+  }
+  .wd-hero__inner { max-width: 800px; }
+  .wd-hero__sub {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    color: var(--wd-ink);
+    margin: 0 0 2rem;
+  }
+  .wd-hero__sub strong { color: var(--wd-forest); font-weight: 600; }
+  .wd-hero__ctas { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+
+  .wd-section { padding: var(--section-pad) 0; background: var(--wd-linen); }
+  .wd-section--alt {
+    background: #FFFDF9;
+    border-top: 1px solid var(--wd-line);
+    border-bottom: 1px solid var(--wd-line);
+  }
+
+  /* ─── MEASURES ───────────────────────────────────────────── */
+  .wd-measures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 0 0 2.5rem;
+  }
+  .wd-measure {
+    background: #fff;
+    border: 1px solid var(--wd-line);
+    border-top: 3px solid var(--wd-gold);
+    border-radius: var(--radius-sm);
+    padding: 1.75rem 1.5rem;
+  }
+  .wd-measure__num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--wd-gold);
+    margin: 0 0 0.75rem;
+  }
+  .wd-measure p { font-size: 0.95rem; line-height: 1.7; color: var(--wd-ink); margin: 0; }
+
+  /* ─── PRICE BAND ─────────────────────────────────────────── */
+  .wd-band { background: var(--wd-forest); padding: var(--section-pad) 0; }
+  .wd-band__inner { max-width: 720px; }
+  .wd-band__price {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--wd-linen);
+    margin: 0 0 1.25rem;
+  }
+  .wd-band__price span {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--wd-sage);
+    margin-left: 0.6rem;
+  }
+  .wd-band__body {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(247, 243, 236, 0.78);
+    margin: 0 0 2rem;
+  }
+
+  /* ─── WHO IT'S FOR ───────────────────────────────────────── */
+  .wd-who {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    max-width: 880px;
+  }
+  .wd-who li {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--wd-sage);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--wd-ink);
+  }
+  .wd-who li strong { color: var(--wd-forest); font-weight: 600; }
+
+  /* ─── WHY IT'S HERE ──────────────────────────────────────── */
+  .wd-why {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .wd-why .wd-h2 { margin-bottom: 0; }
+  @media (max-width: 800px) {
+    .wd-why { grid-template-columns: 1fr; }
+    .wd-why .wd-h2 { margin-bottom: 1.25rem; }
+  }
+</style>

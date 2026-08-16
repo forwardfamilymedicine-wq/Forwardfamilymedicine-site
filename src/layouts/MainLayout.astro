@@ -12,6 +12,7 @@ export interface Props {
   ogType?: string;
   schema?: object | object[];
   noindex?: boolean;
+  suppressOrgSchema?: boolean;
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   ogType = 'website',
   schema,
   noindex = false,
+  suppressOrgSchema = false,
 } = Astro.props;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
@@ -30,6 +32,7 @@ const canonicalUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": ["MedicalOrganization", "LocalBusiness"],
+  "@id": `${siteUrl}/#organization`,
   "name": "Forward Family Medicine",
   "url": siteUrl,
   "telephone": "+12156457044",
@@ -57,7 +60,10 @@ const orgSchema = {
   "sameAs": []
 };
 
-const schemas = [orgSchema, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])];
+const schemas = [
+  ...(suppressOrgSchema ? [] : [orgSchema]),
+  ...(Array.isArray(schema) ? schema : schema ? [schema] : []),
+];
 ---
 
 <!doctype html>
