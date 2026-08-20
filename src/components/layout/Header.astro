@@ -18,6 +18,7 @@ const servicesChildren = [
   { href: '/clarity/', label: 'The Clarity Program' },
   { href: '/for-businesses', label: 'For Businesses' },
   { href: '/wellness-collective', label: 'Wellness Collective' },
+  { href: '/wayne-dexa', label: 'Wayne DEXA (Body Composition)' },
 ];
 
 const newPatientsChildren = [
@@ -441,6 +442,10 @@ const isLocationsActive = currentPath.startsWith('/locations');
     background: var(--cream-200);
     color: var(--green-400);
   }
+
+  /* Set apart the last Services entry (Wayne DEXA) */
+  .services-parent .dropdown > li:last-child { border-top: 1px solid var(--cream-300); }
+  .services-parent .dropdown > li:last-child a { padding-top: 0.7rem; }
 
   /* CTA */
   .nav-cta {
