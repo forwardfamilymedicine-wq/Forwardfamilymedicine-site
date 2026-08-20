@@ -1,12 +1,51 @@
 ---
 import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
+import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
+
+export interface Props {
+  author?: string;
+}
+
+const { author } = Astro.props;
+
+// Frontmatter author strings (and their aliases) → profile key.
+// Mirrors the authorDisplay maps in BlogLayout.astro and lifestyle/[...slug].astro.
+const AUTHOR_ALIASES: Record<string, string> = {
+  'Dr. David Bigley': 'bigley',
+  'David Bigley, DO': 'bigley',
+  'Dr. Philip Lieberman': 'lieberman',
+  'Philip Lieberman, MD': 'lieberman',
+};
+
+const AUTHOR_PROFILES = {
+  bigley: {
+    photo: drBigleyPhoto,
+    photoAlt: 'Dr. David Bigley, DO — Founder & Physician, Forward Family Medicine',
+    name: 'David Bigley, DO',
+    title: 'Founder & Physician, Forward Family Medicine',
+    desc: 'Dr. Bigley founded Forward Family Medicine to practice medicine the way it was meant to be — with time, trust, and a genuine relationship with every patient.',
+    href: '/meet-the-team/david-bigley-do/',
+  },
+  lieberman: {
+    photo: drLiebermanPhoto,
+    photoAlt: 'Dr. Philip Lieberman, MD — Family Medicine & Lifestyle Medicine, Forward Family Medicine',
+    name: 'Philip Lieberman, MD',
+    title: 'Physician, Forward Family Medicine',
+    desc: 'Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with pre-medical training in nutrition and culinary arts. He helps patients use food, movement, sleep, and stress management to prevent and treat chronic disease.',
+    href: '/meet-the-team/philip-lieberman-md/',
+  },
+};
+
+// Unknown or absent author falls back to the founder's bio (previous behavior).
+const profileKey = (author ? AUTHOR_ALIASES[author] : undefined) ?? 'bigley';
+const profile = AUTHOR_PROFILES[profileKey as keyof typeof AUTHOR_PROFILES];
 ---
 
 <aside class="author-bio" aria-label="About the author">
   <div class="author-bio-inner">
     <img
-      src={drBigleyPhoto.src}
-      alt="Dr. David Bigley, DO — Founder & Physician, Forward Family Medicine"
+      src={profile.photo.src}
+      alt={profile.photoAlt}
       class="author-photo"
       width="72"
       height="72"
@@ -14,10 +53,10 @@ import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
     />
     <div class="author-bio-text">
       <p class="author-bio-label">About the Author</p>
-      <p class="author-bio-name">David Bigley, DO</p>
-      <p class="author-bio-title">Founder &amp; Physician, Forward Family Medicine</p>
-      <p class="author-bio-desc">Dr. Bigley founded Forward Family Medicine to practice medicine the way it was meant to be — with time, trust, and a genuine relationship with every patient.</p>
-      <a href="/meet-the-team/david-bigley-do/" class="author-bio-link">Read full bio →</a>
+      <p class="author-bio-name">{profile.name}</p>
+      <p class="author-bio-title">{profile.title}</p>
+      <p class="author-bio-desc">{profile.desc}</p>
+      <a href={profile.href} class="author-bio-link">Read full bio →</a>
     </div>
   </div>
 </aside>

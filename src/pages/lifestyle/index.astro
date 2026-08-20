@@ -2,6 +2,18 @@
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 
+// Curated cross-link block. These six posts live in the `blog` collection
+// (their canonical home) and are surfaced here for discoverability.
+// Edit this list by hand to add or remove entries.
+const ENVIRONMENTAL_HEALTH_SERIES = [
+  { title: "You Don't Need a Toxic-Free Home", url: '/blog/reducing-chemical-exposure-at-home/' },
+  { title: 'PFAS: What Are Forever Chemicals?', url: '/blog/pfas-forever-chemicals-reduce-exposure/' },
+  { title: 'Microplastics: 10 Everyday Sources', url: '/blog/microplastics-everyday-sources/' },
+  { title: 'Is Your Cookware Working Against You?', url: '/blog/choosing-healthier-cookware/' },
+  { title: 'Do You Really Need to Disinfect Your Entire House?', url: '/blog/do-you-need-to-disinfect-your-house/' },
+  { title: 'The Low-Toxicity Home: 15 Simple Changes', url: '/blog/low-toxicity-home-15-changes/' },
+];
+
 const entries = await getCollection('lifestyle');
 const published = entries
   .filter(e => !e.data.draft)
@@ -87,6 +99,27 @@ const breadcrumb = {
     </div>
   </section>
 
+  <section class="library-series section">
+    <div class="container">
+      <div class="category-block">
+        <h2 class="category-heading">New: Environmental Health Series</h2>
+        <p class="series-intro">
+          A six-part series by Dr. Philip Lieberman on reducing everyday chemical
+          exposure — published on our blog.
+        </p>
+        <ul class="article-list">
+          {ENVIRONMENTAL_HEALTH_SERIES.map(post => (
+            <li class="article-item">
+              <a href={post.url} class="article-link">
+                <span class="article-title">{post.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="library-cta section" style="background: var(--cream-200);">
     <div class="container" style="max-width:680px; text-align:center;">
       <span class="section-label">Put It Into Practice</span>
@@ -152,6 +185,16 @@ const breadcrumb = {
     font-size: 0.82rem;
     color: var(--ink-500);
     line-height: 1.5;
+  }
+
+  /* Curated cross-link block — sits directly under .library-body,
+     so drop the duplicated top padding between the two sections. */
+  .library-series { padding-top: 0; }
+  .series-intro {
+    font-size: 0.88rem;
+    color: var(--ink-500);
+    line-height: 1.6;
+    margin: -0.5rem 0 1.25rem;
   }
 
   @media (max-width: 640px) {
