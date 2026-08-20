@@ -121,7 +121,7 @@ const breadcrumbSchema = {
 
 <style>
   .post-wrap {
-    max-width: 760px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 3rem 0 4rem;
   }
@@ -145,12 +145,13 @@ const breadcrumbSchema = {
     color: var(--ink-300);
     font-style: normal;
   }
-  .prose h2 { margin: 2.5rem 0 1rem; }
-  .prose h3 { margin: 2rem 0 0.75rem; }
-  .prose ul, .prose ol { margin: 1rem 0 1rem 1.5rem; }
-  .prose li { margin-bottom: 0.4rem; }
-  .prose p { margin-bottom: 1.25rem; }
-  .prose strong { color: var(--ink-900); }
+  .prose { font-size: 1.0625rem; line-height: 1.75; }
+  .prose :global(h2) { font-size: clamp(1.35rem, 2.5vw, 1.75rem); margin: 3rem 0 1rem; }
+  .prose :global(h3) { font-size: clamp(1.15rem, 2vw, 1.3rem); margin: 2.25rem 0 0.75rem; }
+  .prose :global(p)  { margin-bottom: 1.375rem; }
+  .prose :global(ul), .prose :global(ol) { margin: 1.25rem 0 1.25rem 1.5rem; }
+  .prose :global(li) { margin-bottom: 0.5rem; }
+  .prose :global(strong) { color: var(--ink-900); }
   .post-cta-block {
     margin-top: 3rem;
     padding: 2rem 2.5rem;

@@ -76,7 +76,7 @@ const authorLabel = author ? (authorDisplay[author] ?? author) : null;
 
 <style>
   .post-wrap {
-    max-width: 760px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 3rem 0 4rem;
   }
@@ -90,12 +90,13 @@ const authorLabel = author ? (authorDisplay[author] ?? author) : null;
   .post-header { margin-bottom: 2.5rem; }
   .post-header h1 { margin-bottom: 0.75rem; }
   .post-meta { color: var(--ink-500); font-size: 0.9rem; }
-  .prose h2 { margin: 2.5rem 0 1rem; }
-  .prose h3 { margin: 2rem 0 0.75rem; }
-  .prose ul, .prose ol { margin: 1rem 0 1rem 1.5rem; }
-  .prose li { margin-bottom: 0.4rem; }
-  .prose p { margin-bottom: 1.25rem; }
-  .prose strong { color: var(--ink-900); }
+  .prose { font-size: 1.0625rem; line-height: 1.75; }
+  .prose :global(h2) { font-size: clamp(1.35rem, 2.5vw, 1.75rem); margin: 3rem 0 1rem; }
+  .prose :global(h3) { font-size: clamp(1.15rem, 2vw, 1.3rem); margin: 2.25rem 0 0.75rem; }
+  .prose :global(p)  { margin-bottom: 1.375rem; }
+  .prose :global(ul), .prose :global(ol) { margin: 1.25rem 0 1.25rem 1.5rem; }
+  .prose :global(li) { margin-bottom: 0.5rem; }
+  .prose :global(strong) { color: var(--ink-900); }
   .prose :global(a) { color: var(--green-300); text-decoration: underline; }
   .prose :global(blockquote) { border-left: 4px solid var(--green-300); padding: 0.5rem 1.25rem; margin: 1.5rem 0; background: var(--cream-100); color: var(--ink-700); }
   .prose :global(hr) { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
