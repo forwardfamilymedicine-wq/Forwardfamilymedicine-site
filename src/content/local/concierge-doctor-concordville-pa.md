@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 **Closest FFM office:** West Chester — about 10–15 minutes via US-1 north to PA-202. Opening October 2026.
 **Also convenient:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via US-202 north. Opening October 2026.
-**Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
+**Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 
 ## Frequently Asked Questions
