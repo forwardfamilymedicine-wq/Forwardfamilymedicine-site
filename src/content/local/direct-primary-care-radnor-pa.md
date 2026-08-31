@@ -64,7 +64,7 @@ Yes — we are currently enrolling new members. Panel size is limited, so we enc
 Large health system practices operate on high-volume schedules. Our DPC model limits panel size to give every member same-day access and a physician who knows them deeply. [Learn more →](/direct-primary-care)
 
 **What's the best way to try this before committing?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Bigley and Dr. Lieberman. [Schedule here →](/new-patients)
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with one of our physicians. [Schedule here →](/new-patients)
 
 ## Contact & Practice Information
 
