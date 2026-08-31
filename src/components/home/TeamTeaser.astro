@@ -1,9 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import ProviderCard from '../shared/ProviderCard.astro';
+import { getAvailability } from '../../utils/availability';
 
 const providers = (await getCollection('providers'))
   .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+
+// Split by availability, not by name, so this follows the data if a panel
+// opens or closes later. Anyone not currently accepting drops out of the
+// primary grid; the founder keeps his own block below.
+const accepting = providers.filter(p => getAvailability(p.data).status !== 'full');
+const founder = providers.find(p => p.data.slug === 'david-bigley-do');
+const showFounderBlock = founder && getAvailability(founder.data).status === 'full';
 ---
 
 <section class="team-teaser section" aria-label="Meet the team">
@@ -12,15 +20,35 @@ const providers = (await getCollection('providers'))
       <span class="section-label">Your Care Team</span>
       <h2 class="section-title">Meet the Team</h2>
       <p class="section-intro" style="margin:0 auto;">
-        Three physicians, three locations, one philosophy: small panels, real visit
-        lengths, and primary care that genuinely knows you. Click any card to read
-        their full bio.
+        Small panels, visits long enough to actually get somewhere, and direct
+        access to the doctor who knows your history. The physicians below are
+        accepting new patients now.
       </p>
     </div>
 
     <div class="team-grid">
-      {providers.map(p => <ProviderCard provider={p} />)}
+      {accepting.map(p => <ProviderCard provider={p} />)}
     </div>
+
+    {showFounderBlock && (
+      <div class="founder-block">
+        <p class="founder-eyebrow">Our Founder</p>
+        <h3 class="founder-heading">Founded by Dr. David Bigley, DO</h3>
+        <p class="founder-body">
+          Dr. Bigley opened Forward Family Medicine in 2024. His panel is
+          currently full.
+        </p>
+        <p class="founder-body">
+          That is the model working as designed. Every physician here practices
+          with a deliberate cap on panel size, because the time, the direct
+          access, and the continuity this practice is built on are only possible
+          when a doctor has room for them. A full panel is that commitment kept.
+        </p>
+        <a href="/meet-the-team/david-bigley-do/" class="founder-link">
+          Read Dr. Bigley's story →
+        </a>
+      </div>
+    )}
 
     <div class="team-footer text-center">
       <a href="/meet-the-team/" class="team-all-link">+ Meet our wellness team →</a>
@@ -35,12 +63,55 @@ const providers = (await getCollection('providers'))
   .team-header {
     margin-bottom: 3rem;
   }
+  /* Two accepting physicians: keep cards at card width and centred rather than
+     letting them stretch across the full container. */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    justify-content: center;
     gap: 2rem;
     margin-bottom: 2.5rem;
   }
+
+  /* Founder block — secondary to the cards above, not a third card. */
+  .founder-block {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--warm-50);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .founder-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-500);
+    margin: 0 0 0.5rem;
+  }
+  .founder-heading {
+    font-size: 1.15rem;
+    color: var(--ink-900);
+    margin: 0 0 1rem;
+  }
+  .founder-body {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-700);
+    margin: 0 0 1rem;
+  }
+  .founder-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--green-400);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .founder-link:hover { color: var(--green-500); }
+
   .team-footer {
     margin-top: 1.5rem;
   }
@@ -56,10 +127,11 @@ const providers = (await getCollection('providers'))
   /* Override component flex sizing — grid handles width here */
   .team-grid :global(.provider-card) { max-width: none; min-width: 0; flex: unset; }
 
-  @media (max-width: 860px) {
-    .team-grid { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 780px) {
+    .team-grid { grid-template-columns: minmax(0, 360px); }
   }
   @media (max-width: 540px) {
     .team-grid { grid-template-columns: 1fr; }
+    .founder-block { padding: 1.5rem; }
   }
 </style>
