@@ -31,7 +31,7 @@ Ardmore is a diverse, walkable Lower Merion community that blends an urban-subur
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Ardmore residents have access to:
 
-- **Primary care at our Wayne office** (about 15 minutes from Ardmore) — Dr. David Bigley and Dr. Philip Lieberman provide menopause care as part of comprehensive family medicine
+- **Primary care at our Wayne office** (about 15 minutes from Ardmore) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
 - **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 35 minutes) or Malvern (about 25 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 

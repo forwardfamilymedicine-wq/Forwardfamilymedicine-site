@@ -31,7 +31,7 @@ King of Prussia is Montgomery County's major commercial and corporate hub — ho
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. King of Prussia residents have access to:
 
-- **Primary care at our Wayne office** (about 15 minutes from King of Prussia) — Dr. David Bigley and Dr. Philip Lieberman provide menopause care as part of comprehensive family medicine
+- **Primary care at our Wayne office** (about 15 minutes from King of Prussia) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
 - **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 25 minutes) or Malvern (about 15 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 

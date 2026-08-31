@@ -17,7 +17,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care through our Wayne office at 295 Old Eagle School Road, with Drs. Bigley and Lieberman integrating menopause into family primary care. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our West Chester and Malvern offices (about 30 minutes from Wayne) or via telehealth."
+localNote: "Forward Family Medicine offers comprehensive menopause care through our Wayne office at 295 Old Eagle School Road, with our Wayne physicians integrating menopause into family primary care. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our West Chester and Malvern offices (about 30 minutes from Wayne) or via telehealth."
 nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 ---
 
@@ -31,7 +31,7 @@ Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Pao
 
 ## Menopause Care at Forward Family Medicine
 
-Menopause care at Forward Family Medicine isn't a referral or an add-on — it's part of how every visit works. At our Wayne flagship office, Dr. David Bigley and Dr. Philip Lieberman integrate perimenopause and menopause care into family primary care: symptom evaluation, hormone considerations, cardiovascular and bone health monitoring, lifestyle integration. Visit lengths of 1–2 hours allow real depth.
+Menopause care at Forward Family Medicine isn't a referral or an add-on — it's part of how every visit works. At our Wayne flagship office, our physicians integrate perimenopause and menopause care into family primary care: symptom evaluation, hormone considerations, cardiovascular and bone health monitoring, lifestyle integration. Visit lengths of 1–2 hours allow real depth.
 
 For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) practices at our West Chester and Malvern offices — about 30 minutes west of Wayne. Members can see Dr. Landi in person at either office or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
 
@@ -72,7 +72,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Frequently Asked Questions
 
 **Who provides menopause care at the Wayne office?**
-Dr. David Bigley and Dr. Philip Lieberman provide menopause care as part of family primary care at Wayne. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our West Chester and Malvern offices or by telehealth.
+Our Wayne physicians provide menopause care as part of family primary care. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our West Chester and Malvern offices or by telehealth.
 
 **Is a consultation with Dr. Landi separate from my Wayne primary care?**
 No. Your FFM membership covers care across all three offices. You can establish primary care at Wayne with Dr. Lieberman and schedule specialty menopause consultations with Dr. Landi as needed — in person or by telehealth. Inter-office coordination is automatic and free.

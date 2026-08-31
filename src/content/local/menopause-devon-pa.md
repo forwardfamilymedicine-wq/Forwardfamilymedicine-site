@@ -31,7 +31,7 @@ Devon is a Chester County community nestled between Wayne and Paoli on Lancaster
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Devon residents have access to:
 
-- **Primary care at our Wayne office** (about 5 minutes from Devon) — Dr. David Bigley and Dr. Philip Lieberman provide menopause care as part of comprehensive family medicine
+- **Primary care at our Wayne office** (about 5 minutes from Devon) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
 - **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 25 minutes) or Malvern (about 10 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
