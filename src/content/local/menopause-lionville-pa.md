@@ -75,7 +75,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 MSCP is a credential from the Menopause Society indicating dedicated training and ongoing competency in perimenopause and menopause care. It signals depth beyond what general primary care typically provides — formal evaluation of symptoms, evidence-based HRT decisions, and long-term cardiovascular and bone health planning.
 
 **Is Dr. Landi accepting Lionville patients?**
-Yes — Dr. Landi's patient list for Malvern and West Chester is open now. Joining the list secures first invitations once scheduling opens October 2026. [Join the Lionville patient list →](/contact/?subject=Join%20the%20Lionville%20Patient%20List)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern and West Chester offices beginning October 2026. [Join the Lionville patient list →](/contact/?subject=Join%20the%20Lionville%20Patient%20List)
 
 **Is menopause care included in my membership?**
 Yes — completely. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, and follow-ups are all part of your DPC membership. No per-visit charges, no separate fees.

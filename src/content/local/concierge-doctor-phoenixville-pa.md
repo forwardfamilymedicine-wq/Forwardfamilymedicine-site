@@ -67,7 +67,7 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Phoenixville patients?**
-Yes — Dr. Landi's patient list for Malvern and West Chester is open now. Join to be invited first when scheduling opens October 2026. [Join the patient list →](/contact/?subject=Join%20the%20Phoenixville%20Patient%20List)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern and West Chester offices beginning October 2026. [Join the patient list →](/contact/?subject=Join%20the%20Phoenixville%20Patient%20List)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)

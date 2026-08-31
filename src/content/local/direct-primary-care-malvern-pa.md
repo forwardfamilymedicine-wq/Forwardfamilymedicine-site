@@ -61,7 +61,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting Malvern patients?**
-Yes — Dr. Landi's patient list is open now. Joining the list gets you the first invitations once scheduling opens October 2026. [Join the Malvern patient list →](/contact/?subject=Join%20the%20Malvern%20Patient%20List)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. [Join the Malvern patient list →](/contact/?subject=Join%20the%20Malvern%20Patient%20List)
 
 **Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
