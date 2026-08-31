@@ -34,7 +34,7 @@ Forward Family Medicine delivers the concierge medicine essentials — same-day 
 
 - 3 miles from Devon — quick drive or SEPTA
 - Same-day appointments available
-- Direct line to Dr. David Bigley, DO and Dr. Philip Lieberman, MD — phone, text, or message
+- Direct line to Dr. Philip Lieberman, MD — phone, text, or message
 - Longer, unhurried visits
 - Lifestyle medicine and prevention integrated. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly membership — no billing surprises

@@ -34,7 +34,7 @@ Forward Family Medicine delivers the concierge medicine experience — same-day 
 
 - 5–6 miles from Haverford — Route 30 or SEPTA
 - Same-day appointments available
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone and text
+- Direct access to Dr. Philip Lieberman, MD by phone and text
 - Longer, unhurried visits
 - Lifestyle medicine built in. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Flat monthly fee — no surprises

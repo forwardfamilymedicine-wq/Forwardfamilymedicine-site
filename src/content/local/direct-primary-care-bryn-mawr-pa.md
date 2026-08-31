@@ -34,7 +34,7 @@ Bryn Mawr is a Lower Merion Township community with a distinctive identity: home
 - **5 miles west** of Bryn Mawr on Lancaster Avenue
 - Same-day appointments for acute concerns
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD — phone, text, message
+- Direct access to Dr. Philip Lieberman, MD — phone, text, message
 - Visits as long as your health requires
 - Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Smaller panel means your physician knows your history

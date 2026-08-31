@@ -34,7 +34,7 @@ Ardmore is a diverse, walkable Lower Merion community that blends an urban-subur
 - 6 miles west of Ardmore on Lancaster Avenue
 - Same-day appointments available
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, or message
+- Direct access to Dr. Philip Lieberman, MD by phone, text, or message
 - Longer visits — not a 10-minute slot
 - Lifestyle medicine and prevention integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available

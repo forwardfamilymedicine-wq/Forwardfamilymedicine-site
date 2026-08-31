@@ -34,7 +34,7 @@ Haverford is a quiet, leafy Lower Merion Township community best known for Haver
 - 5–6 miles west via Lancaster Avenue or SEPTA
 - Same-day and next-day appointments
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
+- Direct access to Dr. Philip Lieberman, MD by phone, text, and message
 - Longer visits when your situation requires it
 - Lifestyle medicine and prevention built into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available

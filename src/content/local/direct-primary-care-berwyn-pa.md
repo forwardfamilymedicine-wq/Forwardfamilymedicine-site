@@ -34,7 +34,7 @@ Berwyn is a quiet, residential Chester County community just east of Wayne on La
 - **3 miles from Berwyn** — a quick drive or SEPTA ride on the Paoli–Thorndale line
 - Same-day and next-day appointments for acute concerns
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct phone, text, and message access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD
+- Direct phone, text, and message access to Dr. Philip Lieberman, MD
 - Visits up to 1–2 hours when your health situation requires it
 - Lifestyle medicine integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Wholesale lab pricing — dramatically below standard billed rates

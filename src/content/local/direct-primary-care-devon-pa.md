@@ -34,7 +34,7 @@ Devon is a Chester County community nestled between Wayne and Paoli on Lancaster
 - **3 miles east of Devon** on Lancaster Avenue
 - Same-day appointments available
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and message
+- Direct access to Dr. Philip Lieberman, MD by phone, text, and message
 - Visits as long as they need to be — no billing clock
 - Lifestyle medicine and prevention built into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available

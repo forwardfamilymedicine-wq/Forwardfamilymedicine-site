@@ -34,7 +34,7 @@ Villanova is one of the most prestigious addresses on the Philadelphia Main Line
 - **1 mile from Villanova** — the closest DPC practice on the Main Line
 - Same-day appointments for acute concerns
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, and secure message
+- Direct access to Dr. Philip Lieberman, MD by phone, text, and secure message
 - Visits as long as your situation requires — not a billing clock
 - Preventive care and lifestyle medicine integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available for Villanova households

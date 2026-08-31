@@ -36,7 +36,7 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 
 ## Why Wayne Patients Choose a Concierge-Style DPC Practice
 
-- **You reach Dr. David Bigley, DO and Dr. Philip Lieberman, MD directly** — not a call center
+- **You reach Dr. Philip Lieberman, MD directly** — not a call center
 - **Same-day appointments** for acute concerns
 - **Visits up to 1–2 hours** when your situation calls for it
 - **Proactive follow-up** — we reach out, not just the other way around

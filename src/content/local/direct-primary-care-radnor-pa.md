@@ -34,7 +34,7 @@ Radnor Township is one of the Philadelphia Main Line's most distinguished commun
 - **Located within Radnor Township** — Wayne is Radnor Township
 - Same-day and next-day availability for acute concerns
 - Our patient panel is capped at ~250 patients per physician — roughly half the DPC average — which is what makes genuine same-day access possible.
-- Direct access to Dr. David Bigley, DO and Dr. Philip Lieberman, MD by phone, text, or message
+- Direct access to Dr. Philip Lieberman, MD by phone, text, or message
 - Longer visits when your health requires real conversation
 - Lifestyle medicine and preventive care integrated into every membership. Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 - Family memberships available
