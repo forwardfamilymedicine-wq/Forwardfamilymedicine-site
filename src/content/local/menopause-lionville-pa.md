@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10–12 minutes via PA-100 south. Opening October 2026.
 **Also convenient:** West Chester — about 15 minutes via PA-100 south to PA-322. Opening October 2026.
-**Wayne option:** 295 Old Eagle School Road, about 20 minutes via PA-100 to US-30 east — Dr. Bigley and Dr. Lieberman provide menopause care as part of primary care there, currently accepting new patients.
+**Wayne option:** 295 Old Eagle School Road, about 20 minutes via PA-100 to US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 
 ## Frequently Asked Questions
