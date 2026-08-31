@@ -14,6 +14,7 @@ const isPhysician = provider.collection === 'providers';
 const availability = isPhysician ? getAvailability(d) : null;
 const isPanelFull = availability?.status === 'full';
 const isFuture = availability?.status === 'future';
+const isAccepting = availability?.status === 'accepting';
 const openingLabel = availability?.startLabel ?? null;
 ---
 
@@ -41,6 +42,7 @@ const openingLabel = availability?.startLabel ?? null;
     )}
     {isPanelFull && !isFuture && <span class="panel-badge panel-badge--full">Panel Full</span>}
     {isFuture && <span class="panel-badge panel-badge--future">Joining {openingLabel}</span>}
+    {isAccepting && <span class="panel-badge panel-badge--accepting">Accepting new patients</span>}
   </div>
 
   <div class="provider-card-body">
@@ -82,7 +84,8 @@ const openingLabel = availability?.startLabel ?? null;
 
   .panel-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.7rem; border-radius: 999px; }
   .panel-badge--full { background: var(--cream-300); color: var(--ink-700); }
-  .panel-badge--future { background: var(--green-100); color: var(--green-500); }
+  .panel-badge--future,
+  .panel-badge--accepting { background: var(--green-100); color: var(--green-500); }
 
   .provider-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
   .provider-card-name { font-size: 1.25rem; color: var(--ink-900); margin: 0; }
