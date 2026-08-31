@@ -40,7 +40,7 @@ sameAs:
   - "https://www.doximity.com/pub/brian-landi-do"
 acceptingNewPatients: true
 acceptingNewPatientsNote: "Dr. Landi sees patients at our West Chester and Malvern offices in Chester County."
-displayOrder: 3
+displayOrder: 2
 ---
 
 Dr. Brian Landi is a board-certified family physician dedicated to delivering highly personalized, relationship-driven care through a direct primary care model. After completing his medical degree at Philadelphia College of Osteopathic Medicine, he trained at ChristianaCare, where he served as Chief Resident — a role that reflects both his clinical excellence and his commitment to leadership, education, and patient advocacy.

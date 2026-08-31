@@ -31,7 +31,7 @@ npi: "1093391021"
 sameAs: []
 acceptingNewPatients: false
 acceptingNewPatientsNote: "Dr. Bigley's panel is currently full. New members are warmly welcomed by Dr. Lieberman in Wayne and Dr. Landi in West Chester / Malvern (beginning October 2026)."
-displayOrder: 1
+displayOrder: 3
 ---
 
 Dr. David Bigley, DO embarked on his journey in healthcare with a strong foundation in neuroscience and biochemistry, earning his undergraduate degree from the University of Scranton. Inspired by a holistic approach to medicine, he pursued his medical education at the Philadelphia College of Osteopathic Medicine (PCOM) in Philadelphia, where he embraced the principle of *cura personalis* — caring for the whole person.

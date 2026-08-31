@@ -42,7 +42,7 @@ notableExperience:
 npi: "1669979316"
 sameAs: []
 acceptingNewPatients: true
-displayOrder: 2
+displayOrder: 1
 ---
 
 Dr. Philip Lieberman's path to medicine is unlike any other physician you've met. Before medical school, he earned an Associate's Degree in Culinary Arts and a Bachelor of Science in Nutrition Science — building a clinical foundation in food, metabolism, and lifestyle that most doctors simply never receive.
