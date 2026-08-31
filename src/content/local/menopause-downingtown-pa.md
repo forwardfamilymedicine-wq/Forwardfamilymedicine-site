@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Downingtown PA
   - HRT consultation Downingtown PA
   - women's health Downingtown PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-downingtown-pa"
 location: "Downingtown, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -7,7 +7,6 @@ keywords:
   - family doctor Newtown Square PA
   - primary care Newtown Square PA
   - membership medicine Newtown Square Pennsylvania
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-newtown-square-pa"
 location: "Newtown Square, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

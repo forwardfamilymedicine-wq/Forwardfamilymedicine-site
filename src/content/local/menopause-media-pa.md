@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Media PA
   - HRT consultation Media PA
   - women's health Media PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-media-pa"
 location: "Media, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

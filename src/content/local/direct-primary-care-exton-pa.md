@@ -7,7 +7,6 @@ keywords:
   - family doctor Exton PA
   - primary care Exton PA
   - membership medicine Exton PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-exton-pa"
 location: "Exton, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

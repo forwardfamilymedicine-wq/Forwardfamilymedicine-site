@@ -7,7 +7,6 @@ keywords:
   - family doctor Chester Springs PA
   - primary care Chester Springs PA
   - membership medicine Chester Springs PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-chester-springs-pa"
 location: "Chester Springs, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

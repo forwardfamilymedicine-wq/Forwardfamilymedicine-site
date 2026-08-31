@@ -7,7 +7,6 @@ keywords:
   - direct access physician Downingtown PA
   - membership doctor Downingtown PA
   - private practice Downingtown PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-downingtown-pa"
 location: "Downingtown, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -7,7 +7,6 @@ keywords:
   - family doctor Avondale PA
   - primary care Avondale PA
   - membership medicine Avondale PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-avondale-pa"
 location: "Avondale, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

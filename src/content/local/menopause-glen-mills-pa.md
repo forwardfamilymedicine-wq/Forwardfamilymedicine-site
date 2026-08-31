@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Glen Mills PA
   - HRT consultation Glen Mills PA
   - women's health Glen Mills PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-glen-mills-pa"
 location: "Glen Mills, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

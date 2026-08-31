@@ -6,7 +6,6 @@ keywords:
   - concierge medicine Radnor Pennsylvania
   - concierge physician Radnor Township
   - boutique medicine Radnor PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-radnor-pa"
 location: "Radnor, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -7,7 +7,6 @@ keywords:
   - family doctor Lionville PA
   - primary care Lionville PA
   - membership medicine Lionville PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-lionville-pa"
 location: "Lionville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

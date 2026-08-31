@@ -7,7 +7,6 @@ keywords:
   - wellness doctor West Chester PA
   - chronic disease prevention West Chester PA
   - nutrition doctor West Chester PA
-canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

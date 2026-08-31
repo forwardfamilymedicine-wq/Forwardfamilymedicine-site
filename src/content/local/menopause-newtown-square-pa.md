@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Newtown Square PA
   - HRT consultation Newtown Square PA
   - women's health Newtown Square PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-newtown-square-pa"
 location: "Newtown Square, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

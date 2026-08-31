@@ -7,7 +7,6 @@ keywords:
   - direct access physician Kennett Square PA
   - membership doctor Kennett Square PA
   - private practice Kennett Square PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-kennett-square-pa"
 location: "Kennett Square, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

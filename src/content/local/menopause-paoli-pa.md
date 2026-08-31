@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Paoli PA
   - HRT consultation Paoli PA
   - women's health Paoli PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-paoli-pa"
 location: "Paoli, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

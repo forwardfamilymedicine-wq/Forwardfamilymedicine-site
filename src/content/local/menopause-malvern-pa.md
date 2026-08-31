@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Malvern PA
   - HRT consultation Malvern PA
   - women's health Malvern PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

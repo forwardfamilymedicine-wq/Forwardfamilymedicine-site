@@ -7,7 +7,6 @@ keywords:
   - direct access physician Lionville PA
   - membership doctor Lionville PA
   - private practice Lionville PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-lionville-pa"
 location: "Lionville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

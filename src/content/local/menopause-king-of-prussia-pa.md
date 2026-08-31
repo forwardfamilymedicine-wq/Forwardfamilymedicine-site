@@ -7,7 +7,6 @@ keywords:
   - menopause doctor King of Prussia PA
   - HRT consultation King of Prussia PA
   - women's health King of Prussia PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-king-of-prussia-pa"
 location: "King of Prussia, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

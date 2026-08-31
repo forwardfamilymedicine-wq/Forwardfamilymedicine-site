@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Phoenixville PA
   - HRT consultation Phoenixville PA
   - women's health Phoenixville PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-phoenixville-pa"
 location: "Phoenixville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

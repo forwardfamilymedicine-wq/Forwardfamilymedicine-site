@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Lionville PA
   - HRT consultation Lionville PA
   - women's health Lionville PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-lionville-pa"
 location: "Lionville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

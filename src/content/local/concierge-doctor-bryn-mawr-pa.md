@@ -6,7 +6,6 @@ keywords:
   - concierge medicine Bryn Mawr Pennsylvania
   - boutique medicine Bryn Mawr PA
   - membership doctor Bryn Mawr PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-bryn-mawr-pa"
 location: "Bryn Mawr, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

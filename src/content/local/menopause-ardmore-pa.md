@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Ardmore PA
   - HRT consultation Ardmore PA
   - women's health Ardmore PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-ardmore-pa"
 location: "Ardmore, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

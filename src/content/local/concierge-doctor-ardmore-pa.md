@@ -6,7 +6,6 @@ keywords:
   - concierge medicine Ardmore Pennsylvania
   - boutique medicine Ardmore PA
   - membership doctor Ardmore PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-ardmore-pa"
 location: "Ardmore, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

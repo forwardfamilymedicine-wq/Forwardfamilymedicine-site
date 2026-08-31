@@ -7,7 +7,6 @@ keywords:
   - direct access physician Chester Springs PA
   - membership doctor Chester Springs PA
   - private practice Chester Springs PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-chester-springs-pa"
 location: "Chester Springs, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

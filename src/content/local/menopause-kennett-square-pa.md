@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Kennett Square PA
   - HRT consultation Kennett Square PA
   - women's health Kennett Square PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-kennett-square-pa"
 location: "Kennett Square, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -6,7 +6,6 @@ keywords:
   - preventive care Devon Pennsylvania
   - wellness doctor Devon PA
   - chronic disease prevention Devon PA
-canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-devon-pa"
 location: "Devon, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

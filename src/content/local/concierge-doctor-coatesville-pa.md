@@ -7,7 +7,6 @@ keywords:
   - direct access physician Coatesville PA
   - membership doctor Coatesville PA
   - private practice Coatesville PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-coatesville-pa"
 location: "Coatesville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

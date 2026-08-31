@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Bryn Mawr PA
   - HRT consultation Bryn Mawr PA
   - women's health Bryn Mawr PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-bryn-mawr-pa"
 location: "Bryn Mawr, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

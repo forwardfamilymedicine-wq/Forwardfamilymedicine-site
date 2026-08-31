@@ -7,7 +7,6 @@ keywords:
   - family doctor Phoenixville PA
   - primary care Phoenixville PA
   - membership medicine Phoenixville PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-phoenixville-pa"
 location: "Phoenixville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

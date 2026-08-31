@@ -6,7 +6,6 @@ keywords:
   - preventive care Berwyn Pennsylvania
   - wellness doctor Berwyn PA
   - chronic disease prevention Berwyn PA
-canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-berwyn-pa"
 location: "Berwyn, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -16,7 +16,9 @@ export async function getStaticPaths() {
 const { entry, allProviders } = Astro.props;
 const { Content } = await render(entry);
 const slug = entry.id.replace(/\.mdx?$/, '');
-const canonicalUrl = entry.data.canonical ?? `https://www.forwardfamilymedicine.com/local/${slug}`;
+// Canonical is always derived from the real built path — never from frontmatter.
+// Trailing slash matches the sitemap's /local/ <loc> entries exactly.
+const canonicalUrl = `https://www.forwardfamilymedicine.com/local/${slug}/`;
 
 // Derive location slug ("Malvern, PA" → "malvern", "King of Prussia, PA" → "king-of-prussia")
 const locationSlug = entry.data.location

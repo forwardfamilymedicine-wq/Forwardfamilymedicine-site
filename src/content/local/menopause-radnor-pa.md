@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Radnor PA
   - HRT consultation Radnor PA
   - women's health Radnor PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-radnor-pa"
 location: "Radnor, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"
