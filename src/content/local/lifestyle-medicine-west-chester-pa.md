@@ -52,7 +52,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Menopause
 ## Practical Information for West Chester Patients
 
 **Location:** West Chester, PA 19380
-**Status:** Opening October 2026. Join the patient list now to be invited when scheduling opens.
+**Status:** Dr. Landi is accepting new patients now. Offices open October 2026.
 **Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and Malvern (Dr. Landi)
 

@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Malvern Patients
 
 **Location:** 301 Lindenwood Dr #206, Malvern, PA 19355
-**Status:** Opening October 2026. Join the patient list now to be invited when scheduling opens.
+**Status:** Dr. Landi is accepting new patients now. Offices open October 2026.
 **Telehealth:** Phone and video visits included in membership for established patients
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and West Chester (Dr. Landi)
 
