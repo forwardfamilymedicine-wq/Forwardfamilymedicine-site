@@ -2,7 +2,7 @@
 name: "Wayne"
 slug: "wayne"
 status: "open"
-addressStreet: "295 Old Eagle School Road"
+addressStreet: "295 Old Eagle School Road, STE 2"
 addressCity: "Wayne"
 addressState: "PA"
 addressZip: "19087"
@@ -27,7 +27,7 @@ photos: []
 photoAlts: []
 latitude: 40.0440
 longitude: -75.3944
-mapEmbedUrl: "https://www.google.com/maps?q=295+Old+Eagle+School+Road,+Wayne,+PA+19087&output=embed"
+mapEmbedUrl: "https://www.google.com/maps?q=295+Old+Eagle+School+Road,+STE+2,+Wayne,+PA+19087&output=embed"
 providers:
   - "david-bigley-do"
   - "philip-lieberman-md"

@@ -82,7 +82,7 @@ No. Members from Berwyn, Devon, Villanova, Radnor, and surrounding Main Line com
 
 ## Contact & Practice Information
 
-**Address:** 295 Old Eagle School Road, Wayne, PA 19087
+**Address:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

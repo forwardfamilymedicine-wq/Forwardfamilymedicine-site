@@ -88,9 +88,9 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 
 ## Contact & Practice Information
 
-**Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
+**Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **West Chester Office (opening October 2026):** West Chester, PA 19380
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

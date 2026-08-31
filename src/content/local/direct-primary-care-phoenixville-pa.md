@@ -34,7 +34,7 @@ Phoenixville is a revitalized Chester County borough at the junction of French C
 
 ## Why Phoenixville Patients Choose Forward Family Medicine
 
-- **Malvern office ~12–15 min from Phoenixville** — 301 Lindenwood Dr Ste 206, opening October 2026
+- **Malvern office ~12–15 min from Phoenixville** — 301 Lindenwood Dr #206, opening October 2026
 - **West Chester office ~25–30 min** — opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
 - Same-day and next-day availability for acute concerns
@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Phoenixville Patients
 
-**Closest FFM office:** Malvern — 301 Lindenwood Dr Ste 206, about 12–15 minutes via PA-29 south. Opening October 2026.
+**Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 12–15 minutes via PA-29 south. Opening October 2026.
 **Also convenient:** West Chester — about 25–30 minutes via US-202 south. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via PA-23 east — Dr. Bigley and Dr. Lieberman, currently accepting new patients.
 **Telehealth:** Phone and video visits included in membership for established patients
@@ -75,9 +75,9 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
 **West Chester Office (opening October 2026):** West Chester, PA 19380
-**Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
+**Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

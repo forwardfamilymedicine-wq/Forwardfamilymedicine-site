@@ -47,7 +47,7 @@ Dr. Landi practices at our West Chester office (about 20–25 minutes from Coate
 ## Why Coatesville Patients Choose This Practice
 
 - **West Chester office ~20–25 min from Coatesville** — opening October 2026
-- **Malvern office ~25–30 min** — 301 Lindenwood Dr Ste 206, opening October 2026
+- **Malvern office ~25–30 min** — 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Coatesville Patients
 
 **Closest FFM office:** West Chester — about 20–25 minutes via PA-82 south or US-30 east. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr Ste 206, about 25–30 minutes via US-30 east. Opening October 2026.
+**Also available:** Malvern — 301 Lindenwood Dr #206, about 25–30 minutes via US-30 east. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 30–35 minutes via US-30 east — Dr. Bigley and Dr. Lieberman provide menopause care as part of primary care there, currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 
@@ -86,9 +86,9 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
 **West Chester Office (opening October 2026):** West Chester, PA 19380
-**Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
+**Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

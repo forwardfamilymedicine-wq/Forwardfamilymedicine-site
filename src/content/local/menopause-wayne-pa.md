@@ -48,7 +48,7 @@ For patients who want dedicated Menopause Society Certified Practitioner-level c
 
 ## Why Wayne Patients Choose Forward Family Medicine for Menopause Care
 
-- **In-person primary care in Wayne** — 295 Old Eagle School Road, currently accepting new patients with Dr. Lieberman
+- **In-person primary care in Wayne** — 295 Old Eagle School Road, STE 2, currently accepting new patients with Dr. Lieberman
 - Menopause integrated into every primary care visit, not siloed off
 - **Dedicated MSCP specialty access** through Dr. Landi at our West Chester or Malvern offices (~30 minutes) or by telehealth
 - 1–2 hour visits — long enough to address menopause symptoms alongside everything else
@@ -65,9 +65,9 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Wayne Patients
 
-**Primary care location:** 295 Old Eagle School Road, Wayne, PA 19087
+**Primary care location:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Currently accepting new patients with:** Dr. Lieberman
-**Specialty menopause consultation:** Dr. Landi at our West Chester and Malvern (301 Lindenwood Dr Ste 206) offices, opening October 2026, or via telehealth
+**Specialty menopause consultation:** Dr. Landi at our West Chester and Malvern (301 Lindenwood Dr #206) offices, opening October 2026, or via telehealth
 **Telehealth:** Phone and video visits included for established patients
 
 ## Frequently Asked Questions
@@ -86,9 +86,9 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 
 ## Contact & Practice Information
 
-**Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
+**Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **West Chester Office (opening October 2026):** West Chester, PA 19380
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

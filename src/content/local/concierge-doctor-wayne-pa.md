@@ -60,7 +60,7 @@ Forward Family Medicine delivers the core benefits of concierge medicine — dir
 
 ## Practical Information
 
-**Location:** 295 Old Eagle School Road, Wayne, PA 19087
+**Location:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

@@ -67,7 +67,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Paoli Patients
 
-**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 10 minutes east on Route 30) and Malvern (301 Lindenwood Dr Ste 206, about 10 minutes south). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
+**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 10 minutes east on Route 30) and Malvern (301 Lindenwood Dr #206, about 10 minutes south). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
 **Specialty menopause consultation:** Dr. Landi at Malvern (about 10 minutes) or West Chester (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
 **Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (join Dr. Landi's patient list now to be invited)
@@ -88,9 +88,9 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 
 ## Contact & Practice Information
 
-**Wayne Office:** 295 Old Eagle School Road, Wayne, PA 19087
+**Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **West Chester Office (opening October 2026):** West Chester, PA 19380
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr Ste 206, Malvern, PA 19355
+**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
