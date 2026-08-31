@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getAvailability } from '../../utils/availability';
 
 interface Props {
   provider: CollectionEntry<'providers'> | CollectionEntry<'team'>;
@@ -9,12 +10,11 @@ interface Props {
 const { provider, noLink = false } = Astro.props;
 const d = provider.data as any;
 const isPhysician = provider.collection === 'providers';
-const isPanelFull = isPhysician && !d.acceptingNewPatients;
-const isFuture = isPhysician && d.acceptingNewPatientsStartDate
-  && (() => { const [y, m, day] = d.acceptingNewPatientsStartDate.split('-').map(Number); return new Date(y, m - 1, day) > new Date(); })();
-const openingLabel = d.acceptingNewPatientsStartDate
-  ? (() => { const [y, m] = d.acceptingNewPatientsStartDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })()
-  : null;
+// Availability is derived once, in src/utils/availability.ts.
+const availability = isPhysician ? getAvailability(d) : null;
+const isPanelFull = availability?.status === 'full';
+const isFuture = availability?.status === 'future';
+const openingLabel = availability?.startLabel ?? null;
 ---
 
 <article class={`provider-card card${isPanelFull ? ' panel-full' : ''}`}>
