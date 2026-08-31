@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ProviderCard from '../shared/ProviderCard.astro';
 import { getAvailability } from '../../utils/availability';
+import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
 
 const providers = (await getCollection('providers'))
   .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
@@ -32,8 +33,20 @@ const showFounderBlock = founder && getAvailability(founder.data).status === 'fu
 
     {showFounderBlock && (
       <div class="founder-block">
-        <p class="founder-eyebrow">Our Founder</p>
-        <h3 class="founder-heading">Founded by Dr. David Bigley, DO</h3>
+        <div class="founder-header">
+          <img
+            src={drBigleyPhoto.src}
+            alt="Dr. David Bigley, DO, founder of Forward Family Medicine"
+            class="founder-photo"
+            width="96"
+            height="96"
+            loading="lazy"
+          />
+          <div>
+            <p class="founder-eyebrow">Our Founder</p>
+            <h3 class="founder-heading">Founded by Dr. David Bigley, DO</h3>
+          </div>
+        </div>
         <p class="founder-body">
           Dr. Bigley opened Forward Family Medicine in 2024. His panel is
           currently full.
@@ -82,6 +95,22 @@ const showFounderBlock = founder && getAvailability(founder.data).status === 'fu
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
   }
+  /* Photo sits beside the eyebrow and heading as a credibility anchor, matching
+     the circular treatment used by the blog AuthorBio. */
+  .founder-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .founder-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--green-200);
+  }
   .founder-eyebrow {
     font-family: var(--font-body);
     font-size: 0.75rem;
@@ -89,12 +118,12 @@ const showFounderBlock = founder && getAvailability(founder.data).status === 'fu
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--green-500);
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.35rem;
   }
   .founder-heading {
     font-size: 1.15rem;
     color: var(--ink-900);
-    margin: 0 0 1rem;
+    margin: 0;
   }
   .founder-body {
     font-size: 0.95rem;
@@ -133,5 +162,7 @@ const showFounderBlock = founder && getAvailability(founder.data).status === 'fu
   @media (max-width: 540px) {
     .team-grid { grid-template-columns: 1fr; }
     .founder-block { padding: 1.5rem; }
+    .founder-header { gap: 1rem; }
+    .founder-photo { width: 72px; height: 72px; }
   }
 </style>
