@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProviderCard from '../../components/shared/ProviderCard.astro';
-import elainaPhoto from '../../assets/staff/elaina-gleason.jpg';
 
 const allProviders = await getCollection('providers');
 const allTeam = await getCollection('team');
@@ -11,24 +10,6 @@ const members = [
   ...allProviders,
   ...allTeam,
 ].sort((a, b) => a.data.displayOrder - b.data.displayOrder);
-
-// Practice-wide staff card (no bio page, no route, no JSON-LD) — rendered as a
-// non-linked card immediately after Ritamarie Smedile.
-const elaina = {
-  collection: 'team',
-  data: {
-    name: 'Elaina Gleason',
-    credentials: '',
-    title: 'Practice Manager',
-    photo: elainaPhoto,
-    photoAlt: 'Elaina Gleason — Practice Manager, Forward Family Medicine',
-    descriptor: 'Keeps Forward Family Medicine running smoothly across all three locations.',
-    slug: '',
-  },
-} as any;
-
-const ritamarieIdx = members.findIndex(m => m.data.slug === 'ritamarie-smedile');
-members.splice(ritamarieIdx + 1, 0, elaina);
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/meet-the-team/`;

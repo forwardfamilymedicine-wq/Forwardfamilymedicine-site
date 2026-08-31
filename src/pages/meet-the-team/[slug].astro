@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import { getAvailability } from '../../utils/availability';
 
 export async function getStaticPaths() {
   const providers = await getCollection('providers');
@@ -22,6 +23,9 @@ const { data } = entry;
 const { Content } = await render(entry);
 const d = data as any;
 const isPhysician = type === 'physician';
+// Availability is derived once, in src/utils/availability.ts. Null for team members,
+// who use the separate acceptingNewClients flag handled further down.
+const availability = isPhysician ? getAvailability(d) : null;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/meet-the-team/${d.slug}/`;
@@ -128,14 +132,14 @@ const breadcrumb = {
             </div>
           )}
 
-          {isPhysician && (
-            d.acceptingNewPatients ? (
+          {availability && (
+            availability.status !== 'full' ? (
               <div class="accepting-banner accepting">
-                {d.acceptingNewPatientsStartDate && (() => { const [y, m, day] = d.acceptingNewPatientsStartDate.split('-').map(Number); return new Date(y, m - 1, day) > new Date(); })() ? (
+                {availability.status === 'future' ? (
                   <Fragment>
                     <span>
-                      <strong>Accepting patients starting {(() => { const [y, m] = d.acceptingNewPatientsStartDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })()}</strong>
-                      {d.acceptingNewPatientsNote && <span class="accepting-note"> — {d.acceptingNewPatientsNote}</span>}
+                      <strong>Accepting patients starting {availability.startLabel}</strong>
+                      {availability.note && <span class="accepting-note"> — {availability.note}</span>}
                     </span>
                     <a
                       href={`/contact/?subject=${encodeURIComponent(`Join Dr. ${d.name.split(' ').pop()}'s Patient List`)}`}
@@ -152,7 +156,7 @@ const breadcrumb = {
             ) : (
               <div class="accepting-banner full">
                 <strong>Panel currently full</strong>
-                {d.acceptingNewPatientsNote && <p class="accepting-note">{d.acceptingNewPatientsNote}</p>}
+                {availability.note && <p class="accepting-note">{availability.note}</p>}
               </div>
             )
           )}
