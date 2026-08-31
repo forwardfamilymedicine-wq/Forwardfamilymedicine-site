@@ -1,6 +1,7 @@
 ---
 import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
 import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
+import drLandiPhoto from '../../assets/staff/dr-brian-landi.jpg';
 
 export interface Props {
   author?: string;
@@ -15,6 +16,8 @@ const AUTHOR_ALIASES: Record<string, string> = {
   'David Bigley, DO': 'bigley',
   'Dr. Philip Lieberman': 'lieberman',
   'Philip Lieberman, MD': 'lieberman',
+  'Dr. Brian Landi': 'landi',
+  'Brian Landi, DO': 'landi',
 };
 
 const AUTHOR_PROFILES = {
@@ -34,10 +37,20 @@ const AUTHOR_PROFILES = {
     desc: 'Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with pre-medical training in nutrition and culinary arts. He helps patients use food, movement, sleep, and stress management to prevent and treat chronic disease.',
     href: '/meet-the-team/philip-lieberman-md/',
   },
+  landi: {
+    photo: drLandiPhoto,
+    photoAlt: 'Dr. Brian Landi, DO — Family Medicine & Menopause Care, Forward Family Medicine',
+    name: 'Brian Landi, DO',
+    title: 'Physician, Forward Family Medicine',
+    desc: 'Dr. Landi is a board-certified family physician and a Menopause Society Certified Practitioner. He cares for patients at the West Chester and Malvern offices, with a clinical focus on perimenopause, menopause, and midlife health.',
+    href: '/meet-the-team/brian-landi-do/',
+  },
 };
 
-// Unknown or absent author falls back to the founder's bio (previous behavior).
-const profileKey = (author ? AUTHOR_ALIASES[author] : undefined) ?? 'bigley';
+// Unknown or absent author (for example the practice-authored lifestyle
+// library, written as "Forward Family Medicine") falls back to Dr. Lieberman,
+// whose Lifestyle Medicine board certification matches that material.
+const profileKey = (author ? AUTHOR_ALIASES[author] : undefined) ?? 'lieberman';
 const profile = AUTHOR_PROFILES[profileKey as keyof typeof AUTHOR_PROFILES];
 ---
 
