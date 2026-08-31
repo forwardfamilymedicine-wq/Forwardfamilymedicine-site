@@ -7,7 +7,6 @@ keywords:
   - menopause doctor West Chester PA
   - HRT consultation West Chester PA
   - women's health West Chester PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

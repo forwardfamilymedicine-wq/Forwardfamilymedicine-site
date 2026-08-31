@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Coatesville PA
   - HRT consultation Coatesville PA
   - women's health Coatesville PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-coatesville-pa"
 location: "Coatesville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

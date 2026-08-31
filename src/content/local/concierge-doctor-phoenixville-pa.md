@@ -7,7 +7,6 @@ keywords:
   - direct access physician Phoenixville PA
   - membership doctor Phoenixville PA
   - private practice Phoenixville PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-phoenixville-pa"
 location: "Phoenixville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -6,7 +6,6 @@ keywords:
   - preventive care Radnor Township PA
   - wellness doctor Radnor PA
   - chronic disease prevention Radnor Pennsylvania
-canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-radnor-pa"
 location: "Radnor, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

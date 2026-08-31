@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Chester Springs PA
   - HRT consultation Chester Springs PA
   - women's health Chester Springs PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-chester-springs-pa"
 location: "Chester Springs, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

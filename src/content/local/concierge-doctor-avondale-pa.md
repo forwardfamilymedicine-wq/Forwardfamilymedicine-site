@@ -7,7 +7,6 @@ keywords:
   - direct access physician Avondale PA
   - membership doctor Avondale PA
   - private practice Avondale PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-avondale-pa"
 location: "Avondale, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

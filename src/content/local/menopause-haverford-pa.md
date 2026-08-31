@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Haverford PA
   - HRT consultation Haverford PA
   - women's health Haverford PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-haverford-pa"
 location: "Haverford, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -7,7 +7,6 @@ keywords:
   - family doctor Glen Mills PA
   - primary care Glen Mills PA
   - membership medicine Glen Mills PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-glen-mills-pa"
 location: "Glen Mills, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

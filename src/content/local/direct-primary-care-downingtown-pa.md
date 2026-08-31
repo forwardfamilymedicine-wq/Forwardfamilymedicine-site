@@ -7,7 +7,6 @@ keywords:
   - family doctor Downingtown PA
   - primary care Downingtown PA
   - membership medicine Downingtown PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-downingtown-pa"
 location: "Downingtown, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

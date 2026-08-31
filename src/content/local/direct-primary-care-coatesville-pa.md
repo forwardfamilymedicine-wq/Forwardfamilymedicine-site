@@ -7,7 +7,6 @@ keywords:
   - family doctor Coatesville PA
   - primary care Coatesville PA
   - membership medicine Coatesville PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-coatesville-pa"
 location: "Coatesville, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

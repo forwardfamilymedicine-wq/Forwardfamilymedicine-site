@@ -7,7 +7,6 @@ keywords:
   - family doctor West Chester PA
   - primary care West Chester PA
   - membership medicine West Chester PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Villanova PA
   - HRT consultation Villanova PA
   - women's health Villanova PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-villanova-pa"
 location: "Villanova, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

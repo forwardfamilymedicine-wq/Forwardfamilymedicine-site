@@ -6,7 +6,6 @@ keywords:
   - preventive care Bryn Mawr Pennsylvania
   - wellness doctor Bryn Mawr PA
   - chronic disease prevention Bryn Mawr PA
-canonical: "https://www.forwardfamilymedicine.com/lifestyle-medicine-bryn-mawr-pa"
 location: "Bryn Mawr, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

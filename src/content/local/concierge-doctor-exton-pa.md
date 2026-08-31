@@ -7,7 +7,6 @@ keywords:
   - direct access physician Exton PA
   - membership doctor Exton PA
   - private practice Exton PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-exton-pa"
 location: "Exton, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

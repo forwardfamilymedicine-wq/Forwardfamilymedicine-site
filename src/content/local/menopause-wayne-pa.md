@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Wayne PA
   - HRT consultation Wayne PA
   - women's health Wayne PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-wayne-pa"
 location: "Wayne, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

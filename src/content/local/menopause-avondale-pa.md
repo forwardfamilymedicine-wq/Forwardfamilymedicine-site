@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Avondale PA
   - HRT consultation Avondale PA
   - women's health Avondale PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-avondale-pa"
 location: "Avondale, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

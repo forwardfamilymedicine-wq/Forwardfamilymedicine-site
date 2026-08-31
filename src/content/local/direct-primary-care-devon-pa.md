@@ -7,7 +7,6 @@ keywords:
   - family doctor Devon PA
   - primary care Devon PA
   - membership medicine Devon Pennsylvania
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-devon-pa"
 location: "Devon, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

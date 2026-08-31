@@ -7,7 +7,6 @@ keywords:
   - family doctor Kennett Square PA
   - primary care Kennett Square PA
   - membership medicine Kennett Square PA
-canonical: "https://www.forwardfamilymedicine.com/direct-primary-care-kennett-square-pa"
 location: "Kennett Square, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

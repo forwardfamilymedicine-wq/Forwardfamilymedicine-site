@@ -7,7 +7,6 @@ keywords:
   - direct access physician Glen Mills PA
   - membership doctor Glen Mills PA
   - private practice Glen Mills PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-glen-mills-pa"
 location: "Glen Mills, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

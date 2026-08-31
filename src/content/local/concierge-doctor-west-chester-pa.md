@@ -7,7 +7,6 @@ keywords:
   - direct access physician West Chester PA
   - membership doctor West Chester PA
   - private practice West Chester PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-west-chester-pa"
 location: "West Chester, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

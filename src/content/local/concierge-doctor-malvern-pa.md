@@ -7,7 +7,6 @@ keywords:
   - direct access physician Malvern PA
   - membership doctor Malvern PA
   - private practice Malvern PA
-canonical: "https://www.forwardfamilymedicine.com/concierge-doctor-malvern-pa"
 location: "Malvern, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

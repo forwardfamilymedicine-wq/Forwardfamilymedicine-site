@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Berwyn PA
   - HRT consultation Berwyn PA
   - women's health Berwyn PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-berwyn-pa"
 location: "Berwyn, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"

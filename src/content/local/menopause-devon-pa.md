@@ -7,7 +7,6 @@ keywords:
   - menopause doctor Devon PA
   - HRT consultation Devon PA
   - women's health Devon PA
-canonical: "https://www.forwardfamilymedicine.com/menopause-devon-pa"
 location: "Devon, PA"
 date: "2026-01-01"
 author: "Forward Family Medicine"
