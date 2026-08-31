@@ -30,7 +30,7 @@ notableExperience:
 npi: "1093391021"
 sameAs: []
 acceptingNewPatients: false
-acceptingNewPatientsNote: "Dr. Bigley's panel is currently full. New members are warmly welcomed by Dr. Lieberman in Wayne and Dr. Landi in West Chester / Malvern (beginning October 2026)."
+acceptingNewPatientsNote: "Dr. Bigley's panel is currently full. New members are warmly welcomed by Dr. Lieberman in Wayne and Dr. Landi in West Chester and Malvern, both accepting new patients now."
 displayOrder: 3
 ---
 

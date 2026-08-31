@@ -5,19 +5,24 @@ import MainLayout from '../../layouts/MainLayout.astro';
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 
+// Hand-maintained: names and titles must match src/content/providers/*.md and
+// src/content/team/*.md. Order mirrors displayOrder, so the physician accepting
+// new patients leads each location. Not derived from the collection because
+// Ritamarie Smedile is listed at all three offices while her frontmatter
+// locations array is Wayne only.
 const providersBySlug: Record<string, { name: string; title: string; href: string; photo: string }[]> = {
   'wayne': [
-    { name: 'Dr. David Bigley, DO',     title: 'Board-Certified Family Medicine', href: '/meet-the-team/david-bigley-do/',     photo: '/images/staff/dr-david-bigley.jpg' },
-    { name: 'Dr. Philip Lieberman, MD', title: 'Lifestyle Medicine',               href: '/meet-the-team/philip-lieberman-md/', photo: '/images/staff/dr-philip-lieberman.jpg' },
-    { name: 'Ritamarie Smedile, RN',    title: 'Registered Nurse',                 href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
+    { name: 'Dr. Philip Lieberman, MD',   title: 'Family Medicine & Lifestyle Medicine Physician', href: '/meet-the-team/philip-lieberman-md/', photo: '/images/staff/dr-philip-lieberman.jpg' },
+    { name: 'Dr. David Bigley, DO',       title: 'Founder & Family Medicine Physician',            href: '/meet-the-team/david-bigley-do/',     photo: '/images/staff/dr-david-bigley.jpg' },
+    { name: 'Ritamarie Smedile, PhD, RN', title: 'Clinical Operations & Wellness',                 href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
   ],
   'west-chester': [
-    { name: 'Dr. Brian Landi, DO',   title: 'Board-Certified Family Medicine', href: '/meet-the-team/brian-landi-do/',      photo: '/images/staff/dr-brian-landi.jpg' },
-    { name: 'Ritamarie Smedile, RN', title: 'Registered Nurse',                href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
+    { name: 'Dr. Brian Landi, DO',        title: 'Family Medicine Physician',      href: '/meet-the-team/brian-landi-do/',    photo: '/images/staff/dr-brian-landi.jpg' },
+    { name: 'Ritamarie Smedile, PhD, RN', title: 'Clinical Operations & Wellness', href: '/meet-the-team/ritamarie-smedile/', photo: '/images/staff/ritamarie-smedile.jpg' },
   ],
   'malvern': [
-    { name: 'Dr. Brian Landi, DO',   title: 'Board-Certified Family Medicine', href: '/meet-the-team/brian-landi-do/',      photo: '/images/staff/dr-brian-landi.jpg' },
-    { name: 'Ritamarie Smedile, RN', title: 'Registered Nurse',                href: '/meet-the-team/ritamarie-smedile/',   photo: '/images/staff/ritamarie-smedile.jpg' },
+    { name: 'Dr. Brian Landi, DO',        title: 'Family Medicine Physician',      href: '/meet-the-team/brian-landi-do/',    photo: '/images/staff/dr-brian-landi.jpg' },
+    { name: 'Ritamarie Smedile, PhD, RN', title: 'Clinical Operations & Wellness', href: '/meet-the-team/ritamarie-smedile/', photo: '/images/staff/ritamarie-smedile.jpg' },
   ],
 };
 
