@@ -69,7 +69,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 **Closest primary care offices:** Wayne (295 Old Eagle School Road, about 10 minutes east on Route 30) and Malvern (301 Lindenwood Dr #206, about 10 minutes south). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
 **Specialty menopause consultation:** Dr. Landi at Malvern (about 10 minutes) or West Chester (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
-**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (join Dr. Landi's patient list now to be invited)
+**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 

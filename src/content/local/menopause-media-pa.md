@@ -69,7 +69,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 **Closest office to Media:** West Chester — about 20 minutes via Route 352 north or Baltimore Pike to Route 322. Opening October 2026; Wayne (about 25 min) is open now and accepting new patients with Dr. Lieberman.
 **Specialty menopause consultation:** Dr. Landi at West Chester (about 20 minutes) or Malvern (about 25 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients — an excellent option for Media patients managing the distance
-**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (join Dr. Landi's patient list now to be invited)
+**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
