@@ -1,0 +1,91 @@
+---
+/**
+ * Step 5 of the homepage hierarchy: the felt experience.
+ *
+ * Copy rule: every item is a feature translated into what it means for the
+ * patient. The heading is the feature, the body is the implication. No
+ * outcomes are promised here and none should be added — each claim traces to
+ * something the practice already publishes (visit length, direct access,
+ * same-day availability, the ~250 panel cap, referral coordination).
+ */
+const experience = [
+  {
+    feature: 'Visits that run one to two hours',
+    value: 'Long enough to get past the reason you booked and into the things you would normally decide not to mention. Nobody is standing at the door, so nothing has to be saved for next time.',
+  },
+  {
+    feature: 'Your physician\'s actual phone number',
+    value: 'Call, text, or email the doctor who knows your history — not a switchboard, and not whoever is covering the portal that day. A good number of questions get answered the same day and never need to become an appointment at all.',
+  },
+  {
+    feature: 'Same-day and next-day appointments',
+    value: 'When something new happens, you are seen while it is still happening. Fewer things end up being handled after hours by someone who has never met you.',
+  },
+  {
+    feature: 'A panel capped near 250 patients',
+    value: 'Your physician has room to remember you. What happened last year informs what happens this year, because it is the same person holding both the chart and the memory of the conversation.',
+  },
+  {
+    feature: 'Referrals that come with a phone call',
+    value: 'When you need a specialist, we call ahead and hand off your history physician to physician. You arrive somewhere you are expected, instead of starting the story over from the beginning.',
+  },
+];
+---
+
+<section class="care-experience section" aria-label="What care feels like">
+  <div class="container">
+    <div class="care-header">
+      <span class="section-label">What to Expect</span>
+      <h2 class="section-title">What care here actually feels like</h2>
+      <p class="section-intro">The model exists to produce one specific experience. This is that experience.</p>
+    </div>
+
+    <div class="care-grid">
+      {experience.map(item => (
+        <div class="care-item">
+          <h3>{item.feature}</h3>
+          <p>{item.value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .care-experience {
+    background: var(--cream-50);
+  }
+  .care-header {
+    margin-bottom: 2.5rem;
+  }
+  .care-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 2.5rem;
+  }
+  /* Green rule instead of a card: this section is a read, and boxing five
+     blocks would compete with the provider cards directly above it. */
+  .care-item {
+    border-left: 3px solid var(--green-200);
+    padding-left: 1.5rem;
+  }
+  .care-item h3 {
+    font-size: 1.15rem;
+    color: var(--ink-900);
+    margin-bottom: 0.6rem;
+  }
+  .care-item p {
+    font-size: 0.95rem;
+    color: var(--ink-700);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .care-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    .care-item { padding-left: 1.25rem; }
+  }
+</style>

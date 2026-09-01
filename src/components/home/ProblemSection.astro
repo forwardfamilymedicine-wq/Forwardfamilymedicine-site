@@ -1,0 +1,64 @@
+---
+/**
+ * Step 2 of the homepage hierarchy: why conventional primary care usually
+ * cannot deliver the experience the hero describes.
+ *
+ * Copy rule for this section: the constraint is structural, never personal.
+ * It is about panel math and reimbursement, not about bad physicians or a
+ * named health system. Keep it that way if this copy is ever revised.
+ */
+---
+
+<section class="problem section" aria-label="Why this is hard to find">
+  <div class="container problem-inner">
+    <span class="section-label">Why This Is Hard to Find</span>
+    <h2 class="section-title">Most doctors want to give you this. The system rarely lets them.</h2>
+    <div class="divider"></div>
+
+    <p>
+      A typical primary care physician is responsible for two to three thousand
+      patients. To keep a practice solvent under insurance reimbursement, that
+      schedule has to move in ten and fifteen minute increments, which means the
+      visit routinely ends before the conversation does. That is not a failure of
+      skill or of caring. It is what the arithmetic of the model requires.
+    </p>
+    <p>
+      The downstream effects are familiar to almost everyone. You wait weeks for an
+      appointment, then explain your history to someone reading it for the first
+      time. Your questions get routed through a portal or a front desk. Care gets
+      divided among specialists who never quite talk to one another, and no single
+      physician is holding the whole picture. Prevention, which takes time and
+      repetition, becomes whatever fits in the minutes that are left.
+    </p>
+    <p>
+      None of this is fixable one visit at a time. It is fixable by changing the
+      arithmetic. Fewer patients per physician, visits long enough to finish the
+      conversation, and a practice funded directly by the people it cares for
+      rather than by billing volume. That is the entire idea behind Forward Family
+      Medicine.
+    </p>
+  </div>
+</section>
+
+<style>
+  .problem {
+    background: var(--cream-50);
+  }
+  /* Single measured column: this section is read, not scanned. */
+  .problem-inner {
+    max-width: 780px;
+  }
+  .problem p {
+    font-size: 1.05rem;
+    color: var(--ink-700);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+  .problem p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 700px) {
+    .problem p { font-size: 1rem; }
+  }
+</style>
