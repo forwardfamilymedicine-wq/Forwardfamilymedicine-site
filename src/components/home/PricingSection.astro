@@ -1,0 +1,125 @@
+---
+/**
+ * Step 9 of the homepage hierarchy: price, stated once the reader knows what
+ * they would be buying.
+ *
+ * Figures are mirrored from src/pages/membership.astro and must stay in sync
+ * with it: $200/month individual, family from $175 down to $100 per person,
+ * six-month minimum, 30 days' written notice.
+ */
+---
+
+<section class="pricing section" aria-label="Pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">What membership costs</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card card">
+        <h3>Individual</h3>
+        <p class="price-figure">$200<span class="price-unit">/month</span></p>
+        <p class="price-body">
+          One flat monthly fee covering unlimited visits with no copay, same-day and
+          next-day appointments, direct phone, text, and email access to your
+          physician, preventive and chronic care, minor in-office procedures,
+          telehealth, specialist coordination, and Lifestyle Medicine. Labs and
+          medications are passed through at wholesale.
+        </p>
+      </div>
+
+      <div class="price-card card">
+        <h3>Family</h3>
+        <p class="price-figure">from $175<span class="price-unit">per person/month</span></p>
+        <p class="price-body">
+          The per-person rate decreases as the family grows, down to $100 per person
+          at five or more members. Children are welcome at every age.
+        </p>
+      </div>
+    </div>
+
+    <div class="pricing-terms callout">
+      <p>
+        <strong>Terms, stated plainly:</strong> membership carries a six-month minimum
+        commitment from your enrollment date. After that it's month to month, and
+        cancelling takes 30 days' written notice. There is no enrollment fee, no copay,
+        and nothing else billed for primary care. Many members can pay with HSA funds
+        following the Primary Care Enhancement Act, effective January 1, 2026 &mdash;
+        confirm with your plan administrator.
+      </p>
+    </div>
+
+    <div class="pricing-ctas">
+      <a href="/membership" class="btn btn-primary">See all membership tiers &rarr;</a>
+      <a href="/contact" class="btn btn-outline">Schedule a free meet &amp; greet</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    background: var(--cream-50);
+  }
+  .pricing-header {
+    margin-bottom: 2.5rem;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .price-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .price-figure {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 300;
+    color: var(--green-500);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .price-unit {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-500);
+    margin-left: 0.4rem;
+  }
+  .price-body {
+    font-size: 0.95rem;
+    color: var(--ink-700);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .pricing-terms {
+    max-width: 780px;
+    margin: 2.5rem 0 0;
+  }
+  .pricing-terms p {
+    font-size: 0.9rem;
+    color: var(--ink-700);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .pricing-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 860px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .pricing-ctas .btn { display: block; width: 100%; text-align: center; }
+  }
+</style>

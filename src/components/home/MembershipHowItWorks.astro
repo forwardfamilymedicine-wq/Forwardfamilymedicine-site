@@ -1,0 +1,56 @@
+---
+/**
+ * Step 8 of the homepage hierarchy: the "how", arriving after the experience
+ * rather than before it. This is the page's second dark band — it anchors the
+ * lower half the way the difference section anchors the upper half.
+ *
+ * Deliberately carries no CTA. The pricing section immediately below it does.
+ */
+---
+
+<section class="how-it-works section" aria-label="How membership works">
+  <div class="container how-inner">
+    <span class="section-label how-label">How It Works</span>
+    <h2 class="how-title">Membership, simply</h2>
+    <p>
+      You pay a flat monthly fee directly to the practice. We don't bill insurance,
+      which is what makes the small panel and the long visit financially possible in
+      the first place.
+    </p>
+    <p>
+      Membership covers your primary care. Most members pair it with a high-deductible
+      plan for hospitalization, surgery, and specialist care. Nothing about your visit
+      is shaped by what a billing code will reimburse.
+    </p>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    background: var(--green-500);
+  }
+  .how-inner {
+    max-width: 780px;
+  }
+  /* The shared .section-label green disappears against the green band. */
+  .how-label {
+    color: var(--green-200);
+  }
+  .how-title {
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  .how-it-works p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .how-it-works p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 700px) {
+    .how-it-works p { font-size: 1rem; }
+  }
+</style>
