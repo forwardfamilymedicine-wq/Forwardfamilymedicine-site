@@ -1,0 +1,179 @@
+---
+import TestimonialCard from '../shared/TestimonialCard.astro';
+
+/**
+ * Step 7 of the homepage hierarchy: proof.
+ *
+ * These are real, verified Google reviews. The text is reproduced as supplied
+ * and must not be reworded, reordered, or "tightened" — if a line ever looks
+ * like it needs an edit, ask the practice rather than editing a patient's
+ * words. Every quote carries the "Verified Google review" label.
+ *
+ * Ordering is deliberate and load-bearing: the Lieberman reviews lead because
+ * Dr. Lieberman is accepting new patients. The Bigley reviews sit at the
+ * bottom in founder context because his panel is full — surfacing them as the
+ * lead conversion proof would point prospective patients at a closed panel.
+ * There is intentionally no CTA in this section.
+ */
+const leadReviews = [
+  {
+    quote: "Dr. Lieberman is a very effective clinician and wonderful human being. He is able to look at the big picture and focus on the smaller details as well. It's reassuring to have him communicate with specialists on my behalf. The messaging app used by the practice is extremely helpful.",
+    author: 'D',
+    detail: 'Verified Google review',
+  },
+  {
+    quote: "Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner.",
+    author: 'M',
+    detail: 'Verified Google review',
+  },
+  {
+    quote: "I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier.",
+    author: 'P',
+    detail: 'Verified Google review',
+  },
+];
+
+const founderReviews = [
+  {
+    quote: "The thing that originally sold me was when one of my previous doctors had me do various tests over a 6 month span (totaling ~$7000 out-of-pocket), and afterwards still didn't know what might be causing some ongoing pains I was having. Fast forward a year or so later when I switched to Dr. Bigley, and he had a theory within a few seconds of me describing symptoms, and suggested some at-home stretches. Turns out they did the trick!",
+    author: 'B',
+    detail: 'Verified Google review',
+  },
+  {
+    quote: "Dr. Bigley carefully considered my medical history, diet, lifestyle, and overall health to develop a practical, personalized plan focused on prevention and long-term wellness. When I recently faced a difficult-to-diagnose medical issue, he was there every step of the way. I recommend him without hesitation.",
+    author: 'M',
+    detail: 'Verified Google review',
+  },
+];
+
+const credentials = [
+  {
+    name: 'Philip Lieberman, MD',
+    body: 'Dual board-certified in Family Medicine and Lifestyle Medicine, and a diplomate of the American Board of Lifestyle Medicine. During residency at Abington he built the Lifestyle Medicine curriculum that qualified fellow residents for that same board certification. Before medicine, an Associate of Science in Culinary Arts and a Bachelor of Science in Nutrition Science.',
+  },
+  {
+    name: 'Brian Landi, DO',
+    body: 'Board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. Served as Chief Resident of the ChristianaCare Family Medicine residency.',
+  },
+];
+---
+
+<section class="proof section" aria-label="Patient reviews and credentials">
+  <div class="container">
+    <div class="proof-header">
+      <span class="section-label">Proof</span>
+      <h2 class="section-title">Verified reviews from our patients</h2>
+      <p class="section-intro">
+        Published on Google by patients of this practice. Shown with first initials only.
+      </p>
+    </div>
+
+    <div class="proof-grid">
+      {leadReviews.map(r => <TestimonialCard {...r} />)}
+    </div>
+
+    <div class="credentials-block">
+      <h3 class="credentials-heading">The credentials behind that care</h3>
+      <div class="credentials-grid">
+        {credentials.map(c => (
+          <div class="credential-item">
+            <p class="credential-name">{c.name}</p>
+            <p class="credential-body">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="founder-proof">
+      <h3 class="founder-proof-heading">And where the practice started</h3>
+      <p class="founder-proof-intro">
+        Dr. David Bigley founded Forward Family Medicine in September 2024. His panel
+        is full and he is not currently taking new patients, so these two reviews are
+        here as history rather than as an invitation &mdash; they describe the standard
+        this practice was built to hold.
+      </p>
+      <div class="founder-proof-grid">
+        {founderReviews.map(r => <TestimonialCard {...r} />)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proof {
+    background: var(--cream-200);
+  }
+  .proof-header {
+    margin-bottom: 2.5rem;
+  }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* Credentials: evidence supporting the reviews above, so it reads as a
+     supporting band rather than as a third card row. */
+  .credentials-block {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--cream-300);
+  }
+  .credentials-heading {
+    font-size: 1.15rem;
+    color: var(--ink-900);
+    margin-bottom: 1.5rem;
+  }
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .credential-name {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-500);
+    margin-bottom: 0.5rem;
+  }
+  .credential-body {
+    font-size: 0.95rem;
+    color: var(--ink-700);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* Founder context — deliberately the quietest block in the section. */
+  .founder-proof {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--cream-300);
+  }
+  .founder-proof-heading {
+    font-size: 1.15rem;
+    color: var(--ink-900);
+    margin-bottom: 0.75rem;
+  }
+  .founder-proof-intro {
+    font-size: 0.95rem;
+    color: var(--ink-500);
+    line-height: 1.75;
+    max-width: 680px;
+    margin-bottom: 2rem;
+  }
+  .founder-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 860px) {
+    .proof-grid,
+    .credentials-grid,
+    .founder-proof-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
