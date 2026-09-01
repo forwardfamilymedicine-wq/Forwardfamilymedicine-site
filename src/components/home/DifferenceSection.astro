@@ -1,27 +1,44 @@
 ---
-const credentials = [
+/**
+ * Step 3 of the homepage hierarchy: the four structural differences, stated
+ * plainly. This is the page's upper-third dark band — it carries the contrast
+ * anchor that keeps the top half from reading flat, so keep the green
+ * background if this section is restyled.
+ *
+ * Credentials used to live here. They now sit in the proof section, where they
+ * function as evidence rather than as an opening claim.
+ */
+const differences = [
   {
-    title: 'Dual Board-Certified Lifestyle Medicine',
-    desc: 'Family Medicine + Lifestyle Medicine. Dr. Lieberman holds dual board certification — a combination virtually no other DPC practice on the Main Line can offer.',
+    title: 'Small panels',
+    desc: 'Roughly 250 patients per physician, against the two to three thousand a traditional practice carries. Everything below follows from this one number.',
   },
   {
-    title: 'Menopause Society Certified',
-    desc: 'Comprehensive perimenopause and menopause care. Dr. Landi holds Menopause Society Certified Practitioner credentialing — evidence-based midlife women\'s health, integrated directly into primary care.',
+    title: 'Longer visits',
+    desc: 'One to two hours, scheduled that way by default. Not a longer visit when you ask for one — the standard appointment is simply long enough to finish.',
   },
   {
-    title: 'True DPC Model',
-    desc: 'No insurance. Flat monthly membership. Direct access to your doctor — by phone, text, or email. Same-day appointments. This is what primary care should have always been.',
+    title: 'Direct access',
+    desc: 'Your physician\'s phone, text, and email. Not a portal queue, not a message relayed through staff, not a callback from whoever is on that afternoon.',
+  },
+  {
+    title: 'Proactive care',
+    desc: 'Prevention and Lifestyle Medicine are part of the appointment rather than a referral out of it. Nutrition, movement, sleep, and stress get clinical time.',
   },
 ];
 ---
 
-<section class="credential-strip" aria-label="What makes us different">
+<section class="difference section" aria-label="What makes us different">
   <div class="container">
-    <div class="strip-grid">
-      {credentials.map(c => (
-        <div class="strip-item">
-          <h3>{c.title}</h3>
-          <p>{c.desc}</p>
+    <div class="difference-header">
+      <span class="section-label difference-label">The Difference</span>
+      <h2 class="difference-title">Four things we do differently</h2>
+    </div>
+    <div class="difference-grid">
+      {differences.map(d => (
+        <div class="difference-item">
+          <h3>{d.title}</h3>
+          <p>{d.desc}</p>
         </div>
       ))}
     </div>
@@ -29,32 +46,49 @@ const credentials = [
 </section>
 
 <style>
-  .credential-strip {
+  .difference {
     background: var(--green-500);
-    padding: clamp(40px, 6vw, 72px) 0;
   }
-  .strip-grid {
+  .difference-header {
+    margin-bottom: 2.5rem;
+    max-width: 680px;
+  }
+  /* The shared .section-label green is unreadable on the green band. */
+  .difference-label {
+    color: var(--green-200);
+  }
+  .difference-title {
+    color: white;
+    margin: 0;
+  }
+  .difference-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
   }
-  .strip-item {
+  .difference-item {
     color: rgba(255,255,255,0.9);
   }
-.strip-item h3 {
+  .difference-item h3 {
     color: white;
     font-size: 1.1rem;
     margin-bottom: 0.6rem;
   }
-  .strip-item p {
+  .difference-item p {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.75);
     line-height: 1.7;
     margin: 0;
   }
 
+  @media (max-width: 860px) {
+    .difference-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
   @media (max-width: 700px) {
-    .strip-grid {
+    .difference-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
     }

@@ -1,81 +1,44 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import HeroSection from '../components/home/HeroSection.astro';
-import CredentialStrip from '../components/home/CredentialStrip.astro';
-import ComparisonTable from '../components/home/ComparisonTable.astro';
+import ProblemSection from '../components/home/ProblemSection.astro';
+import DifferenceSection from '../components/home/DifferenceSection.astro';
 import TeamTeaser from '../components/home/TeamTeaser.astro';
+import CareExperience from '../components/home/CareExperience.astro';
 import LifestyleMedTeaser from '../components/home/LifestyleMedTeaser.astro';
-import ServiceCard from '../components/shared/ServiceCard.astro';
-import TestimonialCard from '../components/shared/TestimonialCard.astro';
+import ProofSection from '../components/home/ProofSection.astro';
+import MembershipHowItWorks from '../components/home/MembershipHowItWorks.astro';
+import PricingSection from '../components/home/PricingSection.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 
-const services = [
-  {
-    icon: '',
-    title: 'Direct Primary Care',
-    description: 'The financial model that makes everything else possible. No insurance billing. No copays. Labs at wholesale, medications at cost, and a physician incentivized by your health — not by billing volume.',
-    href: '/services#dpc',
-    featured: false,
-  },
-  {
-    icon: '',
-    title: 'Lifestyle Medicine',
-    description: 'The only in-person, board-certified Lifestyle Medicine practice on the Main Line. Dr. Lieberman is dual board-certified, culinary-trained, and built FFM so this is part of every visit — not an add-on, not a referral.',
-    href: '/lifestyle-medicine',
-    featured: true,
-  },
-  {
-    icon: '',
-    title: 'Concierge Medicine',
-    description: 'Every FFM member gets the experience most people associate with a $5,000/year concierge retainer — 250-patient panels, 1–2 hour visits, and your doctor\'s direct line. There is no separate tier. This is the standard.',
-    href: '/services#concierge',
-    featured: false,
-  },
-];
-
-const testimonials = [
-  {
-    quote: "I've never had a doctor pick up the phone personally when I called. My doctor here does — every time. That alone is worth everything.",
-    author: 'D.W.',
-    detail: 'Forward Family Medicine Patient',
-  },
-  {
-    quote: "When I needed a specialist, they didn't just give me a name. They called ahead, explained my case, and made sure I got in quickly. I felt like I had someone fighting for me.",
-    author: 'P.H.',
-    detail: 'Forward Family Medicine Patient',
-  },
-  {
-    quote: "Dr. Lieberman actually understood how I eat and how I live — and built a plan around that. Three months later, my A1C is down significantly.",
-    author: 'R.M.',
-    detail: 'Forward Family Medicine Patient',
-  },
-];
-
+// Ordered objections first — insurance, insurance-substitution, payment — before
+// the definitional questions. Someone who has already decided to read this far
+// is weighing a reason not to join, not looking for a definition of DPC.
 const faqs = [
   {
-    q: 'What is Direct Primary Care?',
-    a: 'DPC is a membership model where you pay a flat monthly fee directly to your doctor — no insurance involved. You get unlimited primary care access, longer appointments, same-day availability, and a genuine care relationship. Think of it as your primary care doctor, always available, always on your side.',
-  },
-  {
-    q: 'Do I need the Clarity Program to get great care here?',
-    a: 'No. Standard membership is the practice\'s foundation — long visits, same-day access, direct physician contact, and Lifestyle Medicine are all included. The Clarity Program is an optional, separate annual program for members who want a structured year-long diagnostic and prevention system on top of their membership. Most members do not enroll in Clarity, and the standard of care is the same either way.',
+    q: 'Do you accept insurance?',
+    a: 'We do not bill insurance. Our membership model is precisely what allows us to keep our patient panel capped at ~250 patients per physician and spend real time with each patient. No insurance means no compromises.',
   },
   {
     q: 'Is this the same as insurance?',
     a: 'No. Direct Primary Care covers your day-to-day primary care needs. We recommend pairing it with a high-deductible health plan for hospital stays, surgeries, and specialist care.',
   },
   {
-    q: 'Do you accept insurance?',
-    a: 'We do not bill insurance. Our membership model is precisely what allows us to keep our patient panel capped at ~250 patients per physician and spend real time with each patient. No insurance means no compromises.',
+    q: 'Can I use my HSA or FSA?',
+    a: 'In many cases, yes — especially following the Primary Care Enhancement Act (effective January 1, 2026), which clarified that HSA funds can be used for DPC memberships. Confirm eligibility with your plan administrator.',
+  },
+  {
+    q: 'What is Direct Primary Care?',
+    a: 'DPC is a membership model where you pay a flat monthly fee directly to your doctor — no insurance involved. You get unlimited primary care access, longer appointments, same-day availability, and a genuine care relationship. Think of it as your primary care doctor, always available, always on your side.',
   },
   {
     q: 'What is Lifestyle Medicine and is it included?',
     a: "Lifestyle medicine is an evidence-based specialty using therapeutic changes in nutrition, activity, sleep, and stress to prevent, treat, and even reverse chronic disease. Dr. Lieberman is board-certified in it — and it's fully integrated into your membership. No extra fee.",
   },
   {
-    q: 'Can I use my HSA or FSA?',
-    a: 'In many cases, yes — especially following the Primary Care Enhancement Act (effective January 1, 2026), which clarified that HSA funds can be used for DPC memberships. Confirm eligibility with your plan administrator.',
+    q: 'Do I need the Clarity Program to get great care here?',
+    a: 'No. Standard membership is the practice\'s foundation — long visits, same-day access, direct physician contact, and Lifestyle Medicine are all included. The Clarity Program is an optional, separate annual program for members who want a structured year-long diagnostic and prevention system on top of their membership. Most members do not enroll in Clarity, and the standard of care is the same either way.',
   },
   {
     q: 'How do I get started?',
@@ -94,73 +57,71 @@ const breadcrumb = {
 
 <MainLayout
   title="Direct Primary Care Wayne PA | Forward Family Medicine"
-  description="Wayne, PA's Direct Primary Care practice on the Main Line. Flat monthly membership, same-day access, 1–2 hour visits, and direct physician contact — with Lifestyle Medicine included. No insurance required."
+  description="One to two hour visits, your doctor's direct number, and panels capped near 250 patients. Membership primary care in Wayne, PA, Lifestyle Medicine included."
   canonical="https://www.forwardfamilymedicine.com/"
   schema={breadcrumb}
 >
+  <!-- 1 Hero — the desired experience -->
   <HeroSection />
-  <CredentialStrip />
-  <ComparisonTable />
-  <TeamTeaser />
 
-  <!-- Services -->
-  <section class="services-section section">
-    <div class="container">
-      <span class="section-label">What We Offer</span>
-      <h2 class="section-title">Three Things Every FFM Member Gets</h2>
-      <p class="section-intro">Every service starts with more time, more access, and a doctor who genuinely knows you.</p>
-      <div class="services-grid">
-        {services.map(s => <ServiceCard {...s} />)}
-      </div>
-    </div>
-  </section>
+  <!-- 2 The problem -->
+  <ProblemSection />
 
+  <!-- 3 The FFM difference -->
+  <DifferenceSection />
+
+  <!-- 4 Meet your doctor — availability-led; target of the hero's secondary CTA -->
+  <div id="meet-your-doctor" class="anchor-target">
+    <TeamTeaser />
+  </div>
+
+  <!-- 5 What care feels like -->
+  <CareExperience />
+
+  <!-- 6 Beyond traditional primary care -->
   <LifestyleMedTeaser />
 
-  <!-- Clarity Program teaser -->
+  <!-- 7 Proof -->
+  <ProofSection />
+
+  <!-- 8 How membership works -->
+  <MembershipHowItWorks />
+
+  <!-- 9 Pricing -->
+  <PricingSection />
+
+  <!-- Clarity Program teaser — deliberately below pricing so it does not
+       introduce a second, larger number before the membership price. -->
   <section class="clarity-teaser-section">
     <div class="clarity-teaser-container">
       <p class="clarity-teaser-eyebrow">For Members Who Want to Go Deeper</p>
-      <h3 class="clarity-teaser-h3">The Clarity Program</h3>
+      <h2 class="clarity-teaser-h2">The Clarity Program</h2>
       <p class="clarity-teaser-body">Some of our members want more than excellent primary care — they want a structured, year-long diagnostic program built around prevention: whole-body imaging, advanced biomarkers, continuous metabolic and performance data, all read by a physician who tracks how everything moves over time.</p>
       <p class="clarity-teaser-body">We built The Clarity Program for those members. It's an optional, separate program — not a required upgrade, and not the standard of care here. Standard membership remains the foundation, and it remains complete on its own.</p>
       <a href="/clarity/" class="clarity-teaser-link">Learn about the Clarity Program →</a>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials-section section">
-    <div class="container">
-      <span class="section-label">Patient Stories</span>
-      <h2 class="section-title">What Our Patients Say</h2>
-      <div class="testimonials-grid">
-        {testimonials.map(t => <TestimonialCard {...t} />)}
-      </div>
-    </div>
-  </section>
-
+  <!-- 10 FAQ — objections first -->
   <FAQSection faqs={faqs} />
-  <CTABanner />
+
+  <!-- 11 Final CTA — homepage-specific props; the component's defaults are
+       shared with eight other routes and must not be edited here. -->
+  <CTABanner
+    headline="Start with a conversation, not a commitment."
+    subhead="A free meet and greet is exactly what it sounds like. Come in, meet the physician taking new patients, see the office, and ask every question you have. Nothing is signed that day."
+    btnText="Schedule My Free Meet & Greet"
+    btnHref="/contact"
+    btn2Text="See membership details"
+    btn2Href="/membership"
+  />
 </MainLayout>
 
 <style>
-  .services-section {
-    background: var(--cream-50);
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2.5rem;
-  }
-  .testimonials-section {
-    background: var(--cream-100);
-  }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2.5rem;
+  /* The header is sticky, so an in-page anchor needs clearance or the section
+     heading lands underneath it. */
+  .anchor-target {
+    scroll-margin-top: 120px;
   }
 
   /* Clarity teaser */
@@ -182,7 +143,7 @@ const breadcrumb = {
     color: var(--green-500);
     margin: 0 0 0.65rem;
   }
-  .clarity-teaser-h3 {
+  .clarity-teaser-h2 {
     font-family: var(--font-heading);
     font-size: clamp(1.35rem, 2.5vw, 1.75rem);
     font-weight: 300;
@@ -212,12 +173,5 @@ const breadcrumb = {
   .clarity-teaser-link:hover {
     color: #3D6B55;
     text-decoration-color: currentColor;
-  }
-
-  @media (max-width: 860px) {
-    .services-grid,
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-    }
   }
 </style>
