@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Phoenixville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Phoenixville, PA residents with Dr. Brian Landi at our Malvern (12 min) and West Chester (25 min) offices. Unlimited visits, same-day access, flat monthly fee. Now building Phoenixville's patient list."
+description: "Direct Primary Care for Phoenixville, PA residents with Dr. Brian Landi at our Malvern (12 min) and West Chester (25 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Phoenixville PA
   - DPC Phoenixville Pennsylvania

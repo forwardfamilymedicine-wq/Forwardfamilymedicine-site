@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Exton, PA | Forward Family Medicine"
-description: "Direct Primary Care for Exton, PA residents with Dr. Brian Landi at our Malvern (10 min) and West Chester (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Now building Exton's patient list."
+description: "Direct Primary Care for Exton, PA residents with Dr. Brian Landi at our Malvern (10 min) and West Chester (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Exton PA
   - DPC Exton Pennsylvania

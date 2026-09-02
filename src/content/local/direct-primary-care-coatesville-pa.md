@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Coatesville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 min) offices. Unlimited visits, same-day access, telehealth included. Now building Coatesville's patient list."
+description: "Direct Primary Care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Coatesville PA
   - DPC Coatesville Pennsylvania

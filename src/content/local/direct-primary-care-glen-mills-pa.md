@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Glen Mills, PA | Forward Family Medicine"
-description: "Direct Primary Care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Now building Glen Mills' patient list."
+description: "Direct Primary Care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Glen Mills PA
   - DPC Glen Mills Pennsylvania

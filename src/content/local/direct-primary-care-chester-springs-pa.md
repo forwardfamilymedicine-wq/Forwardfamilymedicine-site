@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Chester Springs, PA | Forward Family Medicine"
-description: "Direct Primary Care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern (15 min) and West Chester (20 min) offices. Unlimited visits, same-day access, flat monthly fee. Now building Chester Springs' patient list."
+description: "Direct Primary Care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern (15 min) and West Chester (20 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Chester Springs PA
   - DPC Chester Springs Pennsylvania

@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Concordville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Now building Concordville's patient list."
+description: "Direct Primary Care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Concordville PA
   - DPC Concordville Pennsylvania

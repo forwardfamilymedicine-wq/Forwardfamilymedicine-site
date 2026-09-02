@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Kennett Square, PA | Forward Family Medicine"
-description: "Direct Primary Care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (25 min) offices. Unlimited visits, same-day access, telehealth included. Now building Kennett Square's patient list."
+description: "Direct Primary Care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (25 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Kennett Square PA
   - DPC Kennett Square Pennsylvania
