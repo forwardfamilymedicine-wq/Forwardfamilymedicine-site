@@ -1,0 +1,140 @@
+---
+/**
+ * Collapsed "near you" town list, sitting below the conversion content as
+ * wayfinding rather than persuasion.
+ *
+ * The whole point of this block is to give the /local/* pages inbound links a
+ * crawler can follow, so the links are rendered into the static HTML and are
+ * never injected on expand. Collapse is progressive enhancement, in this
+ * order:
+ *
+ *   - Static HTML ships the region OPEN and the toggle button hidden. With no
+ *     JavaScript, every link is present and reachable.
+ *   - The inline script below reveals the button and collapses the region, so
+ *     a normal visitor gets the collapsed affordance.
+ *
+ * Doing it the other way round — shipping `hidden` and revealing with JS —
+ * would still put the links in the HTML, but a no-JS visitor could never open
+ * the list. Interaction mirrors FAQSection: a button with aria-expanded
+ * controlling a labelled region.
+ */
+export interface Props {
+  /** DOM id for the collapsible region; the button derives its own id from it. */
+  id: string;
+  /** Button text, e.g. "Menopause care in 24 towns". */
+  summary: string;
+  /** Landmark name for the section. */
+  ariaLabel: string;
+  links: { href: string; label: string }[];
+}
+
+const { id, summary, ariaLabel, links } = Astro.props;
+---
+
+<section class="near-you" aria-label={ariaLabel} data-near-you>
+  <div class="container">
+    <button
+      class="near-you-toggle"
+      id={`${id}-btn`}
+      aria-expanded="true"
+      aria-controls={id}
+      hidden
+    >
+      <span>{summary}</span>
+      <span class="near-you-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="near-you-region" id={id} role="region" aria-labelledby={`${id}-btn`}>
+      <ul class="near-you-grid">
+        {links.map(l => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .near-you {
+    background: var(--cream-200);
+    padding: calc(var(--section-pad) * 0.5) 0;
+  }
+  .near-you-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.15s;
+  }
+  .near-you-toggle:hover { color: var(--green-500); }
+  .near-you-icon {
+    font-size: 1.4rem;
+    font-weight: 300;
+    flex-shrink: 0;
+    color: var(--green-400);
+    transition: transform 0.2s;
+  }
+  .near-you-toggle[aria-expanded="true"] .near-you-icon {
+    transform: rotate(45deg);
+  }
+
+  /* Town list — plain links, deliberately quieter than the page above it. */
+  .near-you-grid {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem 2rem;
+  }
+  .near-you-grid a {
+    font-size: 0.95rem;
+    color: var(--ink-700);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .near-you-grid a:hover {
+    color: var(--green-500);
+    border-bottom-color: var(--green-300);
+  }
+
+  @media (max-width: 860px) {
+    .near-you-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .near-you-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script is:inline>
+  document.querySelectorAll('[data-near-you]').forEach(section => {
+    if (section.dataset.nearYouReady) return;
+    section.dataset.nearYouReady = '1';
+
+    const btn = section.querySelector('.near-you-toggle');
+    const region = section.querySelector('.near-you-region');
+    if (!btn || !region) return;
+
+    // JavaScript is available, so take over: show the control, collapse the list.
+    btn.hidden = false;
+    btn.setAttribute('aria-expanded', 'false');
+    region.hidden = true;
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      region.hidden = expanded;
+    });
+  });
+</script>
