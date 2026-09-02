@@ -1,9 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 import drLiebermanPhoto from '../assets/staff/dr-philip-lieberman.jpg';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+
+// Town list is derived from the local collection, never hardcoded, so a new
+// /local/lifestyle-medicine-*.md file appears here the moment it is added.
+const lifestyleTowns = (await getCollection('local'))
+  .map(e => ({ slug: e.id.replace(/\.mdx?$/, ''), label: e.data.location ?? '' }))
+  .filter(t => t.slug.startsWith('lifestyle-medicine-') && t.label)
+  .sort((a, b) => a.label.localeCompare(b.label));
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -282,6 +290,24 @@ const faqs = [
 
   <FAQSection faqs={faqs} headline="Lifestyle Medicine FAQs" />
 
+  <!-- Lifestyle Medicine by town — connects the /local/lifestyle-medicine-*
+       pages, which previously had no inbound links anywhere on the site. -->
+  <section class="near-you section" aria-label="Lifestyle Medicine by location">
+    <div class="container">
+      <span class="section-label">By Location</span>
+      <h2 class="section-title">Lifestyle Medicine near you</h2>
+      <p class="section-intro">
+        How lifestyle medicine fits into primary care for patients coming from each
+        town we serve.
+      </p>
+      <ul class="near-you-grid">
+        {lifestyleTowns.map(t => (
+          <li><a href={`/local/${t.slug}/`}>{t.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- Lifestyle Library cross-link -->
   <section class="section" style="background: var(--cream-200);">
     <div class="container" style="max-width:680px; text-align:center;">
@@ -485,5 +511,35 @@ const faqs = [
   }
   @media (max-width: 560px) {
     .lm-diff-stats { grid-template-columns: 1fr; }
+  }
+
+  /* Town list — plain links, deliberately quieter than the care sections above. */
+  .near-you {
+    background: var(--cream-50);
+  }
+  .near-you-grid {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem 2rem;
+  }
+  .near-you-grid a {
+    font-size: 0.95rem;
+    color: var(--ink-700);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .near-you-grid a:hover {
+    color: var(--green-500);
+    border-bottom-color: var(--green-300);
+  }
+  @media (max-width: 860px) {
+    .near-you-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .near-you-grid { grid-template-columns: 1fr; }
   }
 </style>
