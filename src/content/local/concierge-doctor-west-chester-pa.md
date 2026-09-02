@@ -66,10 +66,10 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting West Chester patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our West Chester office beginning October 2026. [Join the patient list →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our West Chester office beginning October 2026. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)
 
 **What's the best way to evaluate the practice before committing?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
@@ -81,4 +81,4 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Get Started
 
-**[Join the Patient List →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

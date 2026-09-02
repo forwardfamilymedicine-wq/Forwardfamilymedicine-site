@@ -61,7 +61,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting Chester Springs patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern and West Chester offices beginning October 2026. [Join the Chester Springs patient list →](/contact/?subject=Join%20the%20Chester%20Springs%20Patient%20List)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern and West Chester offices beginning October 2026. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Chester%20Springs)
 
 **Who is the physician at the Malvern and West Chester offices?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
@@ -70,7 +70,7 @@ Dr. Brian Landi, DO — board-certified through the American Osteopathic Board o
 Traditional practices operate on high-volume schedules — typically 20–30 patients per physician per day. Our DPC model caps the panel at ~250 patients per physician, which is what enables genuine same-day access and visits long enough to actually solve problems. [Learn more →](/direct-primary-care)
 
 **What's the best way to try the practice before committing?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
@@ -84,4 +84,4 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Get Started
 
-**[Join the Patient List →](/contact/?subject=Join%20the%20Chester%20Springs%20Patient%20List)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Chester%20Springs)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

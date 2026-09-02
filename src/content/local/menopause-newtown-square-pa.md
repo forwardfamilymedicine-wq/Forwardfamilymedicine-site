@@ -83,7 +83,7 @@ MSCP is a credential from the Menopause Society indicating dedicated training in
 Yes — completely, across all three offices. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, telehealth follow-ups, and inter-office coordination are all part of your DPC membership.
 
 **How do I get started?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedule here →](/contact/?subject=Join%20the%20Newtown%20Square%20Patient%20List)
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedule here →](/contact/?subject=Meet%20and%20Greet%20-%20Newtown%20Square)
 
 ## Contact & Practice Information
 
@@ -97,4 +97,4 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Join%20the%20Newtown%20Square%20Patient%20List)** | **[Menopause Care →](/menopause)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Newtown%20Square)** | **[Menopause Care →](/menopause)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

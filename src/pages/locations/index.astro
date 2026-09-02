@@ -172,14 +172,14 @@ const breadcrumb = {
               {/* CTAs */}
               <div class="card-footer">
                 <a href={`/locations/${d.slug}/`} class="btn btn-outline">View Details →</a>
-                {isOpen ? (
-                  <a href="/contact/" class="btn btn-accent">Schedule a Visit →</a>
-                ) : (
-                  <a
-                    href={`/contact/?subject=${encodeURIComponent(`Join Dr. Landi's ${d.name} Patient List`)}&source=locations-${d.slug}`}
-                    class="btn btn-accent"
-                  >Join Dr. Landi's List →</a>
-                )}
+                {/* The action reflects physician availability, not office status:
+                    our physicians are accepting patients now, so every office
+                    offers a meet and greet. The opening date stays as context in
+                    the status badge above. */}
+                <a
+                  href={`/contact/?source=locations-${d.slug}`}
+                  class="btn btn-accent"
+                >Schedule a Meet &amp; Greet →</a>
               </div>
 
             </article>

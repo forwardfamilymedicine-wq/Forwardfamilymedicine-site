@@ -61,7 +61,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting Kennett Square patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our West Chester and Malvern offices beginning October 2026. [Join the Kennett Square patient list →](/contact/?subject=Join%20the%20Kennett%20Square%20Patient%20List)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our West Chester and Malvern offices beginning October 2026. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)
 
 **Who is the physician at the West Chester and Malvern offices?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
@@ -70,7 +70,7 @@ Dr. Brian Landi, DO — board-certified through the American Osteopathic Board o
 Yes — and this is where DPC's telehealth inclusion matters. Annual physicals, new-patient visits, and procedures happen in person. Most follow-ups, acute illness evaluations, medication reviews, and lab result discussions work well by phone or video. Members typically come in a few times per year and handle the rest remotely. [Learn more →](/direct-primary-care)
 
 **What's the best way to try the practice before committing?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi once scheduling opens. [Schedule here →](/contact)
+Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
@@ -84,4 +84,4 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Get Started
 
-**[Join the Patient List →](/contact/?subject=Join%20the%20Kennett%20Square%20Patient%20List)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

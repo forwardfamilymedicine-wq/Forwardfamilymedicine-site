@@ -80,4 +80,4 @@ Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menop
 
 ## Take the First Step
 
-**[Join the Patient List →](/contact/?subject=Join%20the%20West%20Chester%20Patient%20List)** | **[Menopause Care →](/menopause)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Menopause Care →](/menopause)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
