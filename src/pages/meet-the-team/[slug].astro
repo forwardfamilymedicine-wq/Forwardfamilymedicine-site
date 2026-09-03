@@ -6,10 +6,21 @@ import TestimonialCard from '../../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
 
 // Verified Google reviews, keyed by provider slug. Verbatim, never reworded.
-// Lieberman has no non-duplicate review left to place here — his three
-// available reviews are already used on the homepage and the Lifestyle
-// Medicine page, so his key is intentionally absent rather than repeating one.
+// Lieberman's M.M. and P.M. reviews are also used on lifestyle-medicine.astro
+// (and the homepage carries D.B., M.M. and P.M. too) — that overlap is
+// intentional here, not an oversight: his bio should stand on its own with
+// real proof rather than none.
 const REVIEWS: Record<string, { quote: string; author: string }[]> = {
+  'philip-lieberman-md': [
+    {
+      quote: "Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner.",
+      author: 'M.M.',
+    },
+    {
+      quote: "I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. He is incredibly kind and compassionate. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier.",
+      author: 'P.M.',
+    },
+  ],
   'brian-landi-do': [
     {
       quote: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.",
