@@ -2,6 +2,30 @@
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAvailability } from '../../utils/availability';
+import TestimonialCard from '../../components/shared/TestimonialCard.astro';
+
+// Verified Google reviews, keyed by provider slug. Verbatim, never reworded.
+// Lieberman has no non-duplicate review left to place here — his three
+// available reviews are already used on the homepage and the Lifestyle
+// Medicine page, so his key is intentionally absent rather than repeating one.
+const REVIEWS: Record<string, { quote: string; author: string }[]> = {
+  'brian-landi-do': [
+    {
+      quote: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.",
+      author: 'E.G.',
+    },
+  ],
+  'david-bigley-do': [
+    {
+      quote: "Dr Bigley sat and spoke with me for an hour and 45 minutes, getting to know me as a whole person. I felt so comfortable with him that I was totally honest in a way in which I usually do not feel comfortable with other physicians. This is a very rare person. You can tell he cares and will be dedicated to help you.",
+      author: 'A.K.',
+    },
+    {
+      quote: "I'm 81 years young with a couple medical issues. But Dr Bigley brings back memories from my childhood — house calls! He takes the time to listen and amazingly, his first recommendation does not include a prescription pad. And the phone answers and the next appointment available is not next month.",
+      author: 'J.O.',
+    },
+  ],
+};
 
 export async function getStaticPaths() {
   const providers = await getCollection('providers');
@@ -274,6 +298,20 @@ const breadcrumb = {
       </aside>
     </div>
   </section>
+
+  {REVIEWS[d.slug]?.length > 0 && (
+    <section class="provider-reviews section" aria-label="Patient reviews" style="background: var(--cream-200);">
+      <div class="container">
+        <span class="section-label">Patient Reviews</span>
+        <h2 class="section-title">What patients say</h2>
+        <div class={`provider-reviews-grid${REVIEWS[d.slug].length === 1 ? ' provider-reviews-grid--single' : ''}`}>
+          {REVIEWS[d.slug].map((r) => (
+            <TestimonialCard quote={r.quote} author={r.author} detail="Verified Google review" />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </MainLayout>
 
 <style>
@@ -334,5 +372,18 @@ const breadcrumb = {
     .provider-hero-photo { max-width: 280px; }
     .provider-bio-grid { grid-template-columns: 1fr; }
     .bio-sidebar { order: -1; }
+  }
+  .provider-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .provider-reviews-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+  @media (max-width: 780px) {
+    .provider-reviews-grid { grid-template-columns: 1fr; }
   }
 </style>

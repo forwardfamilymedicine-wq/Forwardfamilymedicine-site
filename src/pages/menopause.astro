@@ -5,6 +5,7 @@ import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+import TestimonialCard from '../components/shared/TestimonialCard.astro';
 
 const allProviders = await getCollection('providers');
 const landi = allProviders.find(p => p.id === 'brian-landi-do');
@@ -367,6 +368,21 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Patient reviews -->
+  <section class="menopause-reviews section" aria-label="Patient reviews">
+    <div class="container">
+      <span class="section-label">Patient Reviews</span>
+      <h2 class="section-title">What patients say about Dr. Landi</h2>
+      <div class="menopause-reviews-single">
+        <TestimonialCard
+          quote="I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi."
+          author="E.G."
+          detail="Verified Google review"
+        />
+      </div>
+    </div>
+  </section>
+
   <FAQSection faqs={faqs} headline="Menopause Care FAQs" label="FAQ" />
 
   <CTABanner
@@ -576,4 +592,11 @@ const faqs = [
     .lm-diff-stats { grid-template-columns: 1fr; }
   }
 
+  .menopause-reviews {
+    background: var(--cream-50);
+  }
+  .menopause-reviews-single {
+    max-width: 620px;
+    margin: 2rem auto 0;
+  }
 </style>

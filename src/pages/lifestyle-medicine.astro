@@ -5,6 +5,7 @@ import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+import TestimonialCard from '../components/shared/TestimonialCard.astro';
 import { getAvailability } from '../utils/availability';
 
 // Dr. Lieberman's name, credentials, photo, bio link and availability all come
@@ -341,6 +342,26 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Patient reviews -->
+  <section class="lm-reviews section" aria-label="Patient reviews">
+    <div class="container">
+      <span class="section-label">Patient Reviews</span>
+      <h2 class="section-title">What patients say about Dr. Lieberman</h2>
+      <div class="lm-reviews-grid">
+        <TestimonialCard
+          quote="Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner."
+          author="M.M."
+          detail="Verified Google review"
+        />
+        <TestimonialCard
+          quote="I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. He is incredibly kind and compassionate. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier."
+          author="P.M."
+          detail="Verified Google review"
+        />
+      </div>
+    </div>
+  </section>
+
   <!-- Lifestyle Library cross-link -->
   <section class="section" style="background: var(--cream-200);">
     <div class="container" style="max-width:680px; text-align:center;">
@@ -591,4 +612,16 @@ const faqs = [
     transition: color 0.15s;
   }
   .credential-bio-link:hover { color: var(--green-500); }
+  .lm-reviews {
+    background: var(--cream-50);
+  }
+  .lm-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 780px) {
+    .lm-reviews-grid { grid-template-columns: 1fr; }
+  }
 </style>
