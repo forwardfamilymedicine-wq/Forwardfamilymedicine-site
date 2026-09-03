@@ -6,6 +6,7 @@ import CTABanner from '../components/shared/CTABanner.astro';
 import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
+import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 
 const allProviders = await getCollection('providers');
 const landi = allProviders.find(p => p.id === 'brian-landi-do');
@@ -380,6 +381,7 @@ const faqs = [
           detail="Verified Google review"
         />
       </div>
+      <GoogleReviewsLink />
     </div>
   </section>
 

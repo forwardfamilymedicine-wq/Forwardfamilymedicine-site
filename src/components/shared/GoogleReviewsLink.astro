@@ -1,0 +1,32 @@
+---
+/**
+ * Static link to the practice's Google Business Profile reviews.
+ *
+ * The URL is built from the two STABLE identifiers Google's own redirect
+ * returned for https://share.google/8Zu7VLGAekGCIWOZ7 (the owner's review
+ * link): the business name and its Knowledge Graph ID (kgmid=/g/11w3tyrkjg).
+ * The raw redirect also carried session-specific tokens (sxsrf, kgs,
+ * sca_esv) that are not safe to hardcode — those expire, and a stale one
+ * would silently break this link. kgmid does not expire; it is the same
+ * identifier Google uses internally for this exact business across sessions.
+ *
+ * Deliberately no star rating or review count here — Google shows the live
+ * number; hardcoding one would go stale the day it changes.
+ */
+const GOOGLE_REVIEWS_URL =
+  'https://www.google.com/search?q=Forward+Family+Medicine+-+Direct+Primary+Care&kgmid=/g/11w3tyrkjg';
+---
+
+<p class="google-reviews-link">
+  <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+    Read all our reviews on Google &rarr;
+  </a>
+</p>
+
+<style>
+  .google-reviews-link {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+</style>

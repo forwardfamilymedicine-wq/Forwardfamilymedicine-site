@@ -1,5 +1,6 @@
 ---
 import TestimonialCard from '../shared/TestimonialCard.astro';
+import GoogleReviewsLink from '../shared/GoogleReviewsLink.astro';
 
 /**
  * Step 7 of the homepage hierarchy: proof.
@@ -76,6 +77,8 @@ const credentials = [
     <div class="proof-grid">
       {leadReviews.map(r => <TestimonialCard {...r} />)}
     </div>
+
+    <GoogleReviewsLink />
 
     <div class="credentials-block">
       <h3 class="credentials-heading">The credentials behind that care</h3>

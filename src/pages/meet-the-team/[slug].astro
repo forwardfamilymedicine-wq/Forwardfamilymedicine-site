@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAvailability } from '../../utils/availability';
 import TestimonialCard from '../../components/shared/TestimonialCard.astro';
+import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
 
 // Verified Google reviews, keyed by provider slug. Verbatim, never reworded.
 // Lieberman has no non-duplicate review left to place here — his three
@@ -309,6 +310,7 @@ const breadcrumb = {
             <TestimonialCard quote={r.quote} author={r.author} detail="Verified Google review" />
           ))}
         </div>
+        <GoogleReviewsLink />
       </div>
     </section>
   )}

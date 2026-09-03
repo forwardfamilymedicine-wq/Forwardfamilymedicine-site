@@ -6,6 +6,7 @@ import CTABanner from '../components/shared/CTABanner.astro';
 import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
+import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { getAvailability } from '../utils/availability';
 
 // Dr. Lieberman's name, credentials, photo, bio link and availability all come
@@ -359,6 +360,7 @@ const faqs = [
           detail="Verified Google review"
         />
       </div>
+      <GoogleReviewsLink />
     </div>
   </section>
 
