@@ -14,6 +14,10 @@ import MainLayout from '../layouts/MainLayout.astro';
       <p class="hero-eyebrow">Wayne, PA · Philadelphia Main Line</p>
       <h1>What Is Direct Primary Care?</h1>
       <p class="hero-desc">Primary care freed from insurance billing — and built around you. At Forward Family Medicine, DPC isn't a budget alternative to concierge medicine. It's the financial structure that makes concierge-quality care available to everyone.</p>
+      <p class="hero-press">
+        Cited as a real-world example of this model in Slate &mdash;
+        &ldquo;<a href="https://slate.com/technology/2026/08/health-care-appointment-short-wait-solution-shortage.html" target="_blank" rel="noopener noreferrer">Membership Fees Are Coming for Your Doctor's Office</a>,&rdquo; August 2026.
+      </p>
     </div>
   </section>
 
@@ -350,6 +354,16 @@ import MainLayout from '../layouts/MainLayout.astro';
     max-width: 700px;
     line-height: 1.7;
     margin: 0;
+  }
+  /* Press mention: a citation, not an endorsement — kept quiet on the dark hero. */
+  .hero-press {
+    color: var(--green-200);
+    font-size: 0.85rem;
+    max-width: 700px;
+    margin-top: 1rem;
+  }
+  .hero-press a {
+    color: var(--green-100);
   }
 
   /* ─── Stats ─────────────────────────────────── */
