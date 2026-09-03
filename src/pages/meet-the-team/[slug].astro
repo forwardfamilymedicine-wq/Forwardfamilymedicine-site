@@ -157,6 +157,14 @@ const breadcrumb = {
             </div>
           )}
 
+          {isPhysician && d.additionalCertifications?.length > 0 && (
+            <div class="hero-credentials">
+              {d.additionalCertifications.map((c: any) => (
+                <span class="chip">{c.name}</span>
+              ))}
+            </div>
+          )}
+
           {availability && (
             availability.status !== 'full' ? (
               <div class="accepting-banner accepting">
@@ -335,6 +343,11 @@ const breadcrumb = {
   .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
   .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
   .board-detail { font-size: 0.85rem; color: var(--ink-500); }
+  /* Named credentials (e.g. MSCP, ABLM Diplomate) belong above the fold —
+     the sidebar "Certifications" card further down repeats the full detail
+     for anyone reading on, but a deciding patient shouldn't have to scroll
+     to see the credential that differentiates this physician. */
+  .hero-credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
 
   .accepting-banner { border-radius: var(--radius-sm); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; }
   .accepting-banner.accepting { background: var(--green-50); border: 1px solid var(--green-200); color: var(--green-500); }

@@ -65,6 +65,14 @@ const openingLabel = availability?.startLabel ?? null;
       </div>
     )}
 
+    {isPhysician && d.additionalCertifications?.length > 0 && (
+      <ul class="credential-list">
+        {d.additionalCertifications.slice(0, 2).map((c: any) => (
+          <li>{c.name}</li>
+        ))}
+      </ul>
+    )}
+
     {!noLink && (
       <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
         Meet {isPhysician ? `Dr. ${d.name.split(' ').pop()}` : d.name.split(' ')[0]} →
@@ -99,6 +107,25 @@ const openingLabel = availability?.startLabel ?? null;
   .board-badge { font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.65rem; border-radius: 999px; }
   .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
   .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
+
+  /* Named credentials (e.g. MSCP, ABLM Diplomate) — a deciding patient often
+     never clicks through to the full bio, so the specific credential belongs
+     on the card, not only in the sidebar of the bio page. */
+  .credential-list { list-style: none; padding: 0; margin: 0.1rem 0 0; }
+  .credential-list li {
+    font-size: 0.82rem;
+    color: var(--ink-500);
+    line-height: 1.5;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .credential-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green-400);
+    font-weight: 700;
+  }
 
   .provider-card-cta { margin-top: auto; padding-top: 0.7rem; padding-bottom: 0.7rem; font-size: 0.9rem; text-align: center; }
 
