@@ -279,6 +279,15 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
     if (familySizeGroup) familySizeGroup.hidden = interestSel.value !== 'family';
   });
 
+  // Fires once, on the first field the visitor interacts with — not on every
+  // keystroke. `{ once: true }` removes the listener after it fires.
+  form?.addEventListener('focusin', () => {
+    if (window.ffmTrack) {
+      const source = form.querySelector('[name="source"]')?.value || 'standard';
+      window.ffmTrack('form_start', { source });
+    }
+  }, { once: true });
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
