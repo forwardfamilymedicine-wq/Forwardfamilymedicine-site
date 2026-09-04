@@ -29,13 +29,13 @@ You can read more on our [West Chester location page](/locations/west-chester/) 
 
 ## A note for patients searching for Dr. Landi
 
-Some of you reading this may know Dr. Landi from his work at a large Delaware County hospital system. If you're searching to learn where he's gone next, you've found the right place. Dr. Landi will see patients at Forward Family Medicine starting October 2026, and we are accepting names on his patient list now. Joining the list does not commit you to membership — it simply ensures you receive the first invitations to schedule a free Meet & Greet once he's open for visits.
+Some of you reading this may know Dr. Landi from his work at a large Delaware County hospital system. If you're searching to learn where he's gone next, you've found the right place. Dr. Landi is accepting new patients now. His Chester County office opens in October 2026; until then, early visits happen at our other Chester County location or by telehealth, so there's no need to wait for the office to open before getting started.
 
 If Forward Family Medicine is your first introduction to direct primary care, here's what's different. Most primary care today is built around insurance: short visits, packed schedules, and a system that rewards volume over relationships. Direct primary care works on a flat monthly membership fee instead of insurance billing for routine care. That single structural change unlocks everything else — appointments long enough to actually talk through what's going on (typically 1–2 hours for a new patient visit), direct access to your physician by phone, text, or video when you need it, and a panel small enough that your doctor genuinely knows you. You keep your insurance for things like specialists, hospitals, imaging, and prescriptions; the membership covers the relationship with your primary care doctor.
 
 For most patients coming from a traditional practice, the biggest adjustment isn't the cost or the structure — it's getting used to the idea that you can actually reach your doctor when you need to, and that visits don't have to feel rushed. It's the way primary care used to work, before insurance reshaped it.
 
-Visit Dr. Landi's [physician page](/meet-the-team/brian-landi-do/) to learn more about his background, training, and approach to care, and to add your name to the patient list. You can also read our full guide to [what direct primary care is and how it works](/blog/what-is-direct-primary-care/) if you want to understand the model in more depth before deciding whether it's right for you.
+Visit Dr. Landi's [physician page](/meet-the-team/brian-landi-do/) to learn more about his background, training, and approach to care, and to schedule a free Meet & Greet. You can also read our full guide to [what direct primary care is and how it works](/blog/what-is-direct-primary-care/) if you want to understand the model in more depth before deciding whether it's right for you.
 
 ## What stays the same
 
