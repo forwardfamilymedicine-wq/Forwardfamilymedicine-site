@@ -113,7 +113,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           </ul>
           <div class="plan-cta">
             <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn btn-primary plan-btn">Enroll as Individual</a>
-            <a href="/contact" class="btn btn-outline plan-btn">Start with a free meet &amp; greet</a>
+            <a href="/contact/?source=membership" class="btn btn-outline plan-btn">Start with a free meet &amp; greet</a>
             <div class="panel-notice">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
               Panel size is capped at ~250 patients per physician. Spots fill — we recommend reaching out early.
@@ -145,7 +145,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           </ul>
           <div class="plan-cta">
             <a href={FAMILY_ENROLLMENT_LINK} class="btn btn-accent plan-btn">Enroll Your Family</a>
-            <a href="/contact" class="btn btn-outline plan-btn">Start with a free meet &amp; greet</a>
+            <a href="/contact/?source=membership" class="btn btn-outline plan-btn">Start with a free meet &amp; greet</a>
           </div>
         </div>
 
@@ -169,7 +169,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
           </ul>
           <div class="plan-cta">
             <a href="/for-businesses" class="btn btn-primary plan-btn">Learn About Employer Plans</a>
-            <a href="/contact" class="plan-greet-link">Or contact us directly →</a>
+            <a href="/contact/?source=membership" class="plan-greet-link">Or contact us directly →</a>
           </div>
         </div>
       </div>
@@ -295,6 +295,7 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   <CTABanner
     headline="The Best Time to Start Is Now"
     subhead="Begin with a free, no-obligation meet and greet. No paperwork, no credit card, no pressure. Just a conversation with your future doctor."
+    btnHref="/contact/?source=membership"
     btn2Text="Enroll Now →"
     btn2Href={INDIVIDUAL_ENROLLMENT_LINK}
   />
