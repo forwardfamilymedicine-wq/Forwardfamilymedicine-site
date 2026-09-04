@@ -115,5 +115,22 @@ const schemas = [
   </main>
   <Footer />
   <ConsentBanner />
+  <script is:inline>
+    // Single delegated listener covers every SigmaMD enrollment link
+    // site-wide (Header, membership, contact, new-patients) without
+    // instrumenting each page individually.
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href*="sigmamd.com/signup"]');
+      if (!link) return;
+      var plan = link.href.indexOf('/family-membership') !== -1
+        ? 'family'
+        : link.href.indexOf('/individual-membership') !== -1
+          ? 'individual'
+          : 'unknown';
+      if (window.ffmTrack) {
+        window.ffmTrack('outbound_enrollment_click', { plan });
+      }
+    });
+  </script>
 </body>
 </html>
