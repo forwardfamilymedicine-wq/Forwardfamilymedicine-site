@@ -93,9 +93,45 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
     function hideBanner() { if (banner) banner.hidden = true; }
     function showBanner() { if (banner) banner.hidden = false; }
 
+    // Consent-safe, queue-safe event tracking.
+    //
+    // Lives here (not a separate script file) because this is the one place
+    // that already knows, synchronously, both the consent state and the exact
+    // moment gtag becomes ready — avoiding any cross-script load-order race.
+    // ConsentBanner's script is is:inline and runs during initial page parse,
+    // before any user interaction is possible, so window.ffmTrack is always
+    // defined by the time a click/submit/focus handler elsewhere calls it.
+    //
+    // - Consent already accepted / gtag ready -> send immediately.
+    // - Consent not yet decided (banner still showing) -> queue; flushed if
+    //   the visitor accepts during this page view.
+    // - Consent declined -> drop permanently, never queued, never retried.
+    var trackQueue = [];
+
+    function ffmTrack(eventName, params) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", eventName, params || {});
+        return;
+      }
+      if (getCookie(COOKIE) === "declined") return;
+      trackQueue.push([eventName, params || {}]);
+    }
+
+    function flushTrackQueue() {
+      while (trackQueue.length) {
+        var item = trackQueue.shift();
+        if (typeof window.gtag === "function") {
+          window.gtag("event", item[0], item[1]);
+        }
+      }
+    }
+
+    window.ffmTrack = ffmTrack;
+
     var choice = getCookie(COOKIE);
     if (choice === "accepted") {
       loadTrackers();
+      flushTrackQueue();
       hideBanner();
     } else if (choice === "declined") {
       hideBanner();
@@ -107,6 +143,7 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
       acceptBtn.addEventListener("click", function () {
         setCookie(COOKIE, "accepted", 365);
         loadTrackers();
+        flushTrackQueue();
         hideBanner();
       });
     }
