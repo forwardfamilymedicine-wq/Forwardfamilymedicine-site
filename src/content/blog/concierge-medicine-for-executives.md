@@ -10,7 +10,6 @@ keywords:
 date: "2025-11-19"
 author: "David Bigley, DO"
 category: "concierge-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-for-busy-professionals"
 ---
 
 

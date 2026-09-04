@@ -10,7 +10,6 @@ keywords:
 date: "2025-05-28"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/weight-management-primary-care"
 ---
 
 

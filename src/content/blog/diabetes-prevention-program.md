@@ -10,7 +10,6 @@ keywords:
 date: "2025-04-30"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/diabetes-prevention-program"
 ---
 
 

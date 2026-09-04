@@ -10,7 +10,6 @@ keywords:
 date: "2025-05-14"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/strength-training-after-40"
 ---
 
 

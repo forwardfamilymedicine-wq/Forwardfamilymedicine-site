@@ -6,7 +6,6 @@ keywords:
   - lifestyle medicine results
   - lifestyle medicine case studies
   - reverse chronic disease lifestyle
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-medicine/patient-success-stories"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

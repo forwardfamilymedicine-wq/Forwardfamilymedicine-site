@@ -10,7 +10,6 @@ keywords:
 date: "2025-07-23"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/blood-pressure-monitoring-at-home"
 ---
 
 

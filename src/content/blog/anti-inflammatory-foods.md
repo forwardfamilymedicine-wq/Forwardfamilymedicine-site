@@ -10,7 +10,6 @@ keywords:
 date: "2025-04-09"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/anti-inflammatory-foods"
 ---
 
 

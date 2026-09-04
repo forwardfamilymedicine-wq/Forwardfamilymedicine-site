@@ -10,7 +10,6 @@ keywords:
 date: "2025-11-05"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-for-families"
 ---
 
 

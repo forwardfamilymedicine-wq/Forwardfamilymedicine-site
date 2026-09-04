@@ -10,7 +10,6 @@ keywords:
 date: "2025-03-26"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/annual-physical-what-to-expect"
 ---
 
 

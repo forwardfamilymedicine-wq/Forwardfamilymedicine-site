@@ -10,7 +10,6 @@ keywords:
 date: "2026-02-11"
 author: "David Bigley, DO"
 category: "concierge-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-main-line-pa"
 ---
 
 

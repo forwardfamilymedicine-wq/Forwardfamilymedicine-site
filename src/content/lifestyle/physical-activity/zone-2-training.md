@@ -8,7 +8,6 @@ keywords:
   - zone 2 heart rate
   - low intensity cardio benefits
   - mitochondrial health exercise
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/physical-activity/zone-2-training"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

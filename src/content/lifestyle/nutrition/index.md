@@ -8,7 +8,6 @@ keywords:
   - anti-inflammatory diet
   - Mediterranean diet
   - nutrition chronic disease
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/nutrition"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

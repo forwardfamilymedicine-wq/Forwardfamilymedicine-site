@@ -10,7 +10,6 @@ keywords:
 date: "2025-08-06"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/colorectal-cancer-screening-options"
 ---
 
 

@@ -10,7 +10,6 @@ keywords:
 date: "2025-07-09"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/lifestyle-medicine-hypertension"
 ---
 
 

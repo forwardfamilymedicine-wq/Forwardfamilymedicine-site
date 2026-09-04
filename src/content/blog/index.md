@@ -8,7 +8,6 @@ keywords:
   - preventive health Main Line
   - family medicine Wayne PA blog
   - DPC education articles
-canonical: "https://www.forwardfamilymedicine.com/blog"
 date: "2026-01-01"
 author: "David Bigley, DO"
 schemaType: "Blog"

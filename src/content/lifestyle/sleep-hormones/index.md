@@ -8,7 +8,6 @@ keywords:
   - sleep and metabolism
   - sleep quality improvement
   - restorative sleep
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/sleep-hormones"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

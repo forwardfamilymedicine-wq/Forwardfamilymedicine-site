@@ -8,7 +8,6 @@ keywords:
   - mindfulness behavior change
   - mindfulness anxiety depression
   - meditation health benefits
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/stress-mental-health/mindfulness-behavior-change"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

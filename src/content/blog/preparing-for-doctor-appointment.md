@@ -10,7 +10,6 @@ keywords:
 date: "2025-10-22"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/how-to-prepare-for-doctor-appointment"
 ---
 
 

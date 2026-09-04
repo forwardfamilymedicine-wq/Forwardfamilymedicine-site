@@ -10,7 +10,6 @@ keywords:
 date: "2025-10-01"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/understanding-lab-results"
 ---
 
 

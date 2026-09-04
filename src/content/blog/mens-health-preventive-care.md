@@ -10,7 +10,6 @@ keywords:
 date: "2025-08-20"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/mens-health-preventive-care"
 ---
 
 

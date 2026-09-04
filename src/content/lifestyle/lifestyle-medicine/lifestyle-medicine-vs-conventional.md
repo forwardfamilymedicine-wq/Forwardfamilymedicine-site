@@ -6,7 +6,6 @@ keywords:
   - lifestyle medicine difference
   - integrative vs lifestyle medicine
   - functional medicine vs lifestyle medicine
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-medicine/lifestyle-medicine-vs-conventional"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

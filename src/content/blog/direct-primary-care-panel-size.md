@@ -10,7 +10,6 @@ keywords:
 date: "2025-02-12"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/doctor-panel-size-affects-care"
 ---
 
 

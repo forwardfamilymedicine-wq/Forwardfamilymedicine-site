@@ -8,7 +8,6 @@ keywords:
   - prediabetes exercise
   - reverse prediabetes naturally
   - prediabetes lifestyle changes
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/metabolic-health/how-to-reverse-prediabetes"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

@@ -8,7 +8,6 @@ keywords:
   - weight training blood sugar
   - strength training diabetes prevention
   - resistance training benefits
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/physical-activity/strength-training-metabolic-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

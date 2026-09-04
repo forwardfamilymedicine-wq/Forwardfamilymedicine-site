@@ -10,7 +10,6 @@ keywords:
 date: "2025-05-21"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/longevity-medicine-primary-care"
 ---
 
 

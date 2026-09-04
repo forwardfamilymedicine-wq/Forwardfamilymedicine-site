@@ -10,7 +10,6 @@ keywords:
 date: "2025-03-19"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/is-preventive-care-worth-it"
 ---
 
 

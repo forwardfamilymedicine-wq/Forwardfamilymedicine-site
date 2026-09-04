@@ -10,7 +10,6 @@ keywords:
 date: "2026-01-21"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/health-insurance-basics-patients"
 ---
 
 

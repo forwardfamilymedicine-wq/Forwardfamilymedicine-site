@@ -10,7 +10,6 @@ keywords:
 date: "2026-01-15"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/why-patients-leave-their-doctors"
 ---
 
 

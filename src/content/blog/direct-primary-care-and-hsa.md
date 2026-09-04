@@ -10,7 +10,6 @@ keywords:
 date: "2026-01-14"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-hsa"
 ---
 
 

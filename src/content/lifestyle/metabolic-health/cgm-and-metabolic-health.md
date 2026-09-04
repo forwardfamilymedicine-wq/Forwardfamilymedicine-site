@@ -7,7 +7,6 @@ keywords:
   - CGM for prediabetes
   - glucose monitoring metabolic health
   - CGM diet optimization
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/metabolic-health/cgm-and-metabolic-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

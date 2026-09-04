@@ -10,7 +10,6 @@ keywords:
 date: "2026-01-28"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/how-to-read-eob-explanation-of-benefits"
 ---
 
 

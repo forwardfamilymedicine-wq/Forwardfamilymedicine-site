@@ -7,7 +7,6 @@ keywords:
   - lifestyle medicine doctor
   - lifestyle medicine pillars
   - evidence-based lifestyle medicine
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/lifestyle-medicine"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

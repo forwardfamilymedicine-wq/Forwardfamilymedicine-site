@@ -10,7 +10,6 @@ keywords:
 date: "2025-06-18"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/mental-health-primary-care"
 ---
 
 

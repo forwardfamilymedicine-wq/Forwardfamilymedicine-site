@@ -9,7 +9,6 @@ keywords:
 date: "2025-01-15"
 author: "David Bigley, DO"
 category: "concierge-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/concierge-medicine-vs-direct-primary-care"
 ---
 
 

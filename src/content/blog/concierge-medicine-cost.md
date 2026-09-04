@@ -10,7 +10,6 @@ keywords:
 date: "2025-01-29"
 author: "David Bigley, DO"
 category: "concierge-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/how-much-does-concierge-medicine-cost"
 ---
 
 

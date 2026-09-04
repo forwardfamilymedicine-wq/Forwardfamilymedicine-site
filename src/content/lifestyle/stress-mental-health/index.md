@@ -8,7 +8,6 @@ keywords:
   - stress management
   - mental health lifestyle medicine
   - stress physiology
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/stress-mental-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

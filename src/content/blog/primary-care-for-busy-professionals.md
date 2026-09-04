@@ -10,7 +10,6 @@ keywords:
 date: "2025-11-26"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/primary-care-for-busy-professionals"
 ---
 
 

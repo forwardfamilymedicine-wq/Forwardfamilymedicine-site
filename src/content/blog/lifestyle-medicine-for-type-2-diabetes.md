@@ -10,7 +10,6 @@ keywords:
 date: "2025-04-23"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/lifestyle-medicine-type-2-diabetes"
 ---
 
 

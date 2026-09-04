@@ -10,7 +10,6 @@ keywords:
 date: "2025-06-04"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/sleep-and-weight-gain"
 ---
 
 

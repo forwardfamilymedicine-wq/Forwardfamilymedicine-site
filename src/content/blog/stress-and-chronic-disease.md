@@ -10,7 +10,6 @@ keywords:
 date: "2025-06-11"
 author: "David Bigley, DO"
 category: "lifestyle-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/chronic-stress-and-disease"
 ---
 
 

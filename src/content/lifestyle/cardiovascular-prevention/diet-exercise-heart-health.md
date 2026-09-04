@@ -7,7 +7,6 @@ keywords:
   - heart healthy diet
   - Mediterranean diet heart disease
   - aerobic exercise heart health
-canonical: "https://www.forwardfamilymedicine.com/lifestyle/cardiovascular-prevention/diet-exercise-heart-health"
 category: lifestyle
 date: "2026-01-01"
 author: "Forward Family Medicine"

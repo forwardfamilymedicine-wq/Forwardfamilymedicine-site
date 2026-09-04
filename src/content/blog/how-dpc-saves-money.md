@@ -10,7 +10,6 @@ keywords:
 date: "2025-02-19"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/how-direct-primary-care-saves-money"
 ---
 
 

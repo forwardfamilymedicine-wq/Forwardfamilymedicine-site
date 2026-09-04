@@ -10,7 +10,6 @@ keywords:
 date: "2025-09-10"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/direct-primary-care-chronic-conditions"
 ---
 
 

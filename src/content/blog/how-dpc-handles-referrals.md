@@ -10,7 +10,6 @@ keywords:
 date: "2026-01-07"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/specialist-referrals-direct-primary-care"
 ---
 
 

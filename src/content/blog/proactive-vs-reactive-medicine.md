@@ -10,7 +10,6 @@ keywords:
 date: "2025-02-26"
 author: "David Bigley, DO"
 category: "direct-primary-care"
-canonical: "https://www.forwardfamilymedicine.com/blog/proactive-vs-reactive-medicine"
 ---
 
 

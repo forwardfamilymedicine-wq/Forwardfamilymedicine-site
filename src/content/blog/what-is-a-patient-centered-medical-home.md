@@ -10,7 +10,6 @@ keywords:
 date: "2025-03-05"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/patient-centered-medical-home-vs-dpc"
 ---
 
 

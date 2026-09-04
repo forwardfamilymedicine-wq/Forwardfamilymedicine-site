@@ -10,7 +10,6 @@ keywords:
 date: "2026-01-15"
 author: "David Bigley, DO"
 category: "preventive-medicine"
-canonical: "https://www.forwardfamilymedicine.com/blog/womens-preventive-health-guide"
 ---
 
 

@@ -10,7 +10,6 @@ keywords:
 date: "2025-12-10"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/how-to-avoid-unnecessary-er-visits"
 ---
 
 

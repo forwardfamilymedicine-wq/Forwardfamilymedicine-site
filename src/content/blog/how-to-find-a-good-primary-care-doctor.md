@@ -10,7 +10,6 @@ keywords:
 date: "2025-09-24"
 author: "David Bigley, DO"
 category: "patient-experience"
-canonical: "https://www.forwardfamilymedicine.com/blog/how-to-find-a-good-primary-care-doctor"
 ---
 
 
