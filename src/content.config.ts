@@ -18,10 +18,14 @@ const baseSchema = z.object({
   linksTo: z.array(z.string()).optional(),
 });
 
-// Exclude planning/reference docs that have no frontmatter
+// Exclude planning/reference docs that have no frontmatter. Shared across
+// collections. index.md is deliberately NOT here: it was previously excluded
+// globally on the assumption every index.md is a planning doc, which broke
+// the lifestyle collection's 7 real category-hub pages (nutrition/index.md
+// etc. are genuine content, not planning notes). The blog collection
+// excludes index.md on its own, below, since blog/index.md really is one.
 const EXCLUDE = [
   '!**/README.md',
-  '!**/index.md',           // blog index is a planning doc
   '!**/content-map.md',
   '!**/internal-linking-plan.md',
   '!**/page-stubs-manifest.md',
@@ -31,7 +35,7 @@ const EXCLUDE = [
 ];
 
 const blog = defineCollection({
-  loader: glob({ pattern: ['**/*.{md,mdx}', ...EXCLUDE], base: './src/content/blog' }),
+  loader: glob({ pattern: ['**/*.{md,mdx}', ...EXCLUDE, '!**/index.md'], base: './src/content/blog' }),
   schema: baseSchema.extend({
     category: z.string().optional(),
   }),
