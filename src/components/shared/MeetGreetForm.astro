@@ -343,6 +343,14 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
       const json = await res.json();
       if (!json.success) throw new Error(json.error || 'Unknown error from script');
 
+      if (window.ffmTrack) {
+        window.ffmTrack('generate_lead', {
+          source,
+          interest,
+          preferred_office: preferredOffice,
+        });
+      }
+
       if (successEl) {
         successEl.innerHTML = `
           <strong>Request received!</strong> We'll reach out within 24 hours to schedule your visit.<br />

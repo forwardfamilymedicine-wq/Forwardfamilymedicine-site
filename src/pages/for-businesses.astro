@@ -569,6 +569,14 @@ const breadcrumb = {
         const json = await res.json();
         if (!json.success) throw new Error(json.error || 'Unknown error from script');
 
+        if (window.ffmTrack) {
+          window.ffmTrack('generate_lead', {
+            source: 'business',
+            employees,
+            coverage,
+          });
+        }
+
         if (successEl) {
           successEl.innerHTML = `
             <strong>Message received!</strong> We'll follow up within one business day to discuss your team's options.<br />
