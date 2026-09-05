@@ -27,12 +27,13 @@ import PhysicianSpotlight from '../../components/editorial/PhysicianSpotlight.as
 import ServiceList from '../../components/editorial/ServiceList.astro';
 import PatientScenario from '../../components/editorial/PatientScenario.astro';
 import PracticalInfo from '../../components/editorial/PracticalInfo.astro';
-import ImagePlaceholder from '../../components/editorial/ImagePlaceholder.astro';
+import { Image } from 'astro:assets';
 import FAQSection from '../../components/shared/FAQSection.astro';
 import CTABanner from '../../components/shared/CTABanner.astro';
 import TestimonialCard from '../../components/shared/TestimonialCard.astro';
 import NearYouExpander from '../../components/shared/NearYouExpander.astro';
 import liebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
+import wayneExterior from '../../assets/locations/wayne-exterior.jpeg';
 
 export const faqs = [
   {
@@ -187,11 +188,23 @@ Wayne residents looking for the concierge medicine experience will find our prac
 Also serving patients from Radnor, Strafford, Berwyn, and Devon.
 
     </div>
-    <ImagePlaceholder
-      label="Office exterior at 295 Old Eagle School Road, Wayne"
-      aspect="3/2"
-      caption="Placeholder. Authentic office photography to be supplied by the practice."
-    />
+    <figure class="ed-photo">
+      <Image
+        src={wayneExterior}
+        alt="Forward Family Medicine's Wayne office at 295 Old Eagle School Road: a cream stucco building with a white covered entry, behind the roadside Wayne Medical Center sign that lists the practice"
+        width={1000}
+        height={750}
+        fit="cover"
+        position="center"
+        widths={[480, 720, 1000]}
+        sizes="(max-width: 900px) calc(100vw - 32px), 500px"
+        format="webp"
+        quality={82}
+        loading="lazy"
+        class="ed-photo__img"
+      />
+      <figcaption class="ed-photo__caption">Our office at 295 Old Eagle School Road, Wayne. Free parking on site.</figcaption>
+    </figure>
   </div>
 </Section>
 
@@ -263,6 +276,19 @@ If a strep test or a prescription is needed, it is handled during that visit. Th
     margin-bottom: var(--space-m);
   }
   .ed-two-up p:last-child { margin-bottom: 0; }
+  .ed-photo { margin: 0; }
+  .ed-photo__img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    background: var(--cream-200);
+  }
+  .ed-photo__caption {
+    margin-top: var(--space-xs);
+    font-size: var(--step--1);
+    color: var(--ink-500);
+  }
   @media (max-width: 900px) {
     .ed-two-up { grid-template-columns: 1fr; }
   }
