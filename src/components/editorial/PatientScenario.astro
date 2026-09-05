@@ -1,0 +1,80 @@
+---
+/**
+ * A concrete situation and how care through the practice handles it.
+ * Two columns on wide screens: the situation, then the response (slot).
+ * The response must stay inside what the practice already publishes about
+ * access and visit length; no clinical outcomes are promised here.
+ */
+export interface Props {
+  label?: string;
+  title: string;
+  situation: string;
+}
+const { label = 'A patient scenario', title, situation } = Astro.props;
+---
+
+<aside class="ed-scenario" aria-label={title}>
+  <div class="ed-scenario__inner">
+    <div class="ed-scenario__setup">
+      <span class="section-label">{label}</span>
+      <h2 class="ed-scenario__title">{title}</h2>
+      <p class="ed-scenario__situation">{situation}</p>
+    </div>
+    <div class="ed-scenario__response">
+      <p class="ed-scenario__kicker">How it works at Forward Family Medicine</p>
+      <slot />
+      <p class="ed-scenario__note">An illustrative scenario, not a description of any specific patient. Care decisions are always made with your physician.</p>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .ed-scenario {
+    background: var(--cream-100);
+    border-left: 4px solid var(--green-300);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+  }
+  .ed-scenario__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-xl);
+    align-items: start;
+  }
+  .ed-scenario__title {
+    font-size: var(--step-2);
+    line-height: 1.2;
+    margin: 0 0 var(--space-s);
+  }
+  .ed-scenario__situation {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--ink-700);
+    margin: 0;
+  }
+  .ed-scenario__kicker {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-400);
+    margin-bottom: var(--space-s);
+  }
+  .ed-scenario__response :global(p) {
+    color: var(--ink-700);
+    line-height: 1.75;
+    margin-bottom: var(--space-m);
+  }
+  .ed-scenario__note {
+    font-size: var(--step--1);
+    color: var(--ink-500);
+    border-top: 1px solid var(--cream-300);
+    padding-top: var(--space-s);
+    margin-bottom: 0 !important;
+  }
+  @media (max-width: 900px) {
+    .ed-scenario__inner { grid-template-columns: 1fr; gap: var(--space-l); }
+  }
+</style>

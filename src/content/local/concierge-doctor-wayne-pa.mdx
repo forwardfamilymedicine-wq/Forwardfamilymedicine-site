@@ -1,0 +1,269 @@
+---
+title: "Concierge Doctor in Wayne, PA | Forward Family Medicine"
+description: "Forward Family Medicine offers concierge-style Direct Primary Care in Wayne, PA — same-day access, direct physician contact, and longer visits for one flat monthly membership fee."
+keywords:
+  - concierge doctor Wayne PA
+  - concierge medicine Wayne Pennsylvania
+  - concierge physician Main Line PA
+  - boutique medicine Wayne PA
+  - membership doctor Wayne Pennsylvania
+  - VIP primary care Wayne PA
+location: "Wayne, PA"
+date: "2026-01-01"
+author: "Forward Family Medicine"
+schemaType: "MedicalOrganization"
+linksTo:
+  - "/concierge-medicine"
+  - "/membership"
+  - "/new-patients"
+localNote: "Wayne residents looking for the concierge medicine experience will find our practice directly in the community — no commute needed. Our location on Old Eagle School Road is central to Wayne and walkable from Wayne Station on the Paoli–Thorndale line."
+nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
+---
+
+import LocalHero from '../../components/editorial/LocalHero.astro';
+import Section from '../../components/editorial/Section.astro';
+import StatStrip from '../../components/editorial/StatStrip.astro';
+import PhysicianSpotlight from '../../components/editorial/PhysicianSpotlight.astro';
+import ServiceList from '../../components/editorial/ServiceList.astro';
+import PatientScenario from '../../components/editorial/PatientScenario.astro';
+import PracticalInfo from '../../components/editorial/PracticalInfo.astro';
+import ImagePlaceholder from '../../components/editorial/ImagePlaceholder.astro';
+import FAQSection from '../../components/shared/FAQSection.astro';
+import CTABanner from '../../components/shared/CTABanner.astro';
+import TestimonialCard from '../../components/shared/TestimonialCard.astro';
+import NearYouExpander from '../../components/shared/NearYouExpander.astro';
+import liebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
+
+export const faqs = [
+  {
+    q: 'Is Forward Family Medicine a true concierge practice in Wayne?',
+    a: 'We deliver the same-day access, direct physician contact, longer visits, and proactive prevention that define concierge medicine, through the DPC model, which keeps fees accessible. We consider ourselves concierge in experience, DPC in structure. <a href="/concierge-medicine">More on how the two compare</a>.',
+  },
+  {
+    q: 'How is this different from large health system doctors in the Wayne area?',
+    a: 'Large health system practices typically operate on high-volume schedules with centralized scheduling and limited direct physician access. Forward Family Medicine is intentionally small. Your physician knows you and is accessible to you directly.',
+  },
+  {
+    q: 'What does concierge care cost in Wayne, PA?',
+    a: 'Individual membership starting at $200/month; family plans from $175/person/month, far less than traditional concierge retainer models. <a href="/membership">See pricing</a>.',
+  },
+  {
+    q: 'Can I schedule a visit before committing?',
+    a: 'Yes. Our free Meet &amp; Greet is exactly for that. <a href="/new-patients">Schedule here</a>.',
+  },
+];
+
+export const nearby = [
+  { href: '/local/concierge-doctor-radnor-pa/', label: 'Radnor' },
+  { href: '/local/concierge-doctor-berwyn-pa/', label: 'Berwyn' },
+  { href: '/local/concierge-doctor-devon-pa/', label: 'Devon' },
+  { href: '/local/concierge-doctor-bryn-mawr-pa/', label: 'Bryn Mawr' },
+  { href: '/local/concierge-doctor-villanova-pa/', label: 'Villanova' },
+  { href: '/local/concierge-doctor-paoli-pa/', label: 'Paoli' },
+  { href: '/local/concierge-doctor-king-of-prussia-pa/', label: 'King of Prussia' },
+  { href: '/local/concierge-doctor-haverford-pa/', label: 'Haverford' },
+  { href: '/local/concierge-doctor-ardmore-pa/', label: 'Ardmore' },
+  { href: '/local/concierge-doctor-newtown-square-pa/', label: 'Newtown Square' },
+];
+
+<LocalHero
+  location={frontmatter.location}
+  eyebrow="Wayne, PA · Concierge-style Direct Primary Care"
+  title="Concierge Doctor in Wayne, PA"
+  lede="Same-day access, your physician's direct line, and visits long enough to actually talk. One flat monthly membership fee, no insurance billing for primary care, from our office on Old Eagle School Road."
+  cta={{ label: 'Schedule a free meet and greet', href: '/contact/?source=local-page' }}
+  secondary={{ label: 'See membership plans', href: '/membership' }}
+  photo={liebermanPhoto}
+  photoAlt="Dr. Philip Lieberman, MD, family medicine and lifestyle medicine physician at Forward Family Medicine in Wayne, PA"
+  physician={{
+    name: 'Dr. Philip Lieberman, MD',
+    credential: 'Board-certified in Family Medicine and Lifestyle Medicine. Accepting new patients in Wayne.',
+    href: '/meet-the-team/philip-lieberman-md/',
+    linkLabel: 'Meet Dr. Lieberman',
+  }}
+/>
+
+<StatStrip stats={[
+  { value: '~250', label: 'Max patients per physician' },
+  { value: '1–2 hr', label: 'Visit length' },
+  { value: '$200/mo', label: 'Individual membership' },
+]} />
+
+<Section tone="cream" label="Why Wayne" title="Why Wayne patients look for a different kind of doctor">
+
+Wayne, Pennsylvania is a vibrant Philadelphia Main Line community known for its walkable downtown, excellent schools, and family-friendly neighborhoods. Many residents choose personalized primary care that prioritizes prevention, longer visits, and strong doctor-patient relationships, which is the focus of Forward Family Medicine.
+
+Wayne residents have long valued quality and personalization in their community's services, and healthcare is no exception. The demand for a physician who has time, is accessible, and genuinely knows their patients is exactly why the concierge medicine model resonates here.
+
+</Section>
+
+<Section tone="white" label="Concierge-style care" title="Concierge-Style Care at an Accessible Price">
+
+Forward Family Medicine delivers the core benefits of concierge medicine, direct physician access, same-day availability, unhurried visits, and proactive prevention, through the Direct Primary Care (DPC) model. That means no high annual retainer. One flat monthly membership fee, no insurance billing for primary care, and care that feels like having a doctor in the family.
+
+[How DPC and concierge medicine compare](/concierge-medicine)
+
+</Section>
+
+<Section tone="sand" label="Meet your physician" title="The physician you would actually see">
+  <PhysicianSpotlight
+    name="Dr. Philip Lieberman, MD"
+    credential="Family Medicine and Lifestyle Medicine physician. Dual board-certified, and the only such physician at any DPC practice on the Main Line."
+    href="/meet-the-team/philip-lieberman-md/"
+    photo={liebermanPhoto}
+    photoAlt="Dr. Philip Lieberman, MD"
+    facts={[
+      'Board Certified, American Board of Family Medicine',
+      'Diplomate, American Board of Lifestyle Medicine',
+      'Former U.S. Navy primary care physician',
+      'Culinary Arts and Nutrition Science before medical school',
+    ]}
+  >
+
+Dr. Philip Lieberman's path to medicine is unlike any other physician you've met. Before medical school, he earned an Associate's Degree in Culinary Arts and a Bachelor of Science in Nutrition Science, building a clinical foundation in food, metabolism, and lifestyle that most doctors simply never receive.
+
+He earned his Medical Doctorate from Thomas Jefferson University in Philadelphia and went on to serve as a primary care physician in the U.S. Navy. After his military service, Dr. Lieberman completed residency training at Abington Family Medicine. He is now dual board-certified in both Family Medicine and Lifestyle Medicine.
+
+At Forward Family Medicine in Wayne, he brings that rare combination: clinical medicine, evidence-based lifestyle protocols, and the practical culinary knowledge to make nutrition advice actually work in real life. He lives locally with his wife and two sons.
+
+    <TestimonialCard
+      slot="proof"
+      quote="Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner."
+      author="M.M."
+      detail="Verified Google review"
+    />
+  </PhysicianSpotlight>
+</Section>
+
+<Section tone="white" label="The patient experience" title="What care looks like as a member">
+
+### Your first visit
+
+Plan on one to two hours, not fifteen minutes. Dr. Lieberman takes a full history, goes through your medications and prior results, and talks with you about what you want your health to look like. The approach is whole-person and prevention-first, including lifestyle medicine. He is dual board-certified in Family Medicine and Lifestyle Medicine, the only such physician at any DPC practice on the Main Line.
+
+### Between visits
+
+You reach Dr. Philip Lieberman, MD directly, not a call center. Follow-up is proactive: we reach out, not just the other way around. And you are talking with a physician who knows your history, so you never have to re-explain it.
+
+### When something comes up
+
+Same-day appointments for acute concerns, in the office or by phone or video. Visits run up to one to two hours when your situation calls for it. All of it sits under one predictable monthly fee, with no copays and no billing surprises.
+
+</Section>
+
+<Section tone="cream" label="Services" title="Services Included in Membership">
+  <ServiceList
+    intro="Membership covers the primary care most people need in a year. Nothing below carries a copay or a separate bill."
+    groups={[
+      {
+        heading: 'Everyday care',
+        items: [
+          'Unlimited in-person, phone, and video visits',
+          'Acute illness and injury care',
+          'Minor in-office procedures',
+          'Chronic disease management and medication management',
+        ],
+      },
+      {
+        heading: 'Prevention and the long view',
+        items: [
+          'Annual physicals and preventive screenings',
+          "Women's health and men's health",
+          'Lifestyle medicine counseling',
+          'Care coordination and specialist referrals',
+        ],
+      },
+    ]}
+    more={{ label: 'See all services', href: '/services' }}
+  />
+</Section>
+
+<Section tone="white" width="wide" label="Wayne, up close" title="A practice in the neighborhood, not across the region">
+  <div class="ed-two-up">
+    <div>
+
+Wayne residents looking for the concierge medicine experience will find our practice directly in the community, no commute needed. Our office at 295 Old Eagle School Road is central to Wayne and walkable from Wayne Station on the Paoli–Thorndale line, with free parking on site for anyone driving in.
+
+Also serving patients from Radnor, Strafford, Berwyn, and Devon.
+
+    </div>
+    <ImagePlaceholder
+      label="Office exterior at 295 Old Eagle School Road, Wayne"
+      aspect="3/2"
+      caption="Placeholder. Authentic office photography to be supplied by the practice."
+    />
+  </div>
+</Section>
+
+<Section tone="sand" width="wide">
+  <PatientScenario
+    title="A Tuesday morning in Wayne"
+    situation="You wake up with a fever and a sore throat, and you have a meeting at eleven."
+  >
+
+You message Dr. Lieberman directly at 7:15. He answers before the office opens and asks a few questions. If he wants to see you, you can be in the office on Old Eagle School Road when it opens at 7:30, or on a video visit from your kitchen, whichever fits your morning.
+
+If a strep test or a prescription is needed, it is handled during that visit. There is no copay and no bill afterward, because visits are included in membership. The next day, a message checks in on how you are feeling.
+
+  </PatientScenario>
+</Section>
+
+<Section tone="cream" label="Practical information" title="Practical Information">
+  <PracticalInfo
+    address={{
+      street: props.locationEntry.data.addressStreet,
+      city: props.locationEntry.data.addressCity,
+      state: props.locationEntry.data.addressState,
+      zip: props.locationEntry.data.addressZip,
+    }}
+    phone={props.locationEntry.data.phone}
+    fax="(215) 449-8854"
+    email="information@forwardfamilymedicine.com"
+    hours={props.locationEntry.data.hours}
+    extras={[
+      { label: 'Parking', value: 'Free parking available on site' },
+      { label: 'Transit', value: 'Wayne Station on the Paoli–Thorndale line is about half a mile away' },
+      { label: 'Telehealth', value: 'All visits can be conducted by phone or video when appropriate. Great for follow-ups, prescription questions, or minor acute concerns.' },
+    ]}
+    mapHref="https://www.google.com/maps/search/?api=1&query=295+Old+Eagle+School+Road+STE+2+Wayne+PA+19087"
+    detailsHref={`/locations/${props.locationSlug}/`}
+  />
+</Section>
+
+<FAQSection faqs={faqs} headline="Frequently Asked Questions" label="FAQ" />
+
+<CTABanner
+  headline="Experience Concierge Medicine in Wayne"
+  subhead="Start with a free, no-obligation meet and greet with Dr. Lieberman. Ask every question you have, see the office, and decide at your own pace."
+  btnText="Schedule a Free Meet & Greet"
+  btnHref="/new-patients"
+  btn2Text="See Membership Plans"
+  btn2Href="/membership"
+/>
+
+<NearYouExpander
+  id="concierge-near-you"
+  ariaLabel="Concierge medicine pages for nearby towns"
+  summary="Concierge medicine pages for towns near Wayne"
+  links={nearby}
+/>
+
+<style>{`
+  .ed-two-up {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .ed-two-up p {
+    font-size: var(--step-0);
+    line-height: 1.75;
+    color: var(--ink-700);
+    max-width: var(--measure);
+    margin-bottom: var(--space-m);
+  }
+  .ed-two-up p:last-child { margin-bottom: 0; }
+  @media (max-width: 900px) {
+    .ed-two-up { grid-template-columns: 1fr; }
+  }
+`}</style>

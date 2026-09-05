@@ -1,0 +1,83 @@
+---
+/**
+ * Services as an editorial list rather than an icon grid: an intro line,
+ * then grouped running lists with a heading per group.
+ */
+export interface Props {
+  intro?: string;
+  groups: { heading: string; items: string[] }[];
+  more?: { label: string; href: string };
+}
+const { intro, groups, more } = Astro.props;
+---
+
+<div class="ed-services">
+  {intro && <p class="ed-services__intro">{intro}</p>}
+  <div class="ed-services__groups">
+    {groups.map(g => (
+      <div class="ed-services__group">
+        <h3 class="ed-services__heading">{g.heading}</h3>
+        <ul class="ed-services__list">
+          {g.items.map(item => <li>{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+  {more && <p class="ed-services__more"><a href={more.href}>{more.label}</a></p>}
+</div>
+
+<style>
+  .ed-services__intro {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-900);
+    max-width: 40ch;
+    margin: 0 0 var(--space-l);
+  }
+  .ed-services__groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-l) clamp(2rem, 5vw, 4rem);
+  }
+  .ed-services__heading {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-400);
+    margin: 0 0 var(--space-xs);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--cream-300);
+  }
+  .ed-services__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ed-services__list li {
+    position: relative;
+    padding: 0.55rem 0 0.55rem 1.4rem;
+    color: var(--ink-700);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--cream-200);
+  }
+  .ed-services__list li::before {
+    content: '';
+    position: absolute;
+    left: 0.15rem;
+    top: 1.05rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-300);
+  }
+  .ed-services__more {
+    margin: var(--space-l) 0 0;
+    font-weight: 600;
+  }
+  .ed-services__more a { color: var(--green-400); }
+  @media (max-width: 640px) {
+    .ed-services__groups { grid-template-columns: 1fr; }
+  }
+</style>

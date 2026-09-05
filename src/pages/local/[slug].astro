@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAvailability } from '../../utils/availability';
@@ -61,6 +61,10 @@ const matchedProviders = locationSlug
 const heroCandidates = isMdx
   ? matchedProviders.filter(p => getAvailability(p.data).status !== 'full')
   : matchedProviders;
+
+// MDX pages compose their own practical-information block from the
+// `locations` collection instead of hand-typed lines in the body.
+const locationEntry = isMdx && locationSlug ? await getEntry('locations', locationSlug) : null;
 
 // Build hero card data — always defined (team fallback for 0 or 2+ provider matches)
 const heroProvider = heroCandidates.length === 1
@@ -255,6 +259,7 @@ const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
         locationSlug={locationSlug}
         heroProvider={heroProvider}
         provider={heroCandidates.length === 1 ? heroCandidates[0] : null}
+        locationEntry={locationEntry}
       />
     </div>
   ) : (

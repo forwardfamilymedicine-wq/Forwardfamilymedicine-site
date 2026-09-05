@@ -1,0 +1,83 @@
+---
+/**
+ * Editorial band. One background tone, one content width, optional label and
+ * title, then whatever the page puts inside. Direct-child paragraphs, lists
+ * and h3s from MDX are styled here; nested components style themselves.
+ * Class prefix is `ed-` to stay clear of the global `.section` and the local
+ * route's `.section-*` classes.
+ */
+export interface Props {
+  tone?: 'cream' | 'white' | 'sand' | 'green';
+  width?: 'narrow' | 'wide';
+  label?: string;
+  title?: string;
+  id?: string;
+  class?: string;
+}
+const { tone = 'white', width = 'narrow', label, title, id, class: className } = Astro.props;
+---
+
+<section class:list={['ed-section', `ed-section--${tone}`, `ed-section--${width}`, className]} id={id}>
+  <div class="ed-section__inner">
+    {(label || title) && (
+      <header class="ed-section__head">
+        {label && <span class="section-label">{label}</span>}
+        {title && <h2 class="ed-section__title">{title}</h2>}
+      </header>
+    )}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .ed-section { padding: var(--space-2xl) 0; }
+  .ed-section--cream { background: var(--cream-100); }
+  .ed-section--white { background: #ffffff; }
+  .ed-section--sand  { background: var(--cream-200); }
+  .ed-section--green { background: var(--green-500); color: #ffffff; }
+
+  .ed-section__inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 40px);
+  }
+  .ed-section--narrow .ed-section__inner { max-width: 880px; }
+
+  .ed-section__head { margin-bottom: var(--space-l); }
+  .ed-section__title {
+    font-size: var(--step-3);
+    line-height: 1.15;
+    max-width: 24ch;
+    margin: 0;
+  }
+  .ed-section--green .ed-section__title { color: #ffffff; }
+
+  /* Prose that the MDX places directly inside the band */
+  .ed-section__inner > :global(p) {
+    font-size: var(--step-0);
+    line-height: 1.75;
+    color: var(--ink-700);
+    max-width: var(--measure);
+    margin-bottom: var(--space-m);
+  }
+  .ed-section__inner > :global(p:last-child) { margin-bottom: 0; }
+  .ed-section__inner > :global(h3) {
+    font-size: var(--step-1);
+    line-height: 1.25;
+    margin: var(--space-l) 0 var(--space-xs);
+  }
+  .ed-section__inner > :global(h3:first-of-type) { margin-top: 0; }
+  .ed-section__inner > :global(ul),
+  .ed-section__inner > :global(ol) {
+    max-width: var(--measure);
+    margin: 0 0 var(--space-m) 1.25rem;
+    color: var(--ink-700);
+    line-height: 1.7;
+  }
+  .ed-section__inner > :global(p a),
+  .ed-section__inner > :global(li a) {
+    color: var(--green-400);
+    font-weight: 600;
+  }
+  .ed-section--green .ed-section__inner > :global(p) { color: rgba(255, 255, 255, 0.9); }
+</style>

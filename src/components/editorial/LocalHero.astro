@@ -1,0 +1,158 @@
+---
+/**
+ * Local-page hero: place, proposition, one CTA, and the physician who will
+ * actually see you. Photography is an imported asset rendered through
+ * astro:assets so the page ships resized WebP rather than the original file.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+export interface Props {
+  location: string;
+  eyebrow: string;
+  title: string;
+  lede: string;
+  cta: { label: string; href: string };
+  secondary?: { label: string; href: string };
+  photo: ImageMetadata;
+  photoAlt: string;
+  physician: { name: string; credential: string; href: string; linkLabel: string };
+}
+const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physician } = Astro.props;
+---
+
+<section class="ed-hero">
+  <div class="ed-hero__inner">
+    <div class="ed-hero__text">
+      <nav class="ed-hero__crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>{location}</span>
+      </nav>
+      <p class="section-label ed-hero__eyebrow">{eyebrow}</p>
+      <h1 class="ed-hero__title">{title}</h1>
+      <p class="ed-hero__lede">{lede}</p>
+      <div class="ed-hero__actions">
+        <a href={cta.href} class="btn btn-accent">{cta.label}</a>
+        {secondary && <a href={secondary.href} class="ed-hero__secondary">{secondary.label}</a>}
+      </div>
+    </div>
+    <figure class="ed-hero__figure">
+      <Image
+        src={photo}
+        alt={photoAlt}
+        width={720}
+        height={900}
+        fit="cover"
+        position="top"
+        widths={[360, 540, 720]}
+        sizes="(max-width: 900px) min(80vw, 360px), 380px"
+        format="webp"
+        quality={82}
+        loading="eager"
+        fetchpriority="high"
+        class="ed-hero__photo"
+      />
+      <figcaption class="ed-hero__caption">
+        <span class="ed-hero__name">{physician.name}</span>
+        <span class="ed-hero__cred">{physician.credential}</span>
+        <a href={physician.href} class="ed-hero__bio">{physician.linkLabel}</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .ed-hero {
+    background: var(--cream-100);
+    padding: clamp(2rem, 5vw, 4rem) 0 var(--space-2xl);
+  }
+  .ed-hero__inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 40px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 400px);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .ed-hero__crumb {
+    font-size: 0.85rem;
+    color: var(--ink-300);
+    margin-bottom: var(--space-l);
+  }
+  .ed-hero__crumb a { color: var(--green-300); text-decoration: none; }
+  .ed-hero__crumb a:hover { text-decoration: underline; }
+  .ed-hero__eyebrow { margin-bottom: var(--space-s); }
+  .ed-hero__title {
+    font-size: var(--step-4);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-m);
+    max-width: 16ch;
+  }
+  .ed-hero__lede {
+    font-size: var(--step-1);
+    line-height: 1.55;
+    color: var(--ink-700);
+    max-width: 34ch;
+    margin: 0 0 var(--space-l);
+  }
+  .ed-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-m);
+  }
+  .ed-hero__secondary {
+    color: var(--green-400);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .ed-hero__figure { margin: 0; }
+  .ed-hero__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 15%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    background: var(--cream-200);
+  }
+  .ed-hero__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: var(--space-s) 0.25rem 0;
+    border-top: 1px solid var(--cream-300);
+    margin-top: var(--space-s);
+  }
+  .ed-hero__name {
+    font-family: var(--font-heading);
+    font-size: var(--step-1);
+    font-weight: 700;
+    color: var(--ink-900);
+  }
+  .ed-hero__cred {
+    font-size: var(--step--1);
+    color: var(--ink-700);
+    line-height: 1.5;
+  }
+  .ed-hero__bio {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--green-400);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .ed-hero__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
+    .ed-hero__figure { max-width: 360px; }
+    .ed-hero__lede { max-width: var(--measure); }
+  }
+  @media (max-width: 640px) {
+    .ed-hero__title { max-width: none; }
+    .ed-hero__actions .btn { width: 100%; }
+  }
+</style>

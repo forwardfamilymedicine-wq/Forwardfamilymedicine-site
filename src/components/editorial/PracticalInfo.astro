@@ -1,0 +1,132 @@
+---
+/**
+ * Practical information as a definition list, fed from the `locations`
+ * collection rather than hand-typed bold lines. Consecutive days with the
+ * same hours collapse to one range.
+ */
+export interface Props {
+  address: { street: string; city: string; state: string; zip: string };
+  phone?: string;
+  fax?: string;
+  email?: string;
+  hours?: { day: string; open: string; close: string }[];
+  extras?: { label: string; value: string }[];
+  mapHref?: string;
+  detailsHref?: string;
+}
+const { address, phone, fax, email, hours = [], extras = [], mapHref, detailsHref } = Astro.props;
+
+function telHref(display: string) {
+  const digits = display.replace(/\D/g, '');
+  return `tel:+1${digits.length === 11 ? digits.slice(1) : digits}`;
+}
+
+// Collapse runs of consecutive days sharing the same open/close.
+const hourRuns: { from: string; to: string; open: string; close: string }[] = [];
+for (const h of hours) {
+  const last = hourRuns[hourRuns.length - 1];
+  if (last && last.open === h.open && last.close === h.close) last.to = h.day;
+  else hourRuns.push({ from: h.day, to: h.day, open: h.open, close: h.close });
+}
+const fullAddress = `${address.street}, ${address.city}, ${address.state} ${address.zip}`;
+---
+
+<div class="ed-info">
+  <dl class="ed-info__list">
+    <div class="ed-info__row">
+      <dt>Office</dt>
+      <dd>
+        <span class="ed-info__line">{address.street}</span>
+        <span class="ed-info__line">{address.city}, {address.state} {address.zip}</span>
+        {mapHref && <a href={mapHref} rel="noopener" target="_blank">Directions</a>}
+      </dd>
+    </div>
+    {hourRuns.length > 0 && (
+      <div class="ed-info__row">
+        <dt>Hours</dt>
+        <dd>
+          {hourRuns.map(r => (
+            <span class="ed-info__line">
+              {r.from === r.to ? r.from : `${r.from} to ${r.to}`}, {r.open} to {r.close}
+            </span>
+          ))}
+        </dd>
+      </div>
+    )}
+    {phone && (
+      <div class="ed-info__row">
+        <dt>Phone</dt>
+        <dd><a href={telHref(phone)}>{phone}</a></dd>
+      </div>
+    )}
+    {fax && (
+      <div class="ed-info__row">
+        <dt>Fax</dt>
+        <dd>{fax}</dd>
+      </div>
+    )}
+    {email && (
+      <div class="ed-info__row">
+        <dt>Email</dt>
+        <dd><a href={`mailto:${email}`}>{email}</a></dd>
+      </div>
+    )}
+    {extras.map(x => (
+      <div class="ed-info__row">
+        <dt>{x.label}</dt>
+        <dd>{x.value}</dd>
+      </div>
+    ))}
+  </dl>
+  {detailsHref && (
+    <p class="ed-info__more"><a href={detailsHref}>Office details for {address.city}</a></p>
+  )}
+  <span class="visually-hidden">{fullAddress}</span>
+</div>
+
+<style>
+  .ed-info__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(2rem, 5vw, 4rem);
+    margin: 0;
+    border-top: 1px solid var(--cream-300);
+  }
+  .ed-info__row {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: var(--space-m);
+    padding: var(--space-s) 0;
+    border-bottom: 1px solid var(--cream-300);
+  }
+  .ed-info__row dt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-400);
+    padding-top: 0.2rem;
+  }
+  .ed-info__row dd {
+    margin: 0;
+    color: var(--ink-700);
+    line-height: 1.6;
+  }
+  .ed-info__line { display: block; }
+  .ed-info__row a { color: var(--green-400); font-weight: 600; }
+  .ed-info__more { margin: var(--space-l) 0 0; font-weight: 600; }
+  .ed-info__more a { color: var(--green-400); }
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  @media (max-width: 900px) {
+    .ed-info__list { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .ed-info__row { grid-template-columns: 1fr; gap: 0.25rem; }
+  }
+</style>
