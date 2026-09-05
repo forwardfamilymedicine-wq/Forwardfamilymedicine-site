@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import { getAvailability } from '../../utils/availability';
 
 export async function getStaticPaths() {
   const entries = await getCollection('local');
@@ -13,12 +15,26 @@ export async function getStaticPaths() {
     }));
 }
 
+interface Props {
+  entry: CollectionEntry<'local'>;
+  allProviders: CollectionEntry<'providers'>[];
+}
+
 const { entry, allProviders } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const slug = entry.id.replace(/\.mdx?$/, '');
+const siteUrl = 'https://www.forwardfamilymedicine.com';
 // Canonical is always derived from the real built path — never from frontmatter.
 // Trailing slash matches the sitemap's /local/ <loc> entries exactly.
-const canonicalUrl = `https://www.forwardfamilymedicine.com/local/${slug}/`;
+const canonicalUrl = `${siteUrl}/local/${slug}/`;
+
+// ── Two-path dispatch ───────────────────────────────────────────────────────
+// .md entries flow through the generic server-rendered path below: the
+// pre-rendered markdown is cut into <h2>-delimited sections and wrapped in the
+// same markup the old client-side script used to build in the browser.
+// .mdx entries compose their own layout from components and receive the data
+// this route derives (location, hero provider) as props on <Content />.
+const isMdx = (entry.filePath ?? '').endsWith('.mdx');
 
 // Derive location slug ("Malvern, PA" → "malvern", "King of Prussia, PA" → "king-of-prussia")
 const locationSlug = entry.data.location
@@ -28,7 +44,6 @@ const locationSlug = entry.data.location
 // Provider image: slug → /images/staff/dr-{base}.jpg
 // All three headshots omit the credential suffix and use a dr- prefix.
 // e.g. "brian-landi-do" → "/images/staff/dr-brian-landi.jpg"
-// None of the provider slugs match /images/staff/{slug}.jpg directly — REPORTED.
 function providerPhoto(provSlug: string) {
   return `/images/staff/dr-${provSlug.replace(/-(?:do|md|pa|np|rn)$/i, '')}.jpg`;
 }
@@ -38,10 +53,19 @@ const matchedProviders = locationSlug
   ? allProviders.filter(p => p.data.locations.includes(locationSlug))
   : [];
 
+// Markdown pages keep the original rule: an individual card only when exactly
+// one provider lists this location, otherwise the team card. MDX pages first
+// drop physicians whose panel is full (Dr. Bigley in Wayne) so an accepting
+// physician can front the page. Gated to MDX in this batch so the 85 markdown
+// pages render exactly as before.
+const heroCandidates = isMdx
+  ? matchedProviders.filter(p => getAvailability(p.data).status !== 'full')
+  : matchedProviders;
+
 // Build hero card data — always defined (team fallback for 0 or 2+ provider matches)
-const heroProvider = matchedProviders.length === 1
+const heroProvider = heroCandidates.length === 1
   ? (() => {
-      const p = matchedProviders[0];
+      const p = heroCandidates[0];
       const cred = p.data.slug === 'brian-landi-do'
         ? 'DO — board-certified family physician & Menopause Society Certified Practitioner'
         : `${p.data.credentials} — ${p.data.boardStatus === 'board-certified' ? 'board-certified' : 'board-eligible'} ${(p.data.boardSpecialties[0] ?? 'family medicine').toLowerCase()} physician`;
@@ -62,282 +86,296 @@ const heroProvider = matchedProviders.length === 1
       href: '/meet-the-team/',
       linkLabel: 'Meet the Team →',
     };
+
+// ── Section classifier (ported verbatim from the former client-side script) ──
+// Keys on the <h2> wording. Classifies on decoded heading text, which is what
+// the browser's textContent gave the old script; "Contact & Practice
+// Information" renders as "Contact &#x26; Practice Information" in HTML, so
+// classifying raw markup would misroute it.
+type SectionKind =
+  | 'section-about' | 'section-why' | 'section-services' | 'section-info'
+  | 'section-faq' | 'section-cta' | 'section-explainer';
+
+function classify(text: string): SectionKind {
+  const t = text.toLowerCase().trim();
+  if (t.startsWith('about '))                                              return 'section-about';
+  if (t.startsWith('why '))                                                return 'section-why';
+  if (t.includes('service'))                                               return 'section-services';
+  if (t.includes('practical') || t.includes('contact & practice') || t === 'contact') return 'section-info';
+  if (t.includes('frequently asked') || t === 'faq')                      return 'section-faq';
+  if (t.includes('get started') || t.includes('ready to') ||
+      t.includes('take the first') || t.includes('start living') ||
+      /^experience /.test(t))                                              return 'section-cta';
+  return 'section-explainer';
+}
+
+// ── Markdown path: segment the pre-rendered HTML at <h2> boundaries ─────────
+// The glob loader renders every .md entry once at sync time and stores the
+// result on entry.rendered.html; <Content /> emits that string verbatim. Every
+// <h2> carries an id equal to its heading slug (rehypeHeadingIds), so cutting
+// the string at `<h2 id="{slug}">` reproduces the old script's grouping of
+// "everything between two h2s" without re-rendering any markdown.
+interface Section {
+  kind: SectionKind;
+  text: string;
+  headingHtml: string;
+  bodyHtml: string;
+}
+
+function stripTags(s: string) { return s.replace(/<[^>]+>/g, ''); }
+function decodeEntities(s: string) {
+  return s
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+}
+function escapeHtml(s: string) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+let heroHtml = '';
+let sections: Section[] = [];
+const faqPairs: { q: string; a: string }[] = [];
+
+if (!isMdx) {
+  const html = entry.rendered?.html ?? '';
+  const h2s = headings.filter(h => h.depth === 2);
+
+  const h2Count = (html.match(/<h2[\s>]/g) ?? []).length;
+  if (h2Count !== h2s.length) {
+    throw new Error(`[local/${slug}] ${h2Count} <h2> elements in HTML but ${h2s.length} depth-2 headings; a heading is nested or unslugged and the page cannot be segmented safely.`);
+  }
+
+  const cuts: number[] = [];
+  let from = 0;
+  for (const h of h2s) {
+    const idx = html.indexOf(`<h2 id="${h.slug}">`, from);
+    if (idx === -1) {
+      throw new Error(`[local/${slug}] heading "${h.text}" (#${h.slug}) not found in rendered HTML; cannot segment.`);
+    }
+    cuts.push(idx);
+    from = idx + 1;
+  }
+
+  heroHtml = html.slice(0, cuts[0] ?? html.length);
+  sections = h2s.map((h, i) => {
+    const seg = html.slice(cuts[i], cuts[i + 1] ?? html.length);
+    const close = seg.indexOf('</h2>');
+    return {
+      kind: classify(h.text),
+      text: h.text,
+      headingHtml: seg.slice(0, close + 5),
+      bodyHtml: seg.slice(close + 5),
+    };
+  });
+}
+
+// Old script: add the CTA button only if the hero (breadcrumb excluded) has no link.
+const heroHasLink = /<a[\s>]/.test(heroHtml);
+
+// Old script: #local-extra (localNote + nearby) moves into the first CTA
+// section; if none exists it lands in the last section instead.
+const hasExtra = Boolean(entry.data.localNote || entry.data.nearbyNeighborhoods);
+const firstCta = sections.findIndex(s => s.kind === 'section-cta');
+const extraIndex = hasExtra ? (firstCta !== -1 ? firstCta : sections.length - 1) : -1;
+
+// FAQ: each <p> whose first element child is <strong>…?</strong> becomes an
+// accordion item. Same test and same leading-whitespace trim as the old script.
+// Collects question/answer pairs for FAQPage JSON-LD as a side effect.
+function enhanceFaq(bodyHtml: string): string {
+  return bodyHtml.replace(/<p>([\s\S]*?)<\/p>/g, (full, inner: string) => {
+    const m = inner.match(/^([^<]*)<strong>([\s\S]*?)<\/strong>([\s\S]*)$/);
+    if (!m) return full;
+    const qText = decodeEntities(stripTags(m[2])).trim();
+    if (!qText.endsWith('?')) return full;
+    const answerHtml = (m[1] + m[3]).replace(/^\s*\n?\s*/, '');
+    faqPairs.push({ q: qText, a: decodeEntities(stripTags(answerHtml)).replace(/\s+/g, ' ').trim() });
+    return (
+      '<div class="faq-item-local">' +
+        '<button class="faq-q-btn" aria-expanded="false">' +
+          `<span>${escapeHtml(qText)}</span>` +
+          '<span class="faq-toggle" aria-hidden="true">+</span>' +
+        '</button>' +
+        `<div class="faq-a" hidden><p>${answerHtml}</p></div>` +
+      '</div>'
+    );
+  });
+}
+
+const renderedSections = sections.map(s => ({
+  ...s,
+  bodyHtml: s.kind === 'section-faq' ? enhanceFaq(s.bodyHtml) : s.bodyHtml,
+}));
+
+// ── JSON-LD ─────────────────────────────────────────────────────────────────
+// No Article schema: `date` is a placeholder on every local entry.
+const pageName = entry.data.title.replace(/\s*\|\s*Forward Family Medicine\s*$/, '');
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": pageName, "item": canonicalUrl },
+  ],
+};
+// MDX pages emit FAQPage from the FAQSection component instead.
+const faqSchema = !isMdx && faqPairs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqPairs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+} : null;
+const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
 ---
 
 <MainLayout
   title={entry.data.title}
   description={entry.data.description}
   canonical={canonicalUrl}
+  schema={schemas}
 >
-  <div class="local-page">
-    <!-- local-content starts hidden to prevent FOUC while JS restructures the DOM -->
-    <div class="local-content">
-      <nav class="local-breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span>
-        <span>{entry.data.location ?? 'Nearby'}</span>
-      </nav>
-      <Content />
-    </div>
-
-    {(entry.data.localNote || entry.data.nearbyNeighborhoods) && (
-      <div id="local-extra">
-        {entry.data.localNote && <p class="local-note">{entry.data.localNote}</p>}
-        {entry.data.nearbyNeighborhoods && (
-          <p class="nearby-text">Also serving patients from {entry.data.nearbyNeighborhoods}.</p>
-        )}
-      </div>
-    )}
-
-    {entry.data.mapEmbedUrl && (
-      <div id="local-map">
-        <iframe
-          src={entry.data.mapEmbedUrl}
-          width="100%"
-          height="380"
-          style="border:0;border-radius:12px;display:block;"
-          loading="lazy"
-          title={`Forward Family Medicine — ${entry.data.location ?? 'office'} map`}
-        ></iframe>
-        <div class="map-info-card">
-          <p class="map-info-location">{entry.data.location}</p>
-          {locationSlug && (
-            <a class="map-info-link" href={`/locations/${locationSlug}/`}>Office details →</a>
-          )}
-        </div>
-      </div>
-    )}
-
-    <!-- Hero provider/team card — JS moves this into the two-column hero grid -->
-    <div
-      id="hero-provider-card"
-      class={heroProvider.isTeam ? 'hero-card hero-card--team' : 'hero-card hero-card--individual'}
-    >
-      <img
-        src={heroProvider.photo}
-        alt={heroProvider.isTeam
-          ? 'Forward Family Medicine physician team'
-          : `${heroProvider.name} — Forward Family Medicine`}
-        class="hero-card-photo"
-        width={heroProvider.isTeam ? 280 : 140}
-        height={heroProvider.isTeam ? 160 : 140}
-        loading="eager"
+  {isMdx ? (
+    <div class="local-page local-page--composed">
+      <Content
+        location={entry.data.location}
+        locationSlug={locationSlug}
+        heroProvider={heroProvider}
+        provider={heroCandidates.length === 1 ? heroCandidates[0] : null}
       />
-      <div class="hero-card-body">
-        <p class="hero-card-name">{heroProvider.name}</p>
-        <p class="hero-card-cred">{heroProvider.cred}</p>
-        <a href={heroProvider.href} class="hero-card-link">{heroProvider.linkLabel}</a>
+    </div>
+  ) : (
+    <div class="local-page">
+      <div class="local-content">
+        <div class="section-hero">
+          <div class="lp-container hero-grid">
+            <div class="hero-left">
+              <nav class="local-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> <span aria-hidden="true">›</span>
+                <span>{entry.data.location ?? 'Nearby'}</span>
+              </nav>
+              <Fragment set:html={heroHtml} />
+              {!heroHasLink && (
+                <a href="/contact/?source=local-page" class="hero-cta-btn">Schedule a Meet &amp; Greet →</a>
+              )}
+            </div>
+            <div
+              id="hero-provider-card"
+              class={heroProvider.isTeam ? 'hero-card hero-card--team' : 'hero-card hero-card--individual'}
+            >
+              <img
+                src={heroProvider.photo}
+                alt={heroProvider.isTeam
+                  ? 'Forward Family Medicine physician team'
+                  : `${heroProvider.name} — Forward Family Medicine`}
+                class="hero-card-photo"
+                width={heroProvider.isTeam ? 280 : 140}
+                height={heroProvider.isTeam ? 160 : 140}
+                loading="eager"
+              />
+              <div class="hero-card-body">
+                <p class="hero-card-name">{heroProvider.name}</p>
+                <p class="hero-card-cred">{heroProvider.cred}</p>
+                <a href={heroProvider.href} class="hero-card-link">{heroProvider.linkLabel}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {renderedSections.map((s, i) => (
+          <Fragment>
+            <section class={`local-section ${s.kind}`}>
+              <div class="lp-container">
+                {s.kind === 'section-info' ? (
+                  <Fragment>
+                    <Fragment set:html={s.headingHtml} />
+                    <div class="info-card"><Fragment set:html={s.bodyHtml} /></div>
+                  </Fragment>
+                ) : (
+                  <Fragment set:html={s.headingHtml + s.bodyHtml} />
+                )}
+                {i === extraIndex && (
+                  <Fragment>
+                    {entry.data.localNote && <p class="local-note">{entry.data.localNote}</p>}
+                    {entry.data.nearbyNeighborhoods && (
+                      <p class="nearby-text">Also serving patients from {entry.data.nearbyNeighborhoods}.</p>
+                    )}
+                  </Fragment>
+                )}
+              </div>
+            </section>
+
+            {s.kind === 'section-about' && (
+              <Fragment>
+                <div class="local-stats-strip">
+                  <div class="lp-container">
+                    <div class="local-stats-grid">
+                      <div class="local-stat">
+                        <span class="local-stat-num">~250</span>
+                        <span class="local-stat-label">Max patients per physician</span>
+                      </div>
+                      <div class="local-stat">
+                        <span class="local-stat-num">1–2 hr</span>
+                        <span class="local-stat-label">Visit length</span>
+                      </div>
+                      <div class="local-stat">
+                        <span class="local-stat-num">$200/mo</span>
+                        <span class="local-stat-label">Individual membership</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {entry.data.mapEmbedUrl && (
+                  <section class="local-section section-map">
+                    <div class="lp-container">
+                      <div id="local-map">
+                        <iframe
+                          src={entry.data.mapEmbedUrl}
+                          width="100%"
+                          height="380"
+                          style="border:0;border-radius:12px;display:block;"
+                          loading="lazy"
+                          title={`Forward Family Medicine — ${entry.data.location ?? 'office'} map`}
+                        ></iframe>
+                        <div class="map-info-card">
+                          <p class="map-info-location">{entry.data.location}</p>
+                          {locationSlug && (
+                            <a class="map-info-link" href={`/locations/${locationSlug}/`}>Office details →</a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                )}
+              </Fragment>
+            )}
+          </Fragment>
+        ))}
       </div>
     </div>
-  </div>
+  )}
 </MainLayout>
 
-<!-- Inline script: runs synchronously after the content div is parsed, before first paint.
-     Groups Markdown-rendered elements by h2 headings into styled section wrappers. -->
-<script is:inline>
-(function () {
-  var content = document.querySelector('.local-content');
-  if (!content) return;
-  var extra = document.getElementById('local-extra');
-
-  /* ── Section classifier ──────────────────────────────────────────────── */
-  function classify(text) {
-    var t = text.toLowerCase().trim();
-    if (t.startsWith('about '))                                              return 'section-about';
-    if (t.startsWith('why '))                                                return 'section-why';
-    if (t.includes('service'))                                               return 'section-services';
-    if (t.includes('practical') || t.includes('contact & practice') || t === 'contact') return 'section-info';
-    if (t.includes('frequently asked') || t === 'faq')                      return 'section-faq';
-    if (t.includes('get started') || t.includes('ready to') ||
-        t.includes('take the first') || t.includes('start living') ||
-        /^experience /.test(t))                                              return 'section-cta';
-    return 'section-explainer';
-  }
-
-  /* ── Group children by h2 boundaries ────────────────────────────────── */
-  var children = Array.from(content.children);
-  var heroEls = [];
-  var sectionGroups = [];
-  var current = null;
-  var foundH2 = false;
-
-  for (var i = 0; i < children.length; i++) {
-    var el = children[i];
-    if (el.tagName === 'H2') {
-      foundH2 = true;
-      if (current) sectionGroups.push(current);
-      current = { type: classify(el.textContent || ''), els: [el] };
-    } else if (!foundH2) {
-      heroEls.push(el);
-    } else if (current) {
-      current.els.push(el);
-    }
-  }
-  if (current) sectionGroups.push(current);
-
-  /* ── Stats strip markup (injected after About section) ───────────────── */
-  var statsHTML =
-    '<div class="local-stats-strip">' +
-      '<div class="lp-container">' +
-        '<div class="local-stats-grid">' +
-          '<div class="local-stat">' +
-            '<span class="local-stat-num">~250</span>' +
-            '<span class="local-stat-label">Max patients per physician</span>' +
-          '</div>' +
-          '<div class="local-stat">' +
-            '<span class="local-stat-num">1&#8211;2 hr</span>' +
-            '<span class="local-stat-label">Visit length</span>' +
-          '</div>' +
-          '<div class="local-stat">' +
-            '<span class="local-stat-num">$200/mo</span>' +
-            '<span class="local-stat-label">Individual membership</span>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
-
-  /* ── Rebuild the DOM ─────────────────────────────────────────────────── */
-  content.innerHTML = '';
-
-  // Hero: two-column grid (text left, provider/team card right)
-  var heroSection = document.createElement('div');
-  heroSection.className = 'section-hero';
-  var heroContainer = document.createElement('div');
-  heroContainer.className = 'lp-container hero-grid';
-
-  var heroLeft = document.createElement('div');
-  heroLeft.className = 'hero-left';
-  heroEls.forEach(function (el) { heroLeft.appendChild(el); });
-
-  // Add CTA button if hero content (excluding breadcrumb nav) has no existing links
-  var heroHasLink = Array.from(heroLeft.children).some(function (child) {
-    return !child.classList.contains('local-breadcrumb') && !!child.querySelector('a');
-  });
-  if (!heroHasLink) {
-    var heroBtn = document.createElement('a');
-    heroBtn.href = '/contact/?source=local-page';
-    heroBtn.className = 'hero-cta-btn';
-    heroBtn.textContent = 'Schedule a Meet & Greet →';
-    heroLeft.appendChild(heroBtn);
-  }
-
-  heroContainer.appendChild(heroLeft);
-
-  var heroCard = document.getElementById('hero-provider-card');
-  if (heroCard) { heroContainer.appendChild(heroCard); }
-
-  heroSection.appendChild(heroContainer);
-  content.appendChild(heroSection);
-
-  var ctaFound = false;
-
-  for (var j = 0; j < sectionGroups.length; j++) {
-    var group = sectionGroups[j];
-    var section = document.createElement('section');
-    section.className = 'local-section ' + group.type;
-    var container = document.createElement('div');
-    container.className = 'lp-container';
-
-    if (group.type === 'section-info') {
-      // Info sections: h2 outside the card, contact details inside a card div
-      container.appendChild(group.els[0]);
-      var card = document.createElement('div');
-      card.className = 'info-card';
-      for (var k = 1; k < group.els.length; k++) {
-        card.appendChild(group.els[k]);
-      }
-      container.appendChild(card);
-    } else {
-      group.els.forEach(function (el) { container.appendChild(el); });
-    }
-
-    // Pull #local-extra (localNote + nearby) into the CTA section
-    if (group.type === 'section-cta' && extra) {
-      ctaFound = true;
-      Array.from(extra.children).forEach(function (el) { container.appendChild(el); });
-      extra.remove();
-    }
-
-    section.appendChild(container);
-    content.appendChild(section);
-
-    // After About: inject stats strip, then map band immediately after (if mapEmbedUrl set)
-    if (group.type === 'section-about') {
-      var statsDiv = document.createElement('div');
-      statsDiv.innerHTML = statsHTML;
-      content.appendChild(statsDiv.firstElementChild);
-
-      var mapEl = document.getElementById('local-map');
-      if (mapEl) {
-        var mapSection = document.createElement('section');
-        mapSection.className = 'local-section section-map';
-        var mapContainer = document.createElement('div');
-        mapContainer.className = 'lp-container';
-        mapContainer.appendChild(mapEl);
-        mapSection.appendChild(mapContainer);
-        content.appendChild(mapSection);
-      }
-    }
-  }
-
-  // Fallback: if no CTA section matched, append extra to last section
-  if (!ctaFound && extra && extra.children.length > 0) {
-    var lastContainer = content.querySelector('.local-section:last-child .lp-container');
-    if (lastContainer) {
-      Array.from(extra.children).forEach(function (el) { lastContainer.appendChild(el); });
-    }
-    extra.remove();
-  }
-
-  /* ── FAQ accordion ───────────────────────────────────────────────────── */
-  document.querySelectorAll('.section-faq').forEach(function (faqSection) {
-    var container = faqSection.querySelector('.lp-container') || faqSection;
-    var paragraphs = Array.from(container.querySelectorAll('p'));
-
-    paragraphs.forEach(function (p) {
-      var firstChild = p.children[0];
-      if (!firstChild || firstChild.tagName !== 'STRONG') return;
-      var qText = firstChild.textContent.trim();
-      if (!qText.endsWith('?')) return;
-
-      var answerClone = p.cloneNode(true);
-      var strongInClone = answerClone.querySelector('strong');
-      if (strongInClone) strongInClone.remove();
-      var answerHtml = answerClone.innerHTML.replace(/^\s*\n?\s*/, '');
-
-      var item = document.createElement('div');
-      item.className = 'faq-item-local';
-      item.innerHTML =
-        '<button class="faq-q-btn" aria-expanded="false">' +
-          '<span>' + qText + '</span>' +
-          '<span class="faq-toggle" aria-hidden="true">+</span>' +
-        '</button>' +
-        '<div class="faq-a" hidden>' +
-          '<p>' + answerHtml + '</p>' +
-        '</div>';
-
-      p.replaceWith(item);
-
-      var btn = item.querySelector('.faq-q-btn');
-      var answer = item.querySelector('.faq-a');
-      btn.addEventListener('click', function () {
-        var isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!isExpanded));
-        answer.hidden = isExpanded;
-        btn.querySelector('.faq-toggle').textContent = isExpanded ? '+' : '×';
-      });
+<!-- Progressive enhancement only: the accordion markup is static and every
+     answer is in the HTML. Without JavaScript the answers stay hidden via the
+     `hidden` attribute, exactly as the old DOM-built version behaved. -->
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.faq-q-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      const answer = btn.nextElementSibling as HTMLElement | null;
+      if (answer) answer.hidden = isExpanded;
+      const toggle = btn.querySelector('.faq-toggle');
+      if (toggle) toggle.textContent = isExpanded ? '+' : '×';
     });
   });
-
-  // Reveal content (FOUC guard)
-  content.classList.add('ready');
-})();
 </script>
 
 <style is:global>
-  /* ── FOUC guard ────────────────────────────────────────────────── */
-  .local-content          { visibility: hidden; }
-  .local-content.ready    { visibility: visible; }
-
   /* ── Shared container ──────────────────────────────────────────── */
   .lp-container {
     max-width: 1200px;

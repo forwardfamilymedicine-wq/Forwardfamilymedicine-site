@@ -42,7 +42,7 @@ const blog = defineCollection({
 });
 
 const local = defineCollection({
-  loader: glob({ pattern: ['**/*.md', ...EXCLUDE], base: './src/content/local' }),
+  loader: glob({ pattern: ['**/*.{md,mdx}', ...EXCLUDE], base: './src/content/local' }),
   schema: baseSchema.extend({
     location: z.string().optional(),
     category: z.string().optional(),

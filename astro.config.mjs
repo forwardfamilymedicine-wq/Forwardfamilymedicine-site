@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   site: 'https://www.forwardfamilymedicine.com',
@@ -14,7 +15,7 @@ export default defineConfig({
     '/providers/philip-lieberman-md/': '/meet-the-team/philip-lieberman-md/',
     '/providers/brian-landi-do/': '/meet-the-team/brian-landi-do/',
   },
-  integrations: [sitemap({
+  integrations: [mdx(), sitemap({
     filter: (page) =>
       !page.endsWith('/patient-experience/') &&
       !page.endsWith('/home/') &&
