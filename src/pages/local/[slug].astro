@@ -133,6 +133,16 @@ function decodeEntities(s: string) {
 function escapeHtml(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+// Plain-text answer for FAQPage JSON-LD. Inline links are navigation, not
+// answer content, so each <a> is removed together with its label; otherwise
+// answers end in stranded text such as "More →". Trailing arrow glyphs and
+// the punctuation left behind are trimmed as well.
+function schemaAnswerText(html: string) {
+  return decodeEntities(stripTags(html.replace(/<a\b[^>]*>[\s\S]*?<\/a>/g, '')))
+    .replace(/\s+/g, ' ')
+    .replace(/[\s→›»]+$/g, '')
+    .trim();
+}
 
 let heroHtml = '';
 let sections: Section[] = [];
@@ -190,7 +200,7 @@ function enhanceFaq(bodyHtml: string): string {
     const qText = decodeEntities(stripTags(m[2])).trim();
     if (!qText.endsWith('?')) return full;
     const answerHtml = (m[1] + m[3]).replace(/^\s*\n?\s*/, '');
-    faqPairs.push({ q: qText, a: decodeEntities(stripTags(answerHtml)).replace(/\s+/g, ' ').trim() });
+    faqPairs.push({ q: qText, a: schemaAnswerText(answerHtml) });
     return (
       '<div class="faq-item-local">' +
         '<button class="faq-q-btn" aria-expanded="false">' +
@@ -216,7 +226,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
-    { "@type": "ListItem", "position": 2, "name": pageName, "item": canonicalUrl },
+    { "@type": "ListItem", "position": 2, "name": entry.data.location ?? pageName, "item": canonicalUrl },
   ],
 };
 // MDX pages emit FAQPage from the FAQSection component instead.
