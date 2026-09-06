@@ -7,6 +7,7 @@ keywords:
   - VIP primary care Villanova PA
   - boutique medicine Villanova PA
 location: "Villanova, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

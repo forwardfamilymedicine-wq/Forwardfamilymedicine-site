@@ -40,8 +40,9 @@ function parseLocalDate(value: string): Date {
   return new Date(y, m - 1, d);
 }
 
-/** "2026-10-01" -> "October 2026" */
-function formatMonthYear(value: string): string {
+/** "2026-10-01" -> "October 2026". Exported for physicianRouting.ts, which
+ *  renders office opening months on local-page hero cards. */
+export function formatMonthYear(value: string): string {
   const [y, m] = value.split('-').map(Number);
   return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 }

@@ -8,6 +8,7 @@ keywords:
   - primary care Phoenixville PA
   - membership medicine Phoenixville PA
 location: "Phoenixville, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

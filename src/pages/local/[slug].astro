@@ -1,26 +1,28 @@
 ---
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
-import { getAvailability } from '../../utils/availability';
+import { resolveHeroPhysician } from '../../utils/physicianRouting';
 
 export async function getStaticPaths() {
   const entries = await getCollection('local');
   const allProviders = await getCollection('providers');
+  const allLocations = await getCollection('locations');
   return entries
     .filter(entry => !entry.data.draft)
     .map(entry => ({
       params: { slug: entry.id.replace(/\.mdx?$/, '') },
-      props: { entry, allProviders },
+      props: { entry, allProviders, allLocations },
     }));
 }
 
 interface Props {
   entry: CollectionEntry<'local'>;
   allProviders: CollectionEntry<'providers'>[];
+  allLocations: CollectionEntry<'locations'>[];
 }
 
-const { entry, allProviders } = Astro.props;
+const { entry, allProviders, allLocations } = Astro.props;
 const { Content, headings } = await render(entry);
 const slug = entry.id.replace(/\.mdx?$/, '');
 const siteUrl = 'https://www.forwardfamilymedicine.com';
@@ -41,55 +43,47 @@ const locationSlug = entry.data.location
   ? entry.data.location.toLowerCase().replace(/,\s*pa$/, '').trim().replace(/\s+/g, '-')
   : '';
 
-// Provider image: slug → /images/staff/dr-{base}.jpg
-// All three headshots omit the credential suffix and use a dr- prefix.
-// e.g. "brian-landi-do" → "/images/staff/dr-brian-landi.jpg"
+// Which physician fronts this page: src/utils/physicianRouting.ts. Specialty
+// pages route by credential, general-care pages by location, full panels never
+// front a page, and 0 or 2+ eligible physicians fall back to the team card.
+const hero = resolveHeroPhysician({
+  category: entry.data.category,
+  locationSlug,
+  providers: allProviders,
+  locations: allLocations,
+  warn: (m) => console.warn(m),
+});
+
+// Generic-path card image: the public/ headshots omit the credential suffix and
+// use a dr- prefix, e.g. "brian-landi-do" → "/images/staff/dr-brian-landi.jpg".
 function providerPhoto(provSlug: string) {
   return `/images/staff/dr-${provSlug.replace(/-(?:do|md|pa|np|rn)$/i, '')}.jpg`;
 }
 
-// Find providers whose locations array includes this page's location slug
-const matchedProviders = locationSlug
-  ? allProviders.filter(p => p.data.locations.includes(locationSlug))
-  : [];
-
-// Markdown pages keep the original rule: an individual card only when exactly
-// one provider lists this location, otherwise the team card. MDX pages first
-// drop physicians whose panel is full (Dr. Bigley in Wayne) so an accepting
-// physician can front the page. Gated to MDX in this batch so the 85 markdown
-// pages render exactly as before.
-const heroCandidates = isMdx
-  ? matchedProviders.filter(p => getAvailability(p.data).status !== 'full')
-  : matchedProviders;
-
-// MDX pages compose their own practical-information block from the
-// `locations` collection instead of hand-typed lines in the body.
-const locationEntry = isMdx && locationSlug ? await getEntry('locations', locationSlug) : null;
-
-// Build hero card data — always defined (team fallback for 0 or 2+ provider matches)
-const heroProvider = heroCandidates.length === 1
-  ? (() => {
-      const p = heroCandidates[0];
-      const cred = p.data.slug === 'brian-landi-do'
-        ? 'DO — board-certified family physician & Menopause Society Certified Practitioner'
-        : `${p.data.credentials} — ${p.data.boardStatus === 'board-certified' ? 'board-certified' : 'board-eligible'} ${(p.data.boardSpecialties[0] ?? 'family medicine').toLowerCase()} physician`;
-      return {
-        isTeam: false,
-        name: `Dr. ${p.data.name}`,
-        cred,
-        photo: providerPhoto(p.data.slug),
-        href: `/meet-the-team/${p.data.slug}/`,
-        linkLabel: 'Full bio →',
-      };
-    })()
+// View model for the generic (markdown) hero card. Always defined.
+const heroProvider = hero.kind === 'physician'
+  ? {
+      isTeam: false,
+      name: hero.displayName,
+      cred: hero.credentialLine,
+      note: hero.note,
+      photo: providerPhoto(hero.slug),
+      href: hero.bioHref,
+      linkLabel: 'Full bio →',
+    }
   : {
       isTeam: true,
       name: 'Our Physicians',
       cred: 'Direct Primary Care · Wayne · Malvern · West Chester',
+      note: '',
       photo: '/images/staff/ffm-team.jpg',
       href: '/meet-the-team/',
       linkLabel: 'Meet the Team →',
     };
+
+// MDX pages compose their own practical-information block from the
+// `locations` collection instead of hand-typed lines in the body.
+const locationEntry = isMdx && locationSlug ? (allLocations.find(l => l.data.slug === locationSlug) ?? null) : null;
 
 // ── Section classifier (ported verbatim from the former client-side script) ──
 // Keys on the <h2> wording. Classifies on decoded heading text, which is what
@@ -257,8 +251,7 @@ const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
       <Content
         location={entry.data.location}
         locationSlug={locationSlug}
-        heroProvider={heroProvider}
-        provider={heroCandidates.length === 1 ? heroCandidates[0] : null}
+        hero={hero}
         locationEntry={locationEntry}
       />
     </div>
@@ -285,7 +278,7 @@ const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
                 src={heroProvider.photo}
                 alt={heroProvider.isTeam
                   ? 'Forward Family Medicine physician team'
-                  : `${heroProvider.name} — Forward Family Medicine`}
+                  : `${heroProvider.name}, Forward Family Medicine`}
                 class="hero-card-photo"
                 width={heroProvider.isTeam ? 280 : 140}
                 height={heroProvider.isTeam ? 160 : 140}
@@ -294,6 +287,7 @@ const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
               <div class="hero-card-body">
                 <p class="hero-card-name">{heroProvider.name}</p>
                 <p class="hero-card-cred">{heroProvider.cred}</p>
+                {heroProvider.note && <p class="hero-card-note">{heroProvider.note}</p>}
                 <a href={heroProvider.href} class="hero-card-link">{heroProvider.linkLabel}</a>
               </div>
             </div>
@@ -501,6 +495,13 @@ const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
   .hero-card-cred {
     font-size: 0.82rem;
     color: var(--ink-700);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 280px;
+  }
+  .hero-card-note {
+    font-size: 0.78rem;
+    color: var(--ink-500);
     line-height: 1.5;
     margin: 0;
     max-width: 280px;

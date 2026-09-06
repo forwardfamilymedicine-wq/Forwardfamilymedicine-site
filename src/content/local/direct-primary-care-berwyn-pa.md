@@ -8,6 +8,7 @@ keywords:
   - primary care Berwyn PA
   - membership medicine Berwyn Pennsylvania
 location: "Berwyn, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

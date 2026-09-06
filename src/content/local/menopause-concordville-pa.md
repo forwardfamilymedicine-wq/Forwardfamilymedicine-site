@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Concordville PA
   - women's health Concordville PA
 location: "Concordville, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

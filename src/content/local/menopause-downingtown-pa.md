@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Downingtown PA
   - women's health Downingtown PA
 location: "Downingtown, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -8,6 +8,7 @@ keywords:
   - membership doctor West Chester PA
   - private practice West Chester PA
 location: "West Chester, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

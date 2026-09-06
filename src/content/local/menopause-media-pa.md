@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Media PA
   - women's health Media PA
 location: "Media, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

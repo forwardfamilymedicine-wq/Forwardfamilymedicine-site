@@ -8,6 +8,7 @@ keywords:
   - membership doctor Downingtown PA
   - private practice Downingtown PA
 location: "Downingtown, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

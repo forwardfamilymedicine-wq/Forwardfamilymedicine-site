@@ -8,6 +8,7 @@ keywords:
   - membership doctor Phoenixville PA
   - private practice Phoenixville PA
 location: "Phoenixville, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

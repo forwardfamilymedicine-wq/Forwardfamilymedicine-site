@@ -8,6 +8,7 @@ keywords:
   - chronic disease prevention West Chester PA
   - nutrition doctor West Chester PA
 location: "West Chester, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

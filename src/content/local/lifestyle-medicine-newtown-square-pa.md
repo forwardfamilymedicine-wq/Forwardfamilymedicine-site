@@ -7,6 +7,7 @@ keywords:
   - wellness doctor Newtown Square PA
   - chronic disease prevention Newtown Square PA
 location: "Newtown Square, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

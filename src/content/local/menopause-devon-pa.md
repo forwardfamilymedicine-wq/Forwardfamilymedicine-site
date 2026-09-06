@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Devon PA
   - women's health Devon PA
 location: "Devon, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

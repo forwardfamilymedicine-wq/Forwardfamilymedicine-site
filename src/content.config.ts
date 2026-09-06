@@ -45,7 +45,10 @@ const local = defineCollection({
   loader: glob({ pattern: ['**/*.{md,mdx}', ...EXCLUDE], base: './src/content/local' }),
   schema: baseSchema.extend({
     location: z.string().optional(),
-    category: z.string().optional(),
+    // Drives physician routing on the hero card (src/utils/physicianRouting.ts).
+    // Required: a missing or misspelled value must fail the build, not fall
+    // back silently to the team card.
+    category: z.enum(['concierge', 'direct-primary-care', 'lifestyle-medicine', 'menopause']),
     localNote: z.string().optional(),
     nearbyNeighborhoods: z.string().optional(),
     mapEmbedUrl: z.string().optional(),

@@ -8,6 +8,7 @@ keywords:
   - primary care Concordville PA
   - membership medicine Concordville PA
 location: "Concordville, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -9,6 +9,7 @@ keywords:
   - chronic disease prevention Wayne PA
   - wellness medicine Wayne Pennsylvania
 location: "Wayne, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

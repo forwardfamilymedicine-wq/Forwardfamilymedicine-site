@@ -16,7 +16,7 @@ export interface Props {
   secondary?: { label: string; href: string };
   photo: ImageMetadata;
   photoAlt: string;
-  physician: { name: string; credential: string; href: string; linkLabel: string };
+  physician: { name: string; credential: string; note?: string; href: string; linkLabel: string };
 }
 const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physician } = Astro.props;
 ---
@@ -54,6 +54,7 @@ const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physici
       <figcaption class="ed-hero__caption">
         <span class="ed-hero__name">{physician.name}</span>
         <span class="ed-hero__cred">{physician.credential}</span>
+        {physician.note && <span class="ed-hero__note">{physician.note}</span>}
         <a href={physician.href} class="ed-hero__bio">{physician.linkLabel}</a>
       </figcaption>
     </figure>
@@ -137,6 +138,11 @@ const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physici
   .ed-hero__cred {
     font-size: var(--step--1);
     color: var(--ink-700);
+    line-height: 1.5;
+  }
+  .ed-hero__note {
+    font-size: var(--step--1);
+    color: var(--ink-500);
     line-height: 1.5;
   }
   .ed-hero__bio {

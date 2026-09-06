@@ -7,6 +7,7 @@ keywords:
   - boutique medicine KOP PA
   - membership doctor King of Prussia PA
 location: "King of Prussia, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

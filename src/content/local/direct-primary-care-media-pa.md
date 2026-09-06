@@ -8,6 +8,7 @@ keywords:
   - primary care Media Delaware County PA
   - membership medicine Media Pennsylvania
 location: "Media, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

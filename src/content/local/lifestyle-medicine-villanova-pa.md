@@ -7,6 +7,7 @@ keywords:
   - wellness doctor Villanova PA
   - chronic disease prevention Villanova PA
 location: "Villanova, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

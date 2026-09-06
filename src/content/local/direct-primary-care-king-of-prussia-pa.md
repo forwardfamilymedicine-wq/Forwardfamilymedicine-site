@@ -8,6 +8,7 @@ keywords:
   - primary care KOP PA
   - membership medicine King of Prussia Pennsylvania
 location: "King of Prussia, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

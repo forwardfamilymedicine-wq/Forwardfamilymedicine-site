@@ -8,6 +8,7 @@ keywords:
   - membership doctor Chester Springs PA
   - private practice Chester Springs PA
 location: "Chester Springs, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

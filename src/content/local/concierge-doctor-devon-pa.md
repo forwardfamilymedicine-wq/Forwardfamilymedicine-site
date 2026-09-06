@@ -7,6 +7,7 @@ keywords:
   - boutique medicine Devon PA
   - membership doctor Devon PA
 location: "Devon, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

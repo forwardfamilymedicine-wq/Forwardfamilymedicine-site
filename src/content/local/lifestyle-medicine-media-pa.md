@@ -7,6 +7,7 @@ keywords:
   - wellness doctor Media PA
   - chronic disease prevention Media Delaware County PA
 location: "Media, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

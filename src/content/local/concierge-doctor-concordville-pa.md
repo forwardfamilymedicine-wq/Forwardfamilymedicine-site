@@ -8,6 +8,7 @@ keywords:
   - membership doctor Concordville PA
   - private practice Concordville PA
 location: "Concordville, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

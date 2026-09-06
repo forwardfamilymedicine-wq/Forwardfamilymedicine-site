@@ -8,6 +8,7 @@ keywords:
   - membership doctor Avondale PA
   - private practice Avondale PA
 location: "Avondale, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

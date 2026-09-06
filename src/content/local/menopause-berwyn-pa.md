@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Berwyn PA
   - women's health Berwyn PA
 location: "Berwyn, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Haverford PA
   - women's health Haverford PA
 location: "Haverford, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

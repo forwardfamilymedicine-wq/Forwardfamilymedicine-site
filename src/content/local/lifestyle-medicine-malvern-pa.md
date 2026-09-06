@@ -8,6 +8,7 @@ keywords:
   - chronic disease prevention Malvern PA
   - nutrition doctor Malvern PA
 location: "Malvern, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -8,6 +8,7 @@ keywords:
   - primary care Bryn Mawr PA
   - membership medicine Bryn Mawr Pennsylvania
 location: "Bryn Mawr, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

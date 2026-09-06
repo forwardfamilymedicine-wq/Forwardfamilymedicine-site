@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Glen Mills PA
   - women's health Glen Mills PA
 location: "Glen Mills, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -8,6 +8,7 @@ keywords:
   - primary care Malvern PA
   - membership medicine Malvern PA
 location: "Malvern, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

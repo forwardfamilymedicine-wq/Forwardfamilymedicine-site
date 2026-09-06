@@ -8,6 +8,7 @@ keywords:
   - membership doctor Kennett Square PA
   - private practice Kennett Square PA
 location: "Kennett Square, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

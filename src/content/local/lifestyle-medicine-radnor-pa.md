@@ -7,6 +7,7 @@ keywords:
   - wellness doctor Radnor PA
   - chronic disease prevention Radnor Pennsylvania
 location: "Radnor, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -8,6 +8,7 @@ keywords:
   - membership doctor Malvern PA
   - private practice Malvern PA
 location: "Malvern, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

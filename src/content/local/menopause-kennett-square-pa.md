@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Kennett Square PA
   - women's health Kennett Square PA
 location: "Kennett Square, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

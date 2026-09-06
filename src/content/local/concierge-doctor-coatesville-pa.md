@@ -8,6 +8,7 @@ keywords:
   - membership doctor Coatesville PA
   - private practice Coatesville PA
 location: "Coatesville, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

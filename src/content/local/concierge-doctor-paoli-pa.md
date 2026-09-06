@@ -7,6 +7,7 @@ keywords:
   - boutique medicine Paoli PA
   - membership doctor Paoli PA
 location: "Paoli, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

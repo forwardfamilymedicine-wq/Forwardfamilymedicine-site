@@ -7,6 +7,7 @@ keywords:
   - boutique medicine Media PA
   - membership doctor Media Delaware County PA
 location: "Media, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

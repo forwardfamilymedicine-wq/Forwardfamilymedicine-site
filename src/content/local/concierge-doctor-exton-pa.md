@@ -8,6 +8,7 @@ keywords:
   - membership doctor Exton PA
   - private practice Exton PA
 location: "Exton, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

@@ -8,6 +8,7 @@ keywords:
   - primary care Radnor Township PA
   - membership medicine Radnor PA
 location: "Radnor, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

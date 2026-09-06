@@ -10,6 +10,7 @@ keywords:
   - Wayne PA doctor same-day access
   - Direct Primary Care Philadelphia Main Line
 location: "Wayne, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

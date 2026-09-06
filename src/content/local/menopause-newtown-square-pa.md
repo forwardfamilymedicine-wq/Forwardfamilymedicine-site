@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Newtown Square PA
   - women's health Newtown Square PA
 location: "Newtown Square, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

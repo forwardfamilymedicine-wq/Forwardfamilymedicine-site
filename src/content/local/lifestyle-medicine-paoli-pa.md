@@ -7,6 +7,7 @@ keywords:
   - wellness doctor Paoli PA
   - chronic disease prevention Paoli PA
 location: "Paoli, PA"
+category: "lifestyle-medicine"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

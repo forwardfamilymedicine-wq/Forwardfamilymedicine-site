@@ -8,6 +8,7 @@ keywords:
   - HRT consultation West Chester PA
   - women's health West Chester PA
 location: "West Chester, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

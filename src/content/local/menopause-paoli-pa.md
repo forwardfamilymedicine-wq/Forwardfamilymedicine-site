@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Paoli PA
   - women's health Paoli PA
 location: "Paoli, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

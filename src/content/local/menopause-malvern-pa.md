@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Malvern PA
   - women's health Malvern PA
 location: "Malvern, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

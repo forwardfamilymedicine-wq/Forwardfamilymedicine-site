@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Avondale PA
   - women's health Avondale PA
 location: "Avondale, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

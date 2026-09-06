@@ -8,6 +8,7 @@ keywords:
   - primary care Ardmore PA
   - membership medicine Ardmore Pennsylvania
 location: "Ardmore, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

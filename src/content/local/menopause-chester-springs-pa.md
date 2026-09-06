@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Chester Springs PA
   - women's health Chester Springs PA
 location: "Chester Springs, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

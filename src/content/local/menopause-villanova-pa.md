@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Villanova PA
   - women's health Villanova PA
 location: "Villanova, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

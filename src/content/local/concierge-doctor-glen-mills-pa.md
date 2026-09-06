@@ -8,6 +8,7 @@ keywords:
   - membership doctor Glen Mills PA
   - private practice Glen Mills PA
 location: "Glen Mills, PA"
+category: "concierge"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

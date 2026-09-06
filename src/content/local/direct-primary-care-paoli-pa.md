@@ -8,6 +8,7 @@ keywords:
   - primary care Paoli PA
   - membership medicine Paoli Pennsylvania
 location: "Paoli, PA"
+category: "direct-primary-care"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

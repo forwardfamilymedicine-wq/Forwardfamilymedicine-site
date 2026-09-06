@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Exton PA
   - women's health Exton PA
 location: "Exton, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

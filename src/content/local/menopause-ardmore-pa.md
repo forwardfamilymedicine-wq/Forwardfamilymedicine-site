@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Ardmore PA
   - women's health Ardmore PA
 location: "Ardmore, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"

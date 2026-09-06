@@ -8,6 +8,7 @@ keywords:
   - HRT consultation Bryn Mawr PA
   - women's health Bryn Mawr PA
 location: "Bryn Mawr, PA"
+category: "menopause"
 date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "MedicalOrganization"
