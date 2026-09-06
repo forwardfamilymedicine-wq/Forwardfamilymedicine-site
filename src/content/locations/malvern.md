@@ -2,7 +2,7 @@
 name: "Malvern"
 slug: "malvern"
 status: "coming-soon"
-openingDate: "2026-10-01"
+openingDate: "2026-10-06"
 addressStreet: "301 Lindenwood Dr #206"
 addressCity: "Malvern"
 addressState: "PA"

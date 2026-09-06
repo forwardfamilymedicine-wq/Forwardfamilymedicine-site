@@ -34,7 +34,7 @@ Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Pao
 
 Menopause care at Forward Family Medicine isn't a referral or an add-on — it's part of how every visit works. At our Wayne flagship office, our physicians integrate perimenopause and menopause care into family primary care: symptom evaluation, hormone considerations, cardiovascular and bone health monitoring, lifestyle integration. Visit lengths of 1–2 hours allow real depth.
 
-For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) practices at our West Chester and Malvern offices — about 30 minutes west of Wayne. Members can see Dr. Landi in person at either office or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
+For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) will see patients at our West Chester and Malvern offices when they open in October 2026, about 30 minutes west of Wayne. Members can see Dr. Landi in person at either office or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 

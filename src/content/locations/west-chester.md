@@ -2,7 +2,7 @@
 name: "West Chester"
 slug: "west-chester"
 status: "coming-soon"
-openingDate: "2026-10-01"
+openingDate: "2026-10-06"
 addressStreet: ""
 addressCity: "West Chester"
 addressState: "PA"
