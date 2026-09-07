@@ -28,7 +28,12 @@ for (const h of hours) {
   if (last && last.open === h.open && last.close === h.close) last.to = h.day;
   else hourRuns.push({ from: h.day, to: h.day, open: h.open, close: h.close });
 }
-const fullAddress = `${address.street}, ${address.city}, ${address.state} ${address.zip}`;
+// An office whose street is not yet confirmed (locations entry with an empty
+// addressStreet) shows city, state and ZIP only, with no directions link: a
+// map search on a bare city would send people somewhere we never said.
+const hasStreet = address.street.trim().length > 0;
+const cityLine = `${address.city}, ${address.state} ${address.zip}`;
+const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
 ---
 
 <div class="ed-info">
@@ -36,9 +41,9 @@ const fullAddress = `${address.street}, ${address.city}, ${address.state} ${addr
     <div class="ed-info__row">
       <dt>Office</dt>
       <dd>
-        <span class="ed-info__line">{address.street}</span>
-        <span class="ed-info__line">{address.city}, {address.state} {address.zip}</span>
-        {mapHref && <a href={mapHref} rel="noopener" target="_blank">Directions</a>}
+        {hasStreet && <span class="ed-info__line">{address.street}</span>}
+        <span class="ed-info__line">{cityLine}</span>
+        {hasStreet && mapHref && <a href={mapHref} rel="noopener" target="_blank">Directions</a>}
       </dd>
     </div>
     {hourRuns.length > 0 && (
