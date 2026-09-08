@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Villanova, PA | Forward Family Medicine"
-description: "Comprehensive menopause care for Villanova, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (10 min) and telehealth across all three offices."
+description: "Comprehensive menopause care for Villanova, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (5 min) and telehealth across all three offices."
 keywords:
   - menopause care Villanova PA
   - perimenopause Villanova Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Villanova residents across three offices: Wayne (about 10 minutes), West Chester (about 30 minutes), and Malvern (about 20 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Villanova residents across three offices: Wayne (about 5 minutes), West Chester (about 30 minutes), and Malvern (about 25 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 ---
 
@@ -32,8 +32,8 @@ Villanova is one of the most prestigious addresses on the Philadelphia Main Line
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Villanova residents have access to:
 
-- **Primary care at our Wayne office** (about 10 minutes from Villanova) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 30 minutes) or Malvern (about 20 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Primary care at our Wayne office** (about 5 minutes from Villanova) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 30 minutes) or Malvern (about 25 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,7 +50,7 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Villanova Patients Choose Forward Family Medicine
 
-- **Three convenient offices** — Wayne (10 min), West Chester (30 min), Malvern (20 min)
+- **Three convenient offices** — Wayne (5 min), West Chester (30 min), Malvern (25 min)
 - **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
@@ -67,15 +67,15 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Villanova Patients
 
-**Closest primary care office:** Wayne — 295 Old Eagle School Road, about 10 minutes east on Lancaster Avenue. Currently accepting new patients with Dr. Lieberman.
-**Specialty menopause consultation:** Dr. Landi at West Chester (about 30 minutes) or Malvern (about 20 minutes), or telehealth
+**Closest primary care office:** Wayne — 295 Old Eagle School Road, about 5 minutes east on Lancaster Avenue. Currently accepting new patients with Dr. Lieberman.
+**Specialty menopause consultation:** Dr. Landi at West Chester (about 30 minutes) or Malvern (about 25 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
 **Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
 **Which FFM office should Villanova patients establish at?**
-Most Villanova residents choose Wayne for routine primary care — it's about 10 minutes east on Lancaster Avenue, or one stop on the Paoli–Thorndale SEPTA line. From Villanova: Wayne is about 10 minutes, Malvern is about 20 minutes, and West Chester is about 30 minutes. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
+Most Villanova residents choose Wayne for routine primary care — it's about 5 minutes east on Lancaster Avenue, or one stop on the Paoli–Thorndale SEPTA line. From Villanova: Wayne is about 5 minutes, Malvern is about 25 minutes, and West Chester is about 30 minutes. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.

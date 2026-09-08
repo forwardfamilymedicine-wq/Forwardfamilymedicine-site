@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Avondale residents from our West Chester office (about 25–30 minutes) and Malvern office (about 30–35 minutes) — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Telehealth included for established patients."
+localNote: "Forward Family Medicine serves Avondale residents from our West Chester office (about 25–30 minutes) and Malvern office (about 30–35 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth included for established patients."
 nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hockessin"
 ---
 

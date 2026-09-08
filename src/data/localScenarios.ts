@@ -49,10 +49,43 @@ function inPersonSentence(p: Pick<ScenarioParams, 'physician' | 'office' | 'offi
   return `In-person primary care is at our ${p.office} office. ${p.physician}'s in-person visits are at ${where}${clause}.`;
 }
 
+/** "your physician" -> "Your physician"; "Dr. Landi" unchanged. */
+const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+
 // Logged for a later wave, not built: two more situations keyed to the
 // nearest-office group, so no scenario text is shared by more than about
-// eight pages. One scenario per category ships in wave 1 by decision.
+// eight pages. One scenario per category ships by decision (wave 1 for
+// menopause, wave 2 for the other three).
 export const scenarios: Partial<Record<LocalCategory, (p: ScenarioParams) => Scenario>> = {
+  concierge: ({ town, physician, office, officeOpen }) => ({
+    title: `A Tuesday morning in ${town}`,
+    situation: 'You wake up with a fever and a sore throat, and you have a meeting at eleven.',
+    response: [
+      `You message ${physician} directly at 7:15, before the office opens, and get an answer with a few questions. ${officeOpen
+        ? `Between you, you settle on a same-day video visit from your kitchen, or an appointment at our ${office} office if you would rather be seen in person.`
+        : `Between you, you settle on a same-day video visit from your kitchen. Once our ${office} office opens, that can be an in-person visit instead.`}`,
+      'If a prescription is needed, it is sent during that visit. There is no copay and no bill afterward, because visits are included in membership. The next day, a message checks in on how you are feeling.',
+      'The way in is a free meet and greet, in person or by video: twenty minutes to ask every question you have and see whether this is the practice for you.',
+    ],
+  }),
+  'direct-primary-care': ({ town, physician, office, officeOpen, physicianPractisesHere, physicianOffices }) => ({
+    title: `A refill and a question in ${town}`,
+    situation: 'Your blood pressure medication runs out next week, and the last two home readings were higher than usual.',
+    response: [
+      `You send ${physician} the readings by message. ${cap(physician)} reads them the same day, and the refill is handled the same way.`,
+      `If the readings deserve a closer look, you get a visit that week, by video or in person, long enough to go through what has changed and adjust the plan together. All of it is included in membership, with no copay and no separate bill. ${inPersonSentence({ physician, office, officeOpen, physicianPractisesHere, physicianOffices })}`,
+      'Membership starts with a free meet and greet, in person or by video: twenty minutes, no obligation, to see whether the practice fits.',
+    ],
+  }),
+  'lifestyle-medicine': ({ town, physician, office, officeOpen, physicianPractisesHere, physicianOffices }) => ({
+    title: `A first visit from ${town}`,
+    situation: 'Your cholesterol has been creeping up for two years, you sleep badly, and every appointment so far has ended with a handout.',
+    response: [
+      `Your first visit with ${physician} runs one to two hours. Food, movement, sleep and stress are part of the history alongside the exam and the labs, because here lifestyle medicine is part of primary care rather than a separate referral.`,
+      `You leave with a plan you helped write: what to change first, how you will both know whether it is working, and when to look at the numbers again. Follow-ups happen by phone or video whenever a question comes up, and you message ${physician} directly.`,
+      `${inPersonSentence({ physician, office, officeOpen, physicianPractisesHere, physicianOffices })} The way in is a free meet and greet, in person or by video: twenty minutes to ask what you want to ask and decide at your own pace.`,
+    ],
+  }),
   menopause: ({ town, physician, office, officeOpen, physicianPractisesHere, physicianOffices }) => ({
     title: `Three in the morning in ${town}`,
     situation: 'You are awake again, hot and wide awake, and your last physical covered it in ninety seconds.',

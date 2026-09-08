@@ -1,11 +1,10 @@
 ---
 /**
- * Composed editorial path for markdown /local/ entries in the current rollout
- * wave (src/data/localRollout.ts). A separate route file from [slug].astro on
- * purpose: Astro attaches the CSS of a route's whole module graph to every
- * page it builds, so rendering the editorial components from the generic
- * route would change the head of the 56 pages that must stay byte-identical
- * until their wave. The two routes generate disjoint slugs.
+ * Composed editorial path for every markdown /local/ entry. A separate route
+ * file from [slug].astro (which serves the hand-built .mdx pages) on purpose:
+ * Astro attaches the CSS of a route's whole module graph to every page it
+ * builds, so the two kinds of page keep their stylesheets apart. The two
+ * routes generate disjoint slugs.
  *
  * utils/localCompose.ts derives the view model from the entry body, the
  * providers and locations collections and the town map;
@@ -17,7 +16,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import ComposedLocalPage from '../../components/editorial/ComposedLocalPage.astro';
 import { resolveHeroPhysician } from '../../utils/physicianRouting';
 import { composeLocalPage } from '../../utils/localCompose';
-import { isComposed } from '../../data/localRollout';
 
 export async function getStaticPaths() {
   const entries = await getCollection('local');
@@ -27,7 +25,7 @@ export async function getStaticPaths() {
     .filter(e => !e.data.draft && e.data.location)
     .map(e => ({ slug: e.id.replace(/\.mdx?$/, ''), label: e.data.location as string, category: e.data.category }));
   return entries
-    .filter(entry => !entry.data.draft && !(entry.filePath ?? '').endsWith('.mdx') && isComposed(entry.id.replace(/\.mdx?$/, '')))
+    .filter(entry => !entry.data.draft && !(entry.filePath ?? '').endsWith('.mdx'))
     .map(entry => ({
       params: { composed: entry.id.replace(/\.mdx?$/, '') },
       props: { entry, allProviders, allLocations, siblings },

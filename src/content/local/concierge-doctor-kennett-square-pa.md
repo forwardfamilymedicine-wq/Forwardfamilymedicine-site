@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Kennett Square residents from our West Chester office (about 15–20 minutes) and Malvern office (about 25–30 minutes) — concierge-quality primary care at DPC pricing, led by Dr. Brian Landi, DO. Telehealth is included for established patients, which makes the model work well even at a modest drive."
+localNote: "Forward Family Medicine serves Kennett Square residents from our West Chester office (about 15–20 minutes) and Malvern office (about 25–30 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth is included for established patients, which makes the model work well even at a modest drive."
 nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 ---
 

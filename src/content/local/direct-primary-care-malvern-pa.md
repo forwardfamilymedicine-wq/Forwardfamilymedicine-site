@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr #206 in October 2026 — Direct Primary Care led by Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. Malvern residents now have in-person DPC without the drive east to Wayne."
+localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr #206 in October 2026 — Direct Primary Care with Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. Malvern residents now have in-person DPC without the drive east to Wayne."
 nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
 mapEmbedUrl: "https://www.google.com/maps?q=301+Lindenwood+Dr+%23206,+Malvern,+PA+19355&output=embed"
 ---

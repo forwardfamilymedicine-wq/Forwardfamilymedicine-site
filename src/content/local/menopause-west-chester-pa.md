@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — Menopause Society Certified menopause care led by Dr. Brian Landi, DO. West Chester residents have in-person MSCP-certified menopause expertise in their own community."
+localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — Menopause Society Certified menopause care with Dr. Brian Landi, DO. West Chester residents have in-person MSCP-certified menopause expertise in their own community."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 

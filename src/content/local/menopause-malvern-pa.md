@@ -18,7 +18,7 @@ linksTo:
   - "/locations/malvern"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr #206 in October 2026 — Menopause Society Certified menopause care led by Dr. Brian Landi, DO. Malvern residents have in-person MSCP-certified menopause expertise without the drive east to Wayne."
+localNote: "Forward Family Medicine is opening a Malvern office at 301 Lindenwood Dr #206 in October 2026 — Menopause Society Certified menopause care with Dr. Brian Landi, DO. Malvern residents have in-person MSCP-certified menopause expertise without the drive east to Wayne."
 nearbyNeighborhoods: "Paoli, Berwyn, Frazer, Exton, and Phoenixville"
 ---
 
