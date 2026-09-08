@@ -17,11 +17,19 @@ export interface Props {
   photo: ImageMetadata;
   photoAlt: string;
   physician: { name: string; credential: string; note?: string; href: string; linkLabel: string };
+  /**
+   * Portrait headshots crop to 4:5; a landscape source (the team photo)
+   * renders at 3:2 in a wider column. Derived from the image's own
+   * dimensions, so no page has to say which it is; pass it only to override.
+   */
+  orientation?: 'portrait' | 'landscape';
 }
 const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physician } = Astro.props;
+const orientation = Astro.props.orientation ?? (photo.width > photo.height ? 'landscape' : 'portrait');
+const landscape = orientation === 'landscape';
 ---
 
-<section class="ed-hero">
+<section class:list={['ed-hero', landscape && 'ed-hero--landscape']}>
   <div class="ed-hero__inner">
     <div class="ed-hero__text">
       <nav class="ed-hero__crumb" aria-label="Breadcrumb">
@@ -39,12 +47,14 @@ const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physici
       <Image
         src={photo}
         alt={photoAlt}
-        width={720}
-        height={900}
+        width={landscape ? 960 : 720}
+        height={landscape ? 640 : 900}
         fit="cover"
-        position="top"
-        widths={[360, 540, 720]}
-        sizes="(max-width: 900px) min(80vw, 360px), 380px"
+        position={landscape ? 'center' : 'top'}
+        widths={landscape ? [480, 720, 960] : [360, 540, 720]}
+        sizes={landscape
+          ? '(max-width: 900px) min(calc(100vw - 32px), 560px), 480px'
+          : '(max-width: 900px) min(80vw, 360px), 380px'}
         format="webp"
         quality={82}
         loading="eager"
@@ -110,6 +120,15 @@ const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physici
     text-underline-offset: 4px;
   }
 
+  /* Landscape source: a wider column and a 3:2 frame instead of the 4:5 portrait crop. */
+  .ed-hero--landscape .ed-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+  }
+  .ed-hero--landscape .ed-hero__photo {
+    aspect-ratio: 3 / 2;
+    object-position: 50% 40%;
+  }
+
   .ed-hero__figure { margin: 0; }
   .ed-hero__photo {
     width: 100%;
@@ -154,7 +173,9 @@ const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physici
 
   @media (max-width: 900px) {
     .ed-hero__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
+    .ed-hero--landscape .ed-hero__inner { grid-template-columns: 1fr; }
     .ed-hero__figure { max-width: 360px; }
+    .ed-hero--landscape .ed-hero__figure { max-width: 560px; }
     .ed-hero__lede { max-width: var(--measure); }
   }
   @media (max-width: 640px) {
