@@ -4,8 +4,7 @@
  * Content-preservation check for the composed /local/ pages (batch 4).
  *
  * The expected set is derived from the source markdown, never from old HTML.
- * For every markdown entry in the current rollout wave it asserts, against
- * the built page in dist/:
+ * For every markdown entry it asserts, against the built page in dist/:
  *
  *   links        every href in the body and in `linksTo` appears (by href)
  *   faq          every question and answer appears in the accordion, and in
@@ -19,24 +18,22 @@
  *                list (or the reassigned-town list); anything else fails
  *   frontmatter  localNote and the nearby-neighbourhoods sentence appear
  *
- * With --baseline <dir> it also asserts every markdown page NOT in the wave
- * is byte-identical to the same page in that directory once stylesheet
- * <link> order is normalised. A `linksTo` entry for the West Chester office
- * page is an allowed drop on the six reassigned towns.
+ * A `linksTo` entry for the West Chester office page is an allowed drop on
+ * the six reassigned towns. There is deliberately no snapshot comparison:
+ * every page is composed, so any content or template change is supposed to
+ * change the output, and the assertions above are what must hold.
  *
- * Usage: node scripts/check-local-content.mjs [--baseline path/to/old/dist] [--verbose]
+ * Usage: node scripts/check-local-content.mjs [--verbose]
  * Exit code 1 on any failure.
  */
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
-const baseline = args.includes('--baseline') ? resolve(args[args.indexOf('--baseline') + 1]) : null;
 const verbose = args.includes('--verbose');
 
-const { isComposed } = await import(`${ROOT}/src/data/localRollout.ts`);
 const { towns } = await import(`${ROOT}/src/data/towns.ts`);
 const { DROP_LABELS, REASSIGNED_DROP, labelMatches } = await import(`${ROOT}/src/data/localPracticalLabels.ts`);
 const { faqAnswerText } = await import(`${ROOT}/src/utils/faqSchema.ts`);
@@ -164,7 +161,9 @@ const report = [];
 
 for (const file of readdirSync(contentDir).filter(f => f.endsWith('.md')).sort()) {
   const slug = file.replace(/\.md$/, '');
-  if (!isComposed(slug)) continue;
+  // Mirror the collection: planning docs (no category) and drafts never build.
+  const head = frontmatter(readFileSync(`${contentDir}/${file}`, 'utf8')).fm;
+  if (!head.category || head.draft === 'true') continue;
   const html = readFileSync(`${dist}/${slug}/index.html`, 'utf8');
   const exp = expectations(slug, readFileSync(`${contentDir}/${file}`, 'utf8'));
   const page = pageFacts(html);
@@ -229,31 +228,12 @@ for (const file of readdirSync(contentDir).filter(f => f.endsWith('.md')).sort()
   report.push({ slug, ok: problems.length === 0, counts, problems, discarded });
 }
 
-// Untouched pages against a baseline
-const untouched = { checked: 0, identical: 0, differing: [] };
-if (baseline) {
-  const sortLinks = h => h.replace(/(<link rel="stylesheet" href="[^"]+">\n?)+/g, m => m.split('\n').filter(Boolean).sort().join('\n') + '\n');
-  const markdownSlugs = new Set(readdirSync(contentDir).filter(f => f.endsWith('.md')).map(f => f.replace(/\.md$/, '')));
-  for (const slug of readdirSync(`${baseline}/local`)) {
-    // Markdown entries outside the wave only; .mdx pages are hand-built and not on the generic path.
-    if (isComposed(slug) || !markdownSlugs.has(slug) || !existsSync(`${baseline}/local/${slug}/index.html`)) continue;
-    untouched.checked++;
-    const a = sortLinks(readFileSync(`${baseline}/local/${slug}/index.html`, 'utf8'));
-    const b = existsSync(`${dist}/${slug}/index.html`) ? sortLinks(readFileSync(`${dist}/${slug}/index.html`, 'utf8')) : '';
-    if (a === b) untouched.identical++; else { untouched.differing.push(slug); failures++; }
-  }
-}
-
 // ── Report ───────────────────────────────────────────────────────────────────
 for (const r of report) {
   const c = r.counts;
   console.log(`${r.ok ? 'ok  ' : 'FAIL'} ${r.slug.padEnd(38)} links ${c.links}  faq ${c.faq}  prose ${c.prose}  replacement ${c.replacement}  extras ${c.extras}  discarded ${c.discarded}`);
   if (verbose && r.discarded.length) console.log(`       discarded labels: ${r.discarded.join(', ')}`);
   for (const p of r.problems) console.log(`       ${p}`);
-}
-if (baseline) {
-  console.log(`\nuntouched pages vs baseline: ${untouched.identical}/${untouched.checked} identical after normalising stylesheet link order`);
-  for (const s of untouched.differing) console.log(`       DIFFERS: ${s}`);
 }
 console.log(`\n${report.length} composed pages checked, ${failures} failure(s)`);
 process.exit(failures ? 1 : 0);
