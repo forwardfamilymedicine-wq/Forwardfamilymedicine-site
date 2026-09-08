@@ -50,7 +50,7 @@ Unlimited primary care visits · Annual physicals · Preventive screenings · Ch
 
 ## Practical Information for Berwyn Patients
 
-**Distance from Berwyn:** Approximately 3 miles west on Route 30 / Lancaster Ave
+**Distance from Berwyn:** Approximately 3 miles east on Route 30 / Lancaster Ave
 **Drive time:** ~6–8 minutes
 **SEPTA:** Berwyn Station on the Paoli–Thorndale (R5) line connects directly to Wayne Station — 3 stops (Wayne → Strafford → Devon → Berwyn), walkable from our office
 **Telehealth:** Video and phone visits are included — many members from Berwyn handle routine care without coming in
@@ -61,7 +61,7 @@ Unlimited primary care visits · Annual physicals · Preventive screenings · Ch
 Yes — Berwyn is one of our most common home communities. At just 3 miles from Wayne, it's an easy commute on Route 30 or via SEPTA.
 
 **How far is Forward Family Medicine from Berwyn, PA?**
-Approximately 3 miles west on Lancaster Avenue. Drive time is typically under 10 minutes. Berwyn Station on the Paoli–Thorndale (R5) SEPTA line is 3 stops from Wayne Station (Wayne → Strafford → Devon → Berwyn).
+Approximately 3 miles east on Lancaster Avenue. Drive time is typically under 10 minutes. Berwyn Station on the Paoli–Thorndale (R5) SEPTA line is 3 stops from Wayne Station (Wayne → Strafford → Devon → Berwyn).
 
 **Can I use telehealth as a Berwyn patient?**
 Absolutely. Phone and video visits are included in all memberships. Berwyn patients frequently use telehealth for routine follow-ups, prescription refills, and minor concerns.

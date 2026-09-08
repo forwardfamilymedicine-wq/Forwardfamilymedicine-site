@@ -18,7 +18,7 @@ linksTo:
   - "/membership"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — primary care with lifestyle medicine integrated into every visit, led by Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
+localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — primary care with lifestyle medicine integrated into every visit, with Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -81,4 +81,4 @@ Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menop
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Menopause Care →](/menopause)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Lifestyle Medicine →](/lifestyle-medicine)**

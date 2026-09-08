@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — Direct Primary Care led by Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. West Chester residents now have in-person DPC in their own community."
+localNote: "Forward Family Medicine is opening a West Chester office in October 2026 — Direct Primary Care with Dr. Brian Landi, DO, board-certified family physician and Menopause Society Certified Practitioner. West Chester residents now have in-person DPC in their own community."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 

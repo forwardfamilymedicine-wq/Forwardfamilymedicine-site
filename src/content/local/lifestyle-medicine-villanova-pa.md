@@ -46,7 +46,9 @@ Full lifestyle medicine counseling · Preventive care · Chronic disease managem
 
 ## Practical Information
 
-**Distance:** ~1 mile from Villanova  **SEPTA:** One stop from Villanova Station  **Telehealth:** Video consultations included and well-suited to lifestyle coaching
+**Distance:** ~1 mile from Villanova
+**SEPTA:** One stop from Villanova Station
+**Telehealth:** Video consultations included and well-suited to lifestyle coaching
 
 ## Frequently Asked Questions
 
