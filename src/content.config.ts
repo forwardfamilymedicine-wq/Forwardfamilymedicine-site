@@ -52,6 +52,9 @@ const local = defineCollection({
     localNote: z.string().optional(),
     nearbyNeighborhoods: z.string().optional(),
     mapEmbedUrl: z.string().optional(),
+    // Hero lede on the composed editorial path. Falls back to `description`
+    // with dates and em dashes removed (utils/localCompose.ts ledeFrom).
+    lede: z.string().optional(),
   }),
 });
 

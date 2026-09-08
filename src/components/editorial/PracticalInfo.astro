@@ -13,8 +13,10 @@ export interface Props {
   extras?: { label: string; value: string }[];
   mapHref?: string;
   detailsHref?: string;
+  /** "October 2026" for an office that has not opened; shown first in the Office row. */
+  opening?: string;
 }
-const { address, phone, fax, email, hours = [], extras = [], mapHref, detailsHref } = Astro.props;
+const { address, phone, fax, email, hours = [], extras = [], mapHref, detailsHref, opening } = Astro.props;
 
 function telHref(display: string) {
   const digits = display.replace(/\D/g, '');
@@ -28,17 +30,22 @@ for (const h of hours) {
   if (last && last.open === h.open && last.close === h.close) last.to = h.day;
   else hourRuns.push({ from: h.day, to: h.day, open: h.open, close: h.close });
 }
-const fullAddress = `${address.street}, ${address.city}, ${address.state} ${address.zip}`;
+// An office whose street is not yet confirmed (locations entry with an empty
+// addressStreet) shows city, state and ZIP only, with no directions link: a
+// map search on a bare city would send people somewhere we never said.
+const hasStreet = address.street.trim().length > 0;
+const cityLine = `${address.city}, ${address.state} ${address.zip}`;
+const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
 ---
 
 <div class="ed-info">
   <dl class="ed-info__list">
     <div class="ed-info__row">
       <dt>Office</dt>
-      <dd>
-        <span class="ed-info__line">{address.street}</span>
-        <span class="ed-info__line">{address.city}, {address.state} {address.zip}</span>
-        {mapHref && <a href={mapHref} rel="noopener" target="_blank">Directions</a>}
+      <dd>{opening && <span class="ed-info__line ed-info__opening">Opens {opening}</span>}
+        {hasStreet && <span class="ed-info__line">{address.street}</span>}
+        <span class="ed-info__line">{cityLine}</span>
+        {hasStreet && mapHref && <a href={mapHref} rel="noopener" target="_blank">Directions</a>}
       </dd>
     </div>
     {hourRuns.length > 0 && (
@@ -115,6 +122,7 @@ const fullAddress = `${address.street}, ${address.city}, ${address.state} ${addr
     line-height: 1.6;
   }
   .ed-info__line { display: block; }
+  .ed-info__opening { font-weight: 700; color: var(--ink-900); }
   .ed-info__row a { color: var(--green-400); font-weight: 600; }
   .ed-info__more { margin: var(--space-l) 0 0; font-weight: 600; }
   .ed-info__more a { color: var(--green-400); }

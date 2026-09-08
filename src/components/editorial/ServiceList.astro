@@ -7,8 +7,10 @@ export interface Props {
   intro?: string;
   groups: { heading: string; items: string[] }[];
   more?: { label: string; href: string };
+  /** Short HTML note under the list, e.g. membership pricing with its link. */
+  noteHtml?: string;
 }
-const { intro, groups, more } = Astro.props;
+const { intro, groups, more, noteHtml } = Astro.props;
 ---
 
 <div class="ed-services">
@@ -23,7 +25,7 @@ const { intro, groups, more } = Astro.props;
       </div>
     ))}
   </div>
-  {more && <p class="ed-services__more"><a href={more.href}>{more.label}</a></p>}
+  {more && <p class="ed-services__more"><a href={more.href}>{more.label}</a></p>}{noteHtml && <p class="ed-services__note" set:html={noteHtml} />}
 </div>
 
 <style>
@@ -77,6 +79,15 @@ const { intro, groups, more } = Astro.props;
     font-weight: 600;
   }
   .ed-services__more a { color: var(--green-400); }
+  .ed-services__note {
+    margin: var(--space-m) 0 0;
+    font-size: var(--step--1);
+    color: var(--ink-700);
+    line-height: 1.6;
+    max-width: var(--measure);
+  }
+  .ed-services__note :global(a) { color: var(--green-400); font-weight: 600; }
+  .ed-services__note :global(strong) { color: var(--ink-900); }
   @media (max-width: 640px) {
     .ed-services__groups { grid-template-columns: 1fr; }
   }

@@ -14,8 +14,10 @@ export interface Props {
   photo: ImageMetadata;
   photoAlt: string;
   facts?: string[];
+  /** Where the physician practices, relative to the town on the page. */
+  note?: string;
 }
-const { name, credential, href, photo, photoAlt, facts = [] } = Astro.props;
+const { name, credential, href, photo, photoAlt, facts = [], note } = Astro.props;
 ---
 
 <div class="ed-spotlight">
@@ -35,7 +37,7 @@ const { name, credential, href, photo, photoAlt, facts = [] } = Astro.props;
       class="ed-spotlight__photo"
     />
     <p class="ed-spotlight__name">{name}</p>
-    <p class="ed-spotlight__cred">{credential}</p>
+    <p class="ed-spotlight__cred">{credential}</p>{note && <p class="ed-spotlight__note">{note}</p>}
     {facts.length > 0 && (
       <ul class="ed-spotlight__facts">
         {facts.map(f => <li>{f}</li>)}
@@ -79,6 +81,12 @@ const { name, credential, href, photo, photoAlt, facts = [] } = Astro.props;
     color: var(--ink-700);
     line-height: 1.5;
     margin: 0 0 var(--space-m);
+  }
+  .ed-spotlight__note {
+    font-size: var(--step--1);
+    color: var(--ink-500);
+    line-height: 1.5;
+    margin: calc(-1 * var(--space-s)) 0 var(--space-m);
   }
   .ed-spotlight__facts {
     list-style: none;

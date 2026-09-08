@@ -3,6 +3,8 @@ import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { resolveHeroPhysician } from '../../utils/physicianRouting';
+import { faqAnswerText } from '../../utils/faqSchema';
+import { isComposed } from '../../data/localRollout';
 
 export async function getStaticPaths() {
   const entries = await getCollection('local');
@@ -10,6 +12,8 @@ export async function getStaticPaths() {
   const allLocations = await getCollection('locations');
   return entries
     .filter(entry => !entry.data.draft)
+    // Markdown entries in the current rollout wave build from [composed].astro.
+    .filter(entry => (entry.filePath ?? '').endsWith('.mdx') || !isComposed(entry.id.replace(/\.mdx?$/, '')))
     .map(entry => ({
       params: { slug: entry.id.replace(/\.mdx?$/, '') },
       props: { entry, allProviders, allLocations },
@@ -30,12 +34,15 @@ const siteUrl = 'https://www.forwardfamilymedicine.com';
 // Trailing slash matches the sitemap's /local/ <loc> entries exactly.
 const canonicalUrl = `${siteUrl}/local/${slug}/`;
 
-// ── Two-path dispatch ───────────────────────────────────────────────────────
-// .md entries flow through the generic server-rendered path below: the
-// pre-rendered markdown is cut into <h2>-delimited sections and wrapped in the
-// same markup the old client-side script used to build in the browser.
+// ── Dispatch ────────────────────────────────────────────────────────────────
 // .mdx entries compose their own layout from components and receive the data
 // this route derives (location, hero provider) as props on <Content />.
+// .md entries in the current rollout wave (src/data/localRollout.ts) build
+// from [composed].astro instead and never reach this route. Every other .md
+// entry flows through the generic path below, where the pre-rendered markdown
+// is cut into <h2>-delimited sections and wrapped in the same markup the old
+// client-side script used to build in the browser. The generic path goes away
+// with the last wave.
 const isMdx = (entry.filePath ?? '').endsWith('.mdx');
 
 // Derive location slug ("Malvern, PA" → "malvern", "King of Prussia, PA" → "king-of-prussia")
@@ -85,7 +92,7 @@ const heroProvider = hero.kind === 'physician'
 // `locations` collection instead of hand-typed lines in the body.
 const locationEntry = isMdx && locationSlug ? (allLocations.find(l => l.data.slug === locationSlug) ?? null) : null;
 
-// ── Section classifier (ported verbatim from the former client-side script) ──
+// ── Generic-path section classifier (ported verbatim from the former client-side script) ──
 // Keys on the <h2> wording. Classifies on decoded heading text, which is what
 // the browser's textContent gave the old script; "Contact & Practice
 // Information" renders as "Contact &#x26; Practice Information" in HTML, so
@@ -107,7 +114,7 @@ function classify(text: string): SectionKind {
   return 'section-explainer';
 }
 
-// ── Markdown path: segment the pre-rendered HTML at <h2> boundaries ─────────
+// ── Generic path: segment the pre-rendered HTML at <h2> boundaries ──────────
 // The glob loader renders every .md entry once at sync time and stores the
 // result on entry.rendered.html; <Content /> emits that string verbatim. Every
 // <h2> carries an id equal to its heading slug (rehypeHeadingIds), so cutting
@@ -130,16 +137,6 @@ function decodeEntities(s: string) {
 }
 function escapeHtml(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-// Plain-text answer for FAQPage JSON-LD. Inline links are navigation, not
-// answer content, so each <a> is removed together with its label; otherwise
-// answers end in stranded text such as "More →". Trailing arrow glyphs and
-// the punctuation left behind are trimmed as well.
-function schemaAnswerText(html: string) {
-  return decodeEntities(stripTags(html.replace(/<a\b[^>]*>[\s\S]*?<\/a>/g, '')))
-    .replace(/\s+/g, ' ')
-    .replace(/[\s→›»]+$/g, '')
-    .trim();
 }
 
 let heroHtml = '';
@@ -190,7 +187,8 @@ const extraIndex = hasExtra ? (firstCta !== -1 ? firstCta : sections.length - 1)
 
 // FAQ: each <p> whose first element child is <strong>…?</strong> becomes an
 // accordion item. Same test and same leading-whitespace trim as the old script.
-// Collects question/answer pairs for FAQPage JSON-LD as a side effect.
+// Collects question/answer pairs for FAQPage JSON-LD as a side effect; the
+// schema text comes from utils/faqSchema.ts, shared with FAQSection.
 function enhanceFaq(bodyHtml: string): string {
   return bodyHtml.replace(/<p>([\s\S]*?)<\/p>/g, (full, inner: string) => {
     const m = inner.match(/^([^<]*)<strong>([\s\S]*?)<\/strong>([\s\S]*)$/);
@@ -198,7 +196,7 @@ function enhanceFaq(bodyHtml: string): string {
     const qText = decodeEntities(stripTags(m[2])).trim();
     if (!qText.endsWith('?')) return full;
     const answerHtml = (m[1] + m[3]).replace(/^\s*\n?\s*/, '');
-    faqPairs.push({ q: qText, a: schemaAnswerText(answerHtml) });
+    faqPairs.push({ q: qText, a: faqAnswerText(answerHtml) });
     return (
       '<div class="faq-item-local">' +
         '<button class="faq-q-btn" aria-expanded="false">' +

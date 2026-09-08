@@ -1,0 +1,99 @@
+---
+/**
+ * Composed editorial path for markdown /local/ entries in the current rollout
+ * wave (src/data/localRollout.ts). A separate route file from [slug].astro on
+ * purpose: Astro attaches the CSS of a route's whole module graph to every
+ * page it builds, so rendering the editorial components from the generic
+ * route would change the head of the 56 pages that must stay byte-identical
+ * until their wave. The two routes generate disjoint slugs.
+ *
+ * utils/localCompose.ts derives the view model from the entry body, the
+ * providers and locations collections and the town map;
+ * components/editorial/ComposedLocalPage.astro renders it.
+ */
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import ComposedLocalPage from '../../components/editorial/ComposedLocalPage.astro';
+import { resolveHeroPhysician } from '../../utils/physicianRouting';
+import { composeLocalPage } from '../../utils/localCompose';
+import { isComposed } from '../../data/localRollout';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('local');
+  const allProviders = await getCollection('providers');
+  const allLocations = await getCollection('locations');
+  const siblings = entries
+    .filter(e => !e.data.draft && e.data.location)
+    .map(e => ({ slug: e.id.replace(/\.mdx?$/, ''), label: e.data.location as string, category: e.data.category }));
+  return entries
+    .filter(entry => !entry.data.draft && !(entry.filePath ?? '').endsWith('.mdx') && isComposed(entry.id.replace(/\.mdx?$/, '')))
+    .map(entry => ({
+      params: { composed: entry.id.replace(/\.mdx?$/, '') },
+      props: { entry, allProviders, allLocations, siblings },
+    }));
+}
+
+interface Props {
+  entry: CollectionEntry<'local'>;
+  allProviders: CollectionEntry<'providers'>[];
+  allLocations: CollectionEntry<'locations'>[];
+  siblings: { slug: string; label: string; category: CollectionEntry<'local'>['data']['category'] }[];
+}
+
+const { entry, allProviders, allLocations, siblings } = Astro.props;
+const { headings } = await render(entry);
+const slug = entry.id.replace(/\.mdx?$/, '');
+const siteUrl = 'https://www.forwardfamilymedicine.com';
+// Canonical is always derived from the real built path — never from frontmatter.
+// Trailing slash matches the sitemap's /local/ <loc> entries exactly.
+const canonicalUrl = `${siteUrl}/local/${slug}/`;
+
+const locationSlug = entry.data.location
+  ? entry.data.location.toLowerCase().replace(/,\s*pa$/, '').trim().replace(/\s+/g, '-')
+  : '';
+
+// Which physician fronts this page: src/utils/physicianRouting.ts. Unchanged
+// by the rollout; only the spotlight uses nearest-office data.
+const hero = resolveHeroPhysician({
+  category: entry.data.category,
+  locationSlug,
+  providers: allProviders,
+  locations: allLocations,
+  warn: (m) => console.warn(m),
+});
+
+const page = composeLocalPage({
+  entry, slug,
+  html: entry.rendered?.html ?? '',
+  headings,
+  hero,
+  locationSlug,
+  providers: allProviders,
+  locations: allLocations,
+  siblings,
+});
+
+// FAQPage JSON-LD comes from the FAQSection component. No Article schema:
+// `date` is a placeholder on every local entry.
+const pageName = entry.data.title.replace(/\s*\|\s*Forward Family Medicine\s*$/, '');
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": entry.data.location ?? pageName, "item": canonicalUrl },
+  ],
+};
+---
+
+<MainLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical={canonicalUrl}
+  schema={[breadcrumbSchema]}
+>
+  <div class="local-page local-page--composed">
+    <ComposedLocalPage page={page} />
+  </div>
+</MainLayout>

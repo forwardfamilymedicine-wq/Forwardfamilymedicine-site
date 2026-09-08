@@ -1,4 +1,6 @@
 ---
+import { faqAnswerText } from '../../utils/faqSchema';
+
 export interface FAQ {
   q: string;
   a: string;
@@ -18,6 +20,8 @@ const {
   schema = true,
 } = Astro.props;
 
+// The accordion renders the answer HTML as-is; the schema gets plain text so
+// markup and navigation labels never leak into structured data.
 const faqSchema = schema ? {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -26,7 +30,7 @@ const faqSchema = schema ? {
     "name": f.q,
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": f.a
+      "text": faqAnswerText(f.a)
     }
   }))
 } : null;
