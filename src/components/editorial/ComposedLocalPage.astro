@@ -1,0 +1,191 @@
+---
+/**
+ * The composed /local/ page for markdown entries: the same editorial
+ * components the MDX exemplar uses, fed from the view model that
+ * utils/localCompose.ts derives from the entry, the collections and the
+ * town map. Prose sections keep their body HTML unchanged.
+ */
+import { Image } from 'astro:assets';
+import LocalHero from './LocalHero.astro';
+import Section from './Section.astro';
+import StatStrip from './StatStrip.astro';
+import PhysicianSpotlight from './PhysicianSpotlight.astro';
+import ServiceList from './ServiceList.astro';
+import PatientScenario from './PatientScenario.astro';
+import PracticalInfo from './PracticalInfo.astro';
+import FAQSection from '../shared/FAQSection.astro';
+import CTABanner from '../shared/CTABanner.astro';
+import NearYouExpander from '../shared/NearYouExpander.astro';
+import teamPhoto from '../../assets/staff/ffm-team.jpg';
+import wayneExterior from '../../assets/locations/wayne-exterior.jpeg';
+import type { ComposedPage, Block } from '../../utils/localCompose';
+
+export interface Props { page: ComposedPage }
+const { page } = Astro.props;
+
+// Prose bands alternate cream and white so adjacent sections read as separate.
+const tones: ('cream' | 'white')[] = ['cream', 'white'];
+let toneIndex = 0;
+const nextTone = () => tones[toneIndex++ % 2];
+const beforeTones = page.before.map(() => nextTone());
+const afterTones = page.after.map(() => nextTone());
+
+const renderBlock = (b: Block) => b;
+---
+
+<LocalHero
+  location={page.location}
+  eyebrow={page.hero.eyebrow}
+  title={page.hero.title}
+  lede={page.hero.lede}
+  cta={page.hero.cta}
+  secondary={page.hero.secondary}
+  photo={page.hero.photo ?? teamPhoto}
+  photoAlt={page.hero.photoAlt}
+  physician={page.hero.physician}
+/>
+
+<StatStrip stats={page.stats} />
+
+{page.before.map((b, i) => (
+  b.kind === 'prose' ? (
+    <Section tone={beforeTones[i]} label={b.label} title={b.title}>
+      <Fragment set:html={b.html} />
+    </Section>
+  ) : (
+    <Section tone={beforeTones[i]} label={b.label} title={b.title}>
+      <ServiceList intro={b.model.intro} groups={[{ heading: 'Included in membership', items: b.model.items }]} more={b.model.more} noteHtml={b.model.noteHtml} />
+    </Section>
+  )
+))}
+
+<Section tone="sand" label={page.spotlight.label} title={page.spotlight.title}>
+  <PhysicianSpotlight
+    name={page.spotlight.name}
+    credential={page.spotlight.credential}
+    note={page.spotlight.note}
+    href={page.spotlight.href}
+    photo={page.spotlight.photo}
+    photoAlt={page.spotlight.photoAlt}
+    facts={page.spotlight.facts}
+  >
+    <Fragment set:html={page.spotlight.bioHtml} />
+  </PhysicianSpotlight>
+</Section>
+
+{page.after.map((b, i) => (
+  b.kind === 'prose' ? (
+    <Section tone={afterTones[i]} label={b.label} title={b.title}>
+      <Fragment set:html={b.html} />
+    </Section>
+  ) : (
+    <Section tone={afterTones[i]} label={b.label} title={b.title}>
+      <ServiceList intro={b.model.intro} groups={[{ heading: 'Included in membership', items: b.model.items }]} more={b.model.more} noteHtml={b.model.noteHtml} />
+    </Section>
+  )
+))}
+
+{page.local && (
+  <Section tone="white" width="wide" label={page.local.label} title={page.local.title}>
+    <div class:list={['ed-two-up', { 'ed-two-up--single': !page.local.showWaynePhoto }]}>
+      <div>
+        {page.local.paragraphs.map(p => <p>{p}</p>)}
+      </div>
+      {page.local.showWaynePhoto && (
+        <figure class="ed-photo">
+          <Image
+            src={wayneExterior}
+            alt="Forward Family Medicine's office at 295 Old Eagle School Road in Wayne, PA"
+            width={1000}
+            height={750}
+            fit="cover"
+            position="center"
+            widths={[480, 720, 1000]}
+            sizes="(max-width: 900px) calc(100vw - 32px), 500px"
+            format="webp"
+            quality={82}
+            loading="lazy"
+            class="ed-photo__img"
+          />
+          <figcaption class="ed-photo__caption">Our office at 295 Old Eagle School Road, Wayne. Free parking on site.</figcaption>
+        </figure>
+      )}
+    </div>
+  </Section>
+)}
+
+{page.scenario && (
+  <Section tone="sand" width="wide">
+    <PatientScenario title={page.scenario.title} situation={page.scenario.situation}>
+      {page.scenario.response.map(p => <p>{p}</p>)}
+    </PatientScenario>
+  </Section>
+)}
+
+<Section tone="cream" label="Practical information" title={page.practical.title}>
+  <PracticalInfo
+    address={page.practical.address}
+    phone={page.practical.phone}
+    fax={page.practical.fax}
+    email={page.practical.email}
+    hours={page.practical.hours}
+    extras={page.practical.extras}
+    mapHref={page.practical.mapHref}
+    detailsHref={page.practical.detailsHref}
+    opening={page.practical.opening}
+  />
+</Section>
+
+{page.faq && page.faq.faqs.length > 0 && (
+  <FAQSection faqs={page.faq.faqs} headline={page.faq.headline} label="FAQ" />
+)}
+
+<CTABanner
+  headline={page.cta.headline}
+  subhead={page.cta.subhead}
+  btnText={page.cta.btnText}
+  btnHref={page.cta.btnHref}
+  btn2Text={page.cta.btn2Text}
+  btn2Href={page.cta.btn2Href}
+/>
+
+<NearYouExpander
+  id={page.nearby.id}
+  ariaLabel={page.nearby.ariaLabel}
+  summary={page.nearby.summary}
+  links={page.nearby.links}
+/>
+
+<style>
+  .ed-two-up {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .ed-two-up--single { grid-template-columns: minmax(0, 1fr); max-width: var(--measure); }
+  .ed-two-up p {
+    font-size: var(--step-0);
+    line-height: 1.75;
+    color: var(--ink-700);
+    max-width: var(--measure);
+    margin-bottom: var(--space-m);
+  }
+  .ed-two-up p:last-child { margin-bottom: 0; }
+  .ed-photo { margin: 0; }
+  .ed-photo__img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    background: var(--cream-200);
+  }
+  .ed-photo__caption {
+    margin-top: var(--space-xs);
+    font-size: var(--step--1);
+    color: var(--ink-500);
+  }
+  @media (max-width: 900px) {
+    .ed-two-up { grid-template-columns: 1fr; }
+  }
+</style>
