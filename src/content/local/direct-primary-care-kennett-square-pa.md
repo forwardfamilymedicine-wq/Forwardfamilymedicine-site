@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Kennett Square, PA | Forward Family Medicine"
-description: "Direct Primary Care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (25 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (30 to 35 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Kennett Square PA
   - DPC Kennett Square Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Kennett Square residents across three offices: West Chester (about 15–20 minutes via PA-82 north), Malvern (about 25–30 minutes), and Wayne (about 35–40 minutes). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included in membership for established patients — phone and video visits work well for follow-ups and acute care."
+localNote: "Forward Family Medicine serves Kennett Square residents across three offices: West Chester (about 15–20 minutes via PA-82 north), Malvern (about 30 to 35 minutes), and Wayne (about 35–40 minutes). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included in membership for established patients — phone and video visits work well for follow-ups and acute care."
 nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -35,7 +35,7 @@ Kennett Square is the "Mushroom Capital of the World" — producing more than ha
 ## Why Kennett Square Patients Choose Forward Family Medicine
 
 - **West Chester office ~15–20 min from Kennett Square** — opening October 2026
-- **Malvern office ~25–30 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 20 miles, about 30 to 35 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Kennett Square Patients
 
 **Closest FFM office:** West Chester — about 15–20 minutes via PA-82 north. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 25–30 minutes. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 20 miles, about 30 to 35 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 35–40 minutes — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership — many follow-up and acute visits work well without the drive
 

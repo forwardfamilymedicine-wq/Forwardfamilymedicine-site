@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in King of Prussia, PA | Forward Family Medicine"
-description: "Comprehensive menopause care for King of Prussia, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (15 min) and telehealth across all three offices."
+description: "Comprehensive menopause care for King of Prussia, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (15 to 20 min) and telehealth across all three offices."
 keywords:
   - menopause care King of Prussia PA
   - perimenopause King of Prussia Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to King of Prussia residents across three offices: Wayne (about 15 minutes), West Chester (about 25 minutes), and Malvern (about 15 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to King of Prussia residents across three offices: Wayne (about 15 to 20 minutes), West Chester (about 25 minutes), and Malvern (about 18 to 20 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
 
@@ -26,14 +26,14 @@ nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 
 ## About King of Prussia, PA
 
-King of Prussia is Montgomery County's major commercial and corporate hub — home to the KOP Mall, Valley Forge National Historical Park, and a dense concentration of corporate campuses. The community includes a significant number of professionals and executives who have found traditional primary care — long waits, rushed visits, hard-to-reach physicians — particularly ill-matched to the demands of their lives. That mismatch is especially sharp when it comes to menopause care, which requires exactly the depth and time that high-volume primary care rarely delivers. Forward Family Medicine, with offices in Wayne and Malvern each about 15 minutes from KOP, offers a different approach.
+King of Prussia is Montgomery County's major commercial and corporate hub — home to the KOP Mall, Valley Forge National Historical Park, and a dense concentration of corporate campuses. The community includes a significant number of professionals and executives who have found traditional primary care — long waits, rushed visits, hard-to-reach physicians — particularly ill-matched to the demands of their lives. That mismatch is especially sharp when it comes to menopause care, which requires exactly the depth and time that high-volume primary care rarely delivers. Forward Family Medicine, with offices in Wayne and Malvern each within about 20 minutes of KOP, offers a different approach.
 
 ## Menopause Care at Forward Family Medicine
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. King of Prussia residents have access to:
 
-- **Primary care at our Wayne office** (about 15 minutes from King of Prussia) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 25 minutes) or Malvern (about 15 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Primary care at our Wayne office** (about 15 to 20 minutes from King of Prussia). Our Wayne physicians provide menopause care as part of comprehensive family medicine
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 25 minutes) or Malvern (about 18 to 20 minutes) offices. Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,7 +50,7 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why King of Prussia Patients Choose Forward Family Medicine
 
-- **Three convenient offices** — Wayne (15 min), West Chester (25 min), Malvern (15 min)
+- **Three convenient offices:** Wayne (15 to 20 min), West Chester (25 min), Malvern (18 to 20 min)
 - **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
@@ -67,15 +67,15 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for King of Prussia Patients
 
-**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 15 minutes via Route 202 south) and Malvern (301 Lindenwood Dr #206, about 15 minutes via Route 202 south to Route 30 west) — both currently accessible, Malvern opening October 2026. Wayne accepting new patients with Dr. Lieberman now.
-**Specialty menopause consultation:** Dr. Landi at Malvern (about 15 minutes) or West Chester (about 25 minutes), or telehealth
+**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 15 to 20 minutes via Route 202 south) and Malvern (301 Lindenwood Dr #206, 10 miles, about 18 to 20 minutes). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
+**Specialty menopause consultation:** Dr. Landi at Malvern (about 18 to 20 minutes) or West Chester (about 25 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients — highly practical for KOP patients managing busy schedules
 **Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
 **Which FFM office should King of Prussia patients establish at?**
-From King of Prussia: Wayne is about 15 minutes via Route 202 south, West Chester is about 25 minutes, and Malvern is about 15 minutes. Wayne and Malvern are equally convenient. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
+From King of Prussia: Wayne is about 15 to 20 minutes via Route 202 south, Malvern is about 18 to 20 minutes, and West Chester is about 25 minutes. Wayne is open now; Malvern and West Chester open October 2026. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.

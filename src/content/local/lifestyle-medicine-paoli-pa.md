@@ -15,7 +15,7 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Paoli residents can reach our Wayne lifestyle medicine practice in about 10 minutes via Route 30 or Lancaster Avenue. Paoli's family-oriented community is a good fit for the lifestyle medicine model, which works particularly well when patients can integrate health changes gradually over time with consistent physician support."
+localNote: "Paoli residents can reach our Wayne lifestyle medicine practice in about 12 to 15 minutes via Route 30 or Lancaster Avenue. Paoli's family-oriented community is a good fit for the lifestyle medicine model, which works particularly well when patients can integrate health changes gradually over time with consistent physician support."
 nearbyNeighborhoods: "Devon, Malvern, Berwyn, and Frazer"
 ---
 

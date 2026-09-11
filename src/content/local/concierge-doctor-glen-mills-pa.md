@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Glen Mills, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (15 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
+description: "Concierge-style primary care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (25 to 28 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
 keywords:
   - concierge doctor Glen Mills PA
   - concierge medicine Glen Mills Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Glen Mills residents from our West Chester office (about 12–15 minutes) and Malvern office (about 15–18 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine serves Glen Mills residents from our West Chester office (about 12–15 minutes) and Malvern office (about 25 to 28 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 ---
 
@@ -30,12 +30,12 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About Glen Mills, PA
 
-Glen Mills is an established Delaware County community with an affluent, highly educated population, the well-regarded Garnet Valley School District, and a median age that reflects a mature, settled professional base. Residents here have often sought or considered concierge-level primary care — the kind of relationship where your physician actually knows your history, answers your calls, and has time for a real conversation. Forward Family Medicine — with offices in West Chester (about 12–15 minutes) and Malvern (about 15–18 minutes) — delivers exactly that, without the traditional concierge retainer.
+Glen Mills is an established Delaware County community with an affluent, highly educated population, the well-regarded Garnet Valley School District, and a median age that reflects a mature, settled professional base. Residents here have often sought or considered concierge-level primary care — the kind of relationship where your physician actually knows your history, answers your calls, and has time for a real conversation. Forward Family Medicine, with offices in West Chester (about 12–15 minutes) and Malvern (about 25 to 28 minutes), delivers exactly that, without the traditional concierge retainer.
 
 ## Why Glen Mills Patients Choose This Practice
 
 - **West Chester office ~12–15 min from Glen Mills** — opening October 2026
-- **Malvern office ~15–18 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 15 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Glen Mills Patients
 
 **Closest FFM office:** West Chester — about 12–15 minutes via US-202 north. Opening October 2026.
-**Also convenient:** Malvern — 301 Lindenwood Dr #206, about 15–18 minutes via US-202 north to Boot Rd. Opening October 2026.
+**Also convenient:** Malvern, 301 Lindenwood Dr #206, 15 miles, about 25 to 28 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 

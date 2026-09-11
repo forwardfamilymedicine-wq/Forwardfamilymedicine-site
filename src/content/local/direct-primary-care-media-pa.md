@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/new-patients"
-localNote: "Media residents are roughly 30 minutes from our Wayne office via Route 252 or I-476. We serve a number of Media-area patients who've decided the commute is worth it for a practice model that actually makes primary care feel like care — not a transaction."
+localNote: "Media residents are about 20 minutes from our Wayne office via Route 252 or I-476. We serve a number of Media-area patients who've decided the commute is worth it for a practice model that actually makes primary care feel like care — not a transaction."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
@@ -51,7 +51,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Media Patients
 
 **Distance from Media:** Approximately 12 miles north via Route 252 north, or Baltimore Pike (Route 1) east to Route 252 north to Route 30
-**Drive time:** ~25–30 minutes
+**Drive time:** About 20 minutes
 **SEPTA:** Media/Elwyn (R3) line connects to center city, but not directly to Wayne — telehealth recommended for routine care
 **Telehealth:** All phone and video visits are included — the most practical option for many Media patients managing the distance
 
@@ -61,7 +61,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Media is about 12 miles from Wayne. Members from Media and southeastern Delaware County use telehealth for routine care and come in for visits that benefit from in-person care.
 
 **How far is Forward Family Medicine from Media, PA?**
-Approximately 12 miles north. Drive time is typically 25–30 minutes via Route 252.
+Approximately 12 miles north. Drive time is about 20 minutes via Route 252.
 
 **Can Media patients use telehealth to reduce travel?**
 Yes — phone and video visits are included in all memberships. Follow-ups, prescription management, lab result reviews, and many acute concerns can be handled without the drive.

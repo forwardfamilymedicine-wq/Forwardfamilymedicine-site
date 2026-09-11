@@ -27,5 +27,12 @@ export const KEEP_LABELS = [
  */
 export const REASSIGNED_DROP = ['Closest', 'Also convenient', 'Also available', 'Wayne option'];
 
+/**
+ * Kept labels that describe the drive to the assigned office. They render
+ * ahead of any secondary-office row (see `Town.secondary`), so the block
+ * reads assigned office first, other office second, then telehealth.
+ */
+export const TRAVEL_LABELS = ['Distance', 'Drive time', 'SEPTA', 'Closest', 'Also convenient', 'Also available', 'Wayne option'];
+
 export const labelMatches = (label: string, list: string[]): boolean =>
   list.some(l => label === l || label.startsWith(l + ' '));

@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Ardmore residents across three offices: Wayne (about 15 minutes), West Chester (about 35 minutes), and Malvern (about 25 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Ardmore residents across three offices: Wayne (about 15 minutes), West Chester (about 35 minutes), and Malvern (about 28 to 30 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
 
@@ -33,7 +33,7 @@ Ardmore is a diverse, walkable Lower Merion community that blends an urban-subur
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Ardmore residents have access to:
 
 - **Primary care at our Wayne office** (about 15 minutes from Ardmore) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 35 minutes) or Malvern (about 25 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 35 minutes) or Malvern (about 28 to 30 minutes) offices. Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,7 +50,7 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Ardmore Patients Choose Forward Family Medicine
 
-- **Three convenient offices** — Wayne (15 min), West Chester (35 min), Malvern (25 min)
+- **Three convenient offices:** Wayne (15 min), West Chester (35 min), Malvern (28 to 30 min)
 - **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
@@ -75,7 +75,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Frequently Asked Questions
 
 **Which FFM office should Ardmore patients establish at?**
-Most Ardmore residents choose Wayne for routine primary care — it's about 15 minutes west on Lancaster Avenue, with direct SEPTA access via the Paoli–Thorndale line. Specialty menopause consultation with Dr. Landi is available at West Chester (about 35 minutes) or Malvern (about 25 minutes), or by telehealth — regardless of where you establish primary care.
+Most Ardmore residents choose Wayne for routine primary care — it's about 15 minutes west on Lancaster Avenue, with direct SEPTA access via the Paoli–Thorndale line. Specialty menopause consultation with Dr. Landi is available at West Chester (about 35 minutes) or Malvern (about 28 to 30 minutes), or by telehealth, regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.

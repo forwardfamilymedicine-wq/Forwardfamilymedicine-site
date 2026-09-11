@@ -15,7 +15,7 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Villanova patients interested in lifestyle medicine are just 3–4 miles from our Wayne practice along Lancaster Avenue. Villanova's academically connected, health-informed community has been particularly engaged with the evidence-based approach to prevention that Dr. Lieberman practices — where nutrition, sleep, and movement are treated as clinical tools, not afterthoughts."
+localNote: "Villanova patients interested in lifestyle medicine are just 1 mile from our Wayne practice along Lancaster Avenue. Villanova's academically connected, health-informed community has been particularly engaged with the evidence-based approach to prevention that Dr. Lieberman practices — where nutrition, sleep, and movement are treated as clinical tools, not afterthoughts."
 nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Avondale, PA | Forward Family Medicine"
-description: "Direct Primary Care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (30 min) offices. Unlimited visits, same-day access, telehealth included for established patients."
+description: "Direct Primary Care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (35 min) offices. Unlimited visits, same-day access, telehealth included for established patients."
 keywords:
   - direct primary care Avondale PA
   - DPC Avondale Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Avondale residents across three offices: West Chester (about 25–30 minutes via PA-41 north to US-1 east), Malvern (about 30–35 minutes), and Wayne (about 40–45 minutes). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included for established patients — many follow-up and acute visits work well by phone or video."
+localNote: "Forward Family Medicine serves Avondale residents across three offices: West Chester (about 25–30 minutes via PA-41 north to US-1 east), Malvern (about 35 minutes), and Wayne (about 40–45 minutes). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included for established patients — many follow-up and acute visits work well by phone or video."
 nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -35,7 +35,7 @@ Avondale is a Chester County borough in the southern part of the county — a co
 ## Why Avondale Patients Choose Forward Family Medicine
 
 - **West Chester office ~25–30 min from Avondale** — opening October 2026
-- **Malvern office ~30–35 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 23 miles, about 35 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Avondale Patients
 
 **Closest FFM office:** West Chester — about 25–30 minutes via PA-41 north to US-1 east. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 30–35 minutes. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 23 miles, about 35 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 40–45 minutes — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership — reduces the need for the drive on routine visits
 

@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/new-patients"
-localNote: "Bryn Mawr patients are typically 15–20 minutes from our Wayne office along Lancaster Avenue — a straightforward commute on one of the Main Line's primary corridors. Bryn Mawr's concentration of college faculty, healthcare professionals, and young families makes direct primary care a natural fit for residents who value accessible, relationship-based medicine."
+localNote: "Bryn Mawr patients are about 15 minutes from our Wayne office along Lancaster Avenue, a straightforward commute on one of the Main Line's primary corridors. Bryn Mawr's concentration of college faculty, healthcare professionals, and young families makes direct primary care a natural fit for residents who value accessible, relationship-based medicine."
 nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 ---
 
@@ -50,7 +50,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Bryn Mawr Patients
 
 **Distance from Bryn Mawr:** Approximately 5 miles west on Lancaster Avenue
-**Drive time:** ~10–12 minutes
+**Drive time:** About 15 minutes
 **SEPTA:** Bryn Mawr Station on the Paoli–Thorndale (R5) line — approximately 4 stops from Wayne Station
 **Telehealth:** All phone and video visits included in membership
 
@@ -60,7 +60,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Bryn Mawr is 5 miles from our Wayne office, easily accessible by Route 30 or the SEPTA Paoli–Thorndale line.
 
 **How far is Forward Family Medicine from Bryn Mawr, PA?**
-Approximately 5 miles west on Lancaster Avenue. Drive time is typically 10–12 minutes. Bryn Mawr Station on the Paoli–Thorndale (R5) is about 4 stops from Wayne Station.
+Approximately 5 miles west on Lancaster Avenue. Drive time is about 15 minutes. Bryn Mawr Station on the Paoli–Thorndale (R5) is about 4 stops from Wayne Station.
 
 **Is there a DPC practice in Bryn Mawr itself?**
 Forward Family Medicine in Wayne is the nearest DPC practice to Bryn Mawr residents. Our telehealth offering reduces the need for in-person travel for many visits.

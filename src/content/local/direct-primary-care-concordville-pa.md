@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Concordville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (25 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Concordville PA
   - DPC Concordville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Concordville residents across three offices: West Chester (about 10–15 minutes via US-1 north to PA-202), Malvern (about 15–20 minutes via US-202 north), and Wayne (about 20–25 minutes via US-202 north). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both accessible from the US-1/US-322 corridor."
+localNote: "Forward Family Medicine serves Concordville residents across three offices: West Chester (about 10–15 minutes via US-1 north to PA-202), Malvern (about 25 minutes), and Wayne (about 20–25 minutes via US-202 north). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both accessible from the US-1/US-322 corridor."
 nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 ---
 
@@ -30,12 +30,12 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Concordville, PA
 
-Concordville is a historic Delaware County community in Concord Township — settled by Quakers in the 17th century, anchored by the Concord Friends Meetinghouse (built 1728), and today a prosperous residential area at the junction of US Routes 1 and 322. The Painters Crossing commercial district and Concordville's proximity to both West Chester and Philadelphia make it a well-positioned community whose residents expect quality in the professional services they choose, including healthcare. Forward Family Medicine — with offices in West Chester (about 10–15 minutes) and Malvern (about 15–20 minutes) — is built for exactly that expectation.
+Concordville is a historic Delaware County community in Concord Township — settled by Quakers in the 17th century, anchored by the Concord Friends Meetinghouse (built 1728), and today a prosperous residential area at the junction of US Routes 1 and 322. The Painters Crossing commercial district and Concordville's proximity to both West Chester and Philadelphia make it a well-positioned community whose residents expect quality in the professional services they choose, including healthcare. Forward Family Medicine, with offices in West Chester (about 10–15 minutes) and Malvern (about 25 minutes), is built for exactly that expectation.
 
 ## Why Concordville Patients Choose Forward Family Medicine
 
 - **West Chester office ~10–15 min from Concordville** — opening October 2026
-- **Malvern office ~15–20 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 18 miles, about 25 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Concordville Patients
 
 **Closest FFM office:** West Chester — about 10–15 minutes via US-1 north to PA-202. Opening October 2026.
-**Also convenient:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via US-202 north. Opening October 2026.
+**Also convenient:** Malvern, 301 Lindenwood Dr #206, 18 miles, about 25 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
 

@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Avondale, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (30 min) offices. Perimenopause management, HRT consultation, telehealth included."
+description: "Menopause Society Certified menopause care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (35 min) offices. Perimenopause management, HRT consultation, telehealth included."
 keywords:
   - menopause care Avondale PA
   - perimenopause Avondale Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Avondale residents through Dr. Brian Landi, DO at our West Chester office (about 25–30 minutes) and Malvern office (about 30–35 minutes). Telehealth is included in membership so follow-up visits and consultations don't always require the drive."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Avondale residents through Dr. Brian Landi, DO at our West Chester office (about 25–30 minutes) and Malvern office (about 35 minutes). Telehealth is included in membership so follow-up visits and consultations don't always require the drive."
 nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -32,7 +32,7 @@ Avondale is a small Chester County borough in the region's southern agricultural
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our West Chester office (about 25–30 minutes from Avondale, opening October 2026) and Malvern office (about 30–35 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many consultations and follow-ups can happen by phone or video. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our West Chester office (about 25–30 minutes from Avondale, opening October 2026) and Malvern office (about 35 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many consultations and follow-ups can happen by phone or video. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our West Chester office (about 25–30 minutes from Avond
 ## Why Avondale Patients Choose This Practice
 
 - **West Chester office ~25–30 min from Avondale** — opening October 2026
-- **Malvern office ~30–35 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 23 miles, about 35 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Avondale Patients
 
 **Closest FFM office:** West Chester — about 25–30 minutes via PA-41 north to US-1 east. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 30–35 minutes. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 23 miles, about 35 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 40–45 minutes — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership, no drive required
 

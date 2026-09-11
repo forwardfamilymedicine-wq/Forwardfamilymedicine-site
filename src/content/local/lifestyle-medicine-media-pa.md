@@ -15,7 +15,7 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Media patients seeking lifestyle medicine can reach our Wayne practice in approximately 30 minutes via Route 252. Media's active, community-oriented residents — many of whom already prioritize healthy living — are often looking for a physician who can help them translate those lifestyle priorities into measurable clinical outcomes."
+localNote: "Media patients seeking lifestyle medicine can reach our Wayne practice in about 20 minutes via Route 252. Media's active, community-oriented residents — many of whom already prioritize healthy living — are often looking for a physician who can help them translate those lifestyle priorities into measurable clinical outcomes."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
@@ -48,7 +48,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 ## Practical Information
 
 **Distance:** ~12 miles north via Route 252 or Baltimore Pike (Route 1) east to Route 252
-**Drive time:** ~25–30 minutes
+**Drive time:** About 20 minutes
 **SEPTA:** Media/Elwyn (R3) line does not connect to Wayne — telehealth recommended
 **Telehealth:** Video and phone consultations included — practical for Media patients to reduce travel for routine lifestyle care
 

@@ -28,7 +28,7 @@ Direct Primary Care (DPC) replaces insurance billing with a flat monthly members
 
 ## About Berwyn, PA
 
-Berwyn is a quiet, residential Chester County community just east of Wayne on Lancaster Avenue (Route 30). Known for its charming residential neighborhoods, excellent Tredyffrin-Easttown schools, and easy access to both downtown Philadelphia and Chester County, Berwyn sits at the edge of the Main Line with a distinctly neighborhood feel. Residents here value quality, convenience, and relationships — which is exactly what Direct Primary Care at Forward Family Medicine delivers.
+Berwyn is a quiet, residential Chester County community just west of Wayne on Lancaster Avenue (Route 30). Known for its charming residential neighborhoods, excellent Tredyffrin-Easttown schools, and easy access to both downtown Philadelphia and Chester County, Berwyn sits at the edge of the Main Line with a distinctly neighborhood feel. Residents here value quality, convenience, and relationships — which is exactly what Direct Primary Care at Forward Family Medicine delivers.
 
 ## Why Berwyn Patients Come to Forward Family Medicine
 

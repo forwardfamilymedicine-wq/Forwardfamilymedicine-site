@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Downingtown, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Downingtown, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
+description: "Concierge-style primary care for Downingtown, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 to 18 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
 keywords:
   - concierge doctor Downingtown PA
   - concierge medicine Downingtown Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Downingtown residents from our West Chester office (about 10–12 minutes) and Malvern office (about 15–18 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine serves Downingtown residents from our West Chester office (about 10–12 minutes) and Malvern office (about 15 to 18 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Exton, Malvern, Coatesville, Thorndale, and Parkesburg"
 ---
 
@@ -30,12 +30,12 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About Downingtown, PA
 
-Downingtown is a Chester County borough with SEPTA commuter rail access, a highly regarded school district, and a professional community that has come to expect quality in how they manage their lives. The Downingtown Area School District's nationally recognized STEM Academy draws families who plan ahead and invest in the long term — including in their healthcare. Many Downingtown residents have tried or considered concierge medicine but balked at the $4,000–$15,000 annual retainer. Forward Family Medicine — with offices in West Chester (about 10–12 minutes) and Malvern (about 15–18 minutes) — delivers the same experience at a flat monthly DPC membership.
+Downingtown is a Chester County borough with SEPTA commuter rail access, a highly regarded school district, and a professional community that has come to expect quality in how they manage their lives. The Downingtown Area School District's nationally recognized STEM Academy draws families who plan ahead and invest in the long term — including in their healthcare. Many Downingtown residents have tried or considered concierge medicine but balked at the $4,000–$15,000 annual retainer. Forward Family Medicine, with offices in West Chester (about 10–12 minutes) and Malvern (about 15 to 18 minutes), delivers the same experience at a flat monthly DPC membership.
 
 ## Why Downingtown Patients Choose This Practice
 
 - **West Chester office ~10–12 min from Downingtown** — opening October 2026
-- **Malvern office ~15–18 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 9 miles, about 15 to 18 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Downingtown Patients
 
 **Closest FFM office:** West Chester — about 10–12 minutes via PA-322 south. Opening October 2026.
-**Also convenient:** Malvern — 301 Lindenwood Dr #206, about 15–18 minutes via US-30 east. Opening October 2026.
+**Also convenient:** Malvern, 301 Lindenwood Dr #206, 9 miles, about 15 to 18 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 

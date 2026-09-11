@@ -15,7 +15,7 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Ardmore patients considering concierge medicine are often surprised to find that our DPC model delivers everything they're looking for — same-day access, a physician who picks up the phone, extended visits — at a fraction of traditional concierge pricing. Our Wayne office is a 20-minute drive along the Main Line corridor."
+localNote: "Ardmore patients considering concierge medicine are often surprised to find that our DPC model delivers everything they're looking for — same-day access, a physician who picks up the phone, extended visits — at a fraction of traditional concierge pricing. Our Wayne office is about a 15-minute drive along the Main Line corridor."
 nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
 

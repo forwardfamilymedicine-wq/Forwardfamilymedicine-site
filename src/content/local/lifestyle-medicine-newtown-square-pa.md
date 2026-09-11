@@ -15,7 +15,7 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Newtown Square residents interested in lifestyle medicine will find our Wayne office approximately 20 minutes north via Route 252. Newtown Square's established family communities are well-suited to lifestyle medicine's long-term approach — working with patients over years rather than encounters to build genuine, durable health."
+localNote: "Newtown Square residents interested in lifestyle medicine will find our Wayne office about 15 minutes north via Route 252. Newtown Square's established family communities are well-suited to lifestyle medicine's long-term approach — working with patients over years rather than encounters to build genuine, durable health."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
@@ -48,7 +48,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 ## Practical Information
 
 **Distance:** ~7–8 miles north via Route 252 or Route 3 to Route 252
-**Drive time:** ~18–22 minutes
+**Drive time:** About 15 minutes
 **SEPTA:** No direct rail — telehealth recommended for lifestyle consultations
 **Telehealth:** Video and phone consultations included
 

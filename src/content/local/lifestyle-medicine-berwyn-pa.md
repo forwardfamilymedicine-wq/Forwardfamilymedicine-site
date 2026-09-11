@@ -23,7 +23,7 @@ nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 
 ## About Berwyn, PA
 
-Berwyn is a residential Chester County community on Lancaster Avenue, just east of Wayne. With proximity to the Chester Valley Trail and a community that values outdoor living and family health, Berwyn is a natural home base for patients who want a physician who takes prevention seriously.
+Berwyn is a residential Chester County community on Lancaster Avenue, just west of Wayne. With proximity to the Chester Valley Trail and a community that values outdoor living and family health, Berwyn is a natural home base for patients who want a physician who takes prevention seriously.
 
 ## Lifestyle Medicine as Part of Your Primary Care
 

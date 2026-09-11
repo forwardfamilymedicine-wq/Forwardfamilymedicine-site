@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/new-patients"
-localNote: "Haverford residents are roughly 20–25 minutes from our Wayne office on Lancaster Avenue. Our Haverford members often cite the same reason for making the drive: they wanted a physician with genuine time for them, and that's not something distance tends to stand in the way of."
+localNote: "Haverford residents are about 15 minutes from our Wayne office on Lancaster Avenue. Our Haverford members often cite the same reason for making the drive: they wanted a physician with genuine time for them, and that's not something distance tends to stand in the way of."
 nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
 
@@ -50,7 +50,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Haverford Patients
 
 **Distance from Haverford:** Approximately 5–6 miles west on Lancaster Avenue
-**Drive time:** ~10–12 minutes
+**Drive time:** About 15 minutes
 **SEPTA:** Haverford Station on the Paoli–Thorndale (R5) line — 4–5 stops from Wayne Station
 **Telehealth:** All phone and video visits included in membership
 
@@ -60,7 +60,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Haverford is 5–6 miles from Wayne on Route 30, and Haverford Station connects directly to Wayne Station via SEPTA.
 
 **How far is Forward Family Medicine from Haverford, PA?**
-About 5–6 miles west on Lancaster Avenue. Drive time is typically 10–12 minutes. Haverford Station on the Paoli–Thorndale (R5) is 4–5 stops from Wayne Station.
+About 5–6 miles west on Lancaster Avenue. Drive time is about 15 minutes. Haverford Station on the Paoli–Thorndale (R5) is 4–5 stops from Wayne Station.
 
 **Can Haverford patients use telehealth?**
 Yes — phone and video visits are included for all members.
