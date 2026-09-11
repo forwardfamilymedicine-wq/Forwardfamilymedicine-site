@@ -15,7 +15,7 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Paoli residents looking for a concierge-quality primary care experience will find our Wayne practice 10 minutes east on Lancaster Avenue. We've built a practice that delivers the personal relationship and accessibility that define the best concierge practices, structured as a flat monthly membership without the premium overhead."
+localNote: "Paoli residents looking for a concierge-quality primary care experience will find our Wayne practice about 12 to 15 minutes east on Lancaster Avenue. We've built a practice that delivers the personal relationship and accessibility that define the best concierge practices, structured as a flat monthly membership without the premium overhead."
 nearbyNeighborhoods: "Devon, Malvern, Berwyn, and Frazer"
 ---
 

@@ -10,6 +10,8 @@ import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { resolveHeroPhysician } from '../../utils/physicianRouting';
+import { secondaryExtras } from '../../utils/localCompose';
+import { findTown } from '../../data/towns';
 
 export async function getStaticPaths() {
   const entries = await getCollection('local');
@@ -56,6 +58,10 @@ const hero = resolveHeroPhysician({
 // MDX pages compose their own practical-information block from the
 // `locations` collection instead of hand-typed lines in the body.
 const locationEntry = locationSlug ? (allLocations.find(l => l.data.slug === locationSlug) ?? null) : null;
+// Rows for the town's other offices come from the town map, the same source
+// the composed pages use, so a figure changes in one place.
+const town = findTown(locationSlug);
+const extraOffices = town ? secondaryExtras(town, allLocations) : [];
 
 // FAQPage JSON-LD comes from the FAQSection component. No Article schema:
 // `date` is a placeholder on every local entry.
@@ -82,6 +88,7 @@ const breadcrumbSchema = {
       locationSlug={locationSlug}
       hero={hero}
       locationEntry={locationEntry}
+      extraOffices={extraOffices}
     />
   </div>
 </MainLayout>

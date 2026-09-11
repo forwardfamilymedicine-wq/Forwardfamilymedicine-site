@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/new-patients"
-localNote: "Villanova residents are just 3–4 miles from our Wayne office along Lancaster Avenue, making visits simple and convenient. Our practice draws many Villanova University-area families and professionals who want a primary care physician who genuinely knows them — not just their insurance card."
+localNote: "Villanova residents are just 1 mile from our Wayne office along Lancaster Avenue, making visits simple and convenient. Our practice draws many Villanova University-area families and professionals who want a primary care physician who genuinely knows them — not just their insurance card."
 nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 ---
 

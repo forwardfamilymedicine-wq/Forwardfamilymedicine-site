@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Glen Mills, PA | Forward Family Medicine"
-description: "Direct Primary Care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (25 to 28 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Glen Mills PA
   - DPC Glen Mills Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Glen Mills residents across three offices: West Chester (about 12–15 minutes via US-202 north), Malvern (about 15–18 minutes via US-202 north to Boot Rd), and Wayne (about 20–25 minutes via US-202 north). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both a short drive from Glen Mills."
+localNote: "Forward Family Medicine serves Glen Mills residents across three offices: West Chester (about 12–15 minutes via US-202 north), Malvern (about 25 to 28 minutes), and Wayne (about 20–25 minutes via US-202 north). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both a short drive from Glen Mills."
 nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 ---
 
@@ -30,12 +30,12 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Glen Mills, PA
 
-Glen Mills is an affluent, established Delaware County community in Concord and Thornbury Townships — known for the Garnet Valley School District, a highly educated professional population, and a mature suburban character that attracts families who plan ahead and stay. With a median age over 45 and more than half of residents holding bachelor's degrees or higher, Glen Mills households tend to be discerning about healthcare choices. Forward Family Medicine — with offices in West Chester (about 12–15 minutes) and Malvern (about 15–18 minutes) — offers the kind of primary care this community has been looking for.
+Glen Mills is an affluent, established Delaware County community in Concord and Thornbury Townships — known for the Garnet Valley School District, a highly educated professional population, and a mature suburban character that attracts families who plan ahead and stay. With a median age over 45 and more than half of residents holding bachelor's degrees or higher, Glen Mills households tend to be discerning about healthcare choices. Forward Family Medicine, with offices in West Chester (about 12–15 minutes) and Malvern (about 25 to 28 minutes), offers the kind of primary care this community has been looking for.
 
 ## Why Glen Mills Patients Choose Forward Family Medicine
 
 - **West Chester office ~12–15 min from Glen Mills** — opening October 2026
-- **Malvern office ~15–18 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 15 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Glen Mills Patients
 
 **Closest FFM office:** West Chester — about 12–15 minutes via US-202 north. Opening October 2026.
-**Also convenient:** Malvern — 301 Lindenwood Dr #206, about 15–18 minutes via US-202 north to Boot Rd. Opening October 2026.
+**Also convenient:** Malvern, 301 Lindenwood Dr #206, 15 miles, about 25 to 28 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
 

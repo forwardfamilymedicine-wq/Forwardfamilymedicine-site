@@ -15,7 +15,7 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "King of Prussia's professional community includes many who've considered concierge medicine and wondered whether the premium price is justified. Our Wayne office is under 20 minutes away, and we offer the full concierge experience — panel-capped, unhurried, directly accessible — at a membership rate designed for real families, not just high-net-worth patients."
+localNote: "King of Prussia's professional community includes many who've considered concierge medicine and wondered whether the premium price is justified. Our Wayne office is about 15 to 20 minutes away, and we offer the full concierge experience (panel-capped, unhurried, directly accessible) at a membership rate designed for real families, not just high-net-worth patients."
 nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 ---
 

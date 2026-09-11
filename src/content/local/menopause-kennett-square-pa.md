@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Kennett Square, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (25 min) offices. Perimenopause management, HRT consultation, telehealth included."
+description: "Menopause Society Certified menopause care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (30 to 35 min) offices. Perimenopause management, HRT consultation, telehealth included."
 keywords:
   - menopause care Kennett Square PA
   - perimenopause Kennett Square Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Kennett Square residents through Dr. Brian Landi, DO at our West Chester office (about 15–20 minutes) and Malvern office (about 25–30 minutes). Telehealth is included in membership for follow-up visits and acute consultations."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Kennett Square residents through Dr. Brian Landi, DO at our West Chester office (about 15–20 minutes) and Malvern office (about 30 to 35 minutes). Telehealth is included in membership for follow-up visits and acute consultations."
 nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -32,7 +32,7 @@ Kennett Square is Chester County's "Mushroom Capital" — a borough with an agri
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our West Chester office (about 15–20 minutes from Kennett Square, opening October 2026) and Malvern office (about 25–30 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups — many visits require no drive at all. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our West Chester office (about 15–20 minutes from Kennett Square, opening October 2026) and Malvern office (about 30 to 35 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups — many visits require no drive at all. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our West Chester office (about 15–20 minutes from Kenne
 ## Why Kennett Square Patients Choose This Practice
 
 - **West Chester office ~15–20 min from Kennett Square** — opening October 2026
-- **Malvern office ~25–30 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 20 miles, about 30 to 35 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Kennett Square Patients
 
 **Closest FFM office:** West Chester — about 15–20 minutes via PA-82 north. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 25–30 minutes. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 20 miles, about 30 to 35 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 35–40 minutes — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

@@ -60,7 +60,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Devon is 3 miles west of our Wayne office, an easy commute on Route 30 or via SEPTA.
 
 **How far is Forward Family Medicine from Devon, PA?**
-Approximately 3 miles east on Lancaster Avenue. Drive time is typically under 10 minutes. Devon Station on the Paoli–Thorndale (R5) is two stops from Wayne Station.
+Approximately 3 miles east on Lancaster Avenue. Drive time is about 6 to 8 minutes. Devon Station on the Paoli–Thorndale (R5) is two stops from Wayne Station.
 
 **Can Devon patients use telehealth?**
 Absolutely. Phone and video visits are included for all members.

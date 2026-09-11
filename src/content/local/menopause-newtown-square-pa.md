@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Newtown Square residents across three offices: Wayne (about 15 minutes), West Chester (about 20 minutes), and Malvern (about 15 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Newtown Square residents across three offices: Wayne (about 15 minutes), West Chester (about 20 minutes), and Malvern (about 22 to 25 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
@@ -26,14 +26,14 @@ nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 
 ## About Newtown Square, PA
 
-Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. Newtown Square residents value efficiency and quality in how they manage their time, including their healthcare. For women in midlife managing demanding careers and family responsibilities, perimenopause and menopause care that's integrated, unhurried, and evidence-based is exactly what Forward Family Medicine delivers — across three offices all within about 20 minutes.
+Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. Newtown Square residents value efficiency and quality in how they manage their time, including their healthcare. For women in midlife managing demanding careers and family responsibilities, perimenopause and menopause care that's integrated, unhurried, and evidence-based is exactly what Forward Family Medicine delivers, across three offices all within about 25 minutes.
 
 ## Menopause Care at Forward Family Medicine
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Newtown Square residents have access to:
 
 - **Primary care at our Wayne office** (about 15 minutes from Newtown Square) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 20 minutes) or Malvern (about 15 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 20 minutes) or Malvern (about 22 to 25 minutes) offices. Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,7 +50,7 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Newtown Square Patients Choose Forward Family Medicine
 
-- **Three convenient offices** — Wayne (15 min), West Chester (20 min), Malvern (15 min)
+- **Three convenient offices:** Wayne (15 min), West Chester (20 min), Malvern (22 to 25 min)
 - **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
@@ -67,15 +67,15 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Newtown Square Patients
 
-**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 15 minutes via Route 252 north) and Malvern (301 Lindenwood Dr #206, about 15 minutes via Route 3 west to Route 252 north). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
-**Specialty menopause consultation:** Dr. Landi at Malvern (about 15 minutes) or West Chester (about 20 minutes), or telehealth
+**Closest primary care office:** Wayne, 295 Old Eagle School Road, about 15 minutes via Route 252 north. Wayne is open now and accepting new patients with Dr. Lieberman; Malvern, 301 Lindenwood Dr #206, is 12 miles and about 22 to 25 minutes, opening October 2026.
+**Specialty menopause consultation:** Dr. Landi at Malvern (about 22 to 25 minutes) or West Chester (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
 **Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
 **Which FFM office should Newtown Square patients establish at?**
-From Newtown Square: Wayne and Malvern are both about 15 minutes, and West Chester is about 20 minutes. Wayne is open now; Malvern and West Chester open October 2026. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
+From Newtown Square: Wayne is about 15 minutes, West Chester is about 20 minutes, and Malvern is about 22 to 25 minutes. Wayne is open now; Malvern and West Chester open October 2026. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.

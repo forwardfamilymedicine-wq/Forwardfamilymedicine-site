@@ -17,7 +17,7 @@ import { credentialLine, practiceNote, type HeroResult, type LocalCategory } fro
 import { getAvailability, formatMonthYear } from './availability';
 import { findTown, type Town } from '../data/towns';
 import { scenarios, type Scenario } from '../data/localScenarios';
-import { DROP_LABELS, KEEP_LABELS, REASSIGNED_DROP, labelMatches } from '../data/localPracticalLabels';
+import { DROP_LABELS, KEEP_LABELS, REASSIGNED_DROP, TRAVEL_LABELS, labelMatches } from '../data/localPracticalLabels';
 
 type Provider = CollectionEntry<'providers'>;
 type Location = CollectionEntry<'locations'>;
@@ -172,6 +172,23 @@ export function parsePractical(bodyHtml: string, slug: string, town: Town): { ke
     }
   }
   return { kept, dropped };
+}
+
+/**
+ * One practical-block row per office in `town.secondary`, labelled
+ * "{Office} office". The opening note comes from the `locations` collection,
+ * so it disappears by itself once that office's status flips to open.
+ */
+export function secondaryExtras(town: Town, locations: Location[]): Extra[] {
+  const out: Extra[] = [];
+  for (const [slug, phrase] of Object.entries(town.secondary ?? {})) {
+    if (!phrase || slug === town.office) continue;
+    const loc = locations.find(l => l.data.slug === slug);
+    if (!loc) throw new Error(`[local/${town.slug}] secondary office "${slug}" has no locations entry.`);
+    const opening = loc.data.status !== 'open' && loc.data.openingDate ? ` Opens ${formatMonthYear(loc.data.openingDate)}.` : '';
+    out.push({ label: `${loc.data.name} office`, value: `${phrase}${opening}` });
+  }
+  return out;
 }
 
 // ── Hero lede from the meta description ──────────────────────────────────────
@@ -343,10 +360,15 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
 
   // Practical information
   const { kept, dropped } = practicalSection ? parsePractical(practicalSection.bodyHtml, slug, town) : { kept: [], dropped: [] };
+  // Order: parking, the drive to the assigned office, any other office, then
+  // telehealth and the rest, so the block reads nearest office first.
+  const isTravel = (x: Extra) => startsWithAny(x.label, TRAVEL_LABELS);
   const extras: Extra[] = [];
   extras.push(...(OFFICE_EXTRAS[town.office] ?? []));
   if (town.reassigned && town.travel) extras.push({ label: `From ${town.name}`, value: town.travel });
-  extras.push(...kept);
+  extras.push(...kept.filter(isTravel));
+  extras.push(...secondaryExtras(town, locations));
+  extras.push(...kept.filter(x => !isTravel(x)));
   const d = office.data;
   const mapHref = d.addressStreet
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${d.addressStreet}, ${d.addressCity}, ${d.addressState} ${d.addressZip}`)}`

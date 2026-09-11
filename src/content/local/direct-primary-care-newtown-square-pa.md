@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/new-patients"
-localNote: "Newtown Square residents are typically 20 minutes from our Wayne office via Route 252 North or West Chester Pike. Newtown Square's family-friendly communities and established professional households are well-suited to the DPC model — predictable costs, unlimited access, and a doctor who knows you."
+localNote: "Newtown Square residents are about 15 minutes from our Wayne office via Route 252 North or West Chester Pike. Newtown Square's family-friendly communities and established professional households are well-suited to the DPC model — predictable costs, unlimited access, and a doctor who knows you."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
@@ -51,7 +51,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Newtown Square Patients
 
 **Distance from Newtown Square:** Approximately 7–8 miles north via Route 252 north to Route 30, or Route 3 west to Route 252 north
-**Drive time:** ~18–22 minutes
+**Drive time:** About 15 minutes
 **SEPTA:** No direct rail connection to Wayne from Newtown Square — telehealth is recommended for routine care
 **Telehealth:** All phone and video visits are included — practical for Newtown Square patients managing work and family schedules
 
@@ -61,7 +61,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Newtown Square is about 7–8 miles from Wayne. Many members use telehealth for routine care and come in for in-person visits when needed.
 
 **How far is Forward Family Medicine from Newtown Square, PA?**
-Approximately 7–8 miles north, typically a 18–22 minute drive via Route 252 or Route 3 to Route 252.
+Approximately 7–8 miles north, typically a 15-minute drive via Route 252 or Route 3 to Route 252.
 
 **Can Newtown Square patients use telehealth to reduce travel?**
 Yes — phone and video visits are included in all memberships. Most routine follow-ups, prescription questions, and minor illness concerns can be handled without a drive to Wayne.

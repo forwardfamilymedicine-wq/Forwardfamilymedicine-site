@@ -15,7 +15,7 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Media residents interested in the concierge medicine model often discover that the 30-minute drive to our Wayne office compares favorably to the typical concierge practice's annual retainer. We've structured our membership to be genuinely accessible while delivering on every core concierge promise: access, attention, and continuity."
+localNote: "Media residents interested in the concierge medicine model often discover that the 20-minute drive to our Wayne office compares favorably to the typical concierge practice's annual retainer. We've structured our membership to be genuinely accessible while delivering on every core concierge promise: access, attention, and continuity."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
@@ -47,7 +47,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Practical Information
 
 **Distance:** ~12 miles north via Route 252 or Baltimore Pike (Route 1) east to Route 252
-**Drive time:** ~25–30 minutes
+**Drive time:** About 20 minutes
 **SEPTA:** Media/Elwyn (R3) line connects to center city, not to Wayne — telehealth recommended
 **Telehealth:** All phone and video visits included
 

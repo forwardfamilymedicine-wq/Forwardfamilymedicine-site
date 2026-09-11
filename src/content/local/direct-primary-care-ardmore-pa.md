@@ -16,7 +16,7 @@ linksTo:
   - "/membership"
   - "/direct-primary-care"
   - "/new-patients"
-localNote: "Ardmore patients can reach our Wayne office in about 20 minutes via Lancaster Avenue or the Paoli–Thorndale SEPTA line. Ardmore's mix of young professionals and established families has found DPC appealing as a way to get the kind of primary care time and attention that's increasingly rare in larger practice settings."
+localNote: "Ardmore patients can reach our Wayne office in about 15 minutes via Lancaster Avenue or the Paoli–Thorndale SEPTA line. Ardmore's mix of young professionals and established families has found DPC appealing as a way to get the kind of primary care time and attention that's increasingly rare in larger practice settings."
 nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 ---
 
@@ -50,7 +50,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Ardmore Patients
 
 **Distance from Ardmore:** Approximately 6 miles west on Lancaster Avenue
-**Drive time:** ~12–14 minutes
+**Drive time:** About 15 minutes
 **SEPTA:** Ardmore Station on the Paoli–Thorndale (R5) line — 4–5 stops from Wayne Station. Easy SEPTA commute for patients who prefer transit.
 **Telehealth:** All phone and video visits are included in membership — great for routine follow-ups and minor concerns
 
@@ -60,7 +60,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Ardmore is well-connected to Wayne by Route 30 and the Paoli–Thorndale SEPTA line. Many of our members commute from Ardmore.
 
 **How far is Forward Family Medicine from Ardmore, PA?**
-About 6 miles west on Lancaster Avenue. Drive time is roughly 12–14 minutes. Ardmore Station on the Paoli–Thorndale (R5) line is about 4–5 stops from Wayne.
+About 6 miles west on Lancaster Avenue. Drive time is about 15 minutes. Ardmore Station on the Paoli–Thorndale (R5) line is about 4–5 stops from Wayne.
 
 **Can Ardmore patients use telehealth for routine care?**
 Absolutely. Phone and video visits are included for all members, reducing the need for in-person trips for follow-ups and minor concerns.

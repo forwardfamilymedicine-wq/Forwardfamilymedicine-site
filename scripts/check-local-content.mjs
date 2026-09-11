@@ -17,6 +17,7 @@
  *   allowlist    every discarded Practical Information label is on the drop
  *                list (or the reassigned-town list); anything else fails
  *   frontmatter  localNote and the nearby-neighbourhoods sentence appear
+ *   secondary    every secondary-office phrase in the town map appears
  *
  * A `linksTo` entry for the West Chester office page is an allowed drop on
  * the six reassigned towns. There is deliberately no snapshot comparison:
@@ -221,6 +222,14 @@ for (const file of readdirSync(contentDir).filter(f => f.endsWith('.md')).sort()
   counts.extras = `${keptOk}/${kept}`;
   counts.discarded = `${discarded.length} practical + ${exp.contact.length} contact`;
 
+  // secondary offices from the town map (Town.secondary)
+  const secondary = Object.entries(exp.town?.secondary ?? {});
+  let secOk = 0;
+  for (const [office, phrase] of secondary) {
+    if (page.text.includes(norm(phrase))) secOk++; else problems.push(`secondary office missing (${office}): ${phrase}`);
+  }
+  counts.secondary = secondary.length ? `${secOk}/${secondary.length}` : '-';
+
   // frontmatter prose
   for (const t of exp.frontmatterTexts) if (!page.text.includes(t)) problems.push(`frontmatter text missing: ${t.slice(0, 80)}`);
 
@@ -231,7 +240,7 @@ for (const file of readdirSync(contentDir).filter(f => f.endsWith('.md')).sort()
 // ── Report ───────────────────────────────────────────────────────────────────
 for (const r of report) {
   const c = r.counts;
-  console.log(`${r.ok ? 'ok  ' : 'FAIL'} ${r.slug.padEnd(38)} links ${c.links}  faq ${c.faq}  prose ${c.prose}  replacement ${c.replacement}  extras ${c.extras}  discarded ${c.discarded}`);
+  console.log(`${r.ok ? 'ok  ' : 'FAIL'} ${r.slug.padEnd(38)} links ${c.links}  faq ${c.faq}  prose ${c.prose}  replacement ${c.replacement}  extras ${c.extras}  secondary ${c.secondary}  discarded ${c.discarded}`);
   if (verbose && r.discarded.length) console.log(`       discarded labels: ${r.discarded.join(', ')}`);
   for (const p of r.problems) console.log(`       ${p}`);
 }

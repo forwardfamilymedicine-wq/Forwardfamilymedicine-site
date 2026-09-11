@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Coatesville, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 min) offices. Direct physician access, 1–2 hour visits, telehealth included."
+description: "Concierge-style primary care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 to 28 min) offices. Direct physician access, 1–2 hour visits, telehealth included."
 keywords:
   - concierge doctor Coatesville PA
   - concierge medicine Coatesville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Coatesville residents from our West Chester office (about 20–25 minutes) and Malvern office (about 25–30 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth is included for established patients."
+localNote: "Forward Family Medicine serves Coatesville residents from our West Chester office (about 20–25 minutes) and Malvern office (about 25 to 28 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth is included for established patients."
 nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 ---
 
@@ -30,12 +30,12 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About Coatesville, PA
 
-Coatesville is Chester County's only city — an industrial community with a steel-making heritage and a workforce that deserves the same quality of healthcare access as residents in higher-income parts of the county. The closure of Brandywine Hospital in 2022 reduced local healthcare options substantially, and finding a primary care physician who has time for a real conversation remains harder here than it should be. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a practical alternative: a physician who knows you, direct access, and a model built for people who are serious about their health.
+Coatesville is an industrial community with a steel-making heritage and a workforce that deserves the same quality of healthcare access as residents in higher-income parts of the county. The closure of Brandywine Hospital in 2022 reduced local healthcare options substantially, and finding a primary care physician who has time for a real conversation remains harder here than it should be. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a practical alternative: a physician who knows you, direct access, and a model built for people who are serious about their health.
 
 ## Why Coatesville Patients Choose This Practice
 
 - **West Chester office ~20–25 min from Coatesville** — opening October 2026
-- **Malvern office ~25–30 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 17 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Coatesville Patients
 
 **Closest FFM office:** West Chester — about 20–25 minutes via PA-82 south or US-30 east. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 25–30 minutes via US-30 east. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 17 miles, about 25 to 28 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 30–35 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included — follow-ups and acute care without the drive
 

@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care through our Wayne office at 295 Old Eagle School Road, with our Wayne physicians integrating menopause into family primary care. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our West Chester and Malvern offices (about 30 minutes from Wayne) or via telehealth."
+localNote: "Forward Family Medicine offers comprehensive menopause care through our Wayne office at 295 Old Eagle School Road, with our Wayne physicians integrating menopause into family primary care. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our Malvern office (8 miles, about 15 to 18 minutes from Wayne) or West Chester office (about 30 minutes), or via telehealth."
 nearbyNeighborhoods: "Radnor, Strafford, Berwyn, and Devon"
 ---
 
@@ -34,7 +34,7 @@ Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Pao
 
 Menopause care at Forward Family Medicine isn't a referral or an add-on — it's part of how every visit works. At our Wayne flagship office, our physicians integrate perimenopause and menopause care into family primary care: symptom evaluation, hormone considerations, cardiovascular and bone health monitoring, lifestyle integration. Visit lengths of 1–2 hours allow real depth.
 
-For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) will see patients at our West Chester and Malvern offices when they open in October 2026, about 30 minutes west of Wayne. Members can see Dr. Landi in person at either office or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
+For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) will see patients at our Malvern office (8 miles, about 15 to 18 minutes west of Wayne) and our West Chester office (about 30 minutes west) when they open in October 2026. Members can see Dr. Landi in person at either office or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -50,7 +50,7 @@ For patients who want dedicated Menopause Society Certified Practitioner-level c
 
 - **In-person primary care in Wayne** — 295 Old Eagle School Road, STE 2, currently accepting new patients with Dr. Lieberman
 - Menopause integrated into every primary care visit, not siloed off
-- **Dedicated MSCP specialty access** through Dr. Landi at our West Chester or Malvern offices (~30 minutes) or by telehealth
+- **Dedicated MSCP specialty access** through Dr. Landi at our Malvern office (about 15 to 18 minutes) or West Chester office (about 30 minutes), or by telehealth
 - 1–2 hour visits — long enough to address menopause symptoms alongside everything else
 - ~250-patient panel per physician — direct access by phone, text, or message
 - All menopause care included in DPC membership — no separate consultation fees, no out-of-network surprises

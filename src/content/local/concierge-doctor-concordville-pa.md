@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Concordville, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
+description: "Concierge-style primary care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (25 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
 keywords:
   - concierge doctor Concordville PA
   - concierge medicine Concordville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Concordville residents from our West Chester office (about 10–15 minutes) and Malvern office (about 15–20 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine serves Concordville residents from our West Chester office (about 10–15 minutes) and Malvern office (about 25 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 ---
 
@@ -35,7 +35,7 @@ Concordville is a historic Delaware County community settled by Quakers in the 1
 ## Why Concordville Patients Choose This Practice
 
 - **West Chester office ~10–15 min from Concordville** — opening October 2026
-- **Malvern office ~15–20 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 18 miles, about 25 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Concordville Patients
 
 **Closest FFM office:** West Chester — about 10–15 minutes via US-1 north to PA-202. Opening October 2026.
-**Also convenient:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via US-202 north. Opening October 2026.
+**Also convenient:** Malvern, 301 Lindenwood Dr #206, 18 miles, about 25 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 

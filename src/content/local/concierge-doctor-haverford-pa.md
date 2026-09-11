@@ -15,7 +15,7 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Haverford patients who've looked into concierge medicine often find the retainer pricing puts it out of reach for most families. Our Wayne office is a 20–25 minute drive, and our DPC model delivers the same core concierge promises — direct physician access, extended visits, no copays — within a family-budget membership structure."
+localNote: "Haverford patients who've looked into concierge medicine often find the retainer pricing puts it out of reach for most families. Our Wayne office is about a 15-minute drive, and our DPC model delivers the same core concierge promises (direct physician access, extended visits, no copays) within a family-budget membership structure."
 nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
 

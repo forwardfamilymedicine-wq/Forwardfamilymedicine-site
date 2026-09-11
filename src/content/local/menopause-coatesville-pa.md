@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Coatesville, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 min) offices. Perimenopause management, HRT consultation, telehealth included."
+description: "Menopause Society Certified menopause care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 to 28 min) offices. Perimenopause management, HRT consultation, telehealth included."
 keywords:
   - menopause care Coatesville PA
   - perimenopause Coatesville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Coatesville residents through Dr. Brian Landi, DO at our West Chester office (about 20–25 minutes) and Malvern office (about 25–30 minutes). Telehealth is included in membership for follow-up visits."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Coatesville residents through Dr. Brian Landi, DO at our West Chester office (about 20–25 minutes) and Malvern office (about 25 to 28 minutes). Telehealth is included in membership for follow-up visits."
 nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 ---
 
@@ -26,13 +26,13 @@ nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 
 ## About Coatesville, PA
 
-Coatesville is Chester County's only incorporated city — with a steel-making heritage, a diverse community, and a Coatesville VA Medical Center that serves veterans across the region. The closure of Brandywine Hospital in 2022 reduced local healthcare options, and women here seeking specialist-level menopause care often face limited local choices. Forward Family Medicine's West Chester office — about 20–25 minutes east — brings Menopause Society Certified care within reach, with telehealth available for follow-ups so the drive doesn't define the relationship.
+Coatesville is a Chester County community with a steel-making heritage, a diverse population, and the Coatesville VA Medical Center, which serves veterans across the region. The closure of Brandywine Hospital in 2022 reduced local healthcare options, and women here seeking specialist-level menopause care often face limited local choices. Forward Family Medicine's West Chester office — about 20–25 minutes east — brings Menopause Society Certified care within reach, with telehealth available for follow-ups so the drive doesn't define the relationship.
 
 ## Menopause Society Certified Care, Accessible from Coatesville
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our West Chester office (about 20–25 minutes from Coatesville, opening October 2026) and Malvern office (about 25–30 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many follow-ups and consultations can happen by phone or video. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our West Chester office (about 20–25 minutes from Coatesville, opening October 2026) and Malvern office (about 25 to 28 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many follow-ups and consultations can happen by phone or video. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our West Chester office (about 20–25 minutes from Coate
 ## Why Coatesville Patients Choose This Practice
 
 - **West Chester office ~20–25 min from Coatesville** — opening October 2026
-- **Malvern office ~25–30 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 17 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Coatesville Patients
 
 **Closest FFM office:** West Chester — about 20–25 minutes via PA-82 south or US-30 east. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 25–30 minutes via US-30 east. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 17 miles, about 25 to 28 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 30–35 minutes via US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Coatesville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Coatesville, PA residents with Dr. Brian Landi at our West Chester (20 min) and Malvern (25 to 28 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Coatesville PA
   - DPC Coatesville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Coatesville residents across three offices: West Chester (about 20–25 minutes via PA-82 south or US-30 east), Malvern (about 25–30 minutes via US-30 east), and Wayne (about 30–35 minutes via US-30 east). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included for established patients."
+localNote: "Forward Family Medicine serves Coatesville residents across three offices: West Chester (about 20–25 minutes via PA-82 south or US-30 east), Malvern (about 25 to 28 minutes), and Wayne (about 30–35 minutes via US-30 east). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included for established patients."
 nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 ---
 
@@ -30,12 +30,12 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Coatesville, PA
 
-Coatesville is the only incorporated city in Chester County — a community with deep industrial roots in steel manufacturing, a diverse population, and a revitalization underway along its Route 30 corridor. The closure of Brandywine Hospital in 2022 left a significant gap in local healthcare access, and residents have since navigated more limited options for primary care. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a genuine alternative: a physician who knows you, same-day access when you need it, and visits built for real conversation, not a five-minute check-in.
+Coatesville is a Chester County community with deep industrial roots in steel manufacturing, a diverse population, and a revitalization underway along its Route 30 corridor. The closure of Brandywine Hospital in 2022 left a significant gap in local healthcare access, and residents have since navigated more limited options for primary care. Forward Family Medicine's West Chester office — about 20–25 minutes east — offers a genuine alternative: a physician who knows you, same-day access when you need it, and visits built for real conversation, not a five-minute check-in.
 
 ## Why Coatesville Patients Choose Forward Family Medicine
 
 - **West Chester office ~20–25 min from Coatesville** — opening October 2026
-- **Malvern office ~25–30 min** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 17 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Coatesville Patients
 
 **Closest FFM office:** West Chester — about 20–25 minutes via PA-82 south or US-30 east. Opening October 2026.
-**Also available:** Malvern — 301 Lindenwood Dr #206, about 25–30 minutes via US-30 east. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 17 miles, about 25 to 28 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 30–35 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership — many follow-up and acute visits work well without the drive
 

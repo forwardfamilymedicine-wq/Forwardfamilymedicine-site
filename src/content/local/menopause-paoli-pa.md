@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Paoli, PA | Forward Family Medicine"
-description: "Comprehensive menopause care for Paoli, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (10 min) and telehealth across all three offices."
+description: "Comprehensive menopause care for Paoli, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (12 to 15 min) and telehealth across all three offices."
 keywords:
   - menopause care Paoli PA
   - perimenopause Paoli Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Paoli residents across three offices: Wayne (about 10 minutes), West Chester (about 20 minutes), and Malvern (about 10 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Paoli residents across three offices: Wayne (about 12 to 15 minutes), West Chester (about 20 minutes), and Malvern (about 8 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Devon, Malvern, Berwyn, and Frazer"
 ---
 
@@ -32,8 +32,8 @@ Paoli is the western anchor of the Philadelphia Main Line — a Chester County c
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Paoli residents have access to:
 
-- **Primary care at our Wayne office** (about 10 minutes from Paoli) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 20 minutes) or Malvern (about 10 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Primary care at our Wayne office** (about 12 to 15 minutes from Paoli). Our Wayne physicians provide menopause care as part of comprehensive family medicine
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 20 minutes) or Malvern (about 8 minutes) offices. Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,7 +50,7 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Paoli Patients Choose Forward Family Medicine
 
-- **Three convenient offices** — Wayne (10 min), West Chester (20 min), Malvern (10 min)
+- **Three convenient offices:** Wayne (12 to 15 min), West Chester (20 min), Malvern (8 min)
 - **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
@@ -67,15 +67,15 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Paoli Patients
 
-**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 10 minutes east on Route 30) and Malvern (301 Lindenwood Dr #206, about 10 minutes south). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
-**Specialty menopause consultation:** Dr. Landi at Malvern (about 10 minutes) or West Chester (about 20 minutes), or telehealth
+**Closest primary care offices:** Wayne (295 Old Eagle School Road, about 12 to 15 minutes east on Route 30) and Malvern (301 Lindenwood Dr #206, 3 miles, about 8 minutes). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
+**Specialty menopause consultation:** Dr. Landi at Malvern (about 8 minutes) or West Chester (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
 **Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
 **Which FFM office should Paoli patients establish at?**
-From Paoli: Wayne and Malvern are each about 10 minutes, and West Chester is about 20 minutes. Wayne is open now; Malvern and West Chester open October 2026. Specialty menopause consultation with Dr. Landi is available at Malvern or West Chester, or by telehealth — regardless of where you establish primary care.
+From Paoli: Malvern is about 8 minutes, Wayne is about 12 to 15 minutes, and West Chester is about 20 minutes. Wayne is open now; Malvern and West Chester open October 2026. Specialty menopause consultation with Dr. Landi is available at Malvern or West Chester, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.

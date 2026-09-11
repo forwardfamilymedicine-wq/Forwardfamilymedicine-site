@@ -15,7 +15,7 @@ linksTo:
   - "/concierge-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Newtown Square patients seeking concierge-style medicine will find our Wayne office approximately 20 minutes north via Route 252. Our practice panel is intentionally capped — we limit patients per physician to ensure same-day availability and the kind of attention that makes concierge medicine worth pursuing."
+localNote: "Newtown Square patients seeking concierge-style medicine will find our Wayne office about 15 minutes north via Route 252. Our practice panel is intentionally capped — we limit patients per physician to ensure same-day availability and the kind of attention that makes concierge medicine worth pursuing."
 nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 ---
 
@@ -47,7 +47,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Practical Information
 
 **Distance:** ~7–8 miles north via Route 252 or Route 3 to Route 252
-**Drive time:** ~18–22 minutes
+**Drive time:** About 15 minutes
 **SEPTA:** No direct rail connection — telehealth recommended for routine care
 **Telehealth:** All phone and video visits included
 

@@ -15,7 +15,7 @@ linksTo:
   - "/lifestyle-medicine"
   - "/membership"
   - "/new-patients"
-localNote: "Bryn Mawr patients interested in lifestyle medicine can reach our Wayne office in 15–20 minutes along Lancaster Avenue. Bryn Mawr's educated, health-aware community — including many college-affiliated residents — has been particularly receptive to evidence-based approaches to prevention and chronic condition management."
+localNote: "Bryn Mawr patients interested in lifestyle medicine can reach our Wayne office in about 15 minutes along Lancaster Avenue. Bryn Mawr's educated, health-aware community — including many college-affiliated residents — has been particularly receptive to evidence-based approaches to prevention and chronic condition management."
 nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 ---
 

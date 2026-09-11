@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Media, PA | Forward Family Medicine"
-description: "Comprehensive menopause care for Media, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (25 min) and telehealth across all three offices."
+description: "Comprehensive menopause care for Media, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (20 min) and telehealth across all three offices."
 keywords:
   - menopause care Media PA
   - perimenopause Media Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Media residents across three offices: Wayne (about 25 minutes), West Chester (about 20 minutes), and Malvern (about 25 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Media residents across three offices: Wayne (about 20 minutes), West Chester (about 20 minutes), and Malvern (about 28 to 32 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 ---
 
@@ -26,14 +26,14 @@ nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 
 ## About Media, PA
 
-Media is Delaware County's "everybody's hometown" — a walkable borough with a distinctive Main Street, a strong sense of community, and a mix of long-established families and newcomers drawn by its character and its position as Delaware County's seat. Media residents value genuine relationships, including with their physicians. That expectation is especially important at midlife: perimenopause and menopause unfold over years, and they deserve a care relationship built on depth — not rushed appointments with physicians who have 25 other patients waiting. Forward Family Medicine is accessible from Media via multiple routes, with our West Chester office the closest at about 20 minutes.
+Media is Delaware County's "everybody's hometown" — a walkable borough with a distinctive Main Street, a strong sense of community, and a mix of long-established families and newcomers drawn by its character and its position as Delaware County's seat. Media residents value genuine relationships, including with their physicians. That expectation is especially important at midlife: perimenopause and menopause unfold over years, and they deserve a care relationship built on depth — not rushed appointments with physicians who have 25 other patients waiting. Forward Family Medicine is accessible from Media via multiple routes: our Wayne office is about 20 minutes away and open now, and our West Chester office, also about 20 minutes, opens in October 2026.
 
 ## Menopause Care at Forward Family Medicine
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Media residents have access to:
 
-- **Primary care at our Wayne office** (about 25 minutes from Media) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 20 minutes) or Malvern (about 25 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Primary care at our Wayne office** (about 20 minutes from Media). Our Wayne physicians provide menopause care as part of comprehensive family medicine
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 20 minutes) or Malvern (about 28 to 32 minutes) offices. Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,7 +50,7 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Media Patients Choose Forward Family Medicine
 
-- **Three accessible offices** — West Chester (20 min), Wayne (25 min), Malvern (25 min)
+- **Three accessible offices:** Wayne (20 min), West Chester (20 min), Malvern (28 to 32 min)
 - **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
@@ -67,15 +67,15 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Media Patients
 
-**Closest office to Media:** West Chester — about 20 minutes via Route 352 north or Baltimore Pike to Route 322. Opening October 2026; Wayne (about 25 min) is open now and accepting new patients with Dr. Lieberman.
-**Specialty menopause consultation:** Dr. Landi at West Chester (about 20 minutes) or Malvern (about 25 minutes), or telehealth
+**Closest offices to Media:** Wayne, about 20 minutes, open now and accepting new patients with Dr. Lieberman; West Chester, about 20 minutes via Route 352 north or Baltimore Pike to Route 322, opening October 2026.
+**Specialty menopause consultation:** Dr. Landi at West Chester (about 20 minutes) or Malvern (about 28 to 32 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients — an excellent option for Media patients managing the distance
 **Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
 **Which FFM office should Media patients establish at?**
-From Media: West Chester is about 20 minutes and will be the closest once it opens in October 2026. Wayne is about 25 minutes and is open now, currently accepting new patients with Dr. Lieberman. Malvern is about 25 minutes. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
+From Media: Wayne is about 20 minutes and is open now, currently accepting new patients with Dr. Lieberman. West Chester is also about 20 minutes and opens in October 2026. Malvern is about 28 to 32 minutes. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.
