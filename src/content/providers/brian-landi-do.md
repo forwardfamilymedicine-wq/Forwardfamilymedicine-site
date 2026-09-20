@@ -39,7 +39,7 @@ sameAs:
   - "https://npiregistry.cms.hhs.gov/provider-view/1578213062"
   - "https://www.doximity.com/pub/brian-landi-do"
 acceptingNewPatients: true
-acceptingNewPatientsNote: "Dr. Landi sees patients at our West Chester and Malvern offices in Chester County."
+acceptingNewPatientsNote: "Dr. Landi's office is in Malvern, with telehealth visits available. A West Chester location is planned."
 displayOrder: 2
 ---
 

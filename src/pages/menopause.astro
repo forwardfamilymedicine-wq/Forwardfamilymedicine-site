@@ -7,10 +7,22 @@ import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
+import { formatMonthYear } from '../utils/availability';
 
 const allProviders = await getCollection('providers');
 const landi = allProviders.find(p => p.id === 'brian-landi-do');
 const d = landi?.data;
+
+// Malvern is the only office a patient can go to. Its opening month comes from
+// the locations entry, never hardcoded, and the opening copy drops out the
+// moment that entry's status flips to "open".
+const malvern = (await getCollection('locations')).find(l => l.data.slug === 'malvern');
+if (!malvern) throw new Error('[menopause] no locations entry has the slug "malvern".');
+const malvernOpen = malvern.data.status === 'open';
+if (!malvernOpen && !malvern.data.openingDate) {
+  throw new Error(`[menopause] locations/malvern is "${malvern.data.status}" but has no openingDate.`);
+}
+const malvernOpening = malvernOpen ? '' : formatMonthYear(malvern.data.openingDate!);
 
 // Town list is derived from the local collection, never hardcoded, so a new
 // /local/menopause-*.md file appears here the moment it is added.
@@ -40,16 +52,6 @@ const physicianSchema = {
     "url": "https://www.forwardfamilymedicine.com"
   },
   "workLocation": [
-    {
-      "@type": "MedicalClinic",
-      "name": "Forward Family Medicine — West Chester",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "West Chester",
-        "addressRegion": "PA",
-        "postalCode": "19380"
-      }
-    },
     {
       "@type": "MedicalClinic",
       "name": "Forward Family Medicine — Malvern",
@@ -83,22 +85,24 @@ const faqs = [
   },
   {
     q: 'Where is Dr. Landi located?',
-    a: 'Dr. Landi sees patients at our Chester County locations — West Chester and Malvern (301 Lindenwood Dr #206). He is not at the Wayne office; Dr. Bigley and Dr. Lieberman remain there.',
+    a: malvernOpen
+      ? 'Dr. Landi sees patients at our Malvern office, at 301 Lindenwood Dr #206, and by telehealth. He is accepting new patients now. A West Chester location is planned. He is not at the Wayne office; Dr. Bigley and Dr. Lieberman remain there.'
+      : `Dr. Landi's office is in Malvern, at 301 Lindenwood Dr #206, opening ${malvernOpening}. He is accepting new patients now, with meet and greets and telehealth visits available today. A West Chester location is planned. He is not at the Wayne office; Dr. Bigley and Dr. Lieberman remain there.`,
   },
   {
     q: 'Can menopause visits be done by telehealth?',
     a: 'Yes — many menopause check-ins, follow-ups, and HRT titration conversations work well by phone or video. Initial intake and any visit requiring physical examination is in-person.',
   },
   {
-    q: "I'm not in West Chester or Malvern. Can I still see Dr. Landi?",
-    a: 'Yes. Members can be seen at any of our locations, and telehealth makes ongoing care accessible regardless of where you live. The Chester County offices are most convenient if you\'re in West Chester, Malvern, Exton, Glen Mills, Concordville, Kennett Square, or surrounding communities.',
+    q: "I don't live near Malvern. Can I still see Dr. Landi?",
+    a: "Yes. Many menopause follow-ups and hormone therapy check-ins work well by phone or video, so ongoing care is accessible wherever you live. In-person visits are at our Malvern office, which is most convenient if you're in Malvern, Paoli, Exton, West Chester, Downingtown, or surrounding communities.",
   },
 ];
 ---
 
 <MainLayout
-  title="Menopause Care | Forward Family Medicine | West Chester + Malvern, PA"
-  description="Evidence-based menopause care in West Chester and Malvern, PA. Menopause Society Certified Practitioner, 1–2 hour visits, included in DPC membership."
+  title="Menopause Care | Forward Family Medicine | Malvern, PA"
+  description="Evidence-based menopause care in Malvern, PA and by telehealth across the Main Line and Chester County. Menopause Society Certified Practitioner, 1 to 2 hour visits, included in DPC membership."
   schema={[breadcrumb, physicianSchema]}
 >
   <!-- Hero -->
@@ -153,7 +157,7 @@ const faqs = [
             <li class="badge badge-accent">Menopause Society Certified Practitioner (MSCP)</li>
             <li class="badge badge-accent">Family Medicine Board-Certified (AOBFP)</li>
             <li class="badge">Direct Primary Care Model</li>
-            <li class="badge">West Chester + Malvern Locations</li>
+            <li class="badge">{malvernOpen ? 'Malvern office' : `Malvern office, opening ${malvernOpening}`}</li>
           </ul>
         </div>
       </div>
@@ -360,7 +364,7 @@ const faqs = [
               <span class="timeline-dot" aria-hidden="true"></span>
               <div>
                 <strong>Forward Family Medicine — accepting new patients now</strong>
-                <span>West Chester and Malvern offices open October 2026</span>
+                <span>{malvernOpen ? 'Malvern office now open.' : `Malvern office opens ${malvernOpening}.`} West Chester location planned.</span>
               </div>
             </div>
           </div>
@@ -389,7 +393,7 @@ const faqs = [
 
   <CTABanner
     headline="Schedule a Meet &amp; Greet with Dr. Landi"
-    subhead="Dr. Landi is accepting new patients now. 20 minutes, no obligation, at West Chester or Malvern."
+    subhead="Dr. Landi is accepting new patients now. 20 minutes, no obligation, at our Malvern office or by video."
     btnText="Schedule Now"
     btnHref="/contact/?source=menopause"
   />
