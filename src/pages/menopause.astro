@@ -31,6 +31,21 @@ const menopauseTowns = (await getCollection('local'))
   .filter(t => t.slug.startsWith('menopause-') && t.label)
   .sort((a, b) => a.label.localeCompare(b.label));
 
+// The library cluster, in reading order. Titles and descriptions come from the
+// lifestyle collection, never retyped, and a slug with no entry fails the build.
+const LIBRARY_READING_ORDER = [
+  'perimenopause-early-forties',
+  'what-a-menopause-visit-should-cover',
+  'hormone-therapy-evidence-2026',
+  'bone-and-heart-after-menopause',
+];
+const lifestyleEntries = await getCollection('lifestyle');
+const libraryArticles = LIBRARY_READING_ORDER.map(slug => {
+  const entry = lifestyleEntries.find(e => e.id.replace(/\.mdx?$/, '') === `menopause/${slug}`);
+  if (!entry) throw new Error(`[menopause] no lifestyle entry at menopause/${slug}.`);
+  return { href: `/lifestyle/menopause/${slug}/`, title: entry.data.title, description: entry.data.description };
+});
+
 const breadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -389,6 +404,25 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Library cluster: the hub's return link to the four menopause articles,
+       so the cluster works in both directions. -->
+  <section class="menopause-library section" aria-label="Menopause articles">
+    <div class="container">
+      <span class="section-label">From Our Library</span>
+      <h2>Read More About the Menopause Transition</h2>
+      <div class="divider"></div>
+      <div class="library-grid">
+        {libraryArticles.map(a => (
+          <a href={a.href} class="library-card card">
+            <h3>{a.title}</h3>
+            <p>{a.description}</p>
+          </a>
+        ))}
+      </div>
+      <p class="library-more"><a href="/lifestyle/menopause/">See the full menopause reading guide</a></p>
+    </div>
+  </section>
+
   <FAQSection faqs={faqs} headline="Menopause Care FAQs" label="FAQ" />
 
   <CTABanner
@@ -604,5 +638,33 @@ const faqs = [
   .menopause-reviews-single {
     max-width: 620px;
     margin: 2rem auto 0;
+  }
+
+  /* Library cluster */
+  .library-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .library-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .library-card:hover,
+  .library-card:focus-visible {
+    box-shadow: var(--shadow-md, 0 6px 20px rgba(0,0,0,0.08));
+    transform: translateY(-2px);
+  }
+  .library-card h3 { font-size: 1.05rem; color: var(--green-500); }
+  .library-card p { font-size: 0.9rem; color: var(--ink-700); margin: 0; }
+  .library-more { margin-top: 1.5rem; font-weight: 600; }
+  .library-more a { color: var(--green-300); }
+  @media (max-width: 900px) {
+    .library-grid { grid-template-columns: 1fr; }
   }
 </style>
