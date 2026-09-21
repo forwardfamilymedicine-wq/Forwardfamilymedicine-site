@@ -21,7 +21,7 @@ export const KEEP_LABELS = [
 ];
 
 /**
- * On the six towns whose real nearest office is West Chester, these lines
+ * On the reassigned towns, whose real nearest office is West Chester, these lines
  * contradict the Malvern address above them; the town map's travel phrase
  * replaces them.
  */

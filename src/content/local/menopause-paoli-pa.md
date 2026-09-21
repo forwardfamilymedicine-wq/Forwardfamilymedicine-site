@@ -70,12 +70,12 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 **Closest primary care offices:** Wayne (295 Old Eagle School Road, about 12 to 15 minutes east on Route 30) and Malvern (301 Lindenwood Dr #206, 3 miles, about 8 minutes). Wayne is open now and accepting new patients with Dr. Lieberman; Malvern opens October 2026.
 **Specialty menopause consultation:** Dr. Landi at Malvern (about 8 minutes) or West Chester (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
-**Status:** Wayne currently accepting new patients with Dr. Lieberman; West Chester and Malvern opening October 2026 (Dr. Landi is accepting new patients now)
+**Status:** Wayne currently accepting new patients with Dr. Lieberman; Malvern opening October 2026, West Chester planned (Dr. Landi is accepting new patients now)
 
 ## Frequently Asked Questions
 
 **Which FFM office should Paoli patients establish at?**
-From Paoli: Malvern is about 8 minutes, Wayne is about 12 to 15 minutes, and West Chester is about 20 minutes. Wayne is open now; Malvern and West Chester open October 2026. Specialty menopause consultation with Dr. Landi is available at Malvern or West Chester, or by telehealth — regardless of where you establish primary care.
+From Paoli: Malvern is about 8 minutes, Wayne is about 12 to 15 minutes, and West Chester is about 20 minutes. Wayne is open now, Malvern opens October 2026, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.
@@ -89,7 +89,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 ## Contact & Practice Information
 
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
-**West Chester Office (opening October 2026):** West Chester, PA 19380
+**West Chester Office (planned):** West Chester, PA 19380
 **Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

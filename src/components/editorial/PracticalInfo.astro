@@ -15,8 +15,10 @@ export interface Props {
   detailsHref?: string;
   /** "October 2026" for an office that has not opened; shown first in the Office row. */
   opening?: string;
+  /** Lead-in above the list, for a town whose own office is only planned. */
+  notice?: string;
 }
-const { address, phone, fax, email, hours = [], extras = [], mapHref, detailsHref, opening } = Astro.props;
+const { address, phone, fax, email, hours = [], extras = [], mapHref, detailsHref, opening, notice } = Astro.props;
 
 function telHref(display: string) {
   const digits = display.replace(/\D/g, '');
@@ -39,6 +41,7 @@ const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
 ---
 
 <div class="ed-info">
+  {notice && <p class="ed-info__notice">{notice}</p>}
   <dl class="ed-info__list">
     <div class="ed-info__row">
       <dt>Office</dt>
@@ -92,6 +95,12 @@ const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
 </div>
 
 <style>
+  .ed-info__notice {
+    margin: 0 0 var(--space-l);
+    max-width: 46rem;
+    color: var(--ink-700);
+    line-height: 1.6;
+  }
   .ed-info__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

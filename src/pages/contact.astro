@@ -2,6 +2,8 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
 import { getCollection } from 'astro:content';
+import { isPlanned } from '../utils/physicianRouting';
+import { formatMonthYear } from '../utils/availability';
 
 const locations = (await getCollection('locations'))
   .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
@@ -18,7 +20,7 @@ const breadcrumb = {
 
 <MainLayout
   title="Schedule a Meet & Greet | Forward Family Medicine Wayne PA"
-  description="Schedule a free meet and greet at Forward Family Medicine. No obligation, no commitment. Meet our physicians in Wayne, West Chester, or Malvern, PA and see if we're the right fit for you."
+  description="Schedule a free meet and greet at Forward Family Medicine. No obligation, no commitment. Meet our physicians in Wayne or Malvern, PA and see if we're the right fit for you."
   schema={breadcrumb}
 >
   <!-- Hero -->
@@ -80,7 +82,7 @@ const breadcrumb = {
               <address style="font-style:normal;">
                 West Chester, PA 19380
               </address>
-              <span style="font-size:0.8rem; font-style:italic; color:var(--ink-500);">Coming October 2026</span>
+              <span style="font-size:0.8rem; font-style:italic; color:var(--ink-500);">Planned location</span>
             </div>
           </div>
 
@@ -162,27 +164,26 @@ const breadcrumb = {
       <h2>Our Locations</h2>
       <div class="divider"></div>
       <p class="section-intro" style="margin-bottom:2.5rem;">
-        Wayne (open) and Chester County (West Chester and Malvern, opening October 2026). Each location offers the same Forward Family Medicine experience.
+        Wayne is open, Malvern opens October 2026, and a West Chester office is planned. Each location offers the same Forward Family Medicine experience.
       </p>
 
       <div class="locations-cards-grid">
         {locations.map(loc => {
           const d = loc.data;
           const isOpen = d.status === 'open';
-          const isFuture = !isOpen && d.openingDate;
-          const openingLabel = isFuture
-            ? (() => { const [y, m] = d.openingDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })()
-            : null;
+          // Coming soon with no opening date is a planned office: the badge
+          // says so and never shows a month.
+          const planned = isPlanned(loc);
           return (
             <article class={`location-card${isOpen ? '' : ' coming-soon'}`}>
               {isOpen ? (
                 <span class="location-card-badge open">Now Open</span>
               ) : (
-                <span class="location-card-badge future">Opening {openingLabel}</span>
+                <span class="location-card-badge future">{planned ? 'Planned' : `Opening ${formatMonthYear(d.openingDate!)}`}</span>
               )}
               <h3>{d.name}</h3>
               <address class="location-card-address">
-                {d.addressStreet}<br />
+                {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
                 {d.addressCity}, {d.addressState} {d.addressZip}
               </address>
               {d.phone && (

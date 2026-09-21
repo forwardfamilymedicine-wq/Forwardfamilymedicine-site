@@ -32,7 +32,7 @@ Exton is a Chester County community at the crossroads of US Route 30 and PA Rout
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 10 minutes from Exton, opening October 2026) and West Chester office (about 12–15 minutes, opening October 2026). Both offices offer 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 10 minutes from Exton, opening October 2026). A West Chester office (about 12–15 minutes) is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our Malvern office (about 10 minutes from Exton, opening 
 ## Why Exton Patients Choose This Practice
 
 - **Malvern office ~10 min from Exton** — 301 Lindenwood Dr #206, opening October 2026
-- **West Chester office ~12–15 min** — opening October 2026
+- **West Chester office ~12–15 min** — planned, no opening date set
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Exton Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10 minutes via local routes. Opening October 2026.
-**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Opening October 2026.
+**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 17 minutes via US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 
@@ -76,7 +76,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 MSCP is a credential from the Menopause Society indicating dedicated training and ongoing competency in perimenopause and menopause care. It signals depth beyond what general primary care typically provides — formal evaluation of symptoms, evidence-based HRT decisions, and long-term cardiovascular and bone health planning.
 
 **Is Dr. Landi accepting Exton patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern and West Chester offices beginning October 2026. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Exton)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Exton)
 
 **Is menopause care included in my membership?**
 Yes — completely. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, and follow-ups are all part of your DPC membership. No per-visit charges, no separate fees.
@@ -87,7 +87,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 ## Contact & Practice Information
 
 **Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
-**West Chester Office (opening October 2026):** West Chester, PA 19380
+**West Chester Office (planned):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

@@ -16,6 +16,8 @@
  * The note under the credential line states where the physician actually
  * practices, so a card never implies an office that does not exist in the
  * town being read about. Opening months come from the `locations` collection.
+ * A coming-soon office with no `openingDate` is planned, not dated: the note
+ * never gives it a month, and names it only on the page about its own town.
  */
 import type { CollectionEntry } from 'astro:content';
 import { getAvailability, formatMonthYear } from './availability';
@@ -104,6 +106,14 @@ export function credentialLine(p: Provider): string {
   return parts.join(' ');
 }
 
+/**
+ * A planned office: coming soon with no opening date, so there is no lease
+ * and no address. Nobody is seen there, and no copy may say when that changes.
+ */
+export function isPlanned(l: Location): boolean {
+  return l.data.status !== 'open' && !l.data.openingDate;
+}
+
 /** The practice note for a physician on a page about `locationSlug`. */
 export function practiceNote(p: Provider, locationSlug: string, locations: Location[]): string {
   const offices = p.data.locations.map(slug => {
@@ -113,35 +123,35 @@ export function practiceNote(p: Provider, locationSlug: string, locations: Locat
   });
   const here = offices.find(l => l.data.slug === locationSlug);
 
-  if (here) {
-    if (here.data.status === 'open') return `Accepting new patients in ${here.data.name}.`;
-    return `Accepting new patients now. The ${here.data.name} office opens ${openingMonth(here)}.`;
-  }
+  if (here?.data.status === 'open') return `Accepting new patients in ${here.data.name}.`;
+  const hereMonth = here ? openingMonth(here) : null;
+  if (here && hereMonth) return `Accepting new patients now. The ${here.data.name} office opens ${hereMonth}.`;
 
+  // Either the physician has no office in this town, or the office here is
+  // only planned. Say where the physician does practise.
   const open = offices.filter(l => l.data.status === 'open');
-  const coming = offices.filter(l => l.data.status !== 'open');
   const parts: string[] = ['Accepting new patients now.'];
   if (open.length) {
     parts.push(`Sees patients at our ${joinAnd(open.map(l => l.data.name))} ${open.length > 1 ? 'offices' : 'office'}.`);
   }
   // Group offices that open in the same month so one date is never stretched
-  // across offices that open at different times.
+  // across offices that open at different times. A planned office has no
+  // month, so it never joins a group.
   const byMonth = new Map<string, Location[]>();
-  for (const l of coming) {
-    const m = openingMonth(l);
-    byMonth.set(m, [...(byMonth.get(m) ?? []), l]);
+  for (const l of offices) {
+    const m = l.data.status === 'open' ? null : openingMonth(l);
+    if (m) byMonth.set(m, [...(byMonth.get(m) ?? []), l]);
   }
   for (const [month, group] of byMonth) {
     parts.push(`${joinAnd(group.map(l => l.data.name))} ${group.length > 1 ? 'offices open' : 'office opens'} ${month}.`);
   }
+  if (here) parts.push(`A ${here.data.name} office is planned.`);
   return parts.join(' ');
 }
 
-function openingMonth(l: Location): string {
-  if (!l.data.openingDate) {
-    throw new Error(`[physicianRouting] locations/${l.data.slug} is "${l.data.status}" but has no openingDate.`);
-  }
-  return formatMonthYear(l.data.openingDate);
+/** "October 2026", or null for a planned office. Never a guess. */
+function openingMonth(l: Location): string | null {
+  return l.data.openingDate ? formatMonthYear(l.data.openingDate) : null;
 }
 
 export function resolveHeroPhysician(input: ResolveInput): HeroResult {

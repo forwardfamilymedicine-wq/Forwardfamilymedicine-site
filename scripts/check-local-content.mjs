@@ -20,7 +20,7 @@
  *   secondary    every secondary-office phrase in the town map appears
  *
  * A `linksTo` entry for the West Chester office page is an allowed drop on
- * the six reassigned towns. There is deliberately no snapshot comparison:
+ * the reassigned towns. There is deliberately no snapshot comparison:
  * every page is composed, so any content or template change is supposed to
  * change the output, and the assertions above are what must hold.
  *
