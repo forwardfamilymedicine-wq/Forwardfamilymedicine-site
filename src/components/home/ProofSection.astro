@@ -1,6 +1,8 @@
 ---
 import TestimonialCard from '../shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../shared/GoogleReviewsLink.astro';
+import { Image } from 'astro:assets';
+import topDoctorBadge from '../../assets/awards/main-line-today-top-doctor-2026.png';
 
 /**
  * Step 7 of the homepage hierarchy: proof.
@@ -94,12 +96,26 @@ const credentials = [
 
     <div class="founder-proof">
       <h3 class="founder-proof-heading">And where the practice started</h3>
-      <p class="founder-proof-intro">
-        Dr. David Bigley founded Forward Family Medicine in September 2024. His panel
-        is full and he is not currently taking new patients, so these two reviews are
-        here as history rather than as an invitation &mdash; they describe the standard
-        this practice was built to hold.
-      </p>
+      <div class="founder-proof-lede">
+        <Image
+          src={topDoctorBadge}
+          alt="Main Line Today Top Doctor 2026 badge"
+          width={128}
+          widths={[64, 128, 192]}
+          sizes="64px"
+          format="webp"
+          quality={90}
+          loading="lazy"
+          class="founder-proof-badge"
+        />
+        <p class="founder-proof-intro">
+          Forward Family Medicine was founded by a 2026 Main Line Today Top Doctor.
+          Dr. David Bigley opened the practice in September 2024. His panel
+          is full and he is not currently taking new patients, so these two reviews are
+          here as history rather than as an invitation. They describe the standard
+          this practice was built to hold.
+        </p>
+      </div>
       <div class="founder-proof-grid">
         {founderReviews.map(r => <TestimonialCard {...r} />)}
       </div>
@@ -170,12 +186,26 @@ const credentials = [
     color: var(--ink-900);
     margin-bottom: 0.75rem;
   }
+  /* The award is practice history, like the reviews below it: a small badge
+     beside the intro, never a headline. */
+  .founder-proof-lede {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .founder-proof-badge {
+    width: 64px;
+    height: auto;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
   .founder-proof-intro {
     font-size: 0.95rem;
     color: var(--ink-500);
     line-height: 1.75;
     max-width: 680px;
-    margin-bottom: 2rem;
+    margin: 0;
   }
   .founder-proof-grid {
     display: grid;

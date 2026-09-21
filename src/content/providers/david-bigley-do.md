@@ -14,6 +14,12 @@ boardStatus: "board-certified"
 boardSpecialties:
   - "Family Medicine"
 additionalCertifications: []
+awards:
+  - name: "Top Doctor"
+    organization: "Main Line Today"
+    year: 2026
+    image: ../../assets/awards/main-line-today-top-doctor-2026.png
+    imageAlt: "Main Line Today Top Doctor 2026 badge"
 education:
   - degree: "Bachelor of Science"
     field: "Neuroscience and Biochemistry"

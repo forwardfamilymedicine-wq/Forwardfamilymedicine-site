@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAvailability } from '../../utils/availability';
 import { isPlanned } from '../../utils/physicianRouting';
@@ -92,6 +93,11 @@ const cityString = cityNames.length <= 1
     : `${cityNames.slice(0, -1).join(', ')}, and ${cityNames[cityNames.length - 1]}`;
 const inCities = cityString ? ` in ${cityString}` : '';
 
+// Physician awards, labelled "Organization Name, Year". The wording is the
+// award's own and must not be paraphrased.
+const awards: any[] = isPhysician ? (d.awards ?? []) : [];
+const awardLabel = (a: any) => `${a.organization} ${a.name}, ${a.year}`;
+
 const pageDescription = isPhysician
   ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine${inCities}. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
   : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine${inCities}.`;
@@ -110,6 +116,7 @@ const memberSchema = isPhysician ? {
   "memberOf": d.additionalCertifications?.length > 0
     ? d.additionalCertifications.map((cert: any) => ({ "@type": "Organization", "name": cert.organization }))
     : undefined,
+  "award": awards.length > 0 ? awards.map(awardLabel) : undefined,
   "identifier": d.npi ? { "@type": "PropertyValue", "propertyID": "NPI", "value": d.npi } : undefined,
   "sameAs": d.sameAs?.length > 0 ? d.sameAs : undefined,
 } : {
@@ -185,6 +192,29 @@ const breadcrumb = {
                 <span class="chip">{c.name}</span>
               ))}
             </div>
+          )}
+
+          {awards.length > 0 && (
+            <ul class="hero-awards">
+              {awards.map((a: any) => (
+                <li class="hero-award">
+                  {a.image && (
+                    <Image
+                      src={a.image}
+                      alt={a.imageAlt || awardLabel(a)}
+                      width={144}
+                      widths={[72, 144, 216]}
+                      sizes="72px"
+                      format="webp"
+                      quality={90}
+                      loading="lazy"
+                      class="hero-award-badge"
+                    />
+                  )}
+                  <span class="hero-award-label">{awardLabel(a)}</span>
+                </li>
+              ))}
+            </ul>
           )}
 
           {availability && (
@@ -291,6 +321,21 @@ const breadcrumb = {
           </div>
         )}
 
+        {awards.length > 0 && (
+          <div class="sidebar-card">
+            <h3>Awards</h3>
+            <ul class="edu-list">
+              {awards.map((a: any) => (
+                <li class="edu-item">
+                  <span class="edu-credential">{a.name}</span>
+                  <span class="edu-institution">{a.organization}</span>
+                  <span class="edu-year">{a.year}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {d.locations?.length > 0 && (
           <div class="sidebar-card">
             <h3>Practices At</h3>
@@ -371,6 +416,10 @@ const breadcrumb = {
      for anyone reading on, but a deciding patient shouldn't have to scroll
      to see the credential that differentiates this physician. */
   .hero-credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .hero-awards { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .hero-award { display: flex; align-items: center; gap: 0.9rem; }
+  .hero-award-badge { width: 72px; height: auto; flex-shrink: 0; }
+  .hero-award-label { font-size: 0.95rem; font-weight: 700; color: var(--ink-900); }
 
   .accepting-banner { border-radius: var(--radius-sm); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; }
   .accepting-banner.accepting { background: var(--green-50); border: 1px solid var(--green-200); color: var(--green-500); }
