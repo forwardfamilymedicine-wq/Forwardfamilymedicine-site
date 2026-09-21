@@ -99,6 +99,16 @@ const providers = defineCollection({
       name: z.string(),
       organization: z.string(),
     })).optional().default([]),
+    // Deliberately its own field: additionalCertifications feeds the provider
+    // card and physician routing, and notableExperience feeds the local-page
+    // spotlight. An award belongs on the bio page only.
+    awards: z.array(z.object({
+      name: z.string(),
+      organization: z.string(),
+      year: z.number(),
+      image: image().optional(),
+      imageAlt: z.string().optional(),
+    })).optional().default([]),
     education: z.array(educationEntry).optional().default([]),
     npi: z.string().optional().default(''),
     sameAs: z.array(z.string()).optional().default([]),
