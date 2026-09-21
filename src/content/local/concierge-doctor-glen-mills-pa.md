@@ -34,7 +34,7 @@ Glen Mills is an established Delaware County community with an affluent, highly 
 
 ## Why Glen Mills Patients Choose This Practice
 
-- **West Chester office ~12–15 min from Glen Mills** — opening October 2026
+- **West Chester office ~12–15 min from Glen Mills** — planned, no opening date set
 - **Malvern office, 15 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for Glen Mills Patients
 
-**Closest FFM office:** West Chester — about 12–15 minutes via US-202 north. Opening October 2026.
+**Closest FFM office:** West Chester — about 12–15 minutes via US-202 north. Planned, with no opening date set.
 **Also convenient:** Malvern, 301 Lindenwood Dr #206, 15 miles, about 25 to 28 minutes. Opening October 2026.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
@@ -68,7 +68,7 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Glen Mills patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our West Chester and Malvern offices beginning October 2026. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Glen%20Mills)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Glen%20Mills)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
@@ -76,7 +76,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 ## Contact & Practice Information
 
 **Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
-**West Chester Office (opening October 2026):** West Chester, PA 19380
+**West Chester Office (planned):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854

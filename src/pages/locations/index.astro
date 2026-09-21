@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import { isPlanned } from '../../utils/physicianRouting';
+import { formatMonthYear } from '../../utils/availability';
 
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
@@ -44,7 +46,7 @@ const breadcrumb = {
 
 <MainLayout
   title="Our Locations | Forward Family Medicine"
-  description="Forward Family Medicine serves Wayne, PA and is expanding to West Chester and Malvern in October 2026. Direct Primary Care on the Main Line and in Chester County."
+  description="Forward Family Medicine serves Wayne, PA, with a Malvern office opening October 2026 and a West Chester office planned. Direct Primary Care on the Main Line and in Chester County."
   canonical={canonicalUrl}
   schema={breadcrumb}
 >
@@ -60,7 +62,7 @@ const breadcrumb = {
       <h1>Our Locations</h1>
       <div class="divider"></div>
       <p class="section-intro">
-        Forward Family Medicine is rooted in Wayne, PA and expanding to West Chester and Malvern in October 2026.
+        Forward Family Medicine is rooted in Wayne, PA, with a Malvern office opening October 2026 and a West Chester office planned.
         Every location delivers the same small-panel, relationship-based Direct Primary Care.
       </p>
     </div>
@@ -98,6 +100,8 @@ const breadcrumb = {
         {locations.map(location => {
           const d            = location.data;
           const isOpen       = d.status === 'open';
+          // Coming soon with no opening date: no lease, no address, no month.
+          const planned      = isPlanned(location);
           const providers    = providersBySlug[d.slug]     ?? [];
           const neighborhoods = neighborhoodsBySlug[d.slug] ?? [];
 
@@ -106,7 +110,7 @@ const breadcrumb = {
 
               {/* Status badge */}
               <span class={`status-badge ${isOpen ? 'badge-open' : 'badge-soon'}`}>
-                {isOpen ? 'Now Open' : 'Opening October 2026'}
+                {isOpen ? 'Now Open' : planned ? 'Planned' : `Opening ${formatMonthYear(d.openingDate!)}`}
               </span>
 
               {/* Name */}
@@ -133,11 +137,13 @@ const breadcrumb = {
                 </div>
               )}
 
-              {/* Hours */}
-              <div class="detail-block">
-                <span class="detail-label">Hours</span>
-                <span class="detail-value">Mon–Fri &nbsp;7:30 AM – 5:30 PM</span>
-              </div>
+              {/* Hours: a planned office has none */}
+              {!planned && (
+                <div class="detail-block">
+                  <span class="detail-label">Hours</span>
+                  <span class="detail-value">Mon–Fri &nbsp;7:30 AM – 5:30 PM</span>
+                </div>
+              )}
 
               {/* Areas served */}
               {neighborhoods.length > 0 && (

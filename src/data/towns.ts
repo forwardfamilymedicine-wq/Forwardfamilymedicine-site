@@ -12,10 +12,11 @@
  * Opening status is never stated here; it comes from the `locations`
  * collection.
  *
- * West Chester is assigned only to its own town while its street address is
- * unconfirmed. The six towns marked "reassigned" are geographically nearest
- * to West Chester and point at Malvern as a temporary state pending that
- * address.
+ * West Chester is a planned office with no address and no opening date, so no
+ * town is assigned to it, its own included. The seven towns marked
+ * "reassigned" are geographically nearest to West Chester and point at
+ * Malvern until that office exists. West Chester's own figure to Malvern was
+ * supplied in batch 8 on the same terms as the batch 6 figures.
  */
 export type OfficeSlug = 'wayne' | 'malvern' | 'west-chester';
 
@@ -73,7 +74,7 @@ export const towns: Town[] = [
     secondary: { malvern: '11 miles, about 25 minutes.' } },
   { slug: 'wayne',           name: 'Wayne',           office: 'wayne',   travel: 'Our office is on Old Eagle School Road, about half a mile from Wayne Station on the Paoli–Thorndale line.',
     secondary: { malvern: '8 miles, about 15 to 18 minutes.' } },
-  { slug: 'west-chester',    name: 'West Chester',    office: 'west-chester', travel: '' },
+  { slug: 'west-chester',    name: 'West Chester',    office: 'malvern', travel: '10 miles, about 20 minutes.', reassigned: true },
 ];
 
 export function findTown(slug: string): Town | undefined {

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAvailability } from '../../utils/availability';
+import { isPlanned } from '../../utils/physicianRouting';
 import TestimonialCard from '../../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
 
@@ -73,17 +74,27 @@ const cityMap: Record<string, string> = {
   'west-chester': 'West Chester, PA',
   'malvern': 'Malvern, PA',
 };
+// A planned office (coming soon, no opening date) is not somewhere anyone
+// practises. The provider's `locations` list keeps it, because that list also
+// feeds physicianRouting; this page describes it as planned instead: it stays
+// out of the description and is listed last, labelled, under "Practices At".
+const allLocations = await getCollection('locations');
+const plannedSlugs = new Set(allLocations.filter(isPlanned).map(l => l.data.slug));
 const locationSlugs: string[] = d.locations || ['wayne'];
-const cityNames = locationSlugs.map((s: string) => cityMap[s] || s);
-const cityString = cityNames.length === 1
-  ? cityNames[0]
+const sidebarLocations: { slug: string; planned: boolean }[] = (d.locations ?? [])
+  .map((slug: string) => ({ slug, planned: plannedSlugs.has(slug) }))
+  .sort((a: { planned: boolean }, b: { planned: boolean }) => Number(a.planned) - Number(b.planned));
+const cityNames = locationSlugs.filter((s: string) => !plannedSlugs.has(s)).map((s: string) => cityMap[s] || s);
+const cityString = cityNames.length <= 1
+  ? cityNames[0] ?? ''
   : cityNames.length === 2
     ? `${cityNames[0]} and ${cityNames[1]}`
     : `${cityNames.slice(0, -1).join(', ')}, and ${cityNames[cityNames.length - 1]}`;
+const inCities = cityString ? ` in ${cityString}` : '';
 
 const pageDescription = isPhysician
-  ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in ${cityString}. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
-  : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine in ${cityString}.`;
+  ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine${inCities}. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
+  : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine${inCities}.`;
 
 const memberSchema = isPhysician ? {
   "@context": "https://schema.org",
@@ -284,11 +295,12 @@ const breadcrumb = {
           <div class="sidebar-card">
             <h3>Practices At</h3>
             <ul class="location-list">
-              {d.locations.map((locSlug: string) => (
+              {sidebarLocations.map(({ slug: locSlug, planned }) => (
                 <li>
                   <a href={`/locations/${locSlug}/`} class="location-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     <span>{locSlug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}</span>
+                    {planned && <span class="location-planned">&middot; planned</span>}
                   </a>
                 </li>
               ))}
@@ -391,6 +403,7 @@ const breadcrumb = {
   .location-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
   .location-link { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--green-400); text-decoration: none; font-weight: 500; transition: color 0.15s; }
   .location-link:hover { color: var(--green-500); }
+  .location-planned { color: var(--ink-500); font-weight: 400; font-style: italic; }
   .sidebar-cta { margin-top: 0.5rem; }
 
   @media (max-width: 900px) {

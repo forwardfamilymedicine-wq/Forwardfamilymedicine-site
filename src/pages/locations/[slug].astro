@@ -2,6 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProviderCard from '../../components/shared/ProviderCard.astro';
+import { isPlanned } from '../../utils/physicianRouting';
+import { formatMonthYear } from '../../utils/availability';
 
 export async function getStaticPaths() {
   const locations = await getCollection('locations');
@@ -24,11 +26,36 @@ const locationProviders = (data.providers || [])
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/locations/${data.slug}/`;
 
+// A coming-soon office either has an opening date or is planned (no lease, no
+// date). There is no fallback month: a planned office is never given one.
+const planned = isPlanned(entry);
+const openingLabel = data.status === 'coming-soon' && data.openingDate ? formatMonthYear(data.openingDate) : null;
+
 const locationName = `Forward Family Medicine — ${data.name}`;
 const pageTitle = `${locationName} | Direct Primary Care`;
-const pageDescription = data.status === 'coming-soon'
-  ? `Forward Family Medicine is opening a new Direct Primary Care location in ${data.name}, PA in ${data.openingDate ? (() => { const [y, m] = data.openingDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })() : '2026'}. Dr. Landi is accepting new patients now.`
-  : `Visit Forward Family Medicine in ${data.name}, PA. ${data.description}`;
+const pageDescription = planned
+  ? `Forward Family Medicine plans a Direct Primary Care office in ${data.name}, PA. No opening date has been set. Dr. Landi is accepting new patients now.`
+  : data.status === 'coming-soon'
+    ? `Forward Family Medicine is opening a new Direct Primary Care location in ${data.name}, PA in ${openingLabel}. Dr. Landi is accepting new patients now.`
+    : `Visit Forward Family Medicine in ${data.name}, PA. ${data.description}`;
+
+// Where this office's physicians can be seen while it is only planned: their
+// other offices, open ones first, otherwise the first one with a date.
+const allLocations = await getCollection('locations');
+const otherOffices = planned
+  ? [...new Set(locationProviders.flatMap((p: any) => p.data.locations as string[]))]
+      .filter(slug => slug !== data.slug)
+      .map(slug => allLocations.find(l => l.data.slug === slug))
+      .filter((l): l is NonNullable<typeof l> => Boolean(l) && !isPlanned(l!))
+  : [];
+const openOthers = otherOffices.filter(l => l.data.status === 'open');
+const datedOther = otherOffices.find(l => l.data.status !== 'open');
+const joinAnd = (items: string[]) => items.length <= 2 ? items.join(' and ') : `${items.slice(0, -1).join(', ')}, and ${items[items.length - 1]}`;
+const plannedVisits = openOthers.length
+  ? `Visits are at our ${joinAnd(openOthers.map(l => l.data.name))} ${openOthers.length > 1 ? 'offices' : 'office'} or by phone and video.`
+  : datedOther
+    ? `Our ${datedOther.data.name} office opens in ${formatMonthYear(datedOther.data.openingDate!)}, so early visits happen by telehealth.`
+    : 'Visits are by phone and video.';
 
 const hasAddress = data.addressZip;
 
@@ -60,7 +87,7 @@ const locationSchema = {
       "longitude": data.longitude,
     }
   } : {}),
-  ...(data.hours && data.hours.length > 0 ? {
+  ...(!planned && data.hours && data.hours.length > 0 ? {
     "openingHoursSpecification": data.hours.map((h: any) => ({
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": `https://schema.org/${h.day}`,
@@ -79,11 +106,6 @@ const breadcrumb = {
     { "@type": "ListItem", "position": 3, "name": data.name, "item": canonicalUrl },
   ],
 };
-
-// Build opening date label
-const openingLabel = data.openingDate
-  ? (() => { const [y, m] = data.openingDate.split('-').map(Number); return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); })()
-  : 'October 2026';
 ---
 
 <MainLayout
@@ -106,7 +128,7 @@ const openingLabel = data.openingDate
       <div class="location-hero-inner">
         <div>
           {data.status === 'coming-soon' && (
-            <span class="status-badge coming-soon">Coming {openingLabel}</span>
+            <span class="status-badge coming-soon">{planned ? 'Planned' : `Coming ${openingLabel}`}</span>
           )}
           {data.status === 'open' && (
             <span class="status-badge open">Now Open</span>
@@ -145,8 +167,9 @@ const openingLabel = data.openingDate
     </div>
   </section>
 
-  <!-- Visit Us: address, hours, and map — shown whenever any location data exists -->
-  {(hasAddress || (data.hours && data.hours.length > 0) || data.mapEmbedUrl) && (
+  <!-- Visit Us: address, hours, and map — shown whenever any location data exists.
+       Never for a planned office: there is nowhere to visit. -->
+  {!planned && (hasAddress || (data.hours && data.hours.length > 0) || data.mapEmbedUrl) && (
     <section class="location-visit section" style="background: var(--cream-100);">
       <div class="container">
         <div class="visit-grid">
@@ -224,9 +247,10 @@ const openingLabel = data.openingDate
             <div class="callout" style="border: 2px dashed var(--cream-300); background: var(--cream-100); padding: 2rem; border-radius: var(--radius); text-align: center; margin-top: 2rem;">
               <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Accepting new patients now</h3>
               <p style="color: var(--ink-500); max-width: 460px; margin: 0 auto 1rem;">
-                Dr. Landi is taking new patients today. Our {data.name} office opens
-                in {openingLabel}, so early visits happen at our other Chester County
-                location or by telehealth. Schedule a meet and greet whenever you are
+                {planned
+                  ? `Dr. Landi is taking new patients today. A ${data.name} office is planned, and no opening date has been set. ${plannedVisits}`
+                  : `Dr. Landi is taking new patients today. Our ${data.name} office opens in ${openingLabel}, so early visits happen by telehealth.`}
+                Schedule a meet and greet whenever you are
                 ready and we will sort out the details together.
               </p>
               <a

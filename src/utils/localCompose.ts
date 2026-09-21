@@ -13,7 +13,7 @@
  */
 import type { CollectionEntry } from 'astro:content';
 import type { ImageMetadata } from 'astro';
-import { credentialLine, practiceNote, type HeroResult, type LocalCategory } from './physicianRouting';
+import { credentialLine, isPlanned, practiceNote, type HeroResult, type LocalCategory } from './physicianRouting';
 import { getAvailability, formatMonthYear } from './availability';
 import { findTown, type Town } from '../data/towns';
 import { scenarios, type Scenario } from '../data/localScenarios';
@@ -191,6 +191,20 @@ export function secondaryExtras(town: Town, locations: Location[]): Extra[] {
   return out;
 }
 
+/**
+ * Lead-in for a town whose own office is only planned (West Chester), shown
+ * above the details of the office it is assigned to. The clause about that
+ * office follows its status, so it never says patients are seen in an office
+ * that has not opened.
+ */
+export function plannedNotice(planned: Location, assigned: Location): string {
+  const lead = `A ${planned.data.name} office is planned, and no opening date has been set.`;
+  if (assigned.data.status === 'open') {
+    return `${lead} ${planned.data.name} patients are seen in person at our ${assigned.data.name} office, shown below, or by phone and video.`;
+  }
+  return `${lead} Our nearest office is ${assigned.data.name}, shown below, which opens ${formatMonthYear(assigned.data.openingDate!)}. Until then, visits are by phone and video.`;
+}
+
 // ── Hero lede from the meta description ──────────────────────────────────────
 // Sentences carrying a date go, since they stale; em dashes become commas.
 const MONTHS = 'January|February|March|April|May|June|July|August|September|October|November|December';
@@ -237,6 +251,8 @@ export interface ComposedPage {
     extras: Extra[]; mapHref?: string; detailsHref: string;
     /** "October 2026" while the office is coming soon; undefined once open. */
     opening?: string;
+    /** Set when the town's own office is only planned; see `plannedNotice`. */
+    notice?: string;
     droppedLabels: string[];
   };
   faq: { headline: string; faqs: { q: string; a: string }[] } | null;
@@ -265,6 +281,7 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
   if (!town) throw new Error(`[local/${slug}] no towns entry for "${locationSlug}"; add it to src/data/towns.ts.`);
   const office = locations.find(l => l.data.slug === town.office);
   if (!office) throw new Error(`[local/${slug}] town "${town.slug}" points at office "${town.office}" but no locations entry has that slug.`);
+  if (isPlanned(office)) throw new Error(`[local/${slug}] town "${town.slug}" points at office "${town.office}", which is planned with no opening date; assign a town only to an office that is open or dated.`);
 
   const { heroHtml, sections } = segmentSections(html, headings, slug);
 
@@ -369,6 +386,8 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
   extras.push(...kept.filter(isTravel));
   extras.push(...secondaryExtras(town, locations));
   extras.push(...kept.filter(x => !isTravel(x)));
+  const ownOffice = locations.find(l => l.data.slug === town.slug);
+  const notice = ownOffice && isPlanned(ownOffice) ? plannedNotice(ownOffice, office) : undefined;
   const d = office.data;
   const mapHref = d.addressStreet
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${d.addressStreet}, ${d.addressCity}, ${d.addressState} ${d.addressZip}`)}`
@@ -382,12 +401,13 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
 
   // Scenario
   const make = scenarios[category];
+  // Planned offices are left out: nobody has in-person visits there.
   const physicianOffices = hero.kind === 'physician'
     ? hero.provider.data.locations.map(slugOf => {
         const l = locations.find(x => x.data.slug === slugOf);
         if (!l) throw new Error(`[local/${slug}] ${hero.provider.data.slug} lists location "${slugOf}" but no locations entry has that slug.`);
-        return { name: l.data.name, open: l.data.status === 'open' };
-      })
+        return l;
+      }).filter(l => !isPlanned(l)).map(l => ({ name: l.data.name, open: l.data.status === 'open' }))
     : [];
   const scenario = make
     ? make({
@@ -453,6 +473,7 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
       mapHref,
       detailsHref: `/locations/${town.office}/`,
       opening: office.data.status !== 'open' && office.data.openingDate ? formatMonthYear(office.data.openingDate) : undefined,
+      notice,
       droppedLabels: dropped,
     },
     faq,
