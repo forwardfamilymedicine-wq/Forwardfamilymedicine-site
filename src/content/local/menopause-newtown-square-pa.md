@@ -67,15 +67,15 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Newtown Square Patients
 
-**Closest primary care office:** Wayne, 295 Old Eagle School Road, about 15 minutes via Route 252 north. Wayne is open now and accepting new patients with Dr. Lieberman; Malvern, 301 Lindenwood Dr #206, is 12 miles and about 22 to 25 minutes, opening October 2026.
+**Closest primary care office:** Wayne, 295 Old Eagle School Road, about 15 minutes via Route 252 north. Wayne is open now and accepting new patients with Dr. Lieberman; Malvern, 301 Lindenwood Dr #206, is 12 miles and about 22 to 25 minutes and is also open.
 **Specialty menopause consultation:** Dr. Landi at Malvern (about 22 to 25 minutes) or West Chester (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
-**Status:** Wayne currently accepting new patients with Dr. Lieberman; Malvern opening October 2026, West Chester planned (Dr. Landi is accepting new patients now)
+**Status:** Wayne accepting new patients with Dr. Lieberman; Malvern open and accepting new patients with Dr. Landi; West Chester planned
 
 ## Frequently Asked Questions
 
 **Which FFM office should Newtown Square patients establish at?**
-From Newtown Square: Wayne is about 15 minutes, West Chester is about 20 minutes, and Malvern is about 22 to 25 minutes. Wayne is open now, Malvern opens October 2026, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
+From Newtown Square: Wayne is about 15 minutes, West Chester is about 20 minutes, and Malvern is about 22 to 25 minutes. Wayne and Malvern are open now, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.
@@ -90,7 +90,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **West Chester Office (planned):** West Chester, PA 19380
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
+**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com

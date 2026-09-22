@@ -34,7 +34,7 @@ Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Pao
 
 Menopause care at Forward Family Medicine isn't a referral or an add-on — it's part of how every visit works. At our Wayne flagship office, our physicians integrate perimenopause and menopause care into family primary care: symptom evaluation, hormone considerations, cardiovascular and bone health monitoring, lifestyle integration. Visit lengths of 1–2 hours allow real depth.
 
-For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) will see patients at our Malvern office (8 miles, about 15 to 18 minutes west of Wayne) when it opens in October 2026. A West Chester office (about 30 minutes west) is planned, with no opening date set. Members can see Dr. Landi in person at Malvern or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
+For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) sees patients at our Malvern office (8 miles, about 15 to 18 minutes west of Wayne). A West Chester office (about 30 minutes west) is planned, with no opening date set. Members can see Dr. Landi in person at Malvern or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -67,7 +67,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 **Primary care location:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Currently accepting new patients with:** Dr. Lieberman
-**Specialty menopause consultation:** Dr. Landi at our Malvern office (301 Lindenwood Dr #206), opening October 2026, or via telehealth
+**Specialty menopause consultation:** Dr. Landi at our Malvern office (301 Lindenwood Dr #206), or via telehealth
 **Telehealth:** Phone and video visits included for established patients
 
 ## Frequently Asked Questions
@@ -88,7 +88,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedu
 
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **West Chester Office (planned):** West Chester, PA 19380
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
+**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
