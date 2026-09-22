@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves West Chester residents from our Malvern office (10 miles, about 20 minutes), opening October 2026. A West Chester office is planned, with no opening date set. Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine serves West Chester residents from our Malvern office (10 miles, about 20 minutes). A West Chester office is planned, with no opening date set. Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -34,7 +34,7 @@ West Chester is the Chester County seat — a vibrant borough with a thriving do
 
 ## Why West Chester Patients Choose This Practice
 
-- **In-person care at our Malvern office** — 10 miles from West Chester, opening October 2026
+- **In-person care at our Malvern office** — 10 miles from West Chester
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for West Chester Patients
 
 **Location:** West Chester, PA 19380
-**Status:** Dr. Landi is accepting new patients now. Malvern office opens October 2026. A West Chester office is planned.
+**Status:** Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
 **Telehealth:** Phone and video visits included for established patients
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
 
@@ -67,7 +67,7 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting West Chester patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)

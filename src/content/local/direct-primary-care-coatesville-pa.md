@@ -35,7 +35,7 @@ Coatesville is a Chester County community with deep industrial roots in steel ma
 ## Why Coatesville Patients Choose Forward Family Medicine
 
 - **West Chester office ~20–25 min from Coatesville** — planned, no opening date set
-- **Malvern office, 17 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 17 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
@@ -55,14 +55,14 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Coatesville Patients
 
 **Closest FFM office:** West Chester — about 20–25 minutes via PA-82 south or US-30 east. Planned, with no opening date set.
-**Also available:** Malvern, 301 Lindenwood Dr #206, 17 miles, about 25 to 28 minutes. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 17 miles, about 25 to 28 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 30–35 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership — many follow-up and acute visits work well without the drive
 
 ## Frequently Asked Questions
 
 **Is Forward Family Medicine accepting Coatesville patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Coatesville)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Coatesville)
 
 **Who is the physician at the West Chester and Malvern offices?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
@@ -75,7 +75,7 @@ Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr.
 
 ## Contact & Practice Information
 
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
+**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **West Chester Office (planned):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044

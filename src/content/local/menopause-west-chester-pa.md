@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine serves West Chester residents from our Malvern office (10 miles, about 20 minutes), opening October 2026. A West Chester office is planned, with no opening date set. Menopause Society Certified menopause care with Dr. Brian Landi, DO."
+localNote: "Forward Family Medicine serves West Chester residents from our Malvern office (10 miles, about 20 minutes). A West Chester office is planned, with no opening date set. Menopause Society Certified menopause care with Dr. Brian Landi, DO."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concor
 
 ## About West Chester, PA
 
-West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — many of whom have found that menopause care in the traditional primary care setting means a brief conversation tucked into the final minutes of a standard appointment. Forward Family Medicine is built to offer something meaningfully different: Menopause Society Certified expertise, at our Malvern office (opening October 2026, about 10 miles away) and by phone and video.
+West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — many of whom have found that menopause care in the traditional primary care setting means a brief conversation tucked into the final minutes of a standard appointment. Forward Family Medicine is built to offer something meaningfully different: Menopause Society Certified expertise, at our Malvern office (about 10 miles away) and by phone and video.
 
 ## Menopause Society Certified Care, On-Site in West Chester
 
@@ -46,7 +46,7 @@ Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of 
 
 ## Why West Chester Patients Choose This Practice
 
-- **In-person MSCP care at our Malvern office** — 10 miles from West Chester, opening October 2026
+- **In-person MSCP care at our Malvern office** — 10 miles from West Chester
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -65,7 +65,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for West Chester Patients
 
 **Location:** West Chester, PA 19380
-**Status:** Dr. Landi is accepting new patients now. Malvern office opens October 2026. A West Chester office is planned.
+**Status:** Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
 
@@ -75,7 +75,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 MSCP is a credential from the Menopause Society indicating dedicated training and ongoing competency in perimenopause and menopause care. It signals depth beyond what general primary care typically provides — formal evaluation of symptoms, evidence-based HRT decisions, and long-term cardiovascular and bone health planning.
 
 **Is Dr. Landi accepting West Chester patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)
 
 **Is menopause care included in my membership?**
 Yes — completely. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, and follow-ups are all part of your DPC membership. No per-visit charges, no separate fees.

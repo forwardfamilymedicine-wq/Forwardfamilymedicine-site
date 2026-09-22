@@ -35,7 +35,7 @@ Kennett Square is Chester County's southern borough — "Mushroom Capital of the
 ## Why Kennett Square Patients Choose This Practice
 
 - **West Chester office ~15–20 min from Kennett Square** — planned, no opening date set
-- **Malvern office, 20 miles, about 30 to 35 minutes.** 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office, 20 miles, about 30 to 35 minutes.** 301 Lindenwood Dr #206
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Kennett Square Patients
 
 **Closest FFM office:** West Chester — about 15–20 minutes via PA-82 north. Planned, with no opening date set.
-**Also available:** Malvern, 301 Lindenwood Dr #206, 20 miles, about 30 to 35 minutes. Opening October 2026.
+**Also available:** Malvern, 301 Lindenwood Dr #206, 20 miles, about 30 to 35 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 35–40 minutes — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included — many visits work well without the drive
 
@@ -68,14 +68,14 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Kennett Square patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
+**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **West Chester Office (planned):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044

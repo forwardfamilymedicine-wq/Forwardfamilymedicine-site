@@ -34,7 +34,7 @@ Chester Springs spans several Chester County townships across the PA-100 and PA-
 
 ## Why Chester Springs Patients Choose This Practice
 
-- **Malvern office ~15–20 min from Chester Springs** — 301 Lindenwood Dr #206, opening October 2026
+- **Malvern office ~15–20 min from Chester Springs** — 301 Lindenwood Dr #206
 - **West Chester office ~20–25 min** — planned, no opening date set
 - **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
 - Direct line to your physician by phone, text, or message — not an answering service
@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for Chester Springs Patients
 
-**Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via PA-401 east to PA-29 south. Opening October 2026.
+**Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via PA-401 east to PA-29 south.
 **Also convenient:** West Chester — about 20–25 minutes via PA-100 south. Planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 25–30 minutes via PA-401 east to US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
@@ -68,14 +68,14 @@ Forward Family Medicine delivers the concierge experience — small panels, dire
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Chester Springs patients?**
-Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office beginning October 2026. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Chester%20Springs)
+Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Chester%20Springs)
 
 **What's the best way to evaluate the practice before committing?**
 Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 
-**Malvern Office (opening October 2026):** 301 Lindenwood Dr #206, Malvern, PA 19355
+**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **West Chester Office (planned):** West Chester, PA 19380
 **Wayne Office:** 295 Old Eagle School Road, STE 2, Wayne, PA 19087
 **Phone:** (215) 645-7044

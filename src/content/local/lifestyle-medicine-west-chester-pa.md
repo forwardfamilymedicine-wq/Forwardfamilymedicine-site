@@ -18,7 +18,7 @@ linksTo:
   - "/membership"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves West Chester residents from our Malvern office (10 miles, about 20 minutes), opening October 2026. A West Chester office is planned, with no opening date set. Primary care with lifestyle medicine integrated into every visit, with Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
+localNote: "Forward Family Medicine serves West Chester residents from our Malvern office (10 miles, about 20 minutes). A West Chester office is planned, with no opening date set. Primary care with lifestyle medicine integrated into every visit, with Dr. Brian Landi, DO. For patients seeking dedicated dual-board Lifestyle Medicine consultation, Dr. Philip Lieberman is available at our Wayne office and by telehealth."
 nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concordville"
 ---
 
@@ -36,7 +36,7 @@ For patients who want dedicated specialty consultation with a dual-board-certifi
 
 ## Why West Chester Patients Choose This Approach
 
-- **In-person care at our Malvern office** — 10 miles from West Chester, opening October 2026
+- **In-person care at our Malvern office** — 10 miles from West Chester
 - Lifestyle medicine integrated into every primary care visit
 - Evidence-based nutrition guidance — beyond generic handouts
 - Chronic disease management with lifestyle at the center
@@ -53,7 +53,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Menopause
 ## Practical Information for West Chester Patients
 
 **Location:** West Chester, PA 19380
-**Status:** Dr. Landi is accepting new patients now. Malvern office opens October 2026. A West Chester office is planned.
+**Status:** Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
 **Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and Malvern (Dr. Landi)
 
