@@ -1,12 +1,20 @@
 ---
 // Meet & Greet interest form — Google Sheets via Apps Script
+import { BOOKING_PAGES, bookingEnabled } from '../../data/bookingPages';
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
 const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // source is resolved client-side from ?source= query param (static output mode)
+
+// Self-scheduling. When both physicians' booking pages are configured in
+// src/data/bookingPages.ts, the success state asks the visitor to choose a
+// physician and embeds that physician's Google booking page. With either
+// value empty, nothing below is rendered and the success state is unchanged.
+const BOOKING_ENABLED = bookingEnabled();
+const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, embedSrc }) => ({ code, cardTitle, shareUrl, embedSrc }));
 ---
 
 <div class="form-wrap card">
-  <div class="form-header">
+  <div class="form-header" id="mg-form-header">
     <h2>Request Your Free Meet &amp; Greet</h2>
     <p>Fill out the form below and we'll reach out within 24 hours to schedule your visit. No pressure, no commitment, no credit card.</p>
   </div>
@@ -136,6 +144,42 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
       We'll contact you within 24 hours. Your information is never shared or sold.
     </p>
   </form>
+
+  {BOOKING_ENABLED && (
+    <div id="mg-booking" class="mg-booking" hidden>
+      <p id="mg-booking-intro" class="mg-intro" role="status" tabindex="-1"></p>
+
+      <!-- Step 1: choose a physician. Nothing is preselected. -->
+      <div id="mg-step-choose">
+        <div class="mg-cards">
+          {BOOKING_PAGES.map((p) => (
+            <article class="mg-card">
+              <h3 class="mg-card-title">{p.cardTitle}</h3>
+              <p class="mg-card-sub">{p.cardSubline}</p>
+              <button type="button" class="btn btn-accent mg-card-btn" data-physician={p.code}>See available times</button>
+            </article>
+          ))}
+        </div>
+        <p class="mg-help">
+          Questions? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          or call <a href="tel:+12156457044">(215) 645-7044</a>.
+        </p>
+      </div>
+
+      <!-- Step 2: that physician's booking page, embedded. -->
+      <div id="mg-step-book" hidden>
+        <p class="mg-back-row">
+          <button type="button" class="mg-link-btn" id="mg-back">Choose a different physician</button>
+        </p>
+        <div class="mg-embed">
+          <iframe id="mg-iframe" title="Booking page" src="about:blank"></iframe>
+        </div>
+        <p class="mg-newtab-row">
+          <a id="mg-newtab" href="#" target="_blank" rel="noopener noreferrer">Open booking page in a new tab</a>
+        </p>
+      </div>
+    </div>
+  )}
 </div>
 
 <style>
@@ -248,6 +292,81 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
     .form-row { grid-template-columns: 1fr; }
     .form-wrap { padding: 1.5rem; }
   }
+
+  /* ── Self-scheduling success state ── */
+  .mg-booking {
+    /* Keep the panel clear of the sticky site header when scrolled into view. */
+    scroll-margin-top: 7.5rem;
+  }
+  .mg-intro {
+    font-size: 1rem;
+    color: var(--ink-900);
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+  }
+  .mg-intro:focus { outline: none; }
+  .mg-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .mg-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem 1.25rem;
+    background: var(--cream-50);
+    border: 1.5px solid var(--cream-300);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+  .mg-card-title {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+  .mg-card-sub {
+    flex: 1;
+    color: var(--ink-500);
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+  }
+  .mg-card-btn { width: 100%; }
+  .mg-help {
+    margin: 1.25rem 0 0;
+    font-size: 0.9rem;
+    color: var(--ink-500);
+    text-align: center;
+  }
+  .mg-help a,
+  .mg-newtab-row a { color: var(--green-500); }
+  .mg-link-btn {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--green-500);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .mg-back-row { margin: 0 0 1rem; }
+  .mg-embed iframe {
+    display: block;
+    width: 100%;
+    height: 640px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: var(--cream-50);
+  }
+  .mg-newtab-row {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  @media (max-width: 560px) {
+    .mg-booking { scroll-margin-top: 5rem; }
+    .mg-cards { grid-template-columns: 1fr; }
+  }
 </style>
 
 <script is:inline>
@@ -263,7 +382,7 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -272,6 +391,71 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
   const submitBtn       = document.getElementById('submit-btn');
   const interestSel     = document.getElementById('interest');
   const familySizeGroup = document.getElementById('family-size-group');
+
+  // Self-scheduling elements. All null when BOOKING_ENABLED is false.
+  const formHeader   = document.getElementById('mg-form-header');
+  const bookingPanel = document.getElementById('mg-booking');
+  const bookingIntro = document.getElementById('mg-booking-intro');
+  const stepChoose   = document.getElementById('mg-step-choose');
+  const stepBook     = document.getElementById('mg-step-book');
+  const bookingFrame = document.getElementById('mg-iframe');
+  const newTabLink   = document.getElementById('mg-newtab');
+  const backBtn      = document.getElementById('mg-back');
+  const bookingReady = !!(BOOKING_ENABLED && bookingPanel && bookingIntro && stepChoose && stepBook && bookingFrame && newTabLink && backBtn);
+
+  // Below this viewport width the embedded booking page is too cramped to
+  // use (Google's mobile layout inside a narrow frame, with nested
+  // scrolling), so choosing a card opens the booking page in a new tab
+  // instead. Matches the 560px breakpoint where the cards stack.
+  // 0 would use the embed at every width.
+  const EMBED_MIN_WIDTH = 560;
+
+  function showBookingChooser(firstName) {
+    if (formHeader) formHeader.hidden = true;
+    form.hidden = true;
+    bookingIntro.textContent = 'Thank you, ' + firstName + '. Your request is in. '
+      + 'Choose a physician below to pick your meet and greet time, or we\'ll reach out within 24 hours.';
+    stepBook.hidden   = true;
+    stepChoose.hidden = false;
+    bookingPanel.hidden = false;
+    bookingPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    bookingIntro.focus({ preventScroll: true });
+  }
+
+  function choosePhysician(code) {
+    const page = BOOKING_PAGES.find((p) => p.code === code);
+    if (!page) return;
+    if (window.ffmTrack) window.ffmTrack('mg_physician_selected', { physician: code });
+    if (EMBED_MIN_WIDTH > 0 && window.innerWidth < EMBED_MIN_WIDTH) {
+      window.open(page.shareUrl, '_blank', 'noopener');
+      return;
+    }
+    bookingFrame.title = page.cardTitle + ' booking page';
+    bookingFrame.src   = page.embedSrc;
+    newTabLink.href    = page.shareUrl;
+    stepChoose.hidden  = true;
+    stepBook.hidden    = false;
+    bookingPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    backBtn.focus({ preventScroll: true });
+  }
+
+  function backToChooser() {
+    bookingFrame.src   = 'about:blank';
+    bookingFrame.title = 'Booking page';
+    newTabLink.href    = '#';
+    stepBook.hidden    = true;
+    stepChoose.hidden  = false;
+    const firstCard = stepChoose.querySelector('.mg-card-btn');
+    if (firstCard) firstCard.focus({ preventScroll: true });
+  }
+
+  if (bookingReady) {
+    bookingPanel.addEventListener('click', (e) => {
+      const card = e.target.closest('[data-physician]');
+      if (card) { choosePhysician(card.getAttribute('data-physician')); return; }
+      if (e.target.closest('#mg-back')) backToChooser();
+    });
+  }
 
   const formLoadTime = Date.now();
 
@@ -360,7 +544,11 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
         });
       }
 
-      if (successEl) {
+      if (bookingReady) {
+        form.reset();
+        if (familySizeGroup) familySizeGroup.hidden = true;
+        showBookingChooser(firstName);
+      } else if (successEl) {
         successEl.innerHTML = `
           <strong>Request received!</strong> We'll reach out within 24 hours to schedule your visit.<br />
           Questions? Email <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>
