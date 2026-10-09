@@ -70,6 +70,23 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
       </div>
     </div>
 
+    <!-- Optional. autocomplete is off on purpose: this asks for the patient's
+         birthdate, and contact autofill would insert the submitter's own.
+         max is set to today at page load (static site), and the submit
+         handler checks the range again because the form uses novalidate. -->
+    <div class="form-group">
+      <label for="dob">Patient's date of birth (optional)</label>
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        autocomplete="off"
+        min="1900-01-01"
+        aria-describedby="dob-hint"
+      />
+      <p class="form-hint" id="dob-hint">If you're inquiring for your family, enter your own.</p>
+    </div>
+
     <div class="form-group">
       <label for="interest">I'm interested in <span aria-hidden="true">*</span></label>
       <select id="interest" name="interest" required aria-required="true">
@@ -240,6 +257,22 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     border-color: #c0392b;
   }
   textarea { resize: vertical; }
+  .form-hint {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--ink-500);
+  }
+  /* iOS Safari centers date text and collapses an empty date field;
+     keep it left-aligned at the same height as the other inputs. */
+  input[type="date"] {
+    display: block;
+    min-height: 3rem;
+  }
+  input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+    min-height: 1.5em;
+  }
   select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2372A377' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -380,6 +413,14 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     const messageInput = document.querySelector('textarea[name="message"]');
     if (messageInput && !messageInput.value) messageInput.value = `Re: ${subjectParam}\n\n`;
   }
+  // Date of birth can't be in the future: the latest allowed day is today,
+  // in the visitor's local time, set here because the site is static.
+  const dobField = document.getElementById('dob');
+  if (dobField) {
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, '0');
+    dobField.max = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  }
 </script>
 
 <script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT }}>
@@ -482,6 +523,8 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     const lastName   = form.querySelector('#lastName').value.trim();
     const email      = form.querySelector('#email').value.trim();
     const phone      = form.querySelector('#phone').value.trim();
+    const dobInput   = form.querySelector('#dob');
+    const dob        = dobInput?.value || '';
     const interest   = form.querySelector('#interest').value;
     const familySize = form.querySelector('#familySize')?.value || '';
     const referral   = form.querySelector('#referral').value;
@@ -496,6 +539,25 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
         errorEl.hidden = false;
       }
       return;
+    }
+
+    // Optional date of birth: a native date input gives YYYY-MM-DD or ''.
+    // Two-digit years come through as years like 0085, so anything before
+    // 1900 is treated as an incomplete year. Future dates are refused.
+    if (dob) {
+      const dobError = dob < '1900-01-01'
+        ? 'Please enter the full 4-digit birth year.'
+        : dob > (dobInput.max || dob)
+          ? 'Date of birth can\'t be in the future.'
+          : '';
+      if (dobError) {
+        if (errorEl) {
+          errorEl.textContent = dobError;
+          errorEl.hidden = false;
+        }
+        dobInput.focus();
+        return;
+      }
     }
 
     const interestLabels = {
@@ -517,6 +579,7 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
           lastName,
           email,
           phone,
+          dob,
           interest: interestLabels[interest] || interest,
           familySize,
           preferredOffice,
