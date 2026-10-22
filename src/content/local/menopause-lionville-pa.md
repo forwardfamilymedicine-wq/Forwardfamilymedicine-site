@@ -82,7 +82,7 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Yes — completely. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, and follow-ups are all part of your DPC membership. No per-visit charges, no separate fees.
 
 **How do I get started?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/?subject=Meet%20and%20Greet%20-%20Lionville)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/?subject=Meet%20and%20Greet%20-%20Lionville)
 
 ## Contact & Practice Information
 

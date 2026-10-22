@@ -71,7 +71,7 @@ Dr. Brian Landi, DO — board-certified through the American Osteopathic Board o
 Yes — and telehealth makes the model practical for patients at a distance. Annual physicals, procedures, and new-patient visits happen in person. Most follow-ups, medication reviews, acute illness evaluations, and lab discussions work well by phone or video. Members typically drive in a few times a year and handle the rest remotely. [Learn more →](/direct-primary-care)
 
 **What's the best way to try the practice before committing?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
 
 ## Contact & Practice Information
 

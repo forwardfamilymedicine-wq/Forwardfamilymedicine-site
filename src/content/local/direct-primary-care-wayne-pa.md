@@ -89,7 +89,7 @@ No. While we're located in Wayne, we welcome members from throughout the Main Li
 Traditional practices bill insurance per visit and typically see 20–30 patients a day. DPC practices like Forward Family Medicine cap their panel and bill a flat monthly fee — giving your physician the time and availability to truly know and serve you. [Learn more →](/direct-primary-care)
 
 **Can I tour the practice before deciding?**
-Absolutely. Our free Meet & Greet is a no-obligation 20-minute conversation where you can see the practice and ask all your questions. [Schedule yours →](/new-patients)
+Absolutely. Our free Meet & Greet is a no-obligation 60-minute conversation where you can see the practice and ask all your questions. [Schedule yours →](/new-patients)
 
 ## Ready to Get Started?
 
