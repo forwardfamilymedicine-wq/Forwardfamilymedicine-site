@@ -65,7 +65,7 @@ export const scenarios: Partial<Record<LocalCategory, (p: ScenarioParams) => Sce
         ? `Between you, you settle on a same-day video visit from your kitchen, or an appointment at our ${office} office if you would rather be seen in person.`
         : `Between you, you settle on a same-day video visit from your kitchen. Once our ${office} office opens, that can be an in-person visit instead.`}`,
       'If a prescription is needed, it is sent during that visit. There is no copay and no bill afterward, because visits are included in membership. The next day, a message checks in on how you are feeling.',
-      'The way in is a free meet and greet, in person or by video: twenty minutes to ask every question you have and see whether this is the practice for you.',
+      'The way in is a free meet and greet, in person or by video: an hour to ask every question you have and see whether this is the practice for you.',
     ],
   }),
   'direct-primary-care': ({ town, physician, office, officeOpen, physicianPractisesHere, physicianOffices }) => ({
@@ -74,7 +74,7 @@ export const scenarios: Partial<Record<LocalCategory, (p: ScenarioParams) => Sce
     response: [
       `You send ${physician} the readings by message. ${cap(physician)} reads them the same day, and the refill is handled the same way.`,
       `If the readings deserve a closer look, you get a visit that week, by video or in person, long enough to go through what has changed and adjust the plan together. All of it is included in membership, with no copay and no separate bill. ${inPersonSentence({ physician, office, officeOpen, physicianPractisesHere, physicianOffices })}`,
-      'Membership starts with a free meet and greet, in person or by video: twenty minutes, no obligation, to see whether the practice fits.',
+      'Membership starts with a free meet and greet, in person or by video: an hour, no obligation, to see whether the practice fits.',
     ],
   }),
   'lifestyle-medicine': ({ town, physician, office, officeOpen, physicianPractisesHere, physicianOffices }) => ({
@@ -83,7 +83,7 @@ export const scenarios: Partial<Record<LocalCategory, (p: ScenarioParams) => Sce
     response: [
       `Your first visit with ${physician} runs one to two hours. Food, movement, sleep and stress are part of the history alongside the exam and the labs, because here lifestyle medicine is part of primary care rather than a separate referral.`,
       `You leave with a plan you helped write: what to change first, how you will both know whether it is working, and when to look at the numbers again. Follow-ups happen by phone or video whenever a question comes up, and you message ${physician} directly.`,
-      `${inPersonSentence({ physician, office, officeOpen, physicianPractisesHere, physicianOffices })} The way in is a free meet and greet, in person or by video: twenty minutes to ask what you want to ask and decide at your own pace.`,
+      `${inPersonSentence({ physician, office, officeOpen, physicianPractisesHere, physicianOffices })} The way in is a free meet and greet, in person or by video: an hour to ask what you want to ask and decide at your own pace.`,
     ],
   }),
   menopause: ({ town, physician, office, officeOpen, physicianPractisesHere, physicianOffices }) => ({

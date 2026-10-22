@@ -14,7 +14,7 @@ category: "patient-experience"
 
 
 ## Quick Answer
-A doctor meet-and-greet is a brief, no-obligation conversation with a physician before you become a patient. It's common in direct primary care practices, essentially unheard of in traditional insurance-based medicine, and one of the best ways to evaluate whether a practice is right for you.
+A doctor meet-and-greet is a no-obligation conversation with a physician before you become a patient. It's common in direct primary care practices, essentially unheard of in traditional insurance-based medicine, and one of the best ways to evaluate whether a practice is right for you.
 
 ## Explanation
 
@@ -69,7 +69,7 @@ A DPC physician who knows their practice well should be able to answer these que
 
 ## How Forward Family Medicine Helps
 
-The Forward Family Medicine meet-and-greet is a free, 30-minute conversation — in person or by video — with one of our physicians. No paperwork, no commitment, no credit card. It's a genuine opportunity to understand how the practice works, ask about your specific situation, and evaluate whether the fit is right.
+The Forward Family Medicine meet-and-greet is a free, 60-minute conversation, in person or by video, with one of our physicians. No paperwork, no commitment, no credit card. It's a genuine opportunity to understand how the practice works, ask about your specific situation, and evaluate whether the fit is right.
 
 A few questions worth asking: How does the panel cap of approximately 250 patients affect your access? What does integrated Lifestyle Medicine actually look like in practice? And what's included in the membership versus what's billed separately? See current pricing at [/membership](/membership).
 
@@ -94,7 +94,7 @@ A: At Forward Family Medicine, yes — completely. There's no clinical examinati
 A: Complex patients often benefit most from DPC's additional access and continuity. The meet-and-greet is precisely the right time to describe your health situation in detail and ask the physician directly whether your needs are within the practice's scope. A good DPC physician will give you an honest answer about what they can and can't manage effectively.
 
 **Q: How long does a typical meet-and-greet last?**
-A: At Forward Family Medicine, 30 minutes. This is enough time for meaningful conversation but not for a clinical evaluation. If you have extensive questions or a complex history, consider writing them down in advance to use the time efficiently.
+A: At Forward Family Medicine, 60 minutes. This is enough time for meaningful conversation but not for a clinical evaluation. If you have extensive questions or a complex history, consider writing them down in advance to use the time efficiently.
 
 **Q: What if I enroll and it's not the right fit?**
 A: DPC practices typically operate on a month-to-month membership with no long-term contract. If the relationship isn't working for any reason, you're not locked in. That flexibility is intentional — it keeps the practice accountable to the quality of your experience.

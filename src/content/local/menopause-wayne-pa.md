@@ -82,7 +82,7 @@ No. Your FFM membership covers care across all three offices. You can establish 
 Symptom evaluation, HRT consultation when appropriate, non-hormonal management options, cardiovascular and bone health monitoring (lipids, ApoB, DEXA), sleep and mood assessment, sexual health, and lifestyle integration. All included in your DPC membership.
 
 **How do I get started?**
-Schedule a free Meet & Greet — a no-obligation 20-minute conversation. [Schedule here →](/contact/?subject=Meet%20and%20Greet%20-%20Wayne)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation. [Schedule here →](/contact/?subject=Meet%20and%20Greet%20-%20Wayne)
 
 ## Contact & Practice Information
 
