@@ -2,6 +2,7 @@
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
+import { sitePracticeGraph } from '../utils/practiceSchema';
 import '../styles/global.css';
 
 export interface Props {
@@ -29,36 +30,8 @@ const {
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
 
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": ["MedicalOrganization", "LocalBusiness"],
-  "@id": `${siteUrl}/#organization`,
-  "name": "Forward Family Medicine",
-  "url": siteUrl,
-  "telephone": "+12156457044",
-  "faxNumber": "+12154498854",
-  "email": "information@forwardfamilymedicine.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "295 Old Eagle School Road, STE 2",
-    "addressLocality": "Wayne",
-    "addressRegion": "PA",
-    "postalCode": "19087",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "40.0440",
-    "longitude": "-75.3944"
-  },
-  "medicalSpecialty": ["FamilyMedicine", "LifestyleMedicine"],
-  "availableService": [
-    { "@type": "MedicalTherapy", "name": "Direct Primary Care" },
-    { "@type": "MedicalTherapy", "name": "Lifestyle Medicine" },
-    { "@type": "MedicalTherapy", "name": "Concierge Medicine" }
-  ],
-  "sameAs": []
-};
+// The practice and its open offices, built from the locations collection.
+const orgSchema = await sitePracticeGraph();
 
 const schemas = [
   ...(suppressOrgSchema ? [] : [orgSchema]),

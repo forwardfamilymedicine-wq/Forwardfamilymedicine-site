@@ -31,8 +31,12 @@ const canonicalUrl = `${siteUrl}/locations/${data.slug}/`;
 const planned = isPlanned(entry);
 const openingLabel = data.status === 'coming-soon' && data.openingDate ? formatMonthYear(data.openingDate) : null;
 
-const locationName = `Forward Family Medicine — ${data.name}`;
-const pageTitle = `${locationName} | Direct Primary Care`;
+// Title and H1. An office that is not open says so in the label itself, since
+// a search result shows the title without the status badge.
+const officeLabel = planned
+  ? `${data.name} Office (Planned)`
+  : openingLabel ? `${data.name} Office (Opening ${openingLabel})` : `${data.name} Office`;
+const pageTitle = `${officeLabel} | Forward Family Medicine`;
 const pageDescription = planned
   ? `Forward Family Medicine plans a Direct Primary Care office in ${data.name}, PA. No opening date has been set. Dr. Landi is accepting new patients now.`
   : data.status === 'coming-soon'
@@ -86,44 +90,9 @@ const directions = data.status === 'open' && data.addressStreet ? {
   apple: `https://maps.apple.com/?daddr=${encodeURIComponent(destination)}`,
 } : null;
 
-const locationSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": locationName,
-  "url": canonicalUrl,
-  "branchOf": {
-    "@type": "MedicalBusiness",
-    "name": "Forward Family Medicine",
-    "url": siteUrl,
-  },
-  ...(hasAddress ? {
-    "address": {
-      "@type": "PostalAddress",
-      ...(data.addressStreet ? { "streetAddress": data.addressStreet } : {}),
-      "addressLocality": data.addressCity,
-      "addressRegion": data.addressState,
-      "postalCode": data.addressZip,
-      "addressCountry": "US",
-    }
-  } : {}),
-  ...(data.phone ? { "telephone": data.phone } : {}),
-  ...(data.latitude && data.longitude ? {
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": data.latitude,
-      "longitude": data.longitude,
-    }
-  } : {}),
-  ...(!planned && data.hours && data.hours.length > 0 ? {
-    "openingHoursSpecification": data.hours.map((h: any) => ({
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": `https://schema.org/${h.day}`,
-      "opens": h.open,
-      "closes": h.close,
-    }))
-  } : {}),
-};
-
+// The office's own structured data is in the site-wide graph (MainLayout,
+// utils/practiceSchema), the same on every page, so this page adds only its
+// breadcrumb.
 const breadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -139,7 +108,7 @@ const breadcrumb = {
   title={pageTitle}
   description={pageDescription}
   canonical={canonicalUrl}
-  schema={planned ? [breadcrumb] : [locationSchema, breadcrumb]}
+  schema={[breadcrumb]}
 >
   <!-- Hero -->
   <section class="location-hero section" style={`background: linear-gradient(160deg, ${data.status === 'coming-soon' ? 'var(--cream-200)' : 'var(--green-50)'} 0%, var(--cream-100) 100%);`}>
@@ -160,7 +129,7 @@ const breadcrumb = {
           {data.status === 'open' && (
             <span class="status-badge open">Now Open</span>
           )}
-          <h1>{locationName}</h1>
+          <h1>{officeLabel}</h1>
           <div class="divider"></div>
           <p class="location-desc">{data.description}</p>
 

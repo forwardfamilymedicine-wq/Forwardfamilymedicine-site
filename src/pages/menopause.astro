@@ -8,6 +8,7 @@ import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { formatMonthYear } from '../utils/availability';
+import { isListedOffice, officeRef } from '../utils/practiceSchema';
 
 const allProviders = await getCollection('providers');
 const landi = allProviders.find(p => p.id === 'brian-landi-do');
@@ -66,19 +67,8 @@ const physicianSchema = {
     "name": "Forward Family Medicine",
     "url": "https://www.forwardfamilymedicine.com"
   },
-  "workLocation": [
-    {
-      "@type": "MedicalClinic",
-      "name": "Forward Family Medicine — Malvern",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "301 Lindenwood Dr #206",
-        "addressLocality": "Malvern",
-        "addressRegion": "PA",
-        "postalCode": "19355"
-      }
-    }
-  ]
+  // The office node itself is in the site-wide graph on this page.
+  ...(isListedOffice(malvern) ? { "workLocation": [officeRef(malvern)] } : {}),
 };
 
 const faqs = [
