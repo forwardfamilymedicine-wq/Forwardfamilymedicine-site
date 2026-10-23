@@ -55,7 +55,6 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Exton Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10 minutes via local routes.
-**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 17 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 

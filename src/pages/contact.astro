@@ -78,17 +78,6 @@ const breadcrumb = {
           <div class="info-item">
             <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <strong>West Chester</strong>
-              <address style="font-style:normal;">
-                West Chester, PA 19380
-              </address>
-              <span style="font-size:0.8rem; font-style:italic; color:var(--ink-500);">Planned location</span>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
               <strong>Malvern</strong>
               <address style="font-style:normal;">
                 301 Lindenwood Dr #206<br />
@@ -171,7 +160,7 @@ const breadcrumb = {
           const d = loc.data;
           const isOpen = d.status === 'open';
           // Coming soon with no opening date is a planned office: the badge
-          // says so and never shows a month.
+          // says so and never shows a month, and it has no address or phone.
           const planned = isPlanned(loc);
           return (
             <article class={`location-card${isOpen ? '' : ' coming-soon'}`}>
@@ -181,11 +170,13 @@ const breadcrumb = {
                 <span class="location-card-badge future">{planned ? 'Planned' : `Opening ${formatMonthYear(d.openingDate!)}`}</span>
               )}
               <h3>{d.name}</h3>
-              <address class="location-card-address">
-                {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
-                {d.addressCity}, {d.addressState} {d.addressZip}
-              </address>
-              {d.phone && (
+              {!planned && (
+                <address class="location-card-address">
+                  {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
+                  {d.addressCity}, {d.addressState} {d.addressZip}
+                </address>
+              )}
+              {!planned && d.phone && (
                 <p class="location-card-phone">
                   <a href={`tel:${d.phone.replace(/\D/g, '')}`}>{d.phone}</a>
                 </p>

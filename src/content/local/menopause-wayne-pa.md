@@ -76,7 +76,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 Our Wayne physicians provide menopause care as part of family primary care. For dedicated Menopause Society Certified specialty consultation, Dr. Brian Landi is accessible at our Malvern office or by telehealth.
 
 **Is a consultation with Dr. Landi separate from my Wayne primary care?**
-No. Your FFM membership covers care across all three offices. You can establish primary care at Wayne with Dr. Lieberman and schedule specialty menopause consultations with Dr. Landi as needed — in person or by telehealth. Inter-office coordination is automatic and free.
+No. Your FFM membership covers care at every office. You can establish primary care at Wayne with Dr. Lieberman and schedule specialty menopause consultations with Dr. Landi as needed, in person or by telehealth. Inter-office coordination is automatic and free.
 
 **What does menopause care include?**
 Symptom evaluation, HRT consultation when appropriate, non-hormonal management options, cardiovascular and bone health monitoring (lipids, ApoB, DEXA), sleep and mood assessment, sexual health, and lifestyle integration. All included in your DPC membership.
