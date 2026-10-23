@@ -52,6 +52,8 @@ At Forward Family Medicine, we consider bone health within the broader picture o
 
 The goal is to identify people who need evaluation without assuming that every healthy adult requires frequent imaging.
 
+If a scan makes sense for you, [Wayne DEXA](/wayne-dexa/), which is affiliated with our practice and located in the same building as our Wayne office, offers both bone density and body composition scans. You can <a href="https://www.dexabodycomposition.com/schedule" target="_blank" rel="noopener noreferrer">schedule a scan online</a>.
+
 ## Frequently asked questions
 
 ### Does everyone need a DEXA scan at age 50?
