@@ -20,6 +20,12 @@ additionalCertifications:
     organization: "American Board of Family Medicine"
   - name: "Diplomate, American Board of Lifestyle Medicine"
     organization: "American Board of Lifestyle Medicine"
+awards:
+  - name: "Top Doctor"
+    organization: "Main Line Today"
+    year: 2026
+    image: ../../assets/awards/main-line-today-top-doctor-2026.png
+    imageAlt: "Main Line Today Top Doctor 2026 badge"
 education:
   - degree: "Associate of Science"
     field: "Culinary Arts"
