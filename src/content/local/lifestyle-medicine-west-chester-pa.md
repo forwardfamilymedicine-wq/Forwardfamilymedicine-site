@@ -52,14 +52,14 @@ Lifestyle medicine · Preventive care · Chronic disease management · Menopause
 
 ## Practical Information for West Chester Patients
 
-**Location:** West Chester, PA 19380
+**Location:** West Chester (planned)
 **Status:** Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
 **Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and Malvern (Dr. Landi)
 
 ## Frequently Asked Questions
 
-**How is lifestyle medicine integrated at the West Chester office?**
+**How is lifestyle medicine integrated into care for West Chester patients?**
 Dr. Landi practices primary care with lifestyle factors built in — every visit considers nutrition, movement, sleep, and stress alongside conventional clinical assessment. Visit lengths of 1–2 hours allow for the depth this requires.
 
 **Can I see Dr. Lieberman for dedicated lifestyle medicine consultation?**

@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Radnor, PA | Forward Family Medicine"
-description: "Comprehensive menopause care for Radnor, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (10 min) and telehealth across all three offices."
+description: "Comprehensive menopause care for Radnor, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our Malvern office, with primary care at Wayne (10 min) and telehealth across both offices."
 keywords:
   - menopause care Radnor PA
   - perimenopause Radnor Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Radnor residents across three offices: Wayne (about 10 minutes), West Chester (about 30 minutes), and Malvern (about 20 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Radnor residents across two offices: Wayne (about 10 minutes) and Malvern (about 20 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 ---
 
@@ -33,7 +33,7 @@ Radnor Township is one of the Philadelphia Main Line's most distinguished commun
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Radnor residents have access to:
 
 - **Primary care at our Wayne office** (about 10 minutes from most Radnor neighborhoods, and located within Radnor Township) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 30 minutes) or Malvern (about 20 minutes) offices — Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our Malvern office (about 20 minutes). Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,8 +50,8 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Radnor Patients Choose Forward Family Medicine
 
-- **Three convenient offices** — Wayne (10 min, within Radnor Township), West Chester (30 min), Malvern (20 min)
-- **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
+- **Two convenient offices:** Wayne (10 min, within Radnor Township) and Malvern (20 min)
+- **MSCP-certified specialty care** through Dr. Landi at Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
 - ~250-patient panel per physician — direct physician access by phone, text, or message
@@ -68,17 +68,17 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Radnor Patients
 
 **Closest primary care office:** Wayne — 295 Old Eagle School Road, within Radnor Township, about 10 minutes from most Radnor neighborhoods. Currently accepting new patients with Dr. Lieberman.
-**Specialty menopause consultation:** Dr. Landi at West Chester (about 30 minutes) or Malvern (about 20 minutes), or telehealth
+**Specialty menopause consultation:** Dr. Landi at Malvern (about 20 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
 **Status:** Wayne accepting new patients with Dr. Lieberman; Malvern open and accepting new patients with Dr. Landi; West Chester planned
 
 ## Frequently Asked Questions
 
 **Which FFM office should Radnor patients establish at?**
-For most Radnor Township residents, Wayne is the natural choice — the practice is located within Radnor Township on Old Eagle School Road, about 10 minutes from most neighborhoods in the township. Specialty menopause consultation with Dr. Landi is available at West Chester (about 30 minutes) or Malvern (about 20 minutes), or by telehealth — regardless of where you establish primary care.
+For most Radnor Township residents, Wayne is the natural choice — the practice is located within Radnor Township on Old Eagle School Road, about 10 minutes from most neighborhoods in the township. Specialty menopause consultation with Dr. Landi is available at Malvern (about 20 minutes), or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
-MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.
+MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our Malvern office holds this credential.
 
 **Is menopause care included in my membership?**
 Yes — completely, across all three offices. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, telehealth follow-ups, and inter-office coordination are all part of your DPC membership.

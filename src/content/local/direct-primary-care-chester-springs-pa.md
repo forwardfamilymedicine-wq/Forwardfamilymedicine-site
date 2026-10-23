@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Chester Springs, PA | Forward Family Medicine"
-description: "Direct Primary Care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern (15 min) and West Chester (20 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern office (15 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Chester Springs PA
   - DPC Chester Springs Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Chester Springs residents across three offices: Malvern (about 15–20 minutes via PA-401 east to PA-29 south), West Chester (about 20–25 minutes via PA-100 south), and Wayne (about 25–30 minutes via PA-401 east to US-30 east). Dr. Brian Landi, DO leads our Malvern and West Chester offices."
+localNote: "Forward Family Medicine serves Chester Springs residents across two offices: Malvern (about 15 to 20 minutes via PA-401 east to PA-29 south) and Wayne (about 25 to 30 minutes via PA-401 east to US-30 east). Dr. Brian Landi, DO leads our Malvern office."
 nearbyNeighborhoods: "Exton, Phoenixville, Malvern, Downingtown, and Pottstown"
 ---
 
@@ -35,8 +35,8 @@ Chester Springs is a Chester County community spread across West Pikeland, Charl
 ## Why Chester Springs Patients Choose Forward Family Medicine
 
 - **Malvern office ~15–20 min from Chester Springs** — 301 Lindenwood Dr #206
-- **West Chester office ~20–25 min** — planned, no opening date set
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
+- **West Chester office:** planned, no opening date set
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Chester Springs Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via PA-401 east to PA-29 south.
-**Also convenient:** West Chester — about 20–25 minutes via PA-100 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 25–30 minutes via PA-401 east to US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
 
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Chester Springs patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Chester%20Springs)
 
-**Who is the physician at the Malvern and West Chester offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Chester Springs?**

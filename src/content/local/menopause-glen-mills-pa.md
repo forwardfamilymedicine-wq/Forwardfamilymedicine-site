@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Glen Mills, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (25 to 28 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Glen Mills, PA residents with Dr. Brian Landi at our Malvern office (25 to 28 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Glen Mills PA
   - perimenopause Glen Mills Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Glen Mills residents through Dr. Brian Landi, DO at our West Chester office (about 12–15 minutes via US-202 north) and Malvern office (about 25 to 28 minutes). Glen Mills residents have MSCP-certified menopause expertise a short drive away."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Glen Mills residents through Dr. Brian Landi, DO at our Malvern office (about 25 to 28 minutes). Glen Mills residents have MSCP-certified menopause expertise a short drive away."
 nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 ---
 
@@ -26,13 +26,13 @@ nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 
 ## About Glen Mills, PA
 
-Glen Mills is an established Delaware County community with an affluent, educated professional population, the highly rated Garnet Valley School District, and a median age that reflects a mature, settled base. With more than half of residents holding bachelor's degrees or higher and a median age over 45, Glen Mills has a higher-than-average proportion of women at or approaching the perimenopause and menopause transition — and a population accustomed to high-quality professional services. Forward Family Medicine's West Chester and Malvern offices, both a short drive away, offer the kind of menopause care that matches those expectations.
+Glen Mills is an established Delaware County community with an affluent, educated professional population, the highly rated Garnet Valley School District, and a median age that reflects a mature, settled base. With more than half of residents holding bachelor's degrees or higher and a median age over 45, Glen Mills has a higher-than-average proportion of women at or approaching the perimenopause and menopause transition — and a population accustomed to high-quality professional services. Forward Family Medicine's Malvern office, a short drive away, offers the kind of menopause care that matches those expectations.
 
 ## Menopause Society Certified Care, Minutes from Glen Mills
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 25 to 28 minutes from Glen Mills). A West Chester office (about 12–15 minutes) is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 25 to 28 minutes from Glen Mills). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -46,7 +46,7 @@ Dr. Landi practices at our Malvern office (about 25 to 28 minutes from Glen Mill
 
 ## Why Glen Mills Patients Choose This Practice
 
-- **West Chester office ~12–15 min from Glen Mills** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 15 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
@@ -65,7 +65,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Glen Mills Patients
 
-**Closest FFM office:** West Chester — about 12–15 minutes via US-202 north. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also convenient:** Malvern, 301 Lindenwood Dr #206, 15 miles, about 25 to 28 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership

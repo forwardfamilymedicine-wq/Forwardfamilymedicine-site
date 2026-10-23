@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Concordville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (25 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Concordville, PA residents with Dr. Brian Landi at our Malvern office (25 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Concordville PA
   - DPC Concordville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Concordville residents across three offices: West Chester (about 10–15 minutes via US-1 north to PA-202), Malvern (about 25 minutes), and Wayne (about 20–25 minutes via US-202 north). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both accessible from the US-1/US-322 corridor."
+localNote: "Forward Family Medicine serves Concordville residents across two offices: Malvern (about 25 minutes) and Wayne (about 20 to 25 minutes via US-202 north). Dr. Brian Landi, DO leads our Malvern office, accessible from the US-1/US-322 corridor."
 nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 ---
 
@@ -30,13 +30,13 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Concordville, PA
 
-Concordville is a historic Delaware County community in Concord Township — settled by Quakers in the 17th century, anchored by the Concord Friends Meetinghouse (built 1728), and today a prosperous residential area at the junction of US Routes 1 and 322. The Painters Crossing commercial district and Concordville's proximity to both West Chester and Philadelphia make it a well-positioned community whose residents expect quality in the professional services they choose, including healthcare. Forward Family Medicine, with offices in West Chester (about 10–15 minutes) and Malvern (about 25 minutes), is built for exactly that expectation.
+Concordville is a historic Delaware County community in Concord Township — settled by Quakers in the 17th century, anchored by the Concord Friends Meetinghouse (built 1728), and today a prosperous residential area at the junction of US Routes 1 and 322. The Painters Crossing commercial district and Concordville's proximity to both West Chester and Philadelphia make it a well-positioned community whose residents expect quality in the professional services they choose, including healthcare. Forward Family Medicine, with an office in Malvern (about 25 minutes), is built for exactly that expectation.
 
 ## Why Concordville Patients Choose Forward Family Medicine
 
-- **West Chester office ~10–15 min from Concordville** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 18 miles, about 25 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Concordville Patients
 
-**Closest FFM office:** West Chester — about 10–15 minutes via US-1 north to PA-202. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also convenient:** Malvern, 301 Lindenwood Dr #206, 18 miles, about 25 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Concordville patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Concordville)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Concordville?**

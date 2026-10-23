@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Avondale, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (35 min) offices. Perimenopause management, HRT consultation, telehealth included."
+description: "Menopause Society Certified menopause care for Avondale, PA residents with Dr. Brian Landi at our Malvern office (35 min). Perimenopause management, HRT consultation, telehealth included."
 keywords:
   - menopause care Avondale PA
   - perimenopause Avondale Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Avondale residents through Dr. Brian Landi, DO at our West Chester office (about 25–30 minutes) and Malvern office (about 35 minutes). Telehealth is included in membership so follow-up visits and consultations don't always require the drive."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Avondale residents through Dr. Brian Landi, DO at our Malvern office (about 35 minutes). Telehealth is included in membership so follow-up visits and consultations don't always require the drive."
 nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -26,13 +26,13 @@ nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hock
 
 ## About Avondale, PA
 
-Avondale is a small Chester County borough in the region's southern agricultural corridor — home to a strong Hispanic community, a mushroom-industry workforce, and St. Rocco Church, the first National Hispanic Parish established by the Roman Catholic Archdiocese of Philadelphia. Women in Avondale navigating perimenopause and menopause face a real and practical challenge: specialist-level care for this stage of life is not nearby. Forward Family Medicine's West Chester office — about 25–30 minutes north — brings Menopause Society Certified care within reach, with telehealth included so the relationship isn't defined by the drive.
+Avondale is a small Chester County borough in the region's southern agricultural corridor — home to a strong Hispanic community, a mushroom-industry workforce, and St. Rocco Church, the first National Hispanic Parish established by the Roman Catholic Archdiocese of Philadelphia. Women in Avondale navigating perimenopause and menopause face a real and practical challenge: specialist-level care for this stage of life is not nearby. Forward Family Medicine's Malvern office brings Menopause Society Certified care within reach, with telehealth included so the relationship isn't defined by the drive.
 
 ## Menopause Society Certified Care, Accessible from Avondale
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 35 minutes from Avondale). A West Chester office (about 25–30 minutes) is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many consultations and follow-ups can happen by phone or video. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 35 minutes from Avondale). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many consultations and follow-ups can happen by phone or video. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -46,7 +46,7 @@ Dr. Landi practices at our Malvern office (about 35 minutes from Avondale). A We
 
 ## Why Avondale Patients Choose This Practice
 
-- **West Chester office ~25–30 min from Avondale** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 23 miles, about 35 minutes.** 301 Lindenwood Dr #206
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
@@ -65,7 +65,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Avondale Patients
 
-**Closest FFM office:** West Chester — about 25–30 minutes via PA-41 north to US-1 east. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also available:** Malvern, 301 Lindenwood Dr #206, 23 miles, about 35 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 40–45 minutes — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership, no drive required

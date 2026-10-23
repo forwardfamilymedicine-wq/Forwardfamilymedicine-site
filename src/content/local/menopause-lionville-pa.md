@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Lionville, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Lionville, PA residents with Dr. Brian Landi at our Malvern (10 min) and West Chester (15 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Lionville, PA residents with Dr. Brian Landi at our Malvern office (10 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Lionville PA
   - perimenopause Lionville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/malvern"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Lionville residents through Dr. Brian Landi, DO at our Malvern office (about 10–12 minutes via PA-100 south) and West Chester office (about 15 minutes). Lionville residents have MSCP-certified menopause expertise a short drive from home."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Lionville residents through Dr. Brian Landi, DO at our Malvern office (about 10 to 12 minutes via PA-100 south). Lionville residents have MSCP-certified menopause expertise a short drive from home."
 nearbyNeighborhoods: "Exton, Malvern, Downingtown, Phoenixville, and Frazer"
 ---
 
@@ -32,7 +32,7 @@ Lionville is a Chester County community in Uwchlan Township — a professional, 
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 10–12 minutes from Lionville). A West Chester office (about 15 minutes) is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 10–12 minutes from Lionville). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our Malvern office (about 10–12 minutes from Lionville)
 ## Why Lionville Patients Choose This Practice
 
 - **Malvern office ~10–12 min from Lionville** — 301 Lindenwood Dr #206
-- **West Chester office ~15 min** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Lionville Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10–12 minutes via PA-100 south.
-**Also convenient:** West Chester — about 15 minutes via PA-100 south to PA-322. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 20 minutes via PA-100 to US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

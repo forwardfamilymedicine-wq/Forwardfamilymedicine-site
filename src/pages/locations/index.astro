@@ -15,9 +15,6 @@ const providersBySlug: Record<string, { name: string; title: string; href: strin
     { name: 'Dr. Philip Lieberman, MD',   title: 'Family Medicine & Lifestyle Medicine Physician', href: '/meet-the-team/philip-lieberman-md/', photo: '/images/staff/dr-philip-lieberman.jpg' },
     { name: 'Dr. David Bigley, DO',       title: 'Founder & Family Medicine Physician',            href: '/meet-the-team/david-bigley-do/',     photo: '/images/staff/dr-david-bigley.jpg' },
   ],
-  'west-chester': [
-    { name: 'Dr. Brian Landi, DO',        title: 'Family Medicine Physician',      href: '/meet-the-team/brian-landi-do/',    photo: '/images/staff/dr-brian-landi.jpg' },
-  ],
   'malvern': [
     { name: 'Dr. Brian Landi, DO',        title: 'Family Medicine Physician',      href: '/meet-the-team/brian-landi-do/',    photo: '/images/staff/dr-brian-landi.jpg' },
   ],
@@ -25,7 +22,6 @@ const providersBySlug: Record<string, { name: string; title: string; href: strin
 
 const neighborhoodsBySlug: Record<string, string[]> = {
   'wayne':        ['Wayne', 'Radnor', 'Villanova', 'Bryn Mawr', 'Devon', 'Berwyn', 'Paoli', 'Strafford', 'Haverford', 'Ardmore'],
-  'west-chester': ['West Chester', 'Chester Springs', 'Downingtown', 'Exton', 'Lionville', 'Kennett Square', 'Coatesville'],
   'malvern':      ['Malvern', 'Paoli', 'Berwyn', 'Chester Springs', 'Exton', 'Phoenixville', 'Lionville', 'Glen Mills'],
 };
 
@@ -78,7 +74,7 @@ const breadcrumb = {
           height="420"
           style="border: 0; border-radius: 8px;"
           loading="lazy"
-          title="Forward Family Medicine locations — Wayne, West Chester, Malvern"
+          title="Forward Family Medicine locations in Wayne and Malvern"
         ></iframe>
         <p class="map-link">
           <a

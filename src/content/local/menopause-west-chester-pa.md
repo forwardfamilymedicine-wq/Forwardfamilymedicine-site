@@ -28,11 +28,11 @@ nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concor
 
 West Chester is the seat of Chester County — a vibrant borough anchored by West Chester University, a thriving downtown, and the Route 202 / Route 322 corridor connecting greater Philadelphia to Lancaster County. The community mixes long-established families, university faculty and staff, healthcare professionals, and business owners — many of whom have found that menopause care in the traditional primary care setting means a brief conversation tucked into the final minutes of a standard appointment. Forward Family Medicine is built to offer something meaningfully different: Menopause Society Certified expertise, at our Malvern office (about 10 miles away) and by phone and video.
 
-## Menopause Society Certified Care, On-Site in West Chester
+## Menopause Society Certified Care for West Chester
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation in a 15-minute appointment — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine is built differently.
 
-Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of a small number of family physicians in the region with dedicated specialty training in perimenopause and menopause management. At West Chester, every patient gets the depth this stage of life actually requires: 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and integration with the rest of your primary care. [Full menopause care overview →](/menopause)
+Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of a small number of family physicians in the region with dedicated specialty training in perimenopause and menopause management. At our Malvern office, every patient gets the depth this stage of life actually requires: 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and integration with the rest of your primary care. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -64,7 +64,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for West Chester Patients
 
-**Location:** West Chester, PA 19380
+**Location:** West Chester (planned)
 **Status:** Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 **Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and Malvern (Dr. Landi)
