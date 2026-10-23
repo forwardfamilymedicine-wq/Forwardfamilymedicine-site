@@ -77,6 +77,15 @@ const plannedLine = planned && openOthers.length > 0 ? {
 
 const hasAddress = data.addressZip;
 
+// Directions only to an open office with a street address: a planned office
+// has nowhere to go, and a bare city sends people somewhere we never said.
+// The practice name makes Google open our listing rather than a bare address.
+const destination = `${data.addressStreet}, ${data.addressCity}, ${data.addressState} ${data.addressZip}`;
+const directions = data.status === 'open' && data.addressStreet ? {
+  google: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Forward Family Medicine, ${destination}`)}`,
+  apple: `https://maps.apple.com/?daddr=${encodeURIComponent(destination)}`,
+} : null;
+
 const locationSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
@@ -158,10 +167,15 @@ const breadcrumb = {
           {!planned && hasAddress && (
             <div class="address-block">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <address style="font-style:normal;">
-                {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
-                {data.addressCity}, {data.addressState} {data.addressZip}
-              </address>
+              <div>
+                <address style="font-style:normal;">
+                  {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
+                  {data.addressCity}, {data.addressState} {data.addressZip}
+                </address>
+                {directions && (
+                  <Fragment><a href={directions.google} target="_blank" rel="noopener noreferrer">Get directions</a> <small><span aria-hidden="true">·</span> <a href={directions.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a></small></Fragment>
+                )}
+              </div>
             </div>
           )}
 
@@ -203,6 +217,10 @@ const breadcrumb = {
                   {data.addressCity}, {data.addressState} {data.addressZip}
                 </address>
                 {data.phone && <p><a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a></p>}
+                {directions && (
+                  <p><a href={directions.google} target="_blank" rel="noopener noreferrer">Get directions</a> <small><span aria-hidden="true">·</span> <a href={directions.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a></small></p>
+                )}
+                {data.status === 'open' && data.arrivalNote && <p>{data.arrivalNote}</p>}
               </div>
             )}
 
