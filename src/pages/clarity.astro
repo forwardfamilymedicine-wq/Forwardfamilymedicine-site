@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+import { ORG_ID } from '../utils/practiceSchema';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -12,27 +13,20 @@ const breadcrumb = {
   ]
 };
 
+// A program the practice provides, not a place: no address or phone of its
+// own. The provider is the practice node in the site-wide graph on this page.
 const claritySchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "name": "The Clarity Program — Forward Family Medicine",
+  "@type": "Service",
+  "name": "The Clarity Program",
   "description": "A physician-led longitudinal health operating system for the Main Line. Prenuvo whole-body MRI, advanced biomarker panels, DEXA, VO₂ max, CGM, and gut microbiome — with physician interpretation at every step. $9,600/year.",
   "url": "https://www.forwardfamilymedicine.com/clarity/",
-  "telephone": "+12156457044",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "295 Old Eagle School Road, STE 2",
-    "addressLocality": "Wayne",
-    "addressRegion": "PA",
-    "postalCode": "19087",
-    "addressCountry": "US"
-  },
+  "provider": { "@id": ORG_ID },
   "areaServed": [
     { "@type": "City", "name": "Wayne, PA" },
     { "@type": "AdministrativeArea", "name": "Philadelphia Main Line" },
     { "@type": "City", "name": "Philadelphia, PA" }
-  ],
-  "medicalSpecialty": ["FamilyMedicine", "PreventiveMedicine"]
+  ]
 };
 
 const faqs = [

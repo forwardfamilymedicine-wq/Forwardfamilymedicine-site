@@ -13,23 +13,6 @@ const breadcrumb = {
   ]
 };
 
-const clinicSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "name": "Forward Family Medicine",
-  "url": "https://www.forwardfamilymedicine.com",
-  "telephone": "+12156457044",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "295 Old Eagle School Road, STE 2",
-    "addressLocality": "Wayne",
-    "addressRegion": "PA",
-    "postalCode": "19087",
-    "addressCountry": "US"
-  },
-  "medicalSpecialty": ["FamilyMedicine", "LifestyleMedicine"]
-};
-
 const faqs = [
   {
     q: 'Do I need insurance to be a patient?',
@@ -53,7 +36,7 @@ const faqs = [
 <MainLayout
   title="DPC + Lifestyle Medicine Services | Forward Family Medicine Wayne PA"
   description="Direct Primary Care, board-certified Lifestyle Medicine, and Concierge Medicine in Wayne PA. Flat monthly membership. No insurance. Serving the Main Line and Chester County."
-  schema={[breadcrumb, clinicSchema]}
+  schema={[breadcrumb]}
 >
   <!-- Page hero -->
   <section class="page-hero section hero-section">

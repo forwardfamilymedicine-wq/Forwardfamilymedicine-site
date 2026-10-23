@@ -8,6 +8,7 @@ import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { getAvailability } from '../utils/availability';
+import { isListedOffice, officeRef } from '../utils/practiceSchema';
 
 // Dr. Lieberman's name, credentials, photo, bio link and availability all come
 // from the providers collection — the same source meet-the-team, the homepage
@@ -16,6 +17,9 @@ const allProviders = await getCollection('providers');
 const lieberman = allProviders.find(p => p.id === 'philip-lieberman-md');
 const d = lieberman?.data;
 const availability = d ? getAvailability(d) : null;
+
+const wayne = (await getCollection('locations')).find(l => l.data.slug === 'wayne');
+if (!wayne) throw new Error('[lifestyle-medicine] no locations entry has the slug "wayne".');
 
 // Town list is derived from the local collection, never hardcoded, so a new
 // /local/lifestyle-medicine-*.md file appears here the moment it is added.
@@ -44,19 +48,8 @@ const physicianSchema = {
     "name": "Forward Family Medicine",
     "url": "https://www.forwardfamilymedicine.com"
   },
-  "workLocation": [
-    {
-      "@type": "MedicalClinic",
-      "name": "Forward Family Medicine — Wayne",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "295 Old Eagle School Road, STE 2",
-        "addressLocality": "Wayne",
-        "addressRegion": "PA",
-        "postalCode": "19087"
-      }
-    }
-  ],
+  // The office node itself is in the site-wide graph on this page.
+  ...(isListedOffice(wayne) ? { "workLocation": [officeRef(wayne)] } : {}),
   "url": d ? `https://www.forwardfamilymedicine.com/meet-the-team/${d.slug}/` : undefined
 };
 

@@ -1,6 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
+
+// Wayne DEXA is in Forward Family Medicine's Wayne building, so it takes that
+// building's coordinates from the locations collection rather than its own copy.
+const wayne = (await getCollection('locations')).find(l => l.data.slug === 'wayne');
+if (wayne?.data.latitude == null || wayne.data.longitude == null) {
+  throw new Error('[wayne-dexa] locations/wayne has no latitude/longitude.');
+}
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const pageUrl = `${siteUrl}/wayne-dexa/`;
@@ -42,8 +50,8 @@ const wayneDexaSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "40.0440",
-    "longitude": "-75.3944"
+    "latitude": wayne.data.latitude,
+    "longitude": wayne.data.longitude
   },
   "priceRange": "$$",
   "currenciesAccepted": "USD",

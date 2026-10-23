@@ -27,6 +27,7 @@ photos: []
 photoAlts: []
 latitude: 40.05549
 longitude: -75.40596
+listingName: "Forward Family Medicine - Direct Primary Care"
 mapEmbedUrl: "https://www.google.com/maps?q=295+Old+Eagle+School+Road,+STE+2,+Wayne,+PA+19087&output=embed"
 providers:
   - "david-bigley-do"

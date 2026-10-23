@@ -23,7 +23,7 @@ type Provider = CollectionEntry<'providers'>;
 type Location = CollectionEntry<'locations'>;
 type LocalEntry = CollectionEntry<'local'>;
 
-// Practice-wide constants that no collection holds yet (siteConfig still has placeholders).
+// Practice-wide constants that no collection holds yet. Also used by utils/practiceSchema.
 export const PRACTICE_FAX = '(215) 449-8854';
 export const PRACTICE_EMAIL = 'information@forwardfamilymedicine.com';
 const OFFICE_EXTRAS: Record<string, { label: string; value: string }[]> = {

@@ -147,9 +147,15 @@ const locations = defineCollection({
     mapEmbedUrl: z.string().optional(),
     // How to find the office once in the building; shown in Visit Us for an open office.
     arrivalNote: z.string().optional(),
+    // The office's Google Business Profile name, exactly; its structured-data name.
+    listingName: z.string().optional(),
     providers: z.array(z.string()).optional().default([]),
     description: z.string(),
     displayOrder: z.number(),
+  }).superRefine((d, ctx) => {
+    if (d.status === 'open' && !d.listingName) {
+      ctx.addIssue({ code: 'custom', path: ['listingName'], message: 'an open office needs its Google Business Profile name' });
+    }
   }),
 });
 
