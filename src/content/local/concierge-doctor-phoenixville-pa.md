@@ -55,7 +55,6 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Phoenixville Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 12–15 minutes via PA-29 south.
-**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via PA-23 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 

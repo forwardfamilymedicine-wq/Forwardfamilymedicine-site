@@ -26,11 +26,11 @@ nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 
 ## About Newtown Square, PA
 
-Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. Newtown Square residents value efficiency and quality in how they manage their time, including their healthcare. For women in midlife managing demanding careers and family responsibilities, perimenopause and menopause care that's integrated, unhurried, and evidence-based is exactly what Forward Family Medicine delivers, across three offices all within about 25 minutes.
+Newtown Square is a Delaware County community that has grown significantly over the past two decades, attracting families and professionals drawn to its suburban character, top-rated schools, and proximity to both Philadelphia and the corporate campuses along Route 3. Newtown Square residents value efficiency and quality in how they manage their time, including their healthcare. For women in midlife managing demanding careers and family responsibilities, perimenopause and menopause care that's integrated, unhurried, and evidence-based is exactly what Forward Family Medicine delivers, with offices in Wayne and Malvern, both within about 25 minutes.
 
 ## Menopause Care at Forward Family Medicine
 
-Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Newtown Square residents have access to:
+Menopause care isn't a separate referral at Forward Family Medicine. It's integrated into how primary care works at every FFM office. Newtown Square residents have access to:
 
 - **Primary care at our Wayne office** (about 15 minutes from Newtown Square) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
 - **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our Malvern office (about 22 to 25 minutes). Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
@@ -55,7 +55,7 @@ You establish primary care at your preferred FFM office and access specialty men
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
 - ~250-patient panel per physician — direct physician access by phone, text, or message
-- Inter-office coordination across all three locations included automatically
+- Inter-office coordination across all of our offices included automatically
 
 ## Services Included in Membership
 
@@ -81,7 +81,7 @@ From Newtown Square: Wayne is about 15 minutes and Malvern is about 22 to 25 min
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our Malvern office holds this credential.
 
 **Is menopause care included in my membership?**
-Yes — completely, across all three offices. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, telehealth follow-ups, and inter-office coordination are all part of your DPC membership.
+Yes, completely, at every office. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, telehealth follow-ups, and inter-office coordination are all part of your DPC membership.
 
 **How do I get started?**
 Schedule a free Meet & Greet: a no-obligation 60-minute conversation. [Schedule here →](/contact/?subject=Meet%20and%20Greet%20-%20Newtown%20Square)

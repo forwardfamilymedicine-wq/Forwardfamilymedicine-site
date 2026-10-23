@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProviderCard from '../../components/shared/ProviderCard.astro';
 import { isPlanned } from '../../utils/physicianRouting';
-import { formatMonthYear } from '../../utils/availability';
+import { formatMonthYear, getAvailability } from '../../utils/availability';
 
 export async function getStaticPaths() {
   const locations = await getCollection('locations');
@@ -56,6 +56,24 @@ const plannedVisits = openOthers.length
   : datedOther
     ? `Our ${datedOther.data.name} office opens in ${formatMonthYear(datedOther.data.openingDate!)}, so early visits happen by telehealth.`
     : 'Visits are by phone and video.';
+
+// A planned office has no address or phone to show. In their place the hero
+// names who is accepting new patients now, and at which open office.
+const plannedIntro = 'We will post the address and opening date here once they are confirmed.';
+const plannedAccepting = locationProviders
+  .filter((p: any) => getAvailability(p.data).status === 'accepting')
+  .map((p: any) => `Dr. ${p.data.name.trim().split(/\s+/).pop()}`);
+const plannedLine = planned && openOthers.length > 0 ? {
+  lead: plannedAccepting.length > 0
+    ? ` Until then, ${joinAnd(plannedAccepting)} ${plannedAccepting.length > 1 ? 'are' : 'is'} accepting new patients at our `
+    : ' Until then, visits are at our ',
+  offices: openOthers.map((l, i) => ({
+    sep: i === 0 ? '' : i === openOthers.length - 1 ? ' and ' : ', ',
+    href: `/locations/${l.data.slug}/`,
+    label: openOthers.length === 1 ? `${l.data.name} office` : l.data.name,
+  })),
+  tail: openOthers.length > 1 ? ' offices.' : '.',
+} : null;
 
 const hasAddress = data.addressZip;
 
@@ -112,7 +130,7 @@ const breadcrumb = {
   title={pageTitle}
   description={pageDescription}
   canonical={canonicalUrl}
-  schema={[locationSchema, breadcrumb]}
+  schema={planned ? [breadcrumb] : [locationSchema, breadcrumb]}
 >
   <!-- Hero -->
   <section class="location-hero section" style={`background: linear-gradient(160deg, ${data.status === 'coming-soon' ? 'var(--cream-200)' : 'var(--green-50)'} 0%, var(--cream-100) 100%);`}>
@@ -137,7 +155,7 @@ const breadcrumb = {
           <div class="divider"></div>
           <p class="location-desc">{data.description}</p>
 
-          {hasAddress && (
+          {!planned && hasAddress && (
             <div class="address-block">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <address style="font-style:normal;">
@@ -147,11 +165,13 @@ const breadcrumb = {
             </div>
           )}
 
-          {data.phone && (
+          {!planned && data.phone && (
             <div class="phone-block">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.58 4.5 2 2 0 0 1 3.55 2.34h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
               <a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a>
             </div>
+          )}{planned && (
+            <p class="location-desc">{plannedIntro}{plannedLine && <Fragment>{plannedLine.lead}{plannedLine.offices.map(o => <Fragment>{o.sep}<a href={o.href}>{o.label}</a></Fragment>)}{plannedLine.tail}</Fragment>}</p>
           )}
         </div>
 
@@ -219,8 +239,8 @@ const breadcrumb = {
     </section>
   )}
 
-  <!-- Physicians -->
-  {locationProviders.length > 0 && (
+  <!-- Physicians: not for a planned office, where nobody is seen -->
+  {!planned && locationProviders.length > 0 && (
     <section class="providers-section section" style="background: var(--cream-100);">
       <div class="container">
         <span class="section-label">Our Physicians</span>
@@ -265,7 +285,7 @@ const breadcrumb = {
   )}
 
   <!-- Photos (if any) -->
-  {data.photos && data.photos.length > 0 && (
+  {!planned && data.photos && data.photos.length > 0 && (
     <section class="photos-section section" style="background: var(--cream-200); padding-top: 3rem; padding-bottom: 3rem;">
       <div class="container">
         <h2 class="section-title" style="font-size:1.4rem;">Our Space</h2>

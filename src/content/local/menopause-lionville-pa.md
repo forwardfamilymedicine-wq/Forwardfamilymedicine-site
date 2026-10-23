@@ -66,7 +66,6 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Lionville Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10–12 minutes via PA-100 south.
-**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 20 minutes via PA-100 to US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

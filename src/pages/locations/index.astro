@@ -125,8 +125,8 @@ const breadcrumb = {
                 </div>
               )}
 
-              {/* Phone */}
-              {d.phone && (
+              {/* Phone: a planned office has none */}
+              {!planned && d.phone && (
                 <div class="detail-block">
                   <span class="detail-label">Phone</span>
                   <a href={`tel:${d.phone.replace(/\D/g, '')}`} class="detail-phone">{d.phone}</a>
