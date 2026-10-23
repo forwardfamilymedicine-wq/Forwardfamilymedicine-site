@@ -7,6 +7,8 @@ addressStreet: "301 Lindenwood Dr #206"
 addressCity: "Malvern"
 addressState: "PA"
 addressZip: "19355"
+latitude: 40.05040
+longitude: -75.52957
 mapEmbedUrl: "https://www.google.com/maps?q=301+Lindenwood+Dr+%23206,+Malvern,+PA+19355&output=embed"
 arrivalNote: "We are co-located with Aberdeen Audiology. Take the elevator to the second floor and turn right, and you will see signs for Suite 206."
 phone: "(215) 645-7044"
