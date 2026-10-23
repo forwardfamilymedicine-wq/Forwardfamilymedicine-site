@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/',
   redirects: {
     '/what-to-expect': '/new-patients/',
-    '/blog/dpc-vs-concierge-which-is-right/': '/blog/concierge-medicine-vs-direct-primary-care',
+    '/blog/dpc-vs-concierge-which-is-right/': '/blog/concierge-medicine-vs-direct-primary-care/',
     '/faqs': { status: 301, destination: '/faq/' },
     '/home/': { status: 301, destination: '/' },
     '/providers/': '/meet-the-team/',
@@ -17,7 +17,7 @@ export default defineConfig({
   },
   integrations: [mdx(), sitemap({
     filter: (page) =>
-      !page.endsWith('/patient-experience/') &&
+      page !== 'https://www.forwardfamilymedicine.com/patient-experience/' &&
       !page.endsWith('/home/') &&
       !page.endsWith('/become-a-patient/') &&
       page !== 'https://www.forwardfamilymedicine.com/home'
