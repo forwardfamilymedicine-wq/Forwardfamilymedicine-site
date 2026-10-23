@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Kennett Square, PA | Forward Family Medicine"
-description: "Direct Primary Care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (30 to 35 min) offices. Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Kennett Square, PA residents with Dr. Brian Landi at our Malvern office (30 to 35 min). Unlimited visits, same-day access, telehealth included. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Kennett Square PA
   - DPC Kennett Square Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Kennett Square residents across three offices: West Chester (about 15–20 minutes via PA-82 north), Malvern (about 30 to 35 minutes), and Wayne (about 35–40 minutes). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included in membership for established patients — phone and video visits work well for follow-ups and acute care."
+localNote: "Forward Family Medicine serves Kennett Square residents across two offices: Malvern (about 30 to 35 minutes) and Wayne (about 35 to 40 minutes). Dr. Brian Landi, DO leads our Malvern office. Telehealth is included in membership for established patients — phone and video visits work well for follow-ups and acute care."
 nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -30,13 +30,13 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Kennett Square, PA
 
-Kennett Square is the "Mushroom Capital of the World" — producing more than half of the nation's supply — and a Chester County borough with a revitalized downtown, a strong agricultural heritage, and a community that includes long-established families and newer residents drawn by Longwood Gardens and the borough's quality of life. Residents here navigate healthcare options that are often more limited than those in the northern Main Line corridor. Forward Family Medicine's West Chester office — about 15–20 minutes north — offers something genuinely different: a physician who knows you, same-day access, and visits long enough to actually address your health.
+Kennett Square is the "Mushroom Capital of the World" — producing more than half of the nation's supply — and a Chester County borough with a revitalized downtown, a strong agricultural heritage, and a community that includes long-established families and newer residents drawn by Longwood Gardens and the borough's quality of life. Residents here navigate healthcare options that are often more limited than those in the northern Main Line corridor. Forward Family Medicine's Malvern office offers something genuinely different: a physician who knows you, same-day access, and visits long enough to actually address your health.
 
 ## Why Kennett Square Patients Choose Forward Family Medicine
 
-- **West Chester office ~15–20 min from Kennett Square** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 20 miles, about 30 to 35 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Kennett Square patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Does DPC work well even with the drive from Kennett Square?**

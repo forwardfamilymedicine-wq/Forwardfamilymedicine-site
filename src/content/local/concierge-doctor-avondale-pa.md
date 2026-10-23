@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Avondale, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (35 min) offices. Direct physician access, 1–2 hour visits, telehealth included."
+description: "Concierge-style primary care for Avondale, PA residents with Dr. Brian Landi at our Malvern office (35 min). Direct physician access, 1–2 hour visits, telehealth included."
 keywords:
   - concierge doctor Avondale PA
   - concierge medicine Avondale Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Avondale residents from our West Chester office (about 25–30 minutes) and Malvern office (about 35 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth included for established patients."
+localNote: "Forward Family Medicine serves Avondale residents from our Malvern office (about 35 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth included for established patients."
 nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -30,13 +30,13 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About Avondale, PA
 
-Avondale is a small Chester County borough in Pennsylvania's southern mushroom-growing corridor — a community with strong roots in the agricultural industry, a large and established Hispanic population, and families who have been here for generations. Concierge-level healthcare — where your physician knows you, takes time for a real conversation, and is actually reachable when you need them — is what Forward Family Medicine delivers at a flat monthly DPC membership, without the $4,000+ retainer that puts traditional concierge practices out of reach. Our West Chester office is about 25–30 minutes north.
+Avondale is a small Chester County borough in Pennsylvania's southern mushroom-growing corridor — a community with strong roots in the agricultural industry, a large and established Hispanic population, and families who have been here for generations. Concierge-level healthcare — where your physician knows you, takes time for a real conversation, and is actually reachable when you need them — is what Forward Family Medicine delivers at a flat monthly DPC membership, without the $4,000+ retainer that puts traditional concierge practices out of reach. Our Malvern office is about 35 minutes away.
 
 ## Why Avondale Patients Choose This Practice
 
-- **West Chester office ~25–30 min from Avondale** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 23 miles, about 35 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
 - Same-day and next-day availability for acute concerns
@@ -64,7 +64,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 **Is this true concierge medicine?**
 Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Avondale patients?**

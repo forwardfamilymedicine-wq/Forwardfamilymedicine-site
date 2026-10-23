@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Exton, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Exton, PA residents with Dr. Brian Landi at our Malvern (10 min) and West Chester (15 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Exton, PA residents with Dr. Brian Landi at our Malvern office (10 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Exton PA
   - perimenopause Exton Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/malvern"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Exton residents through Dr. Brian Landi, DO at our Malvern office (about 10 minutes) and West Chester office (about 12–15 minutes). Exton residents have MSCP-certified menopause expertise a short drive from the Route 30 / Route 100 corridor."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Exton residents through Dr. Brian Landi, DO at our Malvern office (about 10 minutes). Exton residents have MSCP-certified menopause expertise a short drive from the Route 30 / Route 100 corridor."
 nearbyNeighborhoods: "Malvern, West Chester, Lionville, Downingtown, and Frazer"
 ---
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our Malvern office (about 10 minutes from Exton). A West 
 ## Why Exton Patients Choose This Practice
 
 - **Malvern office ~10 min from Exton** — 301 Lindenwood Dr #206
-- **West Chester office ~12–15 min** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Exton Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10 minutes via local routes.
-**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 17 minutes via US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

@@ -34,7 +34,3 @@ displayOrder: 2
 ## A West Chester Office Is Planned
 
 Forward Family Medicine plans to open an office in West Chester. There is no address or opening date yet, and both will be posted here once they are confirmed. Dr. Brian Landi, DO is accepting new patients now.
-
-## Meet Your Physician
-
-<!-- This section is auto-rendered from the providers frontmatter. -->

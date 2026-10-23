@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Downingtown, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Downingtown, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 to 18 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Downingtown, PA residents with Dr. Brian Landi at our Malvern office (15 to 18 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Downingtown PA
   - perimenopause Downingtown Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Downingtown residents through Dr. Brian Landi, DO at our West Chester office (about 10–12 minutes) and Malvern office (about 15 to 18 minutes). Downingtown residents have MSCP-certified menopause expertise a short drive from the Route 30 corridor."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Downingtown residents through Dr. Brian Landi, DO at our Malvern office (about 15 to 18 minutes). Downingtown residents have MSCP-certified menopause expertise a short drive from the Route 30 corridor."
 nearbyNeighborhoods: "Exton, Malvern, Coatesville, Thorndale, and Parkesburg"
 ---
 
@@ -46,7 +46,7 @@ Dr. Landi practices at our Malvern office (about 15 to 18 minutes from Downingto
 
 ## Why Downingtown Patients Choose This Practice
 
-- **West Chester office ~10–12 min from Downingtown** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 9 miles, about 15 to 18 minutes.** 301 Lindenwood Dr #206
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations

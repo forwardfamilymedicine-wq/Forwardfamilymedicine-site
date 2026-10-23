@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Concordville, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (25 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Concordville, PA residents with Dr. Brian Landi at our Malvern office (25 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Concordville PA
   - perimenopause Concordville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/west-chester"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Concordville residents through Dr. Brian Landi, DO at our West Chester office (about 10–15 minutes) and Malvern office (about 25 minutes). Concordville residents have MSCP-certified menopause expertise a short drive from the US-1/US-322 corridor."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Concordville residents through Dr. Brian Landi, DO at our Malvern office (about 25 minutes). Concordville residents have MSCP-certified menopause expertise a short drive from the US-1/US-322 corridor."
 nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 ---
 
@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 
 ## About Concordville, PA
 
-Concordville is a historic Quaker community in Concord Township, Delaware County — prosperous, established, and located at the convergence of major routes connecting Chester County and Philadelphia's western suburbs. Residents here share the Garnet Valley School District with neighboring Glen Mills and a mature professional character. Women in Concordville navigating perimenopause and menopause deserve the same quality of care as those on the northern Main Line — Forward Family Medicine's West Chester and Malvern offices bring that within a short drive.
+Concordville is a historic Quaker community in Concord Township, Delaware County — prosperous, established, and located at the convergence of major routes connecting Chester County and Philadelphia's western suburbs. Residents here share the Garnet Valley School District with neighboring Glen Mills and a mature professional character. Women in Concordville navigating perimenopause and menopause deserve the same quality of care as those on the northern Main Line — Forward Family Medicine's Malvern office brings that within a short drive.
 
 ## Menopause Society Certified Care, Minutes from Concordville
 
@@ -46,7 +46,7 @@ Dr. Landi practices at our Malvern office (about 25 minutes from Concordville). 
 
 ## Why Concordville Patients Choose This Practice
 
-- **West Chester office ~10–15 min from Concordville** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 18 miles, about 25 minutes.** 301 Lindenwood Dr #206
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations

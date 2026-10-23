@@ -67,7 +67,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 **Location:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Status:** Malvern office open. Dr. Landi is accepting new patients now.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
-**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and West Chester (Dr. Landi)
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman)
 
 ## Frequently Asked Questions
 

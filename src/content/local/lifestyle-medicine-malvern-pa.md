@@ -55,7 +55,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Menopause
 **Location:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Status:** Malvern office open. Dr. Landi is accepting new patients now.
 **Telehealth:** Lifestyle medicine consultations and follow-ups work well by video — included in membership
-**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine) and West Chester (Dr. Landi)
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman, dual-board Lifestyle Medicine)
 
 ## Frequently Asked Questions
 

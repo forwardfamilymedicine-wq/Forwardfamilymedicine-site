@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Exton, PA | Forward Family Medicine"
-description: "Direct Primary Care for Exton, PA residents with Dr. Brian Landi at our Malvern (10 min) and West Chester (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Exton, PA residents with Dr. Brian Landi at our Malvern office (10 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Exton PA
   - DPC Exton Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Exton residents across three offices: Malvern (about 10 minutes via local routes), West Chester (about 12–15 minutes via PA-100 south), and Wayne (about 17 minutes via US-30 east). Dr. Brian Landi, DO leads our Malvern and West Chester offices — both a short drive from Exton's Route 30 / Route 100 corridor."
+localNote: "Forward Family Medicine serves Exton residents across two offices: Malvern (about 10 minutes via local routes) and Wayne (about 17 minutes via US-30 east). Dr. Brian Landi, DO leads our Malvern office, a short drive from Exton's Route 30 / Route 100 corridor."
 nearbyNeighborhoods: "Malvern, West Chester, Lionville, Downingtown, and Frazer"
 ---
 
@@ -30,13 +30,13 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Exton, PA
 
-Exton is a Chester County community at the crossroads of US Route 30 (Lincoln Highway) and PA Route 100 — a hub for professional and technical employment anchored by West Pharmaceutical Services and the Eagleview planned community. West Whiteland Township residents include a high concentration of professionals in technical, financial, and healthcare industries, many of whom are accustomed to quality service and have found that insurance-driven primary care doesn't match how they want to manage their health. Forward Family Medicine — with offices in Malvern (about 10 minutes from Exton) and West Chester (about 12–15 minutes) — is built for exactly this community: small panel, real visit length, direct physician access, no insurance overhead.
+Exton is a Chester County community at the crossroads of US Route 30 (Lincoln Highway) and PA Route 100 — a hub for professional and technical employment anchored by West Pharmaceutical Services and the Eagleview planned community. West Whiteland Township residents include a high concentration of professionals in technical, financial, and healthcare industries, many of whom are accustomed to quality service and have found that insurance-driven primary care doesn't match how they want to manage their health. Forward Family Medicine, with an office in Malvern about 10 minutes from Exton, is built for exactly this community: small panel, real visit length, direct physician access, no insurance overhead.
 
 ## Why Exton Patients Choose Forward Family Medicine
 
 - **Malvern office ~10 min from Exton** — 301 Lindenwood Dr #206
-- **West Chester office ~12–15 min** — planned, no opening date set
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
+- **West Chester office:** planned, no opening date set
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Exton Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10 minutes via local routes.
-**Also convenient:** West Chester — about 12–15 minutes via PA-100 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 17 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
 
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Exton patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Exton)
 
-**Who is the physician at the Malvern and West Chester offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Exton?**

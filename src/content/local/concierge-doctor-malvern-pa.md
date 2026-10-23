@@ -57,7 +57,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 **Location:** 301 Lindenwood Dr #206, Malvern, PA 19355
 **Status:** Malvern office open. Dr. Landi is accepting new patients now.
 **Telehealth:** Phone and video visits included for established patients
-**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman) and West Chester (Dr. Landi)
+**Other FFM locations:** Wayne (Dr. Bigley and Dr. Lieberman)
 
 ## Frequently Asked Questions
 

@@ -298,7 +298,7 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
     : {
         photo: null,
         photoAlt: 'Forward Family Medicine physician team',
-        physician: { name: 'Our Physicians', credential: 'Direct Primary Care · Wayne · Malvern · West Chester', href: '/meet-the-team/', linkLabel: 'Meet the team' },
+        physician: { name: 'Our Physicians', credential: 'Direct Primary Care · Wayne · Malvern', href: '/meet-the-team/', linkLabel: 'Meet the team' },
       };
 
   // Spotlight: the hero physician, or the physician at the nearest office.

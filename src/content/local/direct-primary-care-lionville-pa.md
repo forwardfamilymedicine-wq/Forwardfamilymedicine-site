@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Lionville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Lionville, PA residents with Dr. Brian Landi at our Malvern (10 min) and West Chester (15 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Lionville, PA residents with Dr. Brian Landi at our Malvern office (10 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Lionville PA
   - DPC Lionville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Lionville residents across three offices: Malvern (about 10–12 minutes via PA-100 south), West Chester (about 15 minutes via PA-100 south to PA-322), and Wayne (about 20 minutes via PA-100 to US-30 east). Dr. Brian Landi, DO leads our Malvern and West Chester offices — both a short drive from Lionville's PA-100 and PA-113 intersection."
+localNote: "Forward Family Medicine serves Lionville residents across two offices: Malvern (about 10 to 12 minutes via PA-100 south) and Wayne (about 20 minutes via PA-100 to US-30 east). Dr. Brian Landi, DO leads our Malvern office, a short drive from Lionville's PA-100 and PA-113 intersection."
 nearbyNeighborhoods: "Exton, Malvern, Downingtown, Phoenixville, and Frazer"
 ---
 
@@ -35,8 +35,8 @@ Lionville is a Uwchlan Township community in Chester County — a close-knit, fa
 ## Why Lionville Patients Choose Forward Family Medicine
 
 - **Malvern office ~10–12 min from Lionville** — 301 Lindenwood Dr #206
-- **West Chester office ~15 min** — planned, no opening date set
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
+- **West Chester office:** planned, no opening date set
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Lionville Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 10–12 minutes via PA-100 south.
-**Also convenient:** West Chester — about 15 minutes via PA-100 south to PA-322. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 20 minutes via PA-100 to US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
 
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Lionville patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Lionville)
 
-**Who is the physician at the Malvern and West Chester offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Lionville?**

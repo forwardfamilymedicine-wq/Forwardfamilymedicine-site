@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Avondale, PA | Forward Family Medicine"
-description: "Direct Primary Care for Avondale, PA residents with Dr. Brian Landi at our West Chester (25 min) and Malvern (35 min) offices. Unlimited visits, same-day access, telehealth included for established patients."
+description: "Direct Primary Care for Avondale, PA residents with Dr. Brian Landi at our Malvern office (35 min). Unlimited visits, same-day access, telehealth included for established patients."
 keywords:
   - direct primary care Avondale PA
   - DPC Avondale Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Avondale residents across three offices: West Chester (about 25–30 minutes via PA-41 north to US-1 east), Malvern (about 35 minutes), and Wayne (about 40–45 minutes). Dr. Brian Landi, DO leads our West Chester and Malvern offices. Telehealth is included for established patients — many follow-up and acute visits work well by phone or video."
+localNote: "Forward Family Medicine serves Avondale residents across two offices: Malvern (about 35 minutes) and Wayne (about 40 to 45 minutes). Dr. Brian Landi, DO leads our Malvern office. Telehealth is included for established patients — many follow-up and acute visits work well by phone or video."
 nearbyNeighborhoods: "Kennett Square, West Chester, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -30,13 +30,13 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Avondale, PA
 
-Avondale is a Chester County borough in the southern part of the county — a community shaped by the regional mushroom industry, a strong Hispanic heritage centered around St. Rocco Church (the first National Hispanic Parish established by the Archdiocese of Philadelphia), and families who have built roots here over generations. Access to quality primary care at a reasonable cost is a real and practical concern for many Avondale residents. Forward Family Medicine's West Chester office — about 25–30 minutes north — offers same-day access, direct physician contact, and a flat monthly fee that replaces the per-visit billing model.
+Avondale is a Chester County borough in the southern part of the county — a community shaped by the regional mushroom industry, a strong Hispanic heritage centered around St. Rocco Church (the first National Hispanic Parish established by the Archdiocese of Philadelphia), and families who have built roots here over generations. Access to quality primary care at a reasonable cost is a real and practical concern for many Avondale residents. Forward Family Medicine's Malvern office offers same-day access, direct physician contact, and a flat monthly fee that replaces the per-visit billing model.
 
 ## Why Avondale Patients Choose Forward Family Medicine
 
-- **West Chester office ~25–30 min from Avondale** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 23 miles, about 35 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Avondale patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Avondale)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Does DPC work well for patients who live a longer drive from your offices?**

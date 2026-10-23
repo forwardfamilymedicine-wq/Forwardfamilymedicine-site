@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Haverford, PA | Forward Family Medicine"
-description: "Comprehensive menopause care for Haverford, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our West Chester and Malvern offices, with primary care at Wayne (15 min) and telehealth across all three offices."
+description: "Comprehensive menopause care for Haverford, PA residents at Forward Family Medicine. Menopause Society Certified specialty consultation via Dr. Landi at our Malvern office, with primary care at Wayne (15 min) and telehealth across both offices."
 keywords:
   - menopause care Haverford PA
   - perimenopause Haverford Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/wayne"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers comprehensive menopause care to Haverford residents across three offices: Wayne (about 15 minutes), West Chester (about 30 minutes), and Malvern (about 25 to 28 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at West Chester and Malvern or via telehealth — all integrated into your DPC membership."
+localNote: "Forward Family Medicine offers comprehensive menopause care to Haverford residents across two offices: Wayne (about 15 minutes) and Malvern (about 25 to 28 minutes). Menopause Society Certified Practitioner Dr. Brian Landi provides dedicated specialty consultation at Malvern or via telehealth — all integrated into your DPC membership."
 nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 ---
 
@@ -26,14 +26,14 @@ nearbyNeighborhoods: "Ardmore, Bryn Mawr, Wynnewood, and Narberth"
 
 ## About Haverford, PA
 
-Haverford is a quiet, leafy Lower Merion Township community best known for Haverford College, its beautiful residential character, and a strong sense of community identity. Haverford residents — including college faculty, professionals, and families who chose the area for its pace and quality — expect thoughtful, relationship-based care from their physicians. That expectation is especially important at midlife: perimenopause and menopause unfold over years, bringing layered health changes that require more than a brief mention at the end of a standard visit. Forward Family Medicine, about 15 minutes west in Wayne and with specialty care accessible at West Chester and Malvern, is built for this kind of depth.
+Haverford is a quiet, leafy Lower Merion Township community best known for Haverford College, its beautiful residential character, and a strong sense of community identity. Haverford residents — including college faculty, professionals, and families who chose the area for its pace and quality — expect thoughtful, relationship-based care from their physicians. That expectation is especially important at midlife: perimenopause and menopause unfold over years, bringing layered health changes that require more than a brief mention at the end of a standard visit. Forward Family Medicine, about 15 minutes west in Wayne and with specialty care accessible at Malvern, is built for this kind of depth.
 
 ## Menopause Care at Forward Family Medicine
 
 Menopause care isn't a separate referral at Forward Family Medicine — it's integrated into how primary care works across all three FFM offices. Haverford residents have access to:
 
 - **Primary care at our Wayne office** (about 15 minutes from Haverford) — Our Wayne physicians provide menopause care as part of comprehensive family medicine
-- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our West Chester (about 30 minutes) or Malvern (about 25 to 28 minutes) offices. Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
+- **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our Malvern office (about 25 to 28 minutes). Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
 You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
@@ -50,8 +50,8 @@ You establish primary care at your preferred FFM office and access specialty men
 
 ## Why Haverford Patients Choose Forward Family Medicine
 
-- **Three convenient offices:** Wayne (15 min), West Chester (30 min), Malvern (25 to 28 min)
-- **MSCP-certified specialty care** through Dr. Landi at West Chester and Malvern, or by telehealth
+- **Two convenient offices:** Wayne (15 min) and Malvern (25 to 28 min)
+- **MSCP-certified specialty care** through Dr. Landi at Malvern, or by telehealth
 - **Comprehensive menopause care included** in DPC membership — no separate consultation fees
 - 1–2 hour visits — enough time for nuanced conversations about symptoms, HRT, and long-term health
 - ~250-patient panel per physician — direct physician access by phone, text, or message
@@ -68,17 +68,17 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Haverford Patients
 
 **Closest primary care office:** Wayne — 295 Old Eagle School Road, about 15 minutes west via Lancaster Avenue. Currently accepting new patients with Dr. Lieberman.
-**Specialty menopause consultation:** Dr. Landi at West Chester (about 30 minutes) or Malvern (about 25 to 28 minutes), or telehealth
+**Specialty menopause consultation:** Dr. Landi at Malvern (about 25 to 28 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients
 **Status:** Wayne accepting new patients with Dr. Lieberman; Malvern open and accepting new patients with Dr. Landi; West Chester planned
 
 ## Frequently Asked Questions
 
 **Which FFM office should Haverford patients establish at?**
-Most Haverford residents choose Wayne for routine primary care — about 15 minutes west on Lancaster Avenue, with SEPTA access on the Paoli–Thorndale line. From Haverford: Wayne is about 15 minutes, Malvern is about 25 to 28 minutes, and West Chester is about 30 minutes. Specialty menopause consultation with Dr. Landi is available at West Chester or Malvern, or by telehealth.
+Most Haverford residents choose Wayne for routine primary care — about 15 minutes west on Lancaster Avenue, with SEPTA access on the Paoli–Thorndale line. From Haverford: Wayne is about 15 minutes and Malvern is about 25 to 28 minutes. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth.
 
 **What does Menopause Society Certified Practitioner mean?**
-MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our West Chester and Malvern offices holds this credential.
+MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our Malvern office holds this credential.
 
 **Is menopause care included in my membership?**
 Yes — completely, across all three offices. Menopause evaluation, HRT consultation, cardiovascular and bone health monitoring, telehealth follow-ups, and inter-office coordination are all part of your DPC membership.

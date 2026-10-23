@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Kennett Square, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Kennett Square, PA residents with Dr. Brian Landi at our West Chester (15 min) and Malvern (30 to 35 min) offices. Direct physician access, 1–2 hour visits, telehealth included."
+description: "Concierge-style primary care for Kennett Square, PA residents with Dr. Brian Landi at our Malvern office (30 to 35 min). Direct physician access, 1–2 hour visits, telehealth included."
 keywords:
   - concierge doctor Kennett Square PA
   - concierge medicine Kennett Square Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Kennett Square residents from our West Chester office (about 15–20 minutes) and Malvern office (about 30 to 35 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth is included for established patients, which makes the model work well even at a modest drive."
+localNote: "Forward Family Medicine serves Kennett Square residents from our Malvern office (about 30 to 35 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Telehealth is included for established patients, which makes the model work well even at a modest drive."
 nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 ---
 
@@ -30,13 +30,13 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About Kennett Square, PA
 
-Kennett Square is Chester County's southern borough — "Mushroom Capital of the World," home to one of the region's most revitalized downtowns, and a short drive from Longwood Gardens. Residents here include long-established families, agricultural professionals, and newer arrivals drawn by the community's character. Concierge-quality primary care has historically been concentrated in the northern Main Line corridor — Forward Family Medicine's West Chester office, about 15–20 minutes north of Kennett Square, changes that equation.
+Kennett Square is Chester County's southern borough — "Mushroom Capital of the World," home to one of the region's most revitalized downtowns, and a short drive from Longwood Gardens. Residents here include long-established families, agricultural professionals, and newer arrivals drawn by the community's character. Concierge-quality primary care has historically been concentrated in the northern Main Line corridor. Forward Family Medicine brings it within reach from our Malvern office, with telehealth for many visits.
 
 ## Why Kennett Square Patients Choose This Practice
 
-- **West Chester office ~15–20 min from Kennett Square** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 20 miles, about 30 to 35 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
 - Same-day and next-day availability for acute concerns
@@ -64,7 +64,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 **Is this true concierge medicine?**
 Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Kennett Square patients?**

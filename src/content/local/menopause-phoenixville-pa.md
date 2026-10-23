@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Phoenixville, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Phoenixville, PA residents with Dr. Brian Landi at our Malvern (12 min) and West Chester (25 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Phoenixville, PA residents with Dr. Brian Landi at our Malvern office (12 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Phoenixville PA
   - perimenopause Phoenixville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/malvern"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Phoenixville residents through Dr. Brian Landi, DO at our Malvern office (about 12–15 minutes via PA-29 south) and West Chester office (about 25–30 minutes). Phoenixville residents have MSCP-certified menopause expertise a short drive from Bridge Street."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Phoenixville residents through Dr. Brian Landi, DO at our Malvern office (about 12 to 15 minutes via PA-29 south). Phoenixville residents have MSCP-certified menopause expertise a short drive from Bridge Street."
 nearbyNeighborhoods: "Malvern, Spring City, Royersford, Collegeville, and Paoli"
 ---
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our Malvern office (about 12–15 minutes from Phoenixvil
 ## Why Phoenixville Patients Choose This Practice
 
 - **Malvern office ~12–15 min from Phoenixville** — 301 Lindenwood Dr #206
-- **West Chester office ~25–30 min** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Phoenixville Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 12–15 minutes via PA-29 south.
-**Also convenient:** West Chester — about 25–30 minutes via US-202 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via PA-23 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

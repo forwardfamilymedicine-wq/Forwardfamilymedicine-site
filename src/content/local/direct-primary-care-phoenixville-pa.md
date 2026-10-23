@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Phoenixville, PA | Forward Family Medicine"
-description: "Direct Primary Care for Phoenixville, PA residents with Dr. Brian Landi at our Malvern (12 min) and West Chester (25 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Phoenixville, PA residents with Dr. Brian Landi at our Malvern office (12 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Phoenixville PA
   - DPC Phoenixville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Phoenixville residents across three offices: Malvern (about 12–15 minutes via PA-29 south), Wayne (about 20–25 minutes via PA-23 east), and West Chester (about 25–30 minutes via US-202 south). Dr. Brian Landi, DO leads our Malvern and West Chester offices — with Malvern the closest option for most Phoenixville residents."
+localNote: "Forward Family Medicine serves Phoenixville residents across two offices: Malvern (about 12 to 15 minutes via PA-29 south) and Wayne (about 20 to 25 minutes via PA-23 east). Dr. Brian Landi, DO leads our Malvern office, the closest option for most Phoenixville residents."
 nearbyNeighborhoods: "Malvern, Spring City, Royersford, Collegeville, and Paoli"
 ---
 
@@ -35,8 +35,8 @@ Phoenixville is a revitalized Chester County borough at the junction of French C
 ## Why Phoenixville Patients Choose Forward Family Medicine
 
 - **Malvern office ~12–15 min from Phoenixville** — 301 Lindenwood Dr #206
-- **West Chester office ~25–30 min** — planned, no opening date set
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
+- **West Chester office:** planned, no opening date set
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -55,7 +55,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 ## Practical Information for Phoenixville Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 12–15 minutes via PA-29 south.
-**Also convenient:** West Chester — about 25–30 minutes via US-202 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via PA-23 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
 
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Phoenixville patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Phoenixville)
 
-**Who is the physician at the Malvern and West Chester offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Phoenixville?**

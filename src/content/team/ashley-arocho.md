@@ -2,7 +2,7 @@
 name: "Ashley Arocho"
 credentials: "Practice Operations Manager"
 slug: "ashley-arocho"
-title: "All locations · Wayne, Malvern, and West Chester"
+title: "All locations · Wayne and Malvern"
 photo: ../../assets/staff/ashley-arocho.jpg
 photoAlt: "Ashley Arocho — Practice Operations Manager, Forward Family Medicine"
 specialties:

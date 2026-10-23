@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Concordville, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Concordville, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (25 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
+description: "Concierge-style primary care for Concordville, PA residents with Dr. Brian Landi at our Malvern office (25 min). Direct physician access, 1–2 hour visits, transparent membership."
 keywords:
   - concierge doctor Concordville PA
   - concierge medicine Concordville Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Concordville residents from our West Chester office (about 10–15 minutes) and Malvern office (about 25 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine serves Concordville residents from our Malvern office (about 25 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Glen Mills, West Chester, Chadds Ford, Media, and Aston"
 ---
 
@@ -30,13 +30,13 @@ Traditional concierge medicine charges $4,000–$15,000 per year as a retainer o
 
 ## About Concordville, PA
 
-Concordville is a historic Delaware County community settled by Quakers in the 17th century — anchored by the Concord Friends Meetinghouse (built 1728) and today one of the more prosperous communities along the US-1 and US-322 corridor. Residents here share the Garnet Valley School District with neighboring Glen Mills, and a professional character that places high value on quality of service. The kind of healthcare where your physician knows you, answers directly, and has time for a real conversation fits this community's expectations exactly. Forward Family Medicine's West Chester office is about 10–15 minutes away.
+Concordville is a historic Delaware County community settled by Quakers in the 17th century — anchored by the Concord Friends Meetinghouse (built 1728) and today one of the more prosperous communities along the US-1 and US-322 corridor. Residents here share the Garnet Valley School District with neighboring Glen Mills, and a professional character that places high value on quality of service. The kind of healthcare where your physician knows you, answers directly, and has time for a real conversation fits this community's expectations exactly. Forward Family Medicine's Malvern office is about 25 minutes away.
 
 ## Why Concordville Patients Choose This Practice
 
-- **West Chester office ~10–15 min from Concordville** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 18 miles, about 25 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
 - Same-day and next-day availability for acute concerns
@@ -64,7 +64,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 **Is this true concierge medicine?**
 Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Concordville patients?**

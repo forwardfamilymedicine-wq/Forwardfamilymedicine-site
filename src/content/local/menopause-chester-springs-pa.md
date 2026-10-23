@@ -1,6 +1,6 @@
 ---
 title: "Menopause Care in Chester Springs, PA | Forward Family Medicine"
-description: "Menopause Society Certified menopause care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern (15 min) and West Chester (20 min) offices. Perimenopause management, HRT consultation, integrated into DPC membership."
+description: "Menopause Society Certified menopause care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern office (15 min). Perimenopause management, HRT consultation, integrated into DPC membership."
 keywords:
   - menopause care Chester Springs PA
   - perimenopause Chester Springs Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/locations/malvern"
   - "/meet-the-team/brian-landi-do"
   - "/new-patients"
-localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Chester Springs residents through Dr. Brian Landi, DO at our Malvern office (about 15–20 minutes via PA-401 east to PA-29 south) and West Chester office (about 20–25 minutes). Chester Springs residents have MSCP-certified menopause expertise within a short drive."
+localNote: "Forward Family Medicine offers Menopause Society Certified menopause care to Chester Springs residents through Dr. Brian Landi, DO at our Malvern office (about 15 to 20 minutes via PA-401 east to PA-29 south). Chester Springs residents have MSCP-certified menopause expertise within a short drive."
 nearbyNeighborhoods: "Exton, Phoenixville, Malvern, Downingtown, and Pottstown"
 ---
 
@@ -47,7 +47,7 @@ Dr. Landi practices at our Malvern office (about 15–20 minutes from Chester Sp
 ## Why Chester Springs Patients Choose This Practice
 
 - **Malvern office ~15–20 min from Chester Springs** — 301 Lindenwood Dr #206
-- **West Chester office ~20–25 min** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Dr. Brian Landi, DO** — board-certified family physician AND Menopause Society Certified Practitioner
 - 1–2 hour visits — enough time for nuanced menopause conversations
 - Menopause care fully integrated into primary care, not a separate referral
@@ -66,7 +66,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Practical Information for Chester Springs Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via PA-401 east to PA-29 south.
-**Also convenient:** West Chester — about 20–25 minutes via PA-100 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 25–30 minutes via PA-401 east to US-30 east — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership
 

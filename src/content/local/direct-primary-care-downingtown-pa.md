@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Downingtown, PA | Forward Family Medicine"
-description: "Direct Primary Care for Downingtown, PA residents with Dr. Brian Landi at our West Chester (10 min) and Malvern (15 to 18 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Downingtown, PA residents with Dr. Brian Landi at our Malvern office (15 to 18 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Downingtown PA
   - DPC Downingtown Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Downingtown residents across three offices: West Chester (about 10–12 minutes via PA-322 south), Malvern (about 15 to 18 minutes), and Wayne (about 20–25 minutes via US-30 east). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both accessible from Downingtown's Route 30 corridor and SEPTA station."
+localNote: "Forward Family Medicine serves Downingtown residents across two offices: Malvern (about 15 to 18 minutes) and Wayne (about 20 to 25 minutes via US-30 east). Dr. Brian Landi, DO leads our Malvern office, accessible from Downingtown's Route 30 corridor and SEPTA station."
 nearbyNeighborhoods: "Exton, Malvern, Coatesville, Thorndale, and Parkesburg"
 ---
 
@@ -30,13 +30,13 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Downingtown, PA
 
-Downingtown is a Chester County borough on the US Route 30 corridor with commuter rail access via the SEPTA Paoli/Thorndale Line and a school district that draws professional families from across the region. The Downingtown Area School District — including its nationally recognized STEM Academy magnet — has made this community a destination for families who prioritize quality and long-term investment. Those same families often find that insurance-driven primary care leaves them with rushed appointments and a physician who barely knows their name. Forward Family Medicine, with offices in West Chester (about 10–12 minutes) and Malvern (about 15 to 18 minutes), is built differently.
+Downingtown is a Chester County borough on the US Route 30 corridor with commuter rail access via the SEPTA Paoli/Thorndale Line and a school district that draws professional families from across the region. The Downingtown Area School District — including its nationally recognized STEM Academy magnet — has made this community a destination for families who prioritize quality and long-term investment. Those same families often find that insurance-driven primary care leaves them with rushed appointments and a physician who barely knows their name. Forward Family Medicine, with an office in Malvern (about 15 to 18 minutes), is built differently.
 
 ## Why Downingtown Patients Choose Forward Family Medicine
 
-- **West Chester office ~10–12 min from Downingtown** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 9 miles, about 15 to 18 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Downingtown patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Downingtown)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Downingtown?**

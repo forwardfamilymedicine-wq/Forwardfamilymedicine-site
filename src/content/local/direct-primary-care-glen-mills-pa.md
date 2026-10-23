@@ -1,6 +1,6 @@
 ---
 title: "Direct Primary Care in Glen Mills, PA | Forward Family Medicine"
-description: "Direct Primary Care for Glen Mills, PA residents with Dr. Brian Landi at our West Chester (12 min) and Malvern (25 to 28 min) offices. Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
+description: "Direct Primary Care for Glen Mills, PA residents with Dr. Brian Landi at our Malvern office (25 to 28 min). Unlimited visits, same-day access, flat monthly fee. Dr. Landi is accepting new patients now."
 keywords:
   - direct primary care Glen Mills PA
   - DPC Glen Mills Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/west-chester"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Glen Mills residents across three offices: West Chester (about 12–15 minutes via US-202 north), Malvern (about 25 to 28 minutes), and Wayne (about 20–25 minutes via US-202 north). Dr. Brian Landi, DO leads our West Chester and Malvern offices — both a short drive from Glen Mills."
+localNote: "Forward Family Medicine serves Glen Mills residents across two offices: Malvern (about 25 to 28 minutes) and Wayne (about 20 to 25 minutes via US-202 north). Dr. Brian Landi, DO leads our Malvern office, a short drive from Glen Mills."
 nearbyNeighborhoods: "West Chester, Concordville, Media, Chadds Ford, and Aston"
 ---
 
@@ -30,13 +30,13 @@ DPC replaces insurance billing with a flat monthly membership covering unlimited
 
 ## About Glen Mills, PA
 
-Glen Mills is an affluent, established Delaware County community in Concord and Thornbury Townships — known for the Garnet Valley School District, a highly educated professional population, and a mature suburban character that attracts families who plan ahead and stay. With a median age over 45 and more than half of residents holding bachelor's degrees or higher, Glen Mills households tend to be discerning about healthcare choices. Forward Family Medicine, with offices in West Chester (about 12–15 minutes) and Malvern (about 25 to 28 minutes), offers the kind of primary care this community has been looking for.
+Glen Mills is an affluent, established Delaware County community in Concord and Thornbury Townships — known for the Garnet Valley School District, a highly educated professional population, and a mature suburban character that attracts families who plan ahead and stay. With a median age over 45 and more than half of residents holding bachelor's degrees or higher, Glen Mills households tend to be discerning about healthcare choices. Forward Family Medicine, with an office in Malvern (about 25 to 28 minutes), offers the kind of primary care this community has been looking for.
 
 ## Why Glen Mills Patients Choose Forward Family Medicine
 
-- **West Chester office ~12–15 min from Glen Mills** — planned, no opening date set
+- **West Chester office:** planned, no opening date set
 - **Malvern office, 15 miles, about 25 to 28 minutes.** 301 Lindenwood Dr #206
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both West Chester and Malvern
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Same-day and next-day availability for acute concerns
 - ~250-patient panel per physician — roughly half the DPC industry average. This is what makes genuine same-day access possible.
 - Direct access to your physician by phone, text, or message
@@ -64,7 +64,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 **Is Forward Family Medicine accepting Glen Mills patients?**
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. A West Chester office is planned. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Glen%20Mills)
 
-**Who is the physician at the West Chester and Malvern offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Glen Mills?**

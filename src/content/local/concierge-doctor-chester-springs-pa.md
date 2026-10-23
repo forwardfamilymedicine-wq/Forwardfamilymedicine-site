@@ -1,6 +1,6 @@
 ---
 title: "Concierge Doctor in Chester Springs, PA | Forward Family Medicine"
-description: "Concierge-style primary care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern (15 min) and West Chester (20 min) offices. Direct physician access, 1–2 hour visits, transparent membership."
+description: "Concierge-style primary care for Chester Springs, PA residents with Dr. Brian Landi at our Malvern office (15 min). Direct physician access, 1–2 hour visits, transparent membership."
 keywords:
   - concierge doctor Chester Springs PA
   - concierge medicine Chester Springs Pennsylvania
@@ -18,7 +18,7 @@ linksTo:
   - "/menopause"
   - "/locations/malvern"
   - "/new-patients"
-localNote: "Forward Family Medicine serves Chester Springs residents from our Malvern office (about 15–20 minutes) and West Chester office (about 20–25 minutes) — concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
+localNote: "Forward Family Medicine serves Chester Springs residents from our Malvern office (about 15 to 20 minutes). Concierge-quality primary care at DPC pricing, with Dr. Brian Landi, DO. Direct physician access and small panels, without the $5,000+ retainer that defines traditional concierge practices."
 nearbyNeighborhoods: "Exton, Phoenixville, Malvern, Downingtown, and Pottstown"
 ---
 
@@ -35,8 +35,8 @@ Chester Springs spans several Chester County townships across the PA-100 and PA-
 ## Why Chester Springs Patients Choose This Practice
 
 - **Malvern office ~15–20 min from Chester Springs** — 301 Lindenwood Dr #206
-- **West Chester office ~20–25 min** — planned, no opening date set
-- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at both Malvern and West Chester
+- **West Chester office:** planned, no opening date set
+- **Dr. Brian Landi, DO** — board-certified family physician and Menopause Society Certified Practitioner, at our Malvern office
 - Direct line to your physician by phone, text, or message — not an answering service
 - 1–2 hour visits, scheduled to actually solve problems
 - Same-day and next-day availability for acute concerns
@@ -55,7 +55,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Practical Information for Chester Springs Patients
 
 **Closest FFM office:** Malvern — 301 Lindenwood Dr #206, about 15–20 minutes via PA-401 east to PA-29 south.
-**Also convenient:** West Chester — about 20–25 minutes via PA-100 south. Planned, with no opening date set.
+**Also convenient:** A West Chester office is planned, with no opening date set.
 **Wayne option:** 295 Old Eagle School Road, about 25–30 minutes via PA-401 east to US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients
 
@@ -64,7 +64,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 **Is this true concierge medicine?**
 Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
 
-**Who is the physician at the Malvern and West Chester offices?**
+**Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Are you accepting Chester Springs patients?**
