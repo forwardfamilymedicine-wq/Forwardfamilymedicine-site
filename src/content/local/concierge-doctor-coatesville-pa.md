@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for Coatesville Patients
 
-**Closest FFM office:** West Chester — about 20–25 minutes via PA-82 south or US-30 east. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also available:** Malvern, 301 Lindenwood Dr #206, 17 miles, about 25 to 28 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 30–35 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included — follow-ups and acute care without the drive

@@ -75,7 +75,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Frequently Asked Questions
 
 **Which FFM office should Newtown Square patients establish at?**
-From Newtown Square: Wayne is about 15 minutes, West Chester is about 20 minutes, and Malvern is about 22 to 25 minutes. Wayne and Malvern are open now, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
+From Newtown Square: Wayne is about 15 minutes and Malvern is about 22 to 25 minutes. Wayne and Malvern are open now, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our Malvern office holds this credential.

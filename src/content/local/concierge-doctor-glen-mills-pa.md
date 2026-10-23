@@ -54,7 +54,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 
 ## Practical Information for Glen Mills Patients
 
-**Closest FFM office:** West Chester — about 12–15 minutes via US-202 north. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also convenient:** Malvern, 301 Lindenwood Dr #206, 15 miles, about 25 to 28 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-202 north — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included for established patients

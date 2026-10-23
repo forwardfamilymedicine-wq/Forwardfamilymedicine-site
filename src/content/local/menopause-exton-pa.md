@@ -32,7 +32,7 @@ Exton is a Chester County community at the crossroads of US Route 30 and PA Rout
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 10 minutes from Exton). A West Chester office (about 12–15 minutes) is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 10 minutes from Exton). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 

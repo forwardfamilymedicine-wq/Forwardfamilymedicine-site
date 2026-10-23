@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Kennett Square Patients
 
-**Closest FFM office:** West Chester — about 15–20 minutes via PA-82 north. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also available:** Malvern, 301 Lindenwood Dr #206, 20 miles, about 30 to 35 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 35–40 minutes — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership — many follow-up and acute visits work well without the drive

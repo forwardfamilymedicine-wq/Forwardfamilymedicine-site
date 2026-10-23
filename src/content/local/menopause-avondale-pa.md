@@ -32,7 +32,7 @@ Avondale is a small Chester County borough in the region's southern agricultural
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 35 minutes from Avondale). A West Chester office (about 25–30 minutes) is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many consultations and follow-ups can happen by phone or video. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 35 minutes from Avondale). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included — many consultations and follow-ups can happen by phone or video. [Full menopause care overview →](/menopause)
 
 ## What Menopause Care Includes
 
@@ -65,7 +65,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Avondale Patients
 
-**Closest FFM office:** West Chester — about 25–30 minutes via PA-41 north to US-1 east. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also available:** Malvern, 301 Lindenwood Dr #206, 23 miles, about 35 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 40–45 minutes — Menopause care at Wayne is included in primary care; Dr. Lieberman is currently accepting new patients.
 **Telehealth:** Menopause consultations and follow-ups work well by video — included in membership, no drive required

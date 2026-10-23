@@ -75,7 +75,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Frequently Asked Questions
 
 **Which FFM office should Paoli patients establish at?**
-From Paoli: Malvern is about 8 minutes, Wayne is about 12 to 15 minutes, and West Chester is about 20 minutes. Wayne and Malvern are open now, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
+From Paoli: Malvern is about 8 minutes and Wayne is about 12 to 15 minutes. Wayne and Malvern are open now, and a West Chester office is planned. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our Malvern office holds this credential.

@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 
 ## About Media, PA
 
-Media is Delaware County's "everybody's hometown" — a walkable borough with a distinctive Main Street, a strong sense of community, and a mix of long-established families and newcomers drawn by its character and its position as Delaware County's seat. Media residents value genuine relationships, including with their physicians. That expectation is especially important at midlife: perimenopause and menopause unfold over years, and they deserve a care relationship built on depth — not rushed appointments with physicians who have 25 other patients waiting. Forward Family Medicine is accessible from Media via multiple routes: our Wayne office is about 20 minutes away and open now. A West Chester office, also about 20 minutes away, is planned, with no opening date set.
+Media is Delaware County's "everybody's hometown" — a walkable borough with a distinctive Main Street, a strong sense of community, and a mix of long-established families and newcomers drawn by its character and its position as Delaware County's seat. Media residents value genuine relationships, including with their physicians. That expectation is especially important at midlife: perimenopause and menopause unfold over years, and they deserve a care relationship built on depth — not rushed appointments with physicians who have 25 other patients waiting. Forward Family Medicine is accessible from Media via multiple routes: our Wayne office is about 20 minutes away and open now. A West Chester office is planned, with no opening date set.
 
 ## Menopause Care at Forward Family Medicine
 
@@ -67,7 +67,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 
 ## Practical Information for Media Patients
 
-**Closest offices to Media:** Wayne, about 20 minutes, open now and accepting new patients with Dr. Lieberman; West Chester, about 20 minutes via Route 352 north or Baltimore Pike to Route 322, planned with no opening date set.
+**Closest offices to Media:** Wayne, about 20 minutes, open now and accepting new patients with Dr. Lieberman; West Chester, planned with no opening date set.
 **Specialty menopause consultation:** Dr. Landi at Malvern (about 28 to 32 minutes), or telehealth
 **Telehealth:** Phone and video visits included for established patients — an excellent option for Media patients managing the distance
 **Status:** Wayne accepting new patients with Dr. Lieberman; Malvern open and accepting new patients with Dr. Landi; West Chester planned
@@ -75,7 +75,7 @@ Menopause care · Annual physicals · Preventive screenings · Chronic disease m
 ## Frequently Asked Questions
 
 **Which FFM office should Media patients establish at?**
-From Media: Wayne is about 20 minutes and is open now, currently accepting new patients with Dr. Lieberman. A West Chester office, also about 20 minutes away, is planned, with no opening date set. Malvern is about 28 to 32 minutes. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
+From Media: Wayne is about 20 minutes and is open now, currently accepting new patients with Dr. Lieberman. A West Chester office is planned, with no opening date set. Malvern is about 28 to 32 minutes. Specialty menopause consultation with Dr. Landi is available at Malvern, or by telehealth — regardless of where you establish primary care.
 
 **What does Menopause Society Certified Practitioner mean?**
 MSCP is a credential from the Menopause Society indicating dedicated training in perimenopause and menopause care — symptom management, HRT decisions, and long-term cardiovascular and bone health planning. Dr. Brian Landi at our Malvern office holds this credential.

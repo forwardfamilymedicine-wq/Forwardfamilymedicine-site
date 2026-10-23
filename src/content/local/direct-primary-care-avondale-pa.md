@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Avondale Patients
 
-**Closest FFM office:** West Chester — about 25–30 minutes via PA-41 north to US-1 east. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also available:** Malvern, 301 Lindenwood Dr #206, 23 miles, about 35 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 40–45 minutes — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership — reduces the need for the drive on routine visits

@@ -54,7 +54,7 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 
 ## Practical Information for Downingtown Patients
 
-**Closest FFM office:** West Chester — about 10–12 minutes via PA-322 south. Planned, with no opening date set.
+**Closest FFM office:** A West Chester office is planned, with no opening date set.
 **Also convenient:** Malvern, 301 Lindenwood Dr #206, 9 miles, about 15 to 18 minutes.
 **Wayne option:** 295 Old Eagle School Road, about 20–25 minutes via US-30 east — Wayne is currently accepting new patients with Dr. Lieberman.
 **Telehealth:** Phone and video visits included in membership for established patients
