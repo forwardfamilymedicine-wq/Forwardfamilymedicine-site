@@ -114,6 +114,22 @@ export function isPlanned(l: Location): boolean {
   return l.data.status !== 'open' && !l.data.openingDate;
 }
 
+/**
+ * Where an office's physicians see patients now, other than at the office
+ * itself: the other open offices they work at, in physician display order.
+ */
+export function openOfficesFor(l: Location, providers: Provider[], locations: Location[]): Location[] {
+  const slugs = (l.data.providers ?? [])
+    .map(slug => providers.find(p => p.data.slug === slug))
+    .filter((p): p is Provider => Boolean(p))
+    .sort((a, b) => a.data.displayOrder - b.data.displayOrder)
+    .flatMap(p => p.data.locations);
+  return [...new Set(slugs)]
+    .filter(slug => slug !== l.data.slug)
+    .map(slug => locations.find(o => o.data.slug === slug))
+    .filter((o): o is Location => Boolean(o) && o!.data.status === 'open');
+}
+
 /** The practice note for a physician on a page about `locationSlug`. */
 export function practiceNote(p: Provider, locationSlug: string, locations: Location[]): string {
   const offices = p.data.locations.map(slug => {

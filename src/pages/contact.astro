@@ -2,11 +2,17 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
 import { getCollection } from 'astro:content';
-import { isPlanned } from '../utils/physicianRouting';
+import { isPlanned, openOfficesFor } from '../utils/physicianRouting';
 import { formatMonthYear } from '../utils/availability';
 
 const locations = (await getCollection('locations'))
   .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+const providers = await getCollection('providers');
+
+// A Google Maps embed for a place search, written the way the locations'
+// own mapEmbedUrl values are: spaces as +, commas kept.
+const mapEmbed = (query: string) =>
+  `https://www.google.com/maps?q=${encodeURIComponent(query).replace(/%20/g, '+').replace(/%2C/g, ',')}&output=embed`;
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -161,31 +167,45 @@ const breadcrumb = {
           const isOpen = d.status === 'open';
           // Coming soon with no opening date is a planned office: the badge
           // says so and never shows a month, and it has no address or phone.
+          // In their place it shows its town, the open offices where its
+          // physicians see patients now, and a map of the town with no pin.
           const planned = isPlanned(loc);
+          const town = `${d.addressCity}, ${d.addressState}`;
+          const seenAt = planned ? openOfficesFor(loc, providers, locations) : [];
+          // An office with a street but no mapEmbedUrl still gets its map.
+          const map = planned
+            ? { src: mapEmbed(town), title: `Map of ${town}` }
+            : d.mapEmbedUrl || d.addressStreet
+              ? { src: d.mapEmbedUrl ?? mapEmbed(`${d.addressStreet}, ${town} ${d.addressZip}`), title: `Map showing ${d.name} location` }
+              : null;
           return (
-            <article class={`location-card${isOpen ? '' : ' coming-soon'}`}>
+            <article class={`location-card${isOpen || planned ? '' : ' coming-soon'}`}>
               {isOpen ? (
                 <span class="location-card-badge open">Now Open</span>
               ) : (
                 <span class="location-card-badge future">{planned ? 'Planned' : `Opening ${formatMonthYear(d.openingDate!)}`}</span>
               )}
               <h3>{d.name}</h3>
-              {!planned && (
+              {planned ? (
+                <p class="location-card-address">{town}<br />Address and opening date to come</p>
+              ) : (
                 <address class="location-card-address">
                   {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
                   {d.addressCity}, {d.addressState} {d.addressZip}
                 </address>
               )}
-              {!planned && d.phone && (
+              {planned ? seenAt.length > 0 && (
+                <p class="location-card-phone">Seeing patients now in {seenAt.map((o, i) => <Fragment>{i === 0 ? '' : i === seenAt.length - 1 ? ' and ' : ', '}<a href={`/locations/${o.data.slug}/`}>{o.data.name}</a></Fragment>)}</p>
+              ) : d.phone && (
                 <p class="location-card-phone">
                   <a href={`tel:${d.phone.replace(/\D/g, '')}`}>{d.phone}</a>
                 </p>
               )}
-              {d.mapEmbedUrl && (
+              {map && (
                 <div class="location-card-map">
                   <iframe
-                    src={d.mapEmbedUrl}
-                    title={`Map showing ${d.name} location`}
+                    src={map.src}
+                    title={map.title}
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                   ></iframe>

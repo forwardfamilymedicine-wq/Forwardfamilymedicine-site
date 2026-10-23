@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
-import { isPlanned } from '../../utils/physicianRouting';
+import { isPlanned, openOfficesFor } from '../../utils/physicianRouting';
 import { formatMonthYear } from '../../utils/availability';
 
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+const allProviders = await getCollection('providers');
 
 // Hand-maintained: names and titles must match src/content/providers/*.md and
 // src/content/team/*.md. Order mirrors displayOrder, so the physician accepting
@@ -100,6 +101,9 @@ const breadcrumb = {
           const planned      = isPlanned(location);
           const providers    = providersBySlug[d.slug]     ?? [];
           const neighborhoods = neighborhoodsBySlug[d.slug] ?? [];
+          // A planned office shows its town where the others show an address,
+          // and the open offices where its physicians see patients now.
+          const seenAt       = planned ? openOfficesFor(location, allProviders, allLocations) : [];
 
           return (
             <article class="location-card card">
@@ -116,7 +120,12 @@ const breadcrumb = {
               <p class="location-desc">{d.description}</p>
 
               {/* Address */}
-              {d.addressStreet && (
+              {planned ? (
+                <div class="detail-block">
+                  <span class="detail-label">Location</span>
+                  <span class="detail-address">{d.addressCity}, {d.addressState}<br />Address and opening date to come</span>
+                </div>
+              ) : d.addressStreet && (
                 <div class="detail-block">
                   <span class="detail-label">Address</span>
                   <address class="detail-address">
@@ -126,7 +135,12 @@ const breadcrumb = {
               )}
 
               {/* Phone: a planned office has none */}
-              {!planned && d.phone && (
+              {planned ? seenAt.length > 0 && (
+                <div class="detail-block">
+                  <span class="detail-label">Seeing patients now</span>
+                  <span class="detail-value">{seenAt.map((o, i) => <Fragment>{i === 0 ? '' : i === seenAt.length - 1 ? ' and ' : ', '}<a href={`/locations/${o.data.slug}/`} class="detail-phone">{o.data.name}</a></Fragment>)}</span>
+                </div>
+              ) : d.phone && (
                 <div class="detail-block">
                   <span class="detail-label">Phone</span>
                   <a href={`tel:${d.phone.replace(/\D/g, '')}`} class="detail-phone">{d.phone}</a>
