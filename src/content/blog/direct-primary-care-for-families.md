@@ -32,7 +32,7 @@ Most DPC practices charge on a per-member basis, with pricing that typically var
 
 This structure means a family of four pays a predictable monthly amount and can see the doctor as many times as needed throughout the month with no additional cost. Contrast that with a family carrying a traditional PPO — $30–$50 in copays per visit adds up fast when you have two kids who need to be seen four to six times per year each, plus adult visits on top.
 
-Visit our [membership page](/membership) for current family pricing at Forward Family Medicine.
+Visit our [membership page](/membership/) for current family pricing at Forward Family Medicine.
 
 ### The Value of One Physician Who Knows Everyone
 
@@ -67,7 +67,7 @@ Let's sketch out a rough comparison for a family of four — two adults, two kid
 - Deductible exposure: $1,500–$3,000 per person if anyone gets sick
 
 **DPC + HDHP:**
-- DPC membership for family of four: varies by practice (visit [membership page](/membership))
+- DPC membership for family of four: varies by practice (visit [membership page](/membership/))
 - HDHP premium: often $300–$500/month less than comparable PPO
 - Primary care visits: no additional cost (included in membership)
 - HSA contributions possible to cover deductible exposure — and following the Primary Care Enhancement Act (effective January 1, 2026), DPC membership fees are now HSA-eligible when paired with a qualifying HDHP — an additional financial benefit worth factoring into your total cost comparison
@@ -80,7 +80,7 @@ At Forward Family Medicine, we love caring for families. Knowing the whole famil
 
 Our practice serves families across Wayne and the Main Line area. We keep our patient panel small on purpose, so when your child is sick on a Monday morning, you can reach us. When your teenager needs to talk to a doctor, we have time for that conversation. When you have a question about your spouse's labs, you can text us rather than scheduling another appointment.
 
-We offer per-member family pricing designed to make DPC accessible for households with multiple members. Learn more on our [membership page](/membership), or visit our [direct primary care overview](/direct-primary-care) to understand what the model includes.
+We offer per-member family pricing designed to make DPC accessible for households with multiple members. Learn more on our [membership page](/membership/), or visit our [direct primary care overview](/direct-primary-care/) to understand what the model includes.
 
 ## Practical Tips
 

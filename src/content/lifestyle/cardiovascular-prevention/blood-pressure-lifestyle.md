@@ -195,7 +195,7 @@ The goal is not to avoid medication at all costs. It is to implement lifestyle a
 
 If you'd like individual guidance on lowering your blood pressure through lifestyle — or help determining whether medication is also appropriate for your situation — we're here for that conversation. At Forward Family Medicine, we take time to understand your blood pressure history, diet, activity level, and any contributing factors like sleep apnea or stress, and we work with you to build a realistic, evidence-based plan.
 
-Explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients) to get started.
+Explore [Forward Family Medicine membership](/membership/) or [become a patient](/new-patients/) to get started.
 
 ---
 

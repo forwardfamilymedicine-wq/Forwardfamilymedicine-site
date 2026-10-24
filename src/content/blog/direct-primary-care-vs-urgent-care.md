@@ -93,9 +93,9 @@ When in doubt, call your DPC physician first — they can often quickly triage w
 
 One of the things our members tell us most often is that they almost never go to urgent care anymore. That's by design. When you're a member at Forward Family Medicine, you can reach your physician directly — by text, phone, or telehealth — for same-day triage and care. We handle the vast majority of conditions that would otherwise send you to urgent care, and we do it faster, with more context, and at no additional charge.
 
-We keep our [direct primary care model](/direct-primary-care) built around genuine availability. Same-day sick appointments, telehealth for quick questions, direct physician communication — these aren't perks. They're the core of what makes DPC different from traditional primary care and why it so effectively replaces most urgent care use.
+We keep our [direct primary care model](/direct-primary-care/) built around genuine availability. Same-day sick appointments, telehealth for quick questions, direct physician communication — these aren't perks. They're the core of what makes DPC different from traditional primary care and why it so effectively replaces most urgent care use.
 
-Explore our [membership options](/membership) to see how Forward Family Medicine can reduce your dependence on urgent care while actually improving the quality of your primary care.
+Explore our [membership options](/membership/) to see how Forward Family Medicine can reduce your dependence on urgent care while actually improving the quality of your primary care.
 
 ## Practical Tips
 

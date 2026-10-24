@@ -73,7 +73,7 @@ More mitochondria mean greater fat oxidation capacity and metabolic flexibility 
 
 HIIT does produce some mitochondrial adaptation, but the stimulus is different and the effect appears less robust for this specific outcome. The high-intensity intervals predominantly recruit fast-twitch Type II fibers, not the Type I fibers where Zone 2 drives its primary mitochondrial adaptations.
 
-The practical consequence: if the goal is specifically improving metabolic flexibility, fat oxidation, and the deep aerobic base that underpins long-term VO2max and longevity, Zone 2 training is the primary tool. HIIT adds on top of that base — it does not replace it. For a full explanation of Zone 2's physiology and implementation, see [Zone 2 Training](/lifestyle/physical-activity/zone-2-training).
+The practical consequence: if the goal is specifically improving metabolic flexibility, fat oxidation, and the deep aerobic base that underpins long-term VO2max and longevity, Zone 2 training is the primary tool. HIIT adds on top of that base — it does not replace it. For a full explanation of Zone 2's physiology and implementation, see [Zone 2 Training](/lifestyle/physical-activity/zone-2-training/).
 
 ---
 
@@ -186,7 +186,7 @@ This structure provides approximately 135–150 minutes of Zone 2 work per week 
 
 Choosing the right balance of exercise intensities for your health goals, fitness level, and any existing health conditions is something a physician who knows you well can help with meaningfully. The generic comparison of HIIT and steady-state cardio matters less than finding the specific approach that you will do consistently, safely, and in a way that aligns with your long-term health priorities.
 
-If you'd like individual guidance on building an exercise program that's right for your situation — whether you're starting from scratch or optimizing an existing routine — we'd be glad to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+If you'd like individual guidance on building an exercise program that's right for your situation — whether you're starting from scratch or optimizing an existing routine — we'd be glad to help. Learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 
@@ -202,7 +202,7 @@ No — and this applies across all fitness levels. High-intensity exercise creat
 A 45-minute Zone 2 session typically burns more calories in total than a 20-minute HIIT session, because of the longer duration. However, HIIT produces a greater post-exercise metabolic elevation (EPOC), which partially offsets this difference. For equivalent total time, HIIT burns somewhat more calories overall. However, focusing on caloric burn from individual sessions is generally the wrong frame for exercise decisions — the cumulative health adaptations (VO2max, metabolic flexibility, mitochondrial density) are more clinically important than session-level caloric expenditure.
 
 **Does HIIT or steady-state cardio better improve heart health?**
-Both improve cardiovascular health through overlapping but distinct mechanisms. HIIT produces larger improvements in VO2max, which is the strongest predictor of cardiovascular longevity identified to date. Zone 2 training produces cardiac structural adaptations (increased stroke volume) and mitochondrial adaptations that support long-term cardiovascular function. The combination — as in the 80/20 model — produces the most comprehensive cardiovascular health benefit. For more on cardiovascular health and exercise, see [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention).
+Both improve cardiovascular health through overlapping but distinct mechanisms. HIIT produces larger improvements in VO2max, which is the strongest predictor of cardiovascular longevity identified to date. Zone 2 training produces cardiac structural adaptations (increased stroke volume) and mitochondrial adaptations that support long-term cardiovascular function. The combination — as in the 80/20 model — produces the most comprehensive cardiovascular health benefit. For more on cardiovascular health and exercise, see [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention/).
 
 ---
 

@@ -67,7 +67,7 @@ The math is simple: if accessing your physician is easy, you'll do it. If it's h
 
 Forward Family Medicine is designed for people who can't afford to have their healthcare system not work. Our membership includes same-day and next-day appointments, direct access to your physician by phone and message, telehealth built into the model, and annual physicals that have enough time to actually be useful.
 
-We're located in Wayne, PA, at the center of the Main Line, and serve professionals throughout Delaware and Chester Counties. If you've been deferring primary care because the process is too difficult to fit into your life, we'd like to show you what it looks like when it isn't. Start at [/direct-primary-care](/direct-primary-care) or [/membership](/membership) to learn more. If concierge-style care is what you've been looking for, [/concierge-medicine](/concierge-medicine) explains how our model compares.
+We're located in Wayne, PA, at the center of the Main Line, and serve professionals throughout Delaware and Chester Counties. If you've been deferring primary care because the process is too difficult to fit into your life, we'd like to show you what it looks like when it isn't. Start at [/direct-primary-care](/direct-primary-care/) or [/membership](/membership/) to learn more. If concierge-style care is what you've been looking for, [/concierge-medicine](/concierge-medicine/) explains how our model compares.
 
 ## Practical Tips
 

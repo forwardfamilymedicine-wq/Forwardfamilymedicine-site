@@ -54,9 +54,9 @@ Lifestyle-first does not mean medication-never. Patients with stage 2 hypertensi
 
 Treating hypertension with lifestyle requires something most medical practices struggle to offer: time. Monitoring blood pressure trends, reviewing home readings, discussing dietary changes, adjusting exercise plans, and knowing when to add or remove medication — this is iterative work that happens over months, not in a single visit.
 
-At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) approach puts evidence-based behavior change at the center of hypertension care. We don't default to a prescription at your first elevated reading. We work with you to understand what's driving your numbers and build a plan — dietary, activity-based, and stress-related — that addresses those causes directly.
+At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) approach puts evidence-based behavior change at the center of hypertension care. We don't default to a prescription at your first elevated reading. We work with you to understand what's driving your numbers and build a plan — dietary, activity-based, and stress-related — that addresses those causes directly.
 
-Our [Direct Primary Care membership](/membership) means we can monitor your progress closely: reviewing your home blood pressure logs, scheduling frequent brief follow-ups during active treatment, and being available between visits when you have questions. For patients working toward medication reduction, this kind of close monitoring is not a luxury — it's a clinical necessity.
+Our [Direct Primary Care membership](/membership/) means we can monitor your progress closely: reviewing your home blood pressure logs, scheduling frequent brief follow-ups during active treatment, and being available between visits when you have questions. For patients working toward medication reduction, this kind of close monitoring is not a luxury — it's a clinical necessity.
 
 ## Practical Tips
 

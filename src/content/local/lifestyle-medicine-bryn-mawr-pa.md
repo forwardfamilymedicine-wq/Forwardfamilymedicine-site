@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership 
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Bryn Mawr Patients Choose This Approach
 
@@ -43,7 +43,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -57,7 +57,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 Yes — Forward Family Medicine in Wayne is 5 miles west and includes lifestyle medicine in every membership.
 
 **Is it covered by the monthly fee?**
-Yes. [See membership →](/membership)
+Yes. [See membership →](/membership/)
 
 **Can I do consultations by video from Bryn Mawr?**
 Yes — telehealth is included.
@@ -80,4 +80,4 @@ The walkable character of Bryn Mawr — compact streets, accessible transit, a f
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

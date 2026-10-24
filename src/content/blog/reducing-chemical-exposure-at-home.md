@@ -12,7 +12,7 @@ It is easy to feel overwhelmed by headlines about PFAS, microplastics, endocrine
 
 A better approach is to focus on exposures that are practical to reduce and to make changes that fit into normal life.
 
-This is the same philosophy I use in Lifestyle Medicine: focus on high-impact behaviors, avoid unnecessary fear, and make sustainable improvements over time. It is the foundation of how I practice at [Forward Family Medicine](/lifestyle-medicine), and it applies just as well to your home environment as it does to nutrition, movement, and sleep.
+This is the same philosophy I use in Lifestyle Medicine: focus on high-impact behaviors, avoid unnecessary fear, and make sustainable improvements over time. It is the foundation of how I practice at [Forward Family Medicine](/lifestyle-medicine/), and it applies just as well to your home environment as it does to nutrition, movement, and sleep.
 
 ## 1. Improve the Water You Drink
 

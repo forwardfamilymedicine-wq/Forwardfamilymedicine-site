@@ -65,11 +65,11 @@ Without intervention, approximately 15–30% of people with prediabetes will dev
 
 Identifying prediabetes is step one. Knowing what to do about it — and having the support to actually do it — is where most patients get stuck. At Forward Family Medicine, we screen for prediabetes routinely, interpret your results in clinical context, and have a real conversation about your options when results are elevated.
 
-We can refer you to CDC-recognized NDPP programs in the area and through online platforms, and we follow your progress over time with repeat lab testing and lifestyle check-ins. Through our [direct primary care](/direct-primary-care) model, you have ongoing access to your physician by phone or message — so if you hit a plateau or have questions mid-program, you do not have to wait for a scheduled appointment.
+We can refer you to CDC-recognized NDPP programs in the area and through online platforms, and we follow your progress over time with repeat lab testing and lifestyle check-ins. Through our [direct primary care](/direct-primary-care/) model, you have ongoing access to your physician by phone or message — so if you hit a plateau or have questions mid-program, you do not have to wait for a scheduled appointment.
 
-We also integrate diabetes prevention into our broader [lifestyle medicine](/lifestyle-medicine) approach. Prediabetes does not exist in isolation — it is typically accompanied by other metabolic risk factors like hypertension, high triglycerides, and low HDL. Addressing them together produces compounding benefits.
+We also integrate diabetes prevention into our broader [lifestyle medicine](/lifestyle-medicine/) approach. Prediabetes does not exist in isolation — it is typically accompanied by other metabolic risk factors like hypertension, high triglycerides, and low HDL. Addressing them together produces compounding benefits.
 
-For patients who prefer a more structured individual approach or who have already progressed to type 2 diabetes, we offer comprehensive metabolic management as part of your [membership](/membership). Prevention is the goal, but we meet you wherever you are.
+For patients who prefer a more structured individual approach or who have already progressed to type 2 diabetes, we offer comprehensive metabolic management as part of your [membership](/membership/). Prevention is the goal, but we meet you wherever you are.
 
 ## Practical Tips
 

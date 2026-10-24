@@ -29,7 +29,7 @@ Bryn Mawr is a distinguished Lower Merion community with a vibrant college, hosp
 
 Forward Family Medicine delivers the concierge medicine experience — direct physician access, same-day availability, longer visits — through an accessible DPC membership. No high retainer. One flat monthly fee.
 
-[How DPC and concierge compare →](/concierge-medicine)
+[How DPC and concierge compare →](/concierge-medicine/)
 
 ## Why Bryn Mawr Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine delivers the concierge medicine experience — direct ph
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -53,10 +53,10 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Bryn Mawr, PA?**
-Forward Family Medicine in Wayne, 5 miles west, offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients)
+Forward Family Medicine in Wayne, 5 miles west, offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients/)
 
 **How much does concierge care cost near Bryn Mawr?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)
 
 **Can Bryn Mawr patients use telehealth?**
 Yes — phone and video visits are included.
@@ -71,4 +71,4 @@ Yes — phone and video visits are included.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

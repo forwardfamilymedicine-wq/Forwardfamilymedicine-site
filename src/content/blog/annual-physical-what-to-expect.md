@@ -53,13 +53,13 @@ There is a meaningful difference between what insurance calls an "Annual Wellnes
 
 ## How Forward Family Medicine Helps
 
-At Forward Family Medicine, the annual physical is one of the most valuable appointments of the year — and we treat it that way. Because our practice is built on the [direct primary care](/direct-primary-care) model, we have the time to do a physical that is genuinely thorough. There are no 15-minute time limits, no pressure to move to the next patient, and no financial incentive to order tests you do not need.
+At Forward Family Medicine, the annual physical is one of the most valuable appointments of the year — and we treat it that way. Because our practice is built on the [direct primary care](/direct-primary-care/) model, we have the time to do a physical that is genuinely thorough. There are no 15-minute time limits, no pressure to move to the next patient, and no financial incentive to order tests you do not need.
 
 We review your full history, coordinate any outstanding screenings, discuss your lab results in detail, and build a personalized prevention plan based on your actual risk profile — not a generic checklist. This is preventive medicine practiced the way it is meant to work.
 
 For patients who have not had a real physical in years (or ever), we often find that the annual physical becomes the starting point for addressing things that have quietly accumulated: blood pressure that has been creeping up, a family history of colon cancer nobody followed up on, a medication that has not been revisited in a decade. Catching these things early is the entire point.
 
-Learn more about how [membership](/membership) works and what is included in your care at Forward Family Medicine.
+Learn more about how [membership](/membership/) works and what is included in your care at Forward Family Medicine.
 
 ## Practical Tips
 

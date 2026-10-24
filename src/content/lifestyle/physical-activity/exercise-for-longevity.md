@@ -73,7 +73,7 @@ Separately, Anne Newman and colleagues documented that low muscle quality in old
 
 The mechanisms are multiple. Muscle mass is the primary tissue for insulin-stimulated glucose disposal — people with more muscle handle carbohydrates more efficiently, reducing the metabolic burden on the pancreas. Muscle strength protects against falls, which are a leading cause of disability and death in older adults. Muscle mass is also a metabolic reserve during illness — patients with greater muscle mass tolerate the catabolic stress of major illness and surgery substantially better than those with less.
 
-For a detailed exploration of how resistance training builds metabolic health, see [Strength Training and Metabolic Health](/lifestyle/physical-activity/strength-training-metabolic-health).
+For a detailed exploration of how resistance training builds metabolic health, see [Strength Training and Metabolic Health](/lifestyle/physical-activity/strength-training-metabolic-health/).
 
 ---
 
@@ -83,7 +83,7 @@ Zone 2 training — low-intensity, steady-state aerobic exercise performed at ro
 
 These adaptations are foundational. They build the aerobic base upon which higher-intensity work can then be layered to push VO2max even higher. Without a solid aerobic base, higher-intensity exercise produces less adaptation and carries greater injury risk.
 
-The practical implication: if longevity through fitness is a goal, a consistent program of Zone 2 aerobic training — three to four sessions per week of 45–60 minutes at a conversational pace — is the most effective single investment you can make in your long-term cardiovascular health. For a full explanation of the science and how to implement it, see [Zone 2 Training](/lifestyle/physical-activity/zone-2-training).
+The practical implication: if longevity through fitness is a goal, a consistent program of Zone 2 aerobic training — three to four sessions per week of 45–60 minutes at a conversational pace — is the most effective single investment you can make in your long-term cardiovascular health. For a full explanation of the science and how to implement it, see [Zone 2 Training](/lifestyle/physical-activity/zone-2-training/).
 
 ---
 
@@ -145,7 +145,7 @@ The body's capacity to adapt to exercise stimulus — to build cardiovascular fi
 
 If you'd like individual guidance on building an exercise plan oriented around your long-term health and longevity — taking into account your current fitness, your health history, and your specific goals — we'd be glad to help. At Forward Family Medicine, we approach physical activity as a clinical priority, and our direct primary care model gives us the time and continuity to work with you on it meaningfully.
 
-Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+Learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 

@@ -29,7 +29,7 @@ Villanova is a distinguished Main Line community defined by Villanova University
 
 Forward Family Medicine — just 1 mile from Villanova — offers the same-day access, direct physician contact, and longer visits that define concierge medicine, through an accessible flat monthly DPC membership. You get the relationship without the high annual retainer.
 
-[DPC vs. traditional concierge medicine →](/concierge-medicine)
+[DPC vs. traditional concierge medicine →](/concierge-medicine/)
 
 ## Why Villanova Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine — just 1 mile from Villanova — offers the same-day a
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Procedures · Specialty coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Procedures · Specialty coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -53,10 +53,10 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Villanova, PA?**
-Yes — Forward Family Medicine in Wayne is just 1 mile away and offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients)
+Yes — Forward Family Medicine in Wayne is just 1 mile away and offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients/)
 
 **Is concierge medicine affordable near Villanova?**
-Forward Family Medicine uses the DPC model — Individual membership starting at $200/month; family plans from $175/person/month, far below traditional concierge retainer fees. [See pricing →](/membership)
+Forward Family Medicine uses the DPC model — Individual membership starting at $200/month; family plans from $175/person/month, far below traditional concierge retainer fees. [See pricing →](/membership/)
 
 **Can Villanova patients use telehealth?**
 Yes — phone and video visits are included in all memberships.
@@ -71,4 +71,4 @@ Yes — phone and video visits are included in all memberships.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

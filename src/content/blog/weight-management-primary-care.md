@@ -55,9 +55,9 @@ None of this fits in a 10-minute appointment. Real weight management requires ta
 
 ## How Forward Family Medicine Helps
 
-At Forward Family Medicine, weight management is treated as the chronic disease it is. That means dedicated time — not a rushed end-of-visit conversation — for assessing your full clinical picture: labs, medication history, sleep, stress, and lifestyle patterns. Our [lifestyle medicine](/lifestyle-medicine) approach integrates nutrition, exercise, sleep, and behavioral strategies into a coherent, personalized plan.
+At Forward Family Medicine, weight management is treated as the chronic disease it is. That means dedicated time — not a rushed end-of-visit conversation — for assessing your full clinical picture: labs, medication history, sleep, stress, and lifestyle patterns. Our [lifestyle medicine](/lifestyle-medicine/) approach integrates nutrition, exercise, sleep, and behavioral strategies into a coherent, personalized plan.
 
-With a [membership model](/membership), your physician has the panel size and appointment flexibility to follow you closely over time. Weight loss isn't linear, and neither is our support. Whether you're exploring GLP-1 medications, a structured dietary protocol, or building sustainable habits over months, we can stay alongside you through the full process — not just hand you a pamphlet and wish you luck.
+With a [membership model](/membership/), your physician has the panel size and appointment flexibility to follow you closely over time. Weight loss isn't linear, and neither is our support. Whether you're exploring GLP-1 medications, a structured dietary protocol, or building sustainable habits over months, we can stay alongside you through the full process — not just hand you a pamphlet and wish you luck.
 
 We also coordinate with registered dietitians, behavioral health providers, and bariatric specialists when appropriate, maintaining central oversight of your care so nothing falls through the cracks.
 

@@ -60,9 +60,9 @@ For patients with Lynch syndrome, colonoscopy every 1–2 years starting at 20�
 
 Colorectal cancer screening is one area where the direct primary care model genuinely changes outcomes — not because we have special technology, but because we have the time and relationship to make sure screening actually happens. In traditional fee-for-service care, a screening that was recommended at one appointment may never get followed up on, and a positive Cologuard result may sit in a patient portal for weeks without clear guidance on next steps.
 
-At Forward Family Medicine, we track your screening status, help you choose the right option for your circumstances, coordinate the referral for colonoscopy when appropriate, and follow up on every result. Through our [direct primary care](/direct-primary-care) approach, there are no gaps where things fall through the cracks.
+At Forward Family Medicine, we track your screening status, help you choose the right option for your circumstances, coordinate the referral for colonoscopy when appropriate, and follow up on every result. Through our [direct primary care](/direct-primary-care/) approach, there are no gaps where things fall through the cracks.
 
-We also make sure that patients with elevated risk — family history, IBD, prior polyps — are screened on the right schedule, not the generic average-risk timeline. If you are unsure whether you are due for colorectal cancer screening, it is worth a conversation at your next visit. Learn more about what is included in your care through our [membership](/membership).
+We also make sure that patients with elevated risk — family history, IBD, prior polyps — are screened on the right schedule, not the generic average-risk timeline. If you are unsure whether you are due for colorectal cancer screening, it is worth a conversation at your next visit. Learn more about what is included in your care through our [membership](/membership/).
 
 ## Practical Tips
 

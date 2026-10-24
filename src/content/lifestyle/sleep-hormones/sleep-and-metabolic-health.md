@@ -117,7 +117,7 @@ Three evidence-based priorities:
 
 Sleep is a core part of metabolic health, and it's one that conventional medicine too often overlooks. If you'd like individual guidance on evaluating your sleep, understanding your metabolic health markers, or exploring whether sleep apnea may be contributing to your health concerns, we're here to help.
 
-[Become a member](/membership) or [become a patient](/new-patients) to access comprehensive metabolic care that treats sleep as the foundational variable it is.
+[Become a member](/membership/) or [become a patient](/new-patients/) to access comprehensive metabolic care that treats sleep as the foundational variable it is.
 
 ## FAQ
 

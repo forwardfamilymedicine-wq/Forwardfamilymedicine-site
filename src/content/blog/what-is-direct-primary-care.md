@@ -72,7 +72,7 @@ At Forward Family Medicine, we built our practice around the DPC model because w
 
 We serve patients in Wayne, PA and the surrounding Main Line area who are tired of the revolving door of traditional primary care. Whether you're managing a chronic condition, navigating a new diagnosis, or just want a physician who remembers your name and your history, DPC makes that possible.
 
-Curious about membership? Visit our [membership page](/membership) to learn about current pricing and what's included, or explore our [direct primary care overview](/direct-primary-care) for more detail on how the model works in our practice.
+Curious about membership? Visit our [membership page](/membership/) to learn about current pricing and what's included, or explore our [direct primary care overview](/direct-primary-care/) for more detail on how the model works in our practice.
 
 ## Practical Tips
 
@@ -90,7 +90,7 @@ Curious about membership? Visit our [membership page](/membership) to learn abou
 A: Yes. DPC covers primary care only. You still need insurance for hospitalizations, emergency care, specialist visits, imaging, and surgery. Most DPC members pair their membership with a high-deductible health plan or health-sharing arrangement to keep overall costs manageable.
 
 **Q: How much does direct primary care cost?**
-A: DPC membership fees vary by practice and age but typically range from $100 to $200 per month for adults. Children are often less. At Forward Family Medicine, visit our [membership page](/membership) for current pricing. There are no per-visit fees on top of your monthly membership.
+A: DPC membership fees vary by practice and age but typically range from $100 to $200 per month for adults. Children are often less. At Forward Family Medicine, visit our [membership page](/membership/) for current pricing. There are no per-visit fees on top of your monthly membership.
 
 **Q: Is direct primary care the same as concierge medicine?**
 A: No. Concierge medicine charges a retainer fee and still bills your insurance for visits. DPC does not bill insurance at all, which eliminates administrative overhead and keeps costs significantly lower. DPC is accessible to a much broader range of patients than traditional concierge care.

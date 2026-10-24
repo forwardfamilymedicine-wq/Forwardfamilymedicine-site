@@ -50,11 +50,11 @@ This is not a dismissal of patients in pain who have used opioids or currently n
 
 ## How Forward Family Medicine Helps
 
-Chronic pain management requires exactly what [direct primary care](/direct-primary-care) is designed to provide: time, continuity, and coordination. Managing a patient with chronic pain isn't a single appointment — it's an ongoing clinical relationship in which the physician tracks what's working, adjusts the approach when it isn't, coordinates physical therapy and specialist referrals, manages medications safely over time, and helps the patient stay engaged in their own care through the difficult periods.
+Chronic pain management requires exactly what [direct primary care](/direct-primary-care/) is designed to provide: time, continuity, and coordination. Managing a patient with chronic pain isn't a single appointment — it's an ongoing clinical relationship in which the physician tracks what's working, adjusts the approach when it isn't, coordinates physical therapy and specialist referrals, manages medications safely over time, and helps the patient stay engaged in their own care through the difficult periods.
 
-At Forward Family Medicine, [lifestyle medicine](/lifestyle-medicine) is integrated throughout chronic pain care. Nutrition counseling, sleep assessment, stress management support, and exercise guidance are part of the clinical conversation — not afterthoughts or referrals to a distant wellness program. For many patients with chronic pain, meaningful reductions in pain and improvement in function come through these channels, not from additional procedures or escalating medications.
+At Forward Family Medicine, [lifestyle medicine](/lifestyle-medicine/) is integrated throughout chronic pain care. Nutrition counseling, sleep assessment, stress management support, and exercise guidance are part of the clinical conversation — not afterthoughts or referrals to a distant wellness program. For many patients with chronic pain, meaningful reductions in pain and improvement in function come through these channels, not from additional procedures or escalating medications.
 
-The [membership](/membership) model also means that a flare-up, a question about a new medication, or a check-in after a physical therapy session doesn't require scheduling a formal appointment and waiting days for access. Patients with chronic conditions benefit enormously from the kind of low-barrier communication that direct primary care provides.
+The [membership](/membership/) model also means that a flare-up, a question about a new medication, or a check-in after a physical therapy session doesn't require scheduling a formal appointment and waiting days for access. Patients with chronic conditions benefit enormously from the kind of low-barrier communication that direct primary care provides.
 
 ## Practical Tips
 

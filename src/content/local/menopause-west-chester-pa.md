@@ -32,7 +32,7 @@ West Chester is the seat of Chester County — a vibrant borough anchored by Wes
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation in a 15-minute appointment — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine is built differently.
 
-Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of a small number of family physicians in the region with dedicated specialty training in perimenopause and menopause management. At our Malvern office, every patient gets the depth this stage of life actually requires: 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and integration with the rest of your primary care. [Full menopause care overview →](/menopause)
+Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of a small number of family physicians in the region with dedicated specialty training in perimenopause and menopause management. At our Malvern office, every patient gets the depth this stage of life actually requires: 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and integration with the rest of your primary care. [Full menopause care overview →](/menopause/)
 
 ## What Menopause Care Includes
 
@@ -58,9 +58,9 @@ Dr. Brian Landi is a Menopause Society Certified Practitioner (MSCP) — one of 
 
 Menopause care · Annual physicals · Preventive screenings · Chronic disease management · Cardiovascular and bone health monitoring · Lab work at wholesale cost · Telehealth · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for West Chester Patients
 
@@ -93,4 +93,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. La
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Menopause Care →](/menopause)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Menopause Care →](/menopause/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

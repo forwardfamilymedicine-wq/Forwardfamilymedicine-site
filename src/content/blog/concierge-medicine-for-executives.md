@@ -58,7 +58,7 @@ For professionals whose time genuinely has economic value, the calculus is often
 
 Forward Family Medicine is designed specifically around the needs of working adults and professionals in the Wayne and Main Line area. Our membership gives you same-day and next-day appointments, direct access to your physician by phone and message, telehealth visits built into the model, and annual physicals that have time to actually cover what matters.
 
-We've built a practice that works for people who can't afford to have their healthcare not work. Visit [/membership](/membership) for current membership details, or explore our [concierge medicine](/concierge-medicine) page for more on our approach.
+We've built a practice that works for people who can't afford to have their healthcare not work. Visit [/membership](/membership/) for current membership details, or explore our [concierge medicine](/concierge-medicine/) page for more on our approach.
 
 ## Practical Tips
 

@@ -32,7 +32,7 @@ West Chester is the Chester County seat — a borough with a thriving downtown, 
 
 Lifestyle medicine works best as part of your primary care relationship, not as a separate referral. At Forward Family Medicine, Dr. Brian Landi practices integrated primary care — meaning nutrition, exercise, sleep, and stress are part of how he evaluates your health and builds your care plan, every visit. 1–2 hour visit lengths are what makes that depth possible.
 
-For patients who want dedicated specialty consultation with a dual-board-certified Lifestyle Medicine physician, Dr. Philip Lieberman practices at our Wayne office and is accessible to West Chester patients by telehealth. [What is lifestyle medicine? →](/lifestyle-medicine)
+For patients who want dedicated specialty consultation with a dual-board-certified Lifestyle Medicine physician, Dr. Philip Lieberman practices at our Wayne office and is accessible to West Chester patients by telehealth. [What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why West Chester Patients Choose This Approach
 
@@ -46,9 +46,9 @@ For patients who want dedicated specialty consultation with a dual-board-certifi
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Menopause care · Unlimited visits · Direct physician access [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Menopause care · Unlimited visits · Direct physician access [Full services →](/services/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for West Chester Patients
 
@@ -66,10 +66,10 @@ Dr. Landi practices primary care with lifestyle factors built in — every visit
 Yes. Dr. Lieberman, who holds dual board certification in Family Medicine and Lifestyle Medicine, practices at our Wayne office and is accessible to West Chester members by telehealth. Members can also schedule visits at the Wayne office (about 30 minutes east).
 
 **Is lifestyle medicine covered in my membership?**
-Yes — completely included, at every FFM location. [See membership →](/membership)
+Yes — completely included, at every FFM location. [See membership →](/membership/)
 
 **What about menopause-specific care?**
-Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menopause care — symptom management, HRT consultation, cardiovascular and bone health monitoring — is part of his practice and included in your membership. [Learn more →](/menopause)
+Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menopause care — symptom management, HRT consultation, cardiovascular and bone health monitoring — is part of his practice and included in your membership. [Learn more →](/menopause/)
 
 ## Contact & Practice Information
 
@@ -81,4 +81,4 @@ Dr. Landi is a Menopause Society Certified Practitioner. Perimenopause and menop
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

@@ -31,7 +31,7 @@ Forward Family Medicine, located within Radnor Township in Wayne, integrates lif
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Radnor Patients Choose This Approach
 
@@ -44,7 +44,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine consultations · Preventive care · Chronic disease management · Unlimited visits · Wholesale labs [Full services →](/services)
+Lifestyle medicine consultations · Preventive care · Chronic disease management · Unlimited visits · Wholesale labs [Full services →](/services/)
 
 ## Practical Information
 
@@ -57,10 +57,10 @@ Lifestyle medicine consultations · Preventive care · Chronic disease managemen
 Yes — Forward Family Medicine in Wayne (Radnor Township) integrates lifestyle medicine into every DPC membership.
 
 **Is lifestyle medicine covered in my membership?**
-Yes — completely. [See membership details →](/membership)
+Yes — completely. [See membership details →](/membership/)
 
 **Does stress management help with my chronic health conditions?**
-Yes. Chronic stress drives cortisol elevation, worsens blood pressure and blood sugar control, and contributes to cardiovascular risk. We address stress as a clinical variable, not just a personal matter. [Learn more →](/lifestyle-medicine)
+Yes. Chronic stress drives cortisol elevation, worsens blood pressure and blood sugar control, and contributes to cardiovascular risk. We address stress as a clinical variable, not just a personal matter. [Learn more →](/lifestyle-medicine/)
 
 ## Contact & Practice Information
 
@@ -72,4 +72,4 @@ Yes. Chronic stress drives cortisol elevation, worsens blood pressure and blood 
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

@@ -29,7 +29,7 @@ Radnor Township encompasses some of the Main Line's finest communities — Wayne
 
 Forward Family Medicine is located in Wayne — within Radnor Township — and offers concierge-style DPC care with direct physician access, same-day availability, and longer visits for a flat monthly membership. The experience of a concierge physician, without the premium annual retainer.
 
-[How DPC compares to traditional concierge medicine →](/concierge-medicine)
+[How DPC compares to traditional concierge medicine →](/concierge-medicine/)
 
 ## Why Radnor Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine is located in Wayne — within Radnor Township — and o
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -56,10 +56,10 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Yes — Forward Family Medicine is located within Radnor Township in Wayne, PA, and offers concierge-style DPC care.
 
 **How much does concierge care cost in Radnor?**
-Individual membership starting at $200/month; family plans from $175/person/month — significantly less than traditional concierge annual retainers. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month — significantly less than traditional concierge annual retainers. [See pricing →](/membership/)
 
 **Is the practice currently accepting Radnor patients?**
-Yes. [Schedule a Meet & Greet →](/new-patients)
+Yes. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -71,4 +71,4 @@ Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

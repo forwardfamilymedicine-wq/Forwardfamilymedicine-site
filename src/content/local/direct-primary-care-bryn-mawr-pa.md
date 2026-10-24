@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Haverford, Ardmore, Villanova, and Rosemont"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. [Full DPC overview →](/direct-primary-care/)
 
 ## About Bryn Mawr, PA
 
@@ -44,8 +44,8 @@ Bryn Mawr is a Lower Merion Township community with a distinctive identity: home
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Bryn Mawr Patients
 
@@ -66,7 +66,7 @@ Approximately 5 miles west on Lancaster Avenue. Drive time is about 15 minutes. 
 Forward Family Medicine in Wayne is the nearest DPC practice to Bryn Mawr residents. Our telehealth offering reduces the need for in-person travel for many visits.
 
 **Is Forward Family Medicine accepting new patients from Bryn Mawr?**
-Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients)
+Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/n
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

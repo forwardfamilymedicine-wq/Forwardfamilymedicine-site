@@ -72,9 +72,9 @@ Depression occurs at roughly twice the rate in women as in men throughout adulth
 
 Women's preventive health requires consistency and continuity — the same physician who performed your baseline mammogram referral at 40 should also know your family history, your bone density result at 65, and how your perimenopausal symptoms evolved over time. At Forward Family Medicine, that continuity is not an ideal; it is built into how we practice.
 
-Through our [direct primary care](/direct-primary-care) model, we have the time to have real conversations about the nuances — shared decision-making on mammography timing, current evidence on hormone therapy, what your DEXA results mean for your actual fracture risk. We also coordinate referrals to gynecology, radiology, and specialists when needed, and follow up to make sure recommendations are completed.
+Through our [direct primary care](/direct-primary-care/) model, we have the time to have real conversations about the nuances — shared decision-making on mammography timing, current evidence on hormone therapy, what your DEXA results mean for your actual fracture risk. We also coordinate referrals to gynecology, radiology, and specialists when needed, and follow up to make sure recommendations are completed.
 
-For women navigating perimenopause or managing multiple screening needs simultaneously, our [membership](/membership) model provides the ongoing, accessible care that makes prevention a reality rather than a series of disconnected appointments.
+For women navigating perimenopause or managing multiple screening needs simultaneously, our [membership](/membership/) model provides the ongoing, accessible care that makes prevention a reality rather than a series of disconnected appointments.
 
 ## Practical Tips
 

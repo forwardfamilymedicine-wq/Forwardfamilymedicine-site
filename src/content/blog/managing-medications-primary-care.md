@@ -59,11 +59,11 @@ This kind of review is especially valuable at annual physicals, after any hospit
 
 ## How Forward Family Medicine Helps
 
-Medication reconciliation — the process of reviewing and reconciling a patient's complete medication list — is one of the core functions of [direct primary care](/direct-primary-care). When you're seeing multiple specialists, your primary care physician is the natural coordinator: the one provider who has visibility into your whole picture and a longitudinal relationship with you.
+Medication reconciliation — the process of reviewing and reconciling a patient's complete medication list — is one of the core functions of [direct primary care](/direct-primary-care/). When you're seeing multiple specialists, your primary care physician is the natural coordinator: the one provider who has visibility into your whole picture and a longitudinal relationship with you.
 
 At Forward Family Medicine, longer appointments mean there's actually time to do a brown bag review properly, to work through the list systematically, and to have a real conversation about whether every medication is still necessary and appropriate. In a seven-minute traditional visit, medication review often becomes a quick acknowledgment of the list rather than an actual clinical analysis.
 
-When a patient is being managed by multiple specialists, your Forward Family Medicine physician can review specialist notes, reconcile new prescriptions against your existing medications, and flag potential interactions before they cause problems. This coordinating role is one of the most genuinely valuable functions a primary care physician can serve — and it requires the time and relationship that [membership](/membership) makes possible.
+When a patient is being managed by multiple specialists, your Forward Family Medicine physician can review specialist notes, reconcile new prescriptions against your existing medications, and flag potential interactions before they cause problems. This coordinating role is one of the most genuinely valuable functions a primary care physician can serve — and it requires the time and relationship that [membership](/membership/) makes possible.
 
 Deprescribing is also a legitimate conversation at Forward Family Medicine. Reducing your medication burden when clinically appropriate is a goal, not a failure, and it requires a physician who knows your history well enough to evaluate what's truly still necessary.
 

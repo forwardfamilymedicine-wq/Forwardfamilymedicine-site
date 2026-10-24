@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Swarthmore, Newtown Square, Springfield, and Wallingford"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care/)
 
 ## About Media, PA
 
@@ -45,8 +45,8 @@ Media is Delaware County's "everybody's hometown" — a walkable borough with a 
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Media Patients
 
@@ -67,7 +67,7 @@ Approximately 12 miles north. Drive time is about 20 minutes via Route 252.
 Yes — phone and video visits are included in all memberships. Follow-ups, prescription management, lab result reviews, and many acute concerns can be handled without the drive.
 
 **Is Forward Family Medicine accepting new patients from Media?**
-Yes. [Schedule a Meet & Greet →](/new-patients)
+Yes. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

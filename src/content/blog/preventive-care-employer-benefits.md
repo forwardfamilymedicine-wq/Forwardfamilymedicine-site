@@ -55,9 +55,9 @@ From the employee perspective, the DPC membership feels dramatically different f
 
 One advantage that sets Forward Family Medicine apart from other DPC employer programs: integrated board-certified Lifestyle Medicine. Dr. Lieberman's dual board certification in Family Medicine and Lifestyle Medicine means your employees don't just get primary care — they get evidence-based nutrition, movement, sleep, and stress management built into their membership. For employers focused on workforce health and productivity, this is a meaningful clinical differentiator.
 
-Forward Family Medicine works with employers in the Wayne, PA area who want to explore DPC as a benefits strategy. Our [membership](/membership) model is designed with employer partnerships in mind — straightforward pricing, transparent scope of services, and a structure that integrates cleanly with high-deductible health plans.
+Forward Family Medicine works with employers in the Wayne, PA area who want to explore DPC as a benefits strategy. Our [membership](/membership/) model is designed with employer partnerships in mind — straightforward pricing, transparent scope of services, and a structure that integrates cleanly with high-deductible health plans.
 
-For employers considering this approach, our [direct primary care](/direct-primary-care) page outlines what membership includes and how the model works in practice. We're available to speak with HR teams, benefits brokers, and business owners who want to understand whether this model fits their workforce.
+For employers considering this approach, our [direct primary care](/direct-primary-care/) page outlines what membership includes and how the model works in practice. We're available to speak with HR teams, benefits brokers, and business owners who want to understand whether this model fits their workforce.
 
 Our goal is simple: give your employees a primary care physician who has time for them, and do it in a way that makes financial sense for your organization.
 

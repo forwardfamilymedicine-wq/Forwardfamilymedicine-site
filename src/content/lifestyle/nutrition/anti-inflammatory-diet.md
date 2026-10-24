@@ -122,7 +122,7 @@ A few honest clarifications worth making:
 
 ## How Forward Family Medicine Can Help
 
-Interpreting your own inflammatory markers and translating that into practical dietary guidance takes time and clinical context. If you'd like individual guidance on an anti-inflammatory eating plan tailored to your health history, labs, and goals, we would be glad to work with you. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+Interpreting your own inflammatory markers and translating that into practical dietary guidance takes time and clinical context. If you'd like individual guidance on an anti-inflammatory eating plan tailored to your health history, labs, and goals, we would be glad to work with you. Learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 

@@ -54,7 +54,7 @@ The clinical prescription: 30–45 minutes of moderate-intensity aerobic exercis
 
 Stress and sleep have a bidirectional relationship that creates a vicious cycle. Acute stress activates the HPA axis, elevating cortisol and making sleep onset difficult. Chronic poor sleep amplifies stress reactivity — the same stressors produce larger emotional and physiological responses in sleep-deprived people than in well-rested ones.
 
-The practical priority: consistent wake time is the single most powerful behavioral lever for sleep quality. Waking at the same time every day — even on weekends — anchors the circadian rhythm and regulates sleep drive. For detailed sleep improvement strategies including CBT-I, sleep restriction therapy, and relaxation techniques, see our [Sleep Improvement Guide](/lifestyle/sleep-hormones/practical-sleep-improvement).
+The practical priority: consistent wake time is the single most powerful behavioral lever for sleep quality. Waking at the same time every day — even on weekends — anchors the circadian rhythm and regulates sleep drive. For detailed sleep improvement strategies including CBT-I, sleep restriction therapy, and relaxation techniques, see our [Sleep Improvement Guide](/lifestyle/sleep-hormones/practical-sleep-improvement/).
 
 ## Intervention 3: Social Connection
 
@@ -118,7 +118,7 @@ Seeking professional support is not a sign that self-management failed. It is cl
 
 Stress is one of the most common drivers of the health concerns our patients bring to us — and it's also one that responds remarkably well to structured, evidence-based intervention. If you'd like individual guidance on building a stress management plan, evaluating whether your symptoms warrant further assessment, or integrating these strategies with your overall health goals, we're here to help.
 
-[Become a member](/membership) or [become a patient](/new-patients) to access care that takes the full picture of your health seriously.
+[Become a member](/membership/) or [become a patient](/new-patients/) to access care that takes the full picture of your health seriously.
 
 ## FAQ
 

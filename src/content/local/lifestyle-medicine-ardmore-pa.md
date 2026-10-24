@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership.
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Ardmore Patients Choose This Approach
 
@@ -42,7 +42,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -56,7 +56,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 Yes — Forward Family Medicine in Wayne is 6 miles from Ardmore and includes lifestyle medicine in every membership.
 
 **Is it included in the membership fee?**
-Yes — completely. [See membership →](/membership)
+Yes — completely. [See membership →](/membership/)
 
 **Can Ardmore patients use telehealth for lifestyle consultations?**
 Yes — phone and video visits are included.
@@ -79,4 +79,4 @@ Ardmore's demographic range — young families, longtime residents, commuters on
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

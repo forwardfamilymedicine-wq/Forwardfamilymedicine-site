@@ -52,11 +52,11 @@ The concept of "allostatic load" — developed by Bruce McEwen — captures the 
 
 ## How Forward Family Medicine Helps
 
-In most clinical settings, stress is acknowledged but not treated. Patients are told "try to reduce stress" and left without support, tools, or follow-up. At Forward Family Medicine, stress management is one of the six core pillars of our [lifestyle medicine](/lifestyle-medicine) approach — not a footnote to a prescription, but a legitimate clinical target.
+In most clinical settings, stress is acknowledged but not treated. Patients are told "try to reduce stress" and left without support, tools, or follow-up. At Forward Family Medicine, stress management is one of the six core pillars of our [lifestyle medicine](/lifestyle-medicine/) approach — not a footnote to a prescription, but a legitimate clinical target.
 
 We take a structured approach to stress: identifying sources, assessing physiological impact (including blood pressure patterns, sleep quality, metabolic markers), and connecting patients to evidence-based interventions. These include mind-body practices with strong trial support — like mindfulness-based stress reduction (MBSR), which has demonstrated measurable reductions in cortisol, blood pressure, and inflammatory markers in controlled trials.
 
-Our [Direct Primary Care membership](/membership) gives us the visit time and relationship depth to address stress as the clinical issue it is. We are available for conversations that don't fit neatly into a 10-minute slot. For many patients, the act of having a physician who genuinely understands their life circumstances — work, relationships, family pressures — is itself therapeutically meaningful.
+Our [Direct Primary Care membership](/membership/) gives us the visit time and relationship depth to address stress as the clinical issue it is. We are available for conversations that don't fit neatly into a 10-minute slot. For many patients, the act of having a physician who genuinely understands their life circumstances — work, relationships, family pressures — is itself therapeutically meaningful.
 
 ## Practical Tips
 

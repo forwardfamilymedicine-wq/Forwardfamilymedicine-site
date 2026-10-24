@@ -102,7 +102,7 @@ At Forward Family Medicine, telehealth isn't a crisis-mode workaround — it's a
 
 When you join our practice, you get a real physician who knows you — not an algorithm or a stranger on a screen. That relationship is what makes the virtual part of our care actually work.
 
-Learn more about how DPC works at our practice on our [direct primary care overview page](/direct-primary-care), or visit our [membership page](/membership) to see what's included in your membership.
+Learn more about how DPC works at our practice on our [direct primary care overview page](/direct-primary-care/), or visit our [membership page](/membership/) to see what's included in your membership.
 
 ## Practical Tips
 

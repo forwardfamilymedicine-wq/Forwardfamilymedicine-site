@@ -72,7 +72,7 @@ The practical prescription is straightforward. Get bright light exposure in the 
 
 It is worth being explicit about what is at stake when sleep hygiene is chronically poor, because most people do not connect their sleep habits to their long-term disease risk.
 
-Chronic sleep insufficiency — consistently sleeping less than 7 hours — is associated with significantly increased risk of type 2 diabetes, cardiovascular disease, obesity, depression, immune dysfunction, and premature death. These are not modest correlations. As noted in our [main sleep guide](/lifestyle/sleep-hormones), the increased cardiovascular risk associated with sleeping less than 6 hours per night is comparable to well-established risk factors like hypertension and dyslipidemia.
+Chronic sleep insufficiency — consistently sleeping less than 7 hours — is associated with significantly increased risk of type 2 diabetes, cardiovascular disease, obesity, depression, immune dysfunction, and premature death. These are not modest correlations. As noted in our [main sleep guide](/lifestyle/sleep-hormones/), the increased cardiovascular risk associated with sleeping less than 6 hours per night is comparable to well-established risk factors like hypertension and dyslipidemia.
 
 The metabolic consequences are particularly well-documented. Reduced insulin sensitivity, disrupted hunger hormone patterns, elevated cortisol, and impaired glucose metabolism all accumulate with chronic short or poor-quality sleep. Weight management becomes significantly harder when the hormonal environment created by sleep deprivation is constantly working against satiety and efficient energy use.
 
@@ -132,7 +132,7 @@ If you have been practicing good sleep hygiene consistently for several weeks an
 
 If you'd like individual guidance on improving your sleep — whether you're not sure where to start, have tried sleep hygiene without success, or want to make sure you don't have an underlying sleep disorder — we're here to help. We take a comprehensive, evidence-based approach to sleep as a clinical priority, not an afterthought.
 
-Learn more about [our membership model](/membership) or [become a patient](/new-patients). For more detailed strategies, see our guide on [Practical Sleep Improvement](/lifestyle/sleep-hormones/practical-sleep-improvement).
+Learn more about [our membership model](/membership/) or [become a patient](/new-patients/). For more detailed strategies, see our guide on [Practical Sleep Improvement](/lifestyle/sleep-hormones/practical-sleep-improvement/).
 
 ---
 

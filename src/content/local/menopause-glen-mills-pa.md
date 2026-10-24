@@ -32,7 +32,7 @@ Glen Mills is an established Delaware County community with an affluent, educate
 
 Comprehensive menopause care is hard to find in primary care. Most family physicians handle it as a brief side-conversation — symptoms minimized, HRT options summarized in one breath. Forward Family Medicine offers a different experience through Dr. Brian Landi, DO, a Menopause Society Certified Practitioner (MSCP) with dedicated specialty training in perimenopause and menopause management.
 
-Dr. Landi practices at our Malvern office (about 25 to 28 minutes from Glen Mills). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause)
+Dr. Landi practices at our Malvern office (about 25 to 28 minutes from Glen Mills). A West Chester office is planned, with no opening date set. The Malvern office offers 1–2 hour visits, evidence-based HRT consultation, cardiovascular and bone health monitoring, and menopause care fully integrated into primary care. Telehealth is included for follow-ups. [Full menopause care overview →](/menopause/)
 
 ## What Menopause Care Includes
 
@@ -59,9 +59,9 @@ Dr. Landi practices at our Malvern office (about 25 to 28 minutes from Glen Mill
 
 Menopause care · Annual physicals · Preventive screenings · Chronic disease management · Cardiovascular and bone health monitoring · Lab work at wholesale cost · Telehealth · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Glen Mills Patients
 
@@ -96,4 +96,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. La
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Glen%20Mills)** | **[Menopause Care →](/menopause)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Glen%20Mills)** | **[Menopause Care →](/menopause/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

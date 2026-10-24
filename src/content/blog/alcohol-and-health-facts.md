@@ -59,11 +59,11 @@ Reduction matters. Moving from five drinks per night to two, or from daily drink
 
 ## How Forward Family Medicine Helps
 
-Alcohol is a topic many physicians rush through or avoid — too much stigma, too little time, and uncertainty about how to help. At Forward Family Medicine, conversations about alcohol are part of our standard [lifestyle medicine](/lifestyle-medicine) approach: non-judgmental, evidence-based, and practically focused.
+Alcohol is a topic many physicians rush through or avoid — too much stigma, too little time, and uncertainty about how to help. At Forward Family Medicine, conversations about alcohol are part of our standard [lifestyle medicine](/lifestyle-medicine/) approach: non-judgmental, evidence-based, and practically focused.
 
 We use validated screening tools (the AUDIT-C) to understand your drinking patterns and their health implications, and we have honest conversations about what the updated evidence means for you specifically — accounting for your family history of cancer, your liver health, your mental health, your sleep. Alcohol interacts with all of these.
 
-For patients who want to reduce their drinking, our [Direct Primary Care membership](/membership) allows the kind of ongoing support and check-ins that make behavioral change sustainable. We also know when to refer — to addiction medicine specialists, therapists, and programs like SMART Recovery or Alcoholics Anonymous — and we do so without judgment.
+For patients who want to reduce their drinking, our [Direct Primary Care membership](/membership/) allows the kind of ongoing support and check-ins that make behavioral change sustainable. We also know when to refer — to addiction medicine specialists, therapists, and programs like SMART Recovery or Alcoholics Anonymous — and we do so without judgment.
 
 ## Practical Tips
 

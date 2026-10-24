@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Bryn Mawr, Radnor, Rosemont, and Wayne"
 
 ## What Is Direct Primary Care?
 
-Direct Primary Care (DPC) replaces insurance billing with a flat monthly membership — covering unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. No per-visit charges. [Full DPC overview →](/direct-primary-care)
+Direct Primary Care (DPC) replaces insurance billing with a flat monthly membership — covering unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. No per-visit charges. [Full DPC overview →](/direct-primary-care/)
 
 ## About Villanova, PA
 
@@ -44,8 +44,8 @@ Villanova is one of the most prestigious addresses on the Philadelphia Main Line
 
 Unlimited visits (in-person, phone, video) · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Villanova Patients
 
@@ -63,10 +63,10 @@ Yes — Villanova is less than a mile from our Wayne office. It's one of our mos
 Approximately 1 mile. A 3–5 minute drive via Lancaster Avenue, or one SEPTA stop on the Paoli–Thorndale line.
 
 **Is Forward Family Medicine accepting new patients from Villanova?**
-Yes — we are currently accepting new members. [Schedule a Meet & Greet →](/new-patients)
+Yes — we are currently accepting new members. [Schedule a Meet & Greet →](/new-patients/)
 
 **What makes DPC different from practices near Villanova University?**
-Most practices near the university run on traditional insurance billing schedules. Forward Family Medicine's DPC model keeps our panel smaller, giving you same-day access and a physician who genuinely knows your history. [Learn more →](/direct-primary-care)
+Most practices near the university run on traditional insurance billing schedules. Forward Family Medicine's DPC model keeps our panel smaller, giving you same-day access and a physician who genuinely knows your history. [Learn more →](/direct-primary-care/)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Most practices near the university run on traditional insurance billing schedule
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

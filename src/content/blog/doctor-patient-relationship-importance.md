@@ -59,7 +59,7 @@ This isn't nostalgia for a simpler era. It's a structural solution to a structur
 
 At Forward Family Medicine, we built our practice around the belief that the physician-patient relationship is where good health begins. Our small patient panel means your physician actually knows you. Longer appointments, direct access, and continuity of care with the same physician over time create the kind of ongoing relationship that the evidence shows produces better outcomes.
 
-When you're a member of our practice, you're not a chart — you're a person your physician has known for years and is genuinely invested in. That relationship pays dividends across every health decision you make together. Learn more about how our model works at [/direct-primary-care](/direct-primary-care) and [/membership](/membership).
+When you're a member of our practice, you're not a chart — you're a person your physician has known for years and is genuinely invested in. That relationship pays dividends across every health decision you make together. Learn more about how our model works at [/direct-primary-care](/direct-primary-care/) and [/membership](/membership/).
 
 ## Practical Tips
 

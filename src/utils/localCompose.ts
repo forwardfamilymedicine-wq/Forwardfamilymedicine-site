@@ -435,7 +435,7 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
       title: plainText(h1[1]),
       lede: entry.data.lede ?? ledeFrom(entry.data.description),
       cta: { label: 'Schedule a free meet and greet', href: '/contact/?source=local-page' },
-      secondary: { label: 'See membership plans', href: '/membership' },
+      secondary: { label: 'See membership plans', href: '/membership/' },
       ...heroPhysician,
     },
     stats: [

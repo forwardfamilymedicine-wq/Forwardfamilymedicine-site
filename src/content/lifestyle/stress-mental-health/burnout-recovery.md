@@ -109,7 +109,7 @@ Remove the most acute stressors where possible. This is situational and depends 
 
 Once acute load is reduced, the biological systems disrupted by burnout need active restoration — they do not restore passively with rest alone.
 
-**Sleep** is the foundation. Target 7–9 hours consistently; use behavioral strategies to improve sleep quality, not just duration. See our [sleep improvement guide](/lifestyle/sleep-hormones/practical-sleep-improvement) for detailed, evidence-based strategies.
+**Sleep** is the foundation. Target 7–9 hours consistently; use behavioral strategies to improve sleep quality, not just duration. See our [sleep improvement guide](/lifestyle/sleep-hormones/practical-sleep-improvement/) for detailed, evidence-based strategies.
 
 **Gentle exercise**: In deep burnout, high-intensity exercise can initially exacerbate HPA axis activation. Beginning with walking, gentle yoga, or low-intensity movement and gradually increasing intensity as energy improves is typically better tolerated than immediately returning to previous exercise intensity.
 
@@ -149,7 +149,7 @@ Seeking professional help for burnout is not an admission that you couldn't hand
 
 Burnout is one of the most common health concerns among working professionals in our community, and it's one that benefits enormously from a physician who actually has time to understand your full situation — your work, your family obligations, your health history, and your goals. If you'd like individual guidance on evaluating burnout, addressing its physical health consequences, or building a realistic recovery plan, we'd be glad to help.
 
-[Become a member](/membership) or [become a patient](/new-patients) to access the kind of comprehensive, unhurried care that burnout recovery actually requires.
+[Become a member](/membership/) or [become a patient](/new-patients/) to access the kind of comprehensive, unhurried care that burnout recovery actually requires.
 
 ## FAQ
 

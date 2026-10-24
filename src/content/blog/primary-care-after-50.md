@@ -60,9 +60,9 @@ Continuity is not a luxury in this decade. It is clinical infrastructure.
 
 ## How Forward Family Medicine Helps
 
-Forward Family Medicine is designed for exactly this kind of longitudinal relationship. With a [membership](/membership), your physician knows you over years, maintains your records with care, and proactively tracks the screenings and monitoring that become more important after 50.
+Forward Family Medicine is designed for exactly this kind of longitudinal relationship. With a [membership](/membership/), your physician knows you over years, maintains your records with care, and proactively tracks the screenings and monitoring that become more important after 50.
 
-Our [direct primary care](/direct-primary-care) model gives us the time to do annual visits properly — not just running through a checklist, but reviewing the full picture: what's changed, what needs to be ordered, what medications should be reconsidered, and what the next decade of health looks like for you specifically.
+Our [direct primary care](/direct-primary-care/) model gives us the time to do annual visits properly — not just running through a checklist, but reviewing the full picture: what's changed, what needs to be ordered, what medications should be reconsidered, and what the next decade of health looks like for you specifically.
 
 We also connect the preventive care work with the broader lifestyle framework that builds functional capacity over time — because arriving at 70 in genuinely good health is not accidental.
 

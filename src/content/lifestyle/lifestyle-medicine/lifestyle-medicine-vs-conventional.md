@@ -93,7 +93,7 @@ With adequate time, a DPC physician can:
 
 DPC and lifestyle medicine are not synonymous — not all DPC practices emphasize lifestyle medicine, and lifestyle medicine can be practiced (imperfectly) in other settings. But DPC removes the structural obstacles that prevent most primary care physicians from practicing lifestyle medicine at the level the evidence supports.
 
-For more on how DPC works, see [Direct Primary Care](/direct-primary-care).
+For more on how DPC works, see [Direct Primary Care](/direct-primary-care/).
 
 ---
 
@@ -103,7 +103,7 @@ If you'd like individual guidance on how a lifestyle medicine approach might dif
 
 At Forward Family Medicine, we practice lifestyle medicine as part of comprehensive primary care. Our membership model gives us the time to work with you on the behavioral dimensions of your health in ways the conventional system rarely allows. We use medications when they are indicated, and we take behavioral change seriously as a clinical intervention — not background advice.
 
-Explore our [membership options](/membership) or [become a patient](/new-patients).
+Explore our [membership options](/membership/) or [become a patient](/new-patients/).
 
 ---
 

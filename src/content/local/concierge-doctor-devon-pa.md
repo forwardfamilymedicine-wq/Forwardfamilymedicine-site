@@ -29,7 +29,7 @@ Devon sits between Wayne and Paoli on Lancaster Avenue — a Chester County comm
 
 Forward Family Medicine delivers the concierge medicine essentials — same-day access, direct physician contact, longer visits — through an accessible DPC membership. Just 3 miles east of Devon in Wayne, PA.
 
-[Compare DPC and traditional concierge medicine →](/concierge-medicine)
+[Compare DPC and traditional concierge medicine →](/concierge-medicine/)
 
 ## Why Devon Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine delivers the concierge medicine essentials — same-day 
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Procedures · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Procedures · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -53,10 +53,10 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Devon, PA?**
-Yes — Forward Family Medicine in Wayne is 3 miles from Devon. [Schedule a Meet & Greet →](/new-patients)
+Yes — Forward Family Medicine in Wayne is 3 miles from Devon. [Schedule a Meet & Greet →](/new-patients/)
 
 **How much does concierge medicine cost for Devon patients?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)
 
 **Can Devon patients use telehealth?**
 Yes — phone and video visits are included.
@@ -71,4 +71,4 @@ Yes — phone and video visits are included.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

@@ -82,7 +82,7 @@ Research on fat oxidation capacity — measured as maximum fat oxidation rate du
 
 Zone 2 training is specifically the intensity range that trains this deficient capacity. By repeatedly challenging the fat oxidation system at the intensity where it is most active, Zone 2 training stimulates the mitochondrial and enzymatic adaptations that restore metabolic flexibility over time.
 
-This has direct implications for blood sugar management, energy stability, and the risk of chronic metabolic disease. For patients working on metabolic health, Zone 2 training is not a nice addition to their program — it is one of the most mechanistically targeted interventions available. For more on the broader metabolic health picture, see [Metabolic Health](/lifestyle/metabolic-health).
+This has direct implications for blood sugar management, energy stability, and the risk of chronic metabolic disease. For patients working on metabolic health, Zone 2 training is not a nice addition to their program — it is one of the most mechanistically targeted interventions available. For more on the broader metabolic health picture, see [Metabolic Health](/lifestyle/metabolic-health/).
 
 ---
 
@@ -94,7 +94,7 @@ The mechanism: consistent Zone 2 training over weeks and months progressively im
 
 Without a solid aerobic base built through Zone 2 training, higher-intensity work produces less adaptation because the cardiovascular foundation that supports it is underdeveloped. This is why endurance coaches consistently prioritize base building — long months of easy, patient Zone 2 work — before adding intensity.
 
-For patients seeking to improve longevity through fitness, building VO2max is the goal, and building an aerobic base through Zone 2 training is the primary pathway to get there. See [Exercise for Longevity](/lifestyle/physical-activity/exercise-for-longevity) for more on the mortality data.
+For patients seeking to improve longevity through fitness, building VO2max is the goal, and building an aerobic base through Zone 2 training is the primary pathway to get there. See [Exercise for Longevity](/lifestyle/physical-activity/exercise-for-longevity/) for more on the mortality data.
 
 ---
 
@@ -148,7 +148,7 @@ Zone 2 should not be the only exercise intensity in your program — particularl
 
 This model explains why the most effective endurance training is not a steady moderate effort all the time. It is mostly very easy work interspersed with shorter bouts of very hard work. The middle intensities (Zone 3) get less benefit per unit of time than either end of the spectrum.
 
-For general health, the practical translation: a weekly program of three to four Zone 2 sessions plus one interval or HIIT session covers the most important adaptations — aerobic base and VO2max through Zone 2, with peak cardiovascular stimulus from the high-intensity session. For a comparison of HIIT and steady-state approaches, see [HIIT vs. Steady-State Cardio](/lifestyle/physical-activity/hiit-vs-steady-state).
+For general health, the practical translation: a weekly program of three to four Zone 2 sessions plus one interval or HIIT session covers the most important adaptations — aerobic base and VO2max through Zone 2, with peak cardiovascular stimulus from the high-intensity session. For a comparison of HIIT and steady-state approaches, see [HIIT vs. Steady-State Cardio](/lifestyle/physical-activity/hiit-vs-steady-state/).
 
 ---
 
@@ -156,7 +156,7 @@ For general health, the practical translation: a weekly program of three to four
 
 Zone 2 training is a concept that sounds straightforward but can be surprisingly difficult to implement correctly without guidance — particularly around finding the right intensity, understanding why going slowly is actually the goal, and fitting it into a complete training program.
 
-If you'd like individual guidance on building a training program around Zone 2 principles — or understanding how your exercise approach relates to your metabolic and cardiovascular health — we'd be glad to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+If you'd like individual guidance on building a training program around Zone 2 principles — or understanding how your exercise approach relates to your metabolic and cardiovascular health — we'd be glad to help. Learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 

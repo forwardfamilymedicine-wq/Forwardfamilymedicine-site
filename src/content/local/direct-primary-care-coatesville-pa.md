@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Downingtown, Exton, West Chester, Malvern, and Parkesburg"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care/)
 
 ## About Coatesville, PA
 
@@ -48,9 +48,9 @@ Coatesville is a Chester County community with deep industrial roots in steel ma
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Menopause care · Procedures · Prescription management · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Coatesville Patients
 
@@ -68,10 +68,10 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Does DPC work well given the drive from Coatesville?**
-Yes — and telehealth makes the model practical for patients at a distance. Annual physicals, procedures, and new-patient visits happen in person. Most follow-ups, medication reviews, acute illness evaluations, and lab discussions work well by phone or video. Members typically drive in a few times a year and handle the rest remotely. [Learn more →](/direct-primary-care)
+Yes — and telehealth makes the model practical for patients at a distance. Annual physicals, procedures, and new-patient visits happen in person. Most follow-ups, medication reviews, acute illness evaluations, and lab discussions work well by phone or video. Members typically drive in a few times a year and handle the rest remotely. [Learn more →](/direct-primary-care/)
 
 **What's the best way to try the practice before committing?**
-Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)
 
 ## Contact & Practice Information
 
@@ -85,4 +85,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. La
 
 ## Get Started
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Coatesville)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Coatesville)** | **[See Membership Plans →](/membership/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

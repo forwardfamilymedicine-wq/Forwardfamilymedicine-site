@@ -66,9 +66,9 @@ What matters is the pattern, the magnitude of the abnormality, the trend over ti
 
 In a typical healthcare setting, patients often receive lab results through a portal without adequate explanation — a list of numbers, some flagged in red, with a brief note. Many patients are left more confused and anxious than they were before. At Forward Family Medicine, lab result review is part of how we practice medicine.
 
-We review your results in the context of your full clinical picture and explain what is significant, what is incidental, and what needs follow-up. Through our [direct primary care](/direct-primary-care) model, you can message us with questions about your results and receive a real answer — not a phone tree.
+We review your results in the context of your full clinical picture and explain what is significant, what is incidental, and what needs follow-up. Through our [direct primary care](/direct-primary-care/) model, you can message us with questions about your results and receive a real answer — not a phone tree.
 
-Understanding your own labs builds health literacy that serves you for life. Patients who understand what their numbers mean are more engaged in their care, more consistent with follow-up, and better at identifying when something has changed. That partnership is the foundation of what we offer through our [membership](/membership).
+Understanding your own labs builds health literacy that serves you for life. Patients who understand what their numbers mean are more engaged in their care, more consistent with follow-up, and better at identifying when something has changed. That partnership is the foundation of what we offer through our [membership](/membership/).
 
 ## Practical Tips
 

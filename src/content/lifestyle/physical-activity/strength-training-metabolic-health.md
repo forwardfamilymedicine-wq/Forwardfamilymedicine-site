@@ -99,7 +99,7 @@ Strength training's benefits extend beyond metabolic health into cardiovascular 
 
 Regular resistance training reduces resting blood pressure, particularly in hypertensive individuals. Meta-analyses suggest average reductions of 3–5 mmHg systolic from resistance training programs, which is clinically meaningful at a population level. The mechanism involves reduced peripheral vascular resistance and improved endothelial function.
 
-The Ruiz BMJ study, referenced in our [Exercise for Longevity](/lifestyle/physical-activity/exercise-for-longevity) article, found that muscular strength predicted cardiovascular mortality as well as all-cause mortality in prospective follow-up of more than 8,700 men. Lower body and upper body strength were both independently protective.
+The Ruiz BMJ study, referenced in our [Exercise for Longevity](/lifestyle/physical-activity/exercise-for-longevity/) article, found that muscular strength predicted cardiovascular mortality as well as all-cause mortality in prospective follow-up of more than 8,700 men. Lower body and upper body strength were both independently protective.
 
 The combination of resistance training and aerobic exercise produces the most favorable cardiovascular risk profile, with improvements in lipid panels (reduced LDL, raised HDL), blood pressure, and insulin sensitivity all contributing.
 
@@ -167,7 +167,7 @@ Start lighter than you think necessary. The first two weeks are about learning t
 
 If you'd like individual guidance on incorporating strength training into your health plan — particularly if you have diabetes, prediabetes, cardiovascular disease, or are returning from injury — we'd be glad to help you build a safe and effective approach.
 
-At Forward Family Medicine, metabolic health is a core focus, and resistance training is one of our most commonly recommended interventions. If you'd like personalized guidance, learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+At Forward Family Medicine, metabolic health is a core focus, and resistance training is one of our most commonly recommended interventions. If you'd like personalized guidance, learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 

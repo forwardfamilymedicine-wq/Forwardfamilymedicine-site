@@ -39,7 +39,7 @@ LDL cholesterol (low-density lipoprotein) is the primary target of cholesterol-l
 
 The 2018 AHA/ACC Cholesterol Guidelines (Grundy et al.) affirm LDL as the primary target for cardiovascular risk reduction. Lower LDL is generally better, and there is no threshold below which benefit disappears for high-risk patients.
 
-A note on particle size and ApoB: standard labs measure the concentration of cholesterol carried by LDL particles — LDL-C. But what actually causes arterial damage is the number of LDL particles, not the amount of cholesterol inside them. Two people can have identical LDL-C levels but very different particle counts, and higher particle count means higher risk. ApoB (apolipoprotein B), which we discuss in detail in [Understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl), provides a more direct measure of particle number. The dietary strategies in this article lower both LDL-C and LDL particle number.
+A note on particle size and ApoB: standard labs measure the concentration of cholesterol carried by LDL particles — LDL-C. But what actually causes arterial damage is the number of LDL particles, not the amount of cholesterol inside them. Two people can have identical LDL-C levels but very different particle counts, and higher particle count means higher risk. ApoB (apolipoprotein B), which we discuss in detail in [Understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl/), provides a more direct measure of particle number. The dietary strategies in this article lower both LDL-C and LDL particle number.
 
 ---
 
@@ -197,7 +197,7 @@ For patients with modestly elevated LDL and low-to-intermediate cardiovascular r
 
 If you'd like individual guidance on your cholesterol and a lifestyle plan tailored to your specific numbers and risk profile, we're here to help. At Forward Family Medicine, we take time to go beyond the standard lipid panel — measuring ApoB, reviewing your diet and activity patterns, and working with you to implement the strategies most likely to make a difference for you specifically.
 
-Explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients) to get started.
+Explore [Forward Family Medicine membership](/membership/) or [become a patient](/new-patients/) to get started.
 
 ---
 

@@ -55,11 +55,11 @@ For straightforward, well-understood conditions with standard treatment paths �
 
 ## How Forward Family Medicine Helps
 
-One of the structural advantages of [direct primary care](/direct-primary-care) is that longer visits and a trusted, ongoing relationship allow your physician to help you navigate complex decisions — not just diagnose and prescribe. At Forward Family Medicine, your doctor has the time to sit with you after a difficult diagnosis, review the options with you, help you formulate the right questions, and make thoughtful referrals when specialist input is warranted.
+One of the structural advantages of [direct primary care](/direct-primary-care/) is that longer visits and a trusted, ongoing relationship allow your physician to help you navigate complex decisions — not just diagnose and prescribe. At Forward Family Medicine, your doctor has the time to sit with you after a difficult diagnosis, review the options with you, help you formulate the right questions, and make thoughtful referrals when specialist input is warranted.
 
 Traditional primary care practices, managing panels of 2,000 or more patients, rarely have the capacity to play this kind of coordinating role. Appointments are short, follow-up is inconsistent, and patients often navigate major health decisions with very little guidance. A DPC physician who knows you well is better positioned to tell you honestly: "I think you should get another opinion on this" — and to help you find the right person to ask.
 
-Your [membership](/membership) at Forward Family Medicine includes the kind of time, access, and relationship that turns your primary care physician into a genuine partner when the stakes are high. That includes helping you prepare for specialist consultations, reviewing what you were told, and following through after second opinions are complete.
+Your [membership](/membership/) at Forward Family Medicine includes the kind of time, access, and relationship that turns your primary care physician into a genuine partner when the stakes are high. That includes helping you prepare for specialist consultations, reviewing what you were told, and following through after second opinions are complete.
 
 ## Practical Tips
 

@@ -116,7 +116,7 @@ Yes — many of the same strategies that lower LDL-C also lower ApoB, with some 
 
 **Weight loss** in patients with overweight or obesity reliably improves the entire lipid profile, including ApoB, particularly through its effects on VLDL and triglycerides.
 
-For strategies and magnitudes of effect, see our companion article on [how to lower cholesterol naturally](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally).
+For strategies and magnitudes of effect, see our companion article on [how to lower cholesterol naturally](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally/).
 
 ---
 
@@ -151,7 +151,7 @@ The main clinical implication of elevated Lp(a) is to intensify other risk facto
 
 If you'd like individual guidance on whether ApoB testing is appropriate for you, or if you've received a concerning ApoB result and want help understanding what it means and what to do next, we're here to help. At Forward Family Medicine, we routinely incorporate ApoB into cardiovascular risk assessments for patients where it adds information — and we take time to explain what the numbers mean and how to act on them.
 
-Explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients) to get started.
+Explore [Forward Family Medicine membership](/membership/) or [become a patient](/new-patients/) to get started.
 
 ---
 
@@ -171,7 +171,7 @@ A: For some people, yes. The patients most likely to have a clinically important
 
 **Q: Can statins lower ApoB?**
 
-A: Yes. Statins reduce ApoB as well as LDL-C. In fact, some analyses of statin trials suggest that ApoB reduction predicts cardiovascular benefit even better than LDL-C reduction — consistent with the evidence that particle number is more causally relevant than cholesterol concentration. Dietary and lifestyle changes also lower ApoB, through overlapping mechanisms, as described in our article on [lowering cholesterol naturally](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally).
+A: Yes. Statins reduce ApoB as well as LDL-C. In fact, some analyses of statin trials suggest that ApoB reduction predicts cardiovascular benefit even better than LDL-C reduction — consistent with the evidence that particle number is more causally relevant than cholesterol concentration. Dietary and lifestyle changes also lower ApoB, through overlapping mechanisms, as described in our article on [lowering cholesterol naturally](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally/).
 
 ---
 

@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership 
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Devon Patients Choose This Approach
 
@@ -42,7 +42,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine consultations · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine consultations · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -56,7 +56,7 @@ Lifestyle medicine consultations · Preventive care · Chronic disease managemen
 Yes — Forward Family Medicine in Wayne is 3 miles from Devon and includes lifestyle medicine in every membership.
 
 **Is this covered in my membership?**
-Yes. [See membership details →](/membership)
+Yes. [See membership details →](/membership/)
 
 **Can I do video lifestyle consultations as a Devon patient?**
 Yes — telehealth is included for all members.
@@ -79,4 +79,4 @@ Devon also has a well-established residential character, with multigenerational 
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

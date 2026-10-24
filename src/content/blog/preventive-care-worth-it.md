@@ -56,11 +56,11 @@ Preventing a single hospitalization for a hypertensive emergency, a stroke rehab
 
 At Forward Family Medicine, we practice evidence-led preventive care — which means recommending what is actually supported by research, explaining the tradeoffs honestly, and not ordering tests that are more likely to cause harm than benefit. We do not believe in the illusion of thoroughness: running a 40-test panel or ordering a full-body scan is not more preventive medicine. It is more testing, which is different.
 
-What we offer is a consistent relationship with a physician who knows your history, tracks your risk factors over time, and catches the things that actually matter to catch. Through our [direct primary care](/direct-primary-care) model, that relationship is accessible, continuous, and uncluttered by the financial incentives that drive overutilization in traditional settings.
+What we offer is a consistent relationship with a physician who knows your history, tracks your risk factors over time, and catches the things that actually matter to catch. Through our [direct primary care](/direct-primary-care/) model, that relationship is accessible, continuous, and uncluttered by the financial incentives that drive overutilization in traditional settings.
 
-For patients interested in going beyond standard prevention into proactive metabolic health, cardiovascular risk reduction, and lifestyle-based intervention, our [lifestyle medicine](/lifestyle-medicine) approach integrates evidence-based strategies that go deeper than a standard checkup.
+For patients interested in going beyond standard prevention into proactive metabolic health, cardiovascular risk reduction, and lifestyle-based intervention, our [lifestyle medicine](/lifestyle-medicine/) approach integrates evidence-based strategies that go deeper than a standard checkup.
 
-Our [membership](/membership) is built around the conviction that investing in prevention — done intelligently — is the most cost-effective approach to long-term health.
+Our [membership](/membership/) is built around the conviction that investing in prevention — done intelligently — is the most cost-effective approach to long-term health.
 
 ## Practical Tips
 

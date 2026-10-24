@@ -61,9 +61,9 @@ Lifestyle modifications — dietary changes (reduced saturated fat, increased fi
 
 Cholesterol management is not a one-time lab result — it is an ongoing conversation that evolves with your age, your lifestyle, and your other health conditions. At Forward Family Medicine, we review your lipid panel in the context of your full cardiovascular risk profile, not in isolation.
 
-Through our [direct primary care](/direct-primary-care) model, we can order comprehensive labs — including ApoB and Lp(a) if clinically appropriate — and have an unhurried conversation about what your numbers actually mean for your individual risk. If medication is indicated, we discuss options, evidence, and your preferences. If lifestyle changes are the right first step, we make a concrete plan rather than just saying "eat better and exercise."
+Through our [direct primary care](/direct-primary-care/) model, we can order comprehensive labs — including ApoB and Lp(a) if clinically appropriate — and have an unhurried conversation about what your numbers actually mean for your individual risk. If medication is indicated, we discuss options, evidence, and your preferences. If lifestyle changes are the right first step, we make a concrete plan rather than just saying "eat better and exercise."
 
-Managing cholesterol well over decades is one of the most effective things you can do to prevent heart attack and stroke. Our [membership](/membership) model is built for exactly this kind of long-term, proactive management.
+Managing cholesterol well over decades is one of the most effective things you can do to prevent heart attack and stroke. Our [membership](/membership/) model is built for exactly this kind of long-term, proactive management.
 
 ## Practical Tips
 

@@ -31,7 +31,7 @@ Forward Family Medicine integrates evidence-based lifestyle medicine into every 
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Villanova Patients Choose This Approach
 
@@ -42,7 +42,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Full lifestyle medicine counseling · Preventive care · Chronic disease management · Unlimited visits · Wholesale labs [Full services →](/services)
+Full lifestyle medicine counseling · Preventive care · Chronic disease management · Unlimited visits · Wholesale labs [Full services →](/services/)
 
 ## Practical Information
 
@@ -56,7 +56,7 @@ Full lifestyle medicine counseling · Preventive care · Chronic disease managem
 Yes — Forward Family Medicine in Wayne is 1 mile from Villanova and includes lifestyle medicine in every membership.
 
 **Is this covered in the membership fee?**
-Yes — all lifestyle medicine counseling is included. [See membership →](/membership)
+Yes — all lifestyle medicine counseling is included. [See membership →](/membership/)
 
 **Can I do lifestyle medicine consultations by video?**
 Absolutely. Telehealth is included and works very well for nutrition and lifestyle coaching conversations.
@@ -79,4 +79,4 @@ The culture of a research university also produces a predictable set of health p
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

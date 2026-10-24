@@ -31,7 +31,7 @@ Forward Family Medicine in Wayne integrates lifestyle medicine into every DPC me
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Haverford Patients Choose This Approach
 
@@ -42,7 +42,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -56,7 +56,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 Yes — Forward Family Medicine in Wayne includes lifestyle medicine in every membership, 5–6 miles from Haverford.
 
 **Is it covered in the membership fee?**
-Yes. [See membership →](/membership)
+Yes. [See membership →](/membership/)
 
 **Can Haverford patients use telehealth for lifestyle consultations?**
 Yes — telehealth is included.
@@ -79,4 +79,4 @@ The professional and academic community around Haverford College tends to bring 
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

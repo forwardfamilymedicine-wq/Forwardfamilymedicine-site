@@ -187,7 +187,7 @@ In practice, this means:
 
 We do not promise that lifestyle medicine will eliminate every medication or reverse every condition. We do practice it because the evidence is compelling, the approach is consistent with good medicine, and our patients deserve care that treats the causes of their conditions, not only the consequences.
 
-If you'd like individual guidance on integrating lifestyle medicine into your care, we invite you to explore our [membership options](/membership) or [become a patient](/new-patients).
+If you'd like individual guidance on integrating lifestyle medicine into your care, we invite you to explore our [membership options](/membership/) or [become a patient](/new-patients/).
 
 ---
 
@@ -230,16 +230,16 @@ Lifestyle medicine services may be covered by insurance when billed as specific 
 ## Related Articles
 
 **Core lifestyle medicine articles:**
-- [What Is Lifestyle Medicine? A Patient's Guide](/lifestyle/lifestyle-medicine/what-is-lifestyle-medicine)
-- [The Six Pillars of Lifestyle Medicine Explained](/lifestyle/lifestyle-medicine/six-pillars)
-- [When Medication Is Still Needed — And How Lifestyle Medicine Fits](/lifestyle/lifestyle-medicine/when-medical-treatment-needed)
-- [Lifestyle Medicine vs. Conventional Medicine: Key Differences](/lifestyle/lifestyle-medicine/lifestyle-medicine-vs-conventional)
-- [Lifestyle Medicine in Practice: Patient Success Stories](/lifestyle/lifestyle-medicine/patient-success-stories)
+- [What Is Lifestyle Medicine? A Patient's Guide](/lifestyle/lifestyle-medicine/what-is-lifestyle-medicine/)
+- [The Six Pillars of Lifestyle Medicine Explained](/lifestyle/lifestyle-medicine/six-pillars/)
+- [When Medication Is Still Needed — And How Lifestyle Medicine Fits](/lifestyle/lifestyle-medicine/when-medical-treatment-needed/)
+- [Lifestyle Medicine vs. Conventional Medicine: Key Differences](/lifestyle/lifestyle-medicine/lifestyle-medicine-vs-conventional/)
+- [Lifestyle Medicine in Practice: Patient Success Stories](/lifestyle/lifestyle-medicine/patient-success-stories/)
 
 **Explore by pillar:**
-- [Nutrition](/lifestyle/nutrition)
-- [Physical Activity](/lifestyle/physical-activity)
-- [Sleep and Hormones](/lifestyle/sleep-hormones)
-- [Stress and Mental Health](/lifestyle/stress-mental-health)
-- [Metabolic Health](/lifestyle/metabolic-health)
-- [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention)
+- [Nutrition](/lifestyle/nutrition/)
+- [Physical Activity](/lifestyle/physical-activity/)
+- [Sleep and Hormones](/lifestyle/sleep-hormones/)
+- [Stress and Mental Health](/lifestyle/stress-mental-health/)
+- [Metabolic Health](/lifestyle/metabolic-health/)
+- [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention/)

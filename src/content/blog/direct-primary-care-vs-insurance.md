@@ -79,7 +79,7 @@ At Forward Family Medicine, we've built our practice around the DPC model specif
 
 We help our members think through the insurance side of the equation too. If you're considering switching to an HDHP to pair with your DPC membership, we're happy to talk through how that combination would work for your situation. Our goal is for you to have better care and a smarter overall healthcare strategy.
 
-Learn more about [our membership options](/membership) or visit our [direct primary care overview](/direct-primary-care) for a deeper look at how the model works at our practice.
+Learn more about [our membership options](/membership/) or visit our [direct primary care overview](/direct-primary-care/) for a deeper look at how the model works at our practice.
 
 ## Practical Tips
 

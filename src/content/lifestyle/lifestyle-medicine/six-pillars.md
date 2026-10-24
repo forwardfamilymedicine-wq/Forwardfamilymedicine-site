@@ -34,7 +34,7 @@ linksTo:
 
 Lifestyle medicine is organized around these six domains because each one has substantial, independent evidence for its role in causing — and in treating — chronic disease. Together, they address the full behavioral landscape of health. Separately, each offers meaningful clinical leverage. Understanding what each pillar means, why it matters, and how it applies to patients is the foundation of the lifestyle medicine framework.
 
-This article explains each pillar in plain terms, with the key evidence behind it. For a broader introduction to the specialty, see [Lifestyle Medicine: The Complete Guide](/lifestyle/lifestyle-medicine).
+This article explains each pillar in plain terms, with the key evidence behind it. For a broader introduction to the specialty, see [Lifestyle Medicine: The Complete Guide](/lifestyle/lifestyle-medicine/).
 
 ---
 
@@ -48,7 +48,7 @@ Whole-food plant-predominant diets reliably lower LDL cholesterol, reduce blood 
 
 **Practical implication:** No single dietary prescription fits every patient. Lifestyle medicine works with individuals to identify a whole-food pattern that is as healthful as possible and as sustainable as their life allows. The direction matters more than perfection — and incremental movement toward more whole foods and fewer ultra-processed ones produces real results.
 
-For more, see [Nutrition](/lifestyle/nutrition).
+For more, see [Nutrition](/lifestyle/nutrition/).
 
 ---
 
@@ -62,7 +62,7 @@ For cardiovascular health, regular aerobic exercise reduces resting blood pressu
 
 **Practical implication:** In lifestyle medicine, physical activity is prescribed with specificity — type, frequency, duration, intensity, and progression — rather than offered as vague encouragement to "move more." This approach produces better adherence and better results. It also accounts for the full spectrum of patients, including those with limited mobility, chronic pain, or significant deconditioning who need an exercise plan tailored to their starting point.
 
-For more, see [Physical Activity](/lifestyle/physical-activity).
+For more, see [Physical Activity](/lifestyle/physical-activity/).
 
 ---
 
@@ -76,7 +76,7 @@ The mechanisms are well established. During sleep, the brain consolidates memory
 
 **Practical implication:** Lifestyle medicine addresses sleep by identifying and treating its behavioral barriers — irregular schedules, excessive screen exposure before bed, caffeine use, alcohol (which fragments sleep architecture despite its sedating effect), and environmental factors like noise and light. When underlying disorders like obstructive sleep apnea or insomnia disorder are present, they are diagnosed and treated clinically.
 
-For more, see [Sleep and Hormones](/lifestyle/sleep-hormones).
+For more, see [Sleep and Hormones](/lifestyle/sleep-hormones/).
 
 ---
 
@@ -90,7 +90,7 @@ MBSR, developed by Jon Kabat-Zinn at the University of Massachusetts, has been s
 
 **Practical implication:** Managing stress well is prerequisite work for the other pillars. Patients under high chronic stress have reduced capacity for behavior change, make worse decisions about food and activity, and are more likely to relapse when attempting any lifestyle modification. Addressing stress is not a soft add-on — it is often the key that unlocks the others.
 
-For more, see [Stress and Mental Health](/lifestyle/stress-mental-health).
+For more, see [Stress and Mental Health](/lifestyle/stress-mental-health/).
 
 ---
 
@@ -138,7 +138,7 @@ If you'd like individual guidance on applying the six pillars to your health, we
 
 At Forward Family Medicine, we assess all six pillars as part of comprehensive care — not as a checklist, but as a genuine clinical evaluation of the behavioral factors driving your health. Our direct primary care membership model gives us the time to do this well: to understand your circumstances, develop a realistic plan with you, and follow up over the months it takes for change to take hold.
 
-Explore our [membership options](/membership) or [become a patient](/new-patients) to get started.
+Explore our [membership options](/membership/) or [become a patient](/new-patients/) to get started.
 
 ---
 

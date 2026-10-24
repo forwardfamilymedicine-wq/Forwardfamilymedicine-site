@@ -111,7 +111,7 @@ Aerobic exercise — activities that elevate heart rate and breathing for sustai
 
 ### Resistance and Strength Training
 
-Strength training — using muscles against resistance — builds muscle mass, increases bone density, improves insulin sensitivity, raises resting metabolic rate, and is one of the most powerful tools for preventing the metabolic diseases of aging. It also provides significant cardiovascular benefits. Contrary to popular belief, strength training is not just for people who want larger muscles — it is a metabolic intervention with profound implications for long-term health. See [Strength Training and Metabolic Health](/lifestyle/physical-activity/strength-training-metabolic-health) for a deeper dive.
+Strength training — using muscles against resistance — builds muscle mass, increases bone density, improves insulin sensitivity, raises resting metabolic rate, and is one of the most powerful tools for preventing the metabolic diseases of aging. It also provides significant cardiovascular benefits. Contrary to popular belief, strength training is not just for people who want larger muscles — it is a metabolic intervention with profound implications for long-term health. See [Strength Training and Metabolic Health](/lifestyle/physical-activity/strength-training-metabolic-health/) for a deeper dive.
 
 ### Flexibility and Mobility
 
@@ -131,7 +131,7 @@ A landmark 2018 study by Mandsager and colleagues, published in JAMA Network Ope
 
 This is not a small effect. Being very fit compared to very unfit may be the single largest modifiable determinant of lifespan that we can measure.
 
-The critical implication: VO2max is trainable. It is not fixed by genetics or age. With regular aerobic training — particularly the kind of low-intensity base training described in our [Zone 2 Training](/lifestyle/physical-activity/zone-2-training) article — cardiorespiratory fitness improves meaningfully in people of all ages, including older adults. For more on the longevity evidence, see [Exercise for Longevity](/lifestyle/physical-activity/exercise-for-longevity).
+The critical implication: VO2max is trainable. It is not fixed by genetics or age. With regular aerobic training — particularly the kind of low-intensity base training described in our [Zone 2 Training](/lifestyle/physical-activity/zone-2-training/) article — cardiorespiratory fitness improves meaningfully in people of all ages, including older adults. For more on the longevity evidence, see [Exercise for Longevity](/lifestyle/physical-activity/exercise-for-longevity/).
 
 ---
 
@@ -148,7 +148,7 @@ Regular aerobic exercise produces the following cardiovascular adaptations:
 - **Reduced stroke risk:** Physical activity reduces ischemic stroke risk by approximately 25–30% in large epidemiological studies.
 - **Improved cardiac function:** The heart muscle adapts to aerobic training, becoming more efficient and more resilient to ischemic stress.
 
-For a detailed review of exercise in cardiovascular risk reduction, see our [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention) guide.
+For a detailed review of exercise in cardiovascular risk reduction, see our [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention/) guide.
 
 ---
 
@@ -164,7 +164,7 @@ Exercise — both aerobic and resistance training — directly counteracts this 
 
 These adaptations are meaningful whether or not exercise produces weight loss. Exercise improves insulin sensitivity and metabolic health through mechanisms independent of body weight — an important point for patients who are discouraged because they are exercising without losing weight. The metabolic benefits are happening regardless.
 
-For more, see [Metabolic Health](/lifestyle/metabolic-health).
+For more, see [Metabolic Health](/lifestyle/metabolic-health/).
 
 ---
 
@@ -180,7 +180,7 @@ The mental health benefits of exercise are among the most consistent findings in
 
 **Stress resilience:** Physically fit individuals show attenuated cortisol responses to psychological stressors. Regular exercise appears to train the body's stress response system, reducing both the magnitude and duration of physiological stress reactions.
 
-For more on the connections between physical activity and mental wellbeing, see [Stress and Mental Health](/lifestyle/stress-mental-health).
+For more on the connections between physical activity and mental wellbeing, see [Stress and Mental Health](/lifestyle/stress-mental-health/).
 
 ---
 
@@ -233,7 +233,7 @@ The benefits of exercise are present throughout life, but the priorities shift a
 
 **"Exercise makes me more tired."** This is common when starting from a very sedentary baseline, and it typically reverses within 2–4 weeks. Exercise is one of the most effective treatments for fatigue in clinical trials. Starting very easy — a walk — avoids the exhaustion trap while beginning to build the habit.
 
-**"I've tried before and it didn't stick."** Behavioral science has a lot to say here. Habit formation takes longer than most people expect — a median of 66 days in research studies, not the commonly cited 21. The key is starting smaller than seems meaningful, building consistency before intensity, and linking exercise to existing routines. See [Getting Started with Exercise](/lifestyle/physical-activity/getting-started-exercise) for a practical protocol.
+**"I've tried before and it didn't stick."** Behavioral science has a lot to say here. Habit formation takes longer than most people expect — a median of 66 days in research studies, not the commonly cited 21. The key is starting smaller than seems meaningful, building consistency before intensity, and linking exercise to existing routines. See [Getting Started with Exercise](/lifestyle/physical-activity/getting-started-exercise/) for a practical protocol.
 
 **"I don't know what to do."** You do not need a complex program to start. Walking daily and doing basic bodyweight exercises two to three times per week covers the majority of the health benefit. A physician who knows your health history can provide more targeted guidance.
 
@@ -245,7 +245,7 @@ At Forward Family Medicine, physical activity is not an afterthought in the marg
 
 As a direct primary care practice, we have the time and relationship depth to work with you on exercise the way it deserves to be addressed — understanding your history, your barriers, your current fitness level, and your goals, then developing a plan that is specific to you rather than generic.
 
-If you'd like individual guidance on building a physical activity plan that fits your health, your life, and your goals, we'd welcome the opportunity to work with you. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+If you'd like individual guidance on building a physical activity plan that fits your health, your life, and your goals, we'd welcome the opportunity to work with you. Learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 
@@ -281,8 +281,8 @@ No. The evidence is unambiguous on this point. Studies show significant mortalit
 
 ## Related Articles
 
-- [Exercise for Longevity: What the Research Shows About Living Longer](/lifestyle/physical-activity/exercise-for-longevity)
-- [Strength Training and Metabolic Health: Why Muscle Is Your Metabolic Organ](/lifestyle/physical-activity/strength-training-metabolic-health)
-- [Getting Started with Exercise: A Beginner's Guide to Building a Sustainable Habit](/lifestyle/physical-activity/getting-started-exercise)
-- [Zone 2 Training: What It Is, Why It Matters, and How to Do It](/lifestyle/physical-activity/zone-2-training)
-- [HIIT vs. Steady-State Cardio: What the Evidence Shows](/lifestyle/physical-activity/hiit-vs-steady-state)
+- [Exercise for Longevity: What the Research Shows About Living Longer](/lifestyle/physical-activity/exercise-for-longevity/)
+- [Strength Training and Metabolic Health: Why Muscle Is Your Metabolic Organ](/lifestyle/physical-activity/strength-training-metabolic-health/)
+- [Getting Started with Exercise: A Beginner's Guide to Building a Sustainable Habit](/lifestyle/physical-activity/getting-started-exercise/)
+- [Zone 2 Training: What It Is, Why It Matters, and How to Do It](/lifestyle/physical-activity/zone-2-training/)
+- [HIIT vs. Steady-State Cardio: What the Evidence Shows](/lifestyle/physical-activity/hiit-vs-steady-state/)

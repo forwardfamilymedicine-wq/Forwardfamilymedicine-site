@@ -110,7 +110,7 @@ The mechanisms are multiple and reinforcing:
 
 The Mediterranean diet does not eliminate any major macronutrient group. It is not a low-fat or low-carbohydrate diet. It is a high-quality diet. That distinction matters.
 
-For a deep dive, see our [detailed Mediterranean diet evidence review](/lifestyle/nutrition/mediterranean-diet-evidence).
+For a deep dive, see our [detailed Mediterranean diet evidence review](/lifestyle/nutrition/mediterranean-diet-evidence/).
 
 ---
 
@@ -130,7 +130,7 @@ The EAT-Lancet Commission's 2019 report modeled the dietary pattern that would s
 
 The Adventist Health Studies, which have followed populations of Seventh-day Adventists in California for decades, provide some of the longest-running data on plant-based diets. Vegetarian and vegan subgroups within these cohorts consistently show lower all-cause mortality, lower cardiovascular mortality, lower rates of type 2 diabetes, and lower BMI than omnivore participants — even after adjustment for other lifestyle factors.
 
-For a detailed look at the plant-based evidence, see [Plant-Based Eating and Health](/lifestyle/nutrition/plant-based-eating-health).
+For a detailed look at the plant-based evidence, see [Plant-Based Eating and Health](/lifestyle/nutrition/plant-based-eating-health/).
 
 ---
 
@@ -151,7 +151,7 @@ Monteiro and colleagues, analyzing data from multiple large prospective cohorts,
 
 This suggests that the harm from ultra-processed foods is not fully explained by their macronutrient content alone. The additives, the disruption of food matrix, the effects on satiety signaling, and the gut microbiome effects all likely play roles. The most actionable takeaway: reducing ultra-processed food consumption is one of the highest-yield dietary interventions available.
 
-For practical guidance on identifying ultra-processed foods at the grocery store, see [How to Read Food Labels](/lifestyle/nutrition/reading-food-labels).
+For practical guidance on identifying ultra-processed foods at the grocery store, see [How to Read Food Labels](/lifestyle/nutrition/reading-food-labels/).
 
 ---
 
@@ -208,7 +208,7 @@ The anti-inflammatory dietary pattern overlaps substantially with the Mediterran
 - Low intake of ultra-processed foods and refined carbohydrates
 - Limited processed meat
 
-For a detailed breakdown, see [The Anti-Inflammatory Diet](/lifestyle/nutrition/anti-inflammatory-diet).
+For a detailed breakdown, see [The Anti-Inflammatory Diet](/lifestyle/nutrition/anti-inflammatory-diet/).
 
 ---
 
@@ -268,7 +268,7 @@ We do not take a dogmatic position on any single dietary ideology. We do not pre
 
 For patients managing specific conditions — cardiovascular disease, type 2 diabetes, metabolic syndrome, autoimmune disease — we work to apply the best available dietary evidence to your individual situation. We interpret relevant lab work (lipid panels, blood glucose, insulin, inflammatory markers, micronutrient levels) in the context of your full clinical picture.
 
-If you'd like individual nutrition guidance as part of a comprehensive primary care relationship, learn more about [our membership model](/membership) or [become a patient](/new-patients).
+If you'd like individual nutrition guidance as part of a comprehensive primary care relationship, learn more about [our membership model](/membership/) or [become a patient](/new-patients/).
 
 ---
 
@@ -311,10 +311,10 @@ A: Reduce ultra-processed food consumption. For most Americans eating a typical 
 
 ## Related Articles
 
-- [The Anti-Inflammatory Diet: What It Is and What the Evidence Shows](/lifestyle/nutrition/anti-inflammatory-diet)
-- [Plant-Based Eating and Health: What the Evidence Shows](/lifestyle/nutrition/plant-based-eating-health)
-- [How to Read Food Labels: A Practical Guide](/lifestyle/nutrition/reading-food-labels)
-- [The Mediterranean Diet: What the Evidence Actually Shows](/lifestyle/nutrition/mediterranean-diet-evidence)
-- [Metabolic Health](/lifestyle/metabolic-health)
-- [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention)
-- [Lifestyle Medicine at Forward Family Medicine](/lifestyle/lifestyle-medicine)
+- [The Anti-Inflammatory Diet: What It Is and What the Evidence Shows](/lifestyle/nutrition/anti-inflammatory-diet/)
+- [Plant-Based Eating and Health: What the Evidence Shows](/lifestyle/nutrition/plant-based-eating-health/)
+- [How to Read Food Labels: A Practical Guide](/lifestyle/nutrition/reading-food-labels/)
+- [The Mediterranean Diet: What the Evidence Actually Shows](/lifestyle/nutrition/mediterranean-diet-evidence/)
+- [Metabolic Health](/lifestyle/metabolic-health/)
+- [Cardiovascular Prevention](/lifestyle/cardiovascular-prevention/)
+- [Lifestyle Medicine at Forward Family Medicine](/lifestyle/lifestyle-medicine/)

@@ -99,7 +99,7 @@ This doesn't mean eliminating all carbohydrates. It means shifting toward carboh
 
 A Mediterranean-style eating pattern — emphasizing vegetables, legumes, fish, olive oil, whole grains, and nuts, with limited red meat and processed food — has strong evidence for metabolic benefit and is one of the most extensively studied dietary approaches for blood sugar control.
 
-For a detailed breakdown of dietary approaches with evidence citations, see [Diet Strategies for Blood Sugar Control](/lifestyle/metabolic-health/diet-strategies-blood-sugar) and our [Nutrition pillar](/lifestyle/nutrition).
+For a detailed breakdown of dietary approaches with evidence citations, see [Diet Strategies for Blood Sugar Control](/lifestyle/metabolic-health/diet-strategies-blood-sugar/) and our [Nutrition pillar](/lifestyle/nutrition/).
 
 ---
 
@@ -115,7 +115,7 @@ The mechanism by which exercise improves insulin sensitivity is direct and poten
 
 A practical starting point for someone currently sedentary: begin with 10–15 minute walks after meals, which have been shown in multiple studies to meaningfully blunt postprandial glucose spikes. Build from there.
 
-See our [Physical Activity pillar](/lifestyle/physical-activity) for a structured guide to getting started.
+See our [Physical Activity pillar](/lifestyle/physical-activity/) for a structured guide to getting started.
 
 ---
 
@@ -161,7 +161,7 @@ When actively working to reverse prediabetes, knowing how to track progress matt
 
 **Waist circumference** is a practical home measurement that tracks visceral fat changes over time. Measuring monthly (same time, same place) is more informative than scale weight alone.
 
-**Continuous glucose monitoring (CGM)** — wearing a sensor for two to four weeks — provides the most granular picture of how your lifestyle changes are affecting day-to-day glucose control. See our article on [CGM and Metabolic Health](/lifestyle/metabolic-health/cgm-and-metabolic-health) for more.
+**Continuous glucose monitoring (CGM)** — wearing a sensor for two to four weeks — provides the most granular picture of how your lifestyle changes are affecting day-to-day glucose control. See our article on [CGM and Metabolic Health](/lifestyle/metabolic-health/cgm-and-metabolic-health/) for more.
 
 A reasonable monitoring cadence: HbA1c and fasting glucose every three months initially, then every six months once targets are achieved and maintained.
 
@@ -173,7 +173,7 @@ If you'd like individual guidance on reversing prediabetes, we're here for that 
 
 At Forward Family Medicine, we assess your full metabolic picture, build a specific intervention plan around your situation and preferences, and follow your progress closely enough to adjust when needed. We use CGM where it's useful, take detailed dietary and lifestyle histories, and treat prediabetes reversal as a genuine clinical goal rather than a "watch and wait" situation.
 
-Learn more about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
+Learn more about our [membership model](/membership/) or take the next step to [become a patient](/new-patients/).
 
 ---
 
