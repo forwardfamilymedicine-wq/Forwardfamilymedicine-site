@@ -72,7 +72,7 @@ An older but still referenced tool, the Framingham Risk Score, works on similar 
 
 **Enhancing Risk Assessment**
 
-For patients where risk is uncertain — particularly those in the borderline or intermediate range — additional testing can help. Coronary artery calcium (CAC) scoring, high-sensitivity CRP (hsCRP), and ApoB measurement can all refine risk estimates and guide decision-making. We discuss ApoB in detail in our companion article, [Understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl).
+For patients where risk is uncertain — particularly those in the borderline or intermediate range — additional testing can help. Coronary artery calcium (CAC) scoring, high-sensitivity CRP (hsCRP), and ApoB measurement can all refine risk estimates and guide decision-making. We discuss ApoB in detail in our companion article, [Understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl/).
 
 ---
 
@@ -86,7 +86,7 @@ LDL cholesterol — often called "bad" cholesterol — is the primary lipid driv
 
 Diet influences LDL primarily through saturated fat intake. Saturated fats — found in red meat, full-fat dairy, butter, coconut oil, and processed foods — raise LDL cholesterol. Replacing them with unsaturated fats, particularly the monounsaturated and polyunsaturated fats found in olive oil, nuts, seeds, and fatty fish, lowers LDL. Soluble fiber (oats, psyllium, legumes, apples) also lowers LDL by binding bile acids in the gut.
 
-Specific strategies, quantities, and expected magnitudes of effect are covered in our detailed article on [how to lower cholesterol naturally](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally).
+Specific strategies, quantities, and expected magnitudes of effect are covered in our detailed article on [how to lower cholesterol naturally](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally/).
 
 ### Blood Pressure and Lifestyle
 
@@ -94,7 +94,7 @@ Hypertension is the single most prevalent modifiable cardiovascular risk factor 
 
 Lifestyle interventions for blood pressure are among the best-documented in medicine. The DASH diet (Dietary Approaches to Stop Hypertension), sodium reduction, aerobic exercise, weight loss, and moderation of alcohol all produce clinically meaningful reductions in blood pressure — often in the range of 4–11 mmHg systolic per intervention. When combined, these strategies can produce reductions of 20–30 mmHg, which is comparable to one or two medications.
 
-Full detail on each intervention is in our article on [blood pressure and lifestyle](/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle).
+Full detail on each intervention is in our article on [blood pressure and lifestyle](/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle/).
 
 ### Inflammation and hsCRP
 
@@ -108,7 +108,7 @@ From a lifestyle standpoint, dietary patterns high in refined carbohydrates, ult
 
 Insulin resistance — the diminished ability of cells to respond to insulin — is a central driver of metabolic syndrome, a cluster of findings that includes abdominal obesity, elevated triglycerides, low HDL, elevated fasting glucose, and hypertension. Metabolic syndrome significantly amplifies cardiovascular risk beyond what any single risk factor would predict.
 
-The good news is that insulin resistance is highly modifiable through lifestyle. Reducing refined carbohydrate and added sugar intake, increasing physical activity (particularly a combination of aerobic exercise and resistance training), improving sleep, and achieving modest weight loss all improve insulin sensitivity meaningfully. Detailed guidance on these interventions is in our [metabolic health section](/lifestyle/metabolic-health).
+The good news is that insulin resistance is highly modifiable through lifestyle. Reducing refined carbohydrate and added sugar intake, increasing physical activity (particularly a combination of aerobic exercise and resistance training), improving sleep, and achieving modest weight loss all improve insulin sensitivity meaningfully. Detailed guidance on these interventions is in our [metabolic health section](/lifestyle/metabolic-health/).
 
 ### Smoking
 
@@ -162,7 +162,7 @@ A standard lipid panel measures four values: total cholesterol, LDL cholesterol,
 
 **Triglycerides** are blood fats that rise with excess refined carbohydrate and sugar intake, excess alcohol, physical inactivity, and insulin resistance. Elevated triglycerides (above 150 mg/dL) are associated with increased cardiovascular risk, particularly in the context of low HDL — a pattern common in metabolic syndrome.
 
-**ApoB** (apolipoprotein B) measures the total number of atherogenic lipoprotein particles — including LDL, VLDL, and Lp(a) — and is increasingly recognized as a more accurate predictor of cardiovascular risk than LDL cholesterol alone. Each atherogenic particle carries exactly one ApoB molecule, so ApoB directly reflects particle count. This distinction matters because two people can have the same LDL cholesterol level but very different numbers of LDL particles — and the person with more particles faces higher risk. A full explanation is in our article on [understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl).
+**ApoB** (apolipoprotein B) measures the total number of atherogenic lipoprotein particles — including LDL, VLDL, and Lp(a) — and is increasingly recognized as a more accurate predictor of cardiovascular risk than LDL cholesterol alone. Each atherogenic particle carries exactly one ApoB molecule, so ApoB directly reflects particle count. This distinction matters because two people can have the same LDL cholesterol level but very different numbers of LDL particles — and the person with more particles faces higher risk. A full explanation is in our article on [understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl/).
 
 ---
 
@@ -185,7 +185,7 @@ The lifestyle interventions with the strongest evidence are:
 - **Weight loss:** Approximately 1 mmHg reduction in systolic pressure per kilogram of weight lost (Neter et al.)
 - **Moderate alcohol restriction:** 2–4 mmHg reduction in heavy drinkers
 
-The full evidence base and practical guidance for each intervention is in our article on [blood pressure and lifestyle](/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle).
+The full evidence base and practical guidance for each intervention is in our article on [blood pressure and lifestyle](/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle/).
 
 ---
 
@@ -208,7 +208,7 @@ Resistance training — strength training with weights, resistance bands, or bod
 
 There is no minimum below which benefit disappears. Even modest amounts of activity — a 15-minute daily walk — produce measurable cardiovascular benefit. The goal is to establish a sustainable habit and build from there.
 
-Our [physical activity section](/lifestyle/physical-activity) provides detailed guidance on exercise type, intensity, progression, and safety.
+Our [physical activity section](/lifestyle/physical-activity/) provides detailed guidance on exercise type, intensity, progression, and safety.
 
 ---
 
@@ -262,7 +262,7 @@ Here is what that looks like in practice:
 
 **Ongoing partnership.** Cardiovascular prevention is not a one-time conversation. It is a process that unfolds over years. As your risk profile changes, your plan should change too. DPC membership makes that kind of longitudinal relationship possible.
 
-If you'd like individual guidance on your cardiovascular risk and a plan tailored to your health history, we invite you to explore [Forward Family Medicine membership](/membership) or [become a patient](/new-patients).
+If you'd like individual guidance on your cardiovascular risk and a plan tailored to your health history, we invite you to explore [Forward Family Medicine membership](/membership/) or [become a patient](/new-patients/).
 
 ---
 
@@ -278,7 +278,7 @@ A: In some patients, yes. The Ornish program — an intensive combination of ver
 
 **Q: Should I get my ApoB checked?**
 
-A: For many patients, particularly those with metabolic syndrome, high triglycerides, low HDL, or a family history of heart disease, ApoB provides more information than a standard lipid panel. It measures the total number of atherogenic lipoprotein particles — which is more directly tied to cardiovascular risk than LDL cholesterol concentration alone. We explain the distinction in detail in our article on [understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl). Whether ApoB testing is appropriate for you is a conversation worth having with your physician.
+A: For many patients, particularly those with metabolic syndrome, high triglycerides, low HDL, or a family history of heart disease, ApoB provides more information than a standard lipid panel. It measures the total number of atherogenic lipoprotein particles — which is more directly tied to cardiovascular risk than LDL cholesterol concentration alone. We explain the distinction in detail in our article on [understanding ApoB and LDL](/lifestyle/cardiovascular-prevention/understanding-apob-ldl/). Whether ApoB testing is appropriate for you is a conversation worth having with your physician.
 
 **Q: How long does it take for lifestyle changes to affect cardiovascular risk?**
 
@@ -303,10 +303,10 @@ A: The evidence favors the Mediterranean dietary pattern over a generic low-fat 
 
 ## Related Articles
 
-- [How to Lower Cholesterol Naturally: Evidence-Based Strategies](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally)
-- [Diet and Exercise for Heart Health: A Practical Guide](/lifestyle/cardiovascular-prevention/diet-exercise-heart-health)
-- [Understanding ApoB and LDL: A Patient-Friendly Explanation](/lifestyle/cardiovascular-prevention/understanding-apob-ldl)
-- [How to Lower Blood Pressure Naturally](/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle)
-- [Metabolic Health](/lifestyle/metabolic-health)
-- [Nutrition](/lifestyle/nutrition)
-- [Physical Activity](/lifestyle/physical-activity)
+- [How to Lower Cholesterol Naturally: Evidence-Based Strategies](/lifestyle/cardiovascular-prevention/lower-cholesterol-naturally/)
+- [Diet and Exercise for Heart Health: A Practical Guide](/lifestyle/cardiovascular-prevention/diet-exercise-heart-health/)
+- [Understanding ApoB and LDL: A Patient-Friendly Explanation](/lifestyle/cardiovascular-prevention/understanding-apob-ldl/)
+- [How to Lower Blood Pressure Naturally](/lifestyle/cardiovascular-prevention/blood-pressure-lifestyle/)
+- [Metabolic Health](/lifestyle/metabolic-health/)
+- [Nutrition](/lifestyle/nutrition/)
+- [Physical Activity](/lifestyle/physical-activity/)

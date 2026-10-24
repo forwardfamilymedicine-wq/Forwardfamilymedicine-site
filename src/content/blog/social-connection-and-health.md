@@ -54,11 +54,11 @@ The US Surgeon General's advisory noted that Americans report fewer close friend
 
 ## How Forward Family Medicine Helps
 
-Addressing social connection is not something most physician offices do. There is no billing code for it, no standard screening protocol in most settings, and no quick treatment. But at Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) approach addresses social health as a legitimate clinical domain — because the evidence demands it.
+Addressing social connection is not something most physician offices do. There is no billing code for it, no standard screening protocol in most settings, and no quick treatment. But at Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) approach addresses social health as a legitimate clinical domain — because the evidence demands it.
 
 We use validated screening tools (including the UCLA Loneliness Scale and the PROMIS Social Isolation measure) to identify patients who are struggling with isolation or loneliness. We have conversations about social connection — about what meaningful relationships look like in your life, what barriers exist to building or maintaining them, and what community resources or referrals might help.
 
-Our [Direct Primary Care membership](/membership) is itself a model for relational medicine — our patients know their physician, have continuity of care, and receive the kind of sustained attention that builds genuine therapeutic relationships. Research suggests that the patient-physician relationship itself has measurable health effects. A practice model built on high-quality, long-term relationships takes that seriously.
+Our [Direct Primary Care membership](/membership/) is itself a model for relational medicine — our patients know their physician, have continuity of care, and receive the kind of sustained attention that builds genuine therapeutic relationships. Research suggests that the patient-physician relationship itself has measurable health effects. A practice model built on high-quality, long-term relationships takes that seriously.
 
 ## Practical Tips
 

@@ -46,9 +46,9 @@ Here is what the evidence-based guidelines recommend during your 40s:
 
 Navigating which screenings apply to you — given your age, sex, family history, and risk factors — is exactly the kind of individualized guidance that gets lost in a rushed 15-minute appointment. At Forward Family Medicine, your annual physical includes a personalized screening review based on your actual risk profile, not a one-size-fits-all checklist.
 
-We use a [direct primary care](/direct-primary-care) model that gives us the time to have this conversation properly. We can explain the tradeoffs between different screening options (colonoscopy vs. Cologuard, for example), order appropriate labs, coordinate referrals, and follow up to make sure nothing falls through the cracks.
+We use a [direct primary care](/direct-primary-care/) model that gives us the time to have this conversation properly. We can explain the tradeoffs between different screening options (colonoscopy vs. Cologuard, for example), order appropriate labs, coordinate referrals, and follow up to make sure nothing falls through the cracks.
 
-The 40s are also when many people start managing a first chronic condition — hypertension, prediabetes, elevated cholesterol. Our [membership](/membership) model means you have easy, ongoing access to your physician as we manage these conditions together over time, not just once a year.
+The 40s are also when many people start managing a first chronic condition — hypertension, prediabetes, elevated cholesterol. Our [membership](/membership/) model means you have easy, ongoing access to your physician as we manage these conditions together over time, not just once a year.
 
 ## Practical Tips
 

@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership 
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Berwyn Patients Choose This Approach
 
@@ -44,7 +44,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included in Membership
 
-Full lifestyle medicine counseling · Chronic disease management · Preventive care · Unlimited visits · Wholesale labs [Full services →](/services)
+Full lifestyle medicine counseling · Chronic disease management · Preventive care · Unlimited visits · Wholesale labs [Full services →](/services/)
 
 ## Practical Information
 
@@ -54,10 +54,10 @@ Full lifestyle medicine counseling · Chronic disease management · Preventive c
 ## Frequently Asked Questions
 
 **Is lifestyle medicine available near Berwyn, PA?**
-Yes — Forward Family Medicine in Wayne, PA is 3 miles from Berwyn and integrates lifestyle medicine into every membership. [Learn more →](/lifestyle-medicine)
+Yes — Forward Family Medicine in Wayne, PA is 3 miles from Berwyn and integrates lifestyle medicine into every membership. [Learn more →](/lifestyle-medicine/)
 
 **Is lifestyle medicine included in the membership fee for Berwyn patients?**
-Yes — all lifestyle medicine counseling is included at no extra cost. [See membership →](/membership)
+Yes — all lifestyle medicine counseling is included at no extra cost. [See membership →](/membership/)
 
 **Can Berwyn patients use telehealth for lifestyle medicine consultations?**
 Absolutely. Phone and video visits are included and work especially well for nutrition and lifestyle check-ins.
@@ -80,4 +80,4 @@ A significant share of Berwyn patients work in the Daylesford and Paoli business
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Explore Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Explore Lifestyle Medicine →](/lifestyle-medicine/)**

@@ -57,9 +57,9 @@ For adults beginning or returning to resistance training after 40, the principle
 
 ## How Forward Family Medicine Helps
 
-At Forward Family Medicine, exercise prescription is a clinical tool, not a vague recommendation to "be more active." Our [lifestyle medicine](/lifestyle-medicine) approach incorporates specific, individualized guidance on resistance training — what to prioritize, how to start safely, and how to progress in the context of your health status and goals.
+At Forward Family Medicine, exercise prescription is a clinical tool, not a vague recommendation to "be more active." Our [lifestyle medicine](/lifestyle-medicine/) approach incorporates specific, individualized guidance on resistance training — what to prioritize, how to start safely, and how to progress in the context of your health status and goals.
 
-With a [membership](/membership), we follow you over time — monitoring metabolic markers that reflect muscle health (fasting insulin, glucose, body composition), adjusting recommendations as your fitness evolves, and integrating exercise as part of a comprehensive strategy for long-term health. We can also help you think through working with a qualified personal trainer if you want hands-on instruction.
+With a [membership](/membership/), we follow you over time — monitoring metabolic markers that reflect muscle health (fasting insulin, glucose, body composition), adjusting recommendations as your fitness evolves, and integrating exercise as part of a comprehensive strategy for long-term health. We can also help you think through working with a qualified personal trainer if you want hands-on instruction.
 
 ## Practical Tips
 

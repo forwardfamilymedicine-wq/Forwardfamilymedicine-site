@@ -34,7 +34,7 @@ Wayne anchors the Main Line along Lancaster Avenue, with easy access via the Pao
 
 Menopause care at Forward Family Medicine isn't a referral or an add-on — it's part of how every visit works. At our Wayne flagship office, our physicians integrate perimenopause and menopause care into family primary care: symptom evaluation, hormone considerations, cardiovascular and bone health monitoring, lifestyle integration. Visit lengths of 1–2 hours allow real depth.
 
-For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) sees patients at our Malvern office (8 miles, about 15 to 18 minutes west of Wayne). A West Chester office is planned, with no opening date set. Members can see Dr. Landi in person at Malvern or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause)
+For patients who want dedicated Menopause Society Certified Practitioner-level consultation, Dr. Brian Landi (MSCP-certified) sees patients at our Malvern office (8 miles, about 15 to 18 minutes west of Wayne). A West Chester office is planned, with no opening date set. Members can see Dr. Landi in person at Malvern or by telehealth, all included in DPC membership. [Full menopause care overview →](/menopause/)
 
 ## What Menopause Care Includes
 
@@ -59,9 +59,9 @@ For patients who want dedicated Menopause Society Certified Practitioner-level c
 
 Menopause care · Annual physicals · Preventive screenings · Chronic disease management · Cardiovascular and bone health monitoring · Lab work at wholesale cost · Telehealth · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Wayne Patients
 
@@ -96,4 +96,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation. [Schedule 
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Wayne)** | **[Menopause Care →](/menopause)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Wayne)** | **[Menopause Care →](/menopause/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

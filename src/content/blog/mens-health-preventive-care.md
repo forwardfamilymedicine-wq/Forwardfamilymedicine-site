@@ -62,11 +62,11 @@ Many men avoid primary care because the friction is too high — hard to get an 
 
 ## How Forward Family Medicine Helps
 
-At Forward Family Medicine, we understand the particular pattern of men delaying care. We do not lecture about it; we make it easier to engage. Through our [direct primary care](/direct-primary-care) model, access is built around your schedule — same-day or next-day appointments, the ability to message your physician directly, and no waiting room delays.
+At Forward Family Medicine, we understand the particular pattern of men delaying care. We do not lecture about it; we make it easier to engage. Through our [direct primary care](/direct-primary-care/) model, access is built around your schedule — same-day or next-day appointments, the ability to message your physician directly, and no waiting room delays.
 
 For men who have not had a comprehensive physical in years, we start with a thorough baseline assessment: full history, vital signs, physical exam, labs, and a realistic prioritized plan that does not feel overwhelming. We address everything — cardiovascular risk, metabolic health, cancer screening, mental health — in one place, with consistency over time.
 
-Our [membership](/membership) model means you have ongoing access to your physician, not just a once-a-year encounter. Preventive care for men works best when it is a relationship, not a transaction.
+Our [membership](/membership/) model means you have ongoing access to your physician, not just a once-a-year encounter. Preventive care for men works best when it is a relationship, not a transaction.
 
 ## Practical Tips
 

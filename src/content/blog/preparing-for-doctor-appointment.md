@@ -66,9 +66,9 @@ If you were given a referral, follow up on it. If labs or imaging were ordered, 
 
 The preparation framework above matters more in traditional practices where time is short. At Forward Family Medicine, appointments are longer by design — there's room for real conversation, follow-up questions, and complexity. But preparation still helps. Even with more time, arriving with clear priorities leads to better outcomes.
 
-[Direct primary care](/direct-primary-care) practices like Forward Family Medicine are built on continuity — your physician knows your history, your preferences, and your goals. That context means you don't have to re-explain your entire medical background every time. Over time, your appointments become more efficient and more effective because your doctor already has the foundation.
+[Direct primary care](/direct-primary-care/) practices like Forward Family Medicine are built on continuity — your physician knows your history, your preferences, and your goals. That context means you don't have to re-explain your entire medical background every time. Over time, your appointments become more efficient and more effective because your doctor already has the foundation.
 
-Members also have access to their physician between appointments via phone and messaging. If you realize after leaving that you forgot to ask something important, you can follow up without scheduling another visit. This is one of the practical day-to-day advantages of [membership](/membership) that patients consistently appreciate.
+Members also have access to their physician between appointments via phone and messaging. If you realize after leaving that you forgot to ask something important, you can follow up without scheduling another visit. This is one of the practical day-to-day advantages of [membership](/membership/) that patients consistently appreciate.
 
 ## Practical Tips
 

@@ -68,7 +68,7 @@ Telehealth visits are included in every Forward Family Medicine membership at no
 
 At Forward Family Medicine, telehealth and direct messaging are built into our membership as standard features, not add-ons. When you have a question or concern, you can reach your physician directly — and because they know your history, they can give you a meaningful response rather than a generic one.
 
-We use telehealth for what it's actually good for, and we bring you in when in-person care is the right call. Our patients get the best of both — the convenience of virtual access combined with the clinical depth of an ongoing in-person relationship. Learn more about our approach at [/direct-primary-care](/direct-primary-care) or visit [/membership](/membership) to see what membership includes.
+We use telehealth for what it's actually good for, and we bring you in when in-person care is the right call. Our patients get the best of both — the convenience of virtual access combined with the clinical depth of an ongoing in-person relationship. Learn more about our approach at [/direct-primary-care](/direct-primary-care/) or visit [/membership](/membership/) to see what membership includes.
 
 ## Practical Tips
 

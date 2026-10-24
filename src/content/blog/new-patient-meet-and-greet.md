@@ -71,9 +71,9 @@ A DPC physician who knows their practice well should be able to answer these que
 
 The Forward Family Medicine meet-and-greet is a free, 60-minute conversation, in person or by video, with one of our physicians. No paperwork, no commitment, no credit card. It's a genuine opportunity to understand how the practice works, ask about your specific situation, and evaluate whether the fit is right.
 
-A few questions worth asking: How does the panel cap of approximately 250 patients affect your access? What does integrated Lifestyle Medicine actually look like in practice? And what's included in the membership versus what's billed separately? See current pricing at [/membership](/membership).
+A few questions worth asking: How does the panel cap of approximately 250 patients affect your access? What does integrated Lifestyle Medicine actually look like in practice? And what's included in the membership versus what's billed separately? See current pricing at [/membership](/membership/).
 
-[Direct primary care](/direct-primary-care) is a different model than most patients have experienced, and questions are expected. Understanding how the model works, what's included, and how day-to-day access functions is important context before you commit to any DPC practice — including this one.
+[Direct primary care](/direct-primary-care/) is a different model than most patients have experienced, and questions are expected. Understanding how the model works, what's included, and how day-to-day access functions is important context before you commit to any DPC practice — including this one.
 
 ## Practical Tips
 

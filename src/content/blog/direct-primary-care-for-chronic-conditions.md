@@ -68,11 +68,11 @@ DPC doesn't mean going it alone on complex cases. Your DPC physician should be a
 
 Chronic disease management is one of the areas where DPC's advantages are clearest, and it's an area we take seriously at Forward Family Medicine. Our physicians have time to do this work right — to sit with patients, understand the full picture, and develop a management plan that accounts for the whole person, not just the lab values.
 
-We incorporate [lifestyle medicine](/lifestyle-medicine) directly into our chronic disease management approach, addressing the upstream factors — nutrition, physical activity, sleep, stress — that drive so many chronic conditions. This isn't a separate program; it's part of how we practice.
+We incorporate [lifestyle medicine](/lifestyle-medicine/) directly into our chronic disease management approach, addressing the upstream factors — nutrition, physical activity, sleep, stress — that drive so many chronic conditions. This isn't a separate program; it's part of how we practice.
 
 For patients managing conditions like diabetes, hypertension, depression, or metabolic syndrome, we offer the combination of thoughtful medical management, real access between visits, and genuine continuity that chronic disease requires.
 
-Learn more about our [direct primary care approach](/direct-primary-care) or explore [membership options](/membership) to see how Forward Family Medicine can improve the management of your chronic condition.
+Learn more about our [direct primary care approach](/direct-primary-care/) or explore [membership options](/membership/) to see how Forward Family Medicine can improve the management of your chronic condition.
 
 ## Practical Tips
 

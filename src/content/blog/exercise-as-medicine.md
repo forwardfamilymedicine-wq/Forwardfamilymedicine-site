@@ -46,11 +46,11 @@ The gap between what the evidence shows and how much people actually exercise is
 
 ## How Forward Family Medicine Helps
 
-Physical activity is not something we mention in passing at Forward Family Medicine. It is a central component of our [lifestyle medicine](/lifestyle-medicine) approach, and we treat it with the same clinical specificity we would apply to a medication: type, dose, frequency, and titration based on your current fitness level, health conditions, and goals.
+Physical activity is not something we mention in passing at Forward Family Medicine. It is a central component of our [lifestyle medicine](/lifestyle-medicine/) approach, and we treat it with the same clinical specificity we would apply to a medication: type, dose, frequency, and titration based on your current fitness level, health conditions, and goals.
 
 We take a structured approach to "prescribing" exercise: understanding your current activity level, identifying realistic barriers, and building a progressive plan that accounts for any musculoskeletal or cardiovascular limitations. Exercise is not one-size-fits-all, and the specifics matter — particularly for patients with diabetes, heart disease, osteoporosis, or depression, where the type of exercise and the way it is progressed significantly affects both safety and outcomes.
 
-Our [Direct Primary Care membership](/membership) means we can follow up on your activity plan regularly — not just once a year. Building an exercise habit takes months, and having a physician who checks in on it, celebrates incremental progress, and adjusts the approach when barriers arise makes a meaningful difference in whether change is sustained.
+Our [Direct Primary Care membership](/membership/) means we can follow up on your activity plan regularly — not just once a year. Building an exercise habit takes months, and having a physician who checks in on it, celebrates incremental progress, and adjusts the approach when barriers arise makes a meaningful difference in whether change is sustained.
 
 ## Practical Tips
 

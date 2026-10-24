@@ -62,11 +62,11 @@ In a direct primary care practice, there is no insurance claim for primary care 
 
 ## How Forward Family Medicine Helps
 
-At Forward Family Medicine, [direct primary care](/direct-primary-care) means your primary care relationship operates entirely outside the insurance billing system. Membership fees are flat, predictable, and disclosed upfront. There is no mystery about what you'll be charged for a visit, a phone call, or a follow-up message — because those things are included in your membership, not billed as separate events.
+At Forward Family Medicine, [direct primary care](/direct-primary-care/) means your primary care relationship operates entirely outside the insurance billing system. Membership fees are flat, predictable, and disclosed upfront. There is no mystery about what you'll be charged for a visit, a phone call, or a follow-up message — because those things are included in your membership, not billed as separate events.
 
 The EOB becomes relevant again when you use your health insurance for non-primary-care services: specialist visits, lab work ordered outside the practice, imaging, hospitalizations. For those situations, the skills in this article apply. But for the majority of day-to-day healthcare — the visits, the questions, the follow-up — members of Forward Family Medicine never have to decipher an EOB.
 
-[Membership](/membership) also includes the kind of physician relationship where you can ask "I got this bill and the amounts don't match my EOB — what should I do?" and actually get a helpful response without scheduling a formal appointment.
+[Membership](/membership/) also includes the kind of physician relationship where you can ask "I got this bill and the amounts don't match my EOB — what should I do?" and actually get a helpful response without scheduling a formal appointment.
 
 ## Practical Tips
 

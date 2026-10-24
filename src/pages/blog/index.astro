@@ -56,9 +56,9 @@ const breadcrumb = {
   <section class="cat-nav-section" style="background: var(--cream-200); border-bottom: 1px solid var(--cream-300);">
     <div class="container">
       <nav class="cat-tabs" aria-label="Blog categories">
-        <a href="/blog" class="cat-tab active" aria-current="page">All</a>
+        <a href="/blog/" class="cat-tab active" aria-current="page">All</a>
         {allCategories.map(([slug, display]) => (
-          <a href={`/blog/category/${slug}`} class="cat-tab">{display}</a>
+          <a href={`/blog/category/${slug}/`} class="cat-tab">{display}</a>
         ))}
       </nav>
     </div>
@@ -90,7 +90,7 @@ const breadcrumb = {
               medicine, nutrition, Direct Primary Care, and living well. Check back soon.
             </p>
             <p>
-              In the meantime, <a href="/contact">schedule a free meet and greet</a> to have
+              In the meantime, <a href="/contact/">schedule a free meet and greet</a> to have
               a real conversation about your health.
             </p>
           </div>
@@ -109,7 +109,7 @@ const breadcrumb = {
           Our physicians write about what actually matters for your health — without the
           noise. New articles monthly, authored by our physicians.
         </p>
-        <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+        <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
       </div>
       <div class="lifestyle-promo card">
         <span class="section-label">Also Explore</span>
@@ -118,7 +118,7 @@ const breadcrumb = {
           Evidence-based articles on nutrition, physical activity, sleep, metabolic health,
           and more — organized by topic.
         </p>
-        <a href="/lifestyle" class="btn btn-outline">Browse the Library</a>
+        <a href="/lifestyle/" class="btn btn-outline">Browse the Library</a>
       </div>
     </div>
   </section>

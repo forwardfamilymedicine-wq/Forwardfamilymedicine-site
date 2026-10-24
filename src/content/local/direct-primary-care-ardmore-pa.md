@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Haverford, Bryn Mawr, Wynnewood, and Merion"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. [Full DPC overview →](/direct-primary-care/)
 
 ## About Ardmore, PA
 
@@ -44,8 +44,8 @@ Ardmore is a diverse, walkable Lower Merion community that blends an urban-subur
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Ardmore Patients
 
@@ -66,7 +66,7 @@ About 6 miles west on Lancaster Avenue. Drive time is about 15 minutes. Ardmore 
 Absolutely. Phone and video visits are included for all members, reducing the need for in-person trips for follow-ups and minor concerns.
 
 **Is Forward Family Medicine accepting new patients from Ardmore?**
-Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients)
+Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/n
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

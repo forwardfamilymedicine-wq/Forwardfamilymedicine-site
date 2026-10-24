@@ -156,7 +156,7 @@ This does not mean quantity of social interactions. Research suggests that quali
 
 Improving sleep is one of the most powerful yet underutilized stress interventions. Adequate sleep (7–9 hours for most adults) regulates cortisol rhythms, restores the prefrontal cortex's capacity for emotional regulation, and reduces the inflammatory burden of chronic stress. Sleep improvement — using evidence-based behavioral approaches (sleep hygiene, cognitive behavioral therapy for insomnia, or CBT-I) — has ripple effects across mood, energy, resilience, and immune function.
 
-See the [Sleep and Hormones guide](/lifestyle/sleep-hormones) for a comprehensive overview of sleep optimization.
+See the [Sleep and Hormones guide](/lifestyle/sleep-hormones/) for a comprehensive overview of sleep optimization.
 
 ### Nature Exposure
 
@@ -175,7 +175,7 @@ Signs that stress has crossed into clinical territory include:
 - Sleep problems that do not improve with self-management strategies
 - Physical symptoms without clear medical explanation (headaches, GI distress, chest tightness, fatigue) that appear related to stress
 - Use of alcohol, substances, or food to manage emotional states
-- Feelings of exhaustion, cynicism, and detachment that do not improve with rest (possible burnout — see [Burnout: Signs, Health Consequences, and Recovery Strategies](/lifestyle/stress-mental-health/burnout-recovery))
+- Feelings of exhaustion, cynicism, and detachment that do not improve with rest (possible burnout — see [Burnout: Signs, Health Consequences, and Recovery Strategies](/lifestyle/stress-mental-health/burnout-recovery/))
 - Intrusive memories, hypervigilance, or avoidance following a traumatic experience
 
 These presentations deserve clinical attention — not because they represent weakness, but because they represent physiological dysregulation that responds to treatment.
@@ -198,7 +198,7 @@ At Forward Family Medicine, we consider stress and mental health integral to the
 
 In practice, this means we take time to understand your stress load and its sources. We discuss evidence-based interventions in the context of your actual life and constraints. We monitor stress-related biomarkers (blood pressure, inflammatory markers, cortisol rhythm when relevant). We coordinate appropriately with therapists, psychologists, and psychiatrists when clinical mental health conditions require specialist support. And we stay involved as a consistent presence across the arc of your care.
 
-If you'd like individual guidance on managing stress as part of your overall health, we'd encourage you to explore [membership at Forward Family Medicine](/membership) or [become a patient](/new-patients). This is exactly the kind of care that DPC was designed to provide.
+If you'd like individual guidance on managing stress as part of your overall health, we'd encourage you to explore [membership at Forward Family Medicine](/membership/) or [become a patient](/new-patients/). This is exactly the kind of care that DPC was designed to provide.
 
 ---
 
@@ -239,9 +239,9 @@ A: Medication can be appropriate for the clinical conditions that often arise fr
 
 ## Related Articles
 
-- [Stress Physiology and Chronic Disease: How Stress Makes You Sick](/lifestyle/stress-mental-health/stress-physiology-chronic-disease)
-- [Mindfulness and Behavior Change: The Evidence and the Practice](/lifestyle/stress-mental-health/mindfulness-behavior-change)
-- [Practical Stress Interventions: What Actually Works](/lifestyle/stress-mental-health/practical-stress-interventions)
-- [Burnout: Signs, Health Consequences, and Recovery Strategies](/lifestyle/stress-mental-health/burnout-recovery)
-- [Sleep and Hormones](/lifestyle/sleep-hormones)
-- [Physical Activity and Exercise](/lifestyle/physical-activity)
+- [Stress Physiology and Chronic Disease: How Stress Makes You Sick](/lifestyle/stress-mental-health/stress-physiology-chronic-disease/)
+- [Mindfulness and Behavior Change: The Evidence and the Practice](/lifestyle/stress-mental-health/mindfulness-behavior-change/)
+- [Practical Stress Interventions: What Actually Works](/lifestyle/stress-mental-health/practical-stress-interventions/)
+- [Burnout: Signs, Health Consequences, and Recovery Strategies](/lifestyle/stress-mental-health/burnout-recovery/)
+- [Sleep and Hormones](/lifestyle/sleep-hormones/)
+- [Physical Activity and Exercise](/lifestyle/physical-activity/)

@@ -135,15 +135,15 @@ The key implication: earlier intervention produces better and easier results. Ad
 
 Insulin resistance is not a fixed biological state. The same lifestyle factors that cause it can be reversed to fix it. The four most evidence-supported interventions are:
 
-**Diet.** Reducing refined carbohydrates and ultra-processed foods decreases the frequency and magnitude of blood sugar spikes, allowing insulin levels to normalize. Increasing fiber and choosing whole foods over processed ones are the most consistently effective dietary changes. For detailed strategies, see [Diet Strategies for Blood Sugar Control](/lifestyle/metabolic-health/diet-strategies-blood-sugar).
+**Diet.** Reducing refined carbohydrates and ultra-processed foods decreases the frequency and magnitude of blood sugar spikes, allowing insulin levels to normalize. Increasing fiber and choosing whole foods over processed ones are the most consistently effective dietary changes. For detailed strategies, see [Diet Strategies for Blood Sugar Control](/lifestyle/metabolic-health/diet-strategies-blood-sugar/).
 
-**Physical activity.** Both aerobic exercise and resistance training improve insulin sensitivity through different mechanisms. Aerobic exercise enables insulin-independent glucose uptake into muscle during activity; resistance training builds muscle mass, expanding the body's total glucose disposal capacity. Consistent physical activity is one of the most potent insulin sensitizers available. See our guide at [Physical Activity](/lifestyle/physical-activity).
+**Physical activity.** Both aerobic exercise and resistance training improve insulin sensitivity through different mechanisms. Aerobic exercise enables insulin-independent glucose uptake into muscle during activity; resistance training builds muscle mass, expanding the body's total glucose disposal capacity. Consistent physical activity is one of the most potent insulin sensitizers available. See our guide at [Physical Activity](/lifestyle/physical-activity/).
 
 **Weight loss.** Even modest weight loss — 5–7% of body weight — produces disproportionately large improvements in insulin sensitivity. This appears to be driven primarily by reduction in visceral fat, which means that changes in waist circumference may be a more meaningful progress marker than changes on the scale.
 
 **Sleep and stress management.** Normalizing sleep to 7–9 hours per night and reducing chronic psychological stress lower cortisol burden, which directly improves insulin sensitivity. These are underappreciated interventions that many people overlook in favor of dietary changes alone.
 
-For a full plan addressing prediabetes specifically, see [How to Reverse Prediabetes](/lifestyle/metabolic-health/how-to-reverse-prediabetes).
+For a full plan addressing prediabetes specifically, see [How to Reverse Prediabetes](/lifestyle/metabolic-health/how-to-reverse-prediabetes/).
 
 ---
 
@@ -153,7 +153,7 @@ If you'd like individual guidance on insulin resistance — whether you've been 
 
 At Forward Family Medicine, we take a thorough approach to metabolic assessment, including fasting insulin and HOMA-IR testing that most standard practices don't routinely offer. We build individualized plans that are realistic, evidence-based, and built around your specific situation — not a generic handout.
 
-Learn more about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
+Learn more about our [membership model](/membership/) or take the next step to [become a patient](/new-patients/).
 
 ---
 

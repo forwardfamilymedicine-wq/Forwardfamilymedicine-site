@@ -50,11 +50,11 @@ Research on distracted eating — eating while using a screen — consistently s
 
 ## How Forward Family Medicine Helps
 
-Most nutritional guidance in primary care focuses on what to eat. Mindful eating is about how — and this dimension of eating behavior is chronically underaddressed in clinical settings. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) approach incorporates eating behavior alongside dietary content, because both matter.
+Most nutritional guidance in primary care focuses on what to eat. Mindful eating is about how — and this dimension of eating behavior is chronically underaddressed in clinical settings. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) approach incorporates eating behavior alongside dietary content, because both matter.
 
 We help patients understand the hunger and satiety signals that chronic dieting, stress, and processed food consumption can blunt over time, and we provide practical tools for restoring sensitivity to those internal cues. For patients with a history of binge eating, emotional eating, or cyclical dieting, this approach is often more useful than another food restriction plan.
 
-Our [Direct Primary Care membership](/membership) allows for the kind of extended, non-rushed conversations where eating behavior can be explored meaningfully. Changing the way you eat — not just what you eat — is behavioral work that benefits from ongoing support, not a single handout.
+Our [Direct Primary Care membership](/membership/) allows for the kind of extended, non-rushed conversations where eating behavior can be explored meaningfully. Changing the way you eat — not just what you eat — is behavioral work that benefits from ongoing support, not a single handout.
 
 ## Practical Tips
 

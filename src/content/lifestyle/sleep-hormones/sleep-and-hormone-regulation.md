@@ -88,7 +88,7 @@ Research from van Cauter's group at the University of Chicago demonstrated that 
 
 The mechanisms are multiple. Sleep deprivation increases sympathetic nervous system activity and elevates cortisol, both of which directly antagonize insulin action. Slow-wave sleep itself appears to play a specific role in glucose regulation — there is experimental evidence that selectively suppressing slow-wave sleep (without reducing total sleep time) impairs glucose metabolism. Growth hormone secretion during slow-wave sleep also contributes to glucose homeostasis.
 
-For patients who are working to prevent or reverse insulin resistance and type 2 diabetes — or those already managing these conditions — sleep is not a peripheral concern. It is a primary metabolic lever. See our article on [Sleep and Metabolic Health](/lifestyle/sleep-hormones/sleep-and-metabolic-health) for a deeper exploration of these mechanisms.
+For patients who are working to prevent or reverse insulin resistance and type 2 diabetes — or those already managing these conditions — sleep is not a peripheral concern. It is a primary metabolic lever. See our article on [Sleep and Metabolic Health](/lifestyle/sleep-hormones/sleep-and-metabolic-health/) for a deeper exploration of these mechanisms.
 
 ---
 
@@ -140,7 +140,7 @@ This is not to say that individual hormonal disorders don't exist and don't warr
 
 If you'd like individual guidance on how sleep may be affecting your hormonal health — or if you're experiencing fatigue, weight changes, low libido, or recovery difficulties that may be related to sleep — we'd welcome the conversation. We evaluate sleep as a primary component of metabolic and hormonal health, not a footnote.
 
-Learn more about [our membership model](/membership) or [become a patient](/new-patients).
+Learn more about [our membership model](/membership/) or [become a patient](/new-patients/).
 
 ---
 

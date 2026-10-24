@@ -29,7 +29,7 @@ Ardmore is one of the Main Line's most accessible and diverse communities — wa
 
 Forward Family Medicine delivers the concierge experience — direct physician access, same-day availability, longer visits — through a flat DPC monthly membership. No high retainer. Just better primary care.
 
-[Compare DPC and traditional concierge →](/concierge-medicine)
+[Compare DPC and traditional concierge →](/concierge-medicine/)
 
 ## Why Ardmore Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine delivers the concierge experience — direct physician a
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -53,10 +53,10 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Ardmore, PA?**
-Forward Family Medicine in Wayne is 6 miles from Ardmore and offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients)
+Forward Family Medicine in Wayne is 6 miles from Ardmore and offers concierge-style DPC care. [Schedule a Meet & Greet →](/new-patients/)
 
 **What does concierge care cost near Ardmore?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)
 
 **Does the SEPTA line connect Ardmore to the Wayne practice?**
 Yes — the Paoli–Thorndale (R5) line runs from Ardmore to Wayne directly.
@@ -71,4 +71,4 @@ Yes — the Paoli–Thorndale (R5) line runs from Ardmore to Wayne directly.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

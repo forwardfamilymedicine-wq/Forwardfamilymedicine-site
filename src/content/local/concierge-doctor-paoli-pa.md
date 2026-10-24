@@ -29,7 +29,7 @@ Paoli is a Chester County community at the western end of the Main Line, known f
 
 Forward Family Medicine in Wayne delivers the core concierge medicine experience through a DPC membership — direct physician access, same-day scheduling, and longer visits — at a flat monthly fee. For Paoli patients, this is a 12–15 minute drive or a SEPTA ride away.
 
-[How DPC compares to traditional concierge medicine →](/concierge-medicine)
+[How DPC compares to traditional concierge medicine →](/concierge-medicine/)
 
 ## Why Paoli Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine in Wayne delivers the core concierge medicine experience
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -56,7 +56,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Yes — Forward Family Medicine in Wayne is the nearest concierge-style DPC practice for Paoli residents.
 
 **How much does concierge medicine cost near Paoli?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)
 
 **Can Paoli patients use telehealth to reduce travel?**
 Yes — phone and video visits are included and work for most routine and follow-up needs.
@@ -71,4 +71,4 @@ Yes — phone and video visits are included and work for most routine and follow
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

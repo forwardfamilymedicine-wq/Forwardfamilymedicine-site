@@ -127,7 +127,7 @@ If you'd like individual guidance on what lifestyle medicine might look like for
 
 At Forward Family Medicine, we work with patients the way the cases above describe: with specific plans, real follow-up, honest conversations about medication, and the time to do it properly. Our direct primary care membership model is what makes this level of care possible.
 
-Explore our [membership options](/membership) or [become a patient](/new-patients).
+Explore our [membership options](/membership/) or [become a patient](/new-patients/).
 
 ---
 

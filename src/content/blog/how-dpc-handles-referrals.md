@@ -62,7 +62,7 @@ Labs ordered through your DPC physician and performed at outside labs (Quest, La
 
 At Forward Family Medicine, we treat coordination as a core part of our job. When you need a cardiologist, a dermatologist, a gastroenterologist, or any other specialist, we're not just sending a referral into the void. We direct you to physicians we have relationships with and trust, provide the clinical context that makes those appointments more productive, and follow up to make sure the loop closes.
 
-Our [direct primary care](/direct-primary-care) model gives us the time to do this properly. And with a [membership](/membership), you have a physician you can message between appointments when questions come up — including questions about what to expect from a specialist visit or what to do if the specialist's recommendation doesn't seem right.
+Our [direct primary care](/direct-primary-care/) model gives us the time to do this properly. And with a [membership](/membership/), you have a physician you can message between appointments when questions come up — including questions about what to expect from a specialist visit or what to do if the specialist's recommendation doesn't seem right.
 
 ## Practical Tips
 

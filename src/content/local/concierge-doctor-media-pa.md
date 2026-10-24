@@ -29,7 +29,7 @@ Media's community culture — walkable, local, and relationship-oriented — mak
 
 Forward Family Medicine delivers the concierge medicine experience — same-day appointments, direct physician contact, unhurried visits — through a DPC membership at significantly lower cost than traditional concierge retainers. For Media patients, telehealth makes the 12-mile distance a non-issue for most routine care.
 
-[Compare DPC and traditional concierge →](/concierge-medicine)
+[Compare DPC and traditional concierge →](/concierge-medicine/)
 
 ## Why Media Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine delivers the concierge medicine experience — same-day 
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -54,13 +54,13 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Media, PA?**
-Forward Family Medicine in Wayne is 12 miles north and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/new-patients)
+Forward Family Medicine in Wayne is 12 miles north and provides concierge-style DPC care. Telehealth is included and makes most routine care accessible without the drive. [Schedule a Meet & Greet →](/new-patients/)
 
 **How does DPC compare to traditional concierge medicine?**
-Traditional concierge practices typically charge $1,500–$6,000+ per year in retainer fees and often still bill insurance. DPC replaces insurance billing with a flat monthly fee that delivers the same quality of access and relationship — typically at a fraction of the cost. [See comparison →](/concierge-medicine)
+Traditional concierge practices typically charge $1,500–$6,000+ per year in retainer fees and often still bill insurance. DPC replaces insurance billing with a flat monthly fee that delivers the same quality of access and relationship — typically at a fraction of the cost. [See comparison →](/concierge-medicine/)
 
 **What does membership cost for Media patients?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)
 
 ## Contact & Practice Information
 
@@ -72,4 +72,4 @@ Individual membership starting at $200/month; family plans from $175/person/mont
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

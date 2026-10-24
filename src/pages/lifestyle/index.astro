@@ -61,7 +61,7 @@ const breadcrumb = {
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span>
-        <a href="/lifestyle-medicine">Lifestyle Medicine</a> <span aria-hidden="true">›</span>
+        <a href="/lifestyle-medicine/">Lifestyle Medicine</a> <span aria-hidden="true">›</span>
         <span>Library</span>
       </nav>
       <span class="section-label">Evidence-Based Resources</span>
@@ -85,7 +85,7 @@ const breadcrumb = {
               const slug = entry.id.replace(/\.mdx?$/, '').replace(/\/index$/, '');
               return (
                 <li class="article-item">
-                  <a href={`/lifestyle/${slug}`} class="article-link">
+                  <a href={`/lifestyle/${slug}/`} class="article-link">
                     <span class="article-title">{entry.data.title}</span>
                     {entry.data.description && (
                       <span class="article-desc">{entry.data.description}</span>
@@ -129,7 +129,7 @@ const breadcrumb = {
         Forward Family Medicine is the only DPC practice on the Main Line with in-person,
         board-certified Lifestyle Medicine integrated into membership. No extra cost.
       </p>
-      <a href="/contact" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+      <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
     </div>
   </section>
 </MainLayout>

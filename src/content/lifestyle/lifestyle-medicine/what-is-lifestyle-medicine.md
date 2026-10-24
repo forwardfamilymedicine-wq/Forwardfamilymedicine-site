@@ -71,7 +71,7 @@ Lifestyle medicine, practiced well, requires time. A physician practicing it nee
 
 ## The Six Pillars — A Brief Overview
 
-Lifestyle medicine is organized around six pillars, each addressing a behavioral domain with strong evidence for its effects on chronic disease. For a detailed breakdown of each pillar with the evidence behind it, see [The Six Pillars of Lifestyle Medicine Explained](/lifestyle/lifestyle-medicine/six-pillars).
+Lifestyle medicine is organized around six pillars, each addressing a behavioral domain with strong evidence for its effects on chronic disease. For a detailed breakdown of each pillar with the evidence behind it, see [The Six Pillars of Lifestyle Medicine Explained](/lifestyle/lifestyle-medicine/six-pillars/).
 
 **Nutrition** is often the most impactful pillar for metabolic conditions. Whole-food, plant-predominant diets have been shown to reduce LDL cholesterol, lower blood pressure, improve insulin sensitivity, and support weight management.
 
@@ -121,7 +121,7 @@ If you'd like individual guidance on what lifestyle medicine can do for your hea
 
 At Forward Family Medicine, lifestyle medicine is integrated into how we practice primary care. Our direct primary care membership model gives us the time to conduct real lifestyle assessments, build individualized plans with you, and follow up over the months it takes for meaningful change to take hold. We don't rush through visits, and we don't manage conditions in isolation from the behaviors that drive them.
 
-Explore our [membership options](/membership) or [become a patient](/new-patients) to get started.
+Explore our [membership options](/membership/) or [become a patient](/new-patients/) to get started.
 
 ---
 

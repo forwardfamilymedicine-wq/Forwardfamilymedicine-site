@@ -100,7 +100,7 @@ What causes cells to become insulin resistant? Several overlapping mechanisms ar
 
 **Genetic predisposition.** Some individuals are more susceptible to insulin resistance at a given body weight or activity level. But genetic predisposition is a risk factor, not a sentence — lifestyle interventions remain effective even in high-risk populations.
 
-For a deeper dive, see our article on [what is insulin resistance](/lifestyle/metabolic-health/what-is-insulin-resistance).
+For a deeper dive, see our article on [what is insulin resistance](/lifestyle/metabolic-health/what-is-insulin-resistance/).
 
 ---
 
@@ -140,7 +140,7 @@ The 10-year follow-up study (DPPOS) showed that the benefits of the initial life
 
 Prediabetes is not a sentence. It is a window — and often a wide one. With the right interventions, many people not only stop progressing to diabetes but return entirely to normal blood sugar levels.
 
-For specific strategies, see [How to Reverse Prediabetes](/lifestyle/metabolic-health/how-to-reverse-prediabetes).
+For specific strategies, see [How to Reverse Prediabetes](/lifestyle/metabolic-health/how-to-reverse-prediabetes/).
 
 ---
 
@@ -181,7 +181,7 @@ The good news is that at the highest level, the evidence converges. The 2019 ADA
 
 **What doesn't help:** ultra-processed foods, regardless of their macronutrient profile. Products engineered for hyper-palatability — chips, crackers, packaged snacks, fast food — tend to override satiety signals and promote overconsumption, regardless of whether they are "low fat" or "low carb" on the label.
 
-For detailed dietary strategies, see [Diet Strategies for Blood Sugar Control](/lifestyle/metabolic-health/diet-strategies-blood-sugar) and our [Nutrition pillar](/lifestyle/nutrition).
+For detailed dietary strategies, see [Diet Strategies for Blood Sugar Control](/lifestyle/metabolic-health/diet-strategies-blood-sugar/) and our [Nutrition pillar](/lifestyle/nutrition/).
 
 ---
 
@@ -199,7 +199,7 @@ The DPP trial used 150 minutes per week of moderate-intensity aerobic activity a
 
 For people who are already somewhat active, adding resistance training two to three days per week produces additional metabolic benefit beyond what aerobic exercise achieves alone.
 
-See our [Physical Activity pillar](/lifestyle/physical-activity) for a full guide to exercise and health.
+See our [Physical Activity pillar](/lifestyle/physical-activity/) for a full guide to exercise and health.
 
 ---
 
@@ -255,7 +255,7 @@ If you're interested in a comprehensive metabolic picture, here is what to consi
 - **Uric acid** — often elevated in the context of high fructose intake and metabolic syndrome.
 - **ALT (liver enzyme)** — elevated ALT can be an early sign of non-alcoholic fatty liver disease.
 
-**Continuous glucose monitoring (CGM):** Wearing a CGM for two to four weeks provides a detailed picture of your glucose patterns — meal responses, fasting trends, sleep patterns, and stress effects — that static blood tests cannot capture. See our article on [CGM and Metabolic Health](/lifestyle/metabolic-health/cgm-and-metabolic-health) for details.
+**Continuous glucose monitoring (CGM):** Wearing a CGM for two to four weeks provides a detailed picture of your glucose patterns — meal responses, fasting trends, sleep patterns, and stress effects — that static blood tests cannot capture. See our article on [CGM and Metabolic Health](/lifestyle/metabolic-health/cgm-and-metabolic-health/) for details.
 
 The goal is not to order every possible test, but to move beyond the bare minimum when metabolic risk is a concern. At Forward Family Medicine, we help patients understand not just whether their numbers are "normal" by population standards, but whether they are optimal — and what's driving any dysfunction.
 
@@ -275,7 +275,7 @@ What this looks like in practice:
 
 **Lifestyle-first, medication-smart.** We are not reflexively opposed to medications — metformin, GLP-1 agonists, and others have important roles. But we lead with lifestyle because the evidence is clear: in most cases of prediabetes and early metabolic syndrome, lifestyle change is more powerful than medication and produces no side effects.
 
-If you'd like individual guidance on your metabolic health — whether you've been told you have prediabetes, metabolic syndrome, or just want to understand your numbers better — we'd welcome the opportunity to work with you. Learn about our [membership model](/membership) or take the next step to [become a patient](/new-patients).
+If you'd like individual guidance on your metabolic health — whether you've been told you have prediabetes, metabolic syndrome, or just want to understand your numbers better — we'd welcome the opportunity to work with you. Learn about our [membership model](/membership/) or take the next step to [become a patient](/new-patients/).
 
 ---
 
@@ -317,7 +317,7 @@ A: Faster than most people expect. Insulin sensitivity can begin to improve with
 
 ## Related Articles
 
-- [What Is Insulin Resistance? Causes, Signs, and What to Do](/lifestyle/metabolic-health/what-is-insulin-resistance)
-- [How to Reverse Prediabetes: Evidence-Based Strategies](/lifestyle/metabolic-health/how-to-reverse-prediabetes)
-- [CGM and Metabolic Health: How Continuous Glucose Monitoring Helps](/lifestyle/metabolic-health/cgm-and-metabolic-health)
-- [Diet Strategies for Blood Sugar Control: What the Evidence Shows](/lifestyle/metabolic-health/diet-strategies-blood-sugar)
+- [What Is Insulin Resistance? Causes, Signs, and What to Do](/lifestyle/metabolic-health/what-is-insulin-resistance/)
+- [How to Reverse Prediabetes: Evidence-Based Strategies](/lifestyle/metabolic-health/how-to-reverse-prediabetes/)
+- [CGM and Metabolic Health: How Continuous Glucose Monitoring Helps](/lifestyle/metabolic-health/cgm-and-metabolic-health/)
+- [Diet Strategies for Blood Sugar Control: What the Evidence Shows](/lifestyle/metabolic-health/diet-strategies-blood-sugar/)

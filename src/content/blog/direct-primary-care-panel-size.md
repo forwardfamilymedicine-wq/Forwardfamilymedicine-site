@@ -75,9 +75,9 @@ At Forward Family Medicine, our panel is intentionally capped to ensure that eve
 
 When you are a member, your physician knows your name, your history, your family situation, and your health concerns before you walk in the door. When you call, you reach someone who knows your file. When you text, you get a thoughtful response, not a triage protocol.
 
-That level of care is made possible specifically because we keep our panel small. It is the foundational commitment behind the [direct primary care model](/direct-primary-care) we practice.
+That level of care is made possible specifically because we keep our panel small. It is the foundational commitment behind the [direct primary care model](/direct-primary-care/) we practice.
 
-If you'd like to experience primary care the way it should work, we invite you to explore our [membership options](/membership). Spots are limited — precisely because we believe that a smaller panel makes for better medicine.
+If you'd like to experience primary care the way it should work, we invite you to explore our [membership options](/membership/). Spots are limited — precisely because we believe that a smaller panel makes for better medicine.
 
 ## Practical Tips
 

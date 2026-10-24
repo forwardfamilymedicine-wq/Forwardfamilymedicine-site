@@ -54,11 +54,11 @@ This is important: an anti-inflammatory diet is a pattern, not a list of superfo
 
 ## How Forward Family Medicine Helps
 
-Nutritional guidance in primary care is often superficial — "eat more vegetables" delivered alongside a prescription. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) approach treats nutrition as a core clinical intervention, not an afterthought.
+Nutritional guidance in primary care is often superficial — "eat more vegetables" delivered alongside a prescription. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) approach treats nutrition as a core clinical intervention, not an afterthought.
 
 We help patients understand their inflammatory risk through clinical markers, family history, and dietary assessment, and we provide practical, individualized guidance on shifting their dietary patterns. We don't hand out one-size-fits-all meal plans. We work with what you actually eat, your cultural food traditions, your budget, and your cooking capacity to build changes that last.
 
-Our [Direct Primary Care membership](/membership) means we have the time to follow up on these conversations — to check in on what's working, address barriers, and connect patients with registered dietitians when more intensive support is warranted. Sustainable dietary change is built over multiple interactions, not a single visit.
+Our [Direct Primary Care membership](/membership/) means we have the time to follow up on these conversations — to check in on what's working, address barriers, and connect patients with registered dietitians when more intensive support is warranted. Sustainable dietary change is built over multiple interactions, not a single visit.
 
 ## Practical Tips
 

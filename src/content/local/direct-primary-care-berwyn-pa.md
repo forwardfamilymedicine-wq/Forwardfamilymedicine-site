@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Devon, Wayne, Paoli, and Strafford"
 
 ## What Is Direct Primary Care?
 
-Direct Primary Care (DPC) replaces insurance billing with a flat monthly membership — covering unlimited primary care visits, direct physician access, and wholesale lab pricing. No copays. No per-visit charges. A physician who knows you. [Full DPC explainer →](/direct-primary-care)
+Direct Primary Care (DPC) replaces insurance billing with a flat monthly membership — covering unlimited primary care visits, direct physician access, and wholesale lab pricing. No copays. No per-visit charges. A physician who knows you. [Full DPC explainer →](/direct-primary-care/)
 
 ## About Berwyn, PA
 
@@ -45,8 +45,8 @@ Berwyn is a quiet, residential Chester County community just west of Wayne on La
 
 Unlimited primary care visits · Annual physicals · Preventive screenings · Chronic disease management (diabetes, hypertension, thyroid, cholesterol) · Acute illness care · Women's and men's health · Lifestyle medicine · Minor procedures · Prescription management · Care coordination
 
-[See full service list →](/services) | [See membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[See full service list →](/services/) | [See membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Berwyn Patients
 
@@ -67,7 +67,7 @@ Approximately 3 miles east on Lancaster Avenue. Drive time is typically under 10
 Absolutely. Phone and video visits are included in all memberships. Berwyn patients frequently use telehealth for routine follow-ups, prescription refills, and minor concerns.
 
 **Is Forward Family Medicine accepting new patients from Berwyn?**
-Yes — we are currently enrolling new members. [Schedule a free Meet & Greet →](/new-patients)
+Yes — we are currently enrolling new members. [Schedule a free Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes — we are currently enrolling new members. [Schedule a free Meet & Greet �
 
 ## Ready to Get Started?
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

@@ -43,7 +43,7 @@ This is before anything goes seriously wrong. And notice: the PPO premium is the
 
 | Expense | Annual Cost |
 |---|---|
-| DPC membership: $200/month (Forward Family Medicine individual rate) — see [membership page](/membership) for family pricing | Variable |
+| DPC membership: $200/month (Forward Family Medicine individual rate) — see [membership page](/membership/) for family pricing | Variable |
 | HDHP monthly premium (typically $200–$300 less/month than PPO) | $1,800–$2,400 less |
 | Primary care visits | $0 (included in membership) |
 | Urgent care visits (significantly reduced with DPC access) | $0–$100 |
@@ -99,7 +99,7 @@ For a family of four currently on a family PPO plan:
 - **Out-of-pocket annual cost (family share): $7,000–$13,000+**
 
 **DPC + Family HDHP:**
-- Family DPC membership: see our [membership page](/membership)
+- Family DPC membership: see our [membership page](/membership/)
 - HDHP family premium: typically $3,000–$5,000 less/year than comparable PPO
 - Primary care: $0 beyond membership
 - Urgent care (significantly reduced): $0–$200
@@ -122,9 +122,9 @@ DPC offers the smallest financial advantage for someone with a heavily subsidize
 
 ## How Forward Family Medicine Helps
 
-At Forward Family Medicine, transparent pricing is part of how we practice. We want our members to understand exactly what they're paying for and what they're getting. Our [membership page](/membership) has current pricing for individuals and families.
+At Forward Family Medicine, transparent pricing is part of how we practice. We want our members to understand exactly what they're paying for and what they're getting. Our [membership page](/membership/) has current pricing for individuals and families.
 
-We offer wholesale lab pricing and in-office medication dispensing to our members, which creates real savings that often offset a meaningful portion of membership costs. And our [direct primary care model](/direct-primary-care) means you're not paying copays or being surprised by bills for primary care visits.
+We offer wholesale lab pricing and in-office medication dispensing to our members, which creates real savings that often offset a meaningful portion of membership costs. And our [direct primary care model](/direct-primary-care/) means you're not paying copays or being surprised by bills for primary care visits.
 
 If you're trying to calculate whether DPC makes financial sense for your situation, we're happy to walk through the math with you.
 

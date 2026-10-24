@@ -54,9 +54,9 @@ Longevity medicine is not a one-visit consultation. It requires a physician who 
 
 ## How Forward Family Medicine Helps
 
-Forward Family Medicine is built for the kind of proactive, longitudinal care that longevity medicine requires. Our [membership](/membership) model means we see you over years, not just at annual checkups — tracking trends in your labs, fitness, body composition, and cognitive health that a reactive system would miss.
+Forward Family Medicine is built for the kind of proactive, longitudinal care that longevity medicine requires. Our [membership](/membership/) model means we see you over years, not just at annual checkups — tracking trends in your labs, fitness, body composition, and cognitive health that a reactive system would miss.
 
-Our [direct primary care](/direct-primary-care) structure gives us time to address the upstream drivers of chronic disease: metabolic health, fitness, sleep, stress, and risk factor modification. We integrate [lifestyle medicine](/lifestyle-medicine) into every long-term patient relationship, because the evidence base for lifestyle interventions in longevity is as strong as anything in a prescription pad.
+Our [direct primary care](/direct-primary-care/) structure gives us time to address the upstream drivers of chronic disease: metabolic health, fitness, sleep, stress, and risk factor modification. We integrate [lifestyle medicine](/lifestyle-medicine/) into every long-term patient relationship, because the evidence base for lifestyle interventions in longevity is as strong as anything in a prescription pad.
 
 At Forward Family Medicine, Dr. Lieberman's dual board certification in Family and Lifestyle Medicine — combined with his background in culinary arts and nutrition science — means the lifestyle medicine pillars are delivered with clinical specificity, not generic advice. This is included in every membership at no additional cost.
 

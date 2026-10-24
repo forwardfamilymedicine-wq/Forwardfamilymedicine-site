@@ -34,7 +34,7 @@ The math goes something like this: you pay $400–$800/month in premiums (depend
 
 The smarter approach for many self-employed individuals:
 
-1. **Enroll in DPC** for primary care. Pay a flat monthly membership fee — visit our [membership page](/membership) for current pricing at Forward Family Medicine. Get unlimited primary care, same-day access, telehealth, and often wholesale labs and medications.
+1. **Enroll in DPC** for primary care. Pay a flat monthly membership fee — visit our [membership page](/membership/) for current pricing at Forward Family Medicine. Get unlimited primary care, same-day access, telehealth, and often wholesale labs and medications.
 
 2. **Pair with a high-deductible health plan (HDHP)** for catastrophic coverage. HDHPs carry the lowest monthly premiums of any ACA-compliant plan. You're protected against major events — hospitalization, surgery, specialist care — without paying for benefits you're not using at the primary care level.
 
@@ -78,7 +78,7 @@ As a DPC practice, we give self-employed patients the kind of access and attenti
 
 We also help members navigate the insurance side of the equation. If you're thinking about switching to an HDHP to pair with DPC, we're happy to talk through how that would work for your health situation.
 
-Explore [our membership options](/membership) or learn more about how our [direct primary care model](/direct-primary-care) works for independent workers and small business owners.
+Explore [our membership options](/membership/) or learn more about how our [direct primary care model](/direct-primary-care/) works for independent workers and small business owners.
 
 ## Practical Tips
 

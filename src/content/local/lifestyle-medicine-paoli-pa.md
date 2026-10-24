@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership 
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Paoli Patients Choose This Approach
 
@@ -43,7 +43,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -57,7 +57,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 Yes — Forward Family Medicine in Wayne includes lifestyle medicine in every membership and is 6 miles east of Paoli.
 
 **Is lifestyle medicine covered in the DPC membership?**
-Yes — completely included. [See membership →](/membership)
+Yes — completely included. [See membership →](/membership/)
 
 **Can Paoli patients do lifestyle consultations by video?**
 Yes — telehealth is included and works well for nutrition and lifestyle coaching check-ins.
@@ -80,4 +80,4 @@ Duportail House park and the natural trail access in East Whiteland offer the ki
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

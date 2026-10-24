@@ -36,7 +36,7 @@ Menopause care isn't a separate referral at Forward Family Medicine. It's integr
 - **Dedicated MSCP specialty consultation** with Dr. Brian Landi at our Malvern office (about 25 to 28 minutes). Dr. Landi is Menopause Society Certified, with focused training in perimenopause and menopause management
 - **Telehealth** — phone and video visits with any FFM physician, included in membership
 
-You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause)
+You establish primary care at your preferred FFM office and access specialty menopause consultation with Dr. Landi when you need it. Inter-office coordination is automatic. [Full menopause care overview →](/menopause/)
 
 ## What Menopause Care Includes
 
@@ -61,9 +61,9 @@ You establish primary care at your preferred FFM office and access specialty men
 
 Menopause care · Annual physicals · Preventive screenings · Chronic disease management · Cardiovascular and bone health monitoring · Lab work at wholesale cost · Telehealth · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Haverford Patients
 
@@ -98,4 +98,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation. [Schedule 
 
 ## Take the First Step
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Haverford)** | **[Menopause Care →](/menopause)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Haverford)** | **[Menopause Care →](/menopause/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

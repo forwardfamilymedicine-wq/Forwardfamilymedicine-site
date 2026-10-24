@@ -111,7 +111,7 @@ If you'd like individual guidance on how lifestyle changes might affect your med
 
 At Forward Family Medicine, we work with patients on both the lifestyle dimensions of their health and the clinical decisions about medication — together, in an ongoing relationship, with the time to do it well.
 
-Explore our [membership options](/membership) or [become a patient](/new-patients).
+Explore our [membership options](/membership/) or [become a patient](/new-patients/).
 
 ---
 

@@ -58,7 +58,7 @@ Our patients get same-day and next-day appointments, direct access to their phys
 
 We also offer something no other DPC practice on the Main Line provides: integrated, in-person, board-certified Lifestyle Medicine. Dr. Lieberman's dual board certification in Family Medicine and Lifestyle Medicine — combined with his background in culinary arts and nutrition science — means every member has access to a physician who can translate the latest evidence on diet, movement, and metabolic health into a plan that actually works in real life.
 
-Learn more about our approach on our [concierge medicine](/concierge-medicine) and [direct primary care](/direct-primary-care) pages, or visit [/membership](/membership) for details on our current membership structure.
+Learn more about our approach on our [concierge medicine](/concierge-medicine/) and [direct primary care](/direct-primary-care/) pages, or visit [/membership](/membership/) for details on our current membership structure.
 
 ## Practical Tips
 
@@ -73,7 +73,7 @@ Learn more about our approach on our [concierge medicine](/concierge-medicine) a
 ## FAQ
 
 **Q: Is there a DPC or concierge practice that serves Wayne, Radnor, Villanova, and surrounding Main Line communities?**
-A: Yes — Forward Family Medicine is located in Wayne, PA and serves patients throughout the Main Line and Philadelphia suburb area. Learn more at [/membership](/membership).
+A: Yes — Forward Family Medicine is located in Wayne, PA and serves patients throughout the Main Line and Philadelphia suburb area. Learn more at [/membership](/membership/).
 
 **Q: Do Main Line concierge practices accept insurance at all?**
 A: It depends on the model. Traditional concierge practices usually still accept and bill insurance on top of a retainer fee. DPC practices like Forward Family Medicine do not bill insurance for primary care — the monthly membership covers primary care services. Patients still maintain their own insurance for specialist care, hospitalizations, and other services outside the practice's scope.

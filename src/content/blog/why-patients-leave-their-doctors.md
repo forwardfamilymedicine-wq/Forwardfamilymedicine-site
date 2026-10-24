@@ -59,7 +59,7 @@ If several of these sound familiar, it may be time to look for something differe
 
 Forward Family Medicine was built specifically to address the structural problems that drive patient dissatisfaction in conventional primary care. With a small patient panel, a flat membership model that doesn't reward volume, and a practice designed around access and continuity, we're able to offer what conventional practices can't.
 
-Our patients know their physician and are known in return. Appointments run on time and last long enough to be useful. Direct access by phone and message means questions get answered. Visit [/direct-primary-care](/direct-primary-care) to understand how our model works, [/concierge-medicine](/concierge-medicine) for context on how we compare to concierge practices, and [/membership](/membership) for details on joining.
+Our patients know their physician and are known in return. Appointments run on time and last long enough to be useful. Direct access by phone and message means questions get answered. Visit [/direct-primary-care](/direct-primary-care/) to understand how our model works, [/concierge-medicine](/concierge-medicine/) for context on how we compare to concierge practices, and [/membership](/membership/) for details on joining.
 
 ## Practical Tips
 

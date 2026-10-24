@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership.
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why Newtown Square Patients Choose This Approach
 
@@ -43,7 +43,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -58,7 +58,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 Yes — Forward Family Medicine in Wayne includes lifestyle medicine in every membership, 7–8 miles from Newtown Square.
 
 **Is lifestyle medicine covered in the membership fee?**
-Yes — completely included. [See membership →](/membership)
+Yes — completely included. [See membership →](/membership/)
 
 **Can Newtown Square patients do lifestyle consultations by video?**
 Yes — telehealth is included and recommended for routine lifestyle coaching, follow-ups, and check-ins.
@@ -73,4 +73,4 @@ Yes — telehealth is included and recommended for routine lifestyle coaching, f
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

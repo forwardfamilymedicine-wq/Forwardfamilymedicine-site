@@ -80,7 +80,7 @@ We understand that healthcare finances are complex, and we help our members navi
 
 Our wholesale lab pricing and in-office medication dispensing create additional opportunities to use HSA funds effectively — accessing high-quality services at dramatically reduced prices and paying with pre-tax dollars.
 
-For a full picture of what's included in membership and what might be billed separately, visit our [membership page](/membership). For more about how the DPC model works financially, visit our [direct primary care overview](/direct-primary-care).
+For a full picture of what's included in membership and what might be billed separately, visit our [membership page](/membership/). For more about how the DPC model works financially, visit our [direct primary care overview](/direct-primary-care/).
 
 ## Practical Tips
 

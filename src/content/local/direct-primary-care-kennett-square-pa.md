@@ -26,7 +26,7 @@ nearbyNeighborhoods: "West Chester, Avondale, Oxford, Landenberg, and Hockessin"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care/)
 
 ## About Kennett Square, PA
 
@@ -48,9 +48,9 @@ Kennett Square is the "Mushroom Capital of the World" — producing more than ha
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Menopause care · Procedures · Prescription management · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Kennett Square Patients
 
@@ -68,10 +68,10 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Does DPC work well even with the drive from Kennett Square?**
-Yes — and this is where DPC's telehealth inclusion matters. Annual physicals, new-patient visits, and procedures happen in person. Most follow-ups, acute illness evaluations, medication reviews, and lab result discussions work well by phone or video. Members typically come in a few times per year and handle the rest remotely. [Learn more →](/direct-primary-care)
+Yes — and this is where DPC's telehealth inclusion matters. Annual physicals, new-patient visits, and procedures happen in person. Most follow-ups, acute illness evaluations, medication reviews, and lab result discussions work well by phone or video. Members typically come in a few times per year and handle the rest remotely. [Learn more →](/direct-primary-care/)
 
 **What's the best way to try the practice before committing?**
-Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)
 
 ## Contact & Practice Information
 
@@ -85,4 +85,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. La
 
 ## Get Started
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Kennett%20Square)** | **[See Membership Plans →](/membership/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

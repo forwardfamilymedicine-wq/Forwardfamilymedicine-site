@@ -64,11 +64,11 @@ Forward Family Medicine is a direct primary care practice. The care philosophy �
 
 ## How Forward Family Medicine Helps
 
-The [direct primary care](/direct-primary-care) model at Forward Family Medicine is designed around the conditions that make good primary care possible: smaller panels, longer visits, genuine physician availability, and continuity over time. These aren't perks — they're the structural prerequisites for the kind of care that actually improves health outcomes.
+The [direct primary care](/direct-primary-care/) model at Forward Family Medicine is designed around the conditions that make good primary care possible: smaller panels, longer visits, genuine physician availability, and continuity over time. These aren't perks — they're the structural prerequisites for the kind of care that actually improves health outcomes.
 
 When you become a member, your physician has the capacity to manage your care proactively — not just respond to acute problems when they reach a crisis. That means chronic condition monitoring, preventive screenings, medication management, and care coordination with specialists all get the attention they require, not the attention that can be squeezed into a seven-minute slot.
 
-[Membership](/membership) at Forward Family Medicine also means your physician is accessible between appointments. Questions, medication concerns, and follow-up on specialist visits happen through direct communication — not a phone tree, not a portal message that takes three business days to get a response.
+[Membership](/membership/) at Forward Family Medicine also means your physician is accessible between appointments. Questions, medication concerns, and follow-up on specialist visits happen through direct communication — not a phone tree, not a portal message that takes three business days to get a response.
 
 ## Practical Tips
 

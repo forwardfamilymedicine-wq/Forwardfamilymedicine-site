@@ -59,7 +59,7 @@ const breadcrumb = {
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span>
-        <a href="/blog">Blog</a> <span aria-hidden="true">›</span>
+        <a href="/blog/">Blog</a> <span aria-hidden="true">›</span>
         <span>{label}</span>
       </nav>
       <span class="section-label">Category</span>
@@ -72,10 +72,10 @@ const breadcrumb = {
   <section class="cat-nav-section" style="background: var(--cream-200); border-bottom: 1px solid var(--cream-300);">
     <div class="container">
       <nav class="cat-tabs" aria-label="Blog categories">
-        <a href="/blog" class="cat-tab">All</a>
+        <a href="/blog/" class="cat-tab">All</a>
         {allCategories.map(([slug, display]) => (
           <a
-            href={`/blog/category/${slug}`}
+            href={`/blog/category/${slug}/`}
             class={`cat-tab${slug === category ? ' active' : ''}`}
             aria-current={slug === category ? 'page' : undefined}
           >

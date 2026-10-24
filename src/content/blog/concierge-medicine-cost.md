@@ -81,9 +81,9 @@ That value is real, and for many patients it's difficult to put a dollar figure 
 
 At Forward Family Medicine, we've structured our membership to be genuinely accessible — not a luxury add-on, but a practical alternative to the frustrations of conventional insurance-based primary care. Our flat monthly fee covers the full scope of primary care without per-visit billing.
 
-We're transparent about what the membership includes and what falls outside it. Visit [/membership](/membership) for a current overview of pricing and what's covered. If you're trying to figure out whether our model makes financial sense for your specific situation, we're happy to walk through it with you before you commit.
+We're transparent about what the membership includes and what falls outside it. Visit [/membership](/membership/) for a current overview of pricing and what's covered. If you're trying to figure out whether our model makes financial sense for your specific situation, we're happy to walk through it with you before you commit.
 
-We also explain the broader landscape of [concierge medicine](/concierge-medicine) and [direct primary care](/direct-primary-care) on our site if you want more context about how our practice compares to other models.
+We also explain the broader landscape of [concierge medicine](/concierge-medicine/) and [direct primary care](/direct-primary-care/) on our site if you want more context about how our practice compares to other models.
 
 ## Practical Tips
 
@@ -98,7 +98,7 @@ We also explain the broader landscape of [concierge medicine](/concierge-medicin
 ## FAQ
 
 **Q: Is there a one-time enrollment fee on top of the monthly membership?**
-A: Some DPC practices charge a one-time enrollment fee; others don't. At Forward Family Medicine, there is no enrollment fee. [See membership details →](/membership)
+A: Some DPC practices charge a one-time enrollment fee; others don't. At Forward Family Medicine, there is no enrollment fee. [See membership details →](/membership/)
 
 **Q: Does the concierge or DPC fee cover prescriptions?**
 A: Most DPC practices do not include prescriptions in the membership fee, but many have access to wholesale medication pricing through dispensaries or programs that can dramatically reduce what patients pay — sometimes to just a few dollars per medication. Ask about this when evaluating any DPC practice.

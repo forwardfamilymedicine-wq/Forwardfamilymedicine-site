@@ -27,7 +27,7 @@ mapEmbedUrl: "https://www.google.com/maps?q=301+Lindenwood+Dr+%23206,+Malvern,+P
 
 ## Concierge Experience, DPC Pricing
 
-Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine)
+Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine/)
 
 ## About Malvern, PA
 
@@ -48,9 +48,9 @@ Malvern is a Chester County borough with a strong professional community, a hist
 
 Unlimited visits · Direct physician access · Same-day scheduling · Wholesale labs · Menopause care · Chronic disease management · Preventive screenings · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Malvern Patients
 
@@ -62,7 +62,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Frequently Asked Questions
 
 **Is this true concierge medicine?**
-Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine)
+Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine/)
 
 **Who is the physician at the Malvern office?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
@@ -71,11 +71,11 @@ Dr. Brian Landi, DO — board-certified through the American Osteopathic Board o
 Yes — Dr. Landi is accepting new patients now, with in-person care at our Malvern office. [Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Malvern)
 
 **What's the best way to evaluate the practice before committing?**
-Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)
 
 ## Contact & Practice Information
 
-**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355 — [office info →](/locations/malvern)
+**Malvern Office:** 301 Lindenwood Dr #206, Malvern, PA 19355 — [office info →](/locations/malvern/)
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
@@ -83,4 +83,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. La
 
 ## Get Started
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Malvern)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20Malvern)** | **[See Membership Plans →](/membership/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

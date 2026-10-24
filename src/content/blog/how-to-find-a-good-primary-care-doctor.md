@@ -60,7 +60,7 @@ Most good primary care physicians — especially those in DPC and concierge mode
 
 ## How Forward Family Medicine Helps
 
-If you're looking for a primary care physician in the Wayne and Main Line area and the criteria above matter to you — small panel, genuine access, a physician who knows you — we'd invite you to learn more about our practice. Our [direct primary care](/direct-primary-care) page explains how the model works, our [concierge medicine](/concierge-medicine) page covers our philosophy, and [/membership](/membership) has details on joining.
+If you're looking for a primary care physician in the Wayne and Main Line area and the criteria above matter to you — small panel, genuine access, a physician who knows you — we'd invite you to learn more about our practice. Our [direct primary care](/direct-primary-care/) page explains how the model works, our [concierge medicine](/concierge-medicine/) page covers our philosophy, and [/membership](/membership/) has details on joining.
 
 We're happy to have a conversation before you decide. That's what meet-and-greets are for.
 

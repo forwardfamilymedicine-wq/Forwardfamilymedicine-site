@@ -128,7 +128,7 @@ This heuristic is not perfect. Some additives with unfamiliar names are benign (
 
 ## How Forward Family Medicine Can Help
 
-Translating nutrition knowledge into a practical eating plan that fits your health history, preferences, and schedule is where individual guidance makes the most difference. If you'd like help navigating dietary choices as part of a personalized health plan, we would be glad to work with you. Learn more about [our membership model](/membership) or [become a patient](/new-patients) today.
+Translating nutrition knowledge into a practical eating plan that fits your health history, preferences, and schedule is where individual guidance makes the most difference. If you'd like help navigating dietary choices as part of a personalized health plan, we would be glad to work with you. Learn more about [our membership model](/membership/) or [become a patient](/new-patients/) today.
 
 ---
 

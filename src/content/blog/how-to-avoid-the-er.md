@@ -68,9 +68,9 @@ Beyond the financial toll — which can be staggering even with insurance when y
 
 At Forward Family Medicine, members have direct access to their physician via phone, text, and messaging. That means when you're not sure whether something needs the ER, you can ask first. A quick message or call can help you triage your situation clearly: yes, go to the ER now; or no, come in tomorrow morning or take this step at home tonight.
 
-This access is the single biggest structural change that makes ER visits avoidable for the right reasons. It's not about discouraging care — it's about directing you to the right care. [Direct primary care](/direct-primary-care) was built around this kind of availability, which doesn't exist in traditional insurance-based practices where physicians are managing panels of 2,000 or more patients.
+This access is the single biggest structural change that makes ER visits avoidable for the right reasons. It's not about discouraging care — it's about directing you to the right care. [Direct primary care](/direct-primary-care/) was built around this kind of availability, which doesn't exist in traditional insurance-based practices where physicians are managing panels of 2,000 or more patients.
 
-Same-day and next-day appointments for sick visits mean you don't have to choose between waiting two weeks and going to the ER. Minor infections, prescription questions, anxiety episodes, and minor injuries can be addressed on your schedule, in a setting where your doctor actually knows you. Learn more about how [membership](/membership) works and what's included.
+Same-day and next-day appointments for sick visits mean you don't have to choose between waiting two weeks and going to the ER. Minor infections, prescription questions, anxiety episodes, and minor injuries can be addressed on your schedule, in a setting where your doctor actually knows you. Learn more about how [membership](/membership/) works and what's included.
 
 ## Practical Tips
 

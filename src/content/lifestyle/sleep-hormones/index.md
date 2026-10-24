@@ -132,7 +132,7 @@ Gangwisch and colleagues analyzed data from the National Health and Nutrition Ex
 
 There is also an important relationship between obstructive sleep apnea (OSA) — the most common sleep disorder in adults — and metabolic disease. OSA independently worsens insulin resistance, partly through the repetitive hypoxia it causes and partly through sleep fragmentation. Treating OSA improves metabolic markers in many patients, providing direct evidence that the sleep-metabolism relationship is causal, not merely correlational.
 
-For a deeper look at this topic, see our article on [Sleep and Metabolic Health](/lifestyle/sleep-hormones/sleep-and-metabolic-health).
+For a deeper look at this topic, see our article on [Sleep and Metabolic Health](/lifestyle/sleep-hormones/sleep-and-metabolic-health/).
 
 ---
 
@@ -154,7 +154,7 @@ Sleep deprivation preferentially impairs emotional regulation. The prefrontal co
 
 Importantly, Cognitive Behavioral Therapy for Insomnia (CBT-I) — the gold-standard treatment for chronic insomnia — has been shown to improve not just sleep but also symptoms of depression and anxiety. Treating the sleep disorder has upstream benefits for mental health that medication alone rarely achieves.
 
-For patients dealing with stress, anxiety, or depression alongside sleep difficulties, we address these as interconnected problems rather than separate conditions. See our section on [Stress and Mental Health](/lifestyle/stress-mental-health) for related guidance.
+For patients dealing with stress, anxiety, or depression alongside sleep difficulties, we address these as interconnected problems rather than separate conditions. See our section on [Stress and Mental Health](/lifestyle/stress-mental-health/) for related guidance.
 
 ---
 
@@ -212,7 +212,7 @@ When sleep problems are present, we approach them systematically: ruling out und
 
 For patients with confirmed sleep disorders, we coordinate with sleep medicine specialists and ensure that treatment is followed through, not just ordered. CPAP therapy for sleep apnea, for example, is only effective if it is being used correctly — we help patients troubleshoot adherence and track response.
 
-If you'd like individual guidance on your sleep — whether you're struggling with insomnia, suspect sleep apnea, or simply want to optimize your sleep as part of a broader health strategy — we're here to help. Learn more about [our membership model](/membership) or [become a patient](/new-patients).
+If you'd like individual guidance on your sleep — whether you're struggling with insomnia, suspect sleep apnea, or simply want to optimize your sleep as part of a broader health strategy — we're here to help. Learn more about [our membership model](/membership/) or [become a patient](/new-patients/).
 
 ---
 
@@ -253,9 +253,9 @@ Sleep medications have a role in specific clinical situations, particularly for 
 
 ## Related Articles
 
-- [Sleep Hygiene and Long-Term Health](/lifestyle/sleep-hormones/sleep-hygiene-long-term-health)
-- [Sleep and Hormone Regulation](/lifestyle/sleep-hormones/sleep-and-hormone-regulation)
-- [Practical Sleep Improvement Strategies](/lifestyle/sleep-hormones/practical-sleep-improvement)
-- [Sleep and Metabolic Health](/lifestyle/sleep-hormones/sleep-and-metabolic-health)
-- [Stress and Mental Health](/lifestyle/stress-mental-health)
-- [Metabolic Health](/lifestyle/metabolic-health)
+- [Sleep Hygiene and Long-Term Health](/lifestyle/sleep-hormones/sleep-hygiene-long-term-health/)
+- [Sleep and Hormone Regulation](/lifestyle/sleep-hormones/sleep-and-hormone-regulation/)
+- [Practical Sleep Improvement Strategies](/lifestyle/sleep-hormones/practical-sleep-improvement/)
+- [Sleep and Metabolic Health](/lifestyle/sleep-hormones/sleep-and-metabolic-health/)
+- [Stress and Mental Health](/lifestyle/stress-mental-health/)
+- [Metabolic Health](/lifestyle/metabolic-health/)

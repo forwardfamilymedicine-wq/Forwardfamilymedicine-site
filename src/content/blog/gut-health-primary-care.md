@@ -59,9 +59,9 @@ Primary care should refer to gastroenterology for: persistent unexplained rectal
 
 ## How Forward Family Medicine Helps
 
-A good conversation about gut health requires time and intellectual honesty — including willingness to say what we know, what we don't, and what the evidence actually supports. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) approach incorporates evidence-based nutrition guidance that directly supports gut health: fiber diversity, fermented foods, anti-inflammatory dietary patterns, and stress management strategies that address the gut-brain connection.
+A good conversation about gut health requires time and intellectual honesty — including willingness to say what we know, what we don't, and what the evidence actually supports. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) approach incorporates evidence-based nutrition guidance that directly supports gut health: fiber diversity, fermented foods, anti-inflammatory dietary patterns, and stress management strategies that address the gut-brain connection.
 
-With a [membership](/membership), your physician can take a thorough history, order appropriate testing, and follow you through a treatment protocol — whether that means a low-FODMAP trial, rifaximin for SIBO, celiac workup, or referral to a trusted gastroenterologist when the clinical picture warrants it. You won't be dismissed, and you won't be sent chasing supplements that won't help.
+With a [membership](/membership/), your physician can take a thorough history, order appropriate testing, and follow you through a treatment protocol — whether that means a low-FODMAP trial, rifaximin for SIBO, celiac workup, or referral to a trusted gastroenterologist when the clinical picture warrants it. You won't be dismissed, and you won't be sent chasing supplements that won't help.
 
 ## Practical Tips
 

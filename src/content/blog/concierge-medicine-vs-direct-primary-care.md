@@ -63,7 +63,7 @@ Concierge medicine may be worth the higher price if you want comprehensive execu
 
 Forward Family Medicine is a Direct Primary Care practice, which means we've structured everything around the flat-monthly-membership model. No insurance billing for primary care, no per-visit charges on top of your fee, and no surprise bills for routine care. Our membership covers the primary care services you actually need.
 
-We describe our approach in detail on both our [concierge medicine](/concierge-medicine) and [direct primary care](/direct-primary-care) pages. If you've been researching concierge practices in the Wayne and Main Line area and wondering whether DPC might serve you just as well at a more accessible price point, we'd be glad to walk you through what our membership covers. Visit [/membership](/membership) for details.
+We describe our approach in detail on both our [concierge medicine](/concierge-medicine/) and [direct primary care](/direct-primary-care/) pages. If you've been researching concierge practices in the Wayne and Main Line area and wondering whether DPC might serve you just as well at a more accessible price point, we'd be glad to walk you through what our membership covers. Visit [/membership](/membership/) for details.
 
 ## Practical Tips
 

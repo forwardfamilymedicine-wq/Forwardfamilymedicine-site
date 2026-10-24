@@ -31,7 +31,7 @@ Forward Family Medicine integrates lifestyle medicine into every DPC membership 
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[What is lifestyle medicine? →](/lifestyle-medicine)
+[What is lifestyle medicine? →](/lifestyle-medicine/)
 
 ## Why King of Prussia Patients Choose This Approach
 
@@ -43,7 +43,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 
 ## Services Included
 
-Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services)
+Lifestyle medicine · Preventive care · Chronic disease management · Unlimited visits [Full services →](/services/)
 
 ## Practical Information
 
@@ -58,7 +58,7 @@ Lifestyle medicine · Preventive care · Chronic disease management · Unlimited
 Yes — Forward Family Medicine in Wayne is 7 miles south and includes lifestyle medicine in every membership. Telehealth makes it practical for KOP patients to access coaching without a drive.
 
 **Is lifestyle medicine covered in the DPC membership?**
-Yes — completely included. [See membership →](/membership)
+Yes — completely included. [See membership →](/membership/)
 
 **Can King of Prussia patients do lifestyle consultations by video?**
 Yes — telehealth is fully included and is the recommended approach for KOP patients, given no direct SEPTA connection. Video and phone visits handle most lifestyle coaching, follow-ups, and medication reviews.
@@ -76,4 +76,4 @@ Prediabetes and diabetes, hypertension, high cholesterol, obesity, metabolic syn
 
 ## Take the First Step
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Lifestyle Medicine →](/lifestyle-medicine/)**

@@ -54,9 +54,9 @@ Smaller panels also mean the physician can engage in outreach: following up when
 
 ## How Forward Family Medicine Helps
 
-Forward Family Medicine is built to be proactive rather than reactive. Our [direct primary care](/direct-primary-care) structure gives us the panel size and appointment flexibility to practice medicine the way evidence suggests it should be practiced: upstream, longitudinal, and genuinely preventive.
+Forward Family Medicine is built to be proactive rather than reactive. Our [direct primary care](/direct-primary-care/) structure gives us the panel size and appointment flexibility to practice medicine the way evidence suggests it should be practiced: upstream, longitudinal, and genuinely preventive.
 
-Our [lifestyle medicine](/lifestyle-medicine) approach means prevention isn't a pamphlet — it's a prescription. And our [membership](/membership) model means we're in a long-term relationship with you, watching the trends, catching the early signals, and addressing risks before they become diagnoses.
+Our [lifestyle medicine](/lifestyle-medicine/) approach means prevention isn't a pamphlet — it's a prescription. And our [membership](/membership/) model means we're in a long-term relationship with you, watching the trends, catching the early signals, and addressing risks before they become diagnoses.
 
 If you've felt like your healthcare only responds after something goes wrong, the structure is likely the problem — not the people in it.
 

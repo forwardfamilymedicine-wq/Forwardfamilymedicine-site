@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Berwyn, Paoli, Wayne, and Malvern"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays. [Full DPC overview →](/direct-primary-care/)
 
 ## About Devon, PA
 
@@ -44,8 +44,8 @@ Devon is a Chester County community nestled between Wayne and Paoli on Lancaster
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Devon Patients
 
@@ -66,7 +66,7 @@ Approximately 3 miles east on Lancaster Avenue. Drive time is about 6 to 8 minut
 Absolutely. Phone and video visits are included for all members.
 
 **Is Forward Family Medicine accepting new Devon patients?**
-Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients)
+Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes — we are currently enrolling new members. [Schedule a Meet & Greet →](/n
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

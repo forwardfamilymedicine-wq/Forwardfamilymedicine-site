@@ -73,9 +73,9 @@ A blood pressure reading of **180/120 mmHg or higher** is a hypertensive crisis.
 
 Home blood pressure monitoring works best when it is part of a continuous relationship with a physician who can interpret the data, adjust medications when needed, and respond promptly to concerning readings. In a direct primary care practice, that kind of ongoing communication is built in.
 
-At Forward Family Medicine, we encourage patients with hypertension or borderline readings to monitor at home and share their logs with us. Through our [direct primary care](/direct-primary-care) model, you can send readings by message without scheduling an office appointment — and we can respond with clinical guidance, medication adjustments, or a prompt to come in when something warrants a closer look.
+At Forward Family Medicine, we encourage patients with hypertension or borderline readings to monitor at home and share their logs with us. Through our [direct primary care](/direct-primary-care/) model, you can send readings by message without scheduling an office appointment — and we can respond with clinical guidance, medication adjustments, or a prompt to come in when something warrants a closer look.
 
-For patients newly diagnosed with hypertension, we establish a monitoring protocol together: what readings to take, how often, and what thresholds should prompt you to reach out. This kind of proactive, between-visit management is what makes the difference between controlled and uncontrolled hypertension over years. Learn more about how [membership](/membership) supports your ongoing care.
+For patients newly diagnosed with hypertension, we establish a monitoring protocol together: what readings to take, how often, and what thresholds should prompt you to reach out. This kind of proactive, between-visit management is what makes the difference between controlled and uncontrolled hypertension over years. Learn more about how [membership](/membership/) supports your ongoing care.
 
 ## Practical Tips
 

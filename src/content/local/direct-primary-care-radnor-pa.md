@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Wayne, Villanova, St. Davids, and Bryn Mawr"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no surprises. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no surprises. [Full DPC overview →](/direct-primary-care/)
 
 ## About Radnor, PA
 
@@ -44,8 +44,8 @@ Radnor Township is one of the Philadelphia Main Line's most distinguished commun
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Radnor Patients
 
@@ -59,13 +59,13 @@ Unlimited visits · Annual physicals · Preventive screenings · Chronic disease
 Yes — Forward Family Medicine is located within Radnor Township (Wayne). Many of our members are Radnor Township residents from across the township.
 
 **Is Forward Family Medicine accepting new Radnor patients?**
-Yes — we are currently enrolling new members. Panel size is limited, so we encourage early enrollment. [Schedule a Meet & Greet →](/new-patients)
+Yes — we are currently enrolling new members. Panel size is limited, so we encourage early enrollment. [Schedule a Meet & Greet →](/new-patients/)
 
 **How does DPC differ from Radnor area practices affiliated with large health systems?**
-Large health system practices operate on high-volume schedules. Our DPC model limits panel size to give every member same-day access and a physician who knows them deeply. [Learn more →](/direct-primary-care)
+Large health system practices operate on high-volume schedules. Our DPC model limits panel size to give every member same-day access and a physician who knows them deeply. [Learn more →](/direct-primary-care/)
 
 **What's the best way to try this before committing?**
-Schedule a free Meet & Greet: a no-obligation 60-minute conversation with one of our physicians. [Schedule here →](/new-patients)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with one of our physicians. [Schedule here →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -77,4 +77,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with one of
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

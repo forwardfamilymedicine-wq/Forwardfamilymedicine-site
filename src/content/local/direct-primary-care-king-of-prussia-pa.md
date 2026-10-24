@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Gulph Mills, Wayne, Audubon, and Norristown"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale labs. No copays. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale labs. No copays. [Full DPC overview →](/direct-primary-care/)
 
 ## About King of Prussia, PA
 
@@ -44,8 +44,8 @@ King of Prussia is Montgomery County's major commercial and corporate hub — ho
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for King of Prussia Patients
 
@@ -66,7 +66,7 @@ Approximately 7 miles south via Route 202 or the Blue Route (I-476). Drive time 
 Yes — phone and video visits are fully included in all memberships, making most routine and follow-up care accessible without a drive.
 
 **Is Forward Family Medicine accepting new patients from King of Prussia?**
-Yes. [Schedule a Meet & Greet →](/new-patients)
+Yes. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -78,4 +78,4 @@ Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

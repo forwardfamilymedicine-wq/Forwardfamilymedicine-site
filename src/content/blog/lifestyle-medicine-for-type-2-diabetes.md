@@ -49,9 +49,9 @@ Lifestyle medicine is not anti-medication. Metformin remains safe, inexpensive, 
 
 Managing diabetes well — whether preventing it, treating it early, or keeping it from progressing — requires more than a quarterly A1c check and a pamphlet. It requires frequent, substantive conversations about what you're eating, how you're sleeping, what your stress looks like, and how your numbers are actually trending. That kind of care is nearly impossible to deliver in a 15-minute appointment every three months.
 
-At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) approach treats type 2 diabetes the way the evidence says it should be treated: as a condition with real, addressable root causes. We work with you to implement the dietary and activity changes that the DPP and DiRECT trials showed can produce meaningful results — not as a vague recommendation to "eat better," but as a structured, personalized plan.
+At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) approach treats type 2 diabetes the way the evidence says it should be treated: as a condition with real, addressable root causes. We work with you to implement the dietary and activity changes that the DPP and DiRECT trials showed can produce meaningful results — not as a vague recommendation to "eat better," but as a structured, personalized plan.
 
-Our [Direct Primary Care membership](/membership) model makes this possible. Because we don't bill per visit, we have the time and flexibility to see you frequently when you're making active changes, answer questions between appointments, review your home glucose logs, and adjust the plan based on what's actually working for you. That kind of iterative, high-contact care is what produces outcomes — not just in trials, but in real patients.
+Our [Direct Primary Care membership](/membership/) model makes this possible. Because we don't bill per visit, we have the time and flexibility to see you frequently when you're making active changes, answer questions between appointments, review your home glucose logs, and adjust the plan based on what's actually working for you. That kind of iterative, high-contact care is what produces outcomes — not just in trials, but in real patients.
 
 ## Practical Tips
 

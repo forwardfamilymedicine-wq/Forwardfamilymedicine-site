@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concor
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership covering unlimited visits, same-day scheduling, direct physician access, and wholesale labs. No copays, no per-visit charges, no claims paperwork. [Full DPC overview →](/direct-primary-care/)
 
 ## About West Chester, PA
 
@@ -47,9 +47,9 @@ West Chester is the seat of Chester County — a vibrant borough anchored by Wes
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Menopause care · Procedures · Prescription management · Specialist coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
 
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for West Chester Patients
 
@@ -67,14 +67,14 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in West Chester?**
-Traditional practices operate on high-volume schedules — typically 20–30 patients per physician per day. Our DPC model caps the panel at ~250 patients per physician, which is what enables genuine same-day access and visits long enough to actually solve problems. [Learn more →](/direct-primary-care)
+Traditional practices operate on high-volume schedules — typically 20–30 patients per physician per day. Our DPC model caps the panel at ~250 patients per physician, which is what enables genuine same-day access and visits long enough to actually solve problems. [Learn more →](/direct-primary-care/)
 
 **What's the best way to try the practice before committing?**
-Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact)
+Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)
 
 ## Contact & Practice Information
 
-**West Chester Office (planned):** West Chester, PA 19380 — [office info →](/locations/west-chester)
+**West Chester Office (planned):** West Chester, PA 19380 — [office info →](/locations/west-chester/)
 **Phone:** (215) 645-7044
 **Fax:** (215) 449-8854
 **Email:** information@forwardfamilymedicine.com
@@ -82,4 +82,4 @@ Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. La
 
 ## Get Started
 
-**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[See Membership Plans →](/membership)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**
+**[Schedule a Meet & Greet →](/contact/?subject=Meet%20and%20Greet%20-%20West%20Chester)** | **[See Membership Plans →](/membership/)** | **[Meet Dr. Landi →](/meet-the-team/brian-landi-do/)**

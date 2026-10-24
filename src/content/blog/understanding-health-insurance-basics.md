@@ -70,11 +70,11 @@ Many DPC members pair their membership with a high-deductible health insurance p
 
 ## How Forward Family Medicine Helps
 
-[Direct primary care](/direct-primary-care) fundamentally changes what health insurance needs to do for you. When your primary care is handled outside the insurance system — through a predictable monthly membership — you no longer need your insurance to cover office visits, sick calls, medication questions, or preventive care. This shifts insurance back toward its original purpose: protecting you from financially catastrophic events.
+[Direct primary care](/direct-primary-care/) fundamentally changes what health insurance needs to do for you. When your primary care is handled outside the insurance system — through a predictable monthly membership — you no longer need your insurance to cover office visits, sick calls, medication questions, or preventive care. This shifts insurance back toward its original purpose: protecting you from financially catastrophic events.
 
 For members considering the DPC + HDHP combination, your Forward Family Medicine physician can help you think through which insurance structure makes sense given your specific health needs and family situation. This isn't formal financial advice, but understanding your clinical utilization pattern helps you make smarter insurance decisions.
 
-[Membership](/membership) at Forward Family Medicine also eliminates the prior authorization process for primary care. Your physician makes clinical decisions directly with you — no insurer approval required for the care your membership covers.
+[Membership](/membership/) at Forward Family Medicine also eliminates the prior authorization process for primary care. Your physician makes clinical decisions directly with you — no insurer approval required for the care your membership covers.
 
 ## Practical Tips
 

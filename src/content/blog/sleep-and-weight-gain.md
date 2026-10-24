@@ -46,11 +46,11 @@ If you are working to manage your weight and consistently sleeping less than sev
 
 ## How Forward Family Medicine Helps
 
-Sleep problems are rarely just sleep problems. Underlying contributors — sleep apnea, anxiety, irregular schedules, screen use, alcohol, medications — need to be identified and addressed, not just treated with a sleep aid. At Forward Family Medicine, sleep is part of our [lifestyle medicine](/lifestyle-medicine) assessment for every patient, not an afterthought.
+Sleep problems are rarely just sleep problems. Underlying contributors — sleep apnea, anxiety, irregular schedules, screen use, alcohol, medications — need to be identified and addressed, not just treated with a sleep aid. At Forward Family Medicine, sleep is part of our [lifestyle medicine](/lifestyle-medicine/) assessment for every patient, not an afterthought.
 
 We screen for obstructive sleep apnea, which is dramatically underdiagnosed and has broad downstream effects on cardiovascular health, weight, and cognitive function. We also address the behavioral and environmental factors that drive poor sleep: sleep hygiene, circadian rhythm disruption, and the stress patterns that cause many patients to lie awake for hours.
 
-Our [Direct Primary Care membership](/membership) gives us the time to have these conversations thoroughly and follow up consistently. Sleep improvement is not a single-visit fix. It requires attention, adjustment, and ongoing support — which is exactly what a long-term primary care relationship provides.
+Our [Direct Primary Care membership](/membership/) gives us the time to have these conversations thoroughly and follow up consistently. Sleep improvement is not a single-visit fix. It requires attention, adjustment, and ongoing support — which is exactly what a long-term primary care relationship provides.
 
 ## Practical Tips
 

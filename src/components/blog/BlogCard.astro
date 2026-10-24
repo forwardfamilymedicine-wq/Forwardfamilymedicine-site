@@ -27,7 +27,7 @@ const dateISO = dateObj.toISOString();
 
 <article class="blog-card card">
   {featuredImage && (
-    <a href={`/blog/${slug}`} class="card-img-link" tabindex="-1" aria-hidden="true">
+    <a href={`/blog/${slug}/`} class="card-img-link" tabindex="-1" aria-hidden="true">
       <div class="card-img">
         <img
           src={featuredImage}
@@ -42,10 +42,10 @@ const dateISO = dateObj.toISOString();
   <div class="card-body">
     {categoryLabel && (
       <div class="card-tags">
-        <a href={`/blog/category/${category}`} class="tag cat-tag">{categoryLabel}</a>
+        <a href={`/blog/category/${category}/`} class="tag cat-tag">{categoryLabel}</a>
       </div>
     )}
-    <h3><a href={`/blog/${slug}`}>{title}</a></h3>
+    <h3><a href={`/blog/${slug}/`}>{title}</a></h3>
     <p class="card-desc">{description}</p>
     <footer class="card-footer">
       <span class="card-author">{author}</span>

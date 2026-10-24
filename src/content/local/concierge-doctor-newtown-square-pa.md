@@ -29,7 +29,7 @@ Newtown Square has become one of Delaware County's most sought-after communities
 
 Forward Family Medicine in Wayne delivers the concierge medicine experience — same-day appointments, direct physician contact, unhurried visits — through a DPC membership. Telehealth makes the short distance even less of a factor for most routine care.
 
-[Compare DPC and traditional concierge →](/concierge-medicine)
+[Compare DPC and traditional concierge →](/concierge-medicine/)
 
 ## Why Newtown Square Patients Choose This Practice
 
@@ -42,7 +42,7 @@ Forward Family Medicine in Wayne delivers the concierge medicine experience — 
 
 ## Services
 
-Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services)
+Unlimited visits · Preventive care · Chronic disease management · Acute care · Lifestyle medicine · Care coordination [Full services →](/services/)
 
 ## Practical Information
 
@@ -54,13 +54,13 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Newtown Square, PA?**
-Forward Family Medicine in Wayne is 7–8 miles north and offers concierge-style DPC care. Telehealth is included and handles most routine visits. [Schedule a Meet & Greet →](/new-patients)
+Forward Family Medicine in Wayne is 7–8 miles north and offers concierge-style DPC care. Telehealth is included and handles most routine visits. [Schedule a Meet & Greet →](/new-patients/)
 
 **How is DPC different from traditional concierge medicine?**
-Traditional concierge typically charges a retainer of $1,500–$6,000+ per year and may still bill insurance on top. DPC replaces insurance billing with a lower, flat monthly fee and delivers the same quality of access and relationship. [Full comparison →](/concierge-medicine)
+Traditional concierge typically charges a retainer of $1,500–$6,000+ per year and may still bill insurance on top. DPC replaces insurance billing with a lower, flat monthly fee and delivers the same quality of access and relationship. [Full comparison →](/concierge-medicine/)
 
 **What does membership cost for Newtown Square patients?**
-Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)
 
 ## Contact & Practice Information
 
@@ -72,4 +72,4 @@ Individual membership starting at $200/month; family plans from $175/person/mont
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**

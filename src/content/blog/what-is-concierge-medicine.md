@@ -68,9 +68,9 @@ Our model means you get same-day and next-day appointments, direct access to you
 
 What makes Forward Family Medicine distinctive among DPC practices on the Main Line is integrated, in-person, board-certified Lifestyle Medicine with Dr. Lieberman — board-certified in Family Medicine and Lifestyle Medicine, with a background in culinary arts and nutrition science. This means evidence-based nutrition, movement, sleep, and stress management are treated as medicine and included in every membership at no additional cost.
 
-Learn more about how membership works at [/membership](/membership).
+Learn more about how membership works at [/membership](/membership/).
 
-If you're exploring whether concierge-style care is right for you, our [concierge medicine](/concierge-medicine) and [direct primary care](/direct-primary-care) pages explain our specific approach in detail. We're happy to answer questions before you commit to anything.
+If you're exploring whether concierge-style care is right for you, our [concierge medicine](/concierge-medicine/) and [direct primary care](/direct-primary-care/) pages explain our specific approach in detail. We're happy to answer questions before you commit to anything.
 
 ## Practical Tips
 

@@ -35,7 +35,7 @@ Lifestyle medicine uses evidence-based behavioral interventions — changes in n
 
 Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine — the only such physician at any DPC practice on the Main Line.
 
-[Full lifestyle medicine explainer →](/lifestyle-medicine)
+[Full lifestyle medicine explainer →](/lifestyle-medicine/)
 
 ## Why Wayne Patients Choose Lifestyle Medicine at Forward Family Medicine
 
@@ -58,7 +58,7 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 - Weight management — comprehensive and evidence-based
 - Chronic disease management through a lifestyle lens
 
-[See full services →](/services)
+[See full services →](/services/)
 
 ## Practical Information
 
@@ -69,10 +69,10 @@ Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine 
 ## Frequently Asked Questions
 
 **Is lifestyle medicine covered in the DPC membership in Wayne?**
-Yes — completely. Lifestyle medicine counseling is integrated into every membership at no additional cost. [See what's included →](/membership)
+Yes — completely. Lifestyle medicine counseling is integrated into every membership at no additional cost. [See what's included →](/membership/)
 
 **Is this alternative medicine or integrative medicine?**
-Neither. Lifestyle medicine is conventional, evidence-based medicine. It uses the same clinical evidence standards as any medical specialty — it simply uses behavioral interventions as primary tools rather than afterthoughts. [Learn more →](/lifestyle-medicine)
+Neither. Lifestyle medicine is conventional, evidence-based medicine. It uses the same clinical evidence standards as any medical specialty — it simply uses behavioral interventions as primary tools rather than afterthoughts. [Learn more →](/lifestyle-medicine/)
 
 **Can lifestyle changes actually treat my chronic condition?**
 For many conditions — prediabetes, mild hypertension, high cholesterol, early metabolic syndrome — yes. Clinical evidence shows lifestyle interventions can match or exceed medication effects. We use medication when it's the right tool, but never instead of addressing root causes.
@@ -90,4 +90,4 @@ No. Members from Berwyn, Devon, Villanova, Radnor, and surrounding Main Line com
 
 ## Start Living Better — With a Doctor Who Supports It
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Learn About Lifestyle Medicine →](/lifestyle-medicine)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Learn About Lifestyle Medicine →](/lifestyle-medicine/)**

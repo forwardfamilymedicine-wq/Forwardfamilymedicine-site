@@ -24,7 +24,7 @@ nearbyNeighborhoods: "Edgmont, Media, Broomall, and Havertown"
 
 ## What Is Direct Primary Care?
 
-DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care)
+DPC replaces insurance billing with a flat monthly membership — unlimited visits, same-day access, direct physician contact, and wholesale lab pricing. No copays, no per-visit charges. [Full DPC overview →](/direct-primary-care/)
 
 ## About Newtown Square, PA
 
@@ -45,8 +45,8 @@ Newtown Square is a Delaware County community that has grown significantly over 
 
 Unlimited visits · Annual physicals · Preventive screenings · Chronic disease management · Acute illness care · Women's and men's health · Lifestyle medicine · Procedures · Prescription management · Care coordination
 
-[Full services →](/services) | [Membership plans →](/membership)
-**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership)
+[Full services →](/services/) | [Membership plans →](/membership/)
+**Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/)
 
 ## Practical Information for Newtown Square Patients
 
@@ -67,7 +67,7 @@ Approximately 7–8 miles north, typically a 15-minute drive via Route 252 or Ro
 Yes — phone and video visits are included in all memberships. Most routine follow-ups, prescription questions, and minor illness concerns can be handled without a drive to Wayne.
 
 **Is Forward Family Medicine accepting new patients from Newtown Square?**
-Yes. [Schedule a Meet & Greet →](/new-patients)
+Yes. [Schedule a Meet & Greet →](/new-patients/)
 
 ## Contact & Practice Information
 
@@ -79,4 +79,4 @@ Yes. [Schedule a Meet & Greet →](/new-patients)
 
 ## Get Started Today
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[See Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[See Membership Plans →](/membership/)**

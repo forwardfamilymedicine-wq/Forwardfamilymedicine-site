@@ -54,11 +54,11 @@ The current US dietary fiber recommendations are 38 grams per day for men and 25
 
 ## How Forward Family Medicine Helps
 
-Most nutrition conversations in primary care focus on what to avoid. Fiber is a case where the focus should be on what to add — an abundance approach rather than a restriction approach. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine) practice incorporates fiber intake as a specific, targeted nutritional goal for nearly every patient.
+Most nutrition conversations in primary care focus on what to avoid. Fiber is a case where the focus should be on what to add — an abundance approach rather than a restriction approach. At Forward Family Medicine, our [lifestyle medicine](/lifestyle-medicine/) practice incorporates fiber intake as a specific, targeted nutritional goal for nearly every patient.
 
 We help patients understand which foods are genuinely high in fiber (legumes, oats, and whole intact grains — not "whole grain" processed foods with added token fiber), how to increase intake gradually to avoid the digestive discomfort that comes from rapid fiber increases, and how to address specific conditions — high cholesterol, blood sugar dysregulation, constipation, microbiome disruption — with targeted fiber choices.
 
-Our [Direct Primary Care membership](/membership) gives us the time to follow up on these recommendations, check in on what patients are actually eating, and make adjustments. Dietary change is iterative, and having ongoing support from a physician who knows your health history and goals makes a meaningful difference in whether it sticks.
+Our [Direct Primary Care membership](/membership/) gives us the time to follow up on these recommendations, check in on what patients are actually eating, and make adjustments. Dietary change is iterative, and having ongoing support from a physician who knows your health history and goals makes a meaningful difference in whether it sticks.
 
 ## Practical Tips
 

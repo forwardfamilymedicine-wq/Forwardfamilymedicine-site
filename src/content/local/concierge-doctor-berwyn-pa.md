@@ -29,7 +29,7 @@ Berwyn is a close-knit Chester County community adjacent to Wayne on Lancaster A
 
 Forward Family Medicine delivers the essential concierge medicine experience — direct physician access, same-day availability, longer visits, and proactive prevention — through an accessible DPC membership. No high annual retainer. One flat monthly fee.
 
-[Compare DPC vs. concierge medicine →](/concierge-medicine)
+[Compare DPC vs. concierge medicine →](/concierge-medicine/)
 
 ## Why Berwyn Patients Choose Forward Family Medicine
 
@@ -44,7 +44,7 @@ Forward Family Medicine delivers the essential concierge medicine experience —
 
 Unlimited visits · Preventive care · Chronic disease management · Acute care · Mental health support · Lifestyle medicine · Procedures · Specialty coordination
 
-[Full services →](/services)
+[Full services →](/services/)
 
 ## Practical Information
 
@@ -55,10 +55,10 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 ## Frequently Asked Questions
 
 **Is there a concierge doctor near Berwyn, PA?**
-Yes — Forward Family Medicine in Wayne offers concierge-style DPC care just 3 miles from Berwyn. [Schedule a Meet & Greet →](/new-patients)
+Yes — Forward Family Medicine in Wayne offers concierge-style DPC care just 3 miles from Berwyn. [Schedule a Meet & Greet →](/new-patients/)
 
 **How much does concierge medicine cost for Berwyn patients?**
-Individual membership starting at $200/month; family plans from $175/person/month — far below traditional concierge retainer pricing. [See pricing →](/membership)
+Individual membership starting at $200/month; family plans from $175/person/month — far below traditional concierge retainer pricing. [See pricing →](/membership/)
 
 **Do you offer telehealth for Berwyn patients?**
 Yes — all phone and video visits are included in membership.
@@ -73,4 +73,4 @@ Yes — all phone and video visits are included in membership.
 
 ## Get Started
 
-**[Schedule a Free Meet & Greet →](/new-patients)** | **[Membership Plans →](/membership)**
+**[Schedule a Free Meet & Greet →](/new-patients/)** | **[Membership Plans →](/membership/)**
