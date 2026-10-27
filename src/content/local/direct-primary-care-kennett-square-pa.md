@@ -68,7 +68,7 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Does DPC work well even with the drive from Kennett Square?**
-Yes — and this is where DPC's telehealth inclusion matters. Annual physicals, new-patient visits, and procedures happen in person. Most follow-ups, acute illness evaluations, medication reviews, and lab result discussions work well by phone or video. Members typically come in a few times per year and handle the rest remotely. [Learn more →](/direct-primary-care/)
+Yes — and this is where DPC's telehealth inclusion matters. Annual physicals, new-patient visits, and procedures happen in person. Most follow-ups, acute illness evaluations, medication reviews, and lab result discussions work well by phone or video. Members typically come in a few times per year and handle the rest remotely. [Direct primary care near Philadelphia →](/direct-primary-care/)
 
 **What's the best way to try the practice before committing?**
 Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)

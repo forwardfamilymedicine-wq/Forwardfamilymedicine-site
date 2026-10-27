@@ -1,20 +1,79 @@
 ---
+import { getCollection } from 'astro:content';
 import MainLayout from '../layouts/MainLayout.astro';
+import FAQSection from '../components/shared/FAQSection.astro';
+import NearYouExpander from '../components/shared/NearYouExpander.astro';
+import MembershipRates from '../components/shared/MembershipRates.astro';
+import HowToJoin from '../components/shared/HowToJoin.astro';
+import RelatedReading from '../components/shared/RelatedReading.astro';
+import { joinAnd } from '../utils/physicianRouting';
+
+// The eyebrow names only offices a patient can go to today, in display order,
+// so a planned office joins it the moment its locations entry flips to "open".
+const openOffices = (await getCollection('locations'))
+  .filter(l => l.data.status === 'open')
+  .sort((a, b) => a.data.displayOrder - b.data.displayOrder)
+  .map(l => l.data.name);
+const eyebrow = `${joinAnd(openOffices)}, near Philadelphia`;
+
+// Town list is derived from the local collection, never hardcoded, so a new
+// /local/direct-primary-care-*.md file appears here the moment it is added.
+const dpcTowns = (await getCollection('local'))
+  .map(e => ({ slug: e.id.replace(/\.mdx?$/, ''), label: e.data.location ?? '' }))
+  .filter(t => t.slug.startsWith('direct-primary-care-') && t.label)
+  .sort((a, b) => a.label.localeCompare(b.label));
+
+// Related reading, in order. Titles come from the blog collection, never
+// retyped, and a slug with no entry fails the build.
+const RELATED_POSTS = [
+  'what-is-direct-primary-care',
+  'direct-primary-care-vs-insurance',
+  'how-dpc-saves-money',
+];
+const blogEntries = await getCollection('blog');
+const relatedPosts = RELATED_POSTS.map(slug => {
+  const entry = blogEntries.find(e => e.id.replace(/\.mdx?$/, '') === slug);
+  if (!entry) throw new Error(`[direct-primary-care] no blog entry at ${slug}.`);
+  return { href: `/blog/${slug}/`, title: entry.data.title };
+});
+
+const faqs = [
+  {
+    q: 'What does "direct" mean in Direct Primary Care?',
+    a: '"Direct" refers to the direct financial relationship between patient and physician: you pay your doctor directly, without an insurance company in the middle. This removes administrative overhead and aligns incentives around your health, not billing volume.',
+  },
+  {
+    q: 'Is DPC covered by Medicare or Medicaid?',
+    a: 'DPC membership fees are not covered by Medicare or Medicaid. Medicare and Medicaid beneficiaries can still join as members paying directly. Our physicians have opted out of Medicare, so Medicare patients sign a short private contract when they enroll. Specialty and hospital services are still billed through Medicare or Medicaid as applicable.',
+  },
+  {
+    q: 'How is DPC different from concierge medicine?',
+    a: 'The distinction most practices draw between DPC and concierge medicine doesn\'t apply at Forward Family Medicine. Every member receives what the industry calls a "concierge experience," delivered through the DPC financial model: no insurance billing, predictable monthly pricing. <a href="/concierge-medicine/">Learn more about our concierge features →</a> For members who want to layer comprehensive imaging, advanced biomarker testing, and longitudinal physician guidance on top of their DPC membership, the <a href="/clarity/">Clarity Program</a> is our integrated executive health offering.',
+  },
+  {
+    q: 'Does the monthly fee really cover everything in primary care?',
+    a: 'It covers the vast majority of what most people need from a primary care physician. You only pay extra for labs, medications, and immunizations, and even then, at cost. No per-visit fees, ever.',
+  },
+  {
+    q: 'How do I know if this practice is a good fit before joining?',
+    a: 'That\'s exactly what our free Meet &amp; Greet is for. <a href="/contact/?source=direct-primary-care">Schedule one here →</a> It\'s a 60-minute conversation, in person or by video, with no pressure and no commitment.',
+  },
+];
 ---
 
 <MainLayout
-  title="What Is Direct Primary Care? | Forward Family Medicine Wayne, PA"
-  description="Direct Primary Care (DPC) is a membership-based primary care model where you pay a flat monthly fee directly to your doctor — no insurance billing, no copays, no rushed visits."
+  title="Direct Primary Care near Philadelphia | Forward Family Medicine"
+  description="Direct primary care in Wayne and Malvern, near Philadelphia: one flat monthly fee, unlimited visits, no copays or insurance billing. $200/month individual."
 >
 
   <!-- ─── Hero ──────────────────────────────────────────────────── -->
   <section class="page-hero">
     <div class="container">
-      <p class="hero-eyebrow">Wayne, PA · Philadelphia Main Line</p>
-      <h1>What Is Direct Primary Care?</h1>
-      <p class="hero-desc">Primary care freed from insurance billing — and built around you. At Forward Family Medicine, DPC isn't a budget alternative to concierge medicine. It's the financial structure that makes concierge-quality care available to everyone.</p>
+      <p class="hero-eyebrow">{eyebrow}</p>
+      <h1>Direct Primary Care on the Main Line</h1>
+      <p class="hero-desc">Direct primary care is primary care you pay for with a flat monthly membership, with no insurance billing and no copays. We offer it at our offices in Wayne and Malvern.</p>
       <p class="hero-press">
-        Cited as a real-world example of this model in Slate &mdash;
+        Cited as a real-world example of this model in Slate:
         &ldquo;<a href="https://slate.com/technology/2026/08/health-care-appointment-short-wait-solution-shortage.html" target="_blank" rel="noopener noreferrer">Membership Fees Are Coming for Your Doctor's Office</a>,&rdquo; August 2026.
       </p>
     </div>
@@ -26,7 +85,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <div class="stat-row">
         <div class="stat-card">
           <strong class="stat-number">≤250</strong>
-          <span class="stat-label">patients per physician — capped</span>
+          <span class="stat-label">patients per physician, capped</span>
         </div>
         <div class="stat-card">
           <strong class="stat-number">1–2 hr</strong>
@@ -55,7 +114,7 @@ import MainLayout from '../layouts/MainLayout.astro';
           <ul class="prose-list">
             <li>Unlimited office visits (in-person, phone, video)</li>
             <li>Same-day or next-day scheduling</li>
-            <li>Direct physician access — call, text, message</li>
+            <li>Direct physician access: call, text, message</li>
             <li>Annual physicals and preventive screenings</li>
             <li>Acute illness care (infections, injuries, etc.)</li>
             <li>Chronic disease management</li>
@@ -68,14 +127,14 @@ import MainLayout from '../layouts/MainLayout.astro';
           <p class="coverage-heading addon">+ At-Cost Add-Ons</p>
           <ul class="prose-list">
             <li>Lab work at wholesale/near-cost pricing</li>
-            <li>Medications dispensed at cost — no pharmacy markup</li>
+            <li>Medications dispensed at cost, no pharmacy markup</li>
             <li>Immunizations at cost</li>
           </ul>
           <p class="coverage-heading notcovered" style="margin-top:2rem;">✕ Not Covered by DPC</p>
           <ul class="prose-list" style="--check-color: var(--ink-300);">
             <li>Specialist visits (billed through your insurance)</li>
             <li>Hospital care and emergency services</li>
-            <li>Imaging — we help coordinate and advocate for you</li>
+            <li>Imaging: we help coordinate and advocate for you</li>
           </ul>
           <p style="font-size:0.85rem; color:var(--ink-500); margin-top:1.25rem;"><a href="/services/">See the full services list →</a></p>
         </div>
@@ -83,12 +142,22 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
+  <!-- ─── Pricing ───────────────────────────────────────────────── -->
+  <section class="section pricing-section">
+    <div class="container">
+      <span class="section-label">Membership Pricing</span>
+      <h2 class="section-title">What Membership Costs</h2>
+      <p class="section-intro">Individual membership is $200 a month, with no enrollment fee. Families pay less per person as the family grows, and children under 26 can be added at the family rate. See our <a href="/membership/">membership page</a> for details.</p>
+      <MembershipRates />
+    </div>
+  </section>
+
   <!-- ─── Lab Pricing ───────────────────────────────────────────── -->
   <section class="section">
     <div class="container">
       <span class="section-label">Transparent Pricing</span>
-      <h2 class="section-title">Wholesale Lab Pricing — What You Actually Pay</h2>
-      <p class="section-intro" style="margin-bottom:2.5rem;">These are the prices you pay. Not an insurance "negotiated" rate. Not a facility fee. Just the lab cost — passed directly to you.</p>
+      <h2 class="section-title">Wholesale Lab Pricing: What You Actually Pay</h2>
+      <p class="section-intro" style="margin-bottom:2.5rem;">These are the prices you pay. Not an insurance "negotiated" rate. Not a facility fee. Just the lab cost, passed directly to you.</p>
       <div class="lab-grid">
         <div class="lab-item">
           <strong class="lab-price">$2</strong>
@@ -152,7 +221,7 @@ import MainLayout from '../layouts/MainLayout.astro';
             <tr>
               <td class="row-feature">Doctor access</td>
               <td class="col-trad">Via scheduling + nurse line</td>
-              <td class="col-ffm">Direct — call, text, message</td>
+              <td class="col-ffm">Direct: call, text, message</td>
             </tr>
             <tr>
               <td class="row-feature">Wait for appointment</td>
@@ -209,23 +278,9 @@ import MainLayout from '../layouts/MainLayout.astro';
           </ul>
         </div>
       </div>
-      <p class="cost-note">Estimates vary widely by age, employer, and plan. Many members find their total annual healthcare spend decreases significantly. Consult a benefits advisor for your specific situation.</p>
+      <p class="cost-note">Estimates vary widely by age, employer, and plan. Your total annual healthcare spend can go down, depending on your plan and how you use care. Consult a benefits advisor for your specific situation.</p>
     </div>
   </section>
-
-  <!-- ─── Inline CTA ────────────────────────────────────────────── -->
-  <div class="section" style="background: var(--cream-100);">
-    <div class="container">
-      <div class="inline-cta">
-        <h2>Want to See If DPC Is Right for You?</h2>
-        <p>Start with a free, no-obligation meet and greet. Meet the physicians, ask every question, and decide with zero pressure.</p>
-        <div class="inline-cta-btns">
-          <a href="/contact/?source=direct-primary-care" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
-          <a href="/membership/" class="btn btn-outline-white">See Membership Plans →</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ─── Is DPC Right for You ──────────────────────────────────── -->
   <section class="section section-alt">
@@ -241,7 +296,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="persona-card">
           <span class="persona-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
           <h3>Chronic Condition Management</h3>
-          <p>Diabetes, hypertension, thyroid disorders — conditions that need ongoing, attentive management — not a 10-minute slot every 3 months.</p>
+          <p>Diabetes, hypertension, thyroid disorders: conditions that need ongoing, attentive management, not a 10-minute slot every 3 months.</p>
         </div>
         <div class="persona-card">
           <span class="persona-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
@@ -257,68 +312,22 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <!-- ─── FAQ ───────────────────────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <span class="section-label">Common Questions</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>What does "direct" mean in Direct Primary Care?</span>
-            <span class="faq-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>"Direct" refers to the direct financial relationship between patient and physician — you pay your doctor directly, without an insurance company in the middle. This removes administrative overhead and aligns incentives around your health, not billing volume.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Is DPC covered by Medicare or Medicaid?</span>
-            <span class="faq-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>DPC membership fees are not covered by Medicare or Medicaid. However, Medicare and Medicaid beneficiaries can join a DPC practice as cash-paying members. Specialty and hospital services would still be billed through Medicare or Medicaid as applicable.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>How is DPC different from concierge medicine?</span>
-            <span class="faq-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>The distinction most practices draw between DPC and concierge medicine doesn't apply at Forward Family Medicine. Every member receives what the industry calls a "concierge experience" — delivered through the DPC financial model: no insurance billing, predictable monthly pricing. <a href="/concierge-medicine/">Learn more about our concierge features →</a> For members who want to layer comprehensive imaging, advanced biomarker testing, and longitudinal physician guidance on top of their DPC membership, the <a href="/clarity/">Clarity Program</a> is our integrated executive health offering.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Does the monthly fee really cover everything in primary care?</span>
-            <span class="faq-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>It covers the vast majority of what most people need from a primary care physician. You only pay extra for labs, medications, and immunizations — and even then, at cost. No per-visit fees, ever.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>How do I know if this practice is a good fit before joining?</span>
-            <span class="faq-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>That's exactly what our free Meet &amp; Greet is for. <a href="/contact/?source=direct-primary-care">Schedule one here →</a> It's a 60-minute conversation, in person or by video, with no pressure and no commitment.</p>
-          </div>
-        </div>
-      </div>
+  <HowToJoin source="direct-primary-care" />
+
+  <RelatedReading label="Related Reading" headline="More on Direct Primary Care" posts={relatedPosts} />
+
+  <FAQSection faqs={faqs} label="Common Questions">
+    <div class="faq-after">
       <p style="margin-top:2rem; font-size:0.9rem; color:var(--ink-500);">More questions? <a href="/faq/">See our full FAQ →</a></p>
     </div>
-  </section>
+  </FAQSection>
 
   <!-- ─── Bottom CTA ────────────────────────────────────────────── -->
   <section class="bottom-cta">
     <div class="container bottom-cta-inner">
       <div class="bottom-cta-text">
         <h2>Take the Next Step</h2>
-        <p>See the practice, meet our physicians, and ask every DPC question you have — no obligation, no pressure.</p>
+        <p>See the practice, meet our physicians, and ask every DPC question you have. No obligation, no pressure.</p>
       </div>
       <div class="bottom-cta-btns">
         <a href="/contact/?source=direct-primary-care" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
@@ -326,6 +335,15 @@ import MainLayout from '../layouts/MainLayout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Wayfinding, not persuasion: sits below the conversion content and
+       links the /local/direct-primary-care-* town pages. -->
+  <NearYouExpander
+    id="dpc-near-you"
+    ariaLabel="Direct primary care by location"
+    summary={`Direct primary care in ${dpcTowns.length} towns near our offices`}
+    links={dpcTowns.map(t => ({ href: `/local/${t.slug}/`, label: t.label }))}
+  />
 
 </MainLayout>
 
@@ -590,29 +608,9 @@ import MainLayout from '../layouts/MainLayout.astro';
     margin-top: 1.5rem;
   }
 
-  /* ─── Inline CTA ───────────────────────────── */
-  .inline-cta {
-    background: var(--green-500);
-    border-radius: 20px;
-    padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
-    text-align: center;
-  }
-  .inline-cta h2 {
-    color: #ffffff;
-    margin-bottom: 0.75rem;
-  }
-  .inline-cta p {
-    color: var(--green-100);
-    font-size: 1.05rem;
-    max-width: 560px;
-    margin: 0 auto 1.75rem;
-  }
-  .inline-cta-btns {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  /* ─── Pricing ──────────────────────────────── */
+  /* Lightest cream, so the band stands apart from both neighbours. */
+  .pricing-section { background: var(--cream-50); }
 
   /* ─── Personas ──────────────────────────────── */
   .persona-grid {
@@ -645,39 +643,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
 
   /* ─── FAQ ───────────────────────────────────── */
-  .faq-list { max-width: 800px; margin-top: 2rem; }
-  .faq-item { border-bottom: 1px solid var(--cream-300); }
-  .faq-item:first-child { border-top: 1px solid var(--cream-300); }
-  .faq-q {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    background: none;
-    border: none;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--ink-900);
-    cursor: pointer;
-    text-align: left;
-    transition: color 0.15s;
-  }
-  .faq-q:hover { color: var(--green-400); }
-  .faq-toggle {
-    font-size: 1.4rem;
-    font-weight: 300;
-    flex-shrink: 0;
-    color: var(--green-400);
-    transition: transform 0.2s;
-    line-height: 1;
-  }
-  .faq-q[aria-expanded="true"] .faq-toggle { transform: rotate(45deg); }
-  .faq-a { padding-bottom: 1.25rem; }
-  .faq-a p { color: var(--ink-500); font-weight: 300; line-height: 1.75; margin: 0; }
-  .faq-a a { color: var(--green-300); }
+  .faq-after { max-width: 800px; }
 
   /* ─── Bottom CTA ────────────────────────────── */
   .bottom-cta {
@@ -708,14 +674,3 @@ import MainLayout from '../layouts/MainLayout.astro';
     .bottom-cta-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
-
-<script>
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      const answer = btn.nextElementSibling as HTMLElement;
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if (answer) answer.hidden = expanded;
-    });
-  });
-</script>

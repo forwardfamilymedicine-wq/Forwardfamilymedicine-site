@@ -29,7 +29,7 @@ Haverford is one of the Main Line's most tranquil communities — centered aroun
 
 Forward Family Medicine delivers the concierge medicine experience — same-day access, direct physician contact, longer visits — through a DPC membership. Just 5–6 miles west of Haverford in Wayne.
 
-[How DPC compares to traditional concierge →](/concierge-medicine/)
+[Concierge family medicine on the Main Line →](/concierge-medicine/)
 
 ## Why Haverford Patients Choose This Practice
 

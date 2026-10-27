@@ -29,7 +29,7 @@ Bryn Mawr is a distinguished Lower Merion community with a vibrant college, hosp
 
 Forward Family Medicine delivers the concierge medicine experience — direct physician access, same-day availability, longer visits — through an accessible DPC membership. No high retainer. One flat monthly fee.
 
-[How DPC and concierge compare →](/concierge-medicine/)
+[Concierge family medicine on the Main Line →](/concierge-medicine/)
 
 ## Why Bryn Mawr Patients Choose This Practice
 

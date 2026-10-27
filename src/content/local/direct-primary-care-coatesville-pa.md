@@ -68,7 +68,7 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **Does DPC work well given the drive from Coatesville?**
-Yes — and telehealth makes the model practical for patients at a distance. Annual physicals, procedures, and new-patient visits happen in person. Most follow-ups, medication reviews, acute illness evaluations, and lab discussions work well by phone or video. Members typically drive in a few times a year and handle the rest remotely. [Learn more →](/direct-primary-care/)
+Yes — and telehealth makes the model practical for patients at a distance. Annual physicals, procedures, and new-patient visits happen in person. Most follow-ups, medication reviews, acute illness evaluations, and lab discussions work well by phone or video. Members typically drive in a few times a year and handle the rest remotely. [How our direct primary care works →](/direct-primary-care/)
 
 **What's the best way to try the practice before committing?**
 Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)

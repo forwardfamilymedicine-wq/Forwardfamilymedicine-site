@@ -62,7 +62,7 @@ Yes — Forward Family Medicine is located within Radnor Township (Wayne). Many 
 Yes — we are currently enrolling new members. Panel size is limited, so we encourage early enrollment. [Schedule a Meet & Greet →](/new-patients/)
 
 **How does DPC differ from Radnor area practices affiliated with large health systems?**
-Large health system practices operate on high-volume schedules. Our DPC model limits panel size to give every member same-day access and a physician who knows them deeply. [Learn more →](/direct-primary-care/)
+Large health system practices operate on high-volume schedules. Our DPC model limits panel size to give every member same-day access and a physician who knows them deeply. [Direct primary care on the Main Line →](/direct-primary-care/)
 
 **What's the best way to try this before committing?**
 Schedule a free Meet & Greet: a no-obligation 60-minute conversation with one of our physicians. [Schedule here →](/new-patients/)

@@ -86,7 +86,7 @@ No. While we're located in Wayne, we welcome members from throughout the Main Li
 **Membership pricing:** Individual: $200/month · Family: from $175/person/month — [see full pricing →](/membership/). There is no enrollment fee.
 
 **How is Direct Primary Care different from my current doctor in Wayne?**
-Traditional practices bill insurance per visit and typically see 20–30 patients a day. DPC practices like Forward Family Medicine cap their panel and bill a flat monthly fee — giving your physician the time and availability to truly know and serve you. [Learn more →](/direct-primary-care/)
+Traditional practices bill insurance per visit and typically see 20–30 patients a day. DPC practices like Forward Family Medicine cap their panel and bill a flat monthly fee — giving your physician the time and availability to truly know and serve you. [Direct primary care on the Main Line →](/direct-primary-care/)
 
 **Can I tour the practice before deciding?**
 Absolutely. Our free Meet & Greet is a no-obligation 60-minute conversation where you can see the practice and ask all your questions. [Schedule yours →](/new-patients/)

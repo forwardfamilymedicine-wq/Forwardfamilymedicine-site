@@ -29,7 +29,7 @@ Ardmore is one of the Main Line's most accessible and diverse communities — wa
 
 Forward Family Medicine delivers the concierge experience — direct physician access, same-day availability, longer visits — through a flat DPC monthly membership. No high retainer. Just better primary care.
 
-[Compare DPC and traditional concierge →](/concierge-medicine/)
+[Concierge family medicine on the Main Line →](/concierge-medicine/)
 
 ## Why Ardmore Patients Choose This Practice
 

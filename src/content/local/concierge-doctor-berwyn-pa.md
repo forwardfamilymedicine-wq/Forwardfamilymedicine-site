@@ -29,7 +29,7 @@ Berwyn is a close-knit Chester County community adjacent to Wayne on Lancaster A
 
 Forward Family Medicine delivers the essential concierge medicine experience — direct physician access, same-day availability, longer visits, and proactive prevention — through an accessible DPC membership. No high annual retainer. One flat monthly fee.
 
-[Compare DPC vs. concierge medicine →](/concierge-medicine/)
+[Concierge family medicine on the Main Line →](/concierge-medicine/)
 
 ## Why Berwyn Patients Choose Forward Family Medicine
 

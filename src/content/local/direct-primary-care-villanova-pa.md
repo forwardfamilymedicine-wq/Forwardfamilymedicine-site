@@ -66,7 +66,7 @@ Approximately 1 mile. A 3–5 minute drive via Lancaster Avenue, or one SEPTA st
 Yes — we are currently accepting new members. [Schedule a Meet & Greet →](/new-patients/)
 
 **What makes DPC different from practices near Villanova University?**
-Most practices near the university run on traditional insurance billing schedules. Forward Family Medicine's DPC model keeps our panel smaller, giving you same-day access and a physician who genuinely knows your history. [Learn more →](/direct-primary-care/)
+Most practices near the university run on traditional insurance billing schedules. Forward Family Medicine's DPC model keeps our panel smaller, giving you same-day access and a physician who genuinely knows your history. [Direct primary care on the Main Line →](/direct-primary-care/)
 
 ## Contact & Practice Information
 

@@ -1,0 +1,60 @@
+---
+/**
+ * Related blog posts for a service page, titles only. The page resolves the
+ * titles from the blog collection, so they are never retyped here.
+ */
+export interface Props {
+  label: string;
+  headline: string;
+  posts: { href: string; title: string }[];
+}
+
+const { label, headline, posts } = Astro.props;
+---
+
+<section class="related-reading section">
+  <div class="container">
+    <span class="section-label">{label}</span>
+    <h2 class="section-title">{headline}</h2>
+    <ul class="related-grid">
+      {posts.map(p => (
+        <li><a href={p.href} class="related-card card"><h3>{p.title}</h3></a></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .related-reading {
+    background: var(--cream-50);
+  }
+  .related-grid {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .related-grid li { display: flex; }
+  .related-card {
+    flex: 1;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .related-card:hover,
+  .related-card:focus-visible {
+    box-shadow: var(--shadow-md, 0 6px 20px rgba(0,0,0,0.08));
+    transform: translateY(-2px);
+  }
+  .related-card h3 {
+    font-size: 1.02rem;
+    color: var(--green-500);
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>
