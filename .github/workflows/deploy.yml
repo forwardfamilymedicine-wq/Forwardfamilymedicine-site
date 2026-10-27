@@ -12,12 +12,12 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: "22.12.0"
+          node-version: "24.22.1"
       - run: npm install
       - run: npm run build
         env:
@@ -26,16 +26,19 @@ jobs:
       # FAQ, paragraph and kept practical line from the source markdown must
       # appear in the built page. No --baseline in CI; there is no prior build.
       - run: npm run check:local
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    # Pages deploys only from main. A run dispatched on another branch builds
+    # and checks the site, then stops here.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-26.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
