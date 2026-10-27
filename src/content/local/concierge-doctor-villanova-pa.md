@@ -29,7 +29,7 @@ Villanova is a distinguished Main Line community defined by Villanova University
 
 Forward Family Medicine — just 1 mile from Villanova — offers the same-day access, direct physician contact, and longer visits that define concierge medicine, through an accessible flat monthly DPC membership. You get the relationship without the high annual retainer.
 
-[DPC vs. traditional concierge medicine →](/concierge-medicine/)
+[Concierge family medicine near Philadelphia →](/concierge-medicine/)
 
 ## Why Villanova Patients Choose This Practice
 

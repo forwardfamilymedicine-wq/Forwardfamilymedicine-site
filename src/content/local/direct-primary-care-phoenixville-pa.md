@@ -67,7 +67,7 @@ Yes — Dr. Landi is accepting new patients now, with in-person care at our Malv
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
 
 **How is DPC different from traditional primary care in Phoenixville?**
-Traditional practices operate on high-volume schedules — typically 20–30 patients per physician per day. Our DPC model caps the panel at ~250 patients per physician, which is what enables genuine same-day access and visits long enough to actually solve problems. [Learn more →](/direct-primary-care/)
+Traditional practices operate on high-volume schedules — typically 20–30 patients per physician per day. Our DPC model caps the panel at ~250 patients per physician, which is what enables genuine same-day access and visits long enough to actually solve problems. [Direct primary care near Philadelphia →](/direct-primary-care/)
 
 **What's the best way to try the practice before committing?**
 Schedule a free Meet & Greet: a no-obligation 60-minute conversation with Dr. Landi, who is accepting new patients now. [Schedule here →](/contact/)

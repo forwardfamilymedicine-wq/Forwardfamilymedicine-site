@@ -29,7 +29,7 @@ Devon sits between Wayne and Paoli on Lancaster Avenue — a Chester County comm
 
 Forward Family Medicine delivers the concierge medicine essentials — same-day access, direct physician contact, longer visits — through an accessible DPC membership. Just 3 miles east of Devon in Wayne, PA.
 
-[Compare DPC and traditional concierge medicine →](/concierge-medicine/)
+[Concierge family medicine on the Main Line →](/concierge-medicine/)
 
 ## Why Devon Patients Choose This Practice
 

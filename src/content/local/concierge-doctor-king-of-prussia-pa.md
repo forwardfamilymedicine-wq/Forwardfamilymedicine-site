@@ -29,7 +29,7 @@ King of Prussia is Montgomery County's largest commercial center — home to cor
 
 Traditional concierge medicine often requires a retainer of $1,500–$6,000 or more per year, before any care is delivered. Forward Family Medicine delivers the same concierge experience — same-day access, direct physician contact, longer visits — through a DPC membership at a fraction of that cost.
 
-[Compare DPC and traditional concierge →](/concierge-medicine/)
+[Concierge medicine near Philadelphia →](/concierge-medicine/)
 
 ## Why King of Prussia Patients Choose This Practice
 
@@ -57,7 +57,7 @@ Unlimited visits · Preventive care · Chronic disease management · Acute care 
 Forward Family Medicine in Wayne, PA is 7 miles south and offers concierge-style DPC care. Telehealth makes it accessible for most routine needs without the commute. [Schedule a Meet & Greet →](/new-patients/)
 
 **How does DPC differ from traditional concierge medicine?**
-Both offer direct physician access and longer visits. Traditional concierge practices often bill insurance on top of the retainer fee; DPC replaces insurance billing entirely with a flat monthly fee — typically much lower than concierge retainers. [Full comparison →](/concierge-medicine/)
+Both offer direct physician access and longer visits. Traditional concierge practices often bill insurance on top of the retainer fee; DPC replaces insurance billing entirely with a flat monthly fee — typically much lower than concierge retainers. [How our concierge family medicine works →](/concierge-medicine/)
 
 **What does membership cost for King of Prussia patients?**
 Individual membership starting at $200/month; family plans from $175/person/month. [See pricing →](/membership/)

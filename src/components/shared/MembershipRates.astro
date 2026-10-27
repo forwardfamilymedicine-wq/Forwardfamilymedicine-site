@@ -1,0 +1,80 @@
+---
+/**
+ * Individual and family rates for the service pages. Every label and figure is
+ * copied from /membership/, which remains the pricing page; change both
+ * together.
+ */
+const FAMILY_TIERS = [
+  { size: '2 members', rate: '$175/person/month' },
+  { size: '3 members', rate: '$150/person/month' },
+  { size: '4 members', rate: '$125/person/month' },
+  { size: '5+ members', rate: '$100/person/month' },
+];
+---
+
+<div class="rates">
+  <div class="rate-card">
+    <h3>Individual Membership</h3>
+    <p class="rate-price">$200<span class="rate-unit">/month</span></p>
+  </div>
+  <div class="rate-card">
+    <h3>Family Membership</h3>
+    <ul class="rate-tiers">
+      {FAMILY_TIERS.map(t => (
+        <li><span class="rate-size">{t.size}</span><span class="rate-tier">{t.rate}</span></li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .rates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    max-width: 760px;
+    margin-top: 2rem;
+  }
+  .rate-card {
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+  }
+  .rate-card h3 {
+    font-size: 1.05rem;
+    color: var(--ink-900);
+    margin-bottom: 0.75rem;
+  }
+  .rate-price {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    color: var(--green-500);
+    line-height: 1;
+    margin: 0;
+  }
+  .rate-unit {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--ink-500);
+  }
+  .rate-tiers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .rate-tiers li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--green-100);
+    font-size: 0.92rem;
+  }
+  .rate-tiers li:last-child { border-bottom: none; }
+  .rate-size { color: var(--ink-700); }
+  .rate-tier { color: var(--green-500); font-weight: 600; }
+  @media (max-width: 700px) {
+    .rates { grid-template-columns: 1fr; }
+  }
+</style>

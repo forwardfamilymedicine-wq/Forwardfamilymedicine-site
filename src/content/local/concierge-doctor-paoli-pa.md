@@ -29,7 +29,7 @@ Paoli is a Chester County community at the western end of the Main Line, known f
 
 Forward Family Medicine in Wayne delivers the core concierge medicine experience through a DPC membership — direct physician access, same-day scheduling, and longer visits — at a flat monthly fee. For Paoli patients, this is a 12–15 minute drive or a SEPTA ride away.
 
-[How DPC compares to traditional concierge medicine →](/concierge-medicine/)
+[Concierge family medicine on the Main Line →](/concierge-medicine/)
 
 ## Why Paoli Patients Choose This Practice
 

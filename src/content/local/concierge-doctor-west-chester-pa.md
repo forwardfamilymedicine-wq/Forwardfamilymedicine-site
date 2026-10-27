@@ -26,7 +26,7 @@ nearbyNeighborhoods: "Exton, Downingtown, Glen Mills, Kennett Square, and Concor
 
 ## Concierge Experience, DPC Pricing
 
-Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [What's the difference? →](/concierge-medicine/)
+Traditional concierge medicine charges $4,000–$15,000 per year as a retainer on top of insurance. Forward Family Medicine operates on a flat monthly DPC membership ($200/month individual) — without the retainer, without insurance billing, with the same patient experience concierge practices charge a premium for. [Concierge medicine near Philadelphia →](/concierge-medicine/)
 
 ## About West Chester, PA
 
@@ -61,7 +61,7 @@ Unlimited visits · Direct physician access · Same-day scheduling · Wholesale 
 ## Frequently Asked Questions
 
 **Is this true concierge medicine?**
-Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [Compare →](/concierge-medicine/)
+Forward Family Medicine delivers the concierge experience — small panels, direct access, long visits — through a Direct Primary Care model. The structural difference: no $4,000+ retainer, no insurance billing for routine care, transparent monthly pricing. The patient experience is what concierge promises but DPC delivers more economically. [About our concierge family medicine →](/concierge-medicine/)
 
 **Who is the physician for West Chester patients?**
 Dr. Brian Landi, DO — board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. [Read his full bio →](/meet-the-team/brian-landi-do/)
