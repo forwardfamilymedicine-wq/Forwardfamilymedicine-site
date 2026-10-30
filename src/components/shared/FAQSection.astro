@@ -1,4 +1,11 @@
 ---
+/**
+ * FAQ accordion: native <details>, plain summary with a "+" marker, hairline
+ * rows; heading left, questions right. Props are unchanged so the thirteen
+ * importers keep working: `label` is still accepted but no longer rendered
+ * (section eyebrows were removed site-wide in the redesign). Answers render
+ * as HTML; the FAQPage JSON-LD gets plain text via faqAnswerText.
+ */
 import { faqAnswerText } from '../../utils/faqSchema';
 
 export interface FAQ {
@@ -16,12 +23,9 @@ export interface Props {
 const {
   faqs,
   headline = 'Frequently Asked Questions',
-  label = 'FAQ',
   schema = true,
 } = Astro.props;
 
-// The accordion renders the answer HTML as-is; the schema gets plain text so
-// markup and navigation labels never leak into structured data.
 const faqSchema = schema ? {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -40,98 +44,79 @@ const faqSchema = schema ? {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}
 
-<section class="faq-section section">
-  <div class="container">
-    <span class="section-label">{label}</span>
-    <h2 class="section-title">{headline}</h2>
-    <div class="faq-list" role="list">
-      {faqs.map((faq, i) => (
-        <div class="faq-item" role="listitem">
-          <button
-            class="faq-question"
-            aria-expanded="false"
-            aria-controls={`faq-answer-${i}`}
-            id={`faq-q-${i}`}
-          >
-            <span>{faq.q}</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div
-            class="faq-answer"
-            id={`faq-answer-${i}`}
-            role="region"
-            aria-labelledby={`faq-q-${i}`}
-            hidden
-          >
+<section class="faq-section rd-section">
+  <div class="rd-wrap faq-inner">
+    <div class="faq-head">
+      <h2 class="rd-h2 faq-title">{headline}</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map(faq => (
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">{faq.q}</span>
+            <span class="faq-mark" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
             <p set:html={faq.a}></p>
           </div>
-        </div>
+        </details>
       ))}
-    </div><slot />
+      <slot />
+    </div>
   </div>
 </section>
 
 <style>
-  .faq-section {
-    background: var(--cream-200);
+  .faq-section { background: var(--linen); }
+  .faq-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 72px;
+    align-items: start;
   }
+  .faq-title { font-size: 40px; }
   .faq-list {
-    margin-top: 2rem;
-    max-width: 800px;
-  }
-  .faq-item {
-    border-bottom: 1px solid var(--cream-300);
-  }
-  .faq-item:first-child {
-    border-top: 1px solid var(--cream-300);
-  }
-  .faq-question {
-    width: 100%;
+    border-top: 1px solid var(--hairline-strong);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    background: none;
-    border: none;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--ink-900);
-    cursor: pointer;
-    text-align: left;
-    transition: color 0.15s;
+    flex-direction: column;
   }
-  .faq-question:hover { color: var(--green-400); }
-  .faq-icon {
-    font-size: 1.4rem;
-    font-weight: 300;
+  .faq-item { border-bottom: 1px solid var(--hairline-strong); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--forest);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover .faq-q { color: var(--sage-600); }
+  .faq-mark {
+    color: var(--sage-600);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
     flex-shrink: 0;
     transition: transform 0.2s;
-    color: var(--green-400);
   }
-  .faq-question[aria-expanded="true"] .faq-icon {
-    transform: rotate(45deg);
-  }
-  .faq-answer {
-    padding-bottom: 1.25rem;
-  }
+  .faq-item[open] .faq-mark { transform: rotate(45deg); }
+  .faq-answer { padding: 0 0 18px; }
   .faq-answer p {
-    color: var(--ink-700);
+    font-size: 15px;
     line-height: 1.7;
+    color: var(--text-700);
     margin: 0;
+    max-width: 68ch;
+  }
+  .faq-answer :global(a) { color: var(--sage-600); }
+  .faq-answer :global(a:hover) { color: var(--forest); }
+
+  @media (max-width: 860px) {
+    .faq-inner { grid-template-columns: 1fr; gap: 28px; }
+    .faq-title { font-size: 30px; }
   }
 </style>
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      const answerId = btn.getAttribute('aria-controls');
-      const answer = document.getElementById(answerId || '');
-
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if (answer) answer.hidden = expanded;
-    });
-  });
-</script>

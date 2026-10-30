@@ -1,291 +1,202 @@
 ---
+/**
+ * Site footer, restyled to the boards' footer (design/boards/Main.dc.html).
+ * Every destination the footer linked before is still here: Home, the full
+ * quick-links list, the office addresses, phone, fax, email, hours, Areas We
+ * Serve, and "Manage cookie choices" (ConsentBanner listens on
+ * [data-consent-reset]). Added by decision: the three office pages are linked
+ * from the Contact Us column, and both Enroll links sit under the CTA. The
+ * SigmaMD links are tracked by the delegated listener in MainLayout.
+ */
 import { Image } from 'astro:assets';
-import logo from '../../assets/logo/logo.png';
+import logo from '../../assets/logo/ffm-logo.png';
 
 const year = new Date().getFullYear();
+
+const quickLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About Us' },
+  { href: '/meet-the-team/', label: 'Meet the Team' },
+  { href: '/locations/', label: 'Locations' },
+  { href: '/services/', label: 'Services' },
+  { href: '/direct-primary-care/', label: 'Direct Primary Care' },
+  { href: '/lifestyle-medicine/', label: 'Lifestyle Medicine' },
+  { href: '/menopause/', label: 'Menopause Care' },
+  { href: '/concierge-medicine/', label: 'Concierge Medicine' },
+  { href: '/clarity/', label: 'Clarity Program' },
+  { href: '/wellness-collective/', label: 'Wellness Collective' },
+  { href: '/wayne-dexa/', label: 'Wayne DEXA (Body Composition)' },
+  { href: '/membership/', label: 'Membership' },
+  { href: '/new-patients/', label: 'New Patients' },
+  { href: '/for-businesses/', label: 'For Businesses' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/contact/', label: 'Contact' },
+  { href: '/careers/', label: 'Careers' },
+  { href: '/faq/', label: 'FAQ' },
+  { href: '/privacy-policy/', label: 'Privacy Policy' },
+];
+
+const towns = [
+  ['wayne', 'Wayne'], ['bryn-mawr', 'Bryn Mawr'], ['ardmore', 'Ardmore'], ['berwyn', 'Berwyn'],
+  ['devon', 'Devon'], ['haverford', 'Haverford'], ['villanova', 'Villanova'], ['radnor', 'Radnor'],
+  ['paoli', 'Paoli'], ['malvern', 'Malvern'], ['king-of-prussia', 'King of Prussia'],
+  ['newtown-square', 'Newtown Square'], ['media', 'Media'], ['west-chester', 'West Chester'],
+];
 ---
 
 <footer class="site-footer" role="contentinfo">
-  <div class="container footer-grid">
+  <div class="rd-wrap">
+    <div class="footer-grid">
 
-    <div class="footer-brand">
-      <a href="/" class="footer-logo" aria-label="Forward Family Medicine">
-        <Image
-          src={logo}
-          alt="Forward Family Medicine logo"
-          class="footer-logo-img"
-          height={56}
-          widths={[144, 288]}
-          sizes="126px"
-          format="webp"
-          quality={90}
-          loading="lazy"
-        />
-      </a>
-      <p class="tagline">The Main Line's only Direct Primary Care practice with in-person, board-certified Lifestyle Medicine.</p>
-      <a href="/contact/" class="btn btn-accent footer-cta">Schedule a Free Meet &amp; Greet</a>
-    </div>
-
-    <div class="footer-nav">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About Us</a></li>
-        <li><a href="/meet-the-team/">Meet the Team</a></li>
-        <li><a href="/locations/">Locations</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/direct-primary-care/">Direct Primary Care</a></li>
-        <li><a href="/lifestyle-medicine/">Lifestyle Medicine</a></li>
-        <li><a href="/menopause/">Menopause Care</a></li>
-        <li><a href="/concierge-medicine/">Concierge Medicine</a></li>
-        <li><a href="/clarity/">Clarity Program</a></li>
-        <li><a href="/wellness-collective/">Wellness Collective</a></li>
-        <li><a href="/wayne-dexa/">Wayne DEXA (Body Composition)</a></li>
-        <li><a href="/membership/">Membership</a></li>
-        <li><a href="/new-patients/">New Patients</a></li>
-        <li><a href="/for-businesses/">For Businesses</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/careers/">Careers</a></li>
-        <li><a href="/faq/">FAQ</a></li>
-        <li><a href="/privacy-policy/">Privacy Policy</a></li>
-        <li><a href="#" data-consent-reset>Manage cookie choices</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <address>
-        <p>
-          <strong>Wayne</strong><br />
-          <a
-            href="https://maps.app.goo.gl/fDXtMnutNzPq2CkF7"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="color: inherit; text-decoration: none;"
-          >295 Old Eagle School Road, STE 2<br />Wayne, PA 19087</a>
-        </p>
-        <p>
-          <strong>Malvern</strong><br />
-          <a
-            href="https://www.google.com/maps/place/301+Lindenwood+Dr+%23206,+Malvern,+PA+19355/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="color: inherit; text-decoration: none;"
-          >301 Lindenwood Dr #206<br />Malvern, PA 19355</a>
-        </p>
-        <p>
-          <strong>Phone</strong><br />
-          <a href="tel:+12156457044">(215) 645-7044</a>
-        </p>
-        <p>
-          <strong>Fax</strong><br />
-          <a href="tel:+12154498854">(215) 449-8854</a>
-        </p>
-        <p>
-          <strong>Email</strong><br />
-          <a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a>
-        </p>
-      </address>
-
-      <div class="office-hours">
-        <strong>Office Hours</strong>
-        <p style="font-size:0.85rem; margin-top:0.25rem; color:var(--ink-700);">
-          Monday–Friday: 7:30 AM – 5:30 PM
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Forward Family Medicine">
+          <Image
+            src={logo}
+            alt="Forward Family Medicine logo"
+            class="footer-logo-img"
+            height={96}
+            widths={[132, 264]}
+            sizes="132px"
+            format="webp"
+            quality={90}
+            loading="lazy"
+          />
+        </a>
+        <p class="tagline">The Main Line's only Direct Primary Care practice with in-person, board-certified Lifestyle Medicine.</p>
+        <a href="/contact/" class="btn-forest btn-sm footer-cta">Schedule a Free Meet &amp; Greet</a>
+        <p class="footer-enroll">
+          <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
         </p>
       </div>
+
+      <div class="footer-contact">
+        <h3 class="rd-eyebrow footer-head">Contact Us</h3>
+        <address>
+          <p>
+            <strong><a href="/locations/wayne/">Wayne</a></strong><br />
+            <a href="https://maps.app.goo.gl/fDXtMnutNzPq2CkF7" target="_blank" rel="noopener noreferrer">295 Old Eagle School Road, STE 2, Wayne, PA 19087</a>
+          </p>
+          <p>
+            <strong><a href="/locations/malvern/">Malvern</a></strong><br />
+            <a href="https://www.google.com/maps/place/301+Lindenwood+Dr+%23206,+Malvern,+PA+19355/" target="_blank" rel="noopener noreferrer">301 Lindenwood Dr #206, Malvern, PA 19355</a>
+          </p>
+          <p>
+            <strong><a href="/locations/west-chester/">West Chester</a></strong><br />
+            Planned
+          </p>
+          <p>
+            <strong>Phone</strong> <a href="tel:+12156457044">(215) 645-7044</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <strong>Fax</strong> <a href="tel:+12154498854">(215) 449-8854</a>
+          </p>
+          <p>
+            <strong>Email</strong><br />
+            <a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a>
+          </p>
+          <p>
+            <strong>Office Hours</strong><br />
+            Monday–Friday: 7:30 AM – 5:30 PM
+          </p>
+        </address>
+      </div>
+
+      <div class="footer-nav">
+        <h3 class="rd-eyebrow footer-head">Quick Links</h3>
+        <ul class="footer-links">
+          {quickLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}
+          <li><a href="#" data-consent-reset>Manage cookie choices</a></li>
+        </ul>
+      </div>
+
     </div>
 
-  </div>
-
-  <!-- Areas We Serve — internal links for local SEO crawlability -->
-  <div class="footer-local">
-    <div class="container">
-      <p class="footer-local-label">Areas We Serve</p>
-      <ul class="footer-local-list">
-        <li><a href="/local/direct-primary-care-wayne-pa/">Wayne</a></li>
-        <li><a href="/local/direct-primary-care-bryn-mawr-pa/">Bryn Mawr</a></li>
-        <li><a href="/local/direct-primary-care-ardmore-pa/">Ardmore</a></li>
-        <li><a href="/local/direct-primary-care-berwyn-pa/">Berwyn</a></li>
-        <li><a href="/local/direct-primary-care-devon-pa/">Devon</a></li>
-        <li><a href="/local/direct-primary-care-haverford-pa/">Haverford</a></li>
-        <li><a href="/local/direct-primary-care-villanova-pa/">Villanova</a></li>
-        <li><a href="/local/direct-primary-care-radnor-pa/">Radnor</a></li>
-        <li><a href="/local/direct-primary-care-paoli-pa/">Paoli</a></li>
-        <li><a href="/local/direct-primary-care-malvern-pa/">Malvern</a></li>
-        <li><a href="/local/direct-primary-care-king-of-prussia-pa/">King of Prussia</a></li>
-        <li><a href="/local/direct-primary-care-newtown-square-pa/">Newtown Square</a></li>
-        <li><a href="/local/direct-primary-care-media-pa/">Media</a></li>
-        <li><a href="/local/direct-primary-care-west-chester-pa/">West Chester</a></li>
-      </ul>
+    <!-- Areas We Serve: internal links for local SEO crawlability -->
+    <div class="footer-local">
+      <span class="rd-eyebrow footer-local-label">Areas We Serve</span>
+      {towns.map(([slug, name]) => <a href={`/local/direct-primary-care-${slug}-pa/`}>{name}</a>)}
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <p>&copy; {year} Forward Family Medicine. All rights reserved.</p>
-      <p class="disclaimer">
-        Forward Family Medicine is a Direct Primary Care practice. Membership is not insurance.
-        We recommend pairing DPC with a high-deductible or health-sharing plan.
-      </p>
-    </div>
+    <p class="footer-bottom">
+      &copy; {year} Forward Family Medicine. All rights reserved.
+      Forward Family Medicine is a Direct Primary Care practice. Membership is not insurance.
+      We recommend pairing DPC with a high-deductible or health-sharing plan.
+    </p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--cream-50);
-    color: var(--ink-900);
-    border-top: 1px solid var(--ink-100);
+    background: var(--linen);
+    border-top: 1px solid var(--hairline);
+    padding: 64px 0 40px;
+    color: var(--text-700);
     margin-top: auto;
   }
-
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 3rem;
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 48px;
   }
 
-  /* Brand column */
-  .footer-logo {
-    display: inline-block;
+  /* Brand */
+  .footer-brand { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  .footer-logo { display: block; }
+  .footer-logo-img { height: 48px; width: auto; display: block; }
+  .tagline { margin: 0; font-size: 14px; line-height: 1.65; color: var(--text-700); max-width: 300px; }
+  .footer-enroll { margin: 0; font-size: 13px; }
+  .footer-enroll a, .footer-contact a, .footer-links a, .footer-local a {
+    color: var(--sage-600);
     text-decoration: none;
-    margin-bottom: 1rem;
-  }
-  .footer-logo-img {
-    height: 56px;
-    width: auto;
-    display: block;
-  }
-
-  .tagline {
-    font-size: 0.9rem;
-    color: var(--ink-700);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    max-width: 320px;
-  }
-  .footer-cta {
-    font-size: 0.9rem;
-    padding: 0.65rem 1.5rem;
-  }
-
-  /* Nav column */
-  .footer-nav h3,
-  .footer-contact h3 {
-    font-family: var(--font-heading);
-    color: var(--ink-900);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  .footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .footer-nav li { margin-bottom: 0.4rem; }
-  .footer-nav a {
-    color: var(--green-300);
-    text-decoration: none;
-    font-size: 0.9rem;
     transition: color 0.15s;
   }
-  .footer-nav a:hover { color: var(--green-400); text-decoration: underline; }
+  .footer-enroll a:hover, .footer-contact a:hover, .footer-links a:hover, .footer-local a:hover { color: var(--forest); }
+  .sep { color: var(--hairline-dot); margin: 0 8px; }
 
-  /* Contact column */
-  .footer-contact address { font-style: normal; }
-  .footer-contact p {
-    font-size: 0.9rem;
-    color: var(--ink-700);
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
-  .footer-contact strong { color: var(--ink-900); }
-  .footer-contact a {
-    color: var(--green-300);
-    text-decoration: none;
-    transition: opacity 0.15s;
-  }
-  .footer-contact a:hover { opacity: 0.8; }
-  .office-hours { margin-top: 1rem; }
-  .office-hours strong { color: var(--ink-900); font-size: 0.9rem; }
-  .status-coming-soon {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: var(--ink-500);
-  }
+  /* Headings */
+  .footer-head { margin: 0 0 6px; }
 
-  /* Bottom bar */
-  .footer-bottom {
-    background: var(--ink-50);
-    border-top: 1px solid var(--ink-100);
-    padding: 1.25rem 0;
-  }
-  .footer-bottom-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-bottom p {
-    font-size: 0.8rem;
-    color: var(--ink-500);
+  /* Contact */
+  .footer-contact { display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.6; }
+  .footer-contact address { font-style: normal; display: flex; flex-direction: column; gap: 10px; }
+  .footer-contact p { margin: 0; }
+  .footer-contact strong { color: var(--forest); font-weight: 600; }
+  .footer-contact strong a { color: var(--forest); }
+  .footer-contact strong a:hover { color: var(--sage-600); }
+
+  /* Quick links */
+  .footer-nav { font-size: 14px; line-height: 1.6; }
+  .footer-links {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
   }
-  .disclaimer { max-width: 600px; }
 
   /* Areas We Serve */
   .footer-local {
-    border-top: 1px solid var(--ink-100);
-    padding: 1.25rem 0;
-  }
-  .footer-local .container {
-    display: flex;
-    align-items: baseline;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-  }
-  .footer-local-label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--ink-500);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-    margin: 0;
-    flex-shrink: 0;
-  }
-  .footer-local-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline-strong);
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem 0.1rem;
+    gap: 8px 18px;
+    font-size: 13px;
+    color: var(--text-600);
   }
-  .footer-local-list li::after {
-    content: '·';
-    color: var(--ink-100);
-    margin: 0 0.35rem;
-  }
-  .footer-local-list li:last-child::after { content: ''; }
-  .footer-local-list a {
-    font-size: 0.82rem;
-    color: var(--green-300);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .footer-local-list a:hover { color: var(--green-400); text-decoration: underline; }
+  .footer-local-label { font-size: 10px; margin-right: 8px; align-self: center; }
 
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding-top: 2.5rem;
-      padding-bottom: 2rem;
-    }
+  .footer-bottom {
+    margin: 28px 0 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-500);
+  }
+
+  @media (max-width: 860px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   }
 </style>

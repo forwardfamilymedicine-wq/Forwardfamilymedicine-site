@@ -1,0 +1,57 @@
+---
+/**
+ * Ruled list: hairline rows, no markers. Pass <li> children in the slot.
+ * `size` sets the row padding (sm 12px, md 13px, lg 26px). With `reveal`,
+ * rows fade up one after another once the list is ~30% visible
+ * (src/scripts/reveal.ts); reduced motion renders the end state.
+ */
+export interface Props {
+  as?: 'ul' | 'ol';
+  size?: 'sm' | 'md' | 'lg';
+  reveal?: boolean;
+  class?: string;
+}
+
+const { as: Tag = 'ul', size = 'md', reveal = false, class: className = '' } = Astro.props;
+---
+
+<Tag
+  class:list={['ruled-list', `ruled-list--${size}`, { 'ruled-list--reveal': reveal }, className]}
+  data-reveal={reveal ? '' : undefined}
+>
+  <slot />
+</Tag>
+
+<style>
+  .ruled-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .ruled-list > :global(li) {
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--forest);
+  }
+  .ruled-list > :global(li:last-child) { border-bottom: 1px solid var(--hairline-strong); }
+  .ruled-list--sm > :global(li) { padding: 12px 0; }
+  .ruled-list--md > :global(li) { padding: 13px 0; }
+  .ruled-list--lg > :global(li) { padding: 26px 0; }
+
+  .ruled-list--reveal > :global(li) {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .ruled-list--reveal.on > :global(li) { opacity: 1; transform: none; }
+  .ruled-list--reveal.on > :global(li:nth-child(1)) { transition-delay: 0.1s; }
+  .ruled-list--reveal.on > :global(li:nth-child(2)) { transition-delay: 0.3s; }
+  .ruled-list--reveal.on > :global(li:nth-child(3)) { transition-delay: 0.5s; }
+  .ruled-list--reveal.on > :global(li:nth-child(4)) { transition-delay: 0.7s; }
+  .ruled-list--reveal.on > :global(li:nth-child(5)) { transition-delay: 0.9s; }
+  .ruled-list--reveal.on > :global(li:nth-child(6)) { transition-delay: 1.1s; }
+  .ruled-list--reveal.on > :global(li:nth-child(n+7)) { transition-delay: 1.3s; }
+</style>

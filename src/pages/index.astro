@@ -8,7 +8,6 @@ import CareExperience from '../components/home/CareExperience.astro';
 import LifestyleMedTeaser from '../components/home/LifestyleMedTeaser.astro';
 import ProofSection from '../components/home/ProofSection.astro';
 import MembershipHowItWorks from '../components/home/MembershipHowItWorks.astro';
-import PricingSection from '../components/home/PricingSection.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 
@@ -64,10 +63,10 @@ const breadcrumb = {
   <!-- 1 Hero — the desired experience -->
   <HeroSection />
 
-  <!-- 2 The problem -->
+  <!-- 2 The problem, beside the dot field -->
   <ProblemSection />
 
-  <!-- 3 The FFM difference -->
+  <!-- 3 The FFM difference: pillars and the visit comparison -->
   <DifferenceSection />
 
   <!-- 4 Meet your doctor — availability-led; target of the hero's secondary CTA -->
@@ -78,34 +77,34 @@ const breadcrumb = {
   <!-- 5 What care feels like -->
   <CareExperience />
 
-  <!-- 6 Beyond traditional primary care -->
+  <!-- 6 Lifestyle Medicine -->
   <LifestyleMedTeaser />
 
-  <!-- 7 Proof -->
+  <!-- 7 Proof: the review marquee and the Top Doctor note -->
   <ProofSection />
 
-  <!-- 8 How membership works -->
+  <!-- 8 How membership works and what it costs -->
   <MembershipHowItWorks />
-
-  <!-- 9 Pricing -->
-  <PricingSection />
 
   <!-- Clarity Program teaser — deliberately below pricing so it does not
        introduce a second, larger number before the membership price. -->
-  <section class="clarity-teaser-section">
-    <div class="clarity-teaser-container">
-      <p class="clarity-teaser-eyebrow">For Members Who Want to Go Deeper</p>
-      <h2 class="clarity-teaser-h2">The Clarity Program</h2>
-      <p class="clarity-teaser-body">Some of our members want more than excellent primary care — they want a structured, year-long diagnostic program built around prevention: whole-body imaging, advanced biomarkers, continuous metabolic and performance data, all read by a physician who tracks how everything moves over time.</p>
-      <p class="clarity-teaser-body">We built The Clarity Program for those members. It's an optional, separate program — not a required upgrade, and not the standard of care here. Standard membership remains the foundation, and it remains complete on its own.</p>
-      <a href="/clarity/" class="clarity-teaser-link">Learn about the Clarity Program →</a>
+  <section class="clarity-teaser">
+    <div class="rd-wrap">
+      <div class="clarity-box">
+        <div class="clarity-text">
+          <h2 class="clarity-h2 rd-serif">The Clarity Program</h2>
+          <p>Some of our members want more than excellent primary care — they want a structured, year-long diagnostic program built around prevention: whole-body imaging, advanced biomarkers, continuous metabolic and performance data, all read by a physician who tracks how everything moves over time.</p>
+          <p>We built The Clarity Program for those members. It's an optional, separate program — not a required upgrade, and not the standard of care here. Standard membership remains the foundation, and it remains complete on its own.</p>
+        </div>
+        <a href="/clarity/" class="rd-link clarity-link">Learn about the Clarity Program →</a>
+      </div>
     </div>
   </section>
 
-  <!-- 10 FAQ — objections first -->
+  <!-- 9 FAQ — objections first -->
   <FAQSection faqs={faqs} />
 
-  <!-- 11 Final CTA — homepage-specific props; the component's defaults are
+  <!-- 10 Final CTA — homepage-specific props; the component's defaults are
        shared with eight other routes and must not be edited here. -->
   <CTABanner
     headline="Start with a conversation, not a commitment."
@@ -118,60 +117,30 @@ const breadcrumb = {
 </MainLayout>
 
 <style>
-  /* The header is sticky, so an in-page anchor needs clearance or the section
-     heading lands underneath it. */
-  .anchor-target {
-    scroll-margin-top: 120px;
-  }
+  .anchor-target { scroll-margin-top: 24px; }
 
-  /* Clarity teaser */
-  .clarity-teaser-section {
-    background: var(--cream-100);
-    padding: calc(var(--section-pad) * 0.5) 0;
+  /* Clarity teaser: a bordered box, link at right */
+  .clarity-teaser { background: var(--linen); padding: 80px 0 0; }
+  .clarity-box {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+    align-items: center;
+    padding: 40px 44px;
+    border: 1px solid var(--hairline-strong);
   }
-  .clarity-teaser-container {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 clamp(20px, 5vw, 48px);
-    text-align: center;
-  }
-  .clarity-teaser-eyebrow {
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--green-500);
-    margin: 0 0 0.65rem;
-  }
-  .clarity-teaser-h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-    font-weight: 300;
-    color: var(--ink-900);
-    margin: 0 0 1.25rem;
-    line-height: 1.25;
-  }
-  .clarity-teaser-body {
-    font-size: 0.95rem;
-    font-weight: 300;
-    line-height: 1.75;
-    color: var(--ink-500);
-    max-width: 540px;
-    margin: 0 auto 0.85rem;
-  }
-  .clarity-teaser-link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--green-500);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: transparent;
-    transition: text-decoration-color 0.2s, color 0.15s;
-  }
-  .clarity-teaser-link:hover {
-    color: #3D6B55;
-    text-decoration-color: currentColor;
+  .clarity-text { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+  .clarity-h2 { font-size: 30px; line-height: 1.15; color: var(--forest); margin: 0; }
+  .clarity-text p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-700); }
+  .clarity-link { white-space: nowrap; }
+
+  /* The FAQ follows directly; its own top padding is reduced here so the
+     teaser box and the FAQ read as one run, as on the board. */
+  .clarity-teaser + :global(.faq-section) { padding-top: 16px; }
+
+  @media (max-width: 860px) {
+    .clarity-teaser { padding-top: 64px; }
+    .clarity-box { grid-template-columns: 1fr; gap: 20px; padding: 24px 20px; }
+    .clarity-link { white-space: normal; }
   }
 </style>

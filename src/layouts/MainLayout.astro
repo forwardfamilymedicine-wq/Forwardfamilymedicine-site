@@ -93,6 +93,11 @@ const schemas = [
   </main>
   <Footer />
   <ConsentBanner />
+  <script>
+    // Scroll-reveal for every [data-reveal] element; see src/scripts/reveal.ts.
+    import { initReveal } from '../scripts/reveal';
+    initReveal();
+  </script>
   <script is:inline>
     // Single delegated listener covers every SigmaMD enrollment link
     // site-wide (Header, membership, contact, new-patients) without

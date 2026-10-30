@@ -1,143 +1,116 @@
 ---
-import { Image } from 'astro:assets';
-import ffmTeamPhoto from '../../assets/staff/ffm-team.jpg';
+/**
+ * Homepage hero, per design/boards/Main.dc.html: copy left, the Wayne
+ * window-chairs photo right, a hairline and three plain facts below.
+ */
+import { Picture } from 'astro:assets';
+import windowChairs from '../../assets/office/wayne-window-chairs.jpg';
 ---
 
 <section class="hero" aria-label="Hero">
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <span class="section-label">Wayne, PA &middot; Malvern, PA</span>
-      <h1>Primary care with the time to know you.</h1>
-      <p class="hero-sub">
-        Forward Family Medicine is a membership primary care practice in Wayne, PA.
-        Visits run one to two hours. You reach your doctor directly by phone, text,
-        or email. Each physician caps their panel at roughly 250 patients. We are the
-        only Direct Primary Care practice on the Main Line with in-person,
-        board-certified Lifestyle Medicine included in every membership.
-      </p>
-      <div class="hero-ctas">
-        <a href="/contact/" class="btn btn-accent hero-btn-primary">Schedule a Free Meet &amp; Greet</a>
-        <a href="#meet-your-doctor" class="btn btn-outline hero-btn-secondary">Meet the physicians accepting patients</a>
+  <div class="rd-wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="rd-eyebrow">Wayne, PA &middot; Malvern, PA</p>
+        <h1 class="hero-h1 rd-serif">Primary care with the time to know you.</h1>
+        <p class="hero-sub">
+          Forward Family Medicine is a membership primary care practice in Wayne, PA.
+          Visits run one to two hours. You reach your doctor directly by phone, text,
+          or email. Each physician caps their panel at roughly 250 patients. We are the
+          only Direct Primary Care practice on the Main Line with in-person,
+          board-certified Lifestyle Medicine included in every membership.
+        </p>
+        <div class="hero-ctas">
+          <a href="/contact/" class="btn-forest">Schedule a Free Meet &amp; Greet</a>
+          <a href="#meet-your-doctor" class="rd-link">Meet the physicians accepting patients</a>
+        </div>
       </div>
-      <div class="hero-trust">
-        <span class="trust-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="trust-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Accepting new patients now
-        </span>
-        <span class="trust-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="trust-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Free meet &amp; greet, no obligation
-        </span>
-        <span class="trust-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="trust-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          No insurance required
-        </span>
-      </div>
+      <Picture
+        src={windowChairs}
+        alt="Two green armchairs by a sunlit window in the Wayne office"
+        widths={[480, 720, 960, 1200]}
+        sizes="(max-width: 860px) calc(100vw - 40px), 470px"
+        formats={['avif', 'webp']}
+        loading="eager"
+        fetchpriority="high"
+        class="hero-img"
+        pictureAttributes={{ class: 'hero-pic' }}
+      />
     </div>
-    <div class="hero-visual">
-      <div class="hero-image-wrap">
-        <Image
-          src={ffmTeamPhoto}
-          alt="The Forward Family Medicine team at our Wayne, PA practice — Dr. David Bigley, Dr. Philip Lieberman, and Dr. Brian Landi"
-          width={560}
-          widths={[400, 560, 800, 1120]}
-          sizes="(max-width: 768px) calc(100vw - 32px), 560px"
-          format="webp"
-          quality={82}
-          loading="eager"
-          fetchpriority="high"
-          class="hero-img"
-        />
-      </div>
-    </div>
+    <div class="rd-hair hero-hair"></div>
+    <ul class="hero-facts">
+      <li>Accepting new patients now</li>
+      <li>Free meet &amp; greet, no obligation</li>
+      <li>No insurance required</li>
+    </ul>
   </div>
 </section>
 
 <style>
   .hero {
-    background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);
-    padding: clamp(48px, 8vw, 96px) 0;
-    overflow: hidden;
+    background: var(--linen);
+    padding: 96px 0 72px;
   }
-  .hero-inner {
+  .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: clamp(2rem, 5vw, 5rem);
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 64px;
+    align-items: end;
   }
-  .hero-content .section-label {
-    margin-bottom: 1rem;
-  }
-  .hero-content h1 {
-    margin-bottom: 1.25rem;
-    color: var(--ink-900);
+  .hero-content { display: flex; flex-direction: column; gap: 28px; }
+  .hero-h1 {
+    font-size: 72px;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: var(--forest);
+    max-width: 10.5ch;
+    margin: 0;
   }
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    color: var(--ink-700);
-    max-width: 540px;
-    margin-bottom: 2rem;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text-900);
+    max-width: 560px;
+    margin: 0;
   }
   .hero-ctas {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 1.75rem;
-  }
-  .hero-btn-primary {
-    font-size: 1.05rem;
-    padding: 0.9rem 2rem;
-  }
-  .hero-btn-secondary {
-    font-size: 1.05rem;
-    padding: 0.9rem 2rem;
-  }
-  .hero-trust {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
-  }
-  .trust-item {
-    display: inline-flex;
+    gap: 14px;
     align-items: center;
-    gap: 0.35rem;
-    font-size: 0.85rem;
-    color: var(--ink-500);
-    font-weight: 500;
+    margin-top: 6px;
   }
-  .trust-icon {
-    color: var(--green-400);
-    flex-shrink: 0;
-  }
-
-  /* Visual */
-  .hero-visual {
-    position: relative;
-  }
-  .hero-image-wrap {
-    position: relative;
-    border-radius: 20px;
-    overflow: visible;
-  }
+  .hero-pic { display: block; }
   .hero-img {
+    display: block;
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: top center;
-    box-shadow: var(--shadow-lg);
-    max-height: 560px;
+    object-position: 60% 50%;
+    border-radius: 2px;
   }
-  @media (max-width: 768px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-    }
-    .hero-visual {
-      order: -1;
-    }
-    .hero-img {
-      max-height: 320px;
-    }
+  .hero-hair { margin-top: 56px; }
+  .hero-facts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero-facts li {
+    flex: 1 1 200px;
+    padding: 22px 32px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sage-600);
+  }
+  .hero-facts li:last-child { padding-right: 0; }
+
+  @media (max-width: 860px) {
+    .hero { padding: 64px 0; }
+    .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+    .hero-h1 { font-size: 42px; max-width: none; }
+    .hero-hair { margin-top: 36px; }
   }
 </style>

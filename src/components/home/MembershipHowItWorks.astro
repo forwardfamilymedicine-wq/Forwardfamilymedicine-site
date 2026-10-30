@@ -1,56 +1,115 @@
 ---
 /**
- * Step 8 of the homepage hierarchy: the "how", arriving after the experience
- * rather than before it. This is the page's second dark band — it anchors the
- * lower half the way the difference section anchors the upper half.
- *
- * Deliberately carries no CTA. The pricing section immediately below it does.
+ * How membership works, with what it costs beside it. Figures are mirrored
+ * from src/pages/membership.astro and must stay in sync with it: $200/month
+ * individual, family from $175 down to $100 per person, six-month minimum,
+ * 30 days' written notice.
  */
 ---
 
-<section class="how-it-works section" aria-label="How membership works">
-  <div class="container how-inner">
-    <span class="section-label how-label">How It Works</span>
-    <h2 class="how-title">Membership, simply</h2>
-    <p>
-      You pay a flat monthly fee directly to the practice. We don't bill insurance,
-      which is what makes the small panel and the long visit financially possible in
-      the first place.
-    </p>
-    <p>
-      Membership covers your primary care. Most members pair it with a high-deductible
-      plan for hospitalization, surgery, and specialist care. Nothing about your visit
-      is shaped by what a billing code will reimburse.
-    </p>
+<section class="how" aria-label="How membership works">
+  <div class="rd-wrap how-grid">
+    <div class="how-text">
+      <h2 class="rd-h2">How membership works</h2>
+      <p>
+        You pay a flat monthly fee directly to the practice. We don't bill insurance,
+        which is what makes the small panel and the long visit financially possible in
+        the first place.
+      </p>
+      <p>
+        Membership covers your primary care. Most members pair it with a high-deductible
+        plan for hospitalization, surgery, and specialist care. Nothing about your visit
+        is shaped by what a billing code will reimburse.
+      </p>
+    </div>
+
+    <div class="costs">
+      <p class="rd-eyebrow costs-label">What membership costs</p>
+      <div class="costs-grid">
+        <div class="cost cost--left">
+          <div class="cost-name">Individual</div>
+          <div class="cost-figure rd-serif">$200<span class="cost-unit">/month</span></div>
+          <p class="cost-body">
+            One flat monthly fee covering unlimited visits with no copay, same-day and
+            next-day appointments, direct phone, text, and email access to your
+            physician, preventive and chronic care, minor in-office procedures,
+            telehealth, specialist coordination, and Lifestyle Medicine. Labs and
+            medications are passed through at wholesale.
+          </p>
+        </div>
+        <div class="cost cost--right">
+          <div class="cost-name">Family</div>
+          <div class="cost-figure rd-serif"><span class="cost-unit cost-unit--lead">from</span>$175<span class="cost-unit cost-unit--tail">per person/month</span></div>
+          <p class="cost-body">
+            The per-person rate decreases as the family grows, down to $100 per person
+            at five or more members. Children are welcome at every age.
+          </p>
+        </div>
+      </div>
+      <p class="costs-terms">
+        <strong>Terms, stated plainly:</strong> membership carries a six-month minimum
+        commitment from your enrollment date. After that it's month to month, and
+        cancelling takes 30 days' written notice. There is no enrollment fee, no copay,
+        and nothing else billed for primary care. Many members can pay with HSA funds
+        following the Primary Care Enhancement Act, effective January 1, 2026 &mdash;
+        confirm with your plan administrator.
+      </p>
+      <div class="costs-ctas">
+        <a href="/membership/" class="btn-ghost">See all membership tiers &rarr;</a>
+        <a href="/contact/" class="btn-forest">Schedule a free meet &amp; greet</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .how-it-works {
-    background: var(--green-500);
+  .how {
+    background: var(--linen-50);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 96px 0;
   }
-  .how-inner {
-    max-width: 780px;
+  .how-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 72px;
+    align-items: start;
   }
-  /* The shared .section-label green disappears against the green band. */
-  .how-label {
-    color: var(--green-200);
-  }
-  .how-title {
-    color: white;
-    margin-bottom: 1.5rem;
-  }
-  .how-it-works p {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.85;
-    margin-bottom: 1.25rem;
-  }
-  .how-it-works p:last-child {
-    margin-bottom: 0;
-  }
+  .how-text { display: flex; flex-direction: column; gap: 16px; }
+  .how-text p { font-size: 15px; line-height: 1.7; color: var(--text-700); margin: 0; }
 
-  @media (max-width: 700px) {
-    .how-it-works p { font-size: 1rem; }
+  .costs { display: flex; flex-direction: column; }
+  .costs-label { margin-bottom: 18px; }
+  .costs-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .cost { padding: 28px 0; border-top: 1px solid var(--forest); display: flex; flex-direction: column; gap: 10px; }
+  .cost--left { padding-right: 32px; border-right: 1px solid var(--hairline-strong); }
+  .cost--right { padding-left: 32px; }
+  .cost-name { font-size: 14px; font-weight: 600; color: var(--sage-600); }
+  .cost-figure { font-size: 52px; line-height: 1.05; color: var(--forest); letter-spacing: -0.02em; }
+  .cost-unit { display: inline-block; font-size: 18px; color: var(--text-600); letter-spacing: 0; }
+  .cost-unit--lead { margin-right: 0.3em; }
+  .cost-unit--tail { margin-left: 0.3em; }
+  .cost-body { margin: 6px 0 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
+  .costs-terms {
+    margin: 0;
+    padding: 22px 0 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-600);
+  }
+  .costs-terms strong { color: var(--forest); }
+  .costs-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; align-items: center; }
+
+  @media (max-width: 860px) {
+    .how { padding: 64px 0; }
+    .how-grid { grid-template-columns: 1fr; gap: 28px; }
+    .costs-grid { grid-template-columns: 1fr; }
+    .cost--left { padding-right: 0; border-right: 0; }
+    .cost--right { padding-left: 0; }
+    .cost-figure { font-size: 40px; }
+  }
+  @media (max-width: 560px) {
+    .costs-ctas a { width: 100%; }
   }
 </style>

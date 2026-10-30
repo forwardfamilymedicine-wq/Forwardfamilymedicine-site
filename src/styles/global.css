@@ -536,3 +536,163 @@ tbody tr:hover {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ============================================================
+   Redesign foundation (2026 boards). Everything below is additive:
+   no token or rule above this line changed. Tokens are the board
+   palette; `.rd-*` classes are the board's layout primitives; the
+   four pill buttons are the board's button system.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --linen:        #F7F3EC;   /* page background */
+  --linen-50:     #FBF9F4;   /* lighter linen: header, alternate bands, cards */
+  --linen-300:    #ECE6DA;   /* placeholder, nav hover */
+  --hairline:     #E6DFD2;   /* section rules */
+  --hairline-strong: #DCD5C8;/* row rules, table rules */
+  --hairline-dot: #B4A992;   /* separator dots, dashed borders */
+  --sage-50:      #EEF1EA;   /* sage wash cards */
+  --sage:         #8FAB8E;   /* sage: accents, active underline, buttons on forest */
+  --sage-600:     #4E6C50;   /* dark sage: the CTA green, labels */
+  --forest:       #1E2D1F;   /* forest: headings, dark bands */
+  --gold:         #B8873A;   /* status lines, numerals */
+  /* Text ramp */
+  --text-900:     #2C2C2A;
+  --text-700:     #444441;
+  --text-600:     #5F5E5A;
+  --text-500:     #888780;
+  --text-400:     #A39E92;
+  /* Text on forest */
+  --on-forest:        #EEEAE1;
+  --on-forest-muted:  #D9DCD2;
+  --on-forest-faint:  #C9D2C6;
+  --linen-55:     rgba(247, 243, 236, 0.55);
+  --linen-08:     rgba(247, 243, 236, 0.08);
+  --shadow-menu:  0 18px 30px -24px rgba(30, 45, 31, 0.35);
+  /* Layout */
+  --content-w:        1180px;
+  --content-pad:      40px;
+  --content-pad-phone: 20px;
+  --section-y:        96px;
+  --section-y-phone:  64px;
+}
+
+/* Layout primitives */
+.rd-wrap {
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: 0 var(--content-pad);
+}
+.rd-section { padding: var(--section-y) 0; }
+.rd-hair { height: 1px; background: var(--hairline-strong); }
+
+/* Type */
+.rd-serif { font-family: var(--font-heading); font-weight: 400; }
+.rd-h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.02;
+  letter-spacing: -0.018em;
+  color: var(--forest);
+  margin: 0;
+}
+.rd-h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--forest);
+  margin: 0;
+}
+.rd-h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--forest);
+  margin: 0;
+}
+.rd-lede {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--forest);
+  margin: 0;
+}
+.rd-body { font-size: 16px; line-height: 1.7; color: var(--text-900); margin: 0; }
+.rd-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-600);
+  margin: 0;
+}
+.rd-eyebrow--gold { color: var(--gold); }
+.rd-eyebrow--muted { color: var(--text-500); }
+.rd-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sage-600);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 2px;
+  transition: color 0.18s, border-color 0.18s;
+}
+.rd-link:hover { color: var(--forest); border-color: var(--forest); }
+
+/* Buttons: 48px pills, 1px border, no lift. Usable alone or with .btn. */
+.btn-forest,
+.btn-sage,
+.btn-ghost,
+.btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 26px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.btn-forest:hover, .btn-forest:active,
+.btn-sage:hover, .btn-sage:active,
+.btn-ghost:hover, .btn-ghost:active,
+.btn-ghost-light:hover, .btn-ghost-light:active { transform: none; }
+.btn-forest { background: var(--sage-600); color: var(--linen); border-color: var(--sage-600); }
+.btn-forest:hover { background: var(--forest); border-color: var(--forest); color: var(--linen); }
+.btn-sage { background: var(--sage); color: var(--forest); border-color: var(--sage); }
+.btn-sage:hover { background: var(--linen); border-color: var(--linen); color: var(--forest); }
+.btn-ghost { background: transparent; color: var(--forest); border-color: var(--forest); }
+.btn-ghost:hover { background: var(--forest); color: var(--linen); }
+.btn-ghost-light { background: transparent; color: var(--linen); border-color: var(--linen-55); }
+.btn-ghost-light:hover { background: var(--linen-08); border-color: var(--linen); color: var(--linen); }
+.btn-sm { min-height: 42px; padding: 0 20px; font-size: 13px; }
+
+/* Reveal: [data-reveal] elements get .on once ~30% visible (src/scripts/reveal.ts).
+   Components define their own transitions keyed on .on. With reduced motion
+   the utility adds .on on load and nothing transitions. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal], [data-reveal] * { transition: none !important; animation: none !important; }
+}
+
+@media (max-width: 860px) {
+  .rd-wrap { padding: 0 var(--content-pad-phone); }
+  .rd-section { padding: var(--section-y-phone) 0; }
+  .rd-h1 { font-size: 40px; }
+  .rd-h2 { font-size: 30px; }
+  .rd-h3 { font-size: 21px; }
+}

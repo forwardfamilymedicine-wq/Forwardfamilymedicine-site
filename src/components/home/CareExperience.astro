@@ -1,6 +1,6 @@
 ---
 /**
- * Step 5 of the homepage hierarchy: the felt experience.
+ * What care here actually feels like: sticky heading left, ruled list right.
  *
  * Copy rule: every item is a feature translated into what it means for the
  * patient. The heading is the feature, the body is the implication. No
@@ -8,6 +8,8 @@
  * something the practice already publishes (visit length, direct access,
  * same-day availability, the ~250 panel cap, referral coordination).
  */
+import RuledList from '../shared/RuledList.astro';
+
 const experience = [
   {
     feature: 'Visits that run one to two hours',
@@ -32,60 +34,44 @@ const experience = [
 ];
 ---
 
-<section class="care-experience section" aria-label="What care feels like">
-  <div class="container">
-    <div class="care-header">
-      <span class="section-label">What to Expect</span>
-      <h2 class="section-title">What care here actually feels like</h2>
-      <p class="section-intro">The model exists to produce one specific experience. This is that experience.</p>
+<section class="care rd-section" aria-label="What care feels like">
+  <div class="rd-wrap care-grid">
+    <div class="care-head">
+      <h2 class="rd-h2">What care here actually feels like</h2>
+      <p class="care-intro">The model exists to produce one specific experience. This is that experience.</p>
     </div>
-
-    <div class="care-grid">
+    <RuledList as="ol" size="lg" class="care-list">
       {experience.map(item => (
-        <div class="care-item">
-          <h3>{item.feature}</h3>
-          <p>{item.value}</p>
-        </div>
+        <li>
+          <h3 class="rd-h3">{item.feature}</h3>
+          <p class="care-body">{item.value}</p>
+        </li>
       ))}
-    </div>
+    </RuledList>
   </div>
 </section>
 
 <style>
-  .care-experience {
-    background: var(--cream-50);
-  }
-  .care-header {
-    margin-bottom: 2.5rem;
-  }
+  .care { background: var(--linen); }
   .care-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 2.5rem;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 72px;
+    align-items: start;
   }
-  /* Green rule instead of a card: this section is a read, and boxing five
-     blocks would compete with the provider cards directly above it. */
-  .care-item {
-    border-left: 3px solid var(--green-200);
-    padding-left: 1.5rem;
+  .care-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 40px;
   }
-  .care-item h3 {
-    font-size: 1.15rem;
-    color: var(--ink-900);
-    margin-bottom: 0.6rem;
-  }
-  .care-item p {
-    font-size: 0.95rem;
-    color: var(--ink-700);
-    line-height: 1.75;
-    margin: 0;
-  }
+  .care-intro { font-size: 16px; line-height: 1.7; color: var(--text-700); margin: 0; }
+  .care-list :global(li) { display: flex; flex-direction: column; gap: 8px; }
+  .care-body { font-size: 15px; line-height: 1.7; color: var(--text-700); margin: 0; }
 
   @media (max-width: 860px) {
-    .care-grid {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-    .care-item { padding-left: 1.25rem; }
+    .care-grid { grid-template-columns: 1fr; gap: 28px; }
+    .care-head { position: static; }
   }
 </style>

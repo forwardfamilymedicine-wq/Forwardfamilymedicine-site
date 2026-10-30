@@ -1,13 +1,22 @@
 ---
+/**
+ * Lifestyle Medicine on a forest band: the case on the left, the "included
+ * in every membership" card on the right.
+ */
+import RuledList from '../shared/RuledList.astro';
+
+const credentials = [
+  { title: 'Board-Certified', sub: 'American Board of Lifestyle Medicine' },
+  { title: 'Culinary Arts + Nutrition Science', sub: 'Pre-medical training in food and metabolism' },
+  { title: 'Built a Physician Training Curriculum', sub: 'Dr. Lieberman trained other physicians in Lifestyle Medicine' },
+];
 ---
 
-<section class="lm-teaser section" aria-label="Lifestyle Medicine">
-  <div class="container lm-inner">
+<section class="lm" aria-label="Lifestyle Medicine">
+  <div class="rd-wrap lm-grid">
     <div class="lm-content">
-      <span class="section-label">What Makes Us Unique</span>
-      <h2>We don't just talk about lifestyle. We make it part of your care.</h2>
-      <div class="divider"></div>
-      <p>
+      <h2 class="lm-h2 rd-serif">We don't just talk about lifestyle. We make it part of your care.</h2>
+      <p class="lm-text">
         Lifestyle medicine is an evidence-based clinical specialty focused on preventing,
         treating, and reversing chronic disease through nutrition, movement, sleep, and
         stress. Dr. Lieberman is board-certified in it alongside Family Medicine, and
@@ -16,142 +25,93 @@
         nutrition science before medical school, which is what lets him make the food
         part of a plan specific enough to follow.
       </p>
-      <p>
+      <p class="lm-pull rd-serif">
         At Forward Family Medicine, lifestyle medicine is built into how we
         practice, not an afterthought.
       </p>
-      <div class="lm-highlights">
-        <div class="lm-highlight">
-          <span class="lm-highlight-icon" aria-hidden="true" style="color: var(--green-400);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-            </svg>
-          </span>
+      <div class="lm-creds">
+        {credentials.map(c => (
           <div>
-            <strong>Board-Certified</strong>
-            <span>American Board of Lifestyle Medicine</span>
+            <div class="lm-cred-title">{c.title}</div>
+            <div class="lm-cred-sub">{c.sub}</div>
           </div>
-        </div>
-        <div class="lm-highlight">
-          <span class="lm-highlight-icon" aria-hidden="true" style="color: var(--green-400);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
-              <path d="M7 2v20"/>
-              <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
-            </svg>
-          </span>
-          <div>
-            <strong>Culinary Arts + Nutrition Science</strong>
-            <span>Pre-medical training in food and metabolism</span>
-          </div>
-        </div>
-        <div class="lm-highlight">
-          <span class="lm-highlight-icon" aria-hidden="true" style="color: var(--green-400);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-              <path d="M12 11h4"/>
-              <path d="M12 16h4"/>
-              <path d="M8 11h.01"/>
-              <path d="M8 16h.01"/>
-            </svg>
-          </span>
-          <div>
-            <strong>Built a Physician Training Curriculum</strong>
-            <span>Dr. Lieberman trained other physicians in Lifestyle Medicine</span>
-          </div>
-        </div>
+        ))}
       </div>
-      <a href="/lifestyle-medicine/" class="btn btn-primary lm-cta">
-        Learn About Our Lifestyle Medicine Approach →
-      </a>
+      <a href="/lifestyle-medicine/" class="btn-sage lm-cta">Learn About Our Lifestyle Medicine Approach →</a>
     </div>
-    <div class="lm-callout card">
-      <h3>Lifestyle Medicine, built into primary care.</h3>
-      <p class="lm-callout-lead">
+
+    <div class="lm-card">
+      <p class="rd-eyebrow">Included in every membership</p>
+      <h3 class="lm-card-h3 rd-serif">Lifestyle Medicine, built into primary care.</h3>
+      <p class="lm-card-lead">
         No other local DPC practice offers it at all. We offer it in person, integrated into every visit — included in your membership.
       </p>
-      <ul class="prose-list">
+      <RuledList size="sm" class="lm-list">
         <li>Personalized nutrition guidance from a culinary-trained physician</li>
         <li>Evidence-based protocols for diabetes, hypertension &amp; heart health</li>
         <li>Physical activity planning that fits your real life</li>
         <li>Sleep optimization and stress management</li>
         <li>Ongoing accountability — not a one-time conversation</li>
-        <li>No extra fee — included in your DPC membership</li>
-      </ul>
+        <li class="lm-list-last">No extra fee — included in your DPC membership</li>
+      </RuledList>
     </div>
   </div>
 </section>
 
 <style>
-  .lm-teaser {
-    background: var(--cream-100);
+  .lm {
+    background: var(--forest);
+    color: var(--linen);
+    padding: 104px 0;
   }
-  .lm-inner {
+  .lm-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: clamp(2rem, 5vw, 5rem);
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 72px;
     align-items: start;
   }
-  .lm-content h2 {
-    margin-bottom: 1rem;
+  .lm-content { display: flex; flex-direction: column; gap: 22px; }
+  .lm-h2 {
+    font-size: 52px;
+    line-height: 1.06;
+    letter-spacing: -0.012em;
+    color: var(--linen);
+    margin: 0;
   }
-  .lm-content p {
-    color: var(--ink-700);
-    margin-bottom: 1.25rem;
+  .lm-text { font-size: 17px; line-height: 1.7; color: var(--on-forest); max-width: 560px; margin: 0; }
+  .lm-pull { font-size: 26px; line-height: 1.35; color: var(--linen); max-width: 560px; margin: 4px 0 0; }
+  .lm-creds {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--sage);
   }
-  .lm-highlights {
+  .lm-cred-title { font-size: 15px; font-weight: 600; color: var(--linen); }
+  .lm-cred-sub { font-size: 13px; color: var(--on-forest-faint); margin-top: 4px; line-height: 1.5; }
+  .lm-cta { align-self: flex-start; margin-top: 10px; }
+
+  .lm-card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin: 1.75rem 0;
+    gap: 16px;
+    padding: 36px 36px 28px;
+    background: var(--linen);
+    border-top: 4px solid var(--sage);
+    color: var(--forest);
   }
-  .lm-highlight {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  .lm-highlight-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-  .lm-highlight strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--ink-900);
-  }
-  .lm-highlight span {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-  }
-  .lm-cta {
-    margin-top: 0.5rem;
-  }
-
-  /* Callout card */
-  .lm-callout {
-    background: linear-gradient(135deg, var(--green-50) 0%, var(--cream-200) 100%);
-    border: 2px solid var(--green-300);
-  }
-  .lm-callout h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-  .lm-callout-lead {
-    font-size: 0.9rem;
-    color: var(--ink-700);
-    margin-bottom: 1.25rem;
-    line-height: 1.65;
-  }
+  .lm-card-h3 { font-size: 28px; line-height: 1.15; color: var(--forest); margin: 0; }
+  .lm-card-lead { font-size: 15px; line-height: 1.7; color: var(--text-700); margin: 0; }
+  .lm-list { margin-top: 6px; }
+  .lm-list :global(.lm-list-last) { color: var(--sage-600); font-weight: 600; }
 
   @media (max-width: 860px) {
-    .lm-inner {
-      grid-template-columns: 1fr;
-    }
-    .lm-callout {
-      order: -1;
-    }
+    .lm { padding: 64px 0; }
+    .lm-grid { grid-template-columns: 1fr; gap: 28px; }
+    .lm-h2 { font-size: 34px; }
+    .lm-pull { font-size: 22px; }
+    .lm-creds { grid-template-columns: 1fr; gap: 16px; }
+    .lm-card { padding: 28px 22px 22px; }
   }
 </style>
