@@ -4,6 +4,8 @@ import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAvailability } from '../../utils/availability';
 import { isPlanned } from '../../utils/physicianRouting';
+import { ORG_ID } from '../../utils/practiceSchema';
+import { physicianNode, headshotUrl, awardLabel, HEADSHOT } from '../../utils/physicianSchema';
 import TestimonialCard from '../../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
 
@@ -91,42 +93,27 @@ const cityString = cityNames.length <= 1
     : `${cityNames.slice(0, -1).join(', ')}, and ${cityNames[cityNames.length - 1]}`;
 const inCities = cityString ? ` in ${cityString}` : '';
 
-// Physician awards, labelled "Organization Name, Year". The wording is the
-// award's own and must not be paraphrased.
+// Physician awards, labelled by awardLabel ("Organization Name, Year"). The
+// wording is the award's own and must not be paraphrased.
 const awards: any[] = isPhysician ? (d.awards ?? []) : [];
-const awardLabel = (a: any) => `${a.organization} ${a.name}, ${a.year}`;
 
 const pageDescription = isPhysician
   ? `Meet ${credentialedName}, ${d.title} at Forward Family Medicine${inCities}. ${d.boardStatus === 'board-certified' ? 'Board-certified' : 'Board-eligible'} in ${d.boardSpecialties.join(' and ')}.`
   : `Meet ${credentialedName}, ${d.title} at Forward Family Medicine${inCities}.`;
 
-const memberSchema = isPhysician ? {
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "name": credentialedName,
-  "honorificSuffix": d.credentials,
-  "jobTitle": d.title,
-  "image": d.photo ? `${siteUrl}${d.photo.src}` : undefined,
-  "medicalSpecialty": d.specialties,
-  "url": canonicalUrl,
-  "worksFor": { "@type": "MedicalBusiness", "name": "Forward Family Medicine", "url": siteUrl },
-  "alumniOf": d.education.filter((e: any) => e.institution).map((e: any) => ({ "@type": "CollegeOrUniversity", "name": e.institution })),
-  "memberOf": d.additionalCertifications?.length > 0
-    ? d.additionalCertifications.map((cert: any) => ({ "@type": "Organization", "name": cert.organization }))
-    : undefined,
-  "award": awards.length > 0 ? awards.map(awardLabel) : undefined,
-  "identifier": d.npi ? { "@type": "PropertyValue", "propertyID": "NPI", "value": d.npi } : undefined,
-  "sameAs": d.sameAs?.length > 0 ? d.sameAs : undefined,
-} : {
+// A physician's node comes from utils/physicianSchema.ts. A team member is a
+// Person; the team collection keeps their job title in `credentials` and a
+// location line in `title`, so the job title is `credentials`.
+const memberSchema = isPhysician ? await physicianNode(entry as any) : {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": credentialedName,
-  "honorificSuffix": d.credentials,
-  "jobTitle": d.title,
-  "image": d.photo ? `${siteUrl}${d.photo.src}` : undefined,
+  "@id": `${canonicalUrl}#person`,
+  "name": d.name,
+  "jobTitle": d.credentials,
+  "image": d.photo ? await headshotUrl(d.photo) : undefined,
   "knowsAbout": d.specialties,
   "url": canonicalUrl,
-  "worksFor": { "@type": "Organization", "name": "Forward Family Medicine", "url": siteUrl },
+  "worksFor": { "@id": ORG_ID },
 };
 
 const breadcrumb = {
@@ -155,7 +142,7 @@ const breadcrumb = {
       <div class="provider-hero-grid">
         <div class="provider-hero-photo">
           {d.photo ? (
-            <img src={d.photo.src} width={d.photo.width} height={d.photo.height} alt={d.photoAlt || credentialedName} class="provider-headshot" loading="eager" />
+            <Image src={d.photo} alt={d.photoAlt || credentialedName} {...HEADSHOT} sizes="(max-width: 900px) 280px, 320px" loading="eager" fetchpriority="high" class="provider-headshot" />
           ) : (
             <div class="provider-headshot provider-headshot--placeholder" role="img" aria-label="Photo coming soon">
               <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>

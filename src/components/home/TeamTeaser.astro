@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import ProviderCard from '../shared/ProviderCard.astro';
 import { getAvailability } from '../../utils/availability';
 import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
@@ -34,12 +35,15 @@ const showFounderBlock = founder && getAvailability(founder.data).status === 'fu
     {showFounderBlock && (
       <div class="founder-block">
         <div class="founder-header">
-          <img
-            src={drBigleyPhoto.src}
+          <Image
+            src={drBigleyPhoto}
             alt="Dr. David Bigley, DO, founder of Forward Family Medicine"
             class="founder-photo"
-            width="96"
-            height="96"
+            width={96}
+            widths={[96, 192, 288]}
+            sizes="(max-width: 540px) 72px, 96px"
+            format="webp"
+            quality={82}
             loading="lazy"
           />
           <div>

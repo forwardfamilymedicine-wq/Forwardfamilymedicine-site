@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
@@ -8,7 +9,7 @@ import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { getAvailability } from '../utils/availability';
-import { isListedOffice, officeRef } from '../utils/practiceSchema';
+import { physicianRef } from '../utils/physicianSchema';
 
 // Dr. Lieberman's name, credentials, photo, bio link and availability all come
 // from the providers collection — the same source meet-the-team, the homepage
@@ -17,9 +18,6 @@ const allProviders = await getCollection('providers');
 const lieberman = allProviders.find(p => p.id === 'philip-lieberman-md');
 const d = lieberman?.data;
 const availability = d ? getAvailability(d) : null;
-
-const wayne = (await getCollection('locations')).find(l => l.data.slug === 'wayne');
-if (!wayne) throw new Error('[lifestyle-medicine] no locations entry has the slug "wayne".');
 
 // Town list is derived from the local collection, never hardcoded, so a new
 // /local/lifestyle-medicine-*.md file appears here the moment it is added.
@@ -37,21 +35,9 @@ const breadcrumb = {
   ]
 };
 
-const physicianSchema = {
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "name": d ? `${d.name}, ${d.credentials}` : "Philip Lieberman, MD",
-  "identifier": d?.npi ?? "1669979316",
-  "medicalSpecialty": "LifestyleMedicine",
-  "worksFor": {
-    "@type": "MedicalOrganization",
-    "name": "Forward Family Medicine",
-    "url": "https://www.forwardfamilymedicine.com"
-  },
-  // The office node itself is in the site-wide graph on this page.
-  ...(isListedOffice(wayne) ? { "workLocation": [officeRef(wayne)] } : {}),
-  "url": d ? `https://www.forwardfamilymedicine.com/meet-the-team/${d.slug}/` : undefined
-};
+// The physician's node lives on their bio page; this page refers to it.
+if (!lieberman) throw new Error('[lifestyle-medicine] no providers entry "philip-lieberman-md".');
+const physicianSchema = physicianRef(lieberman);
 
 const faqs = [
   {
@@ -118,12 +104,15 @@ const faqs = [
         <div class="lm-hero-credential card">
           <div class="credential-header">
             {d?.photo ? (
-              <img
-                src={d.photo.src}
+              <Image
+                src={d.photo}
                 alt={d.photoAlt}
-                loading="eager"
-                width="120"
-                height="140"
+                width={72}
+                widths={[72, 144, 216]}
+                sizes="72px"
+                format="webp"
+                quality={82}
+                loading="lazy"
                 class="credential-photo"
               />
             ) : (

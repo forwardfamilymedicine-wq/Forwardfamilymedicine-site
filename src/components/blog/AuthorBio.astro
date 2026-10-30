@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
 import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
 import drLandiPhoto from '../../assets/staff/dr-brian-landi.jpg';
+import { authorSlug } from '../../utils/authors';
 
 export interface Props {
   author?: string;
@@ -9,19 +11,10 @@ export interface Props {
 
 const { author } = Astro.props;
 
-// Frontmatter author strings (and their aliases) → profile key.
-// Mirrors the authorDisplay maps in BlogLayout.astro and lifestyle/[...slug].astro.
-const AUTHOR_ALIASES: Record<string, string> = {
-  'Dr. David Bigley': 'bigley',
-  'David Bigley, DO': 'bigley',
-  'Dr. Philip Lieberman': 'lieberman',
-  'Philip Lieberman, MD': 'lieberman',
-  'Dr. Brian Landi': 'landi',
-  'Brian Landi, DO': 'landi',
-};
-
+// Keyed by the physician's slug; utils/authors.ts maps frontmatter author
+// strings (and their aliases) to it.
 const AUTHOR_PROFILES = {
-  bigley: {
+  'david-bigley-do': {
     photo: drBigleyPhoto,
     photoAlt: 'Dr. David Bigley, DO — Founder & Physician, Forward Family Medicine',
     name: 'David Bigley, DO',
@@ -29,7 +22,7 @@ const AUTHOR_PROFILES = {
     desc: 'Dr. Bigley founded Forward Family Medicine to practice medicine the way it was meant to be — with time, trust, and a genuine relationship with every patient.',
     href: '/meet-the-team/david-bigley-do/',
   },
-  lieberman: {
+  'philip-lieberman-md': {
     photo: drLiebermanPhoto,
     photoAlt: 'Dr. Philip Lieberman, MD — Family Medicine & Lifestyle Medicine, Forward Family Medicine',
     name: 'Philip Lieberman, MD',
@@ -37,7 +30,7 @@ const AUTHOR_PROFILES = {
     desc: 'Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with pre-medical training in nutrition and culinary arts. He helps patients use food, movement, sleep, and stress management to prevent and treat chronic disease.',
     href: '/meet-the-team/philip-lieberman-md/',
   },
-  landi: {
+  'brian-landi-do': {
     photo: drLandiPhoto,
     photoAlt: 'Dr. Brian Landi, DO — Family Medicine & Menopause Care, Forward Family Medicine',
     name: 'Brian Landi, DO',
@@ -50,18 +43,21 @@ const AUTHOR_PROFILES = {
 // Unknown or absent author (for example the practice-authored lifestyle
 // library, written as "Forward Family Medicine") falls back to Dr. Lieberman,
 // whose Lifestyle Medicine board certification matches that material.
-const profileKey = (author ? AUTHOR_ALIASES[author] : undefined) ?? 'lieberman';
+const profileKey = authorSlug(author) ?? 'philip-lieberman-md';
 const profile = AUTHOR_PROFILES[profileKey as keyof typeof AUTHOR_PROFILES];
 ---
 
 <aside class="author-bio" aria-label="About the author">
   <div class="author-bio-inner">
-    <img
-      src={profile.photo.src}
+    <Image
+      src={profile.photo}
       alt={profile.photoAlt}
       class="author-photo"
-      width="72"
-      height="72"
+      width={72}
+      widths={[72, 144, 216]}
+      sizes="72px"
+      format="webp"
+      quality={82}
       loading="lazy"
     />
     <div class="author-bio-text">

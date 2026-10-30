@@ -1,13 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import { getAvailability } from '../../utils/availability';
 
 interface Props {
   provider: CollectionEntry<'providers'> | CollectionEntry<'team'>;
   noLink?: boolean;
+  /** The card whose photo is the page's largest contentful paint: loaded eagerly, at high priority. */
+  priority?: boolean;
 }
 
-const { provider, noLink = false } = Astro.props;
+const { provider, noLink = false, priority = false } = Astro.props;
 const d = provider.data as any;
 const isPhysician = provider.collection === 'providers';
 // Availability is derived once, in src/utils/availability.ts.
@@ -21,13 +24,17 @@ const openingLabel = availability?.startLabel ?? null;
 <article class={`provider-card card${isPanelFull ? ' panel-full' : ''}`}>
   <div class="provider-card-photo-wrap">
     {d.photo ? (
-      <img
-        src={d.photo.src}
-        width={d.photo.width}
-        height={d.photo.height}
+      <Image
+        src={d.photo}
         alt={d.photoAlt || d.name}
+        width={360}
+        widths={[320, 640, 960]}
+        sizes="(max-width: 540px) calc(100vw - 32px), 360px"
+        format="webp"
+        quality={82}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : undefined}
         class="provider-card-photo"
-        loading="lazy"
       />
     ) : (
       <div class="provider-card-photo provider-card-photo--placeholder"

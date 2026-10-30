@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { isPlanned, openOfficesFor } from '../../utils/physicianRouting';
 import { formatMonthYear } from '../../utils/availability';
@@ -7,17 +8,24 @@ import { formatMonthYear } from '../../utils/availability';
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 const allProviders = await getCollection('providers');
+// Each chip's photo is the providers collection's own, so it is optimized like
+// every other headshot and a missing photo fails the build.
+const photoOf = (slug: string) => {
+  const photo = allProviders.find(p => p.data.slug === slug)?.data.photo;
+  if (!photo) throw new Error(`[locations] providers/${slug} has no photo.`);
+  return photo;
+};
 
 // Hand-maintained: names and titles must match src/content/providers/*.md and
 // src/content/team/*.md. Order mirrors displayOrder, so the physician accepting
 // new patients leads each location.
-const providersBySlug: Record<string, { name: string; title: string; href: string; photo: string }[]> = {
+const providersBySlug: Record<string, { name: string; title: string; href: string; photo: ImageMetadata }[]> = {
   'wayne': [
-    { name: 'Dr. Philip Lieberman, MD',   title: 'Family Medicine & Lifestyle Medicine Physician', href: '/meet-the-team/philip-lieberman-md/', photo: '/images/staff/dr-philip-lieberman.jpg' },
-    { name: 'Dr. David Bigley, DO',       title: 'Founder & Family Medicine Physician',            href: '/meet-the-team/david-bigley-do/',     photo: '/images/staff/dr-david-bigley.jpg' },
+    { name: 'Dr. Philip Lieberman, MD',   title: 'Family Medicine & Lifestyle Medicine Physician', href: '/meet-the-team/philip-lieberman-md/', photo: photoOf('philip-lieberman-md') },
+    { name: 'Dr. David Bigley, DO',       title: 'Founder & Family Medicine Physician',            href: '/meet-the-team/david-bigley-do/',     photo: photoOf('david-bigley-do') },
   ],
   'malvern': [
-    { name: 'Dr. Brian Landi, DO',        title: 'Family Medicine Physician',      href: '/meet-the-team/brian-landi-do/',    photo: '/images/staff/dr-brian-landi.jpg' },
+    { name: 'Dr. Brian Landi, DO',        title: 'Family Medicine Physician',      href: '/meet-the-team/brian-landi-do/',    photo: photoOf('brian-landi-do') },
   ],
 };
 
@@ -173,7 +181,7 @@ const breadcrumb = {
                     {providers.map(p => (
                       <li>
                         <a href={p.href} class="provider-chip">
-                          <img src={p.photo} alt={p.name} width="40" height="40" loading="lazy" />
+                          <Image src={p.photo} alt={p.name} width={40} widths={[40, 80, 120]} sizes="40px" format="webp" quality={82} loading="lazy" />
                           <span class="chip-info">
                             <span class="chip-name">{p.name}</span>
                             <span class="chip-title">{p.title}</span>

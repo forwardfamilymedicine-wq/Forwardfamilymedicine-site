@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
@@ -8,7 +9,7 @@ import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
 import TestimonialCard from '../components/shared/TestimonialCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { formatMonthYear } from '../utils/availability';
-import { isListedOffice, officeRef } from '../utils/practiceSchema';
+import { physicianRef } from '../utils/physicianSchema';
 
 const allProviders = await getCollection('providers');
 const landi = allProviders.find(p => p.id === 'brian-landi-do');
@@ -56,20 +57,9 @@ const breadcrumb = {
   ]
 };
 
-const physicianSchema = {
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "name": d ? `${d.name}, ${d.credentials}` : "Dr. Brian Landi, DO",
-  "identifier": d?.npi ?? "1578213062",
-  "medicalSpecialty": "Menopause",
-  "worksFor": {
-    "@type": "MedicalOrganization",
-    "name": "Forward Family Medicine",
-    "url": "https://www.forwardfamilymedicine.com"
-  },
-  // The office node itself is in the site-wide graph on this page.
-  ...(isListedOffice(malvern) ? { "workLocation": [officeRef(malvern)] } : {}),
-};
+// The physician's node lives on their bio page; this page refers to it.
+if (!landi) throw new Error('[menopause] no providers entry "brian-landi-do".');
+const physicianSchema = physicianRef(landi);
 
 const faqs = [
   {
@@ -137,12 +127,15 @@ const faqs = [
         <div class="lm-hero-credential card">
           <div class="credential-header">
             {d?.photo ? (
-              <img
-                src={d.photo.src}
+              <Image
+                src={d.photo}
                 alt={d.photoAlt}
-                loading="eager"
-                width="120"
-                height="140"
+                width={72}
+                widths={[72, 144, 216]}
+                sizes="72px"
+                format="webp"
+                quality={82}
+                loading="lazy"
                 class="credential-photo"
               />
             ) : (

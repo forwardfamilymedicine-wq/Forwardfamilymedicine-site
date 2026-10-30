@@ -5,7 +5,7 @@ date: "2026-10-23T09:00:00Z"
 author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["david bigley do", "main line today top doctor", "top doctor wayne pa", "forward family medicine", "direct primary care wayne pa"]
-image: "/images/blog/david-bigley-top-doctor-2026.jpg"
+image: ../../assets/blog/david-bigley-top-doctor-2026.jpg
 draft: false
 ---
 

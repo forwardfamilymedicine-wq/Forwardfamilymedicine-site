@@ -51,7 +51,7 @@ const breadcrumb = {
   <section class="providers-grid-section section" style="background: var(--cream-100);">
     <div class="container">
       <div class="providers-grid">
-        {members.map(m => <ProviderCard provider={m} noLink={!m.data.slug} />)}
+        {members.map((m, i) => <ProviderCard provider={m} noLink={!m.data.slug} priority={i === 0} />)}
       </div>
     </div>
   </section>

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 const CATEGORY_LABELS: Record<string, string> = {
   'direct-primary-care': 'Direct Primary Care',
   'lifestyle-medicine': 'Lifestyle Medicine',
@@ -14,10 +16,12 @@ export interface Props {
   date: string;
   slug: string;
   category?: string;
-  featuredImage?: string;
+  featuredImage?: ImageMetadata;
+  /** The first card in a grid, whose image is the page's largest contentful paint. */
+  priority?: boolean;
 }
 
-const { title, description, author, date, slug, category, featuredImage } = Astro.props;
+const { title, description, author, date, slug, category, featuredImage, priority = false } = Astro.props;
 const categoryLabel = category ? (CATEGORY_LABELS[category] ?? category) : null;
 
 const dateObj = new Date(date);
@@ -29,12 +33,16 @@ const dateISO = dateObj.toISOString();
   {featuredImage && (
     <a href={`/blog/${slug}/`} class="card-img-link" tabindex="-1" aria-hidden="true">
       <div class="card-img">
-        <img
+        <Image
           src={featuredImage}
           alt=""
-          loading="lazy"
-          width="600"
-          height="340"
+          width={360}
+          widths={[360, 720, 1080]}
+          sizes="(max-width: 540px) calc(100vw - 32px), (max-width: 860px) calc(50vw - 40px), 360px"
+          format="webp"
+          quality={82}
+          loading={priority ? 'eager' : 'lazy'}
+          fetchpriority={priority ? 'high' : undefined}
         />
       </div>
     </a>

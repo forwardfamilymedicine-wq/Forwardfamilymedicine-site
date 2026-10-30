@@ -5,7 +5,7 @@ date: "2026-05-04"
 author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["team", "west chester pa", "malvern pa", "chester county", "menopause", "direct primary care"]
-image: "/images/staff/dr-brian-landi.jpg"
+image: ../../assets/staff/dr-brian-landi.jpg
 draft: false
 ---
 

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import logo from '../../assets/logo/logo.png';
 
 const year = new Date().getFullYear();
@@ -9,12 +10,16 @@ const year = new Date().getFullYear();
 
     <div class="footer-brand">
       <a href="/" class="footer-logo" aria-label="Forward Family Medicine">
-        <img
-          src={logo.src}
+        <Image
+          src={logo}
           alt="Forward Family Medicine logo"
           class="footer-logo-img"
-          height="56"
-          width="auto"
+          height={56}
+          widths={[144, 288]}
+          sizes="126px"
+          format="webp"
+          quality={90}
+          loading="lazy"
         />
       </a>
       <p class="tagline">The Main Line's only Direct Primary Care practice with in-person, board-certified Lifestyle Medicine.</p>

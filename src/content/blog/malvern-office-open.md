@@ -5,7 +5,7 @@ date: "2026-10-22T12:00:00Z"
 author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["malvern pa", "direct primary care malvern", "menopause care malvern", "chester county", "dr brian landi", "family doctor malvern pa"]
-image: "/images/staff/dr-brian-landi.jpg"
+image: ../../assets/staff/dr-brian-landi.jpg
 draft: false
 ---
 

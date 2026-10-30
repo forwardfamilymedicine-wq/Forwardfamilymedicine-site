@@ -1,6 +1,8 @@
 ---
+import { getImage } from 'astro:assets';
 import MainLayout from './MainLayout.astro';
 import AuthorBio from '../components/blog/AuthorBio.astro';
+import { authorSlug } from '../utils/authors';
 
 const CATEGORY_LABELS: Record<string, string> = {
   'direct-primary-care': 'Direct Primary Care',
@@ -16,7 +18,7 @@ export interface Props {
   author: string;
   date: string;
   tags?: string[];
-  featuredImage?: string;
+  featuredImage?: ImageMetadata;
   slug: string;
   category?: string;
   readingTime?: number;
@@ -36,7 +38,14 @@ const authorLabel = authorDisplay[author] ?? author;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/blog/${slug}/`;
-const ogImage = featuredImage || `${siteUrl}/images/og-image.png`;
+// og:image and the Article image: an absolute URL to a 1200px-wide JPEG at the
+// image's own aspect ratio (never cropped here), declared at its real size.
+const og = featuredImage ? await getImage({ src: featuredImage, width: 1200, format: 'jpg', quality: 82 }) : null;
+const ogImage = og ? `${siteUrl}${og.src}` : `${siteUrl}/images/og-image.png`;
+const ogImageWidth = og ? Number(og.attributes.width) : 1200;
+const ogImageHeight = og ? Number(og.attributes.height) : 630;
+// The author's bio, when the author is one of our physicians.
+const authorBioSlug = authorSlug(author);
 
 const dateObj = new Date(date);
 const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -49,7 +58,8 @@ const articleSchema = {
   "description": description,
   "author": {
     "@type": "Person",
-    "name": author
+    "name": author,
+    ...(authorBioSlug ? { "url": `${siteUrl}/meet-the-team/${authorBioSlug}/` } : {})
   },
   "datePublished": dateISO,
   "image": ogImage,
@@ -77,6 +87,8 @@ const breadcrumbSchema = {
   description={description}
   canonical={canonicalUrl}
   ogImage={ogImage}
+  ogImageWidth={ogImageWidth}
+  ogImageHeight={ogImageHeight}
   ogType="article"
   schema={[articleSchema, breadcrumbSchema]}
 >

@@ -5,7 +5,7 @@ date: "2026-10-23T10:00:00Z"
 author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["dr philip lieberman", "main line today top doctor", "lifestyle medicine wayne pa", "family doctor wayne pa", "forward family medicine"]
-image: "/images/blog/philip-lieberman-top-doctor-2026.jpg"
+image: ../../assets/blog/philip-lieberman-top-doctor-2026.jpg
 draft: false
 ---
 

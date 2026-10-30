@@ -56,11 +56,6 @@ const wayneDexaSchema = {
   "priceRange": "$$",
   "currenciesAccepted": "USD",
   "paymentAccepted": "Cash, credit card",
-  "isRelatedTo": {
-    "@type": "MedicalOrganization",
-    "@id": `${siteUrl}/#organization`,
-    "name": "Forward Family Medicine"
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "DEXA Scanning",
@@ -73,7 +68,7 @@ const wayneDexaSchema = {
         "availability": "https://schema.org/InStock",
         "url": externalUrl,
         "itemOffered": {
-          "@type": "MedicalTest",
+          "@type": "Service",
           "name": "Dual-energy X-ray absorptiometry (DEXA) scan"
         }
       }

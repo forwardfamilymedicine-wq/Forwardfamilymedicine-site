@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import logo from '../../assets/logo/logo.png';
 
 const navLinks = [
@@ -64,12 +65,16 @@ const isLocationsActive = currentPath.startsWith('/locations/');
 
       <!-- Logo -->
       <a href="/" class="logo" aria-label="Forward Family Medicine — Home">
-        <img
-          src={logo.src}
+        <Image
+          src={logo}
           alt="Forward Family Medicine logo"
           class="logo-img"
-          height="64"
-          width="auto"
+          height={64}
+          widths={[144, 288, 432]}
+          sizes="(max-width: 639px) 90px, (max-width: 1023px) 108px, 144px"
+          format="webp"
+          quality={90}
+          loading="eager"
         />
       </a>
 

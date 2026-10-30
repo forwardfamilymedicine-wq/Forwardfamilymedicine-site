@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import ffmTeamPhoto from '../../assets/staff/ffm-team.jpg';
 ---
 
@@ -35,12 +36,16 @@ import ffmTeamPhoto from '../../assets/staff/ffm-team.jpg';
     </div>
     <div class="hero-visual">
       <div class="hero-image-wrap">
-        <img
-          src={ffmTeamPhoto.src}
+        <Image
+          src={ffmTeamPhoto}
           alt="The Forward Family Medicine team at our Wayne, PA practice — Dr. David Bigley, Dr. Philip Lieberman, and Dr. Brian Landi"
+          width={560}
+          widths={[400, 560, 800, 1120]}
+          sizes="(max-width: 768px) calc(100vw - 32px), 560px"
+          format="webp"
+          quality={82}
           loading="eager"
-          width="560"
-          height="379"
+          fetchpriority="high"
           class="hero-img"
         />
       </div>

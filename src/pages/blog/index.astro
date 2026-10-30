@@ -68,7 +68,7 @@ const breadcrumb = {
     <div class="container">
       {posts.length > 0 ? (
         <div class="blog-grid">
-          {posts.map(post => (
+          {posts.map((post, i) => (
             <BlogCard
               title={post.data.title}
               description={post.data.description}
@@ -77,6 +77,7 @@ const breadcrumb = {
               slug={post.id.replace(/\.mdx?$/, '')}
               category={post.data.category}
               featuredImage={post.data.image}
+              priority={i === 0}
             />
           ))}
         </div>
