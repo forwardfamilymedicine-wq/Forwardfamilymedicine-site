@@ -5,7 +5,8 @@
  * quick-links list, the office addresses, phone, fax, email, hours, Areas We
  * Serve, and "Manage cookie choices" (ConsentBanner listens on
  * [data-consent-reset]). Added by decision: the three office pages are linked
- * from the Contact Us column, and both Enroll links sit under the CTA. The
+ * from the Contact Us column, and both Enroll links sit under the CTA. Patient
+ * Portal is a Quick Links entry now that the header's utility bar is gone. The
  * SigmaMD links are tracked by the delegated listener in MainLayout.
  */
 import { Image } from 'astro:assets';
@@ -106,6 +107,7 @@ const towns = [
         <h3 class="rd-eyebrow footer-head">Quick Links</h3>
         <ul class="footer-links">
           {quickLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}
+          <li><a href="https://patient.sigmamd.com" target="_blank" rel="noopener noreferrer">Patient Portal</a></li>
           <li><a href="#" data-consent-reset>Manage cookie choices</a></li>
         </ul>
       </div>

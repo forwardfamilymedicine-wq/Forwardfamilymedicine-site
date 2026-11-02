@@ -575,9 +575,10 @@ tbody tr:hover {
   --content-pad-phone: 20px;
   --section-y:        96px;
   --section-y-phone:  64px;
-  /* Sticky header height (utility bar + main bar + borders). Anchor targets
-     scroll to sit below it. Measured at build time; keep in step with Header.astro. */
-  --header-h:         118px;
+  /* Sticky header height (main bar + bottom border). Anchor targets and every
+     other sticky offset sit below it. Measured in the browser at 81px desktop
+     and 65px under 860px; keep in step with Header.astro (.bar-inner height). */
+  --header-h:         81px;
 }
 
 /* In-page anchors (FAQ, Library, article TOC) land below the sticky header. */
@@ -696,7 +697,7 @@ html { scroll-padding-top: var(--header-h); }
 }
 
 @media (max-width: 860px) {
-  :root { --header-h: 102px; }
+  :root { --header-h: 65px; }
   .rd-wrap { padding: 0 var(--content-pad-phone); }
   .rd-section { padding: var(--section-y-phone) 0; }
   .rd-h1 { font-size: 40px; }

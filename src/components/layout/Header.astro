@@ -2,18 +2,20 @@
 /**
  * Site header, per design/boards/Header.dc.html.
  *
- * Utility bar: phone and "Wayne & Malvern" left; Blog · FAQ · New Patients ·
- * Patient Portal · Enroll right. Main bar: About · Meet the Team · Services ·
- * Locations · Membership · Contact, then the meet-and-greet button. The
- * Services panel opens on hover and on keyboard focus-within with CSS alone;
- * its links are plain anchors in the markup at all times, and the trigger is
- * the /services/ link itself. Esc closes it. Under 860px the bar collapses to
- * the logo and a hamburger, and the sheet carries the same destinations.
+ * One bar, no utility bar (David's decision, overriding the Header board):
+ * About · Meet the Team · Services · Locations · Membership · Contact, then a
+ * quiet Patient Portal text link and the meet-and-greet button. The Services
+ * panel opens on hover and on keyboard focus-within with CSS alone; its links
+ * are plain anchors in the markup at all times, and the trigger is the
+ * /services/ link itself. Esc closes it. Under 860px the bar collapses to the
+ * logo and a hamburger; the sheet carries the primary destinations and, at the
+ * bottom, a secondary list: phone, New Patients, Blog, FAQ, Patient Portal,
+ * Enroll. At desktop widths the secondary destinations are in the footer; the
+ * Patient Portal text link needs about 1130px beside the full nav, so between
+ * 860px and 1139px the footer's Patient Portal link is the way to it.
  *
- * The set of linked destinations is exactly today's: nothing was removed. The
- * family Enroll link lives in the footer and on the Membership and New
- * Patients pages. Every SigmaMD signup link is tracked by the delegated
- * listener in MainLayout (outbound_enrollment_click); nothing to add here.
+ * Every SigmaMD signup link is tracked by the delegated listener in
+ * MainLayout (outbound_enrollment_click); nothing to add here.
  */
 import { Image } from 'astro:assets';
 import logo from '../../assets/logo/ffm-logo.png';
@@ -38,11 +40,14 @@ const programLinks = [
 ];
 const servicesChildren = [...careLinks, ...programLinks];
 
-const utilityLinks = [
+// Mobile sheet, secondary list, in this order.
+const moreLinks = [
+  { href: PHONE_HREF, label: `Call ${PHONE_TEXT}` },
+  { href: '/new-patients/', label: 'New Patients' },
   { href: '/blog/', label: 'Blog' },
   { href: '/faq/', label: 'FAQ' },
-  { href: '/new-patients/', label: 'New Patients' },
   { href: PORTAL_URL, label: 'Patient Portal', external: true },
+  { href: ENROLL_URL, label: 'Enroll', external: true },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -62,28 +67,6 @@ const primaryAfter = [
 ---
 
 <header class="site-header" role="banner">
-
-  <!-- Utility bar -->
-  <div class="util">
-    <div class="rd-wrap util-inner">
-      <div class="util-left">
-        <a href={PHONE_HREF}>{PHONE_TEXT}</a>
-        <span class="sep hide-m" aria-hidden="true">·</span>
-        <span class="hide-m">Wayne &amp; Malvern</span>
-      </div>
-      <div class="util-right">
-        <span class="hide-m">
-          {utilityLinks.map(l => (
-            <>
-              <a href={l.href} target={l.external ? '_blank' : undefined} rel={l.external ? 'noopener noreferrer' : undefined}>{l.label}</a>
-              <span class="sep" aria-hidden="true">·</span>
-            </>
-          ))}
-        </span>
-        <a href={ENROLL_URL} target="_blank" rel="noopener noreferrer">Enroll</a>
-      </div>
-    </div>
-  </div>
 
   <!-- Main bar -->
   <div class="bar">
@@ -141,7 +124,10 @@ const primaryAfter = [
         ))}
       </nav>
 
-      <a href="/contact/" class="btn-forest btn-sm nav-cta">Schedule Meet &amp; Greet</a>
+      <div class="bar-end">
+        <a href={PORTAL_URL} class="portal-link" target="_blank" rel="noopener noreferrer">Patient Portal</a>
+        <a href="/contact/" class="btn-forest btn-sm nav-cta">Schedule Meet &amp; Greet</a>
+      </div>
 
       <button
         class="burger"
@@ -195,13 +181,11 @@ const primaryAfter = [
       {primaryAfter.map(l => (
         <a href={l.href} class={`sheet-link${isActive(l.href) ? ' active' : ''}`}>{l.label}</a>
       ))}
-      <div class="sheet-small">
-        {utilityLinks.map(l => (
-          <a href={l.href} target={l.external ? '_blank' : undefined} rel={l.external ? 'noopener noreferrer' : undefined}>{l.label}</a>
+      <ul class="sheet-more" aria-label="More">
+        {moreLinks.map(l => (
+          <li><a href={l.href} target={l.external ? '_blank' : undefined} rel={l.external ? 'noopener noreferrer' : undefined}>{l.label}</a></li>
         ))}
-        <a href={ENROLL_URL} target="_blank" rel="noopener noreferrer">Enroll</a>
-        <a href={PHONE_HREF}>{PHONE_TEXT}</a>
-      </div>
+      </ul>
     </nav>
     <div class="sheet-foot">
       <a href="/contact/" class="btn-forest sheet-cta">Schedule a Free Meet &amp; Greet</a>
@@ -221,30 +205,6 @@ const primaryAfter = [
     z-index: 30;
     background: var(--linen-50);
   }
-
-  /* Utility bar */
-  .util {
-    background: var(--linen);
-    border-bottom: 1px solid var(--hairline);
-    font-size: 12px;
-    color: var(--sage-600);
-  }
-  .util-inner {
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .util a {
-    color: var(--sage-600);
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.15s;
-    white-space: nowrap;
-  }
-  .util a:hover { color: var(--forest); }
-  .sep { color: var(--hairline-dot); margin: 0 10px; }
 
   /* Main bar */
   .bar { border-bottom: 1px solid var(--hairline); }
@@ -371,6 +331,19 @@ const primaryAfter = [
   }
   .panel-card-link:hover { color: var(--forest); border-color: var(--forest); }
 
+  .bar-end { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+  .portal-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sage-600);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
+  .portal-link:hover { color: var(--forest); }
+  /* The text link only fits beside the full nav from about 1130px. Below
+     that it is in the mobile sheet (under 860px) and the footer. */
+  @media (max-width: 1139px) { .portal-link { display: none; } }
   .nav-cta { white-space: nowrap; flex-shrink: 0; }
 
   /* Hamburger */
@@ -456,14 +429,17 @@ const primaryAfter = [
     text-decoration: none;
   }
   .sheet-sub a.active { color: var(--sage-600); }
-  .sheet-small {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    padding: 20px 0 0;
-    font-size: 14px;
+  .sheet-more { list-style: none; margin: 28px 0 0; padding: 0; }
+  .sheet-more li + li { border-top: 1px solid var(--hairline); }
+  .sheet-more a {
+    display: block;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--sage-600);
+    text-decoration: none;
   }
-  .sheet-small a { color: var(--sage-600); font-weight: 500; text-decoration: none; }
+  .sheet-more a:hover { color: var(--forest); }
   .sheet-foot {
     padding: 14px 18px 22px;
     border-top: 1px solid var(--hairline);
@@ -473,8 +449,7 @@ const primaryAfter = [
   .sheet-cta { width: 100%; min-height: 50px; font-size: 15px; }
 
   @media (max-width: 860px) {
-    .hide-m { display: none; }
-    .nav, .nav-cta { display: none; }
+    .nav, .bar-end { display: none; }
     .burger { display: flex; }
     .bar-inner { height: 64px; }
     .logo-img { height: 34px; }

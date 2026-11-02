@@ -468,9 +468,10 @@ const faqGroups = [
   /* ─── Responsive ────────────────────────────── */
   @media (max-width: 860px) {
     .faq-nav { top: var(--header-h); }
-    .faq-group-section { scroll-margin-top: 52px; }
   }
   @media (max-width: 640px) {
+    /* One-row jump nav (64px) on phones; two rows (104px) above 640px. */
+    .faq-group-section { scroll-margin-top: 64px; }
     .faq-nav {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
