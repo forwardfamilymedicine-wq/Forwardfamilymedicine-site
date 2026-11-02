@@ -46,7 +46,11 @@ const ffm = Astro.props.ffm ?? columns.length - 1;
 
 <style>
   .cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .cmp { width: 100%; min-width: 720px; border-collapse: collapse; table-layout: fixed; font-size: 15px; }
+  .cmp { width: 100%; min-width: 720px; border-collapse: collapse; table-layout: fixed; font-size: 15px; margin: 0; }
+  /* Reset the bare table, th, td and zebra rules in global.css. */
+  .cmp thead tr { background: transparent; color: inherit; }
+  .cmp th, .cmp td { border: 0; vertical-align: top; }
+  .cmp tbody tr:nth-child(even) { background: transparent; }
   .cmp thead th {
     text-align: left;
     padding: 0 20px 14px;
