@@ -1,60 +1,56 @@
 ---
 /**
  * Related blog posts for a service page, titles only. The page resolves the
- * titles from the blog collection, so they are never retyped here.
+ * titles from the blog collection, so they are never retyped here. `label` is
+ * accepted for existing callers but no longer rendered (section eyebrows were
+ * removed in the redesign).
  */
 export interface Props {
-  label: string;
+  label?: string;
   headline: string;
   posts: { href: string; title: string }[];
 }
-
-const { label, headline, posts } = Astro.props;
+const { headline, posts } = Astro.props;
 ---
-
-<section class="related-reading section">
-  <div class="container">
-    <span class="section-label">{label}</span>
-    <h2 class="section-title">{headline}</h2>
+<section class="related-reading">
+  <div class="rd-wrap">
+    <h2 class="rd-serif related-h2">{headline}</h2>
     <ul class="related-grid">
       {posts.map(p => (
-        <li><a href={p.href} class="related-card card"><h3>{p.title}</h3></a></li>
+        <li><a href={p.href} class="related-link rd-serif">{p.title} <span aria-hidden="true">→</span></a></li>
       ))}
     </ul>
   </div>
 </section>
 
 <style>
-  .related-reading {
-    background: var(--cream-50);
-  }
+  .related-reading { background: var(--linen); padding: 80px 0; }
+  .related-h2 { margin: 0 0 28px; font-size: 30px; line-height: 1.15; color: var(--forest); }
   .related-grid {
     list-style: none;
     padding: 0;
-    margin: 2rem 0 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-  .related-grid li { display: flex; }
-  .related-card {
-    flex: 1;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-  }
-  .related-card:hover,
-  .related-card:focus-visible {
-    box-shadow: var(--shadow-md, 0 6px 20px rgba(0,0,0,0.08));
-    transform: translateY(-2px);
-  }
-  .related-card h3 {
-    font-size: 1.02rem;
-    color: var(--green-500);
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 40px;
   }
-  @media (max-width: 900px) {
+  .related-link {
+    display: block;
+    height: 100%;
+    padding: 20px 0;
+    border-top: 1px solid var(--hairline-strong);
+    border-bottom: 1px solid var(--hairline-strong);
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--forest);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  .related-link span { color: var(--sage-600); }
+  .related-link:hover { color: var(--sage-600); }
+  @media (max-width: 860px) {
+    .related-reading { padding: 56px 0; }
     .related-grid { grid-template-columns: 1fr; }
+    .related-grid li + li .related-link { border-top: 0; }
   }
 </style>

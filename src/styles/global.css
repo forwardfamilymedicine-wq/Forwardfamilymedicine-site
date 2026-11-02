@@ -703,3 +703,24 @@ html { scroll-padding-top: var(--header-h); }
   .rd-h2 { font-size: 30px; }
   .rd-h3 { font-size: 21px; }
 }
+
+/* Section tones shared by the service-page boards (Phase 2). Additive. */
+.rd-alt { background: var(--linen-50); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.rd-sage { background: var(--sage-50); }
+.rd-split { display: grid; gap: 72px; align-items: start; }
+.rd-split--a { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.rd-split--b { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
+.rd-split--c { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
+.rd-split--eq { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.rd-sticky { position: sticky; top: calc(var(--header-h) + 24px); }
+.rd-stack { display: flex; flex-direction: column; gap: 18px; }
+.rd-copy { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
+.rd-copy strong { color: var(--forest); font-weight: 600; }
+.rd-copy a:not([class]) { color: var(--sage-600); border-bottom: 1px solid var(--sage); }
+.rd-copy a:not([class]):hover { color: var(--forest); border-color: var(--forest); }
+@media (max-width: 860px) {
+  .rd-split { grid-template-columns: 1fr; gap: 32px; }
+  .rd-sticky { position: static; }
+}
+/* A bare .rd-section sits on linen; zero specificity so any component's own background wins. */
+:where(.rd-section:not(.rd-alt):not(.rd-sage)) { background: var(--linen); }

@@ -1,0 +1,90 @@
+---
+/**
+ * Comparison table: hairline rows, the Forward Family Medicine column filled
+ * sage. `columns` are the heads (first is the feature column); `rows` are
+ * arrays of cells (HTML allowed, e.g. a serif price span). `ffm` is the index
+ * of the highlighted column (default: last). Its cells fill in row by row on
+ * reveal; the `foot` slot sits under the table. Scrolls sideways on phones.
+ */
+export interface Props {
+  columns: string[];
+  rows: string[][];
+  ffm?: number;
+  caption?: string;
+  /** Width in % for each column, matching the board's colgroup. */
+  widths?: number[];
+}
+const { columns, rows, caption, widths } = Astro.props;
+const ffm = Astro.props.ffm ?? columns.length - 1;
+---
+
+<div class="cmp-wrap">
+  <table class="cmp" data-reveal aria-label={caption}>
+    {widths && (
+      <colgroup>{widths.map(w => <col style={`width:${w}%`} />)}</colgroup>
+    )}
+    <thead>
+      <tr>
+        {columns.map((c, i) => (
+          <th scope="col" class:list={{ 'is-ffm': i === ffm }}>{c}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(r => (
+        <tr>
+          {r.map((cell, i) =>
+            i === 0
+              ? <th scope="row" set:html={cell}></th>
+              : <td class:list={{ 'is-ffm': i === ffm }} set:html={cell}></td>
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cmp { width: 100%; min-width: 720px; border-collapse: collapse; table-layout: fixed; font-size: 15px; }
+  .cmp thead th {
+    text-align: left;
+    padding: 0 20px 14px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-500);
+  }
+  .cmp thead th:first-child { padding-left: 0; }
+  .cmp thead th.is-ffm {
+    padding: 16px 24px 14px;
+    font-weight: 600;
+    color: var(--linen);
+    background: var(--forest);
+  }
+  .cmp tbody tr { border-top: 1px solid var(--hairline-strong); }
+  .cmp tbody tr:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .cmp tbody th {
+    text-align: left;
+    padding: 16px 0;
+    font-weight: 500;
+    color: var(--forest);
+  }
+  .cmp td { padding: 16px 20px; color: var(--text-500); line-height: 1.5; }
+  .cmp td.is-ffm {
+    padding: 16px 24px;
+    background: var(--sage-50);
+    color: var(--forest);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+  .cmp.on td.is-ffm { opacity: 1; }
+  .cmp.on tbody tr:nth-child(1) td.is-ffm { transition-delay: 0.2s; }
+  .cmp.on tbody tr:nth-child(2) td.is-ffm { transition-delay: 0.4s; }
+  .cmp.on tbody tr:nth-child(3) td.is-ffm { transition-delay: 0.6s; }
+  .cmp.on tbody tr:nth-child(4) td.is-ffm { transition-delay: 0.8s; }
+  .cmp.on tbody tr:nth-child(5) td.is-ffm { transition-delay: 1s; }
+  .cmp.on tbody tr:nth-child(n+6) td.is-ffm { transition-delay: 1.2s; }
+  .cmp :global(.cmp-num) { font-family: var(--font-heading); font-size: 20px; }
+</style>

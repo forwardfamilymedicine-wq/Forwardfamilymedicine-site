@@ -1,8 +1,9 @@
 ---
 /**
  * "How to Join" for the service pages: an optional meet and greet, then online
- * enrollment. One component so both pages carry the same approved copy; only
- * the contact form's `source` differs.
+ * enrollment. One component so every page carries the same approved copy; only
+ * the contact form's `source` differs. Board: two columns under a forest rule,
+ * "Option one / Option two" in gold.
  */
 export interface Props {
   /** Value for /contact/?source=, so leads stay attributed to the page. */
@@ -15,73 +16,44 @@ const INDIVIDUAL_ENROLLMENT_LINK = 'https://forwardfamilymedicine.sigmamd.com/si
 const FAMILY_ENROLLMENT_LINK = 'https://forwardfamilymedicine.sigmamd.com/signup/family-membership';
 ---
 
-<section class="how-to-join section">
-  <div class="container">
-    <span class="section-label">Getting Started</span>
-    <h2 class="section-title">How to Join</h2>
-    <ol class="join-steps">
-      <li class="join-step">
-        <span class="join-step-num" aria-hidden="true">1</span>
-        <p><strong>Meet us first, if you'd like.</strong> Book a free, 60-minute meet and greet, in person or by video. You can meet one of our physicians, ask your questions and see whether the practice fits, with no obligation.</p>
+<section class="how-to-join rd-section rd-alt">
+  <div class="rd-wrap">
+    <h2 class="rd-h2 join-h2">How to Join</h2>
+    <div class="join-steps">
+      <div class="join-step">
+        <p class="join-step-n rd-serif">Option one</p>
+        <p class="join-step-copy"><strong>Meet us first, if you'd like.</strong> Book a free, 60-minute meet and greet, in person or by video. You can meet one of our physicians, ask your questions and see whether the practice fits, with no obligation.</p>
         <div class="join-step-btns">
-          <a href={`/contact/?source=${source}`} class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
+          <a href={`/contact/?source=${source}`} class="btn-forest">Schedule a Free Meet &amp; Greet</a>
         </div>
-      </li>
-      <li class="join-step">
-        <span class="join-step-num" aria-hidden="true">2</span>
-        <p><strong>Enroll online.</strong> Choose an individual or family membership and enroll online whenever you're ready. If you already know the practice is right for you, you can skip the meet and greet and enroll directly.</p>
+      </div>
+      <div class="join-step">
+        <p class="join-step-n rd-serif">Option two</p>
+        <p class="join-step-copy"><strong>Enroll online.</strong> Choose an individual or family membership and enroll online whenever you're ready. If you already know the practice is right for you, you can skip the meet and greet and enroll directly.</p>
         <div class="join-step-btns">
-          <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn btn-primary">Enroll as Individual</a>
-          <a href={FAMILY_ENROLLMENT_LINK} class="btn btn-outline">Enroll Your Family</a>
+          <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn-forest">Enroll as Individual</a>
+          <a href={FAMILY_ENROLLMENT_LINK} class="btn-ghost">Enroll Your Family</a>
         </div>
-      </li>
-    </ol>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .join-steps {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
+  .join-h2 { margin-bottom: 40px; }
+  .join-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
   .join-step {
-    background: var(--green-50);
-    border: 1px solid var(--green-100);
-    border-radius: 16px;
-    padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
+    padding-top: 22px;
+    border-top: 1px solid var(--forest);
   }
-  .join-step-num {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    background: var(--green-500);
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .join-step p {
-    color: var(--ink-700);
-    line-height: 1.7;
-    margin: 0;
-  }
-  .join-step p strong { color: var(--ink-900); }
-  .join-step-btns {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: auto;
-  }
-  @media (max-width: 800px) {
-    .join-steps { grid-template-columns: 1fr; }
+  .join-step-n { margin: 0; font-size: 14px; color: var(--gold); }
+  .join-step-copy { margin: 0; font-size: 16px; line-height: 1.7; color: var(--text-900); }
+  .join-step-copy strong { color: var(--forest); font-weight: 600; }
+  .join-step-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+  @media (max-width: 860px) {
+    .join-steps { grid-template-columns: 1fr; gap: 36px; }
   }
 </style>

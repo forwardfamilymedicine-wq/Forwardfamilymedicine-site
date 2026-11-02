@@ -1,0 +1,22 @@
+---
+/** Sage card: #EEF1EA wash with a forest top rule. Content goes in the slot. */
+export interface Props { class?: string }
+const { class: className = '' } = Astro.props;
+---
+<div class:list={['sage-card', className]}><slot /></div>
+
+<style>
+  .sage-card {
+    background: var(--sage-50);
+    border-top: 3px solid var(--forest);
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-900);
+  }
+  .sage-card :global(p) { margin: 0; }
+  .sage-card :global(a:not([class])) { color: var(--sage-600); border-bottom: 1px solid var(--sage); }
+</style>
