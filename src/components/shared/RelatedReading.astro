@@ -9,11 +9,13 @@ export interface Props {
   label?: string;
   headline: string;
   posts: { href: string; title: string }[];
+  /** `list`: heading left, stacked links right, on the alternate band (DPC board). */
+  layout?: 'row' | 'list';
 }
-const { headline, posts } = Astro.props;
+const { headline, posts, layout = 'row' } = Astro.props;
 ---
-<section class="related-reading">
-  <div class="rd-wrap">
+<section class:list={['related-reading', { 'related-reading--list rd-alt': layout === 'list' }]}>
+  <div class="rd-wrap related-inner">
     <h2 class="rd-serif related-h2">{headline}</h2>
     <ul class="related-grid">
       {posts.map(p => (
@@ -48,7 +50,21 @@ const { headline, posts } = Astro.props;
   }
   .related-link span { color: var(--sage-600); }
   .related-link:hover { color: var(--sage-600); }
+  .related-reading--list.related-reading { background: var(--linen-50); }
+  .related-reading--list .related-inner { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+  .related-reading--list .related-h2 { margin: 0; font-size: 36px; line-height: 1.1; }
+  .related-reading--list .related-grid { grid-template-columns: 1fr; gap: 0; }
+  .related-reading--list .related-link { padding: 16px 0; border-bottom: 0; position: relative; }
+  .related-reading--list li:last-child .related-link { border-bottom: 1px solid var(--hairline-strong); }
+  .related-reading--list .related-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+    background: var(--sage); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+  }
+  .related-reading--list .related-link:hover::after { transform: none; }
   @media (max-width: 860px) {
+    .related-reading--list .related-inner { grid-template-columns: 1fr; gap: 24px; }
+    .related-reading--list .related-h2 { font-size: 28px; margin: 0; }
+    .related-reading--list.related-reading .related-grid li + li .related-link { border-top: 1px solid var(--hairline-strong); }
     .related-reading { padding: 56px 0; }
     .related-grid { grid-template-columns: 1fr; }
     .related-grid li + li .related-link { border-top: 0; }

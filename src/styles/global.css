@@ -639,7 +639,7 @@ html { scroll-padding-top: var(--header-h); }
   margin: 0;
 }
 .rd-eyebrow--gold { color: var(--gold); }
-.rd-eyebrow--muted { color: var(--text-500); }
+.rd-eyebrow--muted { color: var(--text-600); }
 .rd-link {
   display: inline-block;
   font-size: 14px;

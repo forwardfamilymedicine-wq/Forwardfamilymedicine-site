@@ -8,6 +8,11 @@
  *
  * Reduced motion: the end state is what matters, so `on` is added to every
  * target on load and global.css turns transitions off under `[data-reveal]`.
+ *
+ * Tall elements: a fixed fraction of a block taller than the viewport can
+ * never be visible at once (a 3,000px grid on a phone), so the effective
+ * threshold is capped at 30% of the viewport height divided by the element's
+ * height, with a floor of 0.02.
  * Called once from MainLayout; safe to call again for a subtree.
  */
 export function initReveal(root: ParentNode = document): void {
@@ -28,7 +33,10 @@ export function initReveal(root: ParentNode = document): void {
   const byThreshold = new Map<number, HTMLElement[]>();
   for (const el of targets) {
     const t = Number.parseFloat(el.dataset.reveal || '');
-    const threshold = Number.isFinite(t) && t > 0 && t <= 1 ? t : 0.3;
+    const wanted = Number.isFinite(t) && t > 0 && t <= 1 ? t : 0.3;
+    const height = el.getBoundingClientRect().height;
+    const cap = height > 0 ? (window.innerHeight * 0.3) / height : wanted;
+    const threshold = Math.round(Math.max(0.02, Math.min(wanted, cap)) * 100) / 100;
     const list = byThreshold.get(threshold) || [];
     list.push(el);
     byThreshold.set(threshold, list);

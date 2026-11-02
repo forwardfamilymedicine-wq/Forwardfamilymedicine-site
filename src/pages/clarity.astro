@@ -210,7 +210,11 @@ const comparisons = [
 >
   <!-- Hero: copy left, annual-membership card right -->
   <section class="cl-hero">
-    <div class="rd-wrap cl-hero__grid">
+    <div class="rd-wrap">
+    <nav class="cl-crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/services/">Services</a> <span aria-hidden="true">›</span> <span>The Clarity Program</span>
+    </nav>
+    <div class="cl-hero__grid">
       <div class="cl-hero__copy">
         <h1 class="cl-hero__h1 rd-serif">Your health needs a system, not a schedule.</h1>
         <p class="cl-hero__sub">The Clarity Program is a physician-led longitudinal health operating system — continuous monitoring, structured diagnostics, and a physician who reads everything together, tracks how it changes over time, and acts on what it finds. Not a one-time event. Not a dashboard. A system running on your behalf, all year.</p>
@@ -229,6 +233,7 @@ const comparisons = [
         <a href={CTA} class="btn-forest cl-card__btn">Schedule an inquiry call</a>
         <a href="#how" class="rd-link cl-card__link">See what's included →</a>
       </SageCard>
+    </div>
     </div>
   </section>
 
@@ -329,7 +334,7 @@ const comparisons = [
             <div class="cl-cad__sub">
               {d.cats.map(([label, text]) => (
                 <div>
-                  <h4 class="cl-label">{label}</h4>
+                  <p class="cl-label">{label}</p>
                   <p>{text}</p>
                 </div>
               ))}
@@ -483,6 +488,7 @@ const comparisons = [
     btnHref={CTA}
     btn2Text="Prefer to start with the standard membership? See all plans →"
     btn2Href="/membership/"
+    btn2Link
   />
 </MainLayout>
 
@@ -503,6 +509,10 @@ const comparisons = [
 
   /* Hero */
   .cl-hero { background: var(--linen); padding: 80px 0 96px; }
+  .cl-crumbs { font-size: 13px; color: var(--text-600); margin-bottom: 40px; }
+  .cl-crumbs a { color: var(--text-600); }
+  .cl-crumbs a:hover { color: var(--forest); }
+  .cl-crumbs span:last-child { color: var(--text-700); }
   .cl-hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 72px; align-items: start; }
   .cl-hero__copy { display: flex; flex-direction: column; gap: 26px; padding-top: 12px; align-items: flex-start; }
   .cl-hero__h1 { margin: 0; font-size: 66px; line-height: 1.02; letter-spacing: -0.018em; color: var(--forest); max-width: 12ch; }
@@ -630,7 +640,7 @@ const comparisons = [
   .cl-cad__lede { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
   .cl-cad__sub { display: flex; flex-direction: column; gap: 14px; }
   .cl-cad__sub p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--text-700); }
-  .cl-cad__sub h4 { margin: 0 0 4px; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-600); }
+  .cl-cad__sub p.cl-label { margin: 0 0 4px; font-family: var(--font-body); font-size: 11px; line-height: 1.4; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-600); }
   .cl-cad__sub .cl-note { padding-top: 14px; }
   .cl-cad__renew { display: flex; flex-direction: column; gap: 12px; }
   .cl-cad__renew h3 { font-size: 20px; }

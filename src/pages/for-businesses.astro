@@ -228,8 +228,8 @@ const gets = [
   .biz-hero { background: var(--linen); padding: 80px 0 96px; }
   .biz-hero__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 72px; align-items: start; }
   .biz-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; padding-top: 12px; }
-  .biz-breadcrumb { font-size: 13px; color: var(--text-500); margin-bottom: 14px; }
-  .biz-breadcrumb a { color: var(--text-500); }
+  .biz-breadcrumb { font-size: 13px; color: var(--text-600); margin-bottom: 14px; }
+  .biz-breadcrumb a { color: var(--text-600); }
   .biz-breadcrumb a:hover { color: var(--forest); }
   .biz-breadcrumb span:last-child { color: var(--text-700); }
   .biz-h1 { font-size: 58px; line-height: 1.04; max-width: 17ch; }
@@ -240,7 +240,7 @@ const gets = [
   .biz-facts { margin: 0; display: flex; flex-direction: column; }
   .biz-facts > div { padding: 12px 0; border-top: 1px solid var(--hairline-strong); display: flex; flex-direction: column; gap: 4px; }
   .biz-facts > div:last-child { border-bottom: 1px solid var(--hairline-strong); }
-  .biz-facts dt { font-size: 12px; font-weight: 600; color: var(--text-500); }
+  .biz-facts dt { font-size: 12px; font-weight: 600; color: var(--text-600); }
   .biz-facts dd { margin: 0; font-size: 15px; overflow-wrap: anywhere; }
   .biz-facts a { color: var(--sage-600); }
   .biz-card__note { font-size: 14px; line-height: 1.65; color: var(--text-700); }
@@ -276,7 +276,7 @@ const gets = [
   .biz-person__role { font-size: 13px; color: var(--sage-600); }
   .biz-more { align-self: flex-start; }
 
-  /* Form: hairline fields on lighter linen. Markup, ids and names are unchanged. */
+  /* Form: boxed fields on lighter linen, as on the board. Markup, ids and names are unchanged. */
   .biz-form-card { padding: 36px 40px; background: var(--linen-50); border: 1px solid var(--hairline); border-top: 3px solid var(--forest); }
   .biz-form-card form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
   .biz-form-row { display: contents; }
@@ -293,14 +293,14 @@ const gets = [
   .biz-form-group select,
   .biz-form-group textarea {
     width: 100%; box-sizing: border-box;
-    padding: 12px 0; font: inherit; font-size: 15px; color: var(--forest);
-    background: transparent; border: 0; border-bottom: 1px solid var(--hairline-strong); border-radius: 0;
-    transition: border-color 0.18s;
+    padding: 13px 14px; font: inherit; font-size: 15px; color: var(--forest);
+    background: var(--linen-50); border: 1px solid var(--hairline-strong); border-radius: 2px;
+    transition: border-color 0.18s, box-shadow 0.18s;
   }
   .biz-form-group input:focus,
   .biz-form-group select:focus,
-  .biz-form-group textarea:focus { outline: none; border-bottom-color: var(--sage-600); box-shadow: 0 1px 0 var(--sage-600); }
-  .biz-form-group textarea { resize: vertical; }
+  .biz-form-group textarea:focus { outline: none; border-color: var(--sage-600); box-shadow: 0 0 0 1px var(--sage-600); }
+  .biz-form-group textarea { resize: vertical; min-height: 120px; }
   .biz-form-group ::placeholder { color: var(--text-400); }
   .biz-form-message { padding: 14px 16px; font-size: 14px; line-height: 1.6; border-left: 3px solid; }
   .biz-form-message[hidden] { display: none; }

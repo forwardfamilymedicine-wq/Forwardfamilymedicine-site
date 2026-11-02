@@ -181,11 +181,10 @@ const who = [
   <section class="rd-section rd-alt">
     <div class="rd-wrap">
       <h2 class="rd-h2 h2-gap">How DPC Is Different from Traditional Primary Care</h2>
-      <div class="dpc-cmp">
       <CompareTable
+        variant="plain"
         caption="Traditional primary care compared with Forward Family Medicine"
         columns={['Feature', 'Traditional Primary Care', 'Forward Family Medicine (DPC)']}
-        widths={[24, 34, 42]}
         rows={[
           ['Payment', 'Insurance + copays + deductibles', 'Flat monthly membership fee'],
           ['Visit length', '7–12 minutes (typical)', '1–2 hours'],
@@ -196,7 +195,6 @@ const who = [
           ['Preventive focus', 'Often squeezed out', 'Central to every visit'],
         ]}
       />
-      </div>
     </div>
   </section>
 
@@ -241,7 +239,7 @@ const who = [
 
   <HowToJoin source="direct-primary-care" />
 
-  <RelatedReading headline="More on Direct Primary Care" posts={relatedPosts} />
+  <RelatedReading layout="list" headline="More on Direct Primary Care" posts={relatedPosts} />
 
   <FAQSection faqs={faqs}>
     <p class="faq-more">More questions? <a href="/faq/" class="rd-link">See our full FAQ →</a></p>
@@ -338,7 +336,7 @@ const who = [
   .cost.on .cost-card--ffm { transition-delay: 0.3s; }
   .cost-card--ppo { border-top: 3px solid var(--hairline-strong); }
   .cost-card--ffm { background: var(--sage-50); border-top: 3px solid var(--forest); }
-  .cost-tag { margin: 0; font-size: 13px; font-weight: 500; color: var(--text-500); }
+  .cost-tag { margin: 0; font-size: 13px; font-weight: 500; color: var(--text-600); }
   .cost-tag--gold { color: var(--gold); }
   .cost-amount { margin: 8px 0 0; font-size: 40px; line-height: 1.05; letter-spacing: -0.015em; color: var(--forest); }
   .cost-card--ppo .cost-amount { color: var(--text-600); }
@@ -349,18 +347,7 @@ const who = [
   .cost-card li:last-child { border-bottom: 1px solid var(--hairline-strong); }
   .cost-card--ppo li { color: var(--text-600); }
   .cost-card--ffm li { border-color: var(--on-forest-faint); color: var(--forest); }
-  .cost-note { margin: 24px 0 0; font-size: 13.5px; line-height: 1.65; color: var(--text-500); }
-
-  /* global.css styles bare table elements (green head, striped rows, borders);
-     reset them so the shared CompareTable renders as the board. */
-  .dpc-cmp :global(table.cmp) { display: table; margin: 0; }
-  .dpc-cmp :global(.cmp thead tr),
-  .dpc-cmp :global(.cmp tbody tr:nth-child(even)),
-  .dpc-cmp :global(.cmp tbody tr:hover) { background: transparent; }
-  .dpc-cmp :global(.cmp th),
-  .dpc-cmp :global(.cmp td) { border: 0; }
-  .dpc-cmp :global(.cmp thead th.is-ffm) { background: var(--forest); }
-  .dpc-cmp :global(.cmp tbody tr) { border-top: 1px solid var(--hairline-strong); }
+  .cost-note { margin: 24px 0 0; font-size: 13.5px; line-height: 1.65; color: var(--text-600); }
 
   .faq-more { margin: 28px 0 0; font-size: 14px; color: var(--text-600); }
 

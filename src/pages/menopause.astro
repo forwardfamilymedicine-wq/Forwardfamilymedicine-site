@@ -8,6 +8,7 @@ import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import NumberedRows from '../components/shared/NumberedRows.astro';
 import PathTimeline from '../components/shared/PathTimeline.astro';
 import QuotePair from '../components/shared/QuotePair.astro';
+import reviews from '../data/reviews.json';
 import RuledList from '../components/shared/RuledList.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { formatMonthYear, getAvailability } from '../utils/availability';
@@ -113,7 +114,9 @@ const path = [
   { title: "Forward Family Medicine — accepting new patients now", body: `${malvernOpen ? 'Malvern office now open.' : `Malvern office opens ${malvernOpening}.`} West Chester location planned.` },
 ];
 
-const quotes = [{ text: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.", who: "E.G.", attribution: '— Verified Google review' }];
+const ibReview = reviews.find(r => r.who === 'I.B.');
+if (!ibReview) throw new Error('[menopause] no I.B. review in reviews.json.');
+const quotes = [{ text: ibReview.text, who: ibReview.who, attribution: '— Verified Google review' }, { text: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.", who: "E.G.", attribution: '— Verified Google review' }];
 
 const stats = [
   { value: '15 min', caption: 'average primary care visit, nationally', muted: true },
@@ -203,7 +206,7 @@ const stats = [
         <p class="rd-copy">Menopause is not one symptom — it's a metabolic, hormonal, cardiovascular, skeletal, and cognitive transition. Treating it well requires assessing all of those systems together, over time, and acting on the ones that need attention.</p>
         <p class="rd-copy">At Forward Family Medicine, menopause care is structured around the full scope of the transition. Whether you're navigating early perimenopause, evaluating HRT, or focused on post-menopausal cardiovascular and bone health, your physician is set up to do the work — not refer it out.</p>
       </div>
-      <RuledList reveal size="lg" class="mp-scope">
+      <RuledList reveal size="md" class="mp-scope">
         <li><strong>Comprehensive symptom assessment</strong> — sleep, mood, cognition, cycle changes, vasomotor symptoms, urogenital changes, libido, weight</li>
         <li><strong>Lab workup</strong> — hormone panels, lipids, thyroid, glucose, ApoB when clinically indicated</li>
         <li><strong>HRT consultation</strong> — evidence-based shared decision-making, prescribing when appropriate</li>
@@ -269,6 +272,7 @@ const stats = [
   <div class="mp-faq"><FAQSection faqs={faqs} headline="Menopause Care FAQs" /></div>
 
   <CTABanner
+    ch={16}
     headline="Schedule a Meet &amp; Greet with Dr. Landi"
     subhead="Dr. Landi is accepting new patients now. A 60-minute meet and greet, no obligation, at our Malvern office or by video."
     btnText="Schedule Now"
@@ -288,8 +292,8 @@ const stats = [
 
 <style>
   .mp-hero { background: var(--linen); padding: 80px 0 80px; }
-  .mp-crumb { font-size: 13px; color: var(--text-500); margin-bottom: 40px; }
-  .mp-crumb a { color: var(--text-500); }
+  .mp-crumb { font-size: 13px; color: var(--text-600); margin-bottom: 40px; }
+  .mp-crumb a { color: var(--text-600); }
   .mp-crumb a:hover { color: var(--forest); }
   .mp-crumb span:last-child { color: var(--text-700); }
   .mp-hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 72px; align-items: start; }
@@ -336,7 +340,7 @@ const stats = [
   .mp-stat__c { margin: 10px 0 0; font-size: 13px; line-height: 1.5; color: var(--on-forest); }
   .mp-stat__v.is-muted, .mp-stat__c.is-muted { color: var(--on-forest-faint); }
 
-  .mp-scope :global(li) { font-size: 15px; line-height: 1.65; color: var(--text-900); }
+  .mp-scope.ruled-list > :global(li) { padding: 16px 0; font-size: 15px; line-height: 1.65; color: var(--text-900); }
   .mp-scope :global(li strong) { color: var(--forest); font-weight: 600; }
   .mp-scope :global(li a) { color: var(--sage-600); border-bottom: 1px solid var(--sage); }
   .mp-story__lead { margin: 0; font-size: 22px; line-height: 1.45; color: var(--forest); }
@@ -344,7 +348,7 @@ const stats = [
   .mp-path :global(.path__step::before) { box-shadow: 0 0 0 4px var(--linen); }
 
   .mp-rev__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 40px; }
-  .mp-rev__quotes { margin-top: 44px; max-width: 720px; }
+  .mp-rev__quotes { margin-top: 44px; }
   .mp-reads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin-top: 40px; }
   .mp-read {
     position: relative;
