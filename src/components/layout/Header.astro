@@ -211,8 +211,13 @@ const primaryAfter = [
 </header>
 
 <style>
+  /* Sticky: stays above page content (z 30) and below the consent banner
+     (z 9999). Both tiers have opaque backgrounds so nothing shows through.
+     The Services panel is absolute inside it and the mobile sheet is fixed,
+     so both work while the header is stuck. */
   .site-header {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 30;
     background: var(--linen-50);
   }

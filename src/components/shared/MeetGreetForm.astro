@@ -327,8 +327,9 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
 
   /* ── Self-scheduling success state ── */
   .mg-booking {
-    /* Keep the panel clear of the sticky site header when scrolled into view. */
-    scroll-margin-top: 7.5rem;
+    /* html { scroll-padding-top } already clears the sticky header; this is
+       breathing room only. */
+    scroll-margin-top: 1.5rem;
   }
   .mg-intro {
     font-size: 1rem;
@@ -396,7 +397,7 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     text-align: center;
   }
   @media (max-width: 560px) {
-    .mg-booking { scroll-margin-top: 5rem; }
+    .mg-booking { scroll-margin-top: 1rem; }
     .mg-cards { grid-template-columns: 1fr; }
   }
 </style>
