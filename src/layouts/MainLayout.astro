@@ -96,7 +96,10 @@ const schemas = [
   <script>
     // Scroll-reveal for every [data-reveal] element; see src/scripts/reveal.ts.
     import { initReveal } from '../scripts/reveal';
+    import { initStickyFit } from '../scripts/stickyFit';
     initReveal();
+    // Sticky rails and indexes pin only when they fit under the header; see src/scripts/stickyFit.ts.
+    initStickyFit();
   </script>
   <script is:inline>
     // Single delegated listener covers every SigmaMD enrollment link

@@ -1,19 +1,38 @@
 ---
+/**
+ * Physician and team profiles, per the Bio boards: one template, four
+ * instances. Portrait and status beside the name, role, specialties and a
+ * ruled list of credentials; "About" with the bio; "Education & Training" as
+ * a path timeline beside the details list and a sage card; patient reviews;
+ * the closing band. Everything is read from the providers and team
+ * collections; the only page-level copy is live text reused from elsewhere
+ * on the site (noted inline).
+ *
+ * Dr. Bigley (panel full): "Panel currently full", his notice, and "Meet All
+ * Providers" in place of a scheduling CTA, here and in the closing band.
+ * Ashley: no timeline, details, card or reviews; her non-clinical notice is
+ * dropped (approved removal).
+ */
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import PathTimeline from '../../components/shared/PathTimeline.astro';
+import QuotePair from '../../components/shared/QuotePair.astro';
+import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
+import CTABanner from '../../components/shared/CTABanner.astro';
+import reviewsData from '../../data/reviews.json';
 import { getAvailability } from '../../utils/availability';
 import { isPlanned } from '../../utils/physicianRouting';
+import { contactHrefForPath } from '../../utils/leadSource';
 import { ORG_ID } from '../../utils/practiceSchema';
 import { physicianNode, headshotUrl, awardLabel, HEADSHOT } from '../../utils/physicianSchema';
-import TestimonialCard from '../../components/shared/TestimonialCard.astro';
-import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
 
 // Verified Google reviews, keyed by provider slug. Verbatim, never reworded.
 // Lieberman's M.M. and P.M. reviews are also used on lifestyle-medicine.astro
 // (and the homepage carries D.B., M.M. and P.M. too) — that overlap is
 // intentional here, not an oversight: his bio should stand on its own with
-// real proof rather than none.
+// real proof rather than none. Landi's second review (I.B.) is the verified
+// text in src/data/reviews.json.
 const REVIEWS: Record<string, { quote: string; author: string }[]> = {
   'philip-lieberman-md': [
     {
@@ -30,6 +49,7 @@ const REVIEWS: Record<string, { quote: string; author: string }[]> = {
       quote: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.",
       author: 'E.G.',
     },
+    ...reviewsData.filter(r => r.who === 'I.B.').map(r => ({ quote: r.text, author: r.who })),
   ],
   'david-bigley-do': [
     {
@@ -42,6 +62,27 @@ const REVIEWS: Record<string, { quote: string; author: string }[]> = {
     },
   ],
 };
+
+// The sage card beside the details: live copy from elsewhere on the site.
+// Lieberman: the footer tagline and the homepage Lifestyle Medicine link.
+// Landi: the Lifestyle Medicine page's menopause note. Bigley: the homepage
+// founder paragraph on why the panel is full.
+const CARD: Record<string, { html: string; link?: { href: string; label: string } }> = {
+  'philip-lieberman-md': {
+    html: "The Main Line's only Direct Primary Care practice with in-person, board-certified Lifestyle Medicine.",
+    link: { href: '/lifestyle-medicine/', label: 'Learn About Our Lifestyle Medicine Approach →' },
+  },
+  'brian-landi-do': {
+    html: 'Navigating perimenopause or menopause? Dr. Landi at our Malvern location offers comprehensive, Menopause Society Certified care — see our <a href="/menopause/">Menopause Care page</a> for details.',
+  },
+  'david-bigley-do': {
+    html: 'Every physician here practices with a deliberate cap on panel size, because the time, the direct access, and the continuity this practice is built on are only possible when a doctor has room for them. A full panel is that commitment kept.',
+  },
+};
+
+// Approved wording for a DO board-certified in Family Medicine. Dr. Lieberman's
+// board lines are already in his additionalCertifications as written.
+const DO_BOARD_LINE = 'Board Certified, American Osteopathic Board of Family Physicians';
 
 export async function getStaticPaths() {
   const providers = await getCollection('providers');
@@ -71,6 +112,7 @@ const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/meet-the-team/${d.slug}/`;
 const credentialedName = `${d.name}, ${d.credentials}`;
 const pageTitle = `${credentialedName} | Forward Family Medicine`;
+const lastName = d.name.trim().split(/\s+/).pop();
 
 const cityMap: Record<string, string> = {
   'wayne': 'Wayne, PA',
@@ -80,11 +122,15 @@ const cityMap: Record<string, string> = {
 // A planned office (coming soon, no opening date) is not somewhere anyone
 // practises. The provider's `locations` list keeps it, because that list also
 // feeds physicianRouting; this page leaves it out of both the description and
-// "Practices At".
+// "Practices at".
 const allLocations = await getCollection('locations');
 const plannedSlugs = new Set(allLocations.filter(isPlanned).map(l => l.data.slug));
 const locationSlugs: string[] = d.locations || ['wayne'];
-const sidebarLocations: string[] = (d.locations ?? []).filter((slug: string) => !plannedSlugs.has(slug));
+const sidebarLocations = (d.locations ?? [])
+  .filter((slug: string) => !plannedSlugs.has(slug))
+  .map((slug: string) => allLocations.find(l => l.data.slug === slug))
+  .filter(Boolean)
+  .sort((a: any, b: any) => a.data.displayOrder - b.data.displayOrder);
 const cityNames = locationSlugs.filter((s: string) => !plannedSlugs.has(s)).map((s: string) => cityMap[s] || s);
 const cityString = cityNames.length <= 1
   ? cityNames[0] ?? ''
@@ -92,6 +138,8 @@ const cityString = cityNames.length <= 1
     ? `${cityNames[0]} and ${cityNames[1]}`
     : `${cityNames.slice(0, -1).join(', ')}, and ${cityNames[cityNames.length - 1]}`;
 const inCities = cityString ? ` in ${cityString}` : '';
+// The open office named in the status line and the timeline's last step.
+const officeName: string | undefined = sidebarLocations.find((l: any) => l.data.status === 'open')?.data.name;
 
 // Physician awards, labelled by awardLabel ("Organization Name, Year"). The
 // wording is the award's own and must not be paraphrased.
@@ -125,338 +173,319 @@ const breadcrumb = {
     { "@type": "ListItem", "position": 3, "name": credentialedName, "item": canonicalUrl },
   ],
 };
+
+// Status: the live wording from the previous banner, with the office added.
+const statusText = !availability ? null
+  : availability.status === 'full' ? 'Panel currently full'
+  : availability.status === 'future' ? `Accepting patients starting ${availability.startLabel}`
+  : 'Now accepting new patients';
+const statusLine = statusText && availability?.status === 'accepting' && officeName ? `${statusText} · ${officeName}` : statusText;
+
+// Hero credential rows: board certification, then the named certifications,
+// then awards. Team members list their notable experience.
+const credentialRows: string[] = isPhysician
+  ? [
+      ...(d.boardStatus === 'board-certified'
+        ? (d.credentials === 'DO' && d.boardSpecialties.includes('Family Medicine') ? [DO_BOARD_LINE] : [])
+        : [`Board-Eligible: ${d.boardSpecialties.join(', ')}`]),
+      ...d.additionalCertifications.map((c: any) => c.name),
+    ]
+  : (d.notableExperience ?? []).map((x: any) => x.label);
+
+// Education & Training as a path: degrees and residency as today's sidebar
+// labelled them, notable experience, then the practice as the current step.
+const eduTitle = (e: any) => {
+  const base = e.degree ? (e.field ? `${e.degree} — ${e.field}` : e.degree) : e.residency ? `${e.residency} Residency` : '';
+  return e.year ? `${base}, ${e.year}` : base;
+};
+const steps = isPhysician
+  ? [
+      ...(d.education ?? []).map((e: any) => ({ title: eduTitle(e), body: e.institution || undefined })),
+      ...(d.notableExperience ?? []).map((x: any) => ({ title: x.label, body: x.description || undefined })),
+      { title: 'Forward Family Medicine', body: [officeName, statusText].filter(Boolean).join('. ') },
+    ]
+  : [];
+
+const card = isPhysician ? CARD[d.slug] : undefined;
+const contactHref = contactHrefForPath(`/meet-the-team/${d.slug}/`);
+const joinHref = `/contact/?subject=${encodeURIComponent(`Join Dr. ${lastName}'s Patient List`)}`;
+const reviews = REVIEWS[d.slug] ?? [];
+const quotes = reviews.map(r => ({ text: r.quote, who: r.author, attribution: '— Verified Google review' }));
+
+// Closing band. Accepting physicians: the shared band copy with their lead
+// source. Dr. Bigley and team members: "Ready to find your physician?" from the
+// team page, with "Meet All Providers" and no scheduling CTA for Dr. Bigley.
+const closing = isPhysician && availability?.status !== 'full'
+  ? { btnText: 'Schedule a Meet & Greet', btnHref: availability?.status === 'future' ? joinHref : contactHref, btn2Text: 'Meet All Providers', btn2Href: '/meet-the-team/' }
+  : isPhysician
+    ? { headline: 'Ready to find your physician?', subhead: availability?.note ?? "Schedule a free, no-pressure Meet & Greet to find the right fit.", btnText: 'Meet All Providers', btnHref: '/meet-the-team/' }
+    : { headline: 'Ready to find your physician?', subhead: 'Schedule a free, no-pressure Meet & Greet to find the right fit.', btnText: 'Meet All Providers', btnHref: '/meet-the-team/', btn2Text: 'Schedule a Free Meet & Greet →', btn2Href: '/contact/' };
 ---
 
 <MainLayout title={pageTitle} description={pageDescription} canonical={canonicalUrl} schema={[memberSchema, breadcrumb]}>
 
-  <section class="provider-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-100) 100%);">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span aria-hidden="true">›</span>
-        <a href="/meet-the-team/">Meet the Team</a>
-        <span aria-hidden="true">›</span>
-        <span>{credentialedName}</span>
+  <section class="bio-hero">
+    <div class="rd-wrap">
+      <nav class="rd-crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span>
+        <a href="/meet-the-team/">Meet the Team</a> <span aria-hidden="true">›</span>
+        <span aria-current="page">{credentialedName}</span>
       </nav>
 
-      <div class="provider-hero-grid">
-        <div class="provider-hero-photo">
+      <div class="bio-hero__grid">
+        <div class="bio-hero__photo">
           {d.photo ? (
-            <Image src={d.photo} alt={d.photoAlt || credentialedName} {...HEADSHOT} sizes="(max-width: 900px) 280px, 320px" loading="eager" fetchpriority="high" class="provider-headshot" />
+            <Image src={d.photo} alt={d.photoAlt || credentialedName} {...HEADSHOT} widths={[480, 720, 960]} sizes="(max-width: 860px) calc(100vw - 40px), 480px" loading="eager" fetchpriority="high" class="bio-headshot" />
           ) : (
-            <div class="provider-headshot provider-headshot--placeholder" role="img" aria-label="Photo coming soon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div class="bio-headshot bio-headshot--placeholder" role="img" aria-label="Photo coming soon">
               <span>Photo coming soon</span>
             </div>
           )}
         </div>
 
-        <div class="provider-hero-info">
-          <h1>{credentialedName}</h1>
-          <p class="provider-title">{d.title}</p>
-          <div class="divider"></div>
-
-          {d.specialties?.length > 0 && (
-            <div class="specialty-chips">
-              {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
-            </div>
+        <div class="bio-hero__info">
+          {isPhysician && statusLine && (
+            <p class:list={['rd-eyebrow', availability?.status === 'full' ? 'bio-status--full' : 'rd-eyebrow--gold']}>{statusLine}</p>
+          )}
+          {!isPhysician && d.title && <p class="rd-eyebrow">{d.title}</p>}
+          <h1 class:list={['rd-h1', 'bio-h1', { 'bio-h1--long': credentialedName.length > 18 }]}>{isPhysician ? credentialedName : d.name}</h1>
+          <p class="bio-role">{isPhysician ? d.title : d.credentials}</p>
+          {d.specialties?.length > 0 && <p class="bio-specs">{d.specialties.join(' · ')}</p>}
+          {!isPhysician && sidebarLocations.length > 0 && (
+            <p class="bio-specs">Practices at {sidebarLocations.map((l: any, i: number) => (
+              <Fragment>{i > 0 && ' · '}<a href={`/locations/${l.data.slug}/`}>{l.data.name}</a></Fragment>
+            ))}</p>
           )}
 
-          {isPhysician && (
-            <div class="board-status">
-              <span class={`board-badge ${d.boardStatus}`}>
-                {d.boardStatus === 'board-certified' ? '✓ Board-Certified' : '✓ Board-Eligible'}
-              </span>
-              <span class="board-detail">{d.boardSpecialties.join(', ')}</span>
-            </div>
-          )}
-
-          {isPhysician && d.additionalCertifications?.length > 0 && (
-            <div class="hero-credentials">
-              {d.additionalCertifications.map((c: any) => (
-                <span class="chip">{c.name}</span>
-              ))}
-            </div>
-          )}
-
-          {awards.length > 0 && (
-            <ul class="hero-awards">
+          {(credentialRows.length > 0 || awards.length > 0) && (
+            <ul class="bio-creds">
+              {credentialRows.map(row => <li>{row}</li>)}
               {awards.map((a: any) => (
-                <li class="hero-award">
+                <li class="bio-creds__award">
                   {a.image && (
                     <Image
                       src={a.image}
                       alt={a.imageAlt || awardLabel(a)}
-                      width={144}
-                      widths={[72, 144, 216]}
-                      sizes="72px"
+                      width={96}
+                      widths={[48, 96, 144]}
+                      sizes="48px"
                       format="webp"
                       quality={90}
                       loading="lazy"
-                      class="hero-award-badge"
+                      class="bio-creds__badge"
                     />
                   )}
-                  <span class="hero-award-label">{awardLabel(a)}</span>
+                  <span>{awardLabel(a)}</span>
                 </li>
               ))}
             </ul>
           )}
 
-          {availability && (
-            availability.status !== 'full' ? (
-              <div class="accepting-banner accepting">
-                {availability.status === 'future' ? (
-                  <Fragment>
-                    <span>
-                      <strong>Accepting patients starting {availability.startLabel}</strong>
-                      {availability.note && <span class="accepting-note"> — {availability.note}</span>}
-                    </span>
-                    <a
-                      href={`/contact/?subject=${encodeURIComponent(`Join Dr. ${d.name.split(' ').pop()}'s Patient List`)}`}
-                      class="btn btn-accent"
-                    >Join Dr. {d.name.split(' ').pop()}'s Patient List →</a>
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    <span><strong>Now accepting new patients</strong></span>
-                    <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet →</a>
-                  </Fragment>
-                )}
-              </div>
-            ) : (
-              <div class="accepting-banner full">
-                <strong>Panel currently full</strong>
-                {availability.note && <p class="accepting-note">{availability.note}</p>}
-              </div>
-            )
+          {availability && availability.status === 'accepting' && (
+            <div class="bio-hero__actions">
+              <a href={contactHref} class="btn-forest">Schedule a Free Meet &amp; Greet →</a>
+            </div>
           )}
-
+          {availability && availability.status === 'future' && (
+            <Fragment>
+              {availability.note && <p class="bio-notice">{availability.note}</p>}
+              <div class="bio-hero__actions">
+                <a href={joinHref} class="btn-forest">Join Dr. {lastName}'s Patient List →</a>
+              </div>
+            </Fragment>
+          )}
+          {availability && availability.status === 'full' && (
+            <Fragment>
+              {availability.note && <p class="bio-notice">{availability.note}</p>}
+              <div class="bio-hero__actions">
+                <a href="/meet-the-team/" class="btn-forest">Meet All Providers</a>
+              </div>
+            </Fragment>
+          )}
           {!isPhysician && d.acceptingNewClients !== undefined && (
-            <div class={`accepting-banner ${d.acceptingNewClients ? 'accepting' : 'full'}`}>
-              {d.acceptingNewClients
-                ? <span><strong>Now accepting new clients</strong></span>
-                : <strong>Not currently accepting new clients</strong>
-              }
-              {d.acceptingNewClientsNote && <p class="accepting-note">{d.acceptingNewClientsNote}</p>}
+            <Fragment>
+              {!d.acceptingNewClients && <p class="bio-notice"><strong>Not currently accepting new clients</strong>{d.acceptingNewClientsNote && <Fragment> {d.acceptingNewClientsNote}</Fragment>}</p>}
+              <div class="bio-hero__actions">
+                {d.acceptingNewClients
+                  ? <a href="/contact/" class="btn-forest">Contact Us</a>
+                  : <a href="/meet-the-team/" class="btn-forest">Meet All Providers</a>}
+              </div>
+            </Fragment>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--b">
+      <h2 class="rd-h2 rd-sticky">About {isPhysician ? `Dr. ${lastName}` : d.name.split(' ')[0]}</h2>
+      <div class="bio-prose">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  {isPhysician && (
+    <section class="rd-section">
+      <div class="rd-wrap rd-split rd-split--eq bio-facts">
+        <div class="rd-stack">
+          <h2 class="rd-h2">Education &amp; Training</h2>
+          <PathTimeline steps={steps} variant="profile" />
+        </div>
+        <div class="bio-facts__side">
+          <div class="rd-stack">
+            <h2 class="rd-h2">Details</h2>
+            <dl class="bio-dl">
+              {sidebarLocations.length > 0 && (
+                <div class="bio-dl__row">
+                  <dt>Practices at</dt>
+                  <dd>
+                    {sidebarLocations.map((l: any) => (
+                      <span class="bio-dl__line">
+                        <a href={`/locations/${l.data.slug}/`}>{l.data.name}</a><br />
+                        <span class="bio-dl__muted">{[l.data.addressStreet, `${l.data.addressCity}, ${l.data.addressState} ${l.data.addressZip}`].filter(Boolean).join(', ')}</span>
+                      </span>
+                    ))}
+                  </dd>
+                </div>
+              )}
+              {d.additionalCertifications?.length > 0 && (
+                <div class="bio-dl__row">
+                  <dt>Certifications</dt>
+                  <dd>{d.additionalCertifications.map((c: any) => <span class="bio-dl__line">{c.name}, {c.organization}</span>)}</dd>
+                </div>
+              )}
+              {awards.length > 0 && (
+                <div class="bio-dl__row">
+                  <dt>Awards</dt>
+                  <dd>{awards.map((a: any) => <span class="bio-dl__line">{a.name}, {a.organization}, {a.year}</span>)}</dd>
+                </div>
+              )}
+              {d.npi && (
+                <div class="bio-dl__row">
+                  <dt>NPI Number</dt>
+                  <dd>{d.npi}</dd>
+                </div>
+              )}
+            </dl>
+          </div>
+          {card && (
+            <div class="bio-card">
+              <p class="bio-card__text rd-serif" set:html={card.html}></p>
+              {card.link && <a class="rd-link" href={card.link.href}>{card.link.label}</a>}
             </div>
           )}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
-  <section class="provider-bio section" style="background: var(--cream-50);">
-    <div class="container provider-bio-grid">
-
-      <div class="bio-main prose">
-        {!isPhysician && d.scopeDisclaimer && (
-          <aside class="scope-disclaimer-callout" role="note">
-            <p><strong>Important:</strong> {d.scopeDisclaimer}</p>
-          </aside>
-        )}
-        <Content />
-      </div>
-
-      <aside class="bio-sidebar">
-
-        {d.education?.length > 0 && (
-          <div class="sidebar-card">
-            <h3>Education &amp; Training</h3>
-            <ul class="edu-list">
-              {d.education.map((e: any) => (
-                <li class="edu-item">
-                  <span class="edu-credential">
-                    {e.degree
-                      ? (e.field ? `${e.degree} — ${e.field}` : e.degree)
-                      : e.residency ? `${e.residency} Residency` : ''}
-                  </span>
-                  {e.institution && <span class="edu-institution">{e.institution}</span>}
-                  {e.year && <span class="edu-year">{e.year}</span>}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {d.notableExperience?.length > 0 && (
-          <div class="sidebar-card">
-            <h3>Notable Experience</h3>
-            <ul class="edu-list">
-              {d.notableExperience.map((item: any) => (
-                <li class="edu-item">
-                  <span class="edu-credential">{item.label}</span>
-                  {item.description && <p class="edu-institution">{item.description}</p>}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {isPhysician && d.additionalCertifications?.length > 0 && (
-          <div class="sidebar-card">
-            <h3>Certifications</h3>
-            <ul class="edu-list">
-              {d.additionalCertifications.map((cert: any) => (
-                <li class="edu-item">
-                  <span class="edu-credential">{cert.name}</span>
-                  <span class="edu-institution">{cert.organization}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {awards.length > 0 && (
-          <div class="sidebar-card">
-            <h3>Awards</h3>
-            <ul class="edu-list">
-              {awards.map((a: any) => (
-                <li class="edu-item">
-                  <span class="edu-credential">{a.name}</span>
-                  <span class="edu-institution">{a.organization}</span>
-                  <span class="edu-year">{a.year}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {sidebarLocations.length > 0 && (
-          <div class="sidebar-card">
-            <h3>Practices At</h3>
-            <ul class="location-list">
-              {sidebarLocations.map((locSlug: string) => (
-                <li>
-                  <a href={`/locations/${locSlug}/`} class="location-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>{locSlug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}</span>
-                    {/* Planned offices are filtered out of sidebarLocations above. */}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {isPhysician && d.npi && (
-          <div class="sidebar-card sidebar-card--small">
-            <span class="sidebar-label">NPI Number</span>
-            <span class="sidebar-value">{d.npi}</span>
-          </div>
-        )}
-
-        <div class="sidebar-cta">
-          {(isPhysician ? d.acceptingNewPatients : d.acceptingNewClients) ? (
-            <a href="/contact/" class="btn btn-accent" style="width:100%; text-align:center; display:block;">
-              {isPhysician ? 'Schedule a Meet & Greet' : 'Contact Us'}
-            </a>
-          ) : (
-            <a href="/meet-the-team/" class="btn btn-outline" style="width:100%; text-align:center; display:block;">
-              Meet All Providers
-            </a>
-          )}
+  {quotes.length > 0 && (
+    <section class="rd-section rd-alt" aria-label="Patient reviews">
+      <div class="rd-wrap">
+        <div class="bio-rev__head">
+          <h2 class="rd-h2">What patients say</h2>
+          <GoogleReviewsLink align="end" />
         </div>
-
-      </aside>
-    </div>
-  </section>
-
-  {REVIEWS[d.slug]?.length > 0 && (
-    <section class="provider-reviews section" aria-label="Patient reviews" style="background: var(--cream-200);">
-      <div class="container">
-        <span class="section-label">Patient Reviews</span>
-        <h2 class="section-title">What patients say</h2>
-        <div class={`provider-reviews-grid${REVIEWS[d.slug].length === 1 ? ' provider-reviews-grid--single' : ''}`}>
-          {REVIEWS[d.slug].map((r) => (
-            <TestimonialCard quote={r.quote} author={r.author} detail="Verified Google review" />
-          ))}
-        </div>
-        <GoogleReviewsLink />
+        <div class="bio-rev__quotes"><QuotePair quotes={quotes} /></div>
       </div>
     </section>
   )}
+
+  <CTABanner {...closing} ch={16} />
 </MainLayout>
 
 <style>
-  .breadcrumb { font-size: 0.85rem; color: var(--ink-300); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--green-400); }
-
-  .provider-hero-grid { display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: start; }
-  .provider-headshot { width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; box-shadow: var(--shadow-md); background: var(--cream-200); }
-  .provider-headshot--placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; background: var(--cream-200); color: var(--ink-300); font-size: 0.85rem; aspect-ratio: 4 / 5; }
-  .provider-title { font-size: 1.1rem; color: var(--ink-500); margin-top: 0.5rem; margin-bottom: 0; font-family: var(--font-body); }
-  .divider { width: 48px; height: 3px; background: var(--green-300); border-radius: 2px; margin: 1.25rem 0; }
-
-  .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-  .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.25rem 0.85rem; font-size: 0.82rem; font-weight: 600; }
-
-  .board-status { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
-  .board-badge { font-size: 0.82rem; font-weight: 700; padding: 0.2rem 0.75rem; border-radius: 999px; }
-  .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
-  .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
-  .board-detail { font-size: 0.85rem; color: var(--ink-500); }
-  /* Named credentials (e.g. MSCP, ABLM Diplomate) belong above the fold —
-     the sidebar "Certifications" card further down repeats the full detail
-     for anyone reading on, but a deciding patient shouldn't have to scroll
-     to see the credential that differentiates this physician. */
-  .hero-credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
-  .hero-awards { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
-  .hero-award { display: flex; align-items: center; gap: 0.9rem; }
-  .hero-award-badge { width: 72px; height: auto; flex-shrink: 0; }
-  .hero-award-label { font-size: 0.95rem; font-weight: 700; color: var(--ink-900); }
-
-  .accepting-banner { border-radius: var(--radius-sm); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; }
-  .accepting-banner.accepting { background: var(--green-50); border: 1px solid var(--green-200); color: var(--green-500); }
-  .accepting-banner.full { background: var(--cream-200); border: 1px solid var(--cream-300); color: var(--ink-700); }
-  .accepting-note { font-size: 0.85rem; color: var(--ink-500); }
-
-  .scope-disclaimer-callout { background: var(--green-50); border-left: 4px solid var(--green-300); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin-bottom: 1.75rem; color: var(--ink-700); }
-  .scope-disclaimer-callout p { margin: 0; line-height: 1.6; font-size: 1rem; }
-
-  .provider-bio-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
-
-  .prose :global(h2) { font-size: clamp(1.25rem, 3vw, 1.6rem); margin-top: 2.5rem; margin-bottom: 0.75rem; color: var(--ink-900); }
-  .prose :global(h3) { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--ink-900); }
-  .prose :global(p) { color: var(--ink-700); line-height: 1.8; margin-bottom: 1rem; }
-  .prose :global(ul), .prose :global(ol) { padding-left: 1.5rem; color: var(--ink-700); margin-bottom: 1rem; }
-  .prose :global(li) { margin-bottom: 0.25rem; }
-
-  .sidebar-card { background: var(--cream-50); border: 1px solid var(--cream-300); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; }
-  .sidebar-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-300); margin-bottom: 0.9rem; font-family: var(--font-body); font-weight: 700; }
-  .sidebar-card--small { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; }
-  .sidebar-label { font-size: 0.8rem; color: var(--ink-300); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
-  .sidebar-value { font-size: 0.85rem; color: var(--ink-700); font-family: monospace; }
-
-  .edu-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
-  .edu-item { display: flex; flex-direction: column; gap: 0.1rem; }
-  .edu-credential { font-size: 0.9rem; font-weight: 700; color: var(--ink-900); }
-  .edu-institution { font-size: 0.85rem; color: var(--ink-500); }
-  .edu-year { font-size: 0.8rem; color: var(--ink-300); }
-
-  .location-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
-  .location-link { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--green-400); text-decoration: none; font-weight: 500; transition: color 0.15s; }
-  .location-link:hover { color: var(--green-500); }
-  .location-planned { color: var(--ink-500); font-weight: 400; font-style: italic; }
-  .sidebar-cta { margin-top: 0.5rem; }
-
-  @media (max-width: 900px) {
-    .provider-hero-grid { grid-template-columns: 1fr; }
-    .provider-hero-photo { max-width: 280px; }
-    .provider-bio-grid { grid-template-columns: 1fr; }
-    .bio-sidebar { order: -1; }
-  }
-  .provider-reviews-grid {
+  .bio-hero { background: var(--linen); padding: 72px 0 88px; }
+  .bio-hero__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 72px;
+    align-items: start;
   }
-  .provider-reviews-grid--single {
-    grid-template-columns: 1fr;
-    max-width: 620px;
+  .bio-hero :global(.bio-headshot) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 2px;
+    background: var(--linen-300);
   }
-  @media (max-width: 780px) {
-    .provider-reviews-grid { grid-template-columns: 1fr; }
+  .bio-headshot--placeholder { display: flex; align-items: center; justify-content: center; color: var(--text-600); font-size: 13px; }
+  .bio-hero__info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 8px; }
+  .bio-hero__info > p { margin: 0; }
+  .bio-status--full { color: var(--text-500); }
+  .bio-h1 { font-size: 64px; }
+  .bio-h1--long { font-size: 56px; line-height: 1.04; }
+  .bio-role { font-size: 18px; font-weight: 500; color: var(--sage-600); }
+  .bio-specs { font-size: 14px; color: var(--text-600); }
+  .bio-specs a { color: var(--sage-600); text-decoration: none; }
+  .bio-specs a:hover { color: var(--forest); }
+  .bio-creds { list-style: none; margin: 8px 0 0; padding: 0; width: 100%; display: flex; flex-direction: column; font-size: 15px; line-height: 1.5; color: var(--forest); }
+  .bio-creds li { padding: 12px 0; border-top: 1px solid var(--hairline-strong); }
+  .bio-creds li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .bio-creds__award { display: flex; align-items: center; gap: 12px; }
+  .bio-creds :global(.bio-creds__badge) { width: 48px; height: auto; flex-shrink: 0; }
+  .bio-notice {
+    width: 100%;
+    margin: 10px 0 0 !important;
+    padding: 18px 22px;
+    background: var(--sage-50);
+    border-top: 2px solid var(--sage-600);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--forest);
+  }
+  .bio-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 6px; }
+
+  .bio-prose { display: flex; flex-direction: column; gap: 22px; }
+  .bio-prose :global(p) { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
+  .bio-prose :global(h2), .bio-prose :global(h3) { margin: 12px 0 0; font-size: 22px; color: var(--forest); font-weight: 400; }
+  .bio-prose :global(ul), .bio-prose :global(ol) { margin: 0; padding-left: 1.4rem; color: var(--text-900); line-height: 1.7; }
+  .bio-prose :global(a) { color: var(--sage-600); }
+
+  .bio-facts__side { display: flex; flex-direction: column; gap: 40px; }
+  .bio-dl { margin: 12px 0 0; display: flex; flex-direction: column; }
+  .bio-dl__row {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .bio-dl__row:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .bio-dl dt { margin: 0; color: var(--text-600); }
+  .bio-dl dd { margin: 0; color: var(--forest); }
+  .bio-dl dd a { color: var(--sage-600); text-decoration: none; }
+  .bio-dl dd a:hover { color: var(--forest); }
+  .bio-dl__line { display: block; }
+  .bio-dl__muted { color: var(--text-600); }
+  .bio-card {
+    padding: 28px 30px;
+    background: var(--sage-50);
+    border-top: 3px solid var(--forest);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .bio-card__text { margin: 0; font-size: 22px; line-height: 1.35; color: var(--forest); }
+  .bio-card__text :global(a) { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .bio-card__text :global(a:hover) { color: var(--forest); border-color: var(--forest); }
+  .bio-card .rd-link { align-self: flex-start; }
+
+  .bio-rev__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 40px; }
+  .bio-rev__quotes { margin-top: 44px; }
+
+  @media (max-width: 860px) {
+    .bio-hero { padding: 48px 0 64px; }
+    .bio-hero__grid { grid-template-columns: 1fr; gap: 28px; }
+    .bio-hero__photo { max-width: 360px; }
+    .bio-h1, .bio-h1--long { font-size: 40px; }
+    .bio-dl__row { grid-template-columns: 1fr; gap: 4px; }
   }
 </style>

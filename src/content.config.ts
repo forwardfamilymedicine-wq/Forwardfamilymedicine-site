@@ -41,6 +41,9 @@ const blog = defineCollection({
   schema: ({ image }) => baseSchema.extend({
     category: z.string().optional(),
     image: image().optional(),
+    // Curated related reading for the article rail: post slugs or site paths
+    // (see src/utils/related.ts). Without it the rail is automatic.
+    relatedPosts: z.array(z.string()).optional(),
   }),
 });
 

@@ -233,6 +233,8 @@ export interface ComposedPage {
     cta: { label: string; href: string }; secondary: { label: string; href: string };
     photo: ImageMetadata | null; photoAlt: string;
     physician: { name: string; credential: string; note?: string; href: string; linkLabel: string };
+    /** Team-card pages: the physicians accepting new patients, in display order, for the hero card. */
+    portraits: { photo: ImageMetadata; alt: string }[];
   };
   stats: { value: string; label: string }[];
   before: Block[];
@@ -300,6 +302,11 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
         photoAlt: 'Forward Family Medicine physician team',
         physician: { name: 'Our Physicians', credential: 'Direct Primary Care · Wayne · Malvern', href: '/meet-the-team/', linkLabel: 'Meet the team' },
       };
+  // The team card shows the accepting physicians' portraits; a full panel is never put forward.
+  const portraits = hero.kind === 'physician' ? [] : providers
+    .filter(p => p.data.photo && getAvailability(p.data).status === 'accepting')
+    .sort((a, b) => a.data.displayOrder - b.data.displayOrder)
+    .map(p => ({ photo: p.data.photo as ImageMetadata, alt: p.data.photoAlt }));
 
   // Spotlight: the hero physician, or the physician at the nearest office.
   let spotlightProvider: Provider;
@@ -437,6 +444,7 @@ export function composeLocalPage(input: ComposeInput): ComposedPage {
       cta: { label: 'Schedule a free meet and greet', href: '/contact/?source=local-page' },
       secondary: { label: 'See membership plans', href: '/membership/' },
       ...heroPhysician,
+      portraits,
     },
     stats: [
       { value: '~250', label: 'Max patients per physician' },

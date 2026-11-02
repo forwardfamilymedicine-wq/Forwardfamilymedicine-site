@@ -34,7 +34,7 @@ import CTABanner from '../../components/shared/CTABanner.astro';
 import TestimonialCard from '../../components/shared/TestimonialCard.astro';
 import NearYouExpander from '../../components/shared/NearYouExpander.astro';
 import liebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
-import wayneExterior from '../../assets/locations/wayne-exterior.jpeg';
+import windowChairs from '../../assets/office/wayne-window-chairs.jpg';
 
 export const faqs = [
   {
@@ -92,7 +92,7 @@ export const nearby = [
   { value: '$200/mo', label: 'Individual membership' },
 ]} />
 
-<Section tone="cream" label="Why Wayne" title="Why Wayne patients look for a different kind of doctor">
+<Section layout="split" tone="cream" label="Why Wayne" title="Why Wayne patients look for a different kind of doctor">
 
 Wayne, Pennsylvania is a vibrant Philadelphia Main Line community known for its walkable downtown, excellent schools, and family-friendly neighborhoods. Many residents choose personalized primary care that prioritizes prevention, longer visits, and strong doctor-patient relationships, which is the focus of Forward Family Medicine.
 
@@ -100,7 +100,7 @@ Wayne residents have long valued quality and personalization in their community'
 
 </Section>
 
-<Section tone="white" label="Concierge-style care" title="Concierge-Style Care at an Accessible Price">
+<Section layout="split" tone="white" label="Concierge-style care" title="Concierge-Style Care at an Accessible Price">
 
 Forward Family Medicine delivers the core benefits of concierge medicine, direct physician access, same-day availability, unhurried visits, and proactive prevention, through the Direct Primary Care (DPC) model. That means no high annual retainer. One flat monthly membership fee, no insurance billing for primary care, and care that feels like having a doctor in the family.
 
@@ -138,7 +138,7 @@ At Forward Family Medicine in Wayne, he brings that rare combination: clinical m
   </PhysicianSpotlight>
 </Section>
 
-<Section tone="white" label="The patient experience" title="What care looks like as a member">
+<Section layout="split" tone="white" label="The patient experience" title="What care looks like as a member">
 
 ### Your first visit
 
@@ -154,7 +154,7 @@ Same-day appointments for acute concerns, in the office or by phone or video. Vi
 
 </Section>
 
-<Section tone="cream" label="Services" title="Services Included in Membership">
+<Section layout="split" tone="cream" label="Services" title="Services Included in Membership">
   <ServiceList
     intro="Membership covers the primary care most people need in a year. Nothing below carries a copay or a separate bill."
     groups={[
@@ -181,36 +181,31 @@ Same-day appointments for acute concerns, in the office or by phone or video. Vi
   />
 </Section>
 
-<Section tone="white" width="wide" label="Wayne, up close" title="A practice in the neighborhood, not across the region">
+<Section tone="sand" width="wide" label="Wayne, up close">
   <div class="ed-two-up">
-    <div>
+    <div class="ed-two-up__copy">
+
+## A practice in the neighborhood, not across the region
 
 Wayne residents looking for the concierge medicine experience will find our practice directly in the community, no commute needed. Our office at 295 Old Eagle School Road is central to Wayne and walkable from Wayne Station on the Paoli–Thorndale line, with free parking on site for anyone driving in.
 
 Also serving patients from Radnor, Strafford, Berwyn, and Devon.
 
     </div>
-    <figure class="ed-photo">
-      <Image
-        src={wayneExterior}
-        alt="Forward Family Medicine's office at 295 Old Eagle School Road in Wayne, PA"
-        width={1000}
-        height={750}
-        fit="cover"
-        position="center"
-        widths={[480, 720, 1000]}
-        sizes="(max-width: 900px) calc(100vw - 32px), 500px"
-        format="webp"
-        quality={82}
-        loading="lazy"
-        class="ed-photo__img"
-      />
-      <figcaption class="ed-photo__caption">Our office at 295 Old Eagle School Road, Wayne. Free parking on site.</figcaption>
-    </figure>
+    <Image
+      src={windowChairs}
+      alt="Our office at 295 Old Eagle School Road, Wayne"
+      widths={[480, 720, 960, 1200]}
+      sizes="(max-width: 860px) calc(100vw - 40px), 520px"
+      format="webp"
+      quality={82}
+      loading="lazy"
+      class="ed-two-up__img"
+    />
   </div>
 </Section>
 
-<Section tone="sand" width="wide">
+<Section tone="cream" width="wide">
   <PatientScenario
     title="A Tuesday morning in Wayne"
     situation="You wake up with a fever and a sore throat, and you have a meeting at eleven."
@@ -223,7 +218,7 @@ If a strep test or a prescription is needed, it is handled during that visit. Th
   </PatientScenario>
 </Section>
 
-<Section tone="cream" label="Practical information" title="Practical Information">
+<Section tone="white" label="Practical information" title="Practical Information">
   <PracticalInfo
     address={{
       street: props.locationEntry.data.addressStreet,
@@ -268,31 +263,32 @@ If a strep test or a prescription is needed, it is handled during that visit. Th
   .ed-two-up {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: start;
+    gap: 72px;
+    align-items: center;
   }
-  .ed-two-up p {
-    font-size: var(--step-0);
-    line-height: 1.75;
-    color: var(--ink-700);
-    max-width: var(--measure);
-    margin-bottom: var(--space-m);
+  .ed-two-up__copy { display: flex; flex-direction: column; gap: 18px; }
+  .ed-two-up__copy h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--forest);
   }
-  .ed-two-up p:last-child { margin-bottom: 0; }
-  .ed-photo { margin: 0; }
-  .ed-photo__img {
+  .ed-two-up__copy p { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
+  .ed-two-up__copy p + p { font-size: 15px; line-height: 1.7; color: var(--text-600); }
+  .ed-two-up__img {
+    display: block;
     width: 100%;
     height: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    background: var(--cream-200);
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: 60% 50%;
+    border-radius: 2px;
   }
-  .ed-photo__caption {
-    margin-top: var(--space-xs);
-    font-size: var(--step--1);
-    color: var(--ink-500);
-  }
-  @media (max-width: 900px) {
-    .ed-two-up { grid-template-columns: 1fr; }
+  @media (max-width: 860px) {
+    .ed-two-up { grid-template-columns: 1fr; gap: 28px; }
+    .ed-two-up__copy h2 { font-size: 30px; }
   }
 `}</style>

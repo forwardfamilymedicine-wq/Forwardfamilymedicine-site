@@ -1,83 +1,72 @@
 ---
 /**
- * Editorial band. One background tone, one content width, optional label and
- * title, then whatever the page puts inside. Direct-child paragraphs, lists
- * and h3s from MDX are styled here; nested components style themselves.
- * Class prefix is `ed-` to stay clear of the global `.section` and the local
- * route's `.section-*` classes.
+ * Editorial band for the hand-built local page. One background tone, the
+ * 1180px content width, an optional title, then whatever the page puts
+ * inside. `layout="split"` sets the title in a sticky left column with the
+ * content at right, as the Local boards lay out their prose sections.
+ * `label` and `width` are accepted for existing callers and ignored: section
+ * eyebrows were removed site-wide in the redesign, and every band shares one
+ * width now.
  */
 export interface Props {
   tone?: 'cream' | 'white' | 'sand' | 'green';
   width?: 'narrow' | 'wide';
+  layout?: 'stack' | 'split';
   label?: string;
   title?: string;
   id?: string;
   class?: string;
 }
-const { tone = 'white', width = 'narrow', label, title, id, class: className } = Astro.props;
+const { tone = 'white', layout = 'stack', title, id, class: className } = Astro.props;
+const split = layout === 'split' && title;
 ---
 
-<section class:list={['ed-section', `ed-section--${tone}`, `ed-section--${width}`, className]} id={id}>
-  <div class="ed-section__inner">
-    {(label || title) && (
-      <header class="ed-section__head">
-        {label && <span class="section-label">{label}</span>}
-        {title && <h2 class="ed-section__title">{title}</h2>}
-      </header>
+<section class:list={['ed-section', 'rd-section', `ed-section--${tone}`, className]} id={id}>
+  <div class:list={['rd-wrap', { 'rd-split rd-split--c ed-section__split': split }]}>
+    {split ? (
+      <Fragment>
+        <h2 class="rd-h2 rd-sticky ed-section__title">{title}</h2>
+        <div class="ed-section__body"><slot /></div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        {title && <h2 class="rd-h2 ed-section__title ed-section__title--stack">{title}</h2>}
+        <div class="ed-section__body"><slot /></div>
+      </Fragment>
     )}
-    <slot />
   </div>
 </section>
 
 <style>
-  .ed-section { padding: var(--space-2xl) 0; }
-  .ed-section--cream { background: var(--cream-100); }
-  .ed-section--white { background: #ffffff; }
-  .ed-section--sand  { background: var(--cream-200); }
-  .ed-section--green { background: var(--green-500); color: #ffffff; }
-
-  .ed-section__inner {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 clamp(16px, 4vw, 40px);
-  }
-  .ed-section--narrow .ed-section__inner { max-width: 880px; }
-
-  .ed-section__head { margin-bottom: var(--space-l); }
-  .ed-section__title {
-    font-size: var(--step-3);
-    line-height: 1.15;
-    max-width: 24ch;
-    margin: 0;
-  }
-  .ed-section--green .ed-section__title { color: #ffffff; }
+  .ed-section--cream { background: var(--linen); }
+  .ed-section--white { background: var(--linen-50); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .ed-section--sand { background: var(--sage-50); }
+  .ed-section--green { background: var(--forest); color: var(--linen); }
+  .ed-section--green .ed-section__title { color: var(--linen); }
+  .ed-section__split { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .ed-section__title { margin: 0; }
+  .ed-section__title--stack { margin-bottom: 36px; }
+  .ed-section__body { min-width: 0; display: flex; flex-direction: column; gap: 18px; }
 
   /* Prose that the MDX places directly inside the band */
-  .ed-section__inner > :global(p) {
-    font-size: var(--step-0);
-    line-height: 1.75;
-    color: var(--ink-700);
-    max-width: var(--measure);
-    margin-bottom: var(--space-m);
+  .ed-section__body > :global(p) { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); max-width: 68ch; }
+  .ed-section__body > :global(h3) { margin: 12px 0 -6px; font-family: var(--font-body); font-size: 17px; font-weight: 600; line-height: 1.35; color: var(--forest); }
+  .ed-section__body > :global(h3:first-child) { margin-top: 0; }
+  .ed-section__body > :global(ul), .ed-section__body > :global(ol) { list-style: none; margin: 0; padding: 0; max-width: 68ch; }
+  .ed-section__body > :global(ul) > :global(li), .ed-section__body > :global(ol) > :global(li) {
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--text-900);
   }
-  .ed-section__inner > :global(p:last-child) { margin-bottom: 0; }
-  .ed-section__inner > :global(h3) {
-    font-size: var(--step-1);
-    line-height: 1.25;
-    margin: var(--space-l) 0 var(--space-xs);
+  .ed-section__body > :global(ul) > :global(li:last-child), .ed-section__body > :global(ol) > :global(li:last-child) { border-bottom: 1px solid var(--hairline-strong); }
+  .ed-section__body :global(p a), .ed-section__body :global(li a) { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .ed-section__body :global(p a:hover), .ed-section__body :global(li a:hover) { color: var(--forest); border-color: var(--forest); }
+  .ed-section__body :global(strong) { color: var(--forest); font-weight: 500; }
+  .ed-section--green .ed-section__body > :global(p) { color: var(--on-forest); }
+  @media (max-width: 860px) {
+    .ed-section__title--stack { margin-bottom: 24px; }
+    .ed-section__split { grid-template-columns: 1fr; gap: 28px; }
   }
-  .ed-section__inner > :global(h3:first-of-type) { margin-top: 0; }
-  .ed-section__inner > :global(ul),
-  .ed-section__inner > :global(ol) {
-    max-width: var(--measure);
-    margin: 0 0 var(--space-m) 1.25rem;
-    color: var(--ink-700);
-    line-height: 1.7;
-  }
-  .ed-section__inner > :global(p a),
-  .ed-section__inner > :global(li a) {
-    color: var(--green-400);
-    font-weight: 600;
-  }
-  .ed-section--green .ed-section__inner > :global(p) { color: rgba(255, 255, 255, 0.9); }
 </style>

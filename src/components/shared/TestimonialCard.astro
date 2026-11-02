@@ -1,4 +1,9 @@
 ---
+/**
+ * One patient quote in the boards' staged style: serif text under a sage
+ * opening mark, the reviewer's initials and "Verified Google review". Text is
+ * verbatim, never reworded.
+ */
 export interface Props {
   quote: string;
   author: string;
@@ -8,49 +13,19 @@ export interface Props {
 const { quote, author, detail } = Astro.props;
 ---
 
-<blockquote class="testimonial-card card">
-  <div class="quote-mark" aria-hidden="true">"</div>
-  <p class="quote-text">{quote}</p>
-  <footer class="quote-footer">
+<blockquote class="testimonial">
+  <span class="testimonial__mark rd-serif" aria-hidden="true">“</span>
+  <p class="testimonial__text rd-serif">{quote}</p>
+  <footer class="testimonial__by">
     <strong>{author}</strong>
-    {detail && <span class="detail"> &mdash; {detail}</span>}
+    {detail && <span> — {detail}</span>}
   </footer>
 </blockquote>
 
 <style>
-  .testimonial-card {
-    position: relative;
-    border-left: 4px solid var(--green-300);
-    background: var(--warm-50);
-    margin: 0;
-  }
-  .quote-mark {
-    position: absolute;
-    top: 0.5rem;
-    left: 1.25rem;
-    font-family: var(--font-heading);
-    font-size: 5rem;
-    line-height: 1;
-    color: var(--green-200);
-    pointer-events: none;
-    user-select: none;
-  }
-  .quote-text {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: var(--ink-700);
-    font-style: italic;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
-  }
-  .quote-footer {
-    font-size: 0.9rem;
-    color: var(--ink-900);
-    font-weight: 600;
-  }
-  .detail {
-    font-weight: 400;
-    color: var(--ink-300);
-  }
+  .testimonial { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .testimonial__mark { font-size: 64px; line-height: 0.6; color: var(--sage); }
+  .testimonial__text { margin: 0 !important; font-size: 19px !important; line-height: 1.5 !important; color: var(--forest) !important; }
+  .testimonial__by { font-size: 13px; color: var(--sage-600); }
+  .testimonial__by strong { color: var(--forest); font-weight: 600; }
 </style>

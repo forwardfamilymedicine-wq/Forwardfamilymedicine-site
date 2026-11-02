@@ -1,11 +1,13 @@
 ---
 /**
- * Services as an editorial list rather than an icon grid: an intro line,
- * then grouped running lists with a heading per group.
+ * Services as a two-column ruled list, per the Local boards. An optional
+ * intro line, an optional heading per group, "more" link and note under the
+ * list (the composed page puts its note and links in the column beside the
+ * list instead).
  */
 export interface Props {
   intro?: string;
-  groups: { heading: string; items: string[] }[];
+  groups: { heading?: string; items: string[] }[];
   more?: { label: string; href: string };
   /** Short HTML note under the list, e.g. membership pricing with its link. */
   noteHtml?: string;
@@ -15,80 +17,58 @@ const { intro, groups, more, noteHtml } = Astro.props;
 
 <div class="ed-services">
   {intro && <p class="ed-services__intro">{intro}</p>}
-  <div class="ed-services__groups">
-    {groups.map(g => (
-      <div class="ed-services__group">
-        <h3 class="ed-services__heading">{g.heading}</h3>
-        <ul class="ed-services__list">
-          {g.items.map(item => <li>{item}</li>)}
-        </ul>
-      </div>
-    ))}
-  </div>
-  {more && <p class="ed-services__more"><a href={more.href}>{more.label}</a></p>}{noteHtml && <p class="ed-services__note" set:html={noteHtml} />}
+  {groups.map(g => (
+    <div class="ed-services__group">
+      {g.heading && <h3 class="ed-services__heading">{g.heading}</h3>}
+      <ul class="ed-services__list" data-reveal>
+        {g.items.map(item => <li class="ed-services__item">{item}</li>)}
+      </ul>
+    </div>
+  ))}
+  {more && <p class="ed-services__more"><a href={more.href} class="rd-link">{more.label} →</a></p>}
+  {noteHtml && <p class="ed-services__note" set:html={noteHtml} />}
 </div>
 
 <style>
-  .ed-services__intro {
-    font-size: var(--step-1);
-    line-height: 1.5;
-    color: var(--ink-900);
-    max-width: 40ch;
-    margin: 0 0 var(--space-l);
-  }
-  .ed-services__groups {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-l) clamp(2rem, 5vw, 4rem);
-  }
-  .ed-services__heading {
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green-400);
-    margin: 0 0 var(--space-xs);
-    padding-bottom: var(--space-xs);
-    border-bottom: 1px solid var(--cream-300);
-  }
+  .ed-services { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  .ed-services__intro { margin: 0; font-size: 16px; line-height: 1.7; color: var(--text-900); max-width: 48ch; }
+  .ed-services__heading { margin: 0 0 4px; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--sage-600); }
   .ed-services__list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 40px;
   }
-  .ed-services__list li {
-    position: relative;
-    padding: 0.55rem 0 0.55rem 1.4rem;
-    color: var(--ink-700);
-    line-height: 1.55;
-    border-bottom: 1px solid var(--cream-200);
-  }
-  .ed-services__list li::before {
-    content: '';
-    position: absolute;
-    left: 0.15rem;
-    top: 1.05rem;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green-300);
-  }
-  .ed-services__more {
-    margin: var(--space-l) 0 0;
-    font-weight: 600;
-  }
-  .ed-services__more a { color: var(--green-400); }
-  .ed-services__note {
-    margin: var(--space-m) 0 0;
-    font-size: var(--step--1);
-    color: var(--ink-700);
+  .ed-services__item {
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 15px;
     line-height: 1.6;
-    max-width: var(--measure);
+    color: var(--text-900);
+    opacity: 0;
+    transform: translateX(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .ed-services__note :global(a) { color: var(--green-400); font-weight: 600; }
-  .ed-services__note :global(strong) { color: var(--ink-900); }
-  @media (max-width: 640px) {
-    .ed-services__groups { grid-template-columns: 1fr; }
+  .ed-services__item:nth-last-child(-n+2) { border-bottom: 1px solid var(--hairline-strong); }
+  .ed-services__list.on .ed-services__item { opacity: 1; transform: none; }
+  .ed-services__list.on .ed-services__item:nth-child(1) { transition-delay: 0.1s; }
+  .ed-services__list.on .ed-services__item:nth-child(2) { transition-delay: 0.22s; }
+  .ed-services__list.on .ed-services__item:nth-child(3) { transition-delay: 0.34s; }
+  .ed-services__list.on .ed-services__item:nth-child(4) { transition-delay: 0.46s; }
+  .ed-services__list.on .ed-services__item:nth-child(5) { transition-delay: 0.58s; }
+  .ed-services__list.on .ed-services__item:nth-child(6) { transition-delay: 0.7s; }
+  .ed-services__list.on .ed-services__item:nth-child(7) { transition-delay: 0.82s; }
+  .ed-services__list.on .ed-services__item:nth-child(8) { transition-delay: 0.94s; }
+  .ed-services__list.on .ed-services__item:nth-child(n+9) { transition-delay: 1.06s; }
+  .ed-services__more { margin: 0; }
+  .ed-services__note { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-700); max-width: 68ch; }
+  .ed-services__note :global(a) { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .ed-services__note :global(strong) { color: var(--forest); font-weight: 500; }
+  @media (max-width: 860px) {
+    .ed-services__list { grid-template-columns: 1fr; }
+    .ed-services__item { border-bottom: 0 !important; }
+    .ed-services__item:last-child { border-bottom: 1px solid var(--hairline-strong) !important; }
   }
 </style>

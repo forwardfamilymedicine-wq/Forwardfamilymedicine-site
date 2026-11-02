@@ -729,3 +729,18 @@ html { scroll-padding-top: var(--header-h); }
 }
 /* A bare .rd-section sits on linen; zero specificity so any component's own background wins. */
 :where(.rd-section:not(.rd-alt):not(.rd-sage)) { background: var(--linen); }
+
+/* Phase 3 templates (profiles, articles, blog and library indexes, local pages). Additive. */
+.rd-crumb { font-size: 13px; color: var(--text-500); margin: 0 0 40px; }
+/* Links are underlined so they read as links beside the grey current item, not by colour alone. */
+.rd-crumb a { color: var(--sage-600); text-decoration: underline; text-decoration-color: var(--hairline-dot); text-underline-offset: 3px; }
+.rd-crumb a:hover { color: var(--forest); text-decoration-color: var(--forest); }
+.rd-crumb [aria-current] { color: var(--text-700); }
+/* Sticky only when the element fits under the header (src/scripts/stickyFit.ts
+   adds .is-sticky when its height leaves room at the current viewport). */
+[data-sticky-fit] { position: static; }
+[data-sticky-fit].is-sticky { position: sticky; top: calc(var(--header-h) + 24px); }
+@media (max-width: 860px) {
+  .rd-crumb { margin-bottom: 24px; }
+  [data-sticky-fit].is-sticky { position: static; }
+}

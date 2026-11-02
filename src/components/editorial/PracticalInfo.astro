@@ -1,8 +1,8 @@
 ---
 /**
- * Practical information as a definition list, fed from the `locations`
- * collection rather than hand-typed bold lines. Consecutive days with the
- * same hours collapse to one range.
+ * Practical information as a two-column definition list of hairline rows, per
+ * the Local boards, fed from the `locations` collection rather than hand-typed
+ * lines. Consecutive days with the same hours collapse to one range.
  */
 export interface Props {
   address: { street: string; city: string; state: string; zip: string };
@@ -47,8 +47,7 @@ const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
       <dt>Office</dt>
       <dd>{opening && <span class="ed-info__line ed-info__opening">Opens {opening}</span>}
         {hasStreet && <span class="ed-info__line">{address.street}</span>}
-        <span class="ed-info__line">{cityLine}</span>
-        {hasStreet && mapHref && <a href={mapHref} rel="noopener" target="_blank">Directions</a>}
+        <span class="ed-info__line">{cityLine}{hasStreet && mapHref && <Fragment> <span class="ed-info__dot" aria-hidden="true">·</span> <a href={mapHref} rel="noopener" target="_blank">Directions</a></Fragment>}</span>
       </dd>
     </div>
     {hourRuns.length > 0 && (
@@ -89,52 +88,37 @@ const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
     ))}
   </dl>
   {detailsHref && (
-    <p class="ed-info__more"><a href={detailsHref}>Office details for {address.city}</a></p>
+    <p class="ed-info__more"><a href={detailsHref} class="rd-link">Office details for {address.city} →</a></p>
   )}
   <span class="visually-hidden">{fullAddress}</span>
 </div>
 
 <style>
-  .ed-info__notice {
-    margin: 0 0 var(--space-l);
-    max-width: 46rem;
-    color: var(--ink-700);
-    line-height: 1.6;
-  }
+  .ed-info__notice { margin: 0 0 32px; max-width: 46rem; font-size: 16px; line-height: 1.7; color: var(--text-900); }
   .ed-info__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 clamp(2rem, 5vw, 4rem);
+    gap: 0 48px;
     margin: 0;
-    border-top: 1px solid var(--cream-300);
   }
   .ed-info__row {
     display: grid;
-    grid-template-columns: 7.5rem minmax(0, 1fr);
-    gap: var(--space-m);
-    padding: var(--space-s) 0;
-    border-bottom: 1px solid var(--cream-300);
-  }
-  .ed-info__row dt {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--green-400);
-    padding-top: 0.2rem;
-  }
-  .ed-info__row dd {
-    margin: 0;
-    min-width: 0;
-    overflow-wrap: anywhere;
-    color: var(--ink-700);
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 14px;
     line-height: 1.6;
   }
+  .ed-info__row:nth-last-child(-n+2) { border-bottom: 1px solid var(--hairline-strong); }
+  .ed-info__row dt { margin: 0; color: var(--text-600); }
+  .ed-info__row dd { margin: 0; min-width: 0; overflow-wrap: anywhere; color: var(--forest); }
   .ed-info__line { display: block; }
-  .ed-info__opening { font-weight: 700; color: var(--ink-900); }
-  .ed-info__row a { color: var(--green-400); font-weight: 600; }
-  .ed-info__more { margin: var(--space-l) 0 0; font-weight: 600; }
-  .ed-info__more a { color: var(--green-400); }
+  .ed-info__opening { font-weight: 600; }
+  .ed-info__dot { color: var(--hairline-dot); }
+  .ed-info__row a { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .ed-info__row a:hover { color: var(--forest); border-color: var(--forest); }
+  .ed-info__more { margin: 28px 0 0; }
   .visually-hidden {
     position: absolute;
     width: 1px; height: 1px;
@@ -142,10 +126,12 @@ const fullAddress = hasStreet ? `${address.street}, ${cityLine}` : cityLine;
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 860px) {
     .ed-info__list { grid-template-columns: 1fr; }
+    .ed-info__row { border-bottom: 0 !important; }
+    .ed-info__row:last-child { border-bottom: 1px solid var(--hairline-strong) !important; }
   }
   @media (max-width: 640px) {
-    .ed-info__row { grid-template-columns: 1fr; gap: 0.25rem; }
+    .ed-info__row { grid-template-columns: 1fr; gap: 4px; }
   }
 </style>
