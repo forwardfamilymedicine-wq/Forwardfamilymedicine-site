@@ -576,8 +576,9 @@ tbody tr:hover {
   --section-y:        96px;
   --section-y-phone:  64px;
   /* Sticky header height (main bar + bottom border). Anchor targets and every
-     other sticky offset sit below it. Measured in the browser at 81px desktop
-     and 65px under 860px; keep in step with Header.astro (.bar-inner height). */
+     other sticky offset sit below it. Measured in the browser at 81px with the
+     full nav and 65px at 1023px and under (burger); keep in step with
+     Header.astro (.bar-inner height and its 1023px breakpoint). */
   --header-h:         81px;
 }
 
@@ -696,8 +697,11 @@ html { scroll-padding-top: var(--header-h); }
   [data-reveal], [data-reveal] * { transition: none !important; animation: none !important; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1023px) {
   :root { --header-h: 65px; }
+}
+
+@media (max-width: 860px) {
   .rd-wrap { padding: 0 var(--content-pad-phone); }
   .rd-section { padding: var(--section-y-phone) 0; }
   .rd-h1 { font-size: 40px; }

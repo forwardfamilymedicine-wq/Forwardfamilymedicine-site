@@ -110,8 +110,12 @@ const schemas = [
         : link.href.indexOf('/individual-membership') !== -1
           ? 'individual'
           : 'unknown';
+      // Same-tab links unload the page; ask gtag to send the hit as a beacon
+      // so it survives. New-tab links keep the page alive and send as before.
+      var params = { plan: plan };
+      if (link.target !== '_blank') params.transport_type = 'beacon';
       if (window.ffmTrack) {
-        window.ffmTrack('outbound_enrollment_click', { plan });
+        window.ffmTrack('outbound_enrollment_click', params);
       }
     });
   </script>

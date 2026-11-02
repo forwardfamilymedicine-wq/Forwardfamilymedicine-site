@@ -303,7 +303,12 @@ const clItems = [
   }
   .important strong { color: var(--forest); }
   .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
-  .aside { gap: 24px; }
+  .aside { gap: 24px; position: static; }
+  /* The card plus the 4:5 photo is 730-842px tall (taller as the column
+     widens). Pin it under the header only when the viewport has room for all
+     of it plus the 105px offset, so its bottom is never cut off while stuck. */
+  @media (min-width: 861px) and (min-height: 920px) { .aside { position: sticky; } }
+  @media (min-width: 1200px) and (max-height: 959px) { .aside { position: static; } }
   .aside-link { align-self: flex-start; }
   .aside :global(.aside-img) { display: block; width: 100%; height: auto; object-fit: cover; border-radius: 2px; }
   .conc-lede { font-size: 24px; line-height: 1.45; }

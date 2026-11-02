@@ -7,12 +7,12 @@
  * quiet Patient Portal text link and the meet-and-greet button. The Services
  * panel opens on hover and on keyboard focus-within with CSS alone; its links
  * are plain anchors in the markup at all times, and the trigger is the
- * /services/ link itself. Esc closes it. Under 860px the bar collapses to the
- * logo and a hamburger; the sheet carries the primary destinations and, at the
+ * /services/ link itself. Esc closes it. At 1023px and under the bar collapses
+ * to the logo and a hamburger (the full nav needs about 943px of content width); the sheet carries the primary destinations and, at the
  * bottom, a secondary list: phone, New Patients, Blog, FAQ, Patient Portal,
  * Enroll. At desktop widths the secondary destinations are in the footer; the
  * Patient Portal text link needs about 1130px beside the full nav, so between
- * 860px and 1139px the footer's Patient Portal link is the way to it.
+ * 1024px and 1139px the footer's Patient Portal link is the way to it.
  *
  * Every SigmaMD signup link is tracked by the delegated listener in
  * MainLayout (outbound_enrollment_click); nothing to add here.
@@ -78,7 +78,7 @@ const primaryAfter = [
           class="logo-img"
           height={84}
           widths={[116, 232, 348]}
-          sizes="(max-width: 860px) 94px, 116px"
+          sizes="(max-width: 1023px) 94px, 116px"
           format="webp"
           quality={90}
           loading="eager"
@@ -342,7 +342,7 @@ const primaryAfter = [
   }
   .portal-link:hover { color: var(--forest); }
   /* The text link only fits beside the full nav from about 1130px. Below
-     that it is in the mobile sheet (under 860px) and the footer. */
+     that it is in the mobile sheet (1023px and under) and the footer. */
   @media (max-width: 1139px) { .portal-link { display: none; } }
   .nav-cta { white-space: nowrap; flex-shrink: 0; }
 
@@ -448,7 +448,13 @@ const primaryAfter = [
   }
   .sheet-cta { width: 100%; min-height: 50px; font-size: 15px; }
 
-  @media (max-width: 860px) {
+  /* Just above the burger breakpoint the nav has about 15px to spare (a
+     classic scrollbar takes that much), so tighten the bar gap there. */
+  @media (max-width: 1100px) {
+    .bar-inner { gap: 12px; }
+  }
+
+  @media (max-width: 1023px) {
     .nav, .bar-end { display: none; }
     .burger { display: flex; }
     .bar-inner { height: 64px; }

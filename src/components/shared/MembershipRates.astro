@@ -43,7 +43,9 @@ const FAMILY_TIERS = [
   .rate-tiers dt { color: var(--text-700); }
   .rate-tiers dd { color: var(--forest); font-weight: 500; text-align: right; padding-left: 24px; }
   .rate-tiers dt:nth-last-of-type(1), .rate-tiers dd:last-of-type { border-bottom: 0; }
-  @media (max-width: 860px) {
+  /* Two columns need about 470px; the split column is narrower than that
+     until roughly 930px, so stack earlier than the page's 860px split. */
+  @media (max-width: 940px) {
     .rates { grid-template-columns: 1fr; }
     .rate-col--ind { padding-right: 0; border-right: 0; padding-bottom: 20px; }
     .rate-col--fam { padding-left: 0; }

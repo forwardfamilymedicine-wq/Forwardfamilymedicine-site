@@ -61,6 +61,19 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
         ";path=/;SameSite=Lax";
     }
 
+    // Testing aid: ?ga_debug=1 turns on GA4 debug_mode for this browser
+    // session (so DebugView shows the events), ?ga_debug=0 turns it off.
+    // Does nothing unless the visitor has accepted analytics.
+    function gaDebug() {
+      try {
+        var m = location.search.match(/[?&]ga_debug=([01])(?:&|$)/);
+        if (m) sessionStorage.setItem("ffm_ga_debug", m[1]);
+        return sessionStorage.getItem("ffm_ga_debug") === "1";
+      } catch (e) {
+        return /[?&]ga_debug=1(?:&|$)/.test(location.search);
+      }
+    }
+
     function loadGA4() {
       if (!GA4_ID) return;
       var s = document.createElement("script");
@@ -71,7 +84,7 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
       function gtag() { window.dataLayer.push(arguments); }
       window.gtag = gtag;
       gtag("js", new Date());
-      gtag("config", GA4_ID);
+      gtag("config", GA4_ID, gaDebug() ? { debug_mode: true } : {});
     }
 
     function loadClarity() {
