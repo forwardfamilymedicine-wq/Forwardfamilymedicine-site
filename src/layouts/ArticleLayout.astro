@@ -323,7 +323,8 @@ const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
   .art :global(h2[id="references"] + ol), .art :global(h2[id="references"] + ul) { padding-left: 20px; }
   .art :global(h2[id="references"] + ol li), .art :global(h2[id="references"] + ul li) { font-size: 14px; line-height: 1.6; color: var(--text-600); margin-bottom: 8px; }
 
-  .art-disclaimer {
+  /* Scoped under .art so it outranks `.art p` (which would otherwise zero this margin). */
+  .art .art-disclaimer {
     margin: 40px 0 0;
     padding-top: 22px;
     border-top: 1px solid var(--hairline-strong);
