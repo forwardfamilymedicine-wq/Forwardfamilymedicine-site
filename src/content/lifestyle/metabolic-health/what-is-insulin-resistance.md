@@ -8,7 +8,6 @@ keywords:
   - how to reverse insulin resistance
   - insulin resistance diet
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

@@ -8,7 +8,6 @@ keywords:
   - Mediterranean diet heart disease
   - aerobic exercise heart health
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

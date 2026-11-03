@@ -9,7 +9,6 @@ keywords:
   - insomnia natural remedies
   - CBT for insomnia
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

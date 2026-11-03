@@ -9,7 +9,6 @@ keywords:
   - Mediterranean diet
   - nutrition chronic disease
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

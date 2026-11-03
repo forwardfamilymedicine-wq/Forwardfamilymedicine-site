@@ -9,7 +9,6 @@ keywords:
   - reverse prediabetes naturally
   - prediabetes lifestyle changes
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

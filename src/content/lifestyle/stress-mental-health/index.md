@@ -9,7 +9,6 @@ keywords:
   - mental health lifestyle medicine
   - stress physiology
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

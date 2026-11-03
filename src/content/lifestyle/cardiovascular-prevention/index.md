@@ -9,7 +9,6 @@ keywords:
   - cardiovascular risk reduction
   - heart disease lifestyle medicine
 category: lifestyle
-date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:
