@@ -110,19 +110,13 @@ const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
                   class="art-meta__portrait"
                 />
               )}
-              <span>By {author.href ? <a href={author.href} class="art-meta__author">{authorName}</a> : <span class="art-meta__author">{authorName}</span>}{authorRest}</span>
-              {dateISO && dateFormatted && (
-                <Fragment>
-                  <span class="art-meta__dot" aria-hidden="true">·</span>
-                  <time datetime={dateISO}>{dateFormatted}</time>
-                </Fragment>
-              )}
-              {readingTime && (
-                <Fragment>
-                  <span class="art-meta__dot" aria-hidden="true">·</span>
-                  <span>{readingTime} min read</span>
-                </Fragment>
-              )}
+              <div class="art-meta__text">
+                <div class="art-meta__items">
+                  <span class="art-meta__item">By {author.href ? <a href={author.href} class="art-meta__author">{authorName}</a> : <span class="art-meta__author">{authorName}</span>}{authorRest}</span>
+                  {dateISO && dateFormatted && <span class="art-meta__item art-meta__item--sep"><time datetime={dateISO}>{dateFormatted}</time></span>}
+                  {readingTime && <span class="art-meta__item art-meta__item--sep">{readingTime} min read</span>}
+                </div>
+              </div>
             </div>
           </div>
           {heroImage && (
@@ -224,9 +218,8 @@ const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
   }
   .art-meta {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 6px 10px;
+    gap: 10px;
     font-size: 14px;
     color: var(--text-600);
   }
@@ -236,10 +229,26 @@ const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
     border-radius: 50%;
     object-fit: cover;
     object-position: 50% 20%;
+    flex: none;
+  }
+  /* The separator belongs to the item that follows it (a ::before dot in that
+     item's left padding). The items sit in a box whose left edge clips 6px
+     before the first item's text, so a dot that lands at the start of a wrapped
+     line falls outside it and is never drawn; a dot between two items on one
+     line is inside. The 6px of padding keeps the author link's focus ring. */
+  .art-meta__text { min-width: 0; overflow: hidden; padding: 4px 0 4px 6px; margin: -4px 0 -4px -6px; }
+  .art-meta__items { display: flex; flex-wrap: wrap; row-gap: 4px; margin-left: -20px; }
+  .art-meta__item { position: relative; padding-left: 20px; }
+  .art-meta__item--sep::before {
+    content: '·';
+    position: absolute;
+    left: 6px;
+    width: 8px;
+    text-align: center;
+    color: var(--hairline-dot);
   }
   .art-meta__author { color: var(--forest); font-weight: 500; text-decoration: none; }
   a.art-meta__author:hover { color: var(--sage-600); }
-  .art-meta__dot { color: var(--hairline-dot); }
   .art-hero :global(.art-hero__img) {
     display: block;
     width: 100%;

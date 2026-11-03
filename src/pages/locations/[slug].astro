@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProviderCard from '../../components/shared/ProviderCard.astro';
+import { openOfficeName } from '../../utils/credentialRows';
 import { isPlanned } from '../../utils/physicianRouting';
 import { formatMonthYear, getAvailability } from '../../utils/availability';
 
@@ -111,76 +112,75 @@ const breadcrumb = {
   schema={[breadcrumb]}
 >
   <!-- Hero -->
-  <section class="location-hero section" style={`background: linear-gradient(160deg, ${data.status === 'coming-soon' ? 'var(--cream-200)' : 'var(--green-50)'} 0%, var(--cream-100) 100%);`}>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span aria-hidden="true">›</span>
-        <a href="/locations/">Locations</a>
-        <span aria-hidden="true">›</span>
-        <span>{data.name}</span>
+  <section class="loc-hero">
+    <div class="rd-wrap">
+      <nav class="rd-crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">›</span>
+        <a href="/locations/">Locations</a> <span aria-hidden="true">›</span>
+        <span aria-current="page">{data.name}</span>
       </nav>
 
-      <div class="location-hero-inner">
-        <div>
+      <div class="loc-hero__grid">
+        <div class="loc-hero__copy">
           {data.status === 'coming-soon' && (
-            <span class="status-badge coming-soon">{planned ? 'Planned' : `Coming ${openingLabel}`}</span>
+            <p class="rd-eyebrow rd-eyebrow--muted">{planned ? 'Planned' : `Coming ${openingLabel}`}</p>
           )}
           {data.status === 'open' && (
-            <span class="status-badge open">Now Open</span>
+            <p class="rd-eyebrow rd-eyebrow--gold">Now Open</p>
           )}
-          <h1>{officeLabel}</h1>
-          <div class="divider"></div>
-          <p class="location-desc">{data.description}</p>
+          <h1 class="loc-hero__title rd-serif">{officeLabel}</h1>
+          <p class="loc-hero__desc">{data.description}</p>
 
-          {!planned && hasAddress && (
-            <div class="address-block">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <div>
-                <address style="font-style:normal;">
-                  {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
-                  {data.addressCity}, {data.addressState} {data.addressZip}
-                </address>
-                {directions && (
-                  <Fragment><a href={directions.google} target="_blank" rel="noopener noreferrer">Get directions</a> <small><span aria-hidden="true">·</span> <a href={directions.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a></small></Fragment>
-                )}
-              </div>
-            </div>
-          )}
-
-          {!planned && data.phone && (
-            <div class="phone-block">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.58 4.5 2 2 0 0 1 3.55 2.34h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
-              <a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a>
-            </div>
+          {!planned && (hasAddress || data.phone) && (
+            <dl class="facts">
+              {hasAddress && (
+                <div class="fact">
+                  <dt>Address</dt>
+                  <dd>
+                    <address>
+                      {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
+                      {data.addressCity}, {data.addressState} {data.addressZip}
+                    </address>
+                    {directions && (
+                      <p class="fact__links"><a href={directions.google} target="_blank" rel="noopener noreferrer">Get directions</a> <small><span aria-hidden="true">·</span> <a href={directions.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a></small></p>
+                    )}
+                  </dd>
+                </div>
+              )}
+              {data.phone && (
+                <div class="fact">
+                  <dt>Phone</dt>
+                  <dd><a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a></dd>
+                </div>
+              )}
+            </dl>
           )}{planned && (
-            <p class="location-desc">{plannedIntro}{plannedLine && <Fragment>{plannedLine.lead}{plannedLine.offices.map(o => <Fragment>{o.sep}<a href={o.href}>{o.label}</a></Fragment>)}{plannedLine.tail}</Fragment>}</p>
+            <p class="loc-hero__desc">{plannedIntro}{plannedLine && <Fragment>{plannedLine.lead}{plannedLine.offices.map(o => <Fragment>{o.sep}<a href={o.href}>{o.label}</a></Fragment>)}{plannedLine.tail}</Fragment>}</p>
           )}
         </div>
 
-        <div class="hero-cta-block">
+        <div class="loc-hero__cta">
           {/* Availability, not office status. The opening date is context in the
-              status badge above, never the premise of the action. */}
+              status line above, never the premise of the action. */}
           <a
             href={`/contact/?source=locations-${data.slug}`}
-            class="btn btn-accent"
+            class="btn-forest"
           >Schedule a Meet &amp; Greet →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Visit Us: address, hours, and map — shown whenever any location data exists.
-       Never for a planned office: there is nowhere to visit. -->
+  <!-- Visit Us: address, hours, and map. Never for a planned office: there is nowhere to visit. -->
   {!planned && (hasAddress || (data.hours && data.hours.length > 0) || data.mapEmbedUrl) && (
-    <section class="location-visit section" style="background: var(--cream-100);">
-      <div class="container">
-        <div class="visit-grid">
-          <div class="visit-info">
-            <h2>Visit Us</h2>
+    <section class="loc-visit rd-alt">
+      <div class="rd-wrap">
+        <div class="loc-visit__grid">
+          <div class="loc-visit__info">
+            <h2 class="rd-h2 loc-h2">Visit Us</h2>
             {hasAddress && (
-              <div class="visit-address">
-                <strong>{data.name}</strong>
+              <div class="loc-visit__address">
+                <p class="loc-visit__name rd-serif">{data.name}</p>
                 <address>
                   {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
                   {data.addressCity}, {data.addressState} {data.addressZip}
@@ -195,7 +195,7 @@ const breadcrumb = {
 
             {data.hours && data.hours.length > 0 && (
               <Fragment>
-                <h3>Office Hours</h3>
+                <h3 class="rd-h3 loc-hours-h">Office Hours</h3>
                 <table class="hours-table">
                   <tbody>
                     {data.hours.map((h: any) => (
@@ -211,7 +211,7 @@ const breadcrumb = {
           </div>
 
           {data.mapEmbedUrl && (
-            <div class="visit-map">
+            <div class="loc-visit__map">
               <iframe
                 src={data.mapEmbedUrl}
                 title={`Map showing ${data.name} location`}
@@ -228,32 +228,31 @@ const breadcrumb = {
 
   <!-- Physicians: not for a planned office, where nobody is seen -->
   {!planned && locationProviders.length > 0 && (
-    <section class="providers-section section" style="background: var(--cream-100);">
-      <div class="container">
-        <span class="section-label">Our Physicians</span>
-        <h2 class="section-title">Physicians at This Location</h2>
-        <div class="provider-cards-grid">
-          {locationProviders.map((p: any) => <ProviderCard provider={p} />)}
+    <section class="loc-phys rd-section">
+      <div class="rd-wrap">
+        <h2 class="rd-h2 loc-h2">Physicians at This Location</h2>
+        <div class="loc-phys__grid" data-reveal="0.1">
+          {locationProviders.map((p: any) => <ProviderCard provider={p} as="h3" office={openOfficeName(p.data, allLocations)} />)}
         </div>
       </div>
     </section>
   )}
 
-  <!-- Main content (body from markdown) — suppressed when body is empty -->
-  {(entry.body?.trim().length > 0 || data.status === 'coming-soon') && (
-    <section class="location-content section" style="background: var(--cream-50);">
-      <div class="container">
-        {entry.body?.trim().length > 0 && (
-          <div class="prose location-prose">
+  <!-- Main content (body from markdown), suppressed when body is empty -->
+  {((entry.body?.trim().length ?? 0) > 0 || data.status === 'coming-soon') && (
+    <section class="loc-content rd-alt">
+      <div class="rd-wrap">
+        {(entry.body?.trim().length ?? 0) > 0 && (
+          <div class="location-prose">
             <Content />
           </div>
         )}
 
         {data.status === 'coming-soon' && (
           <div class="opening-note" id="opening">
-            <div class="callout" style="border: 2px dashed var(--cream-300); background: var(--cream-100); padding: 2rem; border-radius: var(--radius); text-align: center; margin-top: 2rem;">
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Accepting new patients now</h3>
-              <p style="color: var(--ink-500); max-width: 460px; margin: 0 auto 1rem;">
+            <div class="sage-note">
+              <h3 class="rd-h3">Accepting new patients now</h3>
+              <p>
                 {planned
                   ? `Dr. Landi is taking new patients today. A ${data.name} office is planned, and no opening date has been set. ${plannedVisits}`
                   : `Dr. Landi is taking new patients today. Our ${data.name} office opens in ${openingLabel}, so early visits happen by telehealth.`}
@@ -262,7 +261,7 @@ const breadcrumb = {
               </p>
               <a
                 href={`/contact/?source=locations-${data.slug}`}
-                class="btn btn-accent"
+                class="btn-forest"
               >Schedule a Meet &amp; Greet →</a>
             </div>
           </div>
@@ -273,9 +272,9 @@ const breadcrumb = {
 
   <!-- Photos (if any) -->
   {!planned && data.photos && data.photos.length > 0 && (
-    <section class="photos-section section" style="background: var(--cream-200); padding-top: 3rem; padding-bottom: 3rem;">
-      <div class="container">
-        <h2 class="section-title" style="font-size:1.4rem;">Our Space</h2>
+    <section class="loc-photos rd-section">
+      <div class="rd-wrap">
+        <h2 class="rd-h3 loc-photos__h">Our Space</h2>
         <div class="photos-grid">
           {data.photos.map((src: string, i: number) => (
             <img
@@ -292,198 +291,85 @@ const breadcrumb = {
 </MainLayout>
 
 <style>
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--green-400); }
-
-  .location-hero-inner {
+  .loc-hero { background: var(--linen); padding: 88px 0 80px; }
+  .loc-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+  .loc-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 720px; }
+  .loc-hero__copy > :global(p) { margin: 0; }
+  .loc-hero__title { margin: 0; font-size: 60px; line-height: 1.03; letter-spacing: -0.018em; color: var(--forest); }
+  .loc-hero__desc { font-size: 17px; line-height: 1.7; color: var(--text-900); max-width: 600px; }
+  .loc-hero__desc :global(a), .loc-visit__address :global(a), .fact a { color: var(--sage-600); }
+  .loc-hero__desc :global(a:hover), .loc-visit__address :global(a:hover), .fact a:hover { color: var(--forest); }
+  .facts { margin: 4px 0 0; display: flex; flex-direction: column; align-self: stretch; max-width: 560px; }
+  .fact {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .status-badge {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    border-radius: 999px;
-    padding: 0.25rem 0.85rem;
-    margin-bottom: 0.75rem;
-  }
-  .status-badge.open {
-    background: var(--green-100);
-    color: var(--green-500);
-  }
-  .status-badge.coming-soon {
-    background: var(--cream-300);
-    color: var(--ink-700);
-  }
-
-  .divider {
-    width: 48px;
-    height: 3px;
-    background: var(--green-300);
-    border-radius: 2px;
-    margin: 1.25rem 0;
-  }
-
-  .location-desc {
-    font-size: 1.05rem;
-    color: var(--ink-700);
-    max-width: 560px;
-    margin-bottom: 1.25rem;
-  }
-
-  .address-block, .phone-block {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    color: var(--ink-700);
-    margin-bottom: 0.75rem;
-  }
-  .address-block svg, .phone-block svg {
-    color: var(--green-400);
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-  }
-  .phone-block a {
-    color: var(--green-400);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .phone-block a:hover { color: var(--green-500); }
-
-  .hero-cta-block {
-    align-self: center;
-  }
-
-  /* Visit Us */
-  .location-visit {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-  .visit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .visit-info h2 {
-    font-size: 1.6rem;
-    margin: 0 0 1rem 0;
-  }
-  .visit-info h3 {
-    font-size: 1.15rem;
-    color: var(--ink-900);
-    margin: 1.75rem 0 0.75rem 0;
-    font-weight: 700;
-  }
-  .visit-address {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 15px;
     line-height: 1.6;
-    color: var(--ink-700);
   }
-  .visit-address address {
-    font-style: normal;
-    margin: 0.5rem 0;
-  }
-  .visit-address a,
-  .address-block a {
-    color: var(--green-400);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .visit-address a:hover,
-  .address-block a:hover {
-    color: var(--green-500);
-    text-decoration: underline;
-  }
-  .hours-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-  .hours-table tr { border-bottom: 1px solid var(--cream-300); }
-  .hours-table tr:last-child { border-bottom: 0; }
-  .hours-table td { padding: 0.55rem 0; }
-  .hours-table td:first-child { font-weight: 600; color: var(--ink-900); width: 6rem; padding-right: 0.75rem; }
-  .hours-table td:last-child { text-align: left; color: var(--ink-700); }
-  .visit-map {
+  .fact:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .fact dt { color: var(--text-600); font-size: 14px; margin: 0; }
+  .fact dd { margin: 0; color: var(--forest); }
+  .fact address { font-style: normal; }
+  .fact__links { margin: 4px 0 0; font-size: 14px; }
+
+  .loc-h2 { font-size: 40px; margin-bottom: 28px; }
+  .loc-visit { padding: 80px 0; }
+  .loc-visit__grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+  .loc-visit__address { font-size: 15px; line-height: 1.7; color: var(--text-900); }
+  .loc-visit__address p { margin: 0 0 8px; }
+  .loc-visit__address address { font-style: normal; margin: 0 0 8px; }
+  .loc-visit__name { font-size: 22px; line-height: 1.25; color: var(--forest); margin: 0 0 6px; }
+  .loc-hours-h { margin: 36px 0 12px; }
+  .hours-table { width: 100%; margin: 0; border-collapse: collapse; font-size: 15px; background: transparent; display: table; overflow: visible; }
+  .hours-table tr, .hours-table tbody tr:nth-child(even), .hours-table tbody tr:hover { background: transparent; }
+  .hours-table tr { border-top: 1px solid var(--hairline-strong); }
+  .hours-table tr:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .hours-table td { padding: 11px 0; border: 0; color: var(--text-900); }
+  .hours-table td:first-child { width: 8rem; color: var(--forest); font-weight: 500; }
+  .loc-visit__map {
+    position: relative;
     aspect-ratio: 4 / 3;
-    border-radius: var(--radius);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    background: var(--linen-300);
   }
-  .visit-map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
+  .loc-visit__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 
-  /* Provider cards grid */
-  .provider-cards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
+  .loc-phys__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 48px; }
+  .loc-phys__grid :global(.pcard) { opacity: 0; transform: translateY(10px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .loc-phys__grid.on :global(.pcard) { opacity: 1; transform: none; }
+  .loc-phys__grid.on :global(.pcard:nth-child(2)) { transition-delay: 0.2s; }
 
-  /* Prose */
-  .location-prose :global(h2) {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--ink-900);
-  }
-  .location-prose :global(h3) {
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--ink-900);
-  }
-  .location-prose :global(p) {
-    color: var(--ink-700);
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
+  .loc-content { padding: 80px 0; }
+  .location-prose { max-width: 720px; font-size: 16px; line-height: 1.8; color: var(--text-900); }
+  .location-prose :global(h2) { font-family: var(--font-heading); font-weight: 400; font-size: 30px; line-height: 1.15; color: var(--forest); margin: 40px 0 12px; }
+  .location-prose :global(h2:first-child) { margin-top: 0; }
+  .location-prose :global(h3) { font-family: var(--font-heading); font-weight: 400; font-size: 22px; color: var(--forest); margin: 28px 0 8px; }
+  .location-prose :global(p) { color: var(--text-900); line-height: 1.8; margin-bottom: 1rem; }
+  .location-prose :global(a) { color: var(--sage-600); }
+  .opening-note { margin-top: 40px; max-width: 720px; }
+  .location-prose + .opening-note { margin-top: 48px; }
+  .sage-note { background: var(--sage-50); border-top: 3px solid var(--forest); padding: 28px 30px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .sage-note :global(h3), .sage-note p { margin: 0; }
+  .sage-note p { font-size: 15px; line-height: 1.7; color: var(--text-700); max-width: 560px; }
 
-  /* Photos grid */
-  .photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .location-photo {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-  }
+  .loc-photos__h { margin-bottom: 24px; }
+  .photos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .location-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 2px; }
 
-  @media (max-width: 768px) {
-    .visit-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .visit-map { aspect-ratio: 16 / 9; }
-  }
-
-  @media (max-width: 700px) {
-    .location-hero-inner { grid-template-columns: 1fr; }
+  @media (max-width: 860px) {
+    .loc-hero { padding: 48px 0 56px; }
+    .loc-hero__grid { grid-template-columns: 1fr; gap: 28px; }
+    .loc-hero__title { font-size: 38px; }
+    .loc-h2 { font-size: 30px; }
+    .loc-visit, .loc-content { padding: 56px 0; }
+    .loc-visit__grid { grid-template-columns: 1fr; gap: 32px; }
+    .loc-visit__map { aspect-ratio: 16 / 10; }
+    .loc-phys__grid { grid-template-columns: 1fr; gap: 44px; }
+    .fact { grid-template-columns: 90px minmax(0, 1fr); }
   }
 </style>

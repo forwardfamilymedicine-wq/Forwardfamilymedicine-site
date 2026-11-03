@@ -1,4 +1,9 @@
 ---
+/**
+ * Page not found, in the Privacy board's typographic pattern: a serif headline
+ * and calm body text on linen, a ruled list of destinations. Copy and links are
+ * the live page's; the large "404" stays as a quiet decorative numeral.
+ */
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
@@ -7,88 +12,53 @@ import MainLayout from '../layouts/MainLayout.astro';
   description="The page you were looking for doesn't exist. Return to the Forward Family Medicine homepage."
   noindex={true}
 >
-  <section class="error-section">
-    <div class="container error-inner">
-      <span class="error-code" aria-hidden="true">404</span>
-      <h1>This Page Has Left the Building</h1>
-      <p>
-        We can't find what you're looking for — but we can find the right doctor for you.
-      </p>
-      <div class="error-ctas">
-        <a href="/" class="btn btn-primary">Return to Homepage</a>
-        <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
-      </div>
-      <div class="error-links">
-        <p>Looking for something specific?</p>
-        <ul>
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/lifestyle-medicine/">Lifestyle Medicine</a></li>
-          <li><a href="/membership/">Membership</a></li>
-          <li><a href="/new-patients/">New Patients</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
+  <section class="nf">
+    <div class="rd-wrap">
+      <div class="nf__inner">
+        <span class="nf__code rd-serif" aria-hidden="true">404</span>
+        <h1 class="nf__h rd-serif">This Page Has Left the Building</h1>
+        <p class="nf__lede">
+          We can't find what you're looking for — but we can find the right doctor for you.
+        </p>
+        <div class="nf__ctas">
+          <a href="/" class="btn-forest">Return to Homepage</a>
+          <a href="/contact/" class="btn-ghost">Schedule a Free Meet &amp; Greet</a>
+        </div>
+        <div class="nf__links">
+          <h2 class="nf__links-h">Looking for something specific?</h2>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/lifestyle-medicine/">Lifestyle Medicine</a></li>
+            <li><a href="/membership/">Membership</a></li>
+            <li><a href="/new-patients/">New Patients</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 </MainLayout>
 
 <style>
-  .error-section {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);
-    padding: var(--section-pad) 0;
+  .nf { background: var(--linen); padding: 96px 0 112px; min-height: 60vh; }
+  .nf__inner { max-width: 720px; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+  .nf__code { font-size: 120px; line-height: 0.9; letter-spacing: -0.03em; color: var(--text-500); }
+  .nf__h { margin: 0; font-size: 60px; line-height: 1.03; letter-spacing: -0.018em; color: var(--forest); }
+  .nf__lede { margin: 0; font-size: 18px; line-height: 1.7; color: var(--text-900); }
+  .nf__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+  .nf__links { align-self: stretch; margin-top: 28px; }
+  .nf__links-h { margin: 0 0 8px; font-family: var(--font-body); font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--text-600); }
+  .nf__links ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+  .nf__links li { border-top: 1px solid var(--hairline-strong); }
+  .nf__links li:nth-last-child(-n+2) { border-bottom: 1px solid var(--hairline-strong); }
+  .nf__links a { display: block; padding: 12px 0; font-size: 15px; color: var(--forest); text-decoration: none; transition: color 0.18s, padding-left 0.2s; }
+  .nf__links a:hover { color: var(--sage-600); padding-left: 6px; }
+  @media (max-width: 860px) {
+    .nf { padding: 48px 0 64px; }
+    .nf__code { font-size: 84px; }
+    .nf__h { font-size: 38px; }
+    .nf__links ul { grid-template-columns: 1fr; }
+    .nf__links li:nth-last-child(2) { border-bottom: 0; }
   }
-  .error-inner {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .error-code {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: clamp(6rem, 20vw, 10rem);
-    font-weight: 700;
-    color: var(--cream-300);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .error-inner h1 {
-    margin-bottom: 1rem;
-  }
-  .error-inner > p {
-    font-size: 1.1rem;
-    color: var(--ink-500);
-    margin-bottom: 2rem;
-  }
-  .error-ctas {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
-  }
-  .error-links p {
-    font-size: 0.9rem;
-    color: var(--ink-300);
-    margin-bottom: 0.75rem;
-  }
-  .error-links ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 1.5rem;
-  }
-  .error-links a {
-    font-size: 0.9rem;
-    color: var(--green-300);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.15s;
-  }
-  .error-links a:hover { color: var(--green-400); }
 </style>

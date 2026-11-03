@@ -115,7 +115,7 @@ const visitItems = [
   .fits-title { font-size: 22px; line-height: 1.2; margin-top: 6px; color: var(--forest); }
   .fits-col--else .fits-title { color: var(--text-600); }
   .fits-sub { font-size: 13px; margin-top: 4px; color: var(--sage-600); }
-  .fits-col--else .fits-sub { color: var(--text-500); }
+  .fits-col--else .fits-sub { color: var(--text-600); }
   .fits-list {
     list-style: none;
     margin: 0;
@@ -150,11 +150,11 @@ const visitItems = [
   .fit-cut { opacity: 0; transform: scaleX(0.2); transform-origin: center; transition: opacity 0.35s ease 0.8s, transform 0.5s ease 0.8s; }
   .fits.on .fit-cut { opacity: 1; transform: none; }
   .fit-rest { transition: color 0.6s ease 1.3s; }
-  .fits.on .fit-rest { color: var(--text-500); }
+  .fits.on .fit-rest { color: var(--text-600); }
 
   @media (prefers-reduced-motion: reduce) {
     .fit-a, .fit-b li, .fit-end, .fit-cut { opacity: 1; transform: none; }
-    .fit-rest { color: var(--text-500); }
+    .fit-rest { color: var(--text-600); }
   }
 
   @media (max-width: 860px) {

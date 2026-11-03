@@ -24,6 +24,7 @@ import reviewsData from '../../data/reviews.json';
 import { getAvailability } from '../../utils/availability';
 import { isPlanned } from '../../utils/physicianRouting';
 import { contactHrefForPath } from '../../utils/leadSource';
+import { physicianCredentialRows } from '../../utils/credentialRows';
 import { ORG_ID } from '../../utils/practiceSchema';
 import { physicianNode, headshotUrl, awardLabel, HEADSHOT } from '../../utils/physicianSchema';
 
@@ -79,10 +80,6 @@ const CARD: Record<string, { html: string; link?: { href: string; label: string 
     html: 'Every physician here practices with a deliberate cap on panel size, because the time, the direct access, and the continuity this practice is built on are only possible when a doctor has room for them. A full panel is that commitment kept.',
   },
 };
-
-// Approved wording for a DO board-certified in Family Medicine. Dr. Lieberman's
-// board lines are already in his additionalCertifications as written.
-const DO_BOARD_LINE = 'Board Certified, American Osteopathic Board of Family Physicians';
 
 export async function getStaticPaths() {
   const providers = await getCollection('providers');
@@ -184,12 +181,7 @@ const statusLine = statusText && availability?.status === 'accepting' && officeN
 // Hero credential rows: board certification, then the named certifications,
 // then awards. Team members list their notable experience.
 const credentialRows: string[] = isPhysician
-  ? [
-      ...(d.boardStatus === 'board-certified'
-        ? (d.credentials === 'DO' && d.boardSpecialties.includes('Family Medicine') ? [DO_BOARD_LINE] : [])
-        : [`Board-Eligible: ${d.boardSpecialties.join(', ')}`]),
-      ...d.additionalCertifications.map((c: any) => c.name),
-    ]
+  ? physicianCredentialRows(d)
   : (d.notableExperience ?? []).map((x: any) => x.label);
 
 // Education & Training as a path: degrees and residency as today's sidebar

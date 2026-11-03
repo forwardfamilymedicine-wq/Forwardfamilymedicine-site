@@ -154,10 +154,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Skip link */
+/* Skip link: moved fully off-screen until it has focus (a fixed -40px offset
+   left a 3px sliver of a 43px-tall link showing at the top of every page). */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: 0;
   left: 0;
   background: var(--green-500);
   color: white;
@@ -165,9 +166,10 @@ body {
   z-index: 9999;
   border-radius: 0 0 var(--radius-sm) 0;
   text-decoration: none;
+  transform: translateY(-100%);
 }
 .skip-link:focus {
-  top: 0;
+  transform: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -732,7 +734,7 @@ html { scroll-padding-top: var(--header-h); }
 :where(.rd-section:not(.rd-alt):not(.rd-sage)) { background: var(--linen); }
 
 /* Phase 3 templates (profiles, articles, blog and library indexes, local pages). Additive. */
-.rd-crumb { font-size: 13px; color: var(--text-500); margin: 0 0 40px; }
+.rd-crumb { font-size: 13px; color: var(--text-600); margin: 0 0 40px; }
 /* Links are underlined so they read as links beside the grey current item, not by colour alone. */
 .rd-crumb a { color: var(--sage-600); text-decoration: underline; text-decoration-color: var(--hairline-dot); text-underline-offset: 3px; }
 .rd-crumb a:hover { color: var(--forest); text-decoration-color: var(--forest); }

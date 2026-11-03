@@ -234,8 +234,9 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
     transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  .consent__btn--solid { background: var(--green-400); color: #fff; }
-  .consent__btn--solid:hover { background: var(--green-500); }
+  /* Accept: the site's CTA green. The former --green-400 fill was 4.09:1 against the white label. */
+  .consent__btn--solid { background: var(--sage-600); color: #fff; }
+  .consent__btn--solid:hover { background: var(--forest); }
 
   .consent__btn--ghost {
     background: transparent;

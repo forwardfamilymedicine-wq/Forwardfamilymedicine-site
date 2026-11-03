@@ -18,12 +18,15 @@ export interface Props {
   headline?: string;
   label?: string;
   schema?: boolean;
+  /** Lighter-linen band with a top hairline (the New Patients board). */
+  alt?: boolean;
 }
 
 const {
   faqs,
   headline = 'Frequently Asked Questions',
   schema = true,
+  alt = false,
 } = Astro.props;
 
 const faqSchema = schema ? {
@@ -44,7 +47,7 @@ const faqSchema = schema ? {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}
 
-<section class="faq-section rd-section">
+<section class:list={['faq-section', 'rd-section', { 'faq-section--alt': alt }]}>
   <div class="rd-wrap faq-inner">
     <div class="faq-head">
       <h2 class="rd-h2 faq-title">{headline}</h2>
@@ -68,6 +71,7 @@ const faqSchema = schema ? {
 
 <style>
   .faq-section { background: var(--linen); }
+  .faq-section--alt { background: var(--linen-50); border-top: 1px solid var(--hairline); }
   .faq-inner {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;

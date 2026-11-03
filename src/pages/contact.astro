@@ -1,7 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import PageHero from '../components/shared/PageHero.astro';
 import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
+import figMirror from '../assets/office/wayne-fig-mirror.jpg';
 import { getCollection } from 'astro:content';
+import SageCard from '../components/shared/SageCard.astro';
 import { isPlanned, openOfficesFor } from '../utils/physicianRouting';
 import { formatMonthYear } from '../utils/availability';
 
@@ -29,33 +33,34 @@ const breadcrumb = {
   description="Schedule a free meet and greet at Forward Family Medicine. No obligation, no commitment. Meet our physicians in Wayne or Malvern, PA and see if we're the right fit for you."
   schema={breadcrumb}
 >
-  <!-- Hero -->
-  <section class="contact-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-100) 100%);">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Contact</span>
-      </nav>
-      <span class="section-label">Free &amp; No Obligation</span>
-      <h1>Schedule a Meet &amp; Greet</h1>
-      <div class="divider"></div>
-      <p class="section-intro">
-        The best way to decide if Forward Family Medicine is right for you is to come in
-        and meet us. Ask everything. See the office. It's free. No pressure. No commitment.
-        Just a conversation. Prefer to connect remotely? We also offer video meet &amp; greets — just let us know in the form below.
-      </p>
-    </div>
-  </section>
+  <PageHero crumb="Contact" title="Schedule a Meet & Greet" pt={80} pb={64} cols="1.3fr .7fr" maxW={640}>
+    <p>
+      The best way to decide if Forward Family Medicine is right for you is to come in
+      and meet us. Ask everything. See the office. It's free. No pressure. No commitment.
+      Just a conversation. Prefer to connect remotely? We also offer video meet &amp; greets — just let us know in the form below.
+    </p>
+    <Image
+      slot="aside"
+      src={figMirror}
+      alt="The waiting room at our Wayne office, reflected in the entry mirror"
+      widths={[320, 480, 640]}
+      sizes="(max-width: 860px) calc(100vw - 40px), 320px"
+      format="webp"
+      quality={80}
+      loading="eager"
+      fetchpriority="high"
+      class="contact-photo"
+    />
+  </PageHero>
 
-  <!-- Contact content -->
-  <section class="contact-section section">
-    <div class="container contact-grid">
-
+  <section class="contact-sec">
+    <div class="rd-wrap contact-grid">
       <!-- Form -->
       <div class="contact-form-col">
         <MeetGreetForm />
-        <div class="card contact-info-card" style="margin-top:1.25rem;">
-          <h3>What Happens After You Submit</h3>
-          <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--ink-700); line-height:1.8;">
+        <div class="after">
+          <h2 class="after__h rd-serif">What Happens After You Submit</h2>
+          <ol class="steps">
             <li>We review your request</li>
             <li>We reach out within 24 hours to schedule</li>
             <li>You come in for your free meet &amp; greet</li>
@@ -65,103 +70,73 @@ const breadcrumb = {
       </div>
 
       <!-- Info -->
-      <div class="contact-info-col">
-
-        <div class="card contact-info-card">
-          <h3>Practice Information</h3>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
-              <strong>Wayne</strong>
-              <address style="font-style:normal;">
-                295 Old Eagle School Road, STE 2<br />
-                Wayne, PA 19087
-              </address>
+      <aside class="contact-info" data-sticky-fit>
+        <div class="info-block">
+          <h2 class="info-h rd-serif">Practice Information</h2>
+          <dl class="facts">
+            <div class="fact">
+              <dt>Wayne</dt>
+              <dd><address>295 Old Eagle School Road, STE 2<br />Wayne, PA 19087</address></dd>
             </div>
-          </div>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
-              <strong>Malvern</strong>
-              <address style="font-style:normal;">
-                301 Lindenwood Dr #206<br />
-                Malvern, PA 19355
-              </address>
+            <div class="fact">
+              <dt>Malvern</dt>
+              <dd><address>301 Lindenwood Dr #206<br />Malvern, PA 19355</address></dd>
             </div>
-          </div>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <div>
-              <strong>Phone</strong>
-              <a href="tel:+12156457044">(215) 645-7044</a>
+            <div class="fact">
+              <dt>Phone</dt>
+              <dd><a href="tel:+12156457044">(215) 645-7044</a></dd>
             </div>
-          </div>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
-            <div>
-              <strong>Fax</strong>
-              <a href="tel:+12154498854">(215) 449-8854</a>
+            <div class="fact">
+              <dt>Fax</dt>
+              <dd><a href="tel:+12154498854">(215) 449-8854</a></dd>
             </div>
-          </div>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a>
+            <div class="fact">
+              <dt>Email</dt>
+              <dd class="fact__email"><a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a></dd>
             </div>
-          </div>
-
-          <div class="info-item">
-            <svg class="info-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 12"/></svg>
-            <div>
-              <strong>Office Hours</strong>
-              <span>Monday–Friday: 7:30 AM – 5:30 PM</span>
+            <div class="fact">
+              <dt>Office Hours</dt>
+              <dd>Monday–Friday: 7:30 AM – 5:30 PM</dd>
             </div>
-          </div>
+          </dl>
         </div>
 
-        <div class="card contact-info-card" style="margin-top:1.25rem; background: linear-gradient(135deg, var(--green-50), var(--cream-200)); border: 2px solid var(--green-300);">
-          <h3>Serving the Main Line</h3>
+        <div class="info-block info-block--serving">
+          <h3 class="rd-h3">Serving the Main Line</h3>
           <p>We see patients from across the Main Line and greater Philadelphia area, including:</p>
-          <ul style="list-style:none; padding:0; font-size:0.9rem; color:var(--ink-700);">
-            <li style="padding:0.2rem 0;">Wayne, PA</li>
-            <li style="padding:0.2rem 0;">Berwyn &amp; Devon</li>
-            <li style="padding:0.2rem 0;">Paoli &amp; Malvern</li>
-            <li style="padding:0.2rem 0;">Radnor &amp; Villanova</li>
-            <li style="padding:0.2rem 0;">Chester County</li>
-            <li style="padding:0.2rem 0;">Greater Philadelphia</li>
+          <ul class="serving">
+            <li>Wayne, PA</li>
+            <li>Berwyn &amp; Devon</li>
+            <li>Paoli &amp; Malvern</li>
+            <li>Radnor &amp; Villanova</li>
+            <li>Chester County</li>
+            <li>Greater Philadelphia</li>
           </ul>
         </div>
 
-        <div class="card contact-info-card" style="margin-top:1.25rem;">
-          <h3>Ready to Enroll?</h3>
-          <p style="font-size:0.9rem; color:var(--ink-700); margin-bottom:1rem;">If you've already met with us and are ready to join, enroll directly online:</p>
-          <div style="display:flex; flex-direction:column; gap:0.75rem;">
-            <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll as Individual</a>
-            <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-accent" target="_blank" rel="noopener noreferrer" style="text-align:center;">Enroll Your Family</a>
-            <a href="https://patient.sigmamd.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="text-align:center;">Patient Portal Login</a>
+        <SageCard class="enroll">
+          <h3 class="rd-h3">Ready to Enroll?</h3>
+          <p>If you've already met with us and are ready to join, enroll directly online:</p>
+          <div class="enroll__btns">
+            <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn-forest" target="_blank" rel="noopener noreferrer">Enroll as Individual</a>
+            <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn-ghost" target="_blank" rel="noopener noreferrer">Enroll Your Family</a>
+            <a href="https://patient.sigmamd.com" class="rd-link enroll__portal" target="_blank" rel="noopener noreferrer">Patient Portal Login</a>
           </div>
-        </div>
-      </div>
-
+        </SageCard>
+      </aside>
     </div>
   </section>
 
-  <section class="contact-locations section">
-    <div class="container">
-      <span class="section-label">Visit Us</span>
-      <h2>Our Locations</h2>
-      <div class="divider"></div>
-      <p class="section-intro" style="margin-bottom:2.5rem;">
-        Wayne and Malvern are open, and a West Chester office is planned. Each location offers the same Forward Family Medicine experience.
-      </p>
+  <section class="locs-sec rd-alt">
+    <div class="rd-wrap">
+      <div class="rd-stack locs-intro">
+        <h2 class="rd-h2">Our Locations</h2>
+        <p class="rd-copy">
+          Wayne and Malvern are open, and a West Chester office is planned. Each location offers the same Forward Family Medicine experience.
+        </p>
+      </div>
 
-      <div class="locations-cards-grid">
+      <div class="locs" data-reveal="0.05">
         {locations.map(loc => {
           const d = loc.data;
           const isOpen = d.status === 'open';
@@ -179,30 +154,9 @@ const breadcrumb = {
               ? { src: d.mapEmbedUrl ?? mapEmbed(`${d.addressStreet}, ${town} ${d.addressZip}`), title: `Map showing ${d.name} location` }
               : null;
           return (
-            <article class={`location-card${isOpen || planned ? '' : ' coming-soon'}`}>
-              {isOpen ? (
-                <span class="location-card-badge open">Now Open</span>
-              ) : (
-                <span class="location-card-badge future">{planned ? 'Planned' : `Opening ${formatMonthYear(d.openingDate!)}`}</span>
-              )}
-              <h3>{d.name}</h3>
-              {planned ? (
-                <p class="location-card-address">{town}<br />Address and opening date to come</p>
-              ) : (
-                <address class="location-card-address">
-                  {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
-                  {d.addressCity}, {d.addressState} {d.addressZip}
-                </address>
-              )}
-              {planned ? seenAt.length > 0 && (
-                <p class="location-card-phone">Seeing patients now in {seenAt.map((o, i) => <Fragment>{i === 0 ? '' : i === seenAt.length - 1 ? ' and ' : ', '}<a href={`/locations/${o.data.slug}/`}>{o.data.name}</a></Fragment>)}</p>
-              ) : d.phone && (
-                <p class="location-card-phone">
-                  <a href={`tel:${d.phone.replace(/\D/g, '')}`}>{d.phone}</a>
-                </p>
-              )}
+            <article class:list={['loc', { 'loc--planned': !isOpen }]}>
               {map && (
-                <div class="location-card-map">
+                <div class="loc__map">
                   <iframe
                     src={map.src}
                     title={map.title}
@@ -211,7 +165,26 @@ const breadcrumb = {
                   ></iframe>
                 </div>
               )}
-              <a href={`/locations/${d.slug}/`} class="location-card-link">
+              <p class:list={['loc__status', { 'loc__status--muted': !isOpen }]}>
+                {isOpen ? 'Now Open' : planned ? 'Planned' : `Opening ${formatMonthYear(d.openingDate!)}`}
+              </p>
+              <h3 class="loc__name rd-serif">{d.name}</h3>
+              {planned ? (
+                <p class="loc__addr">{town}<br />Address and opening date to come</p>
+              ) : (
+                <address class="loc__addr">
+                  {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
+                  {d.addressCity}, {d.addressState} {d.addressZip}
+                </address>
+              )}
+              {planned ? seenAt.length > 0 && (
+                <p class="loc__line">Seeing patients now in {seenAt.map((o, i) => <Fragment>{i === 0 ? '' : i === seenAt.length - 1 ? ' and ' : ', '}<a href={`/locations/${o.data.slug}/`}>{o.data.name}</a></Fragment>)}</p>
+              ) : d.phone && (
+                <p class="loc__line">
+                  <a href={`tel:${d.phone.replace(/\D/g, '')}`}>{d.phone}</a>
+                </p>
+              )}
+              <a href={`/locations/${d.slug}/`} class="rd-link loc__link">
                 View {d.name} location →
               </a>
             </article>
@@ -223,173 +196,104 @@ const breadcrumb = {
 </MainLayout>
 
 <style>
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  :global(.contact-photo) { aspect-ratio: 4 / 5; object-position: 50% 50%; }
 
-  .contact-section {
-    background: var(--cream-100);
-  }
-  .contact-grid {
+  .contact-sec { background: var(--linen); padding: 0 0 96px; }
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 64px; align-items: start; }
+  .contact-form-col { display: flex; flex-direction: column; gap: 40px; min-width: 0; }
+  .after { display: flex; flex-direction: column; gap: 14px; max-width: 620px; }
+  .after__h { margin: 0; font-size: 28px; line-height: 1.15; color: var(--forest); }
+  .steps { counter-reset: s; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .steps li {
+    counter-increment: s;
     display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-900);
   }
+  .steps li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .steps li::before { content: counter(s); font-family: var(--font-heading); font-size: 24px; color: var(--sage-600); line-height: 1; }
 
-  .contact-info-card {
-    padding: 1.75rem;
+  .contact-info { display: flex; flex-direction: column; gap: 28px; }
+  .info-block { display: flex; flex-direction: column; gap: 10px; }
+  .info-block > :global(p) { margin: 0; }
+  .info-h { margin: 0 0 8px; font-size: 26px; line-height: 1.15; color: var(--forest); }
+  .facts { margin: 0; display: flex; flex-direction: column; }
+  .fact {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 14px;
+    line-height: 1.6;
   }
-  .contact-info-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1.25rem;
-    border-bottom: 1px solid var(--ink-100);
-    padding-bottom: 0.75rem;
-  }
-  .info-item {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--ink-100);
-  }
-  .info-item:last-child { border-bottom: none; }
-  .info-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-  .info-item strong {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--ink-300);
-    margin-bottom: 0.25rem;
-  }
-  .info-item a {
-    color: var(--green-300);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.15s;
-  }
-  .info-item a:hover { color: var(--green-400); }
-  .info-item address, .info-item span {
-    font-size: 0.95rem;
-    color: var(--ink-700);
-    line-height: 1.5;
-  }
+  .fact:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .fact dt { color: var(--text-600); margin: 0; }
+  .fact dd { margin: 0; color: var(--forest); }
+  .fact address { font-style: normal; }
+  .fact a { color: var(--sage-600); }
+  .fact a:hover { color: var(--forest); }
+  .fact__email { overflow-wrap: anywhere; }
+  .info-block--serving > :global(p:first-of-type) { font-size: 14px; line-height: 1.65; color: var(--text-700); }
+  .serving { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; font-size: 14px; line-height: 1.9; color: var(--forest); }
+  /* The separator trails its item: it can end a wrapped line, never start one. */
+  .serving li:not(:last-child)::after { content: '·'; margin: 0 8px; color: var(--hairline-dot); }
+  .contact-info :global(.enroll) { gap: 14px; }
+  .contact-info :global(.enroll) > :global(p) { font-size: 14px; line-height: 1.65; color: var(--text-700); }
+  .enroll__btns { display: flex; flex-direction: column; gap: 10px; }
+  .enroll__btns :global(.btn-forest), .enroll__btns :global(.btn-ghost) { min-height: 44px; font-size: 13.5px; }
+  .enroll__portal { align-self: center; margin-top: 4px; }
 
-  /* Locations grid */
-  .contact-locations {
-    background: var(--cream-100);
-  }
-
-  .locations-cards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-
-  .location-card {
-    flex: 0 1 calc(33.333% - 1.334rem);
-    min-width: 280px;
-    max-width: 360px;
+  .locs-sec { padding: 96px 0; border-bottom: 0; }
+  .locs-intro { max-width: 760px; margin-bottom: 40px; }
+  .locs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
+  .loc {
     display: flex;
     flex-direction: column;
-    background: var(--cream-50);
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
+    gap: 10px;
+    padding: 26px 0;
+    border-top: 1px solid var(--hairline-strong);
+    border-bottom: 1px solid var(--hairline-strong);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
   }
-
-  .location-card.coming-soon {
-    opacity: 0.92;
-  }
-
-  .location-card-badge {
-    align-self: flex-start;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.2rem 0.7rem;
-    border-radius: 999px;
-    margin-bottom: 1rem;
-  }
-  .location-card-badge.open {
-    background: var(--green-100);
-    color: var(--green-500);
-  }
-  .location-card-badge.future {
-    background: var(--cream-200);
-    color: var(--ink-700);
-  }
-
-  .location-card h3 {
-    font-size: 1.2rem;
-    margin: 0 0 0.5rem 0;
-    color: var(--ink-900);
-  }
-
-  .location-card-address {
-    font-style: normal;
-    color: var(--ink-700);
-    margin: 0 0 0.5rem 0;
-    line-height: 1.5;
-    font-size: 0.92rem;
-  }
-
-  .location-card-phone {
-    margin: 0 0 1rem 0;
-    font-size: 0.92rem;
-  }
-  .location-card-phone a {
-    color: var(--green-400);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .location-card-phone a:hover {
-    color: var(--green-500);
-    text-decoration: underline;
-  }
-
-  .location-card-map {
+  .locs.on .loc { opacity: 1; transform: none; }
+  .locs.on .loc:nth-child(2) { transition-delay: 0.2s; }
+  .locs.on .loc:nth-child(3) { transition-delay: 0.4s; }
+  .loc__map {
+    position: relative;
     aspect-ratio: 4 / 3;
-    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
     overflow: hidden;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow-sm);
+    background: var(--linen-300);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 2px;
   }
-  .location-card-map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
+  .loc__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  .loc--planned .loc__map iframe { filter: grayscale(1); opacity: 0.85; }
+  .loc > :global(p), .loc > :global(address) { margin: 0; }
+  .loc__status { font-size: 13px; font-weight: 500; color: var(--gold-text); }
+  .loc__status--muted { color: var(--text-600); }
+  .loc__name { margin: 0; font-size: 30px; line-height: 1.1; color: var(--forest); }
+  .loc--planned .loc__name { color: var(--text-600); }
+  .loc__addr { font-style: normal; font-size: 15px; line-height: 1.65; color: var(--text-900); }
+  .loc--planned .loc__addr { color: var(--text-600); }
+  .loc__line { font-size: 15px; color: var(--text-600); }
+  .loc__line a { color: var(--sage-600); }
+  .loc__link { align-self: flex-start; margin-top: 8px; }
 
-  .location-card-link {
-    margin-top: auto;
-    color: var(--green-400);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-  .location-card-link:hover {
-    color: var(--green-500);
-    text-decoration: underline;
-  }
-
-  @media (max-width: 900px) {
-    .contact-grid { grid-template-columns: 1fr; }
-  }
   @media (max-width: 860px) {
-    .location-card { flex: 0 1 calc(50% - 1rem); }
-  }
-  @media (max-width: 540px) {
-    .location-card { flex-basis: 100%; max-width: 100%; }
+    .contact-sec { padding-bottom: 64px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .locs-sec { padding: 64px 0; }
+    .locs { grid-template-columns: 1fr; gap: 28px; }
+    .loc { max-width: 560px; }
   }
 </style>
