@@ -198,13 +198,24 @@ const eduTitle = (e: any) => {
   const base = e.degree ? (e.field ? `${e.degree} — ${e.field}` : e.degree) : e.residency ? `${e.residency} Residency` : '';
   return e.year ? `${base}, ${e.year}` : base;
 };
-const steps = isPhysician
-  ? [
-      ...(d.education ?? []).map((e: any) => ({ title: eduTitle(e), body: e.institution || undefined })),
-      ...(d.notableExperience ?? []).map((x: any) => ({ title: x.label, body: x.description || undefined })),
-      { title: 'Forward Family Medicine', body: [officeName, statusText].filter(Boolean).join('. ') },
-    ]
+// A notable-experience step with `beforeStep` sits ahead of the education step with that title;
+// one with `inTimeline: false` is a plain line under the timeline instead of a step.
+const eduSteps: { title: string; body?: string }[] = isPhysician
+  ? (d.education ?? []).map((e: any) => ({ title: eduTitle(e), body: e.institution || undefined }))
   : [];
+const laterSteps: { title: string; body?: string }[] = [];
+for (const x of isPhysician ? (d.notableExperience ?? []) : []) {
+  if (x.inTimeline === false) continue;
+  const step = { title: x.label, body: x.description || undefined };
+  const at = x.beforeStep ? eduSteps.findIndex(s => s.title === x.beforeStep) : -1;
+  if (at >= 0) eduSteps.splice(at, 0, step); else laterSteps.push(step);
+}
+const steps = isPhysician
+  ? [...eduSteps, ...laterSteps, { title: 'Forward Family Medicine', body: [officeName, statusText].filter(Boolean).join('. ') }]
+  : [];
+const timelineNotes: string[] = isPhysician ? (d.notableExperience ?? []).filter((x: any) => x.inTimeline === false).map((x: any) => x.label) : [];
+// A certification whose name already carries its issuing body is printed once.
+const certLine = (c: any) => c.name.toLowerCase().includes(c.organization.toLowerCase()) ? c.name : `${c.name}, ${c.organization}`;
 
 const card = isPhysician ? CARD[d.slug] : undefined;
 const contactHref = contactHrefForPath(`/meet-the-team/${d.slug}/`);
@@ -332,6 +343,7 @@ const closing = isPhysician && availability?.status !== 'full'
         <div class="rd-stack">
           <h2 class="rd-h2">Education &amp; Training</h2>
           <PathTimeline steps={steps} variant="profile" />
+          {timelineNotes.map(n => <p class="bio-note">{n}</p>)}
         </div>
         <div class="bio-facts__side">
           <div class="rd-stack">
@@ -353,7 +365,7 @@ const closing = isPhysician && availability?.status !== 'full'
               {d.additionalCertifications?.length > 0 && (
                 <div class="bio-dl__row">
                   <dt>Certifications</dt>
-                  <dd>{d.additionalCertifications.map((c: any) => <span class="bio-dl__line">{c.name}, {c.organization}</span>)}</dd>
+                  <dd>{d.additionalCertifications.map((c: any) => <span class="bio-dl__line">{certLine(c)}</span>)}</dd>
                 </div>
               )}
               {awards.length > 0 && (
@@ -417,11 +429,12 @@ const closing = isPhysician && availability?.status !== 'full'
   .bio-headshot--placeholder { display: flex; align-items: center; justify-content: center; color: var(--text-600); font-size: 13px; }
   .bio-hero__info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 8px; }
   .bio-hero__info > p { margin: 0; }
-  .bio-status--full { color: var(--text-500); }
+  .bio-status--full { color: var(--text-600); }
   .bio-h1 { font-size: 64px; }
   .bio-h1--long { font-size: 56px; line-height: 1.04; }
   .bio-role { font-size: 18px; font-weight: 500; color: var(--sage-600); }
   .bio-specs { font-size: 14px; color: var(--text-600); }
+  .bio-note { margin: 0; font-size: 15px; line-height: 1.5; color: var(--forest); }
   .bio-specs a { color: var(--sage-600); text-decoration: none; }
   .bio-specs a:hover { color: var(--forest); }
   .bio-creds { list-style: none; margin: 8px 0 0; padding: 0; width: 100%; display: flex; flex-direction: column; font-size: 15px; line-height: 1.5; color: var(--forest); }

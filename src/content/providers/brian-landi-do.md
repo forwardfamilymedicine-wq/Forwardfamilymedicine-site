@@ -31,6 +31,7 @@ education:
 notableExperience:
   - label: "Chief Resident, ChristianaCare Family Medicine Residency"
   - label: "Six-time triathlete"
+    inTimeline: false
   - label: "Board-certified through the American Osteopathic Board of Family Physicians (AOBFP)"
   - label: "Menopause Society Certified Practitioner (MSCP)"
     description: "Credential awarded by The Menopause Society for demonstrated competency in evidence-based care for perimenopause, menopause, and midlife women's health."

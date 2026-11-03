@@ -124,6 +124,10 @@ const providers = defineCollection({
     notableExperience: z.array(z.object({
       label: z.string(),
       description: z.string().optional(),
+      // Profile timeline only. `inTimeline: false` prints the label as a plain line under the
+      // timeline; `beforeStep` places the step ahead of the education step with that title.
+      inTimeline: z.boolean().optional(),
+      beforeStep: z.string().optional(),
     })).optional(),
     displayOrder: z.number(),
   }),

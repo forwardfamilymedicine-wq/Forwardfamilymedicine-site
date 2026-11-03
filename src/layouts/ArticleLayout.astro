@@ -5,8 +5,8 @@
  * portrait, date and read time; an optional hero image at right (blog posts
  * with an image), full-width title when absent (library articles); a 720px
  * column whose H2s feed the "In this article" rail with scroll-spy; the
- * author card; the educational disclaimer; the closing band. The rail is
- * sticky only when it fits under the header (data-sticky-fit).
+ * author card; the educational disclaimer; the closing band. The contents
+ * block in the rail pins under the header (data-sticky-fit) when it fits.
  *
  * Copy comes from the page that renders this: the live byline strings, the
  * live closing-band copy and the header's live card text. The only new words
@@ -151,30 +151,34 @@ const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
           <p class="art-disclaimer"><strong>Educational Disclaimer</strong> The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
         </div>
 
-        <aside class="art-rail" data-sticky-fit>
+        <aside class="art-rail">
           {toc.length > 0 && (
-            <div class="art-toc">
-              <p class="art-toc__head">In this article</p>
-              <nav class="art-toc__nav" aria-label="In this article" data-article-toc>
-                {toc.map(h => <a href={`#${h.slug}`}>{h.text}</a>)}
-              </nav>
+            <div class="art-rail__pin">
+              <div class="art-toc" data-sticky-fit>
+                <p class="art-toc__head">In this article</p>
+                <nav class="art-toc__nav" aria-label="In this article" data-article-toc>
+                  {toc.map(h => <a href={`#${h.slug}`}>{h.text}</a>)}
+                </nav>
+              </div>
             </div>
           )}
-          {related.items.length > 0 && (
-            <div class="art-related">
-              <h2 class="art-related__h rd-serif">{related.heading}</h2>
-              {related.items.map(item => (
-                <a class="art-read" href={item.href}>
-                  <span class="art-read__title rd-serif">{item.title}</span>
-                  <span class="art-read__meta">{item.meta}</span>
-                </a>
-              ))}
+          <div class="art-rail__rest">
+            {related.items.length > 0 && (
+              <div class="art-related">
+                <h2 class="art-related__h rd-serif">{related.heading}</h2>
+                {related.items.map(item => (
+                  <a class="art-read" href={item.href}>
+                    <span class="art-read__title rd-serif">{item.title}</span>
+                    <span class="art-read__meta">{item.meta}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+            <div class="art-card">
+              <p class="art-card__title rd-serif">Start with a conversation, not a commitment.</p>
+              <p class="art-card__text">A free meet and greet is exactly what it sounds like. Come in, meet the physician taking new patients, see the office, and ask every question you have. Nothing is signed that day.</p>
+              <a class="btn-forest btn-sm" href={contactHref}>Schedule a Free Meet &amp; Greet</a>
             </div>
-          )}
-          <div class="art-card">
-            <p class="art-card__title rd-serif">Start with a conversation, not a commitment.</p>
-            <p class="art-card__text">A free meet and greet is exactly what it sounds like. Come in, meet the physician taking new patients, see the office, and ask every question you have. Nothing is signed that day.</p>
-            <a class="btn-forest btn-sm" href={contactHref}>Schedule a Free Meet &amp; Greet</a>
           </div>
         </aside>
       </div>
@@ -335,7 +339,11 @@ const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
   .art-disclaimer strong { display: block; color: var(--text-600); font-weight: 600; margin-bottom: 2px; }
 
   /* Rail */
-  .art-rail { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
+  /* The rail is as tall as the article. Only the contents block pins (inside .art-rail__pin, which
+     ends where the related list begins); the related list and card scroll with the page. */
+  .art-rail { display: flex; flex-direction: column; gap: 32px; min-width: 0; align-self: stretch; }
+  .art-rail__pin { flex: 1 1 auto; min-height: 0; }
+  .art-rail__rest { display: flex; flex-direction: column; gap: 32px; }
   .art-toc { display: flex; flex-direction: column; gap: 12px; }
   .art-toc__head { margin: 0; font-size: 13px; font-weight: 500; color: var(--forest); }
   .art-toc__nav { display: flex; flex-direction: column; border-left: 1px solid var(--hairline-strong); }

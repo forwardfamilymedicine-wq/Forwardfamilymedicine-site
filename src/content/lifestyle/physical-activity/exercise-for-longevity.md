@@ -9,7 +9,7 @@ keywords:
   - exercise aging
   - physical activity mortality
 category: lifestyle
-date: "2026-01-01"
+date: "2026-03-24"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

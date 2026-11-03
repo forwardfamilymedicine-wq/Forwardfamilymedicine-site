@@ -556,6 +556,7 @@ tbody tr:hover {
   --sage-600:     #4E6C50;   /* dark sage: the CTA green, labels */
   --forest:       #1E2D1F;   /* forest: headings, dark bands */
   --gold:         #B8873A;   /* status lines, numerals */
+  --gold-text:    #84612A;   /* gold for text under 18px: 5.1:1 on linen, 5.4:1 on linen-50, 4.9:1 on sage-50 */
   /* Text ramp */
   --text-900:     #2C2C2A;
   --text-700:     #444441;
@@ -640,7 +641,7 @@ html { scroll-padding-top: var(--header-h); }
   color: var(--sage-600);
   margin: 0;
 }
-.rd-eyebrow--gold { color: var(--gold); }
+.rd-eyebrow--gold { color: var(--gold-text); }
 .rd-eyebrow--muted { color: var(--text-600); }
 .rd-link {
   display: inline-block;
