@@ -10,7 +10,7 @@
  * /services/ link itself. Esc closes it. At 1023px and under the bar collapses
  * to the logo and a hamburger (the full nav needs about 943px of content width); the sheet carries the primary destinations and, at the
  * bottom, a secondary list: phone, New Patients, Blog, FAQ, Patient Portal,
- * Enroll. At desktop widths the secondary destinations are in the footer; the
+ * Enroll — Individual, Enroll — Family. At desktop widths the secondary destinations are in the footer; the
  * Patient Portal text link needs about 1130px beside the full nav, so between
  * 1024px and 1139px the footer's Patient Portal link is the way to it.
  *
@@ -23,6 +23,7 @@ import { contactHrefForPath } from '../../utils/leadSource';
 
 const PORTAL_URL = 'https://patient.sigmamd.com';
 const ENROLL_URL = 'https://forwardfamilymedicine.sigmamd.com/signup/individual-membership';
+const ENROLL_FAMILY_URL = 'https://forwardfamilymedicine.sigmamd.com/signup/family-membership';
 const PHONE_HREF = 'tel:+12156457044';
 const PHONE_TEXT = '(215) 645-7044';
 
@@ -47,7 +48,8 @@ const moreLinks = [
   { href: '/blog/', label: 'Blog' },
   { href: '/faq/', label: 'FAQ' },
   { href: PORTAL_URL, label: 'Patient Portal', external: true },
-  { href: ENROLL_URL, label: 'Enroll', external: true },
+  { href: ENROLL_URL, label: 'Enroll — Individual', external: true },
+  { href: ENROLL_FAMILY_URL, label: 'Enroll — Family', external: true },
 ];
 
 const currentPath = Astro.url.pathname;
