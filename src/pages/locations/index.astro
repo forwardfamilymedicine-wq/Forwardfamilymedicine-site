@@ -12,6 +12,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import PageHero from '../../components/shared/PageHero.astro';
 import { isPlanned, openOfficesFor } from '../../utils/physicianRouting';
 import { formatMonthYear } from '../../utils/availability';
+import { keepUnit } from '../../utils/address';
 
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
@@ -41,12 +42,6 @@ const neighborhoodsBySlug: Record<string, string[]> = {
   'wayne':        ['Wayne', 'Radnor', 'Villanova', 'Bryn Mawr', 'Devon', 'Berwyn', 'Paoli', 'Strafford', 'Haverford', 'Ardmore'],
   'malvern':      ['Malvern', 'Paoli', 'Berwyn', 'Chester Springs', 'Exton', 'Phoenixville', 'Lionville', 'Glen Mills'],
 };
-
-// Approved copy change (BUILD_PROMPT, "Locations"): the Malvern intro line.
-// Applied here only; the collection's description also feeds the office page's
-// meta description, which is not part of the approved change.
-const descriptionFor = (slug: string, fallback: string) =>
-  slug === 'malvern' ? 'Our Chester County location, serving Malvern, Paoli, Exton, Chester Springs, and the western Main Line.' : fallback;
 
 const openOffices = locations.filter(l => l.data.status === 'open');
 const otherOffices = locations.filter(l => l.data.status !== 'open');
@@ -113,13 +108,13 @@ const breadcrumb = {
             <article class="office" id={d.slug}>
               <p class="rd-eyebrow rd-eyebrow--gold">Now Open</p>
               <h2 class="office__name rd-serif">{d.name}</h2>
-              <p class="office__desc">{descriptionFor(d.slug, d.description)}</p>
+              <p class="office__desc">{d.description}</p>
 
               <dl class="facts">
                 {d.addressStreet && (
                   <div class="fact">
                     <dt>Address</dt>
-                    <dd><address>{d.addressStreet}<br />{d.addressCity}, {d.addressState} {d.addressZip}</address></dd>
+                    <dd><address>{keepUnit(d.addressStreet)}<br />{d.addressCity}, {d.addressState} {d.addressZip}</address></dd>
                   </div>
                 )}
                 {d.phone && (
@@ -190,9 +185,9 @@ const breadcrumb = {
               {planned ? (
                 <p>{d.addressCity}, {d.addressState}<br />Address and opening date to come</p>
               ) : (
-                <p>{d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}{d.addressCity}, {d.addressState} {d.addressZip}</p>
+                <p>{d.addressStreet && <Fragment>{keepUnit(d.addressStreet)}<br /></Fragment>}{d.addressCity}, {d.addressState} {d.addressZip}</p>
               )}
-              <p class="orow__desc">{descriptionFor(d.slug, d.description)}</p>
+              <p class="orow__desc">{d.description}</p>
             </div>
             <div class="orow__side">
               {seenAt.length > 0 && (

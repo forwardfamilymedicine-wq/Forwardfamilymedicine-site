@@ -112,6 +112,10 @@ import RuledList from '../components/shared/RuledList.astro';
   .car-join__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
   .car-join__h { font-size: 36px; line-height: 1.1; letter-spacing: -0.01em; }
   .car-join__copy .rd-copy { max-width: 560px; }
+  /* The live label "Email us at information@forwardfamilymedicine.com" stays on one line on a phone. */
+  @media (max-width: 560px) {
+    .car-join .btn-forest { white-space: nowrap; font-size: min(14px, 3.05vw); padding: 0 16px; }
+  }
   @media (max-width: 860px) {
     .car-split, .car-grow__grid, .car-join__inner { grid-template-columns: 1fr; gap: 32px; }
     .car-grow { padding: 56px 0; }

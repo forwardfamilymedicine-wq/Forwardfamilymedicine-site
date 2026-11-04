@@ -8,6 +8,7 @@ import { getCollection } from 'astro:content';
 import SageCard from '../components/shared/SageCard.astro';
 import { isPlanned, openOfficesFor } from '../utils/physicianRouting';
 import { formatMonthYear } from '../utils/availability';
+import { keepUnit } from '../utils/address';
 
 const locations = (await getCollection('locations'))
   .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
@@ -76,7 +77,7 @@ const breadcrumb = {
           <dl class="facts">
             <div class="fact">
               <dt>Wayne</dt>
-              <dd><address>295 Old Eagle School Road, STE 2<br />Wayne, PA 19087</address></dd>
+              <dd><address>295 Old Eagle School Road, STE&nbsp;2<br />Wayne, PA 19087</address></dd>
             </div>
             <div class="fact">
               <dt>Malvern</dt>
@@ -90,7 +91,7 @@ const breadcrumb = {
               <dt>Fax</dt>
               <dd><a href="tel:+12154498854">(215) 449-8854</a></dd>
             </div>
-            <div class="fact">
+            <div class="fact fact--stack">
               <dt>Email</dt>
               <dd class="fact__email"><a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a></dd>
             </div>
@@ -173,7 +174,7 @@ const breadcrumb = {
                 <p class="loc__addr">{town}<br />Address and opening date to come</p>
               ) : (
                 <address class="loc__addr">
-                  {d.addressStreet && <Fragment>{d.addressStreet}<br /></Fragment>}
+                  {d.addressStreet && <Fragment>{keepUnit(d.addressStreet)}<br /></Fragment>}
                   {d.addressCity}, {d.addressState} {d.addressZip}
                 </address>
               )}
@@ -239,6 +240,8 @@ const breadcrumb = {
   .fact address { font-style: normal; }
   .fact a { color: var(--sage-600); }
   .fact a:hover { color: var(--forest); }
+  /* The email address gets the full width under its label, so it never breaks mid-word. */
+  .fact--stack { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .fact__email { overflow-wrap: anywhere; }
   .info-block--serving > :global(p:first-of-type) { font-size: 14px; line-height: 1.65; color: var(--text-700); }
   .serving { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; font-size: 14px; line-height: 1.9; color: var(--forest); }

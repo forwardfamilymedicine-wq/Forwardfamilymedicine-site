@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProviderCard from '../../components/shared/ProviderCard.astro';
 import { openOfficeName } from '../../utils/credentialRows';
+import { keepUnit } from '../../utils/address';
 import { isPlanned } from '../../utils/physicianRouting';
 import { formatMonthYear, getAvailability } from '../../utils/availability';
 
@@ -138,7 +139,7 @@ const breadcrumb = {
                   <dt>Address</dt>
                   <dd>
                     <address>
-                      {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
+                      {data.addressStreet && <Fragment>{keepUnit(data.addressStreet)}<br /></Fragment>}
                       {data.addressCity}, {data.addressState} {data.addressZip}
                     </address>
                     {directions && (
@@ -182,7 +183,7 @@ const breadcrumb = {
               <div class="loc-visit__address">
                 <p class="loc-visit__name rd-serif">{data.name}</p>
                 <address>
-                  {data.addressStreet && <Fragment>{data.addressStreet}<br /></Fragment>}
+                  {data.addressStreet && <Fragment>{keepUnit(data.addressStreet)}<br /></Fragment>}
                   {data.addressCity}, {data.addressState} {data.addressZip}
                 </address>
                 {data.phone && <p><a href={`tel:${data.phone.replace(/\D/g,'').replace(/^/,'+1')}`}>{data.phone}</a></p>}
