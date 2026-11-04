@@ -1,13 +1,16 @@
 ---
 /**
- * The composed /local/ page for markdown entries: the same editorial
- * components the MDX exemplar uses, fed from the view model that
- * utils/localCompose.ts derives from the entry, the collections and the
- * town map. Prose sections keep their body HTML unchanged.
+ * The composed /local/ page for markdown entries, laid out per the Local
+ * boards: hero with the physician card; three figures; the service explainer
+ * beside "About <Town>"; the nearest-office physician with the full bio;
+ * the why-choose list; services with the pricing line; "How we serve <Town>"
+ * with the window-chairs photo; the patient scenario; the practical
+ * information grid; FAQ; the closing band; the collapsed nearby-towns row.
+ * The view model comes from utils/localCompose.ts; prose sections keep their
+ * body HTML unchanged. Physician routing stays on physicianRouting.ts.
  */
 import { Image } from 'astro:assets';
 import LocalHero from './LocalHero.astro';
-import Section from './Section.astro';
 import StatStrip from './StatStrip.astro';
 import PhysicianSpotlight from './PhysicianSpotlight.astro';
 import ServiceList from './ServiceList.astro';
@@ -16,126 +19,151 @@ import PracticalInfo from './PracticalInfo.astro';
 import FAQSection from '../shared/FAQSection.astro';
 import CTABanner from '../shared/CTABanner.astro';
 import NearYouExpander from '../shared/NearYouExpander.astro';
-import teamPhoto from '../../assets/staff/ffm-team.jpg';
-import wayneExterior from '../../assets/locations/wayne-exterior.jpeg';
-import type { ComposedPage, Block } from '../../utils/localCompose';
+import windowChairs from '../../assets/office/wayne-window-chairs.jpg';
+import type { ComposedPage, Block, ProseBlock } from '../../utils/localCompose';
 
 export interface Props { page: ComposedPage }
 const { page } = Astro.props;
 
-// Prose bands alternate cream and white so adjacent sections read as separate.
-const tones: ('cream' | 'white')[] = ['cream', 'white'];
-let toneIndex = 0;
-const nextTone = () => tones[toneIndex++ % 2];
-const beforeTones = page.before.map(() => nextTone());
-const afterTones = page.after.map(() => nextTone());
-
-const renderBlock = (b: Block) => b;
+// The opening section pairs the explainer(s) with "About <Town>".
+const aboutBlock = page.before.find((b): b is ProseBlock => b.kind === 'prose' && /^about\b/i.test(b.title)) ?? null;
+const introBlocks = page.before.filter(b => b !== aboutBlock);
+// Later bands alternate linen and the lighter alternate tone, starting after
+// the spotlight (which is on the alternate tone).
+const afterTone = (i: number) => (i % 2 === 0 ? '' : 'rd-alt');
 ---
 
 <LocalHero
   location={page.location}
-  eyebrow={page.hero.eyebrow}
   title={page.hero.title}
   lede={page.hero.lede}
   cta={page.hero.cta}
   secondary={page.hero.secondary}
-  photo={page.hero.photo ?? teamPhoto}
+  photo={page.hero.photo}
   photoAlt={page.hero.photoAlt}
   physician={page.hero.physician}
+  portraits={page.hero.portraits}
 />
 
 <StatStrip stats={page.stats} />
 
-{page.before.map((b, i) => (
-  b.kind === 'prose' ? (
-    <Section tone={beforeTones[i]} label={b.label} title={b.title}>
-      <Fragment set:html={b.html} />
-    </Section>
-  ) : (
-    <Section tone={beforeTones[i]} label={b.label} title={b.title}>
-      <ServiceList intro={b.model.intro} groups={[{ heading: 'Included in membership', items: b.model.items }]} more={b.model.more} noteHtml={b.model.noteHtml} />
-    </Section>
-  )
-))}
+{(introBlocks.length > 0 || aboutBlock) && (
+  <section class="rd-section">
+    <div class:list={['rd-wrap', 'lp-intro', { 'lp-intro--solo': !(introBlocks.length && aboutBlock) }]}>
+      {introBlocks.length > 0 && (
+        <div class="lp-intro__col">
+          {introBlocks.map(b => (
+            <div class="lp-intro__block">
+              <h2 class="lp-intro__h2 rd-serif">{b.title}</h2>
+              {b.kind === 'prose'
+                ? <div class="lp-prose" data-reveal><Fragment set:html={b.html} /></div>
+                : <ServiceList groups={[{ items: b.model.items }]} more={b.model.more} noteHtml={b.model.noteHtml} />}
+            </div>
+          ))}
+        </div>
+      )}
+      {aboutBlock && (
+        <div class="lp-intro__col">
+          <div class="lp-intro__block">
+            <h2 class="lp-intro__h2 rd-serif">{aboutBlock.title}</h2>
+            <div class="lp-prose"><Fragment set:html={aboutBlock.html} /></div>
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+)}
 
-<Section tone="sand" label={page.spotlight.label} title={page.spotlight.title}>
-  <PhysicianSpotlight
-    name={page.spotlight.name}
-    credential={page.spotlight.credential}
-    note={page.spotlight.note}
-    href={page.spotlight.href}
-    photo={page.spotlight.photo}
-    photoAlt={page.spotlight.photoAlt}
-    facts={page.spotlight.facts}
-  >
-    <Fragment set:html={page.spotlight.bioHtml} />
-  </PhysicianSpotlight>
-</Section>
+<section class="rd-section rd-alt">
+  <div class="rd-wrap">
+    <h2 class="rd-h2 lp-spot__h2">{page.spotlight.title}</h2>
+    <PhysicianSpotlight
+      name={page.spotlight.name}
+      credential={page.spotlight.credential}
+      note={page.spotlight.note}
+      href={page.spotlight.href}
+      photo={page.spotlight.photo}
+      photoAlt={page.spotlight.photoAlt}
+      facts={page.spotlight.facts}
+    >
+      <Fragment set:html={page.spotlight.bioHtml} />
+    </PhysicianSpotlight>
+  </div>
+</section>
 
-{page.after.map((b, i) => (
+{page.after.map((b: Block, i: number) => (
   b.kind === 'prose' ? (
-    <Section tone={afterTones[i]} label={b.label} title={b.title}>
-      <Fragment set:html={b.html} />
-    </Section>
+    <section class:list={['rd-section', afterTone(i)]}>
+      <div class="rd-wrap rd-split lp-split">
+        <h2 class="rd-h2 rd-sticky">{b.title}</h2>
+        <div class="lp-prose lp-prose--list" data-reveal><Fragment set:html={b.html} /></div>
+      </div>
+    </section>
   ) : (
-    <Section tone={afterTones[i]} label={b.label} title={b.title}>
-      <ServiceList intro={b.model.intro} groups={[{ heading: 'Included in membership', items: b.model.items }]} more={b.model.more} noteHtml={b.model.noteHtml} />
-    </Section>
+    <section class:list={['rd-section', afterTone(i)]}>
+      <div class="rd-wrap rd-split lp-split">
+        <div class="rd-stack rd-sticky lp-services__side">
+          <h2 class="rd-h2">{b.title}</h2>
+          {b.model.intro && <p class="lp-services__note">{b.model.intro}</p>}
+          {b.model.noteHtml && <p class="lp-services__note" set:html={b.model.noteHtml} />}
+          {b.model.more && <p class="lp-services__links"><a href={b.model.more.href} class="rd-link">{b.model.more.label} →</a></p>}
+        </div>
+        <ServiceList groups={[{ items: b.model.items }]} />
+      </div>
+    </section>
   )
 ))}
 
 {page.local && (
-  <Section tone="white" width="wide" label={page.local.label} title={page.local.title}>
-    <div class:list={['ed-two-up', { 'ed-two-up--single': !page.local.showWaynePhoto }]}>
-      <div>
+  <section class="lp-serve rd-sage">
+    <div class:list={['rd-wrap', 'lp-serve__grid', { 'lp-serve__grid--solo': !page.local.showWaynePhoto }]}>
+      <div class="lp-serve__copy">
+        <h2 class="rd-h2">{page.local.title}</h2>
         {page.local.paragraphs.map(p => <p>{p}</p>)}
       </div>
       {page.local.showWaynePhoto && (
-        <figure class="ed-photo">
-          <Image
-            src={wayneExterior}
-            alt="Forward Family Medicine's office at 295 Old Eagle School Road in Wayne, PA"
-            width={1000}
-            height={750}
-            fit="cover"
-            position="center"
-            widths={[480, 720, 1000]}
-            sizes="(max-width: 900px) calc(100vw - 32px), 500px"
-            format="webp"
-            quality={82}
-            loading="lazy"
-            class="ed-photo__img"
-          />
-          <figcaption class="ed-photo__caption">Our office at 295 Old Eagle School Road, Wayne. Free parking on site.</figcaption>
-        </figure>
+        <Image
+          src={windowChairs}
+          alt="Our office at 295 Old Eagle School Road, Wayne"
+          widths={[480, 720, 960, 1200]}
+          sizes="(max-width: 860px) calc(100vw - 40px), 520px"
+          format="webp"
+          quality={82}
+          loading="lazy"
+          class="lp-serve__img"
+        />
       )}
     </div>
-  </Section>
+  </section>
 )}
 
 {page.scenario && (
-  <Section tone="sand" width="wide">
-    <PatientScenario title={page.scenario.title} situation={page.scenario.situation}>
-      {page.scenario.response.map(p => <p>{p}</p>)}
-    </PatientScenario>
-  </Section>
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <PatientScenario title={page.scenario.title} situation={page.scenario.situation}>
+        {page.scenario.response.map(p => <p>{p}</p>)}
+      </PatientScenario>
+    </div>
+  </section>
 )}
 
-<Section tone="cream" label="Practical information" title={page.practical.title}>
-  <PracticalInfo
-    address={page.practical.address}
-    phone={page.practical.phone}
-    fax={page.practical.fax}
-    email={page.practical.email}
-    hours={page.practical.hours}
-    extras={page.practical.extras}
-    mapHref={page.practical.mapHref}
-    detailsHref={page.practical.detailsHref}
-    opening={page.practical.opening}
-    notice={page.practical.notice}
-  />
-</Section>
+<section class="rd-section rd-alt">
+  <div class="rd-wrap">
+    <h2 class="rd-h2 lp-practical__h2">{page.practical.title}</h2>
+    <PracticalInfo
+      address={page.practical.address}
+      phone={page.practical.phone}
+      fax={page.practical.fax}
+      email={page.practical.email}
+      hours={page.practical.hours}
+      extras={page.practical.extras}
+      mapHref={page.practical.mapHref}
+      detailsHref={page.practical.detailsHref}
+      opening={page.practical.opening}
+      notice={page.practical.notice}
+    />
+  </div>
+</section>
 
 {page.faq && page.faq.faqs.length > 0 && (
   <FAQSection faqs={page.faq.faqs} headline={page.faq.headline} label="FAQ" />
@@ -158,35 +186,77 @@ const renderBlock = (b: Block) => b;
 />
 
 <style>
-  .ed-two-up {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: start;
+  .lp-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: start; }
+  .lp-intro--solo { grid-template-columns: minmax(0, 1fr); }
+  .lp-intro--solo .lp-intro__col { max-width: 760px; }
+  .lp-intro__col { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
+  .lp-intro__block { display: flex; flex-direction: column; gap: 18px; }
+  .lp-intro__h2 { margin: 0; font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; color: var(--forest); }
+  .lp-intro__block + .lp-intro__block .lp-intro__h2 { font-size: 24px; line-height: 1.2; }
+
+  /* Body HTML from the entry. :global() because it is rendered Markdown. */
+  .lp-prose { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+  .lp-prose :global(p) { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
+  .lp-prose :global(a) { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .lp-prose :global(a:hover) { color: var(--forest); border-color: var(--forest); }
+  .lp-prose :global(strong) { color: var(--forest); font-weight: 500; }
+  .lp-prose :global(h3) { margin: 6px 0 -6px; font-family: var(--font-heading); font-weight: 400; font-size: 24px; line-height: 1.2; color: var(--forest); }
+  .lp-prose :global(ul), .lp-prose :global(ol) { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .lp-prose :global(li) {
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text-900);
+    opacity: 0;
+    transform: translateX(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .ed-two-up--single { grid-template-columns: minmax(0, 1fr); max-width: var(--measure); }
-  .ed-two-up p {
-    font-size: var(--step-0);
-    line-height: 1.75;
-    color: var(--ink-700);
-    max-width: var(--measure);
-    margin-bottom: var(--space-m);
-  }
-  .ed-two-up p:last-child { margin-bottom: 0; }
-  .ed-photo { margin: 0; }
-  .ed-photo__img {
+  .lp-prose :global(li:last-child) { border-bottom: 1px solid var(--hairline-strong); }
+  .lp-prose--list :global(li) { font-size: 15.5px; }
+  .lp-prose.on :global(li) { opacity: 1; transform: none; }
+  .lp-prose.on :global(li:nth-child(1)) { transition-delay: 0.1s; }
+  .lp-prose.on :global(li:nth-child(2)) { transition-delay: 0.22s; }
+  .lp-prose.on :global(li:nth-child(3)) { transition-delay: 0.34s; }
+  .lp-prose.on :global(li:nth-child(4)) { transition-delay: 0.46s; }
+  .lp-prose.on :global(li:nth-child(5)) { transition-delay: 0.58s; }
+  .lp-prose.on :global(li:nth-child(6)) { transition-delay: 0.7s; }
+  .lp-prose.on :global(li:nth-child(7)) { transition-delay: 0.82s; }
+  .lp-prose.on :global(li:nth-child(n+8)) { transition-delay: 0.94s; }
+  /* A block with no list reveals nothing; its paragraphs are always visible. */
+
+  .lp-spot__h2 { margin-bottom: 40px; }
+  .lp-split { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .lp-services__note { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-700); }
+  .lp-services__note :global(a) { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .lp-services__note :global(strong) { color: var(--forest); font-weight: 500; }
+  .lp-services__links { margin: 0; display: flex; gap: 22px; flex-wrap: wrap; }
+
+  .lp-serve { padding: 88px 0; }
+  .lp-serve__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 72px; align-items: center; }
+  .lp-serve__grid--solo { grid-template-columns: minmax(0, 1fr); }
+  .lp-serve__grid--solo .lp-serve__copy { max-width: 720px; margin: 0 auto; }
+  .lp-serve__copy { display: flex; flex-direction: column; gap: 18px; }
+  .lp-serve__copy p { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
+  .lp-serve__copy p + p { font-size: 15px; line-height: 1.7; color: var(--text-600); }
+  .lp-serve :global(.lp-serve__img) {
+    display: block;
     width: 100%;
     height: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    background: var(--cream-200);
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: 60% 50%;
+    border-radius: 2px;
   }
-  .ed-photo__caption {
-    margin-top: var(--space-xs);
-    font-size: var(--step--1);
-    color: var(--ink-500);
-  }
-  @media (max-width: 900px) {
-    .ed-two-up { grid-template-columns: 1fr; }
+  .lp-practical__h2 { margin-bottom: 36px; }
+
+  @media (max-width: 860px) {
+    .lp-intro, .lp-split { grid-template-columns: 1fr; gap: 40px; }
+    .lp-split { gap: 28px; }
+    .lp-intro__h2 { font-size: 28px; }
+    .lp-spot__h2 { margin-bottom: 28px; }
+    .lp-serve { padding: 64px 0; }
+    .lp-serve__grid { grid-template-columns: 1fr; gap: 28px; }
+    .lp-practical__h2 { margin-bottom: 24px; }
   }
 </style>

@@ -1,185 +1,151 @@
 ---
 /**
- * Local-page hero: place, proposition, one CTA, and the physician who will
- * actually see you. Photography is an imported asset rendered through
- * astro:assets so the page ships resized WebP rather than the original file.
+ * Local-page hero, per the Local boards: breadcrumb, title, lede and two
+ * buttons beside a card for the physician who would actually see you. The
+ * card is the routed physician (portrait, name, credential line, practice
+ * note, bio link) or, when physicianRouting yields the team card, the
+ * accepting physicians' portraits side by side with the team link. The
+ * decorative eyebrow is no longer rendered; the prop stays for callers.
  */
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 export interface Props {
   location: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   lede: string;
   cta: { label: string; href: string };
   secondary?: { label: string; href: string };
-  photo: ImageMetadata;
+  photo?: ImageMetadata | null;
   photoAlt: string;
   physician: { name: string; credential: string; note?: string; href: string; linkLabel: string };
-  /**
-   * Portrait headshots crop to 4:5; a landscape source (the team photo)
-   * renders at 3:2 in a wider column. Derived from the image's own
-   * dimensions, so no page has to say which it is; pass it only to override.
-   */
+  /** The team card: portraits of the physicians accepting new patients. */
+  portraits?: { photo: ImageMetadata; alt: string }[];
   orientation?: 'portrait' | 'landscape';
 }
-const { location, eyebrow, title, lede, cta, secondary, photo, photoAlt, physician } = Astro.props;
-const orientation = Astro.props.orientation ?? (photo.width > photo.height ? 'landscape' : 'portrait');
-const landscape = orientation === 'landscape';
+const { location, title, lede, cta, secondary, photo, photoAlt, physician, portraits = [] } = Astro.props;
+const teamCard = !photo && portraits.length > 0;
 ---
 
-<section class:list={['ed-hero', landscape && 'ed-hero--landscape']}>
-  <div class="ed-hero__inner">
-    <div class="ed-hero__text">
-      <nav class="ed-hero__crumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>{location}</span>
-      </nav>
-      <p class="section-label ed-hero__eyebrow">{eyebrow}</p>
-      <h1 class="ed-hero__title">{title}</h1>
-      <p class="ed-hero__lede">{lede}</p>
-      <div class="ed-hero__actions">
-        <a href={cta.href} class="btn btn-accent">{cta.label}</a>
-        {secondary && <a href={secondary.href} class="ed-hero__secondary">{secondary.label}</a>}
+<section class="lh">
+  <div class="rd-wrap">
+    <nav class="rd-crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">{location}</span>
+    </nav>
+    <div class="lh__grid">
+      <div class="lh__copy">
+        <h1 class="lh__h1 rd-serif">{title}</h1>
+        <p class="lh__lede">{lede}</p>
+        <div class="lh__actions">
+          <a href={cta.href} class="btn-forest">{cta.label}</a>
+          {secondary && <a href={secondary.href} class="btn-ghost">{secondary.label}</a>}
+        </div>
       </div>
+
+      {teamCard ? (
+        <div class="lh-card lh-card--team">
+          <div class="lh-card__row">
+            {portraits.map(p => (
+              <Image
+                src={p.photo}
+                alt={p.alt}
+                width={400}
+                height={500}
+                widths={[200, 400, 600]}
+                sizes="(max-width: 860px) calc(50vw - 36px), 170px"
+                format="webp"
+                quality={82}
+                loading="eager"
+                fetchpriority="high"
+                class="lh-card__portrait"
+              />
+            ))}
+          </div>
+          <p class="lh-card__name rd-serif">{physician.name}</p>
+          <p class="lh-card__role">{physician.credential}</p>
+          <a href={physician.href} class="rd-link lh-card__link">{physician.linkLabel} →</a>
+        </div>
+      ) : (
+        <div class="lh-card">
+          {photo && (
+            <Image
+              src={photo}
+              alt={photoAlt}
+              width={760}
+              height={608}
+              widths={[380, 760, 1140]}
+              sizes="(max-width: 860px) calc(100vw - 40px), 380px"
+              format="webp"
+              quality={82}
+              loading="eager"
+              fetchpriority="high"
+              class="lh-card__photo"
+            />
+          )}
+          <div class="lh-card__body">
+            <p class="lh-card__name rd-serif">{physician.name}</p>
+            <p class="lh-card__cred">{physician.credential}</p>
+            {physician.note && <p class="lh-card__note">{physician.note}</p>}
+            <a href={physician.href} class="rd-link lh-card__link">{physician.linkLabel} →</a>
+          </div>
+        </div>
+      )}
     </div>
-    <figure class="ed-hero__figure">
-      <Image
-        src={photo}
-        alt={photoAlt}
-        width={landscape ? 960 : 720}
-        height={landscape ? 640 : 900}
-        fit="cover"
-        position={landscape ? 'center' : 'top'}
-        widths={landscape ? [480, 720, 960] : [360, 540, 720]}
-        sizes={landscape
-          ? '(max-width: 900px) min(calc(100vw - 32px), 560px), 480px'
-          : '(max-width: 900px) min(80vw, 360px), 380px'}
-        format="webp"
-        quality={82}
-        loading="eager"
-        fetchpriority="high"
-        class="ed-hero__photo"
-      />
-      <figcaption class="ed-hero__caption">
-        <span class="ed-hero__name">{physician.name}</span>
-        <span class="ed-hero__cred">{physician.credential}</span>
-        {physician.note && <span class="ed-hero__note">{physician.note}</span>}
-        <a href={physician.href} class="ed-hero__bio">{physician.linkLabel}</a>
-      </figcaption>
-    </figure>
   </div>
 </section>
 
 <style>
-  .ed-hero {
-    background: var(--cream-100);
-    padding: clamp(2rem, 5vw, 4rem) 0 var(--space-2xl);
-  }
-  .ed-hero__inner {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 clamp(16px, 4vw, 40px);
+  .lh { background: var(--linen); padding: 80px 0 96px; }
+  .lh__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 400px);
-    gap: clamp(2rem, 5vw, 5rem);
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: 72px;
     align-items: center;
   }
-  .ed-hero__crumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: var(--space-l);
-  }
-  .ed-hero__crumb a { color: var(--green-300); text-decoration: none; }
-  .ed-hero__crumb a:hover { text-decoration: underline; }
-  .ed-hero__eyebrow { margin-bottom: var(--space-s); }
-  .ed-hero__title {
-    font-size: var(--step-4);
-    line-height: 1.08;
-    letter-spacing: -0.01em;
-    margin: 0 0 var(--space-m);
-    max-width: 16ch;
-  }
-  .ed-hero__lede {
-    font-size: var(--step-1);
-    line-height: 1.55;
-    color: var(--ink-700);
-    max-width: 34ch;
-    margin: 0 0 var(--space-l);
-  }
-  .ed-hero__actions {
+  .lh__copy { display: flex; flex-direction: column; gap: 22px; }
+  .lh__h1 { margin: 0; font-size: 60px; line-height: 1.04; letter-spacing: -0.018em; color: var(--forest); max-width: 16ch; }
+  .lh__lede { margin: 0; font-size: 18px; line-height: 1.7; color: var(--text-900); max-width: 620px; }
+  .lh__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+
+  .lh-card {
+    background: var(--linen-50);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--forest);
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-m);
+    flex-direction: column;
   }
-  .ed-hero__secondary {
-    color: var(--green-400);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-
-  /* Landscape source: a wider column and a 3:2 frame instead of the 4:5 portrait crop. */
-  .ed-hero--landscape .ed-hero__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
-  }
-  .ed-hero--landscape .ed-hero__photo {
-    aspect-ratio: 3 / 2;
-    object-position: 50% 40%;
-  }
-
-  .ed-hero__figure { margin: 0; }
-  .ed-hero__photo {
+  .lh-card :global(.lh-card__photo) {
+    display: block;
     width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+  .lh-card__body { padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 10px; }
+  .lh-card__body p, .lh-card--team p { margin: 0; }
+  .lh-card__name { font-size: 24px; line-height: 1.15; color: var(--forest); }
+  .lh-card__cred { font-size: 14px; line-height: 1.6; color: var(--text-700); }
+  .lh-card__note { font-size: 14px; line-height: 1.6; color: var(--sage-600); font-weight: 500; }
+  .lh-card__link { align-self: flex-start; margin-top: 4px; }
+  .lh-card--team { padding: 28px 30px; gap: 14px; }
+  .lh-card__row { display: flex; gap: 10px; }
+  .lh-card :global(.lh-card__portrait) {
+    display: block;
+    width: 50%;
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: 50% 15%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    background: var(--cream-200);
+    object-position: 50% 20%;
+    border-radius: 2px;
   }
-  .ed-hero__caption {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: var(--space-s) 0.25rem 0;
-    border-top: 1px solid var(--cream-300);
-    margin-top: var(--space-s);
-  }
-  .ed-hero__name {
-    font-family: var(--font-heading);
-    font-size: var(--step-1);
-    font-weight: 700;
-    color: var(--ink-900);
-  }
-  .ed-hero__cred {
-    font-size: var(--step--1);
-    color: var(--ink-700);
-    line-height: 1.5;
-  }
-  .ed-hero__note {
-    font-size: var(--step--1);
-    color: var(--ink-500);
-    line-height: 1.5;
-  }
-  .ed-hero__bio {
-    font-size: var(--step--1);
-    font-weight: 600;
-    color: var(--green-400);
-    margin-top: 0.25rem;
-  }
+  .lh-card__role { font-size: 14px; color: var(--sage-600); font-weight: 500; }
 
-  @media (max-width: 900px) {
-    .ed-hero__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
-    .ed-hero--landscape .ed-hero__inner { grid-template-columns: 1fr; }
-    .ed-hero__figure { max-width: 360px; }
-    .ed-hero--landscape .ed-hero__figure { max-width: 560px; }
-    .ed-hero__lede { max-width: var(--measure); }
-  }
-  @media (max-width: 640px) {
-    .ed-hero__title { max-width: none; }
-    .ed-hero__actions .btn { width: 100%; }
+  @media (max-width: 860px) {
+    .lh { padding: 48px 0 64px; }
+    .lh__grid { grid-template-columns: 1fr; gap: 36px; }
+    .lh__h1 { font-size: 40px; max-width: none; }
+    .lh__actions .btn-forest, .lh__actions .btn-ghost { width: 100%; }
   }
 </style>

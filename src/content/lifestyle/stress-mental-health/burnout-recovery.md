@@ -9,7 +9,6 @@ keywords:
   - chronic work stress
   - burnout vs depression
 category: lifestyle
-date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

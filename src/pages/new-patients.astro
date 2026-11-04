@@ -1,6 +1,10 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import PageHero from '../components/shared/PageHero.astro';
 import MeetGreetForm from '../components/shared/MeetGreetForm.astro';
+import SageCard from '../components/shared/SageCard.astro';
+import creamChairs from '../assets/office/wayne-cream-chairs.jpg';
 import FAQSection from '../components/shared/FAQSection.astro';
 
 const breadcrumb = {
@@ -41,235 +45,168 @@ const faqs = [
   description="Getting started at Forward Family Medicine is easy. Schedule a free meet and greet in Wayne, PA. No insurance needed. No commitment. Just a conversation."
   schema={breadcrumb}
 >
-  <!-- Hero -->
-  <section class="np-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-100) 100%);">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>New Patients</span>
-      </nav>
-      <span class="section-label">Welcome</span>
-      <h1>Start With a Conversation. No Commitment Required.</h1>
-      <div class="divider"></div>
-      <p class="section-intro">
-        We know choosing a new doctor is a big decision. That's why we offer a free,
-        no-obligation meet and greet — a chance to see the office, meet our physicians,
-        ask every question you have, and decide for yourself if we're
-        the right fit. No paperwork. No credit card. No pressure.
-      </p>
-    </div>
-  </section>
+  <PageHero crumb="New Patients" title="Start With a Conversation. No Commitment Required." size={60} ch={16} pt={80} pb={96} cols="1.2fr .8fr" maxW={620}>
+    <p>
+      We know choosing a new doctor is a big decision. That's why we offer a free,
+      no-obligation meet and greet — a chance to see the office, meet our physicians,
+      ask every question you have, and decide for yourself if we're
+      the right fit. No paperwork. No credit card. No pressure.
+    </p>
+    <Image
+      slot="aside"
+      src={creamChairs}
+      alt="The Wayne waiting room"
+      widths={[320, 480, 640]}
+      sizes="(max-width: 860px) calc(100vw - 40px), 400px"
+      format="webp"
+      quality={80}
+      loading="eager"
+      fetchpriority="high"
+      class="np-photo"
+    />
+  </PageHero>
 
   <!-- 4-step process -->
-  <section class="process-section section" style="background: var(--green-500);">
-    <div class="container">
-      <span class="section-label" style="color: var(--green-400);">How It Works</span>
-      <h2 style="color:white; margin-bottom:2.5rem;">Getting Started in 4 Simple Steps</h2>
-      <div class="steps-grid">
-        <div class="step">
-          <span class="step-num" aria-hidden="true">1</span>
-          <h3>Fill Out the Form</h3>
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 np-h2">Getting Started in 4 Simple Steps</h2>
+      <ol class="steps" data-reveal="0.05">
+        <li>
+          <span class="step-n rd-serif" aria-hidden="true">1</span>
+          <h3 class="step-h rd-serif">Fill Out the Form</h3>
           <p>Tell us a little about yourself — takes about 2 minutes. That's all we need to get started.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">2</span>
-          <h3>We Reach Out Within 24 Hours</h3>
+        </li>
+        <li>
+          <span class="step-n rd-serif" aria-hidden="true">2</span>
+          <h3 class="step-h rd-serif">We Reach Out Within 24 Hours</h3>
           <p>A member of our team will contact you to find a convenient time for your visit.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">3</span>
-          <h3>Come In and Meet the Team</h3>
+        </li>
+        <li>
+          <span class="step-n rd-serif" aria-hidden="true">3</span>
+          <h3 class="step-h rd-serif">Come In and Meet the Team</h3>
           <p>See the office, meet our physicians, and ask everything you want to know. Meet &amp; greets are available in person or by video — whichever works best for you.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">4</span>
-          <h3>Decide When You're Ready</h3>
+        </li>
+        <li>
+          <span class="step-n rd-serif" aria-hidden="true">4</span>
+          <h3 class="step-h rd-serif">Decide When You're Ready</h3>
           <p>If it feels right, we'll get you enrolled. If you need more time — no worries at all. Zero pressure.</p>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- Insurance note -->
-  <section class="insurance-note section" style="background: var(--cream-200);">
-    <div class="container">
-      <div class="insurance-inner">
-        <div>
-          <span class="section-label">Important Note</span>
-          <h2>We Don't Accept Insurance — Here's Why That's a Good Thing</h2>
-          <p>
-            Forward Family Medicine is a Direct Primary Care practice. We don't bill insurance for primary care.
-            We don't deal with claims, billing departments, or administrative overhead that eats into your appointment time. That's
-            exactly why your visits run 1–2 hours — instead of 7–12 minutes.
-          </p>
-          <p>
-            Your flat monthly membership covers all your primary care needs directly.
-            For hospital stays, surgeries, specialist care, and emergencies, we recommend pairing your membership with a
-            high-deductible health plan or health sharing plan.
-          </p>
+  <section class="rd-section ins">
+    <div class="rd-wrap ins__grid">
+      <div class="ins__copy">
+        <h2 class="rd-h2 ins__h">We Don't Accept Insurance — Here's Why That's a Good Thing</h2>
+        <p>
+          Forward Family Medicine is a Direct Primary Care practice. We don't bill insurance for primary care.
+          We don't deal with claims, billing departments, or administrative overhead that eats into your appointment time. That's
+          exactly why your visits run 1–2 hours — instead of 7–12 minutes.
+        </p>
+        <p>
+          Your flat monthly membership covers all your primary care needs directly.
+          For hospital stays, surgeries, specialist care, and emergencies, we recommend pairing your membership with a
+          high-deductible health plan or health sharing plan.
+        </p>
+      </div>
+      <div class="ins__lists" data-reveal="0.1">
+        <div class="ins__list">
+          <h3 class="rd-serif">What We Don't Do</h3>
+          <ul>
+            <li>Bill your insurance</li>
+            <li>Submit claims or handle insurance billing</li>
+            <li>Charge copays or deductibles</li>
+            <li>Make you wait 3 weeks for a routine appointment</li>
+          </ul>
         </div>
-        <div class="insurance-cards">
-          <div class="card ins-card">
-            <span class="ins-icon" aria-hidden="true">❌</span>
-            <h4>What We Don't Do</h4>
-            <ul class="prose-list" style="--check-color:var(--ink-900);">
-              <li style="color:var(--ink-300);">Bill your insurance</li>
-              <li style="color:var(--ink-300);">Submit claims or handle insurance billing</li>
-              <li style="color:var(--ink-300);">Charge copays or deductibles</li>
-              <li style="color:var(--ink-300);">Make you wait 3 weeks for a routine appointment</li>
-            </ul>
-          </div>
-          <div class="card ins-card" style="border: 2px solid var(--green-400);">
-            <span class="ins-icon" aria-hidden="true">✅</span>
-            <h4>What We Do</h4>
-            <ul class="prose-list">
-              <li>Flat monthly membership fee</li>
-              <li>Unlimited visits, no copay</li>
-              <li>Same-day access, always</li>
-              <li>Your doctor, directly, when you need them</li>
-            </ul>
-          </div>
+        <div class="ins__list">
+          <h3 class="rd-serif">What We Do</h3>
+          <ul>
+            <li>Flat monthly membership fee</li>
+            <li>Unlimited visits, no copay</li>
+            <li>Same-day access, always</li>
+            <li>Your doctor, directly, when you need them</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Form -->
-  <section class="form-section section" id="request">
-    <div class="container">
+  <section class="np-form" id="request">
+    <div class="rd-wrap np-form__grid">
       <MeetGreetForm />
-      <div class="enroll-direct card">
-        <p class="enroll-direct-eyebrow">Already decided?</p>
-        <h2 class="enroll-direct-heading">Ready to Enroll Now</h2>
-        <p class="enroll-direct-sub">If you've done your research and are ready to join, you can enroll directly online — no Meet &amp; Greet required.</p>
-        <div class="enroll-direct-btns">
-          <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn btn-primary enroll-btn" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
-          <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn btn-primary enroll-btn" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
-        </div>
-        <p class="enroll-direct-note">Questions before enrolling? <a href="/contact/">Contact us</a> or <a href="#request">request a Meet &amp; Greet above</a>.</p>
-      </div>
+      <aside class="np-aside" data-sticky-fit>
+        <SageCard class="enroll">
+          <p class="enroll__eyebrow">Already decided?</p>
+          <h2 class="rd-h3 enroll__h">Ready to Enroll Now</h2>
+          <p>If you've done your research and are ready to join, you can enroll directly online — no Meet &amp; Greet required.</p>
+          <div class="enroll__btns">
+            <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn-forest" target="_blank" rel="noopener noreferrer">Enroll — Individual</a>
+            <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn-ghost" target="_blank" rel="noopener noreferrer">Enroll — Family</a>
+          </div>
+          <p class="enroll__note">Questions before enrolling? <a href="/contact/" class="rd-link">Contact us</a> or <a href="#request" class="rd-link">request a Meet &amp; Greet above</a>.</p>
+        </SageCard>
+      </aside>
     </div>
   </section>
 
-  <FAQSection faqs={faqs} headline="New Patient FAQs" />
+  <FAQSection faqs={faqs} headline="New Patient FAQs" alt />
 </MainLayout>
 
 <style>
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  :global(.np-photo) { aspect-ratio: 4 / 5; object-position: 40% 50%; }
 
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  .step {
-    color: rgba(255,255,255,0.9);
-    position: relative;
-  }
-  .step-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: var(--green-300);
-    color: white;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  .step h3 {
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .step p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .insurance-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .insurance-cards {
+  .np-h2 { margin-bottom: 40px; }
+  .steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; }
+  .steps li {
+    padding: 24px 0 0;
+    border-top: 1px solid var(--hairline-strong);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .ins-card { padding: 1.5rem; }
-  .ins-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
-  .ins-card h4 { margin-bottom: 0.75rem; font-size: 0.95rem; }
+  .steps.on li { opacity: 1; transform: none; }
+  .steps.on li:nth-child(2) { transition-delay: 0.2s; }
+  .steps.on li:nth-child(3) { transition-delay: 0.4s; }
+  .steps.on li:nth-child(4) { transition-delay: 0.6s; }
+  .step-n { font-size: 40px; line-height: 1; color: var(--sage-600); }
+  .step-h { margin: 6px 0 0; font-size: 22px; line-height: 1.2; color: var(--forest); }
+  .steps li > p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--text-700); }
 
-  .form-section {
-    background: var(--cream-100);
-  }
-  .enroll-direct {
-    max-width: 680px;
-    margin: 2.5rem auto 0;
-    padding: 2.5rem 2.75rem;
-    text-align: center;
-    background: var(--cream-200);
-    border: 1px solid var(--cream-300);
-  }
-  .enroll-direct-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--green-400);
-    margin-bottom: 0.5rem;
-  }
-  .enroll-direct-heading {
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
-    color: var(--ink-900);
-  }
-  .enroll-direct-sub {
-    font-size: 0.95rem;
-    color: var(--ink-500);
-    margin-bottom: 1.75rem;
-    max-width: 460px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .enroll-direct-btns {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-  .enroll-btn {
-    padding: 0.85rem 2rem;
-    font-size: 1rem;
-  }
-  .enroll-direct-note {
-    font-size: 0.82rem;
-    color: var(--ink-400);
-    margin: 0;
-  }
-  .enroll-direct-note a {
-    color: var(--green-400);
-    text-decoration: none;
-  }
-  .enroll-direct-note a:hover { text-decoration: underline; }
+  .ins { background: var(--forest); }
+  .ins__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 72px; align-items: start; }
+  .ins__copy { display: flex; flex-direction: column; gap: 22px; }
+  .ins__copy p { margin: 0; font-size: 16px; line-height: 1.75; color: var(--on-forest); }
+  .ins__h { color: var(--linen); }
+  .ins__lists { display: flex; flex-direction: column; gap: 32px; }
+  .ins__list h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.25; color: var(--linen); font-weight: 400; }
+  .ins__list ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .ins__list li { padding: 10px 0; border-top: 1px solid var(--sage); font-size: 15px; line-height: 1.5; color: var(--on-forest); }
+  .ins__list li:last-child { border-bottom: 1px solid var(--sage); }
+  .ins__list { opacity: 0; transform: translateY(10px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .ins__lists.on .ins__list { opacity: 1; transform: none; }
+  .ins__lists.on .ins__list:nth-child(2) { transition-delay: 0.25s; }
+
+  .np-form { background: var(--linen); padding: 96px 0 96px; scroll-margin-top: var(--header-h); }
+  .np-form__grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 64px; align-items: start; }
+  .np-aside { display: flex; flex-direction: column; gap: 28px; }
+  .np-aside :global(.enroll) { gap: 14px; }
+  .enroll__eyebrow { font-size: 13px; font-weight: 500; color: var(--sage-600); }
+  .enroll__h { font-size: 26px; line-height: 1.15; }
+  .np-aside :global(.enroll) > :global(p) { font-size: 14.5px; line-height: 1.65; color: var(--text-700); }
+  .enroll__btns { display: flex; flex-direction: column; gap: 10px; }
+  .enroll__btns :global(.btn-forest), .enroll__btns :global(.btn-ghost) { min-height: 44px; font-size: 13.5px; }
+  .np-aside :global(.enroll) > :global(.enroll__note) { margin-top: 4px; font-size: 13px; line-height: 1.6; color: var(--text-600); }
 
   @media (max-width: 860px) {
-    .steps-grid { grid-template-columns: 1fr 1fr; }
-    .insurance-inner { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 540px) {
-    .steps-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 28px; }
+    .ins__grid, .np-form__grid { grid-template-columns: 1fr; gap: 40px; }
+    .np-form { padding: 64px 0; }
   }
 </style>

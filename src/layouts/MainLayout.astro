@@ -10,6 +10,9 @@ export interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  /** The og:image's real size; the default image is 1200x630. */
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogType?: string;
   schema?: object | object[];
   noindex?: boolean;
@@ -21,6 +24,8 @@ const {
   description,
   canonical,
   ogImage = 'https://www.forwardfamilymedicine.com/images/og-image.png',
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
   ogType = 'website',
   schema,
   noindex = false,
@@ -59,8 +64,8 @@ const schemas = [
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content={String(ogImageWidth)} />
+  <meta property="og:image:height" content={String(ogImageHeight)} />
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:type" content={ogType} />
   <meta property="og:site_name" content="Forward Family Medicine" />
@@ -88,6 +93,14 @@ const schemas = [
   </main>
   <Footer />
   <ConsentBanner />
+  <script>
+    // Scroll-reveal for every [data-reveal] element; see src/scripts/reveal.ts.
+    import { initReveal } from '../scripts/reveal';
+    import { initStickyFit } from '../scripts/stickyFit';
+    initReveal();
+    // Sticky rails and indexes pin only when they fit under the header; see src/scripts/stickyFit.ts.
+    initStickyFit();
+  </script>
   <script is:inline>
     // Single delegated listener covers every SigmaMD enrollment link
     // site-wide (Header, membership, contact, new-patients) without
@@ -100,8 +113,12 @@ const schemas = [
         : link.href.indexOf('/individual-membership') !== -1
           ? 'individual'
           : 'unknown';
+      // Same-tab links unload the page; ask gtag to send the hit as a beacon
+      // so it survives. New-tab links keep the page alive and send as before.
+      var params = { plan: plan };
+      if (link.target !== '_blank') params.transport_type = 'beacon';
       if (window.ffmTrack) {
-        window.ffmTrack('outbound_enrollment_click', { plan });
+        window.ffmTrack('outbound_enrollment_click', params);
       }
     });
   </script>

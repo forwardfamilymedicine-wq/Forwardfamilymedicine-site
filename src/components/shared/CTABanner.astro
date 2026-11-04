@@ -1,4 +1,9 @@
 ---
+/**
+ * Closing band: forest background, heading and lede left, buttons right.
+ * Props and defaults are shared by eleven routes and the local template;
+ * only the presentation changed in the redesign.
+ */
 export interface Props {
   headline?: string;
   subhead?: string;
@@ -6,6 +11,12 @@ export interface Props {
   btnHref?: string;
   btn2Text?: string;
   btn2Href?: string;
+  /** Heading max width in ch: 18 on most boards, 16 on a few. */
+  /** Render the second action as a plain text link, not an outlined button. */
+  btn2Link?: boolean;
+  ch?: number;
+  /** The homepage band: 56px heading, 14ch, 112px padding. */
+  large?: boolean;
 }
 
 const {
@@ -15,19 +26,22 @@ const {
   btnHref = '/contact/',
   btn2Text,
   btn2Href,
+  btn2Link = false,
+  ch = 18,
+  large = false,
 } = Astro.props;
 ---
 
-<section class="cta-banner">
-  <div class="container cta-inner">
+<section class:list={['cta-banner', { 'cta-banner--large': large }]}>
+  <div class="rd-wrap cta-inner">
     <div class="cta-content">
-      <h2>{headline}</h2>
-      <p>{subhead}</p>
+      <h2 class="cta-h2" style={large ? undefined : `max-width:${ch}ch`}>{headline}</h2>
+      <p class="cta-sub">{subhead}</p>
     </div>
     <div class="cta-btns">
-      <a href={btnHref} class="btn btn-accent cta-btn">{btnText}</a>
+      <a href={btnHref} class="btn-sage cta-btn">{btnText}</a>
       {btn2Text && btn2Href && (
-        <a href={btn2Href} class="btn btn-outline-white cta-btn">{btn2Text}</a>
+        <a href={btn2Href} class:list={[btn2Link ? 'cta-link' : 'btn-ghost-light cta-btn']}>{btn2Text}</a>
       )}
     </div>
   </div>
@@ -35,39 +49,61 @@ const {
 
 <style>
   .cta-banner {
-    background: var(--green-500);
-    padding: clamp(48px, 8vw, 80px) 0;
+    background: var(--forest);
+    color: var(--linen);
+    padding: 104px 0;
   }
+  .cta-banner--large { padding: 112px 0; }
   .cta-inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) auto;
+    gap: 48px;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
   }
-  .cta-content h2 {
-    color: white;
-    margin-bottom: 0.75rem;
+  .cta-content { display: flex; flex-direction: column; gap: 22px; }
+  .cta-h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    color: var(--linen);
+    margin: 0;
   }
-  .cta-content p {
-    color: rgba(255,255,255,0.85);
-    font-size: 1.05rem;
-    max-width: 580px;
+  .cta-banner--large .cta-h2 { font-size: 56px; line-height: 1.05; max-width: 14ch; }
+  .cta-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--on-forest-muted);
+    max-width: 620px;
     margin: 0;
   }
   .cta-btns {
     display: flex;
-    gap: 1rem;
-    flex-shrink: 0;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    min-width: 280px;
   }
-  .cta-btn {
-    font-size: 1rem;
-    padding: 0.9rem 2rem;
-    white-space: nowrap;
+  .cta-btn { white-space: nowrap; }
+  .cta-link {
+    align-self: center;
+    padding-bottom: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--on-forest-faint);
+    border-bottom: 1px solid var(--sage);
+    text-decoration: none;
+    transition: color 0.18s, border-color 0.18s;
   }
+  .cta-link:hover { color: var(--linen); border-color: var(--linen); }
 
-  @media (max-width: 700px) {
-    .cta-inner { flex-direction: column; align-items: flex-start; }
+  @media (max-width: 860px) {
+    .cta-banner, .cta-banner--large { padding: 64px 0; }
+    .cta-inner { grid-template-columns: 1fr; gap: 28px; }
+    .cta-h2, .cta-banner--large .cta-h2 { font-size: 34px; max-width: none !important; }
+    .cta-btns { min-width: 0; }
+    .cta-btn { white-space: normal; }
   }
 </style>

@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/shared/PageHero.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
 
 const faqGroups = [
   {
@@ -205,289 +207,147 @@ const faqGroups = [
   title="Frequently Asked Questions | Forward Family Medicine Wayne, PA"
   description="Answers to the most common questions about Direct Primary Care, DPC membership, what's included, insurance, pricing, and how Forward Family Medicine works in Wayne, PA."
 >
+  <PageHero crumb="FAQ" title="Frequently Asked Questions" pt={80} pb={72} maxW={800}>
+    <p>Everything you want to know about Forward Family Medicine and Direct Primary Care — answered plainly. If you don't see your question here, <a href="/contact/" class="rd-link">reach out directly →</a></p>
+  </PageHero>
 
-  <!-- ─── Hero ──────────────────────────────────────────────────── -->
-  <section class="page-hero">
-    <div class="container">
-      <p class="hero-eyebrow">Wayne, PA · Philadelphia Main Line</p>
-      <h1>Frequently Asked Questions</h1>
-      <p class="hero-desc">Everything you want to know about Forward Family Medicine and Direct Primary Care — answered plainly. If you don't see your question here, <a href="/contact/" class="hero-link">reach out directly →</a></p>
-    </div>
-  </section>
-
-  <!-- ─── Quick Nav ─────────────────────────────────────────────── -->
-  <nav class="faq-nav" aria-label="Jump to FAQ section">
-    <div class="container">
-      <ul class="faq-nav-list">
-        {faqGroups.map(g => (
-          <li><a href={`#${g.id}`}>{g.title}</a></li>
-        ))}
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ─── FAQ Groups ────────────────────────────────────────────── -->
-  {faqGroups.map((group, gi) => (
-    <section id={group.id} class={`faq-group-section ${gi % 2 === 0 ? '' : 'section-alt'}`}>
-      <div class="container">
-        <div class="faq-group-header">
-          <h2>{group.title}</h2>
-        </div>
-        <div class="faq-list">
-          {group.faqs.map((faq, fi) => (
-            <div class="faq-item">
-              <button
-                class="faq-q"
-                aria-expanded="false"
-                aria-controls={`faq-${group.id}-${fi}`}
-                id={`faq-btn-${group.id}-${fi}`}
-              >
-                <span>{faq.q}</span>
-                <span class="faq-toggle" aria-hidden="true">+</span>
-              </button>
-              <div
-                class="faq-a"
-                id={`faq-${group.id}-${fi}`}
-                role="region"
-                aria-labelledby={`faq-btn-${group.id}-${fi}`}
-                hidden
-              >
-                <p set:html={faq.a} />
-              </div>
+  <section class="faq-sec">
+    <div class="rd-wrap faq-grid">
+      <nav class="faq-idx" id="faq-idx" aria-label="Jump to FAQ section" data-sticky-fit>
+        {faqGroups.map(g => <a href={`#${g.id}`}>{g.title}</a>)}
+      </nav>
+      <div class="faq-groups">
+        {faqGroups.map(group => (
+          <section id={group.id} class="faq-group">
+            <h2 class="faq-group__h rd-serif">{group.title}</h2>
+            <div class="faq-list" data-reveal="0.1">
+              {group.faqs.map(faq => (
+                <details class="faq-item">
+                  <summary>
+                    <span class="faq-q">{faq.q}</span>
+                    <span class="faq-mark" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="faq-answer">
+                    <p set:html={faq.a} />
+                  </div>
+                </details>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
-
-  <!-- ─── Still Have Questions ─────────────────────────────────── -->
-  <section class="section still-questions">
-    <div class="container">
-      <div class="still-inner">
-        <div>
-          <h2>Still Have Questions?</h2>
-          <p>We're happy to help. Reach out directly or schedule a Meet &amp; Greet and ask in person — that's what it's for.</p>
-        </div>
-        <a href="/contact/" class="btn btn-primary">Contact Us →</a>
+          </section>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ─── Bottom CTA ────────────────────────────────────────────── -->
-  <section class="bottom-cta">
-    <div class="container bottom-cta-inner">
-      <div class="bottom-cta-text">
-        <h2>Ready to Take the Next Step?</h2>
-        <p>Start with a free, no-obligation meet and greet. No pressure. No commitment.</p>
+  <section class="still rd-sage">
+    <div class="rd-wrap still__inner">
+      <div class="rd-stack still__copy">
+        <h2 class="rd-h2 still__h">Still Have Questions?</h2>
+        <p class="rd-copy">We're happy to help. Reach out directly or schedule a Meet &amp; Greet and ask in person — that's what it's for.</p>
       </div>
-      <div class="bottom-cta-btns">
-        <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
-        <a href="/membership/" class="btn btn-outline-white">Explore Membership Plans →</a>
-      </div>
+      <a href="/contact/" class="btn-ghost">Contact Us →</a>
     </div>
   </section>
 
+  <CTABanner
+    headline="Ready to Take the Next Step?"
+    subhead="Start with a free, no-obligation meet and greet. No pressure. No commitment."
+    btnText="Schedule a Free Meet & Greet"
+    btnHref="/contact/?source=faq"
+    btn2Text="Explore Membership Plans →"
+    btn2Href="/membership/"
+  />
 </MainLayout>
 
 <style>
-  /* ─── Hero ─────────────────────────────────── */
-  .page-hero {
-    background: var(--green-500);
-    padding: clamp(48px, 8vw, 80px) 0;
-  }
-  .hero-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--green-200);
-    margin-bottom: 0.75rem;
-  }
-  .page-hero h1 { color: #ffffff; margin-bottom: 0.75rem; }
-  .hero-desc {
-    color: var(--green-100);
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    max-width: 680px;
-    line-height: 1.7;
-    margin: 0;
-  }
-  .hero-link {
-    color: #ffffff;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+  .faq-sec { background: var(--linen); padding: 0 0 96px; }
+  .faq-grid { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 72px; align-items: start; }
 
-  /* ─── Quick nav ─────────────────────────────── */
-  .faq-nav {
-    background: var(--cream-50);
-    border-bottom: 1px solid var(--cream-300);
-    padding: 0.75rem 0;
-    position: sticky;
-    top: 72px;
-    z-index: 10;
+  /* Sticky category index. Pinning is left to stickyFit (top is --header-h + 24px
+     once it fits); the current section is marked by scrollSpy. */
+  .faq-idx { display: flex; flex-direction: column; }
+  .faq-idx a {
+    position: relative;
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 14.5px;
+    color: var(--forest);
+    text-decoration: none;
   }
-  .faq-nav-list {
+  .faq-idx a:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .faq-idx a::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .faq-idx a:hover::after, .faq-idx a.cur::after { transform: none; }
+  .faq-idx a.cur { color: var(--sage-600); }
+
+  .faq-group { padding-top: 56px; }
+  .faq-group:first-child { padding-top: 0; }
+  .faq-group__h { margin: 0 0 10px; font-size: 30px; line-height: 1.15; color: var(--forest); }
+  .faq-item { border-bottom: 1px solid var(--hairline-strong); }
+  .faq-item summary {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  .faq-nav-list a {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--green-500);
-    text-decoration: none;
-    padding: 0.35rem 0.85rem;
-    border: 1.5px solid var(--green-300);
-    border-radius: 999px;
-    background: transparent;
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
-    white-space: nowrap;
-  }
-  .faq-nav-list a:hover {
-    background: var(--green-500);
-    color: white;
-    border-color: var(--green-500);
-    text-decoration: none;
-  }
-
-  /* ─── FAQ groups ────────────────────────────── */
-  .faq-group-section {
-    background: var(--cream-100);
-    padding: clamp(32px, 5vw, 56px) 0;
-  }
-  .faq-group-section.section-alt { background: var(--cream-200); }
-
-  .faq-group-header {
-    background: var(--green-500);
-    border-radius: 12px;
-    padding: 16px 24px;
-    margin-bottom: 0.25rem;
-  }
-  .faq-group-header h2 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin: 0;
-    font-family: var(--font-body);
-    font-weight: 600;
-    letter-spacing: 0.01em;
-  }
-
-  /* ─── FAQ list ──────────────────────────────── */
-  .faq-list {
-    background: var(--cream-50);
-    border-radius: 0 0 12px 12px;
-    border: 1px solid var(--cream-300);
-    border-top: none;
-    overflow: hidden;
-  }
-  .faq-item { border-bottom: 1px solid var(--cream-300); }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-q {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.1rem 1.5rem;
-    background: none;
-    border: none;
-    font-family: var(--font-body);
-    font-size: 0.97rem;
-    font-weight: 500;
-    color: var(--ink-900);
     cursor: pointer;
-    text-align: left;
-    transition: background 0.15s, color 0.15s;
-  }
-  .faq-q:hover {
-    background: var(--green-50);
-    color: var(--green-500);
-  }
-  .faq-toggle {
-    font-size: 1.3rem;
-    font-weight: 300;
-    flex-shrink: 0;
-    color: var(--green-400);
-    transition: transform 0.2s;
-    line-height: 1;
-    min-width: 1.3rem;
-    text-align: center;
-  }
-  .faq-q[aria-expanded="true"] {
-    background: var(--green-50);
-    color: var(--green-500);
-  }
-  .faq-q[aria-expanded="true"] .faq-toggle { transform: rotate(45deg); }
-  .faq-a { padding: 0 1.5rem 1.25rem; }
-  .faq-a p {
-    color: var(--ink-500);
-    font-weight: 300;
-    line-height: 1.75;
-    margin: 0;
-    font-size: 0.95rem;
-  }
-  .faq-a :global(a) { color: var(--green-300); }
-
-  /* ─── Still have questions ──────────────────── */
-  .still-questions { background: var(--ink-50); }
-  .still-inner {
+    padding: 18px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--forest);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .still-inner h2 { color: var(--ink-900); margin-bottom: 0.5rem; }
-  .still-inner p { color: var(--ink-700); font-size: 1rem; margin: 0; max-width: 480px; }
-
-  /* ─── Bottom CTA ────────────────────────────── */
-  .bottom-cta {
-    background: var(--ink-900);
-    padding: clamp(48px, 8vw, 80px) 0;
-  }
-  .bottom-cta-inner {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 24px;
   }
-  .bottom-cta h2 { color: #ffffff; margin-bottom: 0.5rem; }
-  .bottom-cta p { color: var(--ink-300); font-size: 1rem; max-width: 480px; margin: 0; }
-  .bottom-cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover .faq-q { color: var(--sage-600); }
+  .faq-mark { color: var(--sage-600); font-weight: 400; font-size: 20px; line-height: 1; flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item[open] .faq-mark { transform: rotate(45deg); }
+  .faq-answer { padding: 0 0 18px; }
+  .faq-answer p { margin: 0; max-width: 68ch; font-size: 15px; line-height: 1.7; color: var(--text-700); }
+  .faq-answer :global(a) { color: var(--sage-600); }
+  .faq-answer :global(a:hover) { color: var(--forest); }
+  .faq-list:first-of-type { border-top: 1px solid var(--hairline-strong); }
+  .faq-list .faq-item { opacity: 0; transform: translateX(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .faq-list.on .faq-item { opacity: 1; transform: none; }
+  .faq-list.on .faq-item:nth-child(2) { transition-delay: 0.08s; }
+  .faq-list.on .faq-item:nth-child(3) { transition-delay: 0.16s; }
+  .faq-list.on .faq-item:nth-child(4) { transition-delay: 0.24s; }
+  .faq-list.on .faq-item:nth-child(5) { transition-delay: 0.32s; }
+  .faq-list.on .faq-item:nth-child(6) { transition-delay: 0.4s; }
+  .faq-list.on .faq-item:nth-child(n+7) { transition-delay: 0.48s; }
 
-  /* ─── Responsive ────────────────────────────── */
+  .still { padding: 72px 0; }
+  .still__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+  .still__h { font-size: 36px; line-height: 1.1; letter-spacing: -0.01em; }
+  .still__copy .rd-copy { max-width: 560px; }
+
   @media (max-width: 860px) {
-    .faq-nav { top: 60px; }
-  }
-  @media (max-width: 640px) {
-    .faq-nav {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .faq-nav-list {
-      flex-wrap: nowrap;
-      padding-bottom: 0.25rem;
-    }
-    .still-inner { flex-direction: column; align-items: flex-start; }
-    .bottom-cta-inner { flex-direction: column; align-items: flex-start; }
+    .faq-sec { padding-bottom: 64px; }
+    .faq-grid { grid-template-columns: 1fr; gap: 32px; }
+    .faq-idx { flex-direction: row; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+    .faq-idx a { flex: none; border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 8px 14px; white-space: nowrap; font-size: 13px; }
+    .faq-idx a:last-child { border-bottom: 1px solid var(--hairline-strong); }
+    .faq-idx a::after { display: none; }
+    .faq-idx a.cur { border-color: var(--sage-600); }
+    .faq-group { padding-top: 44px; }
+    .faq-group__h { font-size: 26px; }
+    .still { padding: 56px 0; }
+    .still__inner { grid-template-columns: 1fr; gap: 24px; }
+    .still__h { font-size: 30px; }
   }
 </style>
 
 <script>
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      const answerId = btn.getAttribute('aria-controls');
-      const answer = answerId ? document.getElementById(answerId) : null;
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if (answer) answer.hidden = expanded;
-    });
-  });
+  import { initScrollSpy } from '../scripts/scrollSpy';
+  initScrollSpy(
+    document.getElementById('faq-idx'),
+    Array.from(document.querySelectorAll('.faq-group')),
+  );
 </script>

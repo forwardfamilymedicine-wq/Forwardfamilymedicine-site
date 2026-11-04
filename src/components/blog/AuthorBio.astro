@@ -1,7 +1,14 @@
 ---
+/**
+ * Author card at the foot of an article, per the article boards: a small 4:5
+ * portrait beside "About the author", the serif name, title, a sentence and
+ * the bio link. Profile copy is unchanged from before the redesign.
+ */
+import { Image } from 'astro:assets';
 import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
 import drLiebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
 import drLandiPhoto from '../../assets/staff/dr-brian-landi.jpg';
+import { authorSlug } from '../../utils/authors';
 
 export interface Props {
   author?: string;
@@ -9,19 +16,10 @@ export interface Props {
 
 const { author } = Astro.props;
 
-// Frontmatter author strings (and their aliases) → profile key.
-// Mirrors the authorDisplay maps in BlogLayout.astro and lifestyle/[...slug].astro.
-const AUTHOR_ALIASES: Record<string, string> = {
-  'Dr. David Bigley': 'bigley',
-  'David Bigley, DO': 'bigley',
-  'Dr. Philip Lieberman': 'lieberman',
-  'Philip Lieberman, MD': 'lieberman',
-  'Dr. Brian Landi': 'landi',
-  'Brian Landi, DO': 'landi',
-};
-
+// Keyed by the physician's slug; utils/authors.ts maps frontmatter author
+// strings (and their aliases) to it.
 const AUTHOR_PROFILES = {
-  bigley: {
+  'david-bigley-do': {
     photo: drBigleyPhoto,
     photoAlt: 'Dr. David Bigley, DO — Founder & Physician, Forward Family Medicine',
     name: 'David Bigley, DO',
@@ -29,7 +27,7 @@ const AUTHOR_PROFILES = {
     desc: 'Dr. Bigley founded Forward Family Medicine to practice medicine the way it was meant to be — with time, trust, and a genuine relationship with every patient.',
     href: '/meet-the-team/david-bigley-do/',
   },
-  lieberman: {
+  'philip-lieberman-md': {
     photo: drLiebermanPhoto,
     photoAlt: 'Dr. Philip Lieberman, MD — Family Medicine & Lifestyle Medicine, Forward Family Medicine',
     name: 'Philip Lieberman, MD',
@@ -37,7 +35,7 @@ const AUTHOR_PROFILES = {
     desc: 'Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with pre-medical training in nutrition and culinary arts. He helps patients use food, movement, sleep, and stress management to prevent and treat chronic disease.',
     href: '/meet-the-team/philip-lieberman-md/',
   },
-  landi: {
+  'brian-landi-do': {
     photo: drLandiPhoto,
     photoAlt: 'Dr. Brian Landi, DO — Family Medicine & Menopause Care, Forward Family Medicine',
     name: 'Brian Landi, DO',
@@ -50,91 +48,60 @@ const AUTHOR_PROFILES = {
 // Unknown or absent author (for example the practice-authored lifestyle
 // library, written as "Forward Family Medicine") falls back to Dr. Lieberman,
 // whose Lifestyle Medicine board certification matches that material.
-const profileKey = (author ? AUTHOR_ALIASES[author] : undefined) ?? 'lieberman';
+const profileKey = authorSlug(author) ?? 'philip-lieberman-md';
 const profile = AUTHOR_PROFILES[profileKey as keyof typeof AUTHOR_PROFILES];
 ---
 
 <aside class="author-bio" aria-label="About the author">
-  <div class="author-bio-inner">
-    <img
-      src={profile.photo.src}
-      alt={profile.photoAlt}
-      class="author-photo"
-      width="72"
-      height="72"
-      loading="lazy"
-    />
-    <div class="author-bio-text">
-      <p class="author-bio-label">About the Author</p>
-      <p class="author-bio-name">{profile.name}</p>
-      <p class="author-bio-title">{profile.title}</p>
-      <p class="author-bio-desc">{profile.desc}</p>
-      <a href={profile.href} class="author-bio-link">Read full bio →</a>
-    </div>
+  <Image
+    src={profile.photo}
+    alt={profile.photoAlt}
+    class="author-photo"
+    width={176}
+    height={220}
+    widths={[88, 176, 264]}
+    sizes="88px"
+    format="webp"
+    quality={82}
+    loading="lazy"
+  />
+  <div class="author-bio-text">
+    <p class="author-bio-label">About the author</p>
+    <p class="author-bio-name rd-serif">{profile.name}</p>
+    <p class="author-bio-title">{profile.title}</p>
+    <p class="author-bio-desc">{profile.desc}</p>
+    <a href={profile.href} class="rd-link author-bio-link">Read full bio →</a>
   </div>
 </aside>
 
 <style>
   .author-bio {
-    margin-top: 2.5rem;
-    padding: 1.5rem 1.75rem;
-    background: var(--cream-200, #f0ede6);
-    border: 1px solid var(--ink-100, #e8e4dc);
-    border-radius: var(--radius, 8px);
+    margin-top: 48px;
+    padding: 28px 30px;
+    background: var(--linen);
+    border-top: 3px solid var(--forest);
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
   }
-  .author-bio-inner {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .author-photo {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
+  .author-bio :global(.author-photo) {
+    display: block;
+    width: 88px;
+    height: auto;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid var(--green-200, #c8ddd0);
+    object-position: 50% 20%;
+    border-radius: 2px;
   }
-  .author-bio-text {
-    flex: 1;
-  }
-  .author-bio-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--green-400, #3a7a56);
-    margin-bottom: 0.2rem;
-  }
-  .author-bio-name {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--ink-900, #1a1a1a);
-    margin-bottom: 0.1rem;
-  }
-  .author-bio-title {
-    font-size: 0.8rem;
-    color: var(--ink-400, #888);
-    margin-bottom: 0.6rem;
-  }
-  .author-bio-desc {
-    font-size: 0.875rem;
-    color: var(--ink-600, #555);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-  .author-bio-link {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--green-400, #3a7a56);
-    text-decoration: none;
-  }
-  .author-bio-link:hover {
-    text-decoration: underline;
-  }
+  .author-bio-text { display: flex; flex-direction: column; gap: 8px; }
+  .author-bio-text p { margin: 0 !important; }
+  .author-bio-label { font-size: 13px !important; line-height: 1.5 !important; color: var(--text-600) !important; }
+  .author-bio-name { font-size: 24px !important; line-height: 1.15 !important; color: var(--forest) !important; }
+  .author-bio-title { font-size: 14px !important; line-height: 1.5 !important; font-weight: 500; color: var(--sage-600) !important; }
+  .author-bio-desc { margin-top: 6px !important; font-size: 15px !important; line-height: 1.7 !important; color: var(--text-700) !important; }
+  .author-bio-link { align-self: flex-start; }
   @media (max-width: 480px) {
-    .author-bio-inner {
-      flex-direction: column;
-    }
+    .author-bio { grid-template-columns: 1fr; padding: 24px 22px; }
   }
 </style>

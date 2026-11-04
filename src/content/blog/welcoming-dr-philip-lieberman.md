@@ -5,7 +5,7 @@ date: "2025-12-15"
 author: "David Bigley, DO"
 category: "patient-experience"
 keywords: ["team", "lifestyle medicine", "wayne pa", "direct primary care"]
-image: "/images/staff/dr-philip-lieberman.jpg"
+image: ../../assets/staff/dr-philip-lieberman.jpg
 draft: false
 ---
 

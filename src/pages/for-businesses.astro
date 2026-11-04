@@ -1,6 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
+import ServiceHero from '../components/shared/ServiceHero.astro';
+import SageCard from '../components/shared/SageCard.astro';
+import TitledGrid from '../components/shared/TitledGrid.astro';
+import RuledList from '../components/shared/RuledList.astro';
+import { Image } from 'astro:assets';
+import landiPortrait from '../assets/staff/dr-brian-landi.jpg';
 
 const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
@@ -13,6 +19,35 @@ const breadcrumb = {
     { "@type": "ListItem", "position": 2, "name": "For Businesses", "item": "https://www.forwardfamilymedicine.com/for-businesses/" }
   ]
 };
+const problems = [
+  { title: '7-minute appointments', body: 'The national average for a primary care visit. Your employees deserve better — especially for preventive care and chronic condition management.' },
+  { title: 'Unpredictable costs', body: 'Premiums rise every year. High deductibles mean employees avoid the doctor until things get expensive. Then the ER visit costs everyone more.' },
+  { title: '3-week wait times', body: 'The average wait for a primary care appointment. Sick employees who wait get sicker, stay home longer, and cost your business more.' },
+  { title: 'Administrative burden', body: 'Claims, pre-authorizations, EOBs, in-network restrictions. Traditional insurance adds friction at every point of care.' },
+];
+const who = [
+  { title: 'Small Businesses', body: "Can't afford full group health insurance? DPC lets you offer a real, meaningful healthcare benefit at a predictable monthly cost." },
+  { title: 'Professional Firms', body: 'Law firms, accounting practices, and financial services firms who want to offer premium healthcare as a retention and recruitment tool.' },
+  { title: 'Wellness-Focused Employers', body: 'Companies who value employee wellbeing and want to offer lifestyle medicine alongside primary care — as a real, board-certified service.' },
+  { title: 'Companies Supplementing Insurance', body: 'Already have a high-deductible plan? DPC fills the primary care gap — employees get unlimited access without touching their deductible.' },
+];
+const roi = [
+  { title: 'Fewer ER Visits', body: 'Same-day primary care access means employees handle problems early — before they become expensive emergency room visits.' },
+  { title: 'Less Time Away', body: 'Same-day appointments, telehealth, and direct doctor access mean employees spend less time away from work managing healthcare logistics.' },
+  { title: 'Wholesale Medications', body: 'Employees access medications and labs at wholesale pricing — significantly below retail and often below insurance negotiated rates.' },
+  { title: 'Preventive Care That Sticks', body: "Dr. Lieberman's lifestyle medicine approach builds long-term health — reducing the chronic conditions that drive the highest healthcare costs." },
+];
+const gets = [
+  'Unlimited primary care office visits — no copay',
+  'Same-day and next-day appointments',
+  'Visits: 1–2 hours (not 7 minutes)',
+  'Direct phone, text &amp; email access to their doctor',
+  'Preventive care and chronic disease management',
+  'Board-certified Lifestyle Medicine — nutrition, sleep, stress, movement',
+  'Wholesale lab pricing — significant cost savings',
+  'Specialist referral coordination',
+  'Telehealth visits',
+];
 ---
 
 <MainLayout
@@ -20,271 +55,164 @@ const breadcrumb = {
   description="DPC memberships for small businesses and employers on the Main Line. Better primary care for your team at a flat monthly cost. Wayne, PA — serving Main Line companies."
   schema={breadcrumb}
 >
-  <!-- Hero -->
-  <section class="biz-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);">
-    <div class="container biz-hero-inner">
-      <div>
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="biz-hero">
+    <div class="rd-wrap biz-hero__grid">
+      <div class="biz-hero__copy">
+        <nav class="biz-breadcrumb" aria-label="Breadcrumb">
           <a href="/">Home</a> <span aria-hidden="true">›</span> <span>For Businesses</span>
         </nav>
-        <span class="section-label">Employer Memberships</span>
-        <h1>Better Healthcare for Your Team. Simpler Than You Think.</h1>
-        <div class="divider"></div>
-        <p>
-          The Main Line is home to thousands of small businesses, independent professionals,
-          and growing companies — many offering health insurance that costs a fortune and
-          still leaves employees with 7-minute appointments and high copays.
-        </p>
-        <p>
-          Forward Family Medicine employer memberships give your team direct, unlimited
-          access to their primary care physician — no copays, same-day availability, and
-          a doctor who actually knows them.
-        </p>
+        <h1 class="rd-h1 biz-h1">Better Healthcare for Your Team. Simpler Than You Think.</h1>
+        <p class="biz-lede">The Main Line is home to thousands of small businesses, independent professionals, and growing companies — many offering health insurance that costs a fortune and still leaves employees with 7-minute appointments and high copays.</p>
+        <p class="biz-lede">Forward Family Medicine employer memberships give your team direct, unlimited access to their primary care physician — no copays, same-day availability, and a doctor who actually knows them.</p>
         <div class="biz-ctas">
-          <a href="/contact/" class="btn btn-accent">Inquire About Employer Memberships</a>
-          <a href="mailto:information@forwardfamilymedicine.com" class="btn btn-outline">Email Us Directly</a>
+          <a href="/contact/" class="btn-forest">Inquire About Employer Memberships</a>
+          <a href="mailto:information@forwardfamilymedicine.com" class="btn-ghost">Email Us Directly</a>
         </div>
       </div>
-      <div class="biz-hero-aside">
-        <div class="card biz-hero-card">
-          <h3>Quick Contact</h3>
-          <p>Reach us to discuss employer memberships for your team:</p>
-          <div class="biz-contact-item">
-            <span class="biz-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            <a href="tel:+12156457044">(215) 645-7044</a>
+      <SageCard class="biz-card">
+        <p class="rd-eyebrow">Quick Contact</p>
+        <p class="rd-serif biz-card__lede">Reach us to discuss employer memberships for your team:</p>
+        <dl class="biz-facts">
+          <div><dt>Phone</dt><dd><a href="tel:+12156457044">(215) 645-7044</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a></dd></div>
+        </dl>
+        <p class="biz-card__note">We respond within 1 business day and are happy to set up a call to discuss your team's specific needs.</p>
+      </SageCard>
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 biz-h2">Traditional Health Insurance Wasn't Built for Your Team</h2>
+      <TitledGrid columns={2} reveal items={problems} />
+    </div>
+  </section>
+
+  <section class="rd-section">
+    <div class="rd-wrap rd-split rd-split--eq">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">Employer Memberships at Forward Family Medicine</h2>
+        <p class="rd-copy">Employer memberships at Forward Family Medicine work simply: you pay a flat monthly per-employee fee, and your team gets unlimited direct primary care. No copays when they visit. No hoops to jump through. Just a doctor who knows them, picks up the phone, and has time for them.</p>
+        <p class="rd-copy">Our employer plans pair seamlessly with your existing high-deductible health plan — or as a standalone benefit for companies looking to add meaningful healthcare value without replacing full insurance.</p>
+        <p class="rd-copy">Because Dr. Lieberman is board-certified in Lifestyle Medicine, your employees also gain access to evidence-based nutrition, sleep, and stress coaching — the kind of proactive care that keeps people out of the ER and off sick days.</p>
+      </div>
+      <div class="rd-stack">
+        <h3 class="rd-serif biz-h3">What Your Employees Get</h3>
+        <RuledList reveal>
+          {gets.map(g => <li set:html={g}></li>)}
+        </RuledList>
+      </div>
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 biz-h2">Built for Companies Like Yours</h2>
+      <TitledGrid columns={2} reveal items={who} />
+    </div>
+  </section>
+
+  <section class="biz-case">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 biz-case__h2">Better Care Means Lower Costs</h2>
+      <div class="biz-case__grid" data-reveal>
+        {roi.map(r => (
+          <div class="biz-case__item">
+            <h3 class="rd-serif">{r.title}</h3>
+            <p>{r.body}</p>
           </div>
-          <div class="biz-contact-item">
-            <span class="biz-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,10 12,16 2,10"/></svg></span>
-            <a href="mailto:information@forwardfamilymedicine.com">information@forwardfamilymedicine.com</a>
-          </div>
-          <p class="biz-note">We respond within 1 business day and are happy to set up a call to discuss your team's specific needs.</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- The problem -->
-  <section class="biz-problem section" style="background: var(--green-500);">
-    <div class="container">
-      <span class="section-label" style="color: var(--green-400);">The Problem</span>
-      <h2 style="color: white;">Traditional Health Insurance Wasn't Built for Your Team</h2>
-      <div class="problem-grid">
-        <div class="problem-item">
-          <span class="problem-icon" aria-hidden="true">⏱️</span>
-          <strong>7-minute appointments</strong>
-          <p>The national average for a primary care visit. Your employees deserve better — especially for preventive care and chronic condition management.</p>
-        </div>
-        <div class="problem-item">
-          <span class="problem-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
-          <strong>Unpredictable costs</strong>
-          <p>Premiums rise every year. High deductibles mean employees avoid the doctor until things get expensive. Then the ER visit costs everyone more.</p>
-        </div>
-        <div class="problem-item">
-          <span class="problem-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-          <strong>3-week wait times</strong>
-          <p>The average wait for a primary care appointment. Sick employees who wait get sicker, stay home longer, and cost your business more.</p>
-        </div>
-        <div class="problem-item">
-          <span class="problem-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
-          <strong>Administrative burden</strong>
-          <p>Claims, pre-authorizations, EOBs, in-network restrictions. Traditional insurance adds friction at every point of care.</p>
-        </div>
+  <section class="rd-section rd-sage">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">Menopause Care for Your Team</h2>
+        <a href="/meet-the-team/brian-landi-do/" class="biz-person">
+          <Image src={landiPortrait} alt="Dr. Brian Landi, DO" width={144} height={180} class="biz-person__img" />
+          <span class="biz-person__text">
+            <span class="biz-person__name rd-serif">Dr. Brian Landi, DO</span>
+            <span class="biz-person__role">Menopause Society Certified Practitioner · Malvern</span>
+          </span>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <!-- How employer membership works -->
-  <section class="biz-how section">
-    <div class="container">
-      <span class="section-label">How It Works</span>
-      <h2>Employer Memberships at Forward Family Medicine</h2>
-      <div class="divider"></div>
-      <div class="grid-2">
-        <div>
-          <p>
-            Employer memberships at Forward Family Medicine work simply: you pay a flat monthly
-            per-employee fee, and your team gets unlimited direct primary care. No copays when
-            they visit. No hoops to jump through. Just a doctor who knows them, picks up the
-            phone, and has time for them.
-          </p>
-          <p>
-            Our employer plans pair seamlessly with your existing high-deductible health plan —
-            or as a standalone benefit for companies looking to add meaningful healthcare value
-            without replacing full insurance.
-          </p>
-          <p>
-            Because Dr. Lieberman is board-certified in Lifestyle Medicine, your employees
-            also gain access to evidence-based nutrition, sleep, and stress coaching — the
-            kind of proactive care that keeps people out of the ER and off sick days.
-          </p>
-        </div>
-        <div>
-          <h3>What Your Employees Get</h3>
-          <ul class="prose-list">
-            <li>Unlimited primary care office visits — no copay</li>
-            <li>Same-day and next-day appointments</li>
-            <li>Visits: 1–2 hours (not 7 minutes)</li>
-            <li>Direct phone, text &amp; email access to their doctor</li>
-            <li>Preventive care and chronic disease management</li>
-            <li>Board-certified Lifestyle Medicine — nutrition, sleep, stress, movement</li>
-            <li>Wholesale lab pricing — significant cost savings</li>
-            <li>Specialist referral coordination</li>
-            <li>Telehealth visits</li>
-          </ul>
-        </div>
+      <div class="rd-stack">
+        <p class="rd-copy">A significant share of every employer's workforce is women in their 40s and 50s — a demographic where perimenopause and menopause symptoms are common, often undertreated, and increasingly cited as a driver of mid-career attrition. Untreated menopause symptoms cost women in productivity, sleep, energy, and wellbeing — and cost their employers the institutional knowledge and leadership these employees represent.</p>
+        <p class="rd-copy">Forward Family Medicine offers Menopause Society Certified menopause care through Dr. Brian Landi at our Malvern location — comprehensive perimenopause and menopause management, evidence-based HRT consultation, and cardiovascular and bone health monitoring, all included in employees' DPC membership. For employers in professional services, healthcare, education, financial services, and biotech — sectors with significant women workforce in their 40s and 50s — this is a meaningful retention investment, not just a benefit.</p>
+        <a href="/menopause/" class="rd-link biz-more">Learn more about Menopause Care →</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Who it's for -->
-  <section class="biz-who section" style="background: var(--cream-200);">
-    <div class="container">
-      <span class="section-label">Who It's For</span>
-      <h2>Built for Companies Like Yours</h2>
-      <div class="divider"></div>
-      <div class="who-grid">
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-          <h3>Small Businesses</h3>
-          <p>Can't afford full group health insurance? DPC lets you offer a real, meaningful healthcare benefit at a predictable monthly cost.</p>
-        </div>
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="3" x2="21" y2="3"/><path d="M6 3L9 12H3L6 3z"/><path d="M18 3L21 12H15L18 3z"/></svg></span>
-          <h3>Professional Firms</h3>
-          <p>Law firms, accounting practices, and financial services firms who want to offer premium healthcare as a retention and recruitment tool.</p>
-        </div>
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
-          <h3>Wellness-Focused Employers</h3>
-          <p>Companies who value employee wellbeing and want to offer lifestyle medicine alongside primary care — as a real, board-certified service.</p>
-        </div>
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-          <h3>Companies Supplementing Insurance</h3>
-          <p>Already have a high-deductible plan? DPC fills the primary care gap — employees get unlimited access without touching their deductible.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROI section -->
-  <section class="biz-roi section">
-    <div class="container">
-      <span class="section-label">The Business Case</span>
-      <h2>Better Care Means Lower Costs</h2>
-      <div class="divider"></div>
-      <div class="roi-grid">
-        <div class="roi-item">
-          <span class="roi-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></span>
-          <h3>Fewer ER Visits</h3>
-          <p>Same-day primary care access means employees handle problems early — before they become expensive emergency room visits.</p>
-        </div>
-        <div class="roi-item">
-          <span class="roi-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-          <h3>Less Time Away</h3>
-          <p>Same-day appointments, telehealth, and direct doctor access mean employees spend less time away from work managing healthcare logistics.</p>
-        </div>
-        <div class="roi-item">
-          <span class="roi-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/></svg></span>
-          <h3>Wholesale Medications</h3>
-          <p>Employees access medications and labs at wholesale pricing — significantly below retail and often below insurance negotiated rates.</p>
-        </div>
-        <div class="roi-item">
-          <span class="roi-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
-          <h3>Preventive Care That Sticks</h3>
-          <p>Dr. Lieberman's lifestyle medicine approach builds long-term health — reducing the chronic conditions that drive the highest healthcare costs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Menopause Care: Workforce Retention -->
-  <section class="section" style="background: var(--cream-100);">
-    <div class="container" style="max-width: 800px;">
-      <span class="section-label">A Workforce Retention Opportunity</span>
-      <h2>Menopause Care for Your Team</h2>
-      <div class="divider"></div>
-      <p>
-        A significant share of every employer's workforce is women in their 40s and 50s — a demographic where perimenopause and menopause symptoms are common, often undertreated, and increasingly cited as a driver of mid-career attrition. Untreated menopause symptoms cost women in productivity, sleep, energy, and wellbeing — and cost their employers the institutional knowledge and leadership these employees represent.
-      </p>
-      <p>
-        Forward Family Medicine offers Menopause Society Certified menopause care through Dr. Brian Landi at our Malvern location — comprehensive perimenopause and menopause management, evidence-based HRT consultation, and cardiovascular and bone health monitoring, all included in employees' DPC membership. For employers in professional services, healthcare, education, financial services, and biotech — sectors with significant women workforce in their 40s and 50s — this is a meaningful retention investment, not just a benefit.
-      </p>
-      <a href="/menopause/" class="btn btn-outline" style="margin-top: 1rem; display: inline-block;">Learn more about Menopause Care →</a>
     </div>
   </section>
 
   <!-- Employer inquiry form -->
-  <section class="biz-form-section section" id="contact" style="background: var(--cream-200);">
-    <div class="container" style="max-width: 720px;">
-      <span class="section-label">Get in Touch</span>
-      <h2>Let's Talk About Your Team</h2>
-      <div class="divider"></div>
-      <p class="biz-form-intro">
-        Employer plans are priced per employee per month and scale with team size
-        and coverage structure. Every employer situation is different — we'll build
-        a plan that fits your team and your budget. Contact us to start the conversation.
-      </p>
-      <p class="biz-form-sub">Tell us a bit about your company and we'll follow up within one business day to discuss options.</p>
-      <div class="biz-form-card card">
-        <form id="biz-inquiry-form" novalidate aria-label="Employer inquiry form">
-          <input type="hidden" name="subject" value="Business Inquiry" />
-
-          <div class="biz-form-row">
-            <div class="biz-form-group">
-              <label for="biz-name">Your Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="biz-name" name="name" required autocomplete="name" aria-required="true" />
-            </div>
-            <div class="biz-form-group">
-              <label for="biz-company">Company Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="biz-company" name="companyName" required aria-required="true" />
-            </div>
-          </div>
-
-          <div class="biz-form-group">
-            <label for="biz-email">Email Address <span aria-hidden="true">*</span></label>
-            <input type="email" id="biz-email" name="email" required autocomplete="email" aria-required="true" />
-          </div>
-
-          <div class="biz-form-row">
-            <div class="biz-form-group">
-              <label for="biz-employees">Number of Employees <span aria-hidden="true">*</span></label>
-              <select id="biz-employees" name="employees" required aria-required="true">
-                <option value="">Select…</option>
-                <option value="1–10">1–10</option>
-                <option value="11–25">11–25</option>
-                <option value="26–50">26–50</option>
-                <option value="51–100">51–100</option>
-                <option value="100+">100+</option>
-              </select>
-            </div>
-            <div class="biz-form-group">
-              <label for="biz-coverage">Current Employee Healthcare</label>
-              <select id="biz-coverage" name="coverage">
-                <option value="">Select…</option>
-                <option value="Group health plan">Group health plan</option>
-                <option value="No current coverage">No current coverage</option>
-                <option value="Self-insured">Self-insured</option>
-                <option value="Health sharing plan">Health sharing plan</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="biz-form-group">
-            <label for="biz-message">Questions or anything you'd like us to know (optional)</label>
-            <textarea id="biz-message" name="message" rows="4" placeholder="Tell us about your team, your goals, or any specific questions you have..."></textarea>
-          </div>
-
-          <div id="biz-form-error" class="biz-form-message biz-error" hidden role="alert" aria-live="assertive"></div>
-          <div id="biz-form-success" class="biz-form-message biz-success" hidden role="alert" aria-live="assertive"></div>
-
-          <button type="submit" class="btn btn-accent biz-submit-btn" id="biz-submit-btn">
-            Request a Conversation
-          </button>
-
-          <p class="biz-form-note">We'll follow up within one business day. Your information is never shared or sold.</p>
-        </form>
+  <section class="rd-section biz-form-section" id="contact">
+    <div class="rd-wrap rd-split rd-split--b">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">Let's Talk About Your Team</h2>
+        <p class="rd-copy">Employer plans are priced per employee per month and scale with team size and coverage structure. Every employer situation is different — we'll build a plan that fits your team and your budget. Contact us to start the conversation.</p>
+        <p class="rd-copy">Tell us a bit about your company and we'll follow up within one business day to discuss options.</p>
+      </div>
+      <div class="biz-form-card">
+              <form id="biz-inquiry-form" novalidate aria-label="Employer inquiry form">
+                <input type="hidden" name="subject" value="Business Inquiry" />
+      
+                <div class="biz-form-row">
+                  <div class="biz-form-group">
+                    <label for="biz-name">Your Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="biz-name" name="name" required autocomplete="name" aria-required="true" />
+                  </div>
+                  <div class="biz-form-group">
+                    <label for="biz-company">Company Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="biz-company" name="companyName" required aria-required="true" />
+                  </div>
+                </div>
+      
+                <div class="biz-form-group">
+                  <label for="biz-email">Email Address <span aria-hidden="true">*</span></label>
+                  <input type="email" id="biz-email" name="email" required autocomplete="email" aria-required="true" />
+                </div>
+      
+                <div class="biz-form-row">
+                  <div class="biz-form-group">
+                    <label for="biz-employees">Number of Employees <span aria-hidden="true">*</span></label>
+                    <select id="biz-employees" name="employees" required aria-required="true">
+                      <option value="">Select…</option>
+                      <option value="1–10">1–10</option>
+                      <option value="11–25">11–25</option>
+                      <option value="26–50">26–50</option>
+                      <option value="51–100">51–100</option>
+                      <option value="100+">100+</option>
+                    </select>
+                  </div>
+                  <div class="biz-form-group">
+                    <label for="biz-coverage">Current Employee Healthcare</label>
+                    <select id="biz-coverage" name="coverage">
+                      <option value="">Select…</option>
+                      <option value="Group health plan">Group health plan</option>
+                      <option value="No current coverage">No current coverage</option>
+                      <option value="Self-insured">Self-insured</option>
+                      <option value="Health sharing plan">Health sharing plan</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+      
+                <div class="biz-form-group">
+                  <label for="biz-message">Questions or anything you'd like us to know (optional)</label>
+                  <textarea id="biz-message" name="message" rows="4" placeholder="Tell us about your team, your goals, or any specific questions you have..."></textarea>
+                </div>
+      
+                <div id="biz-form-error" class="biz-form-message biz-error" hidden role="alert" aria-live="assertive"></div>
+                <div id="biz-form-success" class="biz-form-message biz-success" hidden role="alert" aria-live="assertive"></div>
+      
+                <button type="submit" class="btn-forest biz-submit-btn" id="biz-submit-btn">
+                  Request a Conversation
+                </button>
+      
+                <p class="biz-form-note">We'll follow up within one business day. Your information is never shared or sold.</p>
+              </form>
       </div>
     </div>
   </section>
@@ -297,206 +225,101 @@ const breadcrumb = {
 </MainLayout>
 
 <style>
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .biz-hero { background: var(--linen); padding: 80px 0 96px; }
+  .biz-hero__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 72px; align-items: start; }
+  .biz-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; padding-top: 12px; }
+  .biz-breadcrumb { font-size: 13px; color: var(--text-600); margin-bottom: 14px; }
+  .biz-breadcrumb a { color: var(--text-600); }
+  .biz-breadcrumb a:hover { color: var(--forest); }
+  .biz-breadcrumb span:last-child { color: var(--text-700); }
+  .biz-h1 { font-size: 58px; line-height: 1.04; max-width: 17ch; }
+  .biz-lede { margin: 0; max-width: 640px; font-size: 17px; line-height: 1.7; color: var(--text-900); }
+  .biz-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+  .biz-hero__grid > :global(.biz-card) { position: sticky; top: calc(var(--header-h) + 24px); }
+  .biz-card__lede { font-size: 22px; line-height: 1.35; color: var(--forest); }
+  .biz-facts { margin: 0; display: flex; flex-direction: column; }
+  .biz-facts > div { padding: 12px 0; border-top: 1px solid var(--hairline-strong); display: flex; flex-direction: column; gap: 4px; }
+  .biz-facts > div:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .biz-facts dt { font-size: 12px; font-weight: 600; color: var(--text-600); }
+  .biz-facts dd { margin: 0; font-size: 15px; overflow-wrap: anywhere; }
+  .biz-facts a { color: var(--sage-600); }
+  .biz-card__note { font-size: 14px; line-height: 1.65; color: var(--text-700); }
 
-  .biz-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 3rem;
-    align-items: start;
-  }
-  .biz-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.75rem;
-  }
-  .biz-hero-card {
-    padding: 1.75rem;
-  }
-  .biz-hero-card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
-  .biz-hero-card > p { font-size: 0.9rem; color: var(--ink-500); margin-bottom: 1rem; }
-  .biz-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    min-width: 0;
-  }
-  .biz-contact-icon { flex-shrink: 0; color: var(--green-400); }
-  .biz-contact-item a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--green-300);
-    text-decoration: none;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    min-width: 0;
-  }
-  .biz-contact-item a:hover { text-decoration: underline; }
-  .biz-note {
-    font-size: 0.8rem;
-    color: var(--ink-300);
-    margin: 0.75rem 0 0;
-  }
+  .biz-h2 { max-width: 820px; margin-bottom: 40px; }
+  .biz-h3 { margin: 0; font-size: 24px; line-height: 1.2; color: var(--forest); }
 
-  /* Problem */
-  .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+  .biz-case { background: var(--forest); color: var(--linen); padding: 96px 0; }
+  .biz-case__h2 { color: var(--linen); margin-bottom: 40px; }
+  .biz-case__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; }
+  .biz-case__item {
+    padding: 24px 0;
+    border-top: 1px solid var(--sage);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .problem-item {
-    background: rgba(255,255,255,0.08);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .problem-icon { display: block; margin-bottom: 0.6rem; color: rgba(255,255,255,0.85); }
-  .problem-item strong {
-    display: block;
-    font-size: 1rem;
-    color: white;
-    margin-bottom: 0.5rem;
-  }
-  .problem-item p {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.65;
-    margin: 0;
-  }
+  .biz-case__grid.on .biz-case__item { opacity: 1; transform: none; }
+  .biz-case__grid.on .biz-case__item:nth-child(2) { transition-delay: 0.2s; }
+  .biz-case__grid.on .biz-case__item:nth-child(3) { transition-delay: 0.4s; }
+  .biz-case__grid.on .biz-case__item:nth-child(4) { transition-delay: 0.6s; }
+  .biz-case__item h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; color: var(--linen); }
+  .biz-case__item p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--on-forest); }
 
-  /* Who + ROI */
-  .who-grid, .roi-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
+  .biz-person {
+    display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: center;
+    margin-top: 8px; padding: 14px 0;
+    border-top: 1px solid var(--on-forest-faint); border-bottom: 1px solid var(--on-forest-faint);
+    color: var(--forest); text-decoration: none;
   }
-  .who-card, .roi-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .who-card { padding: 1.5rem; }
-  .roi-item {
-    background: var(--cream-50);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .who-icon { display: block; margin-bottom: 0.5rem; color: var(--green-400); }
-  .roi-icon { display: block; margin-bottom: 0.5rem; color: var(--green-400); }
-  .who-card h3, .roi-item h3 { font-size: 1.05rem; }
-  .who-card p, .roi-item p { font-size: 0.9rem; color: var(--ink-700); margin: 0; }
+  .biz-person :global(.biz-person__img) { display: block; width: 72px; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 20%; border-radius: 2px; }
+  .biz-person__text { display: flex; flex-direction: column; gap: 3px; }
+  .biz-person__name { font-size: 19px; line-height: 1.2; }
+  .biz-person__role { font-size: 13px; color: var(--sage-600); }
+  .biz-more { align-self: flex-start; }
 
-  /* Employer inquiry form */
-  .biz-form-intro {
-    font-size: 1rem;
-    color: var(--ink-700);
-    margin-bottom: 0.5rem;
-  }
-  .biz-form-sub {
-    font-size: 0.95rem;
-    color: var(--ink-500);
-    margin-bottom: 2rem;
-  }
-  .biz-form-card {
-    padding: 2.5rem;
-  }
-  .biz-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .biz-form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
-  }
-  .biz-form-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ink-900);
-  }
-  .biz-form-group label span[aria-hidden] {
-    color: var(--green-400);
-  }
+  /* Form: boxed fields on lighter linen, as on the board. Markup, ids and names are unchanged. */
+  .biz-form-card { padding: 36px 40px; background: var(--linen-50); border: 1px solid var(--hairline); border-top: 3px solid var(--forest); }
+  .biz-form-card form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  .biz-form-row { display: contents; }
+  .biz-form-group { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .biz-form-card form > .biz-form-group,
+  .biz-form-card form > #biz-form-error,
+  .biz-form-card form > #biz-form-success,
+  .biz-form-card form > .biz-submit-btn,
+  .biz-form-card form > .biz-form-note { grid-column: 1 / -1; }
+  .biz-form-group:has(textarea), .biz-form-group:has(input[type="email"]) { grid-column: 1 / -1; }
+  .biz-form-group label { font-size: 13px; font-weight: 500; color: var(--forest); }
+  .biz-form-group label span[aria-hidden] { color: var(--gold-text); }
   .biz-form-group input,
   .biz-form-group select,
   .biz-form-group textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1.5px solid var(--cream-300);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--ink-900);
-    background: var(--cream-50);
-    transition: border-color 0.2s, box-shadow 0.2s;
-    appearance: none;
+    width: 100%; box-sizing: border-box;
+    padding: 13px 14px; font: inherit; font-size: 15px; color: var(--forest);
+    background: var(--linen-50); border: 1px solid var(--hairline-strong); border-radius: 2px;
+    transition: border-color 0.18s, box-shadow 0.18s;
   }
   .biz-form-group input:focus,
   .biz-form-group select:focus,
-  .biz-form-group textarea:focus {
-    outline: none;
-    border-color: var(--green-300);
-    box-shadow: 0 0 0 3px rgba(114, 163, 119, 0.2);
-  }
-  .biz-form-group textarea { resize: vertical; }
-  .biz-form-group select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2372A377' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    padding-right: 2.5rem;
-  }
-  .biz-submit-btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.05rem;
-    margin-top: 0.5rem;
-  }
-  .biz-submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-  }
-  .biz-form-message {
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-sm);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-  .biz-error {
-    background: #fdf0f0;
-    border: 1px solid #e74c3c;
-    color: #c0392b;
-  }
-  .biz-success {
-    background: var(--green-50);
-    border: 1px solid var(--green-300);
-    color: var(--green-500);
-  }
-  .biz-form-note {
-    font-size: 0.8rem;
-    color: var(--ink-300);
-    text-align: center;
-    margin-top: 0.75rem;
-    margin-bottom: 0;
-  }
+  .biz-form-group textarea:focus { outline: none; border-color: var(--sage-600); box-shadow: 0 0 0 1px var(--sage-600); }
+  .biz-form-group textarea { resize: vertical; min-height: 120px; }
+  .biz-form-group ::placeholder { color: var(--text-400); }
+  .biz-form-message { padding: 14px 16px; font-size: 14px; line-height: 1.6; border-left: 3px solid; }
+  .biz-form-message[hidden] { display: none; }
+  .biz-error { background: #FBF0EC; border-color: #A6452E; color: #6B2A1B; }
+  .biz-success { background: var(--sage-50); border-color: var(--sage-600); color: var(--forest); }
+  .biz-success a { color: var(--sage-600); }
+  .biz-submit-btn { justify-self: start; border: 1px solid var(--sage-600); }
+  .biz-submit-btn:disabled { opacity: 0.6; cursor: default; }
+  .biz-form-note { margin: 0; font-size: 13px; line-height: 1.6; color: var(--text-600); }
 
   @media (max-width: 860px) {
-    .biz-hero-inner { grid-template-columns: 1fr; }
-    .problem-grid { grid-template-columns: 1fr; }
-    .who-grid, .roi-grid { grid-template-columns: 1fr; }
-    .biz-form-row { grid-template-columns: 1fr; }
-    .biz-form-card { padding: 1.5rem; }
+    .biz-hero { padding: 56px 0 64px; }
+    .biz-hero__grid { grid-template-columns: 1fr; gap: 36px; }
+    .biz-hero__grid > :global(.biz-card) { position: static; }
+    .biz-h1 { font-size: 40px; max-width: none; }
+    .biz-case { padding: 64px 0; }
+    .biz-case__grid { grid-template-columns: 1fr; }
+    .biz-form-card { padding: 24px 20px; }
+    .biz-form-card form { grid-template-columns: 1fr; }
   }
 </style>
 

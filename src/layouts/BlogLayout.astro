@@ -1,29 +1,32 @@
 ---
-import MainLayout from './MainLayout.astro';
-import AuthorBio from '../components/blog/AuthorBio.astro';
-
-const CATEGORY_LABELS: Record<string, string> = {
-  'direct-primary-care': 'Direct Primary Care',
-  'lifestyle-medicine': 'Lifestyle Medicine',
-  'preventive-medicine': 'Preventive Care',
-  'patient-experience': 'Patient Experience',
-  'concierge-medicine': 'Concierge Medicine',
-};
+/**
+ * A blog post: resolves the byline, the author's portrait and bio link, the
+ * og:image and Article structured data, and the related-reading rail, then
+ * renders the shared article template (ArticleLayout, boards Post and Post2).
+ */
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
+import ArticleLayout from './ArticleLayout.astro';
+import type { ArticleHeading } from './ArticleLayout.astro';
+import { authorSlug } from '../utils/authors';
+import { blogCategoryLabel } from '../data/blogCategories';
+import { blogRelated, postSlug } from '../utils/related';
+import { contactHrefForPath } from '../utils/leadSource';
 
 export interface Props {
-  title: string;
-  description: string;
-  author: string;
-  date: string;
-  tags?: string[];
-  featuredImage?: string;
-  slug: string;
-  category?: string;
+  entry: CollectionEntry<'blog'>;
+  headings: ArticleHeading[];
   readingTime?: number;
 }
 
-const { title, description, author, date, tags = [], featuredImage, slug, category, readingTime } = Astro.props;
-const categoryLabel = category ? (CATEGORY_LABELS[category] ?? category) : null;
+const { entry, headings, readingTime } = Astro.props;
+const { title, description, category } = entry.data;
+const author = entry.data.author ?? 'Forward Family Medicine';
+const date = entry.data.date ?? new Date().toISOString();
+const featuredImage = entry.data.image;
+const slug = postSlug(entry);
+const categoryLabel = blogCategoryLabel(category);
 
 const authorDisplay: Record<string, string> = {
   'Dr. Philip Lieberman': 'Dr. Philip Lieberman, MD — Board-Certified Family Medicine & Lifestyle Medicine',
@@ -36,10 +39,21 @@ const authorLabel = authorDisplay[author] ?? author;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}/blog/${slug}/`;
-const ogImage = featuredImage || `${siteUrl}/images/og-image.png`;
+// og:image and the Article image: an absolute URL to a 1200px-wide JPEG at the
+// image's own aspect ratio (never cropped here), declared at its real size.
+const og = featuredImage ? await getImage({ src: featuredImage, width: 1200, format: 'jpg', quality: 82 }) : null;
+const ogImage = og ? `${siteUrl}${og.src}` : `${siteUrl}/images/og-image.png`;
+const ogImageWidth = og ? Number(og.attributes.width) : 1200;
+const ogImageHeight = og ? Number(og.attributes.height) : 630;
+
+// The author's bio and portrait, when the author is one of our physicians.
+const providers = await getCollection('providers');
+const authorBioSlug = authorSlug(author);
+const authorProvider = authorBioSlug ? providers.find(p => p.data.slug === authorBioSlug) : undefined;
 
 const dateObj = new Date(date);
-const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+// A bare frontmatter date is a calendar date; UTC keeps it from rendering a day early in US time zones.
+const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const dateISO = dateObj.toISOString();
 
 const articleSchema = {
@@ -49,7 +63,8 @@ const articleSchema = {
   "description": description,
   "author": {
     "@type": "Person",
-    "name": author
+    "name": author,
+    ...(authorBioSlug ? { "url": `${siteUrl}/meet-the-team/${authorBioSlug}/` } : {})
   },
   "datePublished": dateISO,
   "image": ogImage,
@@ -70,117 +85,47 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 3, "name": title, "item": canonicalUrl }
   ]
 };
+
+const related = blogRelated({
+  entry,
+  posts: await getCollection('blog'),
+  providers,
+  library: await getCollection('lifestyle'),
+});
 ---
 
-<MainLayout
-  title={`${title} | Forward Family Medicine`}
+<ArticleLayout
+  title={title}
+  pageTitle={`${title} | Forward Family Medicine`}
   description={description}
   canonical={canonicalUrl}
   ogImage={ogImage}
+  ogImageWidth={ogImageWidth}
+  ogImageHeight={ogImageHeight}
   ogType="article"
   schema={[articleSchema, breadcrumbSchema]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: title }]}
+  category={categoryLabel && category ? { label: categoryLabel, href: `/blog/category/${category}/` } : undefined}
+  author={{
+    label: authorLabel,
+    href: authorBioSlug ? `/meet-the-team/${authorBioSlug}/` : undefined,
+    photo: authorProvider?.data.photo,
+    photoAlt: authorProvider?.data.photoAlt,
+  }}
+  authorKey={author}
+  dateISO={dateISO}
+  dateFormatted={dateFormatted}
+  readingTime={readingTime}
+  heroImage={featuredImage}
+  heroAlt={entry.data.imageAlt ?? ''}
+  headings={headings}
+  related={related}
+  contactHref={contactHrefForPath(`/blog/${slug}/`)}
+  closing={{
+    headline: 'Ready to experience medicine the way it should be?',
+    subhead: 'Schedule a free, no-obligation meet and greet with one of our physicians. No pressure, no commitment — just a conversation.',
+    btnText: 'Schedule a Free Meet & Greet',
+  }}
 >
-  <article class="blog-post">
-    <div class="container">
-      <div class="post-wrap">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span aria-hidden="true"> › </span>
-          <a href="/blog/">Blog</a>
-          <span aria-hidden="true"> › </span>
-          <span>{title}</span>
-        </nav>
-        <header class="post-header">
-          {categoryLabel && (
-            <div class="post-tags">
-              <a href={`/blog/category/${category}/`} class="badge cat-badge">{categoryLabel}</a>
-            </div>
-          )}
-          <h1>{title}</h1>
-          <p class="post-meta">
-            By <strong>{authorLabel}</strong> &middot;
-            <time datetime={dateISO}>{dateFormatted}</time>{readingTime && <> &middot; <span class="reading-time">{readingTime} min read</span></>}
-          </p>
-        </header>
-        <div class="post-body prose">
-          <slot />
-        </div>
-        <AuthorBio author={author} />
-        <div class="post-cta-block card">
-          <p class="text-muted" style="font-size:0.9rem; margin-bottom:0.5rem;">Forward Family Medicine</p>
-          <h3>Ready to experience medicine the way it should be?</h3>
-          <p>Schedule a free, no-obligation meet and greet with one of our physicians. No pressure, no commitment — just a conversation.</p>
-          <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
-        </div>
-        <aside class="medical-disclaimer" aria-label="Educational disclaimer">
-          <p class="disclaimer-label">Educational Disclaimer</p>
-          <p>The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
-        </aside>
-      </div>
-    </div>
-  </article>
-</MainLayout>
-
-<style>
-  .post-wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 3rem 0 4rem;
-  }
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 2rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .post-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-  .cat-badge {
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-  .cat-badge:hover { background: var(--green-300); color: white; }
-  .post-header { margin-bottom: 2.5rem; }
-  .post-header h1 { margin-bottom: 0.75rem; }
-  .post-meta { color: var(--ink-500); font-size: 0.9rem; }
-  .reading-time {
-    color: var(--ink-300);
-    font-style: normal;
-  }
-  .prose { font-size: 1.0625rem; line-height: 1.75; }
-  .prose :global(h2) { font-size: clamp(1.35rem, 2.5vw, 1.75rem); margin: 3rem 0 1rem; }
-  .prose :global(h3) { font-size: clamp(1.15rem, 2vw, 1.3rem); margin: 2.25rem 0 0.75rem; }
-  .prose :global(p)  { margin-bottom: 1.375rem; }
-  .prose :global(ul), .prose :global(ol) { margin: 1.25rem 0 1.25rem 1.5rem; }
-  .prose :global(li) { margin-bottom: 0.5rem; }
-  .prose :global(strong) { color: var(--ink-900); }
-  .post-cta-block {
-    margin-top: 3rem;
-    padding: 2rem 2.5rem;
-    background: linear-gradient(135deg, var(--green-50) 0%, var(--cream-200) 100%);
-    border-radius: var(--radius);
-  }
-  .post-cta-block h3 { margin-bottom: 0.75rem; }
-  .post-cta-block p { margin-bottom: 1.25rem; }
-  .medical-disclaimer {
-    margin-top: 2rem;
-    padding: 1rem 1.25rem;
-    background: var(--cream-100, #f7f5f0);
-    border-left: 3px solid var(--green-300);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  }
-  .disclaimer-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--green-400);
-    margin-bottom: 0.4rem;
-  }
-  .medical-disclaimer p:last-child {
-    font-size: 0.8rem;
-    color: var(--ink-400, #888);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-</style>
+  <slot />
+</ArticleLayout>

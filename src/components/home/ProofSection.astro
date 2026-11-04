@@ -1,224 +1,212 @@
 ---
-import TestimonialCard from '../shared/TestimonialCard.astro';
-import GoogleReviewsLink from '../shared/GoogleReviewsLink.astro';
+/**
+ * Reviews: the fourteen Google reviews from src/data/reviews.json rendered
+ * twice as a marquee (translateX(-50%) loop, ~90s; 28s when sped up), paused
+ * on hover and focus-within, with Pause and Speed controls. Reduced motion
+ * shows a static grid with the duplicate set hidden and the controls gone.
+ *
+ * The text is reproduced from Google as supplied and must not be reworded,
+ * reordered, or "tightened"; a trimmed excerpt would need ellipses. Order is
+ * load-bearing: the first four cards are about physicians accepting new
+ * patients, so no review of Dr. Bigley's care leads the marquee or shows on
+ * the first screen while his panel is full. The Top Doctor note below the
+ * marquee keeps his reviews in founder context.
+ *
+ * To do: if a sub-five-star review ever appears, swap the subline for a
+ * count-based line.
+ */
 import { Image } from 'astro:assets';
+import reviewsData from '../../data/reviews.json';
+import GoogleReviewsLink from '../shared/GoogleReviewsLink.astro';
 import topDoctorBadge from '../../assets/awards/main-line-today-top-doctor-2026.png';
 
-/**
- * Step 7 of the homepage hierarchy: proof.
- *
- * These are real, verified Google reviews. The text is reproduced as supplied
- * and must not be reworded, reordered, or "tightened" — if a line ever looks
- * like it needs an edit, ask the practice rather than editing a patient's
- * words. Every quote carries the "Verified Google review" label.
- *
- * Ordering is deliberate and load-bearing: the Lieberman reviews lead because
- * Dr. Lieberman is accepting new patients. The Bigley reviews sit at the
- * bottom in founder context because his panel is full — surfacing them as the
- * lead conversion proof would point prospective patients at a closed panel.
- * There is intentionally no CTA in this section.
- */
-const leadReviews = [
-  {
-    quote: "Dr. Lieberman is a very effective clinician and wonderful human being. He is able to look at the big picture and focus on the smaller details as well. It's reassuring to have him communicate with specialists on my behalf. The messaging app used by the practice is extremely helpful.",
-    author: 'D.B.',
-    detail: 'Verified Google review',
-  },
-  {
-    quote: "Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner.",
-    author: 'M.M.',
-    detail: 'Verified Google review',
-  },
-  {
-    quote: "I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier.",
-    author: 'P.M.',
-    detail: 'Verified Google review',
-  },
-];
-
-const founderReviews = [
-  {
-    quote: "The thing that originally sold me was when one of my previous doctors had me do various tests over a 6 month span (totaling ~$7000 out-of-pocket), and afterwards still didn't know what might be causing some ongoing pains I was having. Fast forward a year or so later when I switched to Dr. Bigley, and he had a theory within a few seconds of me describing symptoms, and suggested some at-home stretches. Turns out they did the trick!",
-    author: 'B',
-    detail: 'Verified Google review',
-  },
-  {
-    quote: "Dr. Bigley carefully considered my medical history, diet, lifestyle, and overall health to develop a practical, personalized plan focused on prevention and long-term wellness. When I recently faced a difficult-to-diagnose medical issue, he was there every step of the way. I recommend him without hesitation.",
-    author: 'M',
-    detail: 'Verified Google review',
-  },
-];
-
-const credentials = [
-  {
-    name: 'Philip Lieberman, MD',
-    body: 'Dual board-certified in Family Medicine and Lifestyle Medicine, and a diplomate of the American Board of Lifestyle Medicine. During residency at Abington he built the Lifestyle Medicine curriculum that qualified fellow residents for that same board certification. Before medicine, an Associate of Science in Culinary Arts and a Bachelor of Science in Nutrition Science.',
-  },
-  {
-    name: 'Brian Landi, DO',
-    body: 'Board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. Served as Chief Resident of the ChristianaCare Family Medicine residency.',
-  },
-];
+interface Review { who: string; text: string }
+const reviews = reviewsData as Review[];
 ---
 
-<section class="proof section" aria-label="Patient reviews and credentials">
-  <div class="container">
-    <div class="proof-header">
-      <span class="section-label">Proof</span>
-      <h2 class="section-title">Verified reviews from our patients</h2>
-      <p class="section-intro">
-        Published on Google by patients of this practice. Shown with first initials only.
+<section class="proof" aria-label="Patient reviews">
+  <div class="rd-wrap proof-head">
+    <div class="proof-intro">
+      <h2 class="rd-h2">Don't take our word for it.</h2>
+      <p class="proof-sub">Every Google review of this practice and our physicians is five stars. Here are some of them, in patients' own words.</p>
+    </div>
+    <div class="proof-aside">
+      <GoogleReviewsLink align="end" />
+      <div class="marq-controls">
+        <button type="button" class="ctl" id="marq-pause" aria-pressed="false">Pause</button>
+        <button type="button" class="ctl" id="marq-speed" aria-pressed="false">Speed up</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="marq" id="marq" role="region" aria-label="Verified Google reviews">
+    <div class="marq-track" id="marq-track">
+      {reviews.map(r => (
+        <blockquote class="rev">
+          <span class="rev-mark rd-serif" aria-hidden="true">“</span>
+          <p class="rev-text">{r.text}</p>
+          <footer class="rev-foot"><strong>{r.who}</strong> — Verified Google review</footer>
+        </blockquote>
+      ))}
+      {reviews.map(r => (
+        <blockquote class="rev marq-dup" aria-hidden="true">
+          <span class="rev-mark rd-serif">“</span>
+          <p class="rev-text">{r.text}</p>
+          <footer class="rev-foot"><strong>{r.who}</strong> — Verified Google review</footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+
+  <div class="rd-wrap">
+    <div class="topdoc">
+      <Image
+        src={topDoctorBadge}
+        alt="Main Line Today Top Doctor 2026 badge"
+        class="topdoc-badge"
+        width={192}
+        widths={[96, 192, 288]}
+        sizes="96px"
+        format="webp"
+        quality={90}
+        loading="lazy"
+      />
+      <p class="topdoc-text">
+        Two of our physicians, Dr. David Bigley and Dr. Philip Lieberman, were
+        named Main Line Today Top Doctors for 2026. Dr. Bigley opened the
+        practice in September 2024. His panel is full and he is not currently
+        taking new patients; the reviews of his care above are here as history
+        rather than as an invitation. They describe the standard this practice
+        was built to hold.
       </p>
-      <p class="proof-press">
-        Cited as a real-world example of the direct primary care model in Slate &mdash;
-        &ldquo;<a href="https://slate.com/technology/2026/08/health-care-appointment-short-wait-solution-shortage.html" target="_blank" rel="noopener noreferrer">Membership Fees Are Coming for Your Doctor's Office</a>,&rdquo;
-        August 2026.
-      </p>
-    </div>
-
-    <div class="proof-grid">
-      {leadReviews.map(r => <TestimonialCard {...r} />)}
-    </div>
-
-    <GoogleReviewsLink />
-
-    <div class="credentials-block">
-      <h3 class="credentials-heading">The credentials behind that care</h3>
-      <div class="credentials-grid">
-        {credentials.map(c => (
-          <div class="credential-item">
-            <p class="credential-name">{c.name}</p>
-            <p class="credential-body">{c.body}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div class="founder-proof">
-      <h3 class="founder-proof-heading">And where the practice started</h3>
-      <div class="founder-proof-lede">
-        <Image
-          src={topDoctorBadge}
-          alt="Main Line Today Top Doctor 2026 badge"
-          width={128}
-          widths={[64, 128, 192]}
-          sizes="64px"
-          format="webp"
-          quality={90}
-          loading="lazy"
-          class="founder-proof-badge"
-        />
-        <p class="founder-proof-intro">
-          Two of our physicians, Dr. David Bigley and Dr. Philip Lieberman, were
-          named Main Line Today Top Doctors for 2026. Dr. Bigley opened the
-          practice in September 2024. His panel
-          is full and he is not currently taking new patients, so these two reviews are
-          here as history rather than as an invitation. They describe the standard
-          this practice was built to hold.
-        </p>
-      </div>
-      <div class="founder-proof-grid">
-        {founderReviews.map(r => <TestimonialCard {...r} />)}
-      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .proof {
-    background: var(--cream-200);
-  }
-  .proof-header {
-    margin-bottom: 2.5rem;
-  }
-  /* Press mention: a citation, not an endorsement — kept quiet, no badge or logo. */
-  .proof-press {
-    font-size: 0.85rem;
-    color: var(--ink-500);
-    margin-top: 0.75rem;
-  }
-  .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  /* Credentials: evidence supporting the reviews above, so it reads as a
-     supporting band rather than as a third card row. */
-  .credentials-block {
-    margin-top: 3rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--cream-300);
-  }
-  .credentials-heading {
-    font-size: 1.15rem;
-    color: var(--ink-900);
-    margin-bottom: 1.5rem;
-  }
-  .credentials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  .credential-name {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--green-500);
-    margin-bottom: 0.5rem;
-  }
-  .credential-body {
-    font-size: 0.95rem;
-    color: var(--ink-700);
-    line-height: 1.75;
-    margin: 0;
-  }
-
-  /* Founder context — deliberately the quietest block in the section. */
-  .founder-proof {
-    margin-top: 3rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--cream-300);
-  }
-  .founder-proof-heading {
-    font-size: 1.15rem;
-    color: var(--ink-900);
-    margin-bottom: 0.75rem;
-  }
-  /* The award is practice history, like the reviews below it: a small badge
-     beside the intro, never a headline. */
-  .founder-proof-lede {
+  .proof { background: var(--linen); padding: 96px 0; }
+  .proof-head {
     display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px 40px;
   }
-  .founder-proof-badge {
-    width: 64px;
-    height: auto;
-    flex-shrink: 0;
-    margin-top: 0.25rem;
+  .proof-intro { display: flex; flex-direction: column; gap: 16px; max-width: 620px; }
+  .proof-sub { font-size: 17px; line-height: 1.6; color: var(--text-900); margin: 0; }
+  .proof-aside { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+  .marq-controls { display: flex; gap: 8px; }
+  .ctl {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sage-600);
+    background: transparent;
+    border: 1px solid var(--sage);
+    border-radius: 999px;
+    padding: 8px 14px;
+    min-height: 36px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
   }
-  .founder-proof-intro {
-    font-size: 0.95rem;
-    color: var(--ink-500);
-    line-height: 1.75;
-    max-width: 680px;
+  .ctl:hover { background: var(--sage-600); color: var(--linen); border-color: var(--sage-600); }
+  .ctl[aria-pressed="true"] { background: var(--forest); color: var(--linen); border-color: var(--forest); }
+
+  .marq {
+    overflow: hidden;
+    margin-top: 36px;
+    padding: 28px 0;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .marq-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    padding-left: 24px;
+    animation: marq 90s linear infinite;
+    will-change: transform;
+  }
+  .marq:hover .marq-track,
+  .marq:focus-within .marq-track,
+  .marq-track.paused { animation-play-state: paused; }
+  .marq-track.fast { animation-duration: 28s; }
+  @keyframes marq {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .rev {
     margin: 0;
+    width: 400px;
+    flex: 0 0 400px;
+    min-height: 280px;
+    padding: 28px 30px 24px;
+    background: var(--linen-50);
+    border: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: border-color 0.2s;
   }
-  .founder-proof-grid {
+  .rev:hover { border-color: var(--sage); }
+  .rev-mark { font-size: 56px; line-height: 0.5; color: var(--sage-mark); }
+  .rev-text { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-900); }
+  .rev-foot { font-size: 13px; color: var(--sage-600); margin-top: auto; }
+  .rev-foot strong { color: var(--forest); }
+
+  .topdoc {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline-strong);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    max-width: 820px;
   }
+  .topdoc-badge { width: 96px; height: auto; display: block; }
+  .topdoc-text { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
 
   @media (max-width: 860px) {
-    .proof-grid,
-    .credentials-grid,
-    .founder-proof-grid {
-      grid-template-columns: 1fr;
+    .proof { padding: 64px 0; }
+    .proof-aside { align-items: flex-start; }
+    .rev { width: 300px; flex-basis: 300px; }
+    .marq-track { animation-duration: 60s; }
+    .marq-track.fast { animation-duration: 20s; }
+    .topdoc { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; margin-top: 40px; }
+    .topdoc-badge { width: 72px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marq-track {
+      animation: none;
+      width: auto;
+      flex-wrap: wrap;
+      padding: 0 var(--content-pad);
+      max-width: var(--content-w);
+      margin: 0 auto;
     }
+    .marq-dup { display: none; }
+    .rev { width: auto; flex: 1 1 300px; }
+    .marq-controls { display: none; }
   }
 </style>
+
+<script>
+  const track = document.getElementById('marq-track');
+  const pauseBtn = document.getElementById('marq-pause');
+  const speedBtn = document.getElementById('marq-speed');
+
+  pauseBtn?.addEventListener('click', () => {
+    const paused = pauseBtn.getAttribute('aria-pressed') !== 'true';
+    pauseBtn.setAttribute('aria-pressed', String(paused));
+    pauseBtn.textContent = paused ? 'Resume' : 'Pause';
+    track?.classList.toggle('paused', paused);
+  });
+  speedBtn?.addEventListener('click', () => {
+    const fast = speedBtn.getAttribute('aria-pressed') !== 'true';
+    speedBtn.setAttribute('aria-pressed', String(fast));
+    speedBtn.textContent = fast ? 'Slow down' : 'Speed up';
+    track?.classList.toggle('fast', fast);
+  });
+</script>

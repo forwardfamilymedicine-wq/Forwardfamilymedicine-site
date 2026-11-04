@@ -1,0 +1,419 @@
+---
+/**
+ * Article template shared by the blog and the Lifestyle Library (boards Post,
+ * Post2 and LibPost). Category link, headline, byline with the author's small
+ * portrait, date and read time; an optional hero image at right (blog posts
+ * with an image), full-width title when absent (library articles); a 720px
+ * column whose H2s feed the "In this article" rail with scroll-spy; the
+ * author card; the educational disclaimer; the closing band. The contents
+ * block in the rail pins under the header (data-sticky-fit) when it fits.
+ *
+ * Copy comes from the page that renders this: the live byline strings, the
+ * live closing-band copy and the header's live card text. The only new words
+ * are the rail headings on the approved list ("In this article", "Mentioned
+ * in this post" / "More from Dr. ___" / "More in <Category>").
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import MainLayout from './MainLayout.astro';
+import AuthorBio from '../components/blog/AuthorBio.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+import type { RelatedRail } from '../utils/related';
+
+export interface Crumb { label: string; href?: string }
+export interface ArticleHeading { depth: number; slug: string; text: string }
+export interface Props {
+  title: string;
+  /** The <title> exactly as the route set it before the redesign; defaults to `title`. */
+  pageTitle?: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogType?: string;
+  schema?: object | object[];
+  crumbs: Crumb[];
+  /** The small link above the title: blog category or library section. */
+  category?: { label: string; href: string };
+  /** `label` is the live byline string ("Dr. David Bigley, DO — Board-Certified Family Medicine"). */
+  author: { label: string; href?: string; photo?: ImageMetadata; photoAlt?: string };
+  dateISO?: string;
+  dateFormatted?: string;
+  readingTime?: number;
+  heroImage?: ImageMetadata;
+  heroAlt?: string;
+  headings: ArticleHeading[];
+  related: RelatedRail;
+  /** /contact/ with this page's lead source. */
+  contactHref: string;
+  closing: { headline: string; subhead: string; btnText: string };
+  /** The frontmatter author string, for the author card. */
+  authorKey?: string;
+}
+
+const {
+  title, pageTitle, description, canonical, ogImage, ogImageWidth, ogImageHeight, ogType, schema,
+  crumbs, category, author, dateISO, dateFormatted, readingTime, heroImage, heroAlt = '',
+  headings, related, contactHref, closing, authorKey,
+} = Astro.props;
+
+// "Dr. David Bigley, DO — Board-Certified Family Medicine": the name links to
+// the bio, the credential clause stays plain. A label with no dash is one span.
+const dash = author.label.indexOf(' — ');
+const authorName = dash === -1 ? author.label : author.label.slice(0, dash);
+const authorRest = dash === -1 ? '' : author.label.slice(dash);
+const toc = headings.filter(h => h.depth === 2);
+// The board frames a portrait at 4:5 from the top; a landscape source (every
+// blog image today is 16:9) is framed square from its centre instead, so a
+// head-and-shoulders photo is not zoomed into a forehead.
+const heroLandscape = heroImage ? heroImage.width >= heroImage.height : false;
+---
+
+<MainLayout
+  title={pageTitle ?? title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogImageWidth={ogImageWidth}
+  ogImageHeight={ogImageHeight}
+  ogType={ogType}
+  schema={schema}
+>
+  <article class="art-page">
+    <header class="art-hero">
+      <div class="rd-wrap">
+        <nav class="rd-crumb" aria-label="Breadcrumb">
+          {crumbs.map((c, i) => (
+            <Fragment>
+              {i > 0 && <span aria-hidden="true"> › </span>}
+              {c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}
+            </Fragment>
+          ))}
+        </nav>
+        <div class:list={['art-hero__grid', { 'art-hero__grid--solo': !heroImage }]}>
+          <div class="art-hero__copy">
+            {category && <a href={category.href} class="art-cat">{category.label}</a>}
+            <h1 class="art-h1 rd-serif">{title}</h1>
+            <div class="art-meta">
+              {author.photo && (
+                <Image
+                  src={author.photo}
+                  alt=""
+                  width={72}
+                  height={72}
+                  widths={[72, 144]}
+                  sizes="36px"
+                  format="webp"
+                  quality={82}
+                  loading="eager"
+                  class="art-meta__portrait"
+                />
+              )}
+              <div class="art-meta__text">
+                <div class="art-meta__items">
+                  <span class="art-meta__item">By {author.href ? <a href={author.href} class="art-meta__author">{authorName}</a> : <span class="art-meta__author">{authorName}</span>}{authorRest}</span>
+                  {dateISO && dateFormatted && <span class="art-meta__item art-meta__item--sep"><time datetime={dateISO}>{dateFormatted}</time></span>}
+                  {readingTime && <span class="art-meta__item art-meta__item--sep">{readingTime} min read</span>}
+                </div>
+              </div>
+            </div>
+          </div>
+          {heroImage && (
+            <Image
+              src={heroImage}
+              alt={heroAlt}
+              widths={[340, 680, 1020]}
+              sizes="(max-width: 860px) calc(100vw - 40px), 340px"
+              format="webp"
+              quality={82}
+              loading="eager"
+              fetchpriority="high"
+              class="art-hero__img"
+              style={heroLandscape ? 'aspect-ratio:1/1;object-position:50% 50%' : undefined}
+            />
+          )}
+        </div>
+      </div>
+    </header>
+
+    <div class="art-body">
+      <div class="rd-wrap art-body__grid">
+        <div class="art">
+          <slot />
+          <AuthorBio author={authorKey} />
+          <p class="art-disclaimer"><strong>Educational Disclaimer</strong> The content on this blog is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Reading this post does not create a doctor-patient relationship. Always consult your physician or a qualified healthcare provider before making any changes to your health, medications, or treatment plan.</p>
+        </div>
+
+        <aside class="art-rail">
+          {toc.length > 0 && (
+            <div class="art-rail__pin">
+              <div class="art-toc" data-sticky-fit>
+                <p class="art-toc__head">In this article</p>
+                <nav class="art-toc__nav" aria-label="In this article" data-article-toc>
+                  {toc.map(h => <a href={`#${h.slug}`}>{h.text}</a>)}
+                </nav>
+              </div>
+            </div>
+          )}
+          <div class="art-rail__rest">
+            {related.items.length > 0 && (
+              <div class="art-related">
+                <h2 class="art-related__h rd-serif">{related.heading}</h2>
+                {related.items.map(item => (
+                  <a class="art-read" href={item.href}>
+                    <span class="art-read__title rd-serif">{item.title}</span>
+                    <span class="art-read__meta">{item.meta}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+            <div class="art-card">
+              <p class="art-card__title rd-serif">Start with a conversation, not a commitment.</p>
+              <p class="art-card__text">A free meet and greet is exactly what it sounds like. Come in, meet the physician taking new patients, see the office, and ask every question you have. Nothing is signed that day.</p>
+              <a class="btn-forest btn-sm" href={contactHref}>Schedule a Free Meet &amp; Greet</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    headline={closing.headline}
+    subhead={closing.subhead}
+    btnText={closing.btnText}
+    btnHref={contactHref}
+  />
+</MainLayout>
+
+<script>
+  import { initScrollSpy } from '../scripts/scrollSpy';
+  initScrollSpy(
+    document.querySelector('[data-article-toc]'),
+    Array.from(document.querySelectorAll('.art h2[id]')),
+  );
+</script>
+
+<style>
+  .art-hero { background: var(--linen); padding: 80px 0 72px; }
+  .art-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) 340px;
+    gap: 72px;
+    align-items: end;
+  }
+  .art-hero__grid--solo { grid-template-columns: minmax(0, 1fr); }
+  .art-hero__grid--solo .art-hero__copy { max-width: 900px; }
+  .art-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+  .art-cat { font-size: 14px; font-weight: 500; color: var(--sage-600); text-decoration: none; }
+  .art-cat:hover { color: var(--forest); }
+  .art-h1 {
+    margin: 0;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    color: var(--forest);
+    max-width: 20ch;
+  }
+  .art-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-600);
+  }
+  .art-meta :global(.art-meta__portrait) {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    flex: none;
+  }
+  /* The separator belongs to the item that follows it (a ::before dot in that
+     item's left padding). The items sit in a box whose left edge clips 6px
+     before the first item's text, so a dot that lands at the start of a wrapped
+     line falls outside it and is never drawn; a dot between two items on one
+     line is inside. The 6px of padding keeps the author link's focus ring. */
+  .art-meta__text { min-width: 0; overflow: hidden; padding: 4px 0 4px 6px; margin: -4px 0 -4px -6px; }
+  .art-meta__items { display: flex; flex-wrap: wrap; row-gap: 4px; margin-left: -20px; }
+  .art-meta__item { position: relative; padding-left: 20px; }
+  .art-meta__item--sep::before {
+    content: '·';
+    position: absolute;
+    left: 6px;
+    width: 8px;
+    text-align: center;
+    color: var(--hairline-dot);
+  }
+  .art-meta__author { color: var(--forest); font-weight: 500; text-decoration: none; }
+  a.art-meta__author:hover { color: var(--sage-600); }
+  .art-hero :global(.art-hero__img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 2px;
+  }
+
+  .art-body { background: var(--linen-50); border-top: 1px solid var(--hairline); padding: 72px 0 96px; }
+  .art-body__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 72px;
+    align-items: start;
+  }
+  /* A long unbroken token (a slash-joined citation, a URL) wraps instead of widening the page. */
+  .art { max-width: 720px; min-width: 0; overflow-wrap: anywhere; }
+
+  /* Body copy, per the boards. :global() because it styles rendered Markdown. */
+  .art :global(p) { margin: 0 0 22px; font-size: 17.5px; line-height: 1.8; color: var(--text-900); }
+  .art :global(h2) {
+    margin: 44px 0 14px;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+  }
+  .art :global(h3) { margin: 30px 0 10px; font-family: var(--font-body); font-size: 18px; font-weight: 600; line-height: 1.35; color: var(--forest); }
+  .art :global(h4) { margin: 24px 0 8px; font-family: var(--font-body); font-size: 16px; font-weight: 600; color: var(--forest); }
+  .art :global(a:not([class])) { color: var(--sage-600); text-decoration: none; border-bottom: 1px solid var(--sage); }
+  .art :global(a:not([class]):hover) { color: var(--forest); border-color: var(--forest); }
+  .art :global(ul), .art :global(ol) { margin: 0 0 24px; padding-left: 22px; }
+  .art :global(li) { margin: 0 0 8px; font-size: 17px; line-height: 1.7; color: var(--text-900); }
+  .art :global(li::marker) { color: var(--sage); }
+  .art :global(li > p) { margin: 0; }
+  .art :global(strong) { color: var(--forest); font-weight: 600; }
+  .art :global(em) { font-style: italic; }
+  .art :global(blockquote) {
+    margin: 0 0 24px;
+    padding: 4px 0 4px 22px;
+    border-left: 2px solid var(--sage);
+    color: var(--text-700);
+  }
+  .art :global(hr) { border: 0; border-top: 1px solid var(--hairline-strong); margin: 36px 0; }
+  .art :global(img) { max-width: 100%; height: auto; border-radius: 2px; }
+  /* The "Quick answer" callout (library articles). */
+  .art :global(.art-quick) {
+    padding: 22px 26px;
+    background: var(--sage-50);
+    border-top: 3px solid var(--forest);
+    margin: 0 0 30px;
+  }
+  .art :global(.art-quick p) { margin: 0; font-size: 16.5px; line-height: 1.7; }
+  /* Tables: reset the global table rules, then the board's ledger style. */
+  /* Keeps the global phone rule (display: block; overflow-x: auto) so a wide table scrolls instead of widening the page. */
+  .art :global(table) { width: 100%; border-collapse: collapse; margin: 6px 0 28px; font-size: 15px; }
+  .art :global(thead tr) { background: transparent; color: inherit; }
+  .art :global(tbody tr:nth-child(even)), .art :global(tbody tr:hover) { background: transparent; }
+  .art :global(th) {
+    text-align: left;
+    padding: 10px 14px 10px 0;
+    border: 0;
+    border-bottom: 1px solid var(--forest);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage-600);
+  }
+  .art :global(td) {
+    padding: 12px 14px 12px 0;
+    border: 0;
+    border-bottom: 1px solid var(--hairline-strong);
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--text-900);
+  }
+  .art :global(td:first-child) { color: var(--forest); font-weight: 500; }
+  /* The references list under a "References" heading. */
+  .art :global(h2[id="references"] + ol), .art :global(h2[id="references"] + ul) { padding-left: 20px; }
+  .art :global(h2[id="references"] + ol li), .art :global(h2[id="references"] + ul li) { font-size: 14px; line-height: 1.6; color: var(--text-600); margin-bottom: 8px; }
+
+  /* Scoped under .art so it outranks `.art p` (which would otherwise zero this margin). */
+  .art .art-disclaimer {
+    margin: 40px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    color: var(--text-600) !important;
+  }
+  .art-disclaimer strong { display: block; color: var(--text-600); font-weight: 600; margin-bottom: 2px; }
+
+  /* Rail */
+  /* The rail is as tall as the article. Only the contents block pins (inside .art-rail__pin, which
+     ends where the related list begins); the related list and card scroll with the page. */
+  .art-rail { display: flex; flex-direction: column; gap: 32px; min-width: 0; align-self: stretch; }
+  .art-rail__pin { flex: 1 1 auto; min-height: 0; }
+  .art-rail__rest { display: flex; flex-direction: column; gap: 32px; }
+  .art-toc { display: flex; flex-direction: column; gap: 12px; }
+  .art-toc__head { margin: 0; font-size: 13px; font-weight: 500; color: var(--forest); }
+  .art-toc__nav { display: flex; flex-direction: column; border-left: 1px solid var(--hairline-strong); }
+  .art-toc__nav a {
+    display: block;
+    padding: 7px 0 7px 14px;
+    margin-left: -1px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--text-600);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .art-toc__nav a:hover { color: var(--forest); }
+  .art-toc__nav a.cur { color: var(--forest); border-color: var(--sage); }
+  .art-related { display: flex; flex-direction: column; }
+  .art-related__h { margin: 0 0 10px; font-size: 22px; line-height: 1.2; color: var(--forest); }
+  .art-read {
+    display: block;
+    padding: 16px 0;
+    border-top: 1px solid var(--hairline-strong);
+    color: var(--forest);
+    text-decoration: none;
+    position: relative;
+  }
+  .art-read:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .art-read::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .art-read:hover::after { transform: none; }
+  .art-read:hover { z-index: 1; }
+  .art-read__title { display: block; font-size: 17px; line-height: 1.3; }
+  .art-read__meta { display: block; margin-top: 4px; font-size: 13px; color: var(--text-600); }
+  .art-card {
+    padding: 28px 30px;
+    background: var(--sage-50);
+    border-top: 3px solid var(--forest);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .art-card__title { margin: 0; font-size: 21px; line-height: 1.35; color: var(--forest); }
+  .art-card__text { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--text-700); }
+  .art-card .btn-forest { align-self: flex-start; }
+
+  @media (max-width: 860px) {
+    .art-hero { padding: 48px 0 56px; }
+    .art-hero__grid { grid-template-columns: 1fr; gap: 28px; }
+    .art-hero :global(.art-hero__img) { max-width: 340px; }
+    .art-h1 { font-size: 40px; max-width: none; }
+    .art-body { padding: 56px 0 64px; }
+    .art-body__grid { grid-template-columns: 1fr; gap: 48px; }
+    .art :global(p) { font-size: 17px; }
+    .art :global(h2) { font-size: 26px; margin-top: 36px; }
+  }
+</style>

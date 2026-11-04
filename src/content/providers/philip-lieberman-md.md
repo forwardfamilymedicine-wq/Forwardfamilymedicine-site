@@ -43,6 +43,7 @@ education:
     year: null
 notableExperience:
   - label: "U.S. Navy Primary Care Physician"
+    beforeStep: "Family Medicine Residency"
   - label: "Developed Lifestyle Medicine curriculum"
     description: "Built a comprehensive curriculum at Abington Family Medicine residency that enabled fellow residents to qualify for board certification through the American College of Lifestyle Medicine."
 npi: "1669979316"

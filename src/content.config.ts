@@ -36,8 +36,14 @@ const EXCLUDE = [
 
 const blog = defineCollection({
   loader: glob({ pattern: ['**/*.{md,mdx}', ...EXCLUDE, '!**/index.md'], base: './src/content/blog' }),
-  schema: baseSchema.extend({
+  // A post's image is an asset, not a public/ path, so its card and og:image
+  // are generated at the sizes they are shown at.
+  schema: ({ image }) => baseSchema.extend({
     category: z.string().optional(),
+    image: image().optional(),
+    // Curated related reading for the article rail: post slugs or site paths
+    // (see src/utils/related.ts). Without it the rail is automatic.
+    relatedPosts: z.array(z.string()).optional(),
   }),
 });
 
@@ -118,6 +124,10 @@ const providers = defineCollection({
     notableExperience: z.array(z.object({
       label: z.string(),
       description: z.string().optional(),
+      // Profile timeline only. `inTimeline: false` prints the label as a plain line under the
+      // timeline; `beforeStep` places the step ahead of the education step with that title.
+      inTimeline: z.boolean().optional(),
+      beforeStep: z.string().optional(),
     })).optional(),
     displayOrder: z.number(),
   }),
@@ -125,7 +135,7 @@ const providers = defineCollection({
 
 const locations = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/locations' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     name: z.string(),
     slug: z.string(),
     status: z.enum(['open', 'coming-soon']),
@@ -149,6 +159,10 @@ const locations = defineCollection({
     arrivalNote: z.string().optional(),
     // The office's Google Business Profile name, exactly; its structured-data name.
     listingName: z.string().optional(),
+    // A real photo of the office, for its structured-data image only; it is not
+    // rendered on the page (that is `photos`). Leave it out rather than use a
+    // stock or unrelated photo.
+    listingImage: image().optional(),
     providers: z.array(z.string()).optional().default([]),
     description: z.string(),
     displayOrder: z.number(),

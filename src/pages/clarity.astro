@@ -1,7 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
-import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+import CTABanner from '../components/shared/CTABanner.astro';
+import SageCard from '../components/shared/SageCard.astro';
+import TitledGrid from '../components/shared/TitledGrid.astro';
 import { ORG_ID } from '../utils/practiceSchema';
 
 const breadcrumb = {
@@ -79,6 +81,125 @@ const faqs = [
     a: 'Yes — Clarity is an annual program paid upfront. Your program runs from enrollment through Month 9, where you receive your 12-month health blueprint and have a renewal conversation. If you renew, Year 2 begins with a full re-enrollment draw — everything from Month 0 except the one-time lifetime markers, which are already in your record permanently.',
   },
 ];
+
+const CTA = '/new-patients/?source=clarity#request';
+
+const included = [
+  'Prenuvo whole-body MRI at enrollment',
+  '4 advanced biomarker draws — 85–63 results each',
+  'Gut microbiome panel at enrollment',
+  '6 weeks CGM monitoring across the year',
+  'DEXA body composition, 2×/year',
+  'VO₂ max testing, 2×/year',
+  'Coronary calcium score, every 3 years',
+  'Full FFM membership included',
+];
+
+const shortfalls = [
+  { label: 'Executive physicals', title: 'A full day of testing. Then silence for twelve months.', body: "Valuable data, no follow-through. A results binder doesn't adjust your protocol when your biomarkers shift. A physician who knows your history does." },
+  { label: 'DIY testing platforms', title: '160 biomarkers and a dashboard. But no one to call.', body: 'Function Health, InsideTracker, and similar services surface data efficiently. Without clinical interpretation, a number outside the reference range produces anxiety, not action.' },
+  { label: 'Traditional primary care', title: 'Twenty minutes a year with a doctor you rarely see.', body: 'A physician seeing 25 patients a day cannot read your VO₂ trends, review your imaging, and connect it to your bloodwork. The structure of standard care makes that impossible.' },
+];
+
+const inputs = [
+  { title: 'Structural imaging — what bloodwork cannot see', body: "The Prenuvo whole-body MRI screens 500+ conditions across 33 organ systems — brain, spine, organs, vasculature — before symptoms appear. Dr. Bigley reviews findings with you directly and coordinates any follow-through. This is the only input that reveals what's structurally happening inside your body right now.", stat: "14% of first-time Prenuvo members discover a clinically significant finding they didn't know existed." },
+  { title: 'Biomarkers and gut health — interpreted in context, four times a year', body: 'Over 60 blood markers across cardiovascular risk, hormones, metabolic health, inflammation, and organ function — reviewed at enrollment, month 3, and month 9. Paired with a gut microbiome panel at enrollment that maps your bacterial diversity, inflammatory species, and digestive function.', stat: 'CGM data is read alongside bloodwork at each check-in — real-time glucose and bloodwork together tell a far more complete metabolic story.' },
+  { title: 'Continuous glucose monitoring — metabolic data between visits', body: 'Six weeks of CGM data distributed across three 2-week windows, timed to align with your lab check-ins. While bloodwork captures a single moment, CGM tracks how your glucose actually behaves — across meals, sleep, stress, and exercise — over days.', stat: 'Insulin resistance is detectable by CGM years before it appears on standard diabetes screening.' },
+  { title: 'Physical performance — measured as a clinical vital sign', body: 'VO₂ max is the strongest independent predictor of all-cause mortality in the medical literature — stronger than blood pressure, cholesterol, or smoking status. DEXA body composition tracks lean mass, visceral fat, and bone density with the precision BMI was never designed to provide. Both tested twice yearly.', stat: 'Cardiorespiratory fitness is more predictive of longevity than any single biomarker we measure.' },
+];
+
+// Filled dots are things done; `o` items (hollow dots) are outcomes confirmed.
+const milestones = [
+  { when: 'Month 0 — Enrollment', name: 'Foundation', now: true, items: [
+    ['3-hour new patient visit'], ['Prenuvo whole-body MRI'], ['Full biomarker panel (~85 results)'], ['Gut microbiome panel'],
+    ['2-week CGM baseline period'], ['DEXA body composition'], ['VO₂ max baseline'], ['Coronary calcium score if due', true] ] },
+  { when: 'Month 3', name: 'Response check', items: [
+    ['2-week CGM period'], ['Lab check-in (~43 results)'], ['Intervention response confirmed', true], ['Medication safety reviewed', true], ['Physician review visit'] ] },
+  { when: 'Month 6', name: 'Semi-annual expansion', items: [
+    ['DEXA — second scan'], ['VO₂ max — follow-up test'], ['Lab check-in (~63 results)'], ['Body comp vs. baseline', true], ['Physician review visit'] ] },
+  { when: 'Month 9', name: 'Drift check', items: [
+    ['2-week CGM period'], ['Lab check-in (~55 results)'], ['CGM + bloodwork read together', true], ['Physician review visit'], ['12-month health blueprint'], ['Year 2 renewal conversation'] ] },
+  { when: 'Upon renewal', name: 'Year 2 begins', items: [
+    ['Prenuvo MRI — repeated'], ['Full lab draw (~80+ results)'], ['Gut microbiome — repeated'], ['DEXA + VO₂ max baseline'], ['2-week CGM baseline'], ['One-time markers excluded — already in your record', true] ] },
+];
+
+// The five target values and the rules above them were removed in the redesign.
+const anchors = [
+  { marker: 'ApoB', title: 'The atherogenic particle count', body: 'More accurate than cholesterol. Counts every particle capable of causing arterial disease — this is the number we treat to, not LDL-C.' },
+  { marker: 'Fasting Insulin', title: 'The metabolic early-warning system', body: 'Detects insulin resistance 5–10 years before HbA1c moves. The single biggest early-detection delta between Clarity and standard primary care.' },
+  { marker: 'HbA1c', title: 'Your 3-month blood sugar memory', body: 'A rolling average of glucose control over 90 days — held to a tighter standard than conventional medicine considers normal.' },
+  { marker: 'hs-CRP', title: 'The whole-body inflammation thermostat', body: 'Chronic low-grade inflammation is the shared mechanism behind cardiovascular disease, cognitive decline, and accelerated aging.' },
+  { marker: 'Vitamin D', title: 'The nutrient with the highest response-to-intervention ratio', body: "Almost everyone can move this number meaningfully within 90 days. Tested at seasonal intervals — not quarterly, when it's mostly noise." },
+];
+
+const draws = [
+  { month: 'Month 0', name: 'Baseline', meta: '~85+ results · One-time lifetime markers · Prenuvo MRI',
+    lede: "Your comprehensive enrollment visit. Every longitudinal reference point for your Clarity program, your Prenuvo whole-body MRI, gut microbiome baseline, and the lifetime genetic markers you'll know forever — all at the start.",
+    cats: [
+      ['Metabolic & Organ Reserve', 'A comprehensive window into how your liver, kidneys, blood, and blood sugar are performing — including markers most panels skip that predict metabolic risk years before disease appears.'],
+      ['Advanced Cardiovascular', 'Beyond standard cholesterol — particle counts, atherogenic particle burden, inflammation markers, and a one-time genetic cardiovascular risk marker that most physicians have never ordered.'],
+      ['Hormones', 'A complete hormonal baseline — thyroid (including active and inactive forms), sex hormones with gold-standard assay methodology, adrenal markers, and growth factors. Tailored by sex and age.'],
+      ['Nutritional Status', 'Key micronutrients that affect energy, immune function, cardiovascular risk, and cognitive performance — measured at levels optimized for performance, not just above the clinical floor.'],
+      ['One-Time Genetic Markers', "Blood typing and an optional cardiovascular and cognitive risk genotype — measured once, known forever."],
+    ] },
+  { month: 'Month 3', name: 'Response check', meta: '~43 results · Intervention and safety focus',
+    lede: 'Ninety days is the ideal window to answer: is what we started working, and is it safe? Every result here is time-sensitive.',
+    cats: [["What We're Checking", 'Metabolic response to any interventions started at enrollment. Cardiovascular markers confirming treatment targets are moving. Organ safety. Blood sugar trajectory at the first meaningful checkpoint.']],
+    note: 'Nutritional markers and advanced lipid particle counts are intentionally held until Month 6 — they require more time to reflect real change. Testing them at 90 days produces noise, not signal.' },
+  { month: 'Month 6', name: 'Semi-annual expansion', meta: '~63 results · Richest mid-year draw',
+    lede: 'The most comprehensive follow-up draw of the year. Slow-turnover markers have finally stabilized enough to be meaningful.',
+    cats: [["What We're Checking", 'Full cardiovascular panel including advanced particle analysis. Metabolic markers with trend context from Month 3. Nutritional status — particularly Vitamin D timed to seasonal low and Omega-3 index which requires 120 days to reflect dietary changes.']],
+    addl: 'Hormone panel added for members on active therapy or with Month 0 abnormals being treated.' },
+  { month: 'Month 9', name: 'Drift check', meta: '~55 results · Pre-annual trajectory lock',
+    lede: 'A focused pre-annual checkpoint. We confirm the trajectory from Month 6 holds, catch any drift, and adjust anything heading in the wrong direction.',
+    cats: [["What We're Checking", "Core metabolic and cardiovascular markers with three-draw trend context. Advanced lipid particle analysis. Organ function and inflammation. Additional markers added on clinical indication — nothing routine that hasn't earned its place by this point."]] },
+];
+
+const markers = [
+  { cat: 'Cardiovascular', tone: 'cardio', title: 'Lipoprotein(a)', tag: 'The genetic risk factor most doctors still miss.', body: 'Measured once in your lifetime. About 90% genetic. Roughly 1 in 5 adults has an elevated level that dramatically increases cardiovascular risk independent of LDL cholesterol.', note: 'New targeted therapies are in late-stage trials. We measure it now so your care plan is ready when they arrive.' },
+  { cat: 'Cardiovascular', tone: 'cardio', title: 'NMR LipoProfile', tag: "We don't just measure your cholesterol. We count the particles.", body: 'Two people with identical LDL cholesterol can have completely different heart disease risk depending on particle size and number. NMR also gives us LP-IR score (insulin resistance at the lipoprotein level) and GlycA, a next-generation inflammation marker more stable than CRP.', note: 'Standard panels measure the amount of cholesterol carried. NMR measures the number of vehicles carrying it.' },
+  { cat: 'Cardiovascular', tone: 'cardio', title: 'ApoB', tag: 'One number that supersedes traditional cholesterol.', body: 'Counts every atherogenic particle in your blood. The National Lipid Association (2024) and ACC/AHA (2022) both identify ApoB as the preferred cardiovascular target over LDL-C. This is the number we treat to.', note: 'Your LDL-C can look fine while your ApoB is elevated. We track both, but we act on ApoB.' },
+  { cat: 'Metabolic', tone: 'metabolic', title: 'Fasting Insulin', tag: 'The number your previous doctor never checked.', body: 'Insulin resistance develops silently for years before HbA1c moves. Fasting insulin is the earliest detectable signal — it can flag a metabolic problem a decade before standard diabetes screening would catch it.', note: 'The single biggest early-detection delta between Clarity and a standard primary care panel.' },
+  { cat: 'Performance', tone: 'performance', title: 'Omega-3 Index', tag: 'The fatty acid composition of your red blood cell membranes.', body: 'A target above 8% is cardiovascularly protective. Below 4% carries the same cardiac risk as smoking. Most people land between 4 and 6%. Responds to diet or supplementation within 120 days — which is why we test it at Month 6, not Month 3.', note: 'Your omega-3 index reflects actual membrane incorporation — not what you ate last week.' },
+  { cat: 'Kidney function', tone: 'kidney', title: 'Cystatin C with eGFR', tag: 'We measure kidney function two ways.', body: "Standard creatinine-based eGFR systematically misleads in lean, muscular patients and endurance athletes. Cystatin C gives an independent confirmation that doesn't depend on muscle mass.", note: 'For active, health-optimizing patients, this matters more than most physicians realize.' },
+  { cat: 'Opt-in · With counseling', tone: 'optin', title: 'APOE Genotype', tag: 'How your brain ages, and how you respond to dietary fat.', body: 'Your APOE variant affects how you metabolize dietary fat, how we think about cardiovascular management, and how we approach dementia prevention. APOE ε4 carriers require meaningfully different strategies.', note: 'GINA protects employment and health insurance. It does NOT protect life, long-term care, or disability insurance. We discuss this before testing.' },
+  { cat: 'Inflammation', tone: 'inflammation', title: 'GlycA', tag: 'A more stable inflammation signal than CRP.', body: 'Measured as part of the NMR LipoProfile, GlycA reflects a longer-term inflammation signal less susceptible to acute spikes from recent illness or intense training that can temporarily distort hs-CRP.', note: 'Provides a cleaner trend line across the year.' },
+];
+
+const outcomes = [
+  { title: 'Your true cardiovascular risk — not a surrogate', body: "Coronary calcium, NMR particle counts, ApoB, and Lp(a) together give a far more accurate cardiovascular picture than any standard lipid panel. You'll know your actual risk and have a clear protocol for managing it." },
+  { title: 'A full-body structural baseline before symptoms arise', body: "The Prenuvo MRI creates a longitudinal record of your internal anatomy. If something changes, you have a reference point. Most of what's found in first-time scans would otherwise remain undetected until symptomatic." },
+  { title: 'Objective fitness benchmarks that compound over years', body: "VO₂ max and DEXA body composition measured consistently tell you whether your training, nutrition, and recovery are actually working — and in which direction you're trending over time." },
+  { title: 'A hormonal picture aligned with how you perform', body: "Not just whether you're 'in range' — but whether your full hormonal environment is optimized for energy, body composition, sleep quality, cognitive performance, and libido." },
+  { title: "Real-time metabolic insight — and what's driving it", body: 'Six weeks of continuous glucose data across three periods, read alongside fasting insulin and metabolic bloodwork, paired with a gut microbiome panel. The combination surfaces dysfunction years before standard screening flags anything.' },
+  { title: 'A physician who operates the whole system', body: 'The value of the Clarity Program is not any individual test — it is a physician who reads your MRI, labs, CGM patterns, DEXA, and VO₂ together, across time, and tells you what it means for you specifically.' },
+];
+
+const lifestyleCards = [
+  { title: 'Lifestyle as first-line medicine', body: "Nutrition, exercise prescription, sleep optimization, and stress physiology aren't adjuncts — they're the intervention. We build them into your plan with the same specificity we apply to lab targets." },
+  { title: 'Medication when the evidence is clear', body: "Some conditions respond best or most safely to pharmacological treatment. We don't avoid medication ideologically. We use it judiciously, explain the reasoning, and monitor it at every draw." },
+  { title: 'Active deprescribing as health improves', body: "If you start the program on medications that were prescribed reactively, we actively evaluate whether they're still necessary as your biomarkers improve. Reducing a medication when it's no longer needed is a clinical goal, not an afterthought." },
+];
+
+const forList = [
+  'People who take their health seriously and want a physician program structured around prevention — more signal, real follow-through, a doctor who stays with you',
+  "Anyone who's done a one-time physical or ordered their own labs and found the data valuable but disconnected from an ongoing care relationship",
+  'Those who already track sleep, nutrition, or fitness with wearables and want a physician who can read that data in full clinical context',
+  "People with family history of cardiovascular disease, cancer, or metabolic conditions who want to be working a decade ahead of what's coming",
+  'Anyone who values a primary care relationship built around prevention — not acute visits when something goes wrong',
+];
+const notList = [
+  'People primarily looking for a convenient annual check-in — the standard FFM membership is a better fit',
+  'Those who prefer to receive test results and interpret them independently, without physician guidance',
+  "Anyone not ready to engage meaningfully across the program's five structured milestones throughout the year",
+];
+
+const comparisons = [
+  { title: 'vs. Executive physicals', sub: 'Mayo / Cleveland / Penn', body: '$4,000–$8,000 for a two-day program. Outstanding diagnostics, followed by a flight home and no ongoing physician relationship. You get a report. We give you a year.', quote: '"The best single-day assessment money can buy — and then you\'re on your own."' },
+  { title: 'vs. Longevity clinics', sub: 'Fountain Life / Human Longevity / Next Health', body: '$10,500–$85,000/year for advanced diagnostics and specialist access. Clinically impressive. No primary care relationship. No physician who knows you across acute and chronic care.', quote: '"World-class technology. No one to call when you\'re actually sick."' },
+  { title: 'vs. DIY testing', sub: 'Function Health / InsideTracker / Lifeforce', body: '$365–$2,000/year for biomarker panels with algorithm-generated guidance. No imaging. No physician oversight. No ability to prescribe, refer, or follow through when something surfaces.', quote: '"Great data. No one accountable for what you do with it."' },
+];
+
 ---
 
 <MainLayout
@@ -87,1513 +208,509 @@ const faqs = [
   canonical="https://www.forwardfamilymedicine.com/clarity/"
   schema={[breadcrumb, claritySchema]}
 >
-  <div class="clarity-page">
-
-    <!-- SECTION 1 — HERO -->
-    <section class="clarity-hero">
-      <BotanicalGraphic variant="layered" class="clarity-botanical" />
-      <div class="clarity-container clarity-hero__grid">
-        <div class="clarity-hero__text">
-          <p class="clarity-eyebrow">The Clarity Program · Forward Family Medicine</p>
-          <h1 class="clarity-hero__h1">Your health needs a system, not a schedule.</h1>
-          <p class="clarity-hero__sub">The Clarity Program is a physician-led longitudinal health operating system — continuous monitoring, structured diagnostics, and a physician who reads everything together, tracks how it changes over time, and acts on what it finds. Not a one-time event. Not a dashboard. A system running on your behalf, all year.</p>
-          <div class="clarity-hero__ctas">
-            <a href="/new-patients/?source=clarity#request" class="clarity-btn clarity-btn--dark">Schedule an inquiry call</a>
-            <a href="#how" class="clarity-btn clarity-btn--ghost-dark">See how it works →</a>
-          </div>
-        </div>
-        <div class="clarity-hero__sidebar">
-          <p class="clarity-sidebar__label">Annual membership</p>
-          <p class="clarity-sidebar__price">$9,600</p>
-          <p class="clarity-sidebar__period">Paid annually · HSA-eligible</p>
-          <ul class="clarity-sidebar__list">
-            <li>Prenuvo whole-body MRI at enrollment</li>
-            <li>4 advanced biomarker draws — 85–63 results each</li>
-            <li>Gut microbiome panel at enrollment</li>
-            <li>6 weeks CGM monitoring across the year</li>
-            <li>DEXA body composition, 2×/year</li>
-            <li>VO₂ max testing, 2×/year</li>
-            <li>Coronary calcium score, every 3 years</li>
-            <li>Full FFM membership included</li>
-          </ul>
-          <div class="clarity-sidebar__ctas">
-            <a href="/new-patients/?source=clarity#request" class="clarity-btn clarity-btn--green">Schedule an inquiry call</a>
-            <a href="#how" class="clarity-btn clarity-btn--ghost-light">See what's included →</a>
-          </div>
+  <!-- Hero: copy left, annual-membership card right -->
+  <section class="cl-hero">
+    <div class="rd-wrap">
+    <nav class="cl-crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/services/">Services</a> <span aria-hidden="true">›</span> <span>The Clarity Program</span>
+    </nav>
+    <div class="cl-hero__grid">
+      <div class="cl-hero__copy">
+        <h1 class="cl-hero__h1 rd-serif">Your health needs a system, not a schedule.</h1>
+        <p class="cl-hero__sub">The Clarity Program is a physician-led longitudinal health operating system — continuous monitoring, structured diagnostics, and a physician who reads everything together, tracks how it changes over time, and acts on what it finds. Not a one-time event. Not a dashboard. A system running on your behalf, all year.</p>
+        <div class="cl-ctas">
+          <a href={CTA} class="btn-forest">Schedule an inquiry call</a>
+          <a href="#how" class="rd-link">See how it works →</a>
         </div>
       </div>
-    </section>
+      <SageCard class="cl-card">
+        <p class="rd-eyebrow">Annual membership</p>
+        <p class="cl-card__price rd-serif">$9,600</p>
+        <p class="cl-card__period">Paid annually · HSA-eligible</p>
+        <ul class="cl-card__list">
+          {included.map(i => <li>{i}</li>)}
+        </ul>
+        <a href={CTA} class="btn-forest cl-card__btn">Schedule an inquiry call</a>
+        <a href="#how" class="rd-link cl-card__link">See what's included →</a>
+      </SageCard>
+    </div>
+    </div>
+  </section>
 
-    <!-- SECTION 2 — PROBLEM -->
-    <section class="clarity-problem">
-      <div class="clarity-container clarity-problem__grid">
-        <div class="clarity-problem__left">
-          <p class="clarity-eyebrow">Why typical care falls short</p>
-          <h2 class="clarity-h2">The problem isn't access to data. It's that nothing connects.</h2>
-          <p class="clarity-body">You've probably pieced together a health routine that's better than most. But piecing things together is the problem. When your physician, your labs, your imaging, your CGM, and your fitness data don't connect — and no one is accountable for reading them as a system — you're not getting a picture. You're getting fragments.</p>
-        </div>
-        <div class="clarity-problem__right">
-          <div class="clarity-problem-card">
-            <p class="clarity-problem-card__label">Executive physicals</p>
-            <h3 class="clarity-h3">A full day of testing. Then silence for twelve months.</h3>
-            <p class="clarity-body">Valuable data, no follow-through. A results binder doesn't adjust your protocol when your biomarkers shift. A physician who knows your history does.</p>
-          </div>
-          <div class="clarity-problem-card">
-            <p class="clarity-problem-card__label">DIY testing platforms</p>
-            <h3 class="clarity-h3">160 biomarkers and a dashboard. But no one to call.</h3>
-            <p class="clarity-body">Function Health, InsideTracker, and similar services surface data efficiently. Without clinical interpretation, a number outside the reference range produces anxiety, not action.</p>
-          </div>
-          <div class="clarity-problem-card">
-            <p class="clarity-problem-card__label">Traditional primary care</p>
-            <h3 class="clarity-h3">Twenty minutes a year with a doctor you rarely see.</h3>
-            <p class="clarity-body">A physician seeing 25 patients a day cannot read your VO₂ trends, review your imaging, and connect it to your bloodwork. The structure of standard care makes that impossible.</p>
-          </div>
-        </div>
+  <!-- Problem -->
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">The problem isn't access to data. It's that nothing connects.</h2>
+        <p class="rd-copy">You've probably pieced together a health routine that's better than most. But piecing things together is the problem. When your physician, your labs, your imaging, your CGM, and your fitness data don't connect — and no one is accountable for reading them as a system — you're not getting a picture. You're getting fragments.</p>
       </div>
-    </section>
-
-    <!-- SECTION 3 — DIFFERENTIATOR -->
-    <section class="clarity-diff">
-      <div class="clarity-container">
-        <div class="clarity-diff__intro">
-          <p class="clarity-eyebrow">What makes this different</p>
-          <h2 class="clarity-h2">Four inputs. One operating system. One physician accountable for all of it.</h2>
-          <p class="clarity-diff__sub">The Clarity Program isn't a menu of diagnostics. It's a closed-loop system — each data source is read in the context of the others, by the same physician, across time. That's what turns measurement into medicine.</p>
-        </div>
-        <div class="clarity-diff__grid">
-          <div class="clarity-diff-card">
-            <span class="clarity-diff-card__num">01</span>
-            <h3 class="clarity-h3">Structural imaging — what bloodwork cannot see</h3>
-            <p class="clarity-body">The Prenuvo whole-body MRI screens 500+ conditions across 33 organ systems — brain, spine, organs, vasculature — before symptoms appear. Dr. Bigley reviews findings with you directly and coordinates any follow-through. This is the only input that reveals what's structurally happening inside your body right now.</p>
-            <p class="clarity-diff-card__stat">14% of first-time Prenuvo members discover a clinically significant finding they didn't know existed.</p>
+      <div class="cl-short" data-reveal>
+        {shortfalls.map(s => (
+          <div class="cl-short__row">
+            <p class="rd-eyebrow cl-short__label">{s.label}</p>
+            <div>
+              <h3 class="cl-short__h3 rd-serif">{s.title}</h3>
+              <p class="cl-small">{s.body}</p>
+            </div>
           </div>
-          <div class="clarity-diff-card">
-            <span class="clarity-diff-card__num">02</span>
-            <h3 class="clarity-h3">Biomarkers and gut health — interpreted in context, four times a year</h3>
-            <p class="clarity-body">Over 60 blood markers across cardiovascular risk, hormones, metabolic health, inflammation, and organ function — reviewed at enrollment, month 3, and month 9. Paired with a gut microbiome panel at enrollment that maps your bacterial diversity, inflammatory species, and digestive function.</p>
-            <p class="clarity-diff-card__stat">CGM data is read alongside bloodwork at each check-in — real-time glucose and bloodwork together tell a far more complete metabolic story.</p>
-          </div>
-          <div class="clarity-diff-card">
-            <span class="clarity-diff-card__num">03</span>
-            <h3 class="clarity-h3">Continuous glucose monitoring — metabolic data between visits</h3>
-            <p class="clarity-body">Six weeks of CGM data distributed across three 2-week windows, timed to align with your lab check-ins. While bloodwork captures a single moment, CGM tracks how your glucose actually behaves — across meals, sleep, stress, and exercise — over days.</p>
-            <p class="clarity-diff-card__stat">Insulin resistance is detectable by CGM years before it appears on standard diabetes screening.</p>
-          </div>
-          <div class="clarity-diff-card">
-            <span class="clarity-diff-card__num">04</span>
-            <h3 class="clarity-h3">Physical performance — measured as a clinical vital sign</h3>
-            <p class="clarity-body">VO₂ max is the strongest independent predictor of all-cause mortality in the medical literature — stronger than blood pressure, cholesterol, or smoking status. DEXA body composition tracks lean mass, visceral fat, and bone density with the precision BMI was never designed to provide. Both tested twice yearly.</p>
-            <p class="clarity-diff-card__stat">Cardiorespiratory fitness is more predictive of longevity than any single biomarker we measure.</p>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 4 — CADENCE -->
-    <section class="clarity-cadence" id="how">
-      <div class="clarity-container">
-        <p class="clarity-eyebrow clarity-eyebrow--green">How the operating system runs</p>
-        <h2 class="clarity-h2 clarity-h2--white">Four structured milestones. Continuous monitoring between them.</h2>
-        <div class="clarity-cadence__grid">
+  <!-- Four inputs -->
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <div class="rd-stack cl-intro">
+        <h2 class="rd-h2">Four inputs. One operating system. One physician accountable for all of it.</h2>
+        <p class="rd-copy">The Clarity Program isn't a menu of diagnostics. It's a closed-loop system — each data source is read in the context of the others, by the same physician, across time. That's what turns measurement into medicine.</p>
+      </div>
+      <div class="cl-cards cl-cards--2" data-reveal>
+        {inputs.map(i => (
+          <div class="cl-card-item">
+            <h3 class="cl-card-item__h3 rd-serif">{i.title}</h3>
+            <p class="cl-small">{i.body}</p>
+            <p class="cl-note cl-note--gold">{i.stat}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-          <div class="clarity-cadence-col clarity-cadence-col--highlight">
-            <p class="clarity-cadence-col__title">Month 0 — Enrollment</p>
-            <h3 class="clarity-cadence-col__h3">Foundation</h3>
-            <ul class="clarity-cadence-col__list">
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">3-hour new patient visit</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Prenuvo whole-body MRI</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Full biomarker panel (~85 results)</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Gut microbiome panel</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">2-week CGM baseline period</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">DEXA body composition</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">VO₂ max baseline</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--dim">Coronary calcium score if due</li>
+  <!-- Timeline band -->
+  <section class="cl-band" id="how">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 cl-band__h2">Four structured milestones. Continuous monitoring between them.</h2>
+      <div class="cl-tl" data-reveal>
+        {milestones.map(m => (
+          <div class:list={['cl-ms', { 'is-now': m.now }]}>
+            <p class="rd-eyebrow cl-ms__when">{m.when}</p>
+            <p class="cl-ms__name rd-serif">{m.name}</p>
+            <ul class="cl-ms__list">
+              {m.items.map(([t, o]) => <li class:list={{ o }}>{t}</li>)}
             </ul>
           </div>
-
-          <div class="clarity-cadence-col">
-            <p class="clarity-cadence-col__title">Month 3</p>
-            <h3 class="clarity-cadence-col__h3">Response check</h3>
-            <ul class="clarity-cadence-col__list">
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">2-week CGM period</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Lab check-in (~43 results)</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--dim">Intervention response confirmed</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--dim">Medication safety reviewed</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Physician review visit</li>
-            </ul>
-          </div>
-
-          <div class="clarity-cadence-col">
-            <p class="clarity-cadence-col__title">Month 6</p>
-            <h3 class="clarity-cadence-col__h3">Semi-annual expansion</h3>
-            <ul class="clarity-cadence-col__list">
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">DEXA — second scan</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">VO₂ max — follow-up test</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Lab check-in (~63 results)</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--dim">Body comp vs. baseline</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Physician review visit</li>
-            </ul>
-          </div>
-
-          <div class="clarity-cadence-col clarity-cadence-col--highlight">
-            <p class="clarity-cadence-col__title">Month 9</p>
-            <h3 class="clarity-cadence-col__h3">Drift check</h3>
-            <ul class="clarity-cadence-col__list">
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">2-week CGM period</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Lab check-in (~55 results)</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--dim">CGM + bloodwork read together</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Physician review visit</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">12-month health blueprint</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Year 2 renewal conversation</li>
-            </ul>
-          </div>
-
-          <div class="clarity-cadence-col">
-            <p class="clarity-cadence-col__title">Upon renewal</p>
-            <h3 class="clarity-cadence-col__h3">Year 2 begins</h3>
-            <ul class="clarity-cadence-col__list">
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Prenuvo MRI — repeated</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Full lab draw (~80+ results)</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">Gut microbiome — repeated</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">DEXA + VO₂ max baseline</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--bright">2-week CGM baseline</li>
-              <li class="clarity-cadence-col__item clarity-cadence-col__item--dim">One-time markers excluded — already in your record</li>
-            </ul>
-          </div>
-
-        </div>
-        <div class="clarity-cadence__footer">
-          Between every milestone: unlimited same-day visits, direct physician contact, specialist coordination, in-office procedures, and wholesale medications — included in your membership.
-        </div>
+        ))}
       </div>
-    </section>
+      <p class="cl-band__foot">Between every milestone: unlimited same-day visits, direct physician contact, specialist coordination, in-office procedures, and wholesale medications — included in your membership.</p>
+    </div>
+  </section>
 
-    <!-- SECTION 5 — ANCHOR BIOMARKERS -->
-    <section class="clarity-anchors">
-      <div class="clarity-container">
-        <p class="clarity-eyebrow">The numbers that matter most</p>
-        <h2 class="clarity-h2">Five anchor biomarkers. Tracked at every draw, trended every year.</h2>
-        <p class="clarity-anchors__intro">These are your longitudinal health record — the first numbers your physician reviews at every visit, with trend context from every prior draw in your program.</p>
-        <div class="clarity-anchors__grid">
-
-          <div class="clarity-anchor-card">
-            <p class="clarity-anchor-card__marker">ApoB</p>
-            <h3 class="clarity-h3">The atherogenic particle count</h3>
-            <p class="clarity-body">More accurate than cholesterol. Counts every particle capable of causing arterial disease — this is the number we treat to, not LDL-C.</p>
-            <div class="clarity-anchor-card__target">
-              <span class="clarity-anchor-card__target-label">Target</span>
-              &lt;80 mg/dL primary prevention / &lt;65 moderate risk / &lt;55 with ASCVD or elevated Lp(a)
-            </div>
-          </div>
-
-          <div class="clarity-anchor-card">
-            <p class="clarity-anchor-card__marker">Fasting Insulin</p>
-            <h3 class="clarity-h3">The metabolic early-warning system</h3>
-            <p class="clarity-body">Detects insulin resistance 5–10 years before HbA1c moves. The single biggest early-detection delta between Clarity and standard primary care.</p>
-            <div class="clarity-anchor-card__target">
-              <span class="clarity-anchor-card__target-label">Target</span>
-              &lt;8 µIU/mL / HOMA-IR &lt;1.5
-            </div>
-          </div>
-
-          <div class="clarity-anchor-card">
-            <p class="clarity-anchor-card__marker">HbA1c</p>
-            <h3 class="clarity-h3">Your 3-month blood sugar memory</h3>
-            <p class="clarity-body">A rolling average of glucose control over 90 days — held to a tighter standard than conventional medicine considers normal.</p>
-            <div class="clarity-anchor-card__target">
-              <span class="clarity-anchor-card__target-label">Target</span>
-              &lt;5.4% (stricter than ADA "normal")
-            </div>
-          </div>
-
-          <div class="clarity-anchor-card">
-            <p class="clarity-anchor-card__marker">hs-CRP</p>
-            <h3 class="clarity-h3">The whole-body inflammation thermostat</h3>
-            <p class="clarity-body">Chronic low-grade inflammation is the shared mechanism behind cardiovascular disease, cognitive decline, and accelerated aging.</p>
-            <div class="clarity-anchor-card__target">
-              <span class="clarity-anchor-card__target-label">Target</span>
-              &lt;1.0 mg/L
-            </div>
-          </div>
-
-          <div class="clarity-anchor-card">
-            <p class="clarity-anchor-card__marker">Vitamin D</p>
-            <h3 class="clarity-h3">The nutrient with the highest response-to-intervention ratio</h3>
-            <p class="clarity-body">Almost everyone can move this number meaningfully within 90 days. Tested at seasonal intervals — not quarterly, when it's mostly noise.</p>
-            <div class="clarity-anchor-card__target">
-              <span class="clarity-anchor-card__target-label">Target</span>
-              40–60 ng/mL
-            </div>
-          </div>
-
-        </div>
+  <!-- Anchor biomarkers (no target values) -->
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <div class="rd-stack cl-intro">
+        <h2 class="rd-h2">Five anchor biomarkers. Tracked at every draw, trended every year.</h2>
+        <p class="rd-copy">These are your longitudinal health record — the first numbers your physician reviews at every visit, with trend context from every prior draw in your program.</p>
       </div>
-    </section>
-
-    <!-- SECTION 6 — LAB DRAWS -->
-    <section class="clarity-draws">
-      <div class="clarity-container">
-        <p class="clarity-eyebrow clarity-eyebrow--green">The 12-month draw cadence</p>
-        <h2 class="clarity-h2 clarity-h2--white">Timed to biology, not the calendar.</h2>
-        <p class="clarity-draws__intro">Each draw is purposeful — every result answers a specific clinical question, and every number your physician reviews has a clear 'because of this, we will…' attached. Across your first year, that's nearly 250 individual biomarker results — with physician interpretation on every one.</p>
-
-        <div class="clarity-draws__grid">
-
-          <div class="clarity-draw-card clarity-draw-card--tinted">
-            <div class="clarity-draw-card__header">
-              <p class="clarity-draw-card__meta">~85+ results · One-time lifetime markers · Prenuvo MRI</p>
-              <h3 class="clarity-h3 clarity-h3--white">Month 0 Baseline</h3>
-              <p class="clarity-draw-card__quote">Your comprehensive enrollment visit. Every longitudinal reference point for your Clarity program, your Prenuvo whole-body MRI, gut microbiome baseline, and the lifetime genetic markers you'll know forever — all at the start.</p>
-            </div>
-            <div class="clarity-draw-card__categories">
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">Metabolic &amp; Organ Reserve</p>
-                <p class="clarity-draw-category__desc">A comprehensive window into how your liver, kidneys, blood, and blood sugar are performing — including markers most panels skip that predict metabolic risk years before disease appears.</p>
-              </div>
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">Advanced Cardiovascular</p>
-                <p class="clarity-draw-category__desc">Beyond standard cholesterol — particle counts, atherogenic particle burden, inflammation markers, and a one-time genetic cardiovascular risk marker that most physicians have never ordered.</p>
-              </div>
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">Hormones</p>
-                <p class="clarity-draw-category__desc">A complete hormonal baseline — thyroid (including active and inactive forms), sex hormones with gold-standard assay methodology, adrenal markers, and growth factors. Tailored by sex and age.</p>
-              </div>
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">Nutritional Status</p>
-                <p class="clarity-draw-category__desc">Key micronutrients that affect energy, immune function, cardiovascular risk, and cognitive performance — measured at levels optimized for performance, not just above the clinical floor.</p>
-              </div>
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">One-Time Genetic Markers</p>
-                <p class="clarity-draw-category__desc">Blood typing and an optional cardiovascular and cognitive risk genotype — measured once, known forever.</p>
-              </div>
-            </div>
+      <div class="cl-anch" data-reveal>
+        {anchors.map(a => (
+          <div class="cl-anch__item">
+            <h3 class="cl-anch__marker rd-serif">{a.marker}</h3>
+            <p class="cl-anch__title">{a.title}</p>
+            <p class="cl-small">{a.body}</p>
           </div>
-
-          <div class="clarity-draw-card">
-            <div class="clarity-draw-card__header">
-              <p class="clarity-draw-card__meta">~43 results · Intervention and safety focus</p>
-              <h3 class="clarity-h3 clarity-h3--white">Month 3 Response check</h3>
-              <p class="clarity-draw-card__quote">Ninety days is the ideal window to answer: is what we started working, and is it safe? Every result here is time-sensitive.</p>
-            </div>
-            <div class="clarity-draw-card__categories">
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">What We're Checking</p>
-                <p class="clarity-draw-category__desc">Metabolic response to any interventions started at enrollment. Cardiovascular markers confirming treatment targets are moving. Organ safety. Blood sugar trajectory at the first meaningful checkpoint.</p>
-              </div>
-              <div class="clarity-draw-note">
-                Nutritional markers and advanced lipid particle counts are intentionally held until Month 6 — they require more time to reflect real change. Testing them at 90 days produces noise, not signal.
-              </div>
-            </div>
-          </div>
-
-          <div class="clarity-draw-card">
-            <div class="clarity-draw-card__header">
-              <p class="clarity-draw-card__meta">~63 results · Richest mid-year draw</p>
-              <h3 class="clarity-h3 clarity-h3--white">Month 6 Semi-annual expansion</h3>
-              <p class="clarity-draw-card__quote">The most comprehensive follow-up draw of the year. Slow-turnover markers have finally stabilized enough to be meaningful.</p>
-            </div>
-            <div class="clarity-draw-card__categories">
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">What We're Checking</p>
-                <p class="clarity-draw-category__desc">Full cardiovascular panel including advanced particle analysis. Metabolic markers with trend context from Month 3. Nutritional status — particularly Vitamin D timed to seasonal low and Omega-3 index which requires 120 days to reflect dietary changes.</p>
-              </div>
-              <p class="clarity-draw-card__addl">Hormone panel added for members on active therapy or with Month 0 abnormals being treated.</p>
-            </div>
-          </div>
-
-          <div class="clarity-draw-card">
-            <div class="clarity-draw-card__header">
-              <p class="clarity-draw-card__meta">~55 results · Pre-annual trajectory lock</p>
-              <h3 class="clarity-h3 clarity-h3--white">Month 9 Drift check</h3>
-              <p class="clarity-draw-card__quote">A focused pre-annual checkpoint. We confirm the trajectory from Month 6 holds, catch any drift, and adjust anything heading in the wrong direction.</p>
-            </div>
-            <div class="clarity-draw-card__categories">
-              <div class="clarity-draw-category">
-                <p class="clarity-draw-category__label">What We're Checking</p>
-                <p class="clarity-draw-category__desc">Core metabolic and cardiovascular markers with three-draw trend context. Advanced lipid particle analysis. Organ function and inflammation. Additional markers added on clinical indication — nothing routine that hasn't earned its place by this point.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="clarity-draws__renewal">
-          <div class="clarity-draws__renewal-grid">
-            <div class="clarity-draws__renewal-col">
-              <p class="clarity-draws__renewal-eyebrow">Upon renewal</p>
-              <p class="clarity-draws__renewal-title">Year 2 enrollment</p>
-              <p class="clarity-draws__renewal-meta">~80+ results</p>
-              <p class="clarity-draws__renewal-sub">Year 2 begins</p>
-            </div>
-            <div class="clarity-draws__renewal-col">
-              <p class="clarity-draws__renewal-label">The renewal draw — everything from Month 0, minus what's already known</p>
-              <p class="clarity-body clarity-body--muted">Renewing members start Year 2 with a full enrollment draw — Prenuvo MRI, comprehensive labs, gut microbiome, DEXA, VO₂ max, and CGM baseline. The difference from Year 1: the one-time lifetime markers don't need repeating. Everything else resets as a new longitudinal anchor, now read against Year 1 data.</p>
-              <p class="clarity-draws__renewal-note">The 12-month health blueprint delivered at your Month 9 visit makes the case for renewal.</p>
-            </div>
-            <div class="clarity-draws__renewal-col">
-              <p class="clarity-draws__renewal-label">Why the data compounds</p>
-              <p class="clarity-body clarity-body--muted">A single year of Clarity data tells you where you are. Two years tells you which direction you're moving and how fast. The longitudinal record doesn't reset on renewal — it deepens.</p>
-              <p class="clarity-draws__renewal-small">Members who renew move from establishing baselines to tracking trajectories. That shift is where the program's real diagnostic power comes from.</p>
-            </div>
-          </div>
-        </div>
-
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 7 — PREMIUM MARKERS -->
-    <section class="clarity-markers">
-      <div class="clarity-container">
-        <p class="clarity-eyebrow">Why it's different from standard care</p>
-        <h2 class="clarity-h2">The markers most physicians still don't order.</h2>
-        <p class="clarity-markers__intro">Each of these represents a significant gap between what standard primary care tests and what advanced cardiovascular and metabolic medicine requires.</p>
-        <div class="clarity-markers__grid">
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--cardio">Cardiovascular</span>
-            <h3 class="clarity-h3">Lipoprotein(a)</h3>
-            <p class="clarity-marker-card__tagline">The genetic risk factor most doctors still miss.</p>
-            <p class="clarity-body">Measured once in your lifetime. About 90% genetic. Roughly 1 in 5 adults has an elevated level that dramatically increases cardiovascular risk independent of LDL cholesterol.</p>
-            <p class="clarity-marker-card__note">New targeted therapies are in late-stage trials. We measure it now so your care plan is ready when they arrive.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--cardio">Cardiovascular</span>
-            <h3 class="clarity-h3">NMR LipoProfile</h3>
-            <p class="clarity-marker-card__tagline">We don't just measure your cholesterol. We count the particles.</p>
-            <p class="clarity-body">Two people with identical LDL cholesterol can have completely different heart disease risk depending on particle size and number. NMR also gives us LP-IR score (insulin resistance at the lipoprotein level) and GlycA, a next-generation inflammation marker more stable than CRP.</p>
-            <p class="clarity-marker-card__note">Standard panels measure the amount of cholesterol carried. NMR measures the number of vehicles carrying it.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--cardio">Cardiovascular</span>
-            <h3 class="clarity-h3">ApoB</h3>
-            <p class="clarity-marker-card__tagline">One number that supersedes traditional cholesterol.</p>
-            <p class="clarity-body">Counts every atherogenic particle in your blood. The National Lipid Association (2024) and ACC/AHA (2022) both identify ApoB as the preferred cardiovascular target over LDL-C. This is the number we treat to.</p>
-            <p class="clarity-marker-card__note">Your LDL-C can look fine while your ApoB is elevated. We track both, but we act on ApoB.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--metabolic">Metabolic</span>
-            <h3 class="clarity-h3">Fasting Insulin</h3>
-            <p class="clarity-marker-card__tagline">The number your previous doctor never checked.</p>
-            <p class="clarity-body">Insulin resistance develops silently for years before HbA1c moves. Fasting insulin is the earliest detectable signal — it can flag a metabolic problem a decade before standard diabetes screening would catch it.</p>
-            <p class="clarity-marker-card__note">The single biggest early-detection delta between Clarity and a standard primary care panel.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--performance">Performance</span>
-            <h3 class="clarity-h3">Omega-3 Index</h3>
-            <p class="clarity-marker-card__tagline">The fatty acid composition of your red blood cell membranes.</p>
-            <p class="clarity-body">A target above 8% is cardiovascularly protective. Below 4% carries the same cardiac risk as smoking. Most people land between 4 and 6%. Responds to diet or supplementation within 120 days — which is why we test it at Month 6, not Month 3.</p>
-            <p class="clarity-marker-card__note">Your omega-3 index reflects actual membrane incorporation — not what you ate last week.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--kidney">Kidney function</span>
-            <h3 class="clarity-h3">Cystatin C with eGFR</h3>
-            <p class="clarity-marker-card__tagline">We measure kidney function two ways.</p>
-            <p class="clarity-body">Standard creatinine-based eGFR systematically misleads in lean, muscular patients and endurance athletes. Cystatin C gives an independent confirmation that doesn't depend on muscle mass.</p>
-            <p class="clarity-marker-card__note">For active, health-optimizing patients, this matters more than most physicians realize.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--optin">Opt-in · With counseling</span>
-            <h3 class="clarity-h3">APOE Genotype</h3>
-            <p class="clarity-marker-card__tagline">How your brain ages, and how you respond to dietary fat.</p>
-            <p class="clarity-body">Your APOE variant affects how you metabolize dietary fat, how we think about cardiovascular management, and how we approach dementia prevention. APOE ε4 carriers require meaningfully different strategies.</p>
-            <p class="clarity-marker-card__note">GINA protects employment and health insurance. It does NOT protect life, long-term care, or disability insurance. We discuss this before testing.</p>
-          </div>
-
-          <div class="clarity-marker-card">
-            <span class="clarity-marker-card__badge clarity-marker-card__badge--inflammation">Inflammation</span>
-            <h3 class="clarity-h3">GlycA</h3>
-            <p class="clarity-marker-card__tagline">A more stable inflammation signal than CRP.</p>
-            <p class="clarity-body">Measured as part of the NMR LipoProfile, GlycA reflects a longer-term inflammation signal less susceptible to acute spikes from recent illness or intense training that can temporarily distort hs-CRP.</p>
-            <p class="clarity-marker-card__note">Provides a cleaner trend line across the year.</p>
-          </div>
-
-        </div>
+  <!-- 12-month draw cadence -->
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap">
+      <div class="rd-stack cl-intro">
+        <h2 class="rd-h2">Timed to biology, not the calendar.</h2>
+        <p class="rd-copy">Each draw is purposeful — every result answers a specific clinical question, and every number your physician reviews has a clear 'because of this, we will…' attached. Across your first year, that's nearly 250 individual biomarker results — with physician interpretation on every one.</p>
       </div>
-    </section>
-
-    <!-- SECTION 8 — OUTCOMES -->
-    <section class="clarity-outcomes">
-      <div class="clarity-container">
-        <p class="clarity-eyebrow">What the operating system delivers</p>
-        <h2 class="clarity-h2">Not just data. A continuously updated picture of your health.</h2>
-        <div class="clarity-outcomes__grid">
-
-          <div class="clarity-outcome-item">
-            <div class="clarity-outcome-item__bar"></div>
-            <h3 class="clarity-h3">Your true cardiovascular risk — not a surrogate</h3>
-            <p class="clarity-body">Coronary calcium, NMR particle counts, ApoB, and Lp(a) together give a far more accurate cardiovascular picture than any standard lipid panel. You'll know your actual risk and have a clear protocol for managing it.</p>
+      <div class="cl-cad">
+        {draws.map(d => (
+          <div class="cl-cad__row" data-reveal>
+            <div class="cl-cad__head">
+              <p class="cl-cad__month rd-serif">{d.month}</p>
+              <p class="cl-cad__name">{d.name}</p>
+              <p class="cl-cad__meta">{d.meta}</p>
+            </div>
+            <p class="cl-cad__lede">{d.lede}</p>
+            <div class="cl-cad__sub">
+              {d.cats.map(([label, text]) => (
+                <div>
+                  <p class="cl-label">{label}</p>
+                  <p>{text}</p>
+                </div>
+              ))}
+              {d.note && <p class="cl-note cl-note--gold">{d.note}</p>}
+              {d.addl && <p class="cl-cad__addl">{d.addl}</p>}
+            </div>
           </div>
-
-          <div class="clarity-outcome-item">
-            <div class="clarity-outcome-item__bar"></div>
-            <h3 class="clarity-h3">A full-body structural baseline before symptoms arise</h3>
-            <p class="clarity-body">The Prenuvo MRI creates a longitudinal record of your internal anatomy. If something changes, you have a reference point. Most of what's found in first-time scans would otherwise remain undetected until symptomatic.</p>
+        ))}
+        <div class="cl-cad__row" data-reveal>
+          <div class="cl-cad__head">
+            <p class="cl-cad__month rd-serif">Upon renewal</p>
+            <p class="cl-cad__name">Year 2 begins</p>
+            <p class="cl-cad__meta">Year 2 enrollment · ~80+ results</p>
           </div>
-
-          <div class="clarity-outcome-item">
-            <div class="clarity-outcome-item__bar"></div>
-            <h3 class="clarity-h3">Objective fitness benchmarks that compound over years</h3>
-            <p class="clarity-body">VO₂ max and DEXA body composition measured consistently tell you whether your training, nutrition, and recovery are actually working — and in which direction you're trending over time.</p>
+          <div class="cl-cad__renew">
+            <h3 class="rd-h3">The renewal draw — everything from Month 0, minus what's already known</h3>
+            <p>Renewing members start Year 2 with a full enrollment draw — Prenuvo MRI, comprehensive labs, gut microbiome, DEXA, VO₂ max, and CGM baseline. The difference from Year 1: the one-time lifetime markers don't need repeating. Everything else resets as a new longitudinal anchor, now read against Year 1 data.</p>
+            <p>The 12-month health blueprint delivered at your Month 9 visit makes the case for renewal.</p>
           </div>
-
-          <div class="clarity-outcome-item">
-            <div class="clarity-outcome-item__bar"></div>
-            <h3 class="clarity-h3">A hormonal picture aligned with how you perform</h3>
-            <p class="clarity-body">Not just whether you're 'in range' — but whether your full hormonal environment is optimized for energy, body composition, sleep quality, cognitive performance, and libido.</p>
-          </div>
-
-          <div class="clarity-outcome-item">
-            <div class="clarity-outcome-item__bar"></div>
-            <h3 class="clarity-h3">Real-time metabolic insight — and what's driving it</h3>
-            <p class="clarity-body">Six weeks of continuous glucose data across three periods, read alongside fasting insulin and metabolic bloodwork, paired with a gut microbiome panel. The combination surfaces dysfunction years before standard screening flags anything.</p>
-          </div>
-
-          <div class="clarity-outcome-item">
-            <div class="clarity-outcome-item__bar"></div>
-            <h3 class="clarity-h3">A physician who operates the whole system</h3>
-            <p class="clarity-body">The value of the Clarity Program is not any individual test — it is a physician who reads your MRI, labs, CGM patterns, DEXA, and VO₂ together, across time, and tells you what it means for you specifically.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 9 — LIFESTYLE FIRST -->
-    <section class="clarity-lifestyle">
-      <div class="clarity-container">
-        <div class="clarity-lifestyle__intro-grid">
-          <div class="clarity-lifestyle__left">
-            <p class="clarity-eyebrow">Our clinical philosophy</p>
-            <h2 class="clarity-h2">Lifestyle changes first. Medication when genuinely necessary. Less over time, not more.</h2>
-          </div>
-          <div class="clarity-lifestyle__right">
-            <p class="clarity-body">Most medical systems are optimized for prescribing. Clarity is optimized for not needing to. When your labs surface something worth acting on, the first question we ask is what lifestyle change — in nutrition, movement, sleep, or stress — could move this number before we consider a prescription.</p>
-            <p class="clarity-body">This is where Dr. Lieberman's dual board certification in Lifestyle Medicine and culinary background become clinically meaningful. Behavioral interventions are not a consolation prize — they are the primary tool, with evidence that rivals or exceeds pharmacological options for many of the conditions we're tracking.</p>
-            <p class="clarity-body">When medication is the right answer — and sometimes it clearly is — we use it at the lowest effective dose, monitor it at every draw, and revisit whether it's still necessary as your health improves. Deprescribing is as deliberate a clinical act as prescribing.</p>
-          </div>
-        </div>
-        <div class="clarity-lifestyle__cards">
-          <div class="clarity-lifestyle-card">
-            <div class="clarity-lifestyle-card__bar"></div>
-            <h3 class="clarity-h3">Lifestyle as first-line medicine</h3>
-            <p class="clarity-body">Nutrition, exercise prescription, sleep optimization, and stress physiology aren't adjuncts — they're the intervention. We build them into your plan with the same specificity we apply to lab targets.</p>
-          </div>
-          <div class="clarity-lifestyle-card">
-            <div class="clarity-lifestyle-card__bar"></div>
-            <h3 class="clarity-h3">Medication when the evidence is clear</h3>
-            <p class="clarity-body">Some conditions respond best or most safely to pharmacological treatment. We don't avoid medication ideologically. We use it judiciously, explain the reasoning, and monitor it at every draw.</p>
-          </div>
-          <div class="clarity-lifestyle-card">
-            <div class="clarity-lifestyle-card__bar"></div>
-            <h3 class="clarity-h3">Active deprescribing as health improves</h3>
-            <p class="clarity-body">If you start the program on medications that were prescribed reactively, we actively evaluate whether they're still necessary as your biomarkers improve. Reducing a medication when it's no longer needed is a clinical goal, not an afterthought.</p>
-          </div>
-        </div>
-        <p style="margin-top:2rem; font-size:0.88rem; color:var(--ink-500); line-height:1.7; max-width:640px;">
-          For midlife women navigating perimenopause and menopause, our
-          <a href="/menopause/" style="color:var(--green-500);">Menopause Care program</a>
-          complements Clarity's longitudinal health framework — evidence-based HRT consultation,
-          symptom assessment, and cardiovascular risk management, integrated directly into your
-          primary care.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 10 — WHO IT'S FOR -->
-    <section class="clarity-who">
-      <div class="clarity-container clarity-who__grid">
-        <div class="clarity-who__for">
-          <p class="clarity-eyebrow clarity-eyebrow--green-sm">This program is designed for</p>
-          <h3 class="clarity-h3 clarity-h3--lg">People who want to stay ahead of their health — not just manage it.</h3>
-          <ul class="clarity-who__list clarity-who__list--for">
-            <li><span class="clarity-who__arrow">→</span> People who take their health seriously and want a physician program structured around prevention — more signal, real follow-through, a doctor who stays with you</li>
-            <li><span class="clarity-who__arrow">→</span> Anyone who's done a one-time physical or ordered their own labs and found the data valuable but disconnected from an ongoing care relationship</li>
-            <li><span class="clarity-who__arrow">→</span> Those who already track sleep, nutrition, or fitness with wearables and want a physician who can read that data in full clinical context</li>
-            <li><span class="clarity-who__arrow">→</span> People with family history of cardiovascular disease, cancer, or metabolic conditions who want to be working a decade ahead of what's coming</li>
-            <li><span class="clarity-who__arrow">→</span> Anyone who values a primary care relationship built around prevention — not acute visits when something goes wrong</li>
-          </ul>
-        </div>
-        <div class="clarity-who__not">
-          <p class="clarity-eyebrow clarity-eyebrow--muted">This program is not for</p>
-          <h3 class="clarity-h3 clarity-h3--lg">And what it isn't.</h3>
-          <ul class="clarity-who__list clarity-who__list--not">
-            <li><span class="clarity-who__x">✕</span> People primarily looking for a convenient annual check-in — the standard FFM membership is a better fit</li>
-            <li><span class="clarity-who__x">✕</span> Those who prefer to receive test results and interpret them independently, without physician guidance</li>
-            <li><span class="clarity-who__x">✕</span> Anyone not ready to engage meaningfully across the program's five structured milestones throughout the year</li>
-          </ul>
-          <div class="clarity-who__callout">
-            <p>If the standard membership is a better fit for where you are right now, that's a conversation worth having.</p>
-            <a href="/new-patients/?source=clarity#request" class="clarity-who__callout-link">Schedule a free meet and greet →</a>
+          <div class="cl-cad__renew">
+            <h3 class="rd-h3">Why the data compounds</h3>
+            <p>A single year of Clarity data tells you where you are. Two years tells you which direction you're moving and how fast. The longitudinal record doesn't reset on renewal — it deepens.</p>
+            <p>Members who renew move from establishing baselines to tracking trajectories. That shift is where the program's real diagnostic power comes from.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 11 — VALUE FRAMING + PRICING -->
-    <section class="clarity-pricing">
-      <div class="clarity-container">
-        <p class="clarity-eyebrow">Positioning and pricing</p>
-        <h2 class="clarity-h2">What this replaces. And what it costs.</h2>
-        <p class="clarity-pricing__intro">The Clarity Program sits between fragmented self-directed testing and the ultra-premium longevity clinics — delivering clinical rigor and a physician relationship at a price that reflects the Main Line, not Manhattan or Scottsdale.</p>
+  <!-- Markers most physicians don't order -->
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <div class="rd-stack cl-intro">
+        <h2 class="rd-h2">The markers most physicians still don't order.</h2>
+        <p class="rd-copy">Each of these represents a significant gap between what standard primary care tests and what advanced cardiovascular and metabolic medicine requires.</p>
+      </div>
+      <div class="cl-cards cl-cards--2" data-reveal>
+        {markers.map(m => (
+          <div class="cl-card-item">
+            <p class="cl-label">{m.cat}</p>
+            <h3 class="cl-card-item__h3 rd-serif">{m.title}</h3>
+            <p class="cl-tag">{m.tag}</p>
+            <p class="cl-small">{m.body}</p>
+            <p class="cl-note">{m.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-        <div class="clarity-pricing__compare">
-          <div class="clarity-compare-card">
-            <h3 class="clarity-h3">vs. Executive physicals</h3>
-            <p class="clarity-compare-card__sub">Mayo / Cleveland / Penn</p>
-            <p class="clarity-body">$4,000–$8,000 for a two-day program. Outstanding diagnostics, followed by a flight home and no ongoing physician relationship. You get a report. We give you a year.</p>
-            <p class="clarity-compare-card__quote">"The best single-day assessment money can buy — and then you're on your own."</p>
-          </div>
-          <div class="clarity-compare-card">
-            <h3 class="clarity-h3">vs. Longevity clinics</h3>
-            <p class="clarity-compare-card__sub">Fountain Life / Human Longevity / Next Health</p>
-            <p class="clarity-body">$10,500–$85,000/year for advanced diagnostics and specialist access. Clinically impressive. No primary care relationship. No physician who knows you across acute and chronic care.</p>
-            <p class="clarity-compare-card__quote">"World-class technology. No one to call when you're actually sick."</p>
-          </div>
-          <div class="clarity-compare-card">
-            <h3 class="clarity-h3">vs. DIY testing</h3>
-            <p class="clarity-compare-card__sub">Function Health / InsideTracker / Lifeforce</p>
-            <p class="clarity-body">$365–$2,000/year for biomarker panels with algorithm-generated guidance. No imaging. No physician oversight. No ability to prescribe, refer, or follow through when something surfaces.</p>
-            <p class="clarity-compare-card__quote">"Great data. No one accountable for what you do with it."</p>
-          </div>
-        </div>
+  <!-- Outcomes -->
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 cl-outcomes__h2">Not just data. A continuously updated picture of your health.</h2>
+      <TitledGrid reveal columns={3} items={outcomes} />
+    </div>
+  </section>
 
-        <div class="clarity-pricing__box">
-          <div class="clarity-pricing__box-left">
-            <p class="clarity-pricing__price">$9,600</p>
-            <p class="clarity-pricing__period">Paid annually · No enrollment fee</p>
-          </div>
-          <div class="clarity-pricing__box-right">
-            <div class="clarity-pricing__tags">
-              <span class="clarity-pricing__tag">Paid annually</span>
-              <span class="clarity-pricing__tag">HSA-eligible</span>
-              <span class="clarity-pricing__tag">No enrollment fee</span>
-              <span class="clarity-pricing__tag">Full FFM membership included</span>
-            </div>
-            <div class="clarity-pricing__ctas">
-              <a href="/new-patients/?source=clarity#request" class="clarity-btn clarity-btn--dark">Schedule an inquiry call</a>
-              <a href="#how" class="clarity-btn clarity-btn--ghost-sm">See what's included →</a>
-            </div>
-          </div>
+  <!-- Lifestyle first -->
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <div class="rd-split rd-split--eq cl-life">
+        <h2 class="rd-h2">Lifestyle changes first. Medication when genuinely necessary. Less over time, not more.</h2>
+        <div class="rd-stack">
+          <p class="rd-copy">Most medical systems are optimized for prescribing. Clarity is optimized for not needing to. When your labs surface something worth acting on, the first question we ask is what lifestyle change — in nutrition, movement, sleep, or stress — could move this number before we consider a prescription.</p>
+          <p class="rd-copy">This is where Dr. Lieberman's dual board certification in Lifestyle Medicine and culinary background become clinically meaningful. Behavioral interventions are not a consolation prize — they are the primary tool, with evidence that rivals or exceeds pharmacological options for many of the conditions we're tracking.</p>
+          <p class="rd-copy">When medication is the right answer — and sometimes it clearly is — we use it at the lowest effective dose, monitor it at every draw, and revisit whether it's still necessary as your health improves. Deprescribing is as deliberate a clinical act as prescribing.</p>
         </div>
       </div>
-    </section>
+      <TitledGrid reveal columns={3} items={lifestyleCards} class="cl-life__cards" />
+      <SageCard class="cl-meno">
+        <p>For midlife women navigating perimenopause and menopause, our <a href="/menopause/">Menopause Care program</a> complements Clarity's longitudinal health framework — evidence-based HRT consultation, symptom assessment, and cardiovascular risk management, integrated directly into your primary care.</p>
+      </SageCard>
+    </div>
+  </section>
 
-    <!-- SECTION 12 — PATIENT PROMISE -->
-    <section class="clarity-promise">
-      <div class="clarity-container clarity-promise__grid">
-        <div class="clarity-promise__left">
-          <p class="clarity-eyebrow clarity-eyebrow--muted-white">The Clarity promise</p>
-          <h2 class="clarity-h2 clarity-h2--white">Every result ends with a sentence that starts: "Because of this, we will…"</h2>
-        </div>
-        <div class="clarity-promise__right">
-          <p class="clarity-promise__quote">Your comprehensive baseline delivers 85+ individual biomarker results. Each follow-up draw adds 43 to 63 more. Over your first year in Clarity, that's nearly 250 data points tracked longitudinally — with physician interpretation on every single one.</p>
-          <p class="clarity-promise__body">The number isn't the point. Every result ends with a sentence that starts: "Because of this, we will…" That sentence — and the physician behind it — is what makes Clarity different from every testing platform, every executive physical, and every annual lab panel you've had before.</p>
+  <!-- Who it is for -->
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--eq cl-who">
+      <div class="cl-who__col">
+        <p class="rd-eyebrow">This program is designed for</p>
+        <h3 class="cl-who__h rd-serif">People who want to stay ahead of their health — not just manage it.</h3>
+        <ul class="cl-who__list cl-who__list--for">
+          {forList.map(t => <li><span aria-hidden="true">→</span>{t}</li>)}
+        </ul>
+      </div>
+      <div class="cl-who__col">
+        <p class="rd-eyebrow rd-eyebrow--muted">This program is not for</p>
+        <h3 class="cl-who__h cl-who__h--muted rd-serif">And what it isn't.</h3>
+        <ul class="cl-who__list">
+          {notList.map(t => <li><span aria-hidden="true">✕</span>{t}</li>)}
+        </ul>
+        <div class="cl-callout">
+          <p>If the standard membership is a better fit for where you are right now, that's a conversation worth having.</p>
+          <a href={CTA} class="rd-link">Schedule a free meet and greet →</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 13 — FAQ -->
-    <FAQSection
-      faqs={faqs}
-      headline="A few things worth clarifying."
-      label="Common questions"
-    />
-
-    <!-- SECTION 14 — CLOSE CTA -->
-    <section class="clarity-close">
-      <div class="clarity-container clarity-close__inner">
-        <p class="clarity-eyebrow clarity-eyebrow--green">The Clarity Program</p>
-        <h2 class="clarity-h2 clarity-h2--white">Start with a 60-minute meet and greet.</h2>
-        <p class="clarity-close__sub">No paperwork. No commitment. A conversation with one of our physicians to determine whether this program fits what you're looking for — and what it would look like in practice.</p>
-        <a href="/new-patients/?source=clarity#request" class="clarity-btn clarity-btn--green clarity-btn--lg">Schedule an inquiry call</a>
-        <p class="clarity-close__alt">
-          <a href="/membership/" class="clarity-close__alt-link">Prefer to start with the standard membership? See all plans →</a>
-        </p>
+  <!-- Positioning and pricing -->
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <div class="rd-stack cl-intro">
+        <h2 class="rd-h2">What this replaces. And what it costs.</h2>
+        <p class="rd-copy">The Clarity Program sits between fragmented self-directed testing and the ultra-premium longevity clinics — delivering clinical rigor and a physician relationship at a price that reflects the Main Line, not Manhattan or Scottsdale.</p>
       </div>
-    </section>
+      <div class="cl-cmp" data-reveal>
+        {comparisons.map(c => (
+          <div class="cl-cmp__item">
+            <h3 class="rd-h3">{c.title}</h3>
+            <p class="cl-cmp__sub">{c.sub}</p>
+            <p class="cl-small">{c.body}</p>
+            <p class="cl-cmp__quote rd-serif">{c.quote}</p>
+          </div>
+        ))}
+      </div>
+      <SageCard class="cl-price">
+        <div class="cl-price__left">
+          <p class="cl-price__n rd-serif">$9,600</p>
+          <p class="cl-card__period">Paid annually · No enrollment fee</p>
+        </div>
+        <div class="cl-price__tags">
+          <span>Paid annually</span><span>HSA-eligible</span><span>No enrollment fee</span><span class="is-strong">Full FFM membership included</span>
+        </div>
+        <div class="cl-price__ctas">
+          <a href={CTA} class="btn-forest">Schedule an inquiry call</a>
+          <a href="#how" class="rd-link">See what's included →</a>
+        </div>
+      </SageCard>
+    </div>
+  </section>
 
-  </div>
+  <!-- Promise -->
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--a">
+      <h2 class="rd-h2">Every result ends with a sentence that starts: <em>"Because of this, we will…"</em></h2>
+      <div class="rd-stack">
+        <p class="rd-copy">Your comprehensive baseline delivers 85+ individual biomarker results. Each follow-up draw adds 43 to 63 more. Over your first year in Clarity, that's nearly 250 data points tracked longitudinally — with physician interpretation on every single one.</p>
+        <p class="rd-copy">The number isn't the point. Every result ends with a sentence that starts: "Because of this, we will…" That sentence — and the physician behind it — is what makes Clarity different from every testing platform, every executive physical, and every annual lab panel you've had before.</p>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} headline="A few things worth clarifying." />
+
+  <CTABanner
+    headline="Start with a 60-minute meet and greet."
+    subhead="No paperwork. No commitment. A conversation with one of our physicians to determine whether this program fits what you're looking for — and what it would look like in practice."
+    btnText="Schedule an inquiry call"
+    btnHref={CTA}
+    btn2Text="Prefer to start with the standard membership? See all plans →"
+    btn2Href="/membership/"
+    btn2Link
+  />
 </MainLayout>
 
 <style>
-  /* ─── BASE ─────────────────────────────────────────────── */
-  .clarity-page {
-    font-family: var(--font-body);
-    color: var(--ink-900);
-  }
-
-  .clarity-container {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 clamp(20px, 5vw, 48px);
-  }
-
-  /* ─── TYPOGRAPHY HELPERS ───────────────────────────────── */
-  .clarity-eyebrow {
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--green-500);
-    margin: 0 0 0.75rem;
-  }
-  .clarity-eyebrow--green { color: var(--green-400); }
-  .clarity-eyebrow--green-sm { color: var(--green-500); }
-  .clarity-eyebrow--muted { color: var(--ink-500); }
-  .clarity-eyebrow--muted-white { color: rgba(255,255,255,0.55); }
-
-  .clarity-h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--ink-900);
-    margin: 0 0 1.25rem;
-  }
-  .clarity-h2--white { color: #fff; }
-
-  .clarity-h3 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--ink-900);
-    margin: 0 0 0.6rem;
-  }
-  .clarity-h3--white { color: #fff; }
-  .clarity-h3--lg { font-size: clamp(1.15rem, 2.5vw, 1.4rem); }
-
-  .clarity-body {
-    font-size: 0.95rem;
+  .cl-small { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
+  .cl-intro { max-width: 820px; margin-bottom: 44px; }
+  .cl-label { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-600); }
+  .cl-note {
+    margin: 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--hairline-strong);
+    font-size: 13px;
     line-height: 1.7;
-    color: var(--ink-700);
-    margin: 0 0 0.75rem;
+    font-style: italic;
+    color: var(--text-700);
   }
-  .clarity-body--muted { color: rgba(255,255,255,0.65); }
+  .cl-note--gold { border-top: 2px solid var(--gold); }
 
-  /* ─── BUTTONS ───────────────────────────────────────────── */
-  .clarity-btn {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 600;
-    padding: 0.7rem 1.4rem;
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-    white-space: nowrap;
+  /* Hero */
+  .cl-hero { background: var(--linen); padding: 80px 0 96px; }
+  .cl-crumbs { font-size: 13px; color: var(--text-600); margin-bottom: 40px; }
+  .cl-crumbs a { color: var(--text-600); }
+  .cl-crumbs a:hover { color: var(--forest); }
+  .cl-crumbs span:last-child { color: var(--text-700); }
+  .cl-hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 72px; align-items: start; }
+  .cl-hero__copy { display: flex; flex-direction: column; gap: 26px; padding-top: 12px; align-items: flex-start; }
+  .cl-hero__h1 { margin: 0; font-size: 66px; line-height: 1.02; letter-spacing: -0.018em; color: var(--forest); max-width: 12ch; }
+  .cl-hero__sub { margin: 0; font-size: 18px; line-height: 1.7; color: var(--text-900); max-width: 600px; }
+  .cl-ctas { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; margin-top: 6px; }
+  :global(.cl-card) { padding: 32px 34px 30px; gap: 0; align-items: flex-start; }
+  :global(.cl-card) > * { width: 100%; }
+  .cl-card__price { margin: 14px 0 4px; font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: var(--forest); }
+  .cl-card__period { margin: 0 0 22px; font-size: 13.5px; font-weight: 500; color: var(--sage-600); }
+  .cl-card__list { list-style: none; margin: 0 0 26px; padding: 0; }
+  .cl-card__list li { padding: 14px 0; border-top: 1px solid var(--hairline-strong); font-size: 14px; line-height: 1.6; color: var(--text-900); }
+  .cl-card__list li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  :global(.cl-card) .cl-card__btn { width: auto; align-self: flex-start; }
+  :global(.cl-card) .cl-card__link { width: auto; align-self: flex-start; margin-top: 18px; }
+
+  /* Problem */
+  .cl-short { display: flex; flex-direction: column; }
+  .cl-short__row {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 32px;
+    padding: 26px 0;
+    border-top: 1px solid var(--hairline-strong);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .clarity-btn--dark {
-    background: var(--ink-900);
-    color: #fff;
-    border: 2px solid var(--ink-900);
+  .cl-short__row:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .cl-short.on .cl-short__row { opacity: 1; transform: none; }
+  .cl-short.on .cl-short__row:nth-child(2) { transition-delay: 0.2s; }
+  .cl-short.on .cl-short__row:nth-child(3) { transition-delay: 0.4s; }
+  .cl-short__label { padding-top: 6px; }
+  .cl-short__h3 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; color: var(--forest); }
+  .cl-short__row .cl-small { font-size: 15px; }
+
+  /* Two-column card grids (inputs, markers) */
+  .cl-cards { display: grid; gap: 0 56px; }
+  .cl-cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cl-card-item {
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 32px 0 32px;
+    border-top: 1px solid var(--hairline-strong);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .clarity-btn--dark:hover { background: #1a1a1a; border-color: #1a1a1a; }
+  .cl-card-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--hairline-strong); }
+  .cl-cards.on .cl-card-item { opacity: 1; transform: none; }
+  .cl-cards.on .cl-card-item:nth-child(2) { transition-delay: 0.15s; }
+  .cl-cards.on .cl-card-item:nth-child(3) { transition-delay: 0.3s; }
+  .cl-cards.on .cl-card-item:nth-child(4) { transition-delay: 0.45s; }
+  .cl-cards.on .cl-card-item:nth-child(n+5) { transition-delay: 0.6s; }
+  .cl-card-item__h3 { margin: 0; font-size: 26px; line-height: 1.2; color: var(--forest); }
+  .cl-card-item .cl-note { margin-top: 8px; }
+  .cl-tag { margin: 0; font-size: 15px; font-weight: 600; color: var(--forest); }
 
-  .clarity-btn--green {
-    background: var(--green-500);
-    color: #fff;
-    border: 2px solid var(--green-500);
-  }
-  .clarity-btn--green:hover { background: #3D6B55; border-color: #3D6B55; }
-
-  .clarity-btn--ghost-dark {
-    background: transparent;
-    color: var(--ink-900);
-    border: 2px solid var(--ink-300);
-  }
-  .clarity-btn--ghost-dark:hover { border-color: var(--ink-700); color: var(--ink-900); }
-
-  .clarity-btn--ghost-light {
-    background: transparent;
-    color: rgba(255,255,255,0.85);
-    border: 2px solid rgba(255,255,255,0.3);
-  }
-  .clarity-btn--ghost-light:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
-
-  .clarity-btn--ghost-sm {
-    background: transparent;
-    color: var(--ink-700);
-    border: 2px solid var(--cream-300);
-    font-size: 0.85rem;
-  }
-  .clarity-btn--ghost-sm:hover { border-color: var(--ink-500); }
-
-  .clarity-btn--lg { padding: 0.9rem 2rem; font-size: 1rem; }
-
-  /* ─── SECTION 1 — HERO ──────────────────────────────────── */
-  .clarity-hero {
-    background: var(--cream-50);
-    padding: var(--section-pad) 0;
+  /* Timeline band */
+  .cl-band { background: var(--forest); color: var(--linen); padding: 96px 0 104px; }
+  .cl-band__h2 { color: var(--linen); max-width: 760px; margin-bottom: 56px; }
+  .cl-tl {
     position: relative;
-    overflow: hidden;
-  }
-  .clarity-hero__grid {
-    position: relative;
-    z-index: 1;
-  }
-  .clarity-hero__grid {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0 28px;
+    padding-top: 30px;
   }
-  .clarity-hero__h1 {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--ink-900);
-    margin: 0 0 1.25rem;
+  .cl-tl::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 5px; height: 1px;
+    background: var(--sage);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 1.4s ease 0.1s;
   }
-  .clarity-hero__sub {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--ink-700);
-    margin: 0 0 2rem;
-    max-width: 600px;
+  .cl-tl.on::before { transform: none; }
+  .cl-ms {
+    position: relative; display: flex; flex-direction: column; gap: 14px;
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .clarity-hero__ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  .cl-ms::before {
+    content: ""; position: absolute; left: 0; top: -30px; width: 11px; height: 11px; box-sizing: border-box;
+    border-radius: 50%; background: var(--forest); border: 1.5px solid var(--sage);
   }
-  .clarity-hero__sidebar {
-    background: var(--ink-900);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-  }
-  .clarity-sidebar__label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin: 0 0 0.4rem;
-  }
-  .clarity-sidebar__price {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0 0 0.25rem;
-    line-height: 1;
-  }
-  .clarity-sidebar__period {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.55);
-    margin: 0 0 1.25rem;
-  }
-  .clarity-sidebar__list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .clarity-sidebar__list li {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.45;
-    padding-left: 1rem;
-    position: relative;
-  }
-  .clarity-sidebar__list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--green-400);
-  }
-  .clarity-sidebar__ctas {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .clarity-sidebar__ctas .clarity-btn { text-align: center; }
+  .cl-ms.is-now::before { background: var(--sage); }
+  .cl-tl.on .cl-ms { opacity: 1; transform: none; }
+  .cl-tl.on .cl-ms:nth-child(1) { transition-delay: 0.25s; }
+  .cl-tl.on .cl-ms:nth-child(2) { transition-delay: 0.5s; }
+  .cl-tl.on .cl-ms:nth-child(3) { transition-delay: 0.75s; }
+  .cl-tl.on .cl-ms:nth-child(4) { transition-delay: 1s; }
+  .cl-tl.on .cl-ms:nth-child(5) { transition-delay: 1.25s; }
+  .cl-ms__when { color: var(--sage); }
+  .cl-ms__name { margin: 0; font-size: 22px; line-height: 1.2; color: var(--linen); }
+  .cl-ms__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 13.5px; line-height: 1.5; color: var(--on-forest); }
+  .cl-ms__list li { position: relative; padding-left: 18px; }
+  .cl-ms__list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
+  .cl-ms__list li.o { color: var(--on-forest-faint); }
+  .cl-ms__list li.o::before { background: transparent; border: 1px solid var(--sage); width: 5px; height: 5px; }
+  .cl-band__foot { margin: 56px 0 0; padding-top: 22px; border-top: 1px solid var(--sage); font-size: 15px; line-height: 1.7; color: var(--on-forest); max-width: 900px; }
 
-  /* ─── SECTION 2 — PROBLEM ───────────────────────────────── */
-  .clarity-problem {
-    background: var(--cream-100);
-    padding: var(--section-pad) 0;
+  /* Anchors */
+  .cl-anch { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 28px; }
+  .cl-anch__item {
+    padding: 24px 0; border-top: 1px solid var(--hairline-strong); border-bottom: 1px solid var(--hairline-strong);
+    display: flex; flex-direction: column; gap: 10px;
+    opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .clarity-problem__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .clarity-problem__left .clarity-h2 { margin-top: 0.5rem; }
+  .cl-anch.on .cl-anch__item { opacity: 1; transform: none; }
+  .cl-anch.on .cl-anch__item:nth-child(2) { transition-delay: 0.15s; }
+  .cl-anch.on .cl-anch__item:nth-child(3) { transition-delay: 0.3s; }
+  .cl-anch.on .cl-anch__item:nth-child(4) { transition-delay: 0.45s; }
+  .cl-anch.on .cl-anch__item:nth-child(5) { transition-delay: 0.6s; }
+  .cl-anch__marker { margin: 0; font-size: 28px; line-height: 1.1; color: var(--forest); }
+  .cl-anch__title { margin: 0; font-size: 13.5px; font-weight: 500; line-height: 1.4; color: var(--sage-600); }
 
-  .clarity-problem-card {
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 1.4rem;
-    margin-bottom: 1rem;
-    background: transparent;
+  /* Draw cadence rows */
+  .cl-cad { margin-top: 24px; }
+  .cl-cad__row {
+    display: grid; grid-template-columns: 250px minmax(0, 1fr) minmax(0, 1fr); gap: 40px;
+    padding: 36px 0; border-top: 1px solid var(--hairline-strong);
+    opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .clarity-problem-card:last-child { margin-bottom: 0; }
-  .clarity-problem-card__label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-500);
-    margin: 0 0 0.5rem;
-  }
-  .clarity-problem-card .clarity-h3 { margin-bottom: 0.5rem; }
+  .cl-cad__row:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .cl-cad__row.on { opacity: 1; transform: none; }
+  .cl-cad__head { display: flex; flex-direction: column; gap: 8px; }
+  .cl-cad__month { margin: 0; font-size: 30px; line-height: 1.1; color: var(--forest); }
+  .cl-cad__name { margin: 0; font-size: 15px; font-weight: 500; color: var(--sage-600); }
+  .cl-cad__meta { margin: 4px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--text-600); }
+  .cl-cad__lede { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-900); }
+  .cl-cad__sub { display: flex; flex-direction: column; gap: 14px; }
+  .cl-cad__sub p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--text-700); }
+  .cl-cad__sub p.cl-label { margin: 0 0 4px; font-family: var(--font-body); font-size: 11px; line-height: 1.4; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-600); }
+  .cl-cad__sub .cl-note { padding-top: 14px; }
+  .cl-cad__renew { display: flex; flex-direction: column; gap: 12px; }
+  .cl-cad__renew h3 { font-size: 20px; }
+  .cl-cad__renew p { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
 
-  /* ─── SECTION 3 — DIFFERENTIATOR ───────────────────────── */
-  .clarity-diff {
-    background: var(--cream-50);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-diff__intro {
-    max-width: 760px;
-    margin: 0 auto 3rem;
-    text-align: center;
-  }
-  .clarity-diff__sub {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--ink-700);
-    margin: 0;
-  }
-  .clarity-diff__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  .clarity-diff-card {
-    border: 1px solid var(--cream-200);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-    background: #fff;
-    box-shadow: var(--shadow-sm);
-  }
-  .clarity-diff-card__num {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--green-200);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-  .clarity-diff-card__stat {
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--green-500);
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--cream-200);
-  }
+  .cl-outcomes__h2 { max-width: 20ch; margin-bottom: 44px; }
 
-  /* ─── SECTION 4 — CADENCE ───────────────────────────────── */
-  .clarity-cadence {
-    background: var(--ink-900);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-cadence .clarity-h2 { margin-bottom: 2.5rem; }
-  .clarity-cadence__grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1px;
-    background: rgba(255,255,255,0.08);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-  }
-  .clarity-cadence-col {
-    background: var(--ink-900);
-    padding: 1.5rem 1.25rem;
-  }
-  .clarity-cadence-col--highlight {
-    background: rgba(255,255,255,0.06);
-  }
-  .clarity-cadence-col__title {
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green-400);
-    margin: 0 0 0.4rem;
-  }
-  .clarity-cadence-col__h3 {
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0 0 1rem;
-  }
-  .clarity-cadence-col__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-  }
-  .clarity-cadence-col__item {
-    font-size: 0.8rem;
-    line-height: 1.45;
-    padding-left: 1.1rem;
-    position: relative;
-  }
-  .clarity-cadence-col__item::before {
-    position: absolute;
-    left: 0;
-    font-size: 0.7rem;
-  }
-  .clarity-cadence-col__item--bright { color: rgba(255,255,255,0.9); }
-  .clarity-cadence-col__item--bright::before { content: '●'; color: var(--green-400); }
-  .clarity-cadence-col__item--dim { color: rgba(255,255,255,0.45); }
-  .clarity-cadence-col__item--dim::before { content: '○'; color: rgba(255,255,255,0.3); }
+  /* Lifestyle first */
+  .cl-life { align-items: start; margin-bottom: 56px; }
+  :global(.cl-life__cards) { margin-bottom: 48px; }
+  :global(.cl-meno) { max-width: 952px; }
 
-  .clarity-cadence__footer {
-    background: rgba(255,255,255,0.05);
-    border-radius: var(--radius-sm);
-    padding: 1rem 1.5rem;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.65);
-    text-align: center;
-  }
+  /* Who it is for */
+  .cl-who { gap: 72px; }
+  .cl-who__col { display: flex; flex-direction: column; gap: 14px; }
+  .cl-who__h { margin: 0 0 10px; font-size: 32px; line-height: 1.2; color: var(--forest); font-weight: 400; }
+  .cl-who__h--muted { color: var(--text-600); }
+  .cl-who__list { list-style: none; margin: 0; padding: 0; }
+  .cl-who__list li { display: grid; grid-template-columns: 24px minmax(0, 1fr); padding: 16px 0; border-top: 1px solid var(--hairline-strong); font-size: 14px; line-height: 1.65; color: var(--text-900); }
+  .cl-who__list li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .cl-who__list li span { color: var(--sage-600); font-size: 13px; }
+  .cl-who__list:not(.cl-who__list--for) li span { color: var(--text-600); }
+  .cl-callout { margin-top: 10px; padding: 22px 26px; background: var(--linen); border-top: 3px solid var(--gold); display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  .cl-callout p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-900); }
 
-  /* ─── SECTION 5 — ANCHOR BIOMARKERS ────────────────────── */
-  .clarity-anchors {
-    background: var(--cream-50);
-    padding: var(--section-pad) 0;
+  /* Pricing */
+  .cl-cmp { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-bottom: 56px; }
+  .cl-cmp__item {
+    display: flex; flex-direction: column; gap: 10px; padding: 32px 0;
+    border-top: 1px solid var(--hairline-strong); border-bottom: 1px solid var(--hairline-strong);
+    opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .clarity-anchors__intro {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--ink-700);
-    max-width: 700px;
-    margin: 0 0 2.5rem;
-  }
-  .clarity-anchors__grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.25rem;
-  }
-  .clarity-anchor-card {
-    border: 1px solid var(--cream-200);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    background: #fff;
-    box-shadow: var(--shadow-sm);
-  }
-  .clarity-anchor-card__marker {
-    font-family: var(--font-heading);
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--green-500);
-    margin: 0 0 0.4rem;
-    line-height: 1.1;
-  }
-  .clarity-anchor-card .clarity-h3 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  .clarity-anchor-card .clarity-body { font-size: 0.83rem; }
-  .clarity-anchor-card__target {
-    margin-top: 0.75rem;
-    padding: 0.6rem 0.75rem;
-    background: var(--cream-100);
-    border-radius: var(--radius-sm);
-    font-size: 0.78rem;
-    line-height: 1.5;
-    color: var(--ink-700);
-  }
-  .clarity-anchor-card__target-label {
-    display: block;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green-500);
-    margin-bottom: 0.25rem;
-  }
+  .cl-cmp.on .cl-cmp__item { opacity: 1; transform: none; }
+  .cl-cmp.on .cl-cmp__item:nth-child(2) { transition-delay: 0.2s; }
+  .cl-cmp.on .cl-cmp__item:nth-child(3) { transition-delay: 0.4s; }
+  .cl-cmp__sub { margin: 0; font-size: 13px; font-weight: 500; color: var(--sage-600); }
+  .cl-cmp__quote { margin: 8px 0 0; font-size: 19px; line-height: 1.4; font-style: italic; color: var(--forest); }
+  :global(.sage-card.cl-price) { display: grid; flex-direction: row; grid-template-columns: auto minmax(0, 1fr) auto; gap: 40px; align-items: center; padding: 40px 44px; }
+  .cl-price__n { margin: 0; font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: var(--forest); }
+  .cl-price__left .cl-card__period { margin: 4px 0 0; }
+  .cl-price__tags { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--text-900); }
+  .cl-price__tags .is-strong { font-weight: 500; color: var(--forest); }
+  .cl-price__ctas { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
 
-  /* ─── SECTION 6 — LAB DRAWS ────────────────────────────── */
-  .clarity-draws {
-    background: var(--ink-900);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-draws__intro {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.65);
-    max-width: 720px;
-    margin: 0 0 2.5rem;
-  }
-  .clarity-draws__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .clarity-draw-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .clarity-draw-card--tinted {
-    background: rgba(63,99,68,0.18);
-    border-color: rgba(63,99,68,0.35);
-  }
-  .clarity-draw-card__meta {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--green-400);
-    margin: 0 0 0.4rem;
-  }
-  .clarity-draw-card .clarity-h3--white { font-size: 1rem; margin-bottom: 0.75rem; }
-  .clarity-draw-card__quote {
-    font-size: 0.83rem;
-    font-style: italic;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.6);
-    margin: 0 0 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .clarity-draw-category { margin-bottom: 0.9rem; }
-  .clarity-draw-category__label {
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin: 0 0 0.25rem;
-  }
-  .clarity-draw-category__desc {
-    font-size: 0.82rem;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.7);
-    margin: 0;
-  }
-  .clarity-draw-note {
-    font-size: 0.8rem;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.45);
-    font-style: italic;
-    padding: 0.75rem;
-    border: 1px dashed rgba(255,255,255,0.15);
-    border-radius: var(--radius-sm);
-    margin-top: 0.5rem;
-  }
-  .clarity-draw-card__addl {
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--green-300);
-    margin: 0.5rem 0 0;
-  }
-
-  .clarity-draws__renewal {
-    background: rgba(63,99,68,0.15);
-    border: 1px solid rgba(63,99,68,0.3);
-    border-radius: var(--radius);
-    padding: 2rem;
-  }
-  .clarity-draws__renewal-grid {
-    display: grid;
-    grid-template-columns: 180px 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-  .clarity-draws__renewal-eyebrow {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green-400);
-    margin: 0 0 0.3rem;
-  }
-  .clarity-draws__renewal-title {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0 0 0.2rem;
-  }
-  .clarity-draws__renewal-meta {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.55);
-    margin: 0 0 0.15rem;
-  }
-  .clarity-draws__renewal-sub {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.4);
-    margin: 0;
-  }
-  .clarity-draws__renewal-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: rgba(255,255,255,0.7);
-    margin: 0 0 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .clarity-draws__renewal-note {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.45);
-    margin: 0.5rem 0 0;
-  }
-  .clarity-draws__renewal-small {
-    font-size: 0.78rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.4);
-    margin: 0.5rem 0 0;
-  }
-
-  /* ─── SECTION 7 — PREMIUM MARKERS ──────────────────────── */
-  .clarity-markers {
-    background: var(--cream-100);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-markers__intro {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--ink-700);
-    max-width: 680px;
-    margin: 0 0 2.5rem;
-  }
-  .clarity-markers__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-  .clarity-marker-card {
-    background: #fff;
-    border: 1px solid var(--cream-200);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .clarity-marker-card__badge {
-    display: inline-block;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    margin-bottom: 0.75rem;
-  }
-  .clarity-marker-card__badge--cardio { background: var(--warm-100); color: #8C6D3F; }
-  .clarity-marker-card__badge--metabolic { background: var(--green-50); color: var(--green-500); }
-  .clarity-marker-card__badge--performance { background: var(--cream-200); color: var(--ink-700); }
-  .clarity-marker-card__badge--kidney { background: var(--cream-100); color: var(--ink-500); }
-  .clarity-marker-card__badge--optin { background: var(--ink-50); color: var(--ink-700); }
-  .clarity-marker-card__badge--inflammation { background: var(--green-100); color: var(--green-500); }
-
-  .clarity-marker-card__tagline {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--ink-900);
-    margin: 0 0 0.5rem;
-    line-height: 1.4;
-  }
-  .clarity-marker-card .clarity-body { font-size: 0.875rem; }
-  .clarity-marker-card__note {
-    font-size: 0.78rem;
-    font-style: italic;
-    color: var(--ink-500);
-    margin: 0.5rem 0 0;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--cream-200);
-  }
-
-  /* ─── SECTION 8 — OUTCOMES ──────────────────────────────── */
-  .clarity-outcomes {
-    background: var(--cream-100);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-outcomes__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  .clarity-outcome-item__bar {
-    width: 32px;
-    height: 2px;
-    background: var(--green-500);
-    margin-bottom: 1rem;
-  }
-  .clarity-outcome-item .clarity-h3 { margin-bottom: 0.5rem; }
-
-  /* ─── SECTION 9 — LIFESTYLE FIRST ──────────────────────── */
-  .clarity-lifestyle {
-    background: var(--cream-100);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-lifestyle__intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-    margin-bottom: 2.5rem;
-  }
-  .clarity-lifestyle__right .clarity-body + .clarity-body { margin-top: 0.75rem; }
-  .clarity-lifestyle__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-  .clarity-lifestyle-card {
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    background: var(--cream-50);
-  }
-  .clarity-lifestyle-card__bar {
-    width: 32px;
-    height: 2px;
-    background: var(--green-500);
-    margin-bottom: 1rem;
-  }
-
-  /* ─── SECTION 10 — WHO IT'S FOR ─────────────────────────── */
-  .clarity-who {
-    background: var(--cream-50);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-who__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-  }
-  .clarity-who__list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-  .clarity-who__list li {
-    font-size: 0.93rem;
-    line-height: 1.6;
-    color: var(--ink-700);
-    display: flex;
-    gap: 0.6rem;
-  }
-  .clarity-who__arrow {
-    color: var(--green-500);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-  .clarity-who__x {
-    color: #c0856a;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-  .clarity-who__callout {
-    margin-top: 1.5rem;
-    background: var(--cream-100);
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 1.1rem 1.25rem;
-    font-size: 0.88rem;
-    color: var(--ink-700);
-    line-height: 1.6;
-  }
-  .clarity-who__callout p { margin: 0 0 0.5rem; }
-  .clarity-who__callout-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--green-500);
-    text-decoration: none;
-  }
-  .clarity-who__callout-link:hover { color: #3D6B55; }
-
-  /* ─── SECTION 11 — PRICING ──────────────────────────────── */
-  .clarity-pricing {
-    background: var(--cream-100);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-pricing__intro {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--ink-700);
-    max-width: 680px;
-    margin: 0 0 2.5rem;
-  }
-  .clarity-pricing__compare {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-  }
-  .clarity-compare-card {
-    background: #fff;
-    border: 1px solid var(--cream-200);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .clarity-compare-card .clarity-h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
-  .clarity-compare-card__sub {
-    font-size: 0.72rem;
-    color: var(--ink-500);
-    margin: 0 0 0.75rem;
-  }
-  .clarity-compare-card__quote {
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--ink-500);
-    margin: 0.75rem 0 0;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--cream-200);
-  }
-  .clarity-pricing__box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    background: #fff;
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 2rem 2.5rem;
-    align-items: center;
-    box-shadow: var(--shadow-sm);
-  }
-  .clarity-pricing__price {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--ink-900);
-    margin: 0 0 0.25rem;
-    line-height: 1;
-  }
-  .clarity-pricing__period {
-    font-size: 0.85rem;
-    color: var(--ink-500);
-    margin: 0;
-  }
-  .clarity-pricing__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
-  }
-  .clarity-pricing__tag {
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 0.25rem 0.6rem;
-    background: var(--cream-100);
-    border: 1px solid var(--cream-300);
-    border-radius: 4px;
-    color: var(--ink-700);
-  }
-  .clarity-pricing__ctas {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  /* ─── SECTION 12 — PROMISE ──────────────────────────────── */
-  .clarity-promise {
-    background: var(--ink-900);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-promise__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .clarity-promise__quote {
-    font-family: var(--font-heading);
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
-    font-style: italic;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.65;
-    margin: 0 0 1.25rem;
-  }
-  .clarity-promise__body {
-    font-size: 0.93rem;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.6);
-    margin: 0;
-  }
-
-  /* Section 13 uses the shared FAQSection component — no page-level FAQ styles needed */
-
-  /* ─── SECTION 14 — CLOSE CTA ────────────────────────────── */
-  .clarity-close {
-    background: var(--ink-900);
-    padding: var(--section-pad) 0;
-  }
-  .clarity-close__inner {
-    text-align: center;
-    max-width: 640px;
-  }
-  .clarity-close__sub {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.65);
-    margin: 0 0 2rem;
-  }
-  .clarity-close__alt {
-    margin: 1.25rem 0 0;
-  }
-  .clarity-close__alt-link {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-  }
-  .clarity-close__alt-link:hover { color: rgba(255,255,255,0.8); }
-
-  /* ─── RESPONSIVE ────────────────────────────────────────── */
-  @media (max-width: 1100px) {
-    .clarity-anchors__grid { grid-template-columns: repeat(3, 1fr); }
-    .clarity-cadence__grid { grid-template-columns: repeat(3, 1fr); }
-    .clarity-draws__grid { grid-template-columns: repeat(2, 1fr); }
-    .clarity-draws__renewal-grid { grid-template-columns: 1fr 1fr; }
-    .clarity-draws__renewal-grid > :first-child { grid-column: 1 / -1; }
-  }
-
-  @media (max-width: 900px) {
-    .clarity-hero__grid { grid-template-columns: 1fr; }
-    .clarity-hero__sidebar { max-width: 400px; }
-    .clarity-problem__grid { grid-template-columns: 1fr; }
-    .clarity-diff__grid { grid-template-columns: 1fr; }
-    .clarity-anchors__grid { grid-template-columns: repeat(2, 1fr); }
-    .clarity-cadence__grid { grid-template-columns: repeat(2, 1fr); }
-    .clarity-outcomes__grid { grid-template-columns: repeat(2, 1fr); }
-    .clarity-lifestyle__intro-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .clarity-lifestyle__cards { grid-template-columns: 1fr; }
-    .clarity-who__grid { grid-template-columns: 1fr; }
-    .clarity-pricing__compare { grid-template-columns: 1fr; }
-    .clarity-pricing__box { grid-template-columns: 1fr; }
-    .clarity-promise__grid { grid-template-columns: 1fr; }
-    .clarity-markers__grid { grid-template-columns: 1fr; }
-    .clarity-draws__renewal-grid { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 600px) {
-    .clarity-anchors__grid { grid-template-columns: 1fr; }
-    .clarity-cadence__grid { grid-template-columns: 1fr; }
-    .clarity-outcomes__grid { grid-template-columns: 1fr; }
-    .clarity-hero__ctas { flex-direction: column; align-items: flex-start; }
-    .clarity-pricing__ctas { flex-direction: column; align-items: flex-start; }
+  @media (max-width: 860px) {
+    .cl-hero { padding: 48px 0 64px; }
+    .cl-hero__grid { grid-template-columns: 1fr; gap: 40px; }
+    .cl-hero__h1 { font-size: 40px; max-width: none; }
+    .cl-hero__sub { font-size: 17px; }
+    :global(.cl-card) { padding: 26px 22px; }
+    .cl-card__price { font-size: 52px; }
+    .cl-short__row { grid-template-columns: 1fr; gap: 10px; }
+    .cl-cards--2 { grid-template-columns: 1fr; }
+    .cl-card-item:nth-last-child(2) { border-bottom: 0; }
+    .cl-card-item__h3 { font-size: 22px; }
+    .cl-band { padding: 64px 0; }
+    .cl-band__h2 { margin-bottom: 40px; }
+    .cl-tl { grid-template-columns: 1fr; gap: 36px; padding-top: 0; padding-left: 28px; }
+    .cl-tl::before { left: 5px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; transform: scaleY(0); transform-origin: top; }
+    .cl-tl.on::before { transform: none; }
+    .cl-ms::before { left: -28px; top: 4px; }
+    .cl-anch { grid-template-columns: 1fr; }
+    .cl-anch__item + .cl-anch__item { border-top: 0; }
+    .cl-cad__row { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
+    .cl-who { gap: 40px; }
+    .cl-who__h { font-size: 26px; }
+    .cl-cmp { grid-template-columns: 1fr; }
+    .cl-cmp__item + .cl-cmp__item { border-top: 0; }
+    :global(.sage-card.cl-price) { grid-template-columns: 1fr; gap: 24px; padding: 28px 22px; }
+    .cl-price__n { font-size: 48px; }
+    .cl-price__ctas { align-items: flex-start; }
   }
 </style>

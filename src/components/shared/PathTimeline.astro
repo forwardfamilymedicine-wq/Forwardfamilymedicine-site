@@ -1,0 +1,65 @@
+---
+/**
+ * Path timeline: dots on a vertical line that draws down on reveal. The last
+ * step is the current one. `variant="default"` (Lifestyle Medicine and
+ * Menopause pages): filled sage dots, the current one gold. `variant="profile"`
+ * (physician profiles): hollow dots, the current one filled forest. A step's
+ * body is optional.
+ */
+export interface Step { title: string; body?: string }
+export interface Props { steps: Step[]; variant?: 'default' | 'profile' }
+const { steps, variant = 'default' } = Astro.props;
+---
+
+<ol class:list={['path', `path--${variant}`]} data-reveal>
+  <span class="path__line" aria-hidden="true"></span>
+  {steps.map((s, i) => (
+    <li class:list={['path__step', { 'is-now': i === steps.length - 1 }]}>
+      <p class="path__title">{s.title}</p>
+      {s.body && <p class="path__body">{s.body}</p>}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .path { position: relative; list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 24px; }
+  .path__line {
+    position: absolute;
+    left: 5px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: var(--sage);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.6s ease;
+  }
+  .path.on .path__line { transform: scaleY(1); }
+  .path__step {
+    position: relative;
+    padding-left: 32px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .path__step::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--sage);
+    box-shadow: 0 0 0 4px var(--linen-50);
+  }
+  .path__step.is-now::before { background: var(--gold); }
+  /* Profile variant: hollow dots on the page background, the current one forest. */
+  .path--profile .path__step::before { background: var(--linen); border: 1.5px solid var(--sage-600); box-sizing: border-box; box-shadow: 0 0 0 4px var(--linen); }
+  .path--profile .path__step.is-now::before { background: var(--forest); border-color: var(--forest); }
+  .path.on .path__step { opacity: 1; transform: none; }
+  .path.on .path__step:nth-of-type(1) { transition-delay: 0.1s; }
+  .path.on .path__step:nth-of-type(2) { transition-delay: 0.4s; }
+  .path.on .path__step:nth-of-type(3) { transition-delay: 0.7s; }
+  .path.on .path__step:nth-of-type(4) { transition-delay: 1s; }
+  .path.on .path__step:nth-of-type(5) { transition-delay: 1.3s; }
+  .path.on .path__step:nth-of-type(n+6) { transition-delay: 1.6s; }
+  .path__title { margin: 0; font-size: 15px; font-weight: 600; color: var(--forest); }
+  .path__body { margin: 3px 0 0; font-size: 13px; line-height: 1.5; color: var(--text-600); }
+</style>

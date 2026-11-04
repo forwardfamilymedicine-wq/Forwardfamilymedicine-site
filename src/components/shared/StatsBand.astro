@@ -1,0 +1,90 @@
+---
+/**
+ * Stats band: Playfair numerals on forest, each under a sage rule. An item
+ * may carry a small label above the figure (comparison bands), and `muted`
+ * greys the figure for the "elsewhere" side. `foot` is the closing line
+ * under its own rule. Heading is optional.
+ */
+export interface Stat {
+  value: string;
+  caption: string;
+  label?: string;
+  muted?: boolean;
+}
+export interface Props {
+  stats: Stat[];
+  heading?: string;
+  foot?: string;
+  columns?: 2 | 3 | 4;
+  /** Figure size in px (boards use 52 to 56). */
+  size?: number;
+}
+const { stats, heading, foot, columns = 4, size = 54 } = Astro.props;
+---
+
+<section class="stats-band">
+  <div class="rd-wrap">
+    {heading && <h2 class="rd-h2 stats-band__h2">{heading}</h2>}
+    <slot name="intro" />
+    <div class={`stats-band__grid stats-band__grid--${columns}`} data-reveal>
+      {stats.map(s => (
+        <div class="stats-band__stat">
+          {s.label && <p class="stats-band__label">{s.label}</p>}
+          <div class:list={['stats-band__value', 'rd-serif', { 'is-muted': s.muted }]} style={`font-size:${size}px`} set:html={s.value}></div>
+          <p class:list={['stats-band__caption', { 'is-muted': s.muted }]}>{s.caption}</p>
+        </div>
+      ))}
+    </div>
+    {foot && <p class="stats-band__foot">{foot}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .stats-band { background: var(--forest); color: var(--linen); padding: 80px 0; }
+  .stats-band__h2 { color: var(--linen); font-size: 40px; margin-bottom: 40px; max-width: 24ch; }
+  .stats-band__grid { display: grid; gap: 0 32px; }
+  .stats-band__grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats-band__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stats-band__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stats-band__stat {
+    padding: 24px 0;
+    border-top: 1px solid var(--sage);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .stats-band__grid.on .stats-band__stat { opacity: 1; transform: none; }
+  .stats-band__grid.on .stats-band__stat:nth-child(2) { transition-delay: 0.2s; }
+  .stats-band__grid.on .stats-band__stat:nth-child(3) { transition-delay: 0.4s; }
+  .stats-band__grid.on .stats-band__stat:nth-child(4) { transition-delay: 0.6s; }
+  .stats-band__label {
+    margin: 0 0 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+  .stats-band__value { line-height: 1; letter-spacing: -0.02em; color: var(--linen); }
+  .stats-band__value :global(small) { font-size: 0.42em; letter-spacing: 0; }
+  .stats-band__value.is-muted { color: var(--on-forest-faint); }
+  .stats-band__caption { margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: var(--on-forest); }
+  .stats-band__caption.is-muted { color: var(--on-forest-faint); }
+  .stats-band__foot {
+    margin: 28px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--sage);
+    font-size: 15px;
+    color: var(--on-forest);
+  }
+  @media (max-width: 860px) {
+    .stats-band { padding: 56px 0; }
+    .stats-band__h2 { font-size: 30px; }
+    .stats-band__grid--2, .stats-band__grid--3, .stats-band__grid--4 { grid-template-columns: 1fr 1fr; }
+    .stats-band__value { font-size: 38px !important; }
+  }
+  @media (max-width: 480px) {
+    .stats-band__grid--2, .stats-band__grid--3, .stats-band__grid--4 { grid-template-columns: 1fr; }
+  }
+</style>

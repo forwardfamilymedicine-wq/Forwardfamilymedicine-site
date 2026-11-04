@@ -1,7 +1,11 @@
 ---
 /**
- * Step 2 of the homepage hierarchy: why conventional primary care usually
- * cannot deliver the experience the hero describes.
+ * Why conventional primary care usually cannot deliver the experience the
+ * hero describes, beside the dot field: 2,500 dots, one per patient on a
+ * typical panel. On reveal the forest fill drains from the bottom in 45 steps
+ * over 2.2s while the numeral counts down from 2,500 to 250; then the sage
+ * hairline and the explanatory line fade in. Reduced motion renders the end
+ * state with no movement.
  *
  * Copy rule for this section: the constraint is structural, never personal.
  * It is about panel math and reimbursement, not about bad physicians or a
@@ -9,56 +13,140 @@
  */
 ---
 
-<section class="problem section" aria-label="Why this is hard to find">
-  <div class="container problem-inner">
-    <span class="section-label">Why This Is Hard to Find</span>
-    <h2 class="section-title">Most doctors want to give you this. The system rarely lets them.</h2>
-    <div class="divider"></div>
+<section class="problem" aria-label="Why this is hard to find">
+  <div class="rd-wrap problem-grid">
+    <div class="problem-text">
+      <h2 class="rd-h2 problem-h2">Most doctors want to give you this. The system rarely lets them.</h2>
+      <p>
+        A typical primary care physician is responsible for two to three thousand
+        patients. To keep a practice solvent under insurance reimbursement, that
+        schedule has to move in ten and fifteen minute increments, which means the
+        visit routinely ends before the conversation does. That is not a failure of
+        skill or of caring. It is what the arithmetic of the model requires.
+      </p>
+      <p>
+        The downstream effects are familiar to almost everyone. You wait weeks for an
+        appointment, then explain your history to someone reading it for the first
+        time. Your questions get routed through a portal or a front desk. Care gets
+        divided among specialists who never quite talk to one another, and no single
+        physician is holding the whole picture. Prevention, which takes time and
+        repetition, becomes whatever fits in the minutes that are left.
+      </p>
+      <p>
+        None of this is fixable one visit at a time. It is fixable by changing the
+        arithmetic. Fewer patients per physician, visits long enough to finish the
+        conversation, and a practice funded directly by the people it cares for
+        rather than by billing volume. That is the entire idea behind Forward Family
+        Medicine.
+      </p>
+    </div>
 
-    <p>
-      A typical primary care physician is responsible for two to three thousand
-      patients. To keep a practice solvent under insurance reimbursement, that
-      schedule has to move in ten and fifteen minute increments, which means the
-      visit routinely ends before the conversation does. That is not a failure of
-      skill or of caring. It is what the arithmetic of the model requires.
-    </p>
-    <p>
-      The downstream effects are familiar to almost everyone. You wait weeks for an
-      appointment, then explain your history to someone reading it for the first
-      time. Your questions get routed through a portal or a front desk. Care gets
-      divided among specialists who never quite talk to one another, and no single
-      physician is holding the whole picture. Prevention, which takes time and
-      repetition, becomes whatever fits in the minutes that are left.
-    </p>
-    <p>
-      None of this is fixable one visit at a time. It is fixable by changing the
-      arithmetic. Fewer patients per physician, visits long enough to finish the
-      conversation, and a practice funded directly by the people it cares for
-      rather than by billing volume. That is the entire idea behind Forward Family
-      Medicine.
-    </p>
+    <figure class="dotfield" data-reveal="0.4">
+      <svg viewBox="0 0 500 500" width="100%" role="img" aria-label="A field of 2,500 dots, one per patient on a typical physician's panel, with the top 250 shaded forest green to show a Forward Family Medicine panel">
+        <defs>
+          <pattern id="dotFaint" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.3" fill="#D8D0C2"></circle></pattern>
+          <pattern id="dotForest" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.3" fill="#1E2D1F"></circle></pattern>
+        </defs>
+        <rect x="0" y="0" width="500" height="500" fill="url(#dotFaint)"></rect>
+        <rect class="dotfill" x="0" y="0" width="500" height="500" fill="url(#dotForest)"></rect>
+        <line class="dotline" x1="0" y1="52.5" x2="500" y2="52.5" stroke="#8FAB8E" stroke-width="1"></line>
+      </svg>
+      <figcaption>
+        <div class="dotnum rd-serif">250</div>
+        <div class="dotcap">patients per physician. One dot each.</div>
+        <div class="dotafter">The green dots are a Forward Family Medicine panel. The faint ones are the rest of a typical panel of 2,500.</div>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
 <style>
   .problem {
-    background: var(--cream-50);
+    background: var(--linen-50);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 104px 0;
   }
-  /* Single measured column: this section is read, not scanned. */
-  .problem-inner {
-    max-width: 780px;
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
   }
-  .problem p {
-    font-size: 1.05rem;
-    color: var(--ink-700);
-    line-height: 1.85;
-    margin-bottom: 1.5rem;
-  }
-  .problem p:last-child {
-    margin-bottom: 0;
+  .problem-text { display: flex; flex-direction: column; gap: 22px; }
+  .problem-h2 { line-height: 1.12; }
+  .problem-text p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-900);
+    margin: 0;
   }
 
-  @media (max-width: 700px) {
-    .problem p { font-size: 1rem; }
+  .dotfield { margin: 0; display: flex; flex-direction: column; gap: 18px; }
+  .dotfield svg { display: block; }
+  .dotfield figcaption { display: flex; flex-direction: column; gap: 6px; }
+  .dotnum {
+    font-size: 84px;
+    line-height: 1;
+    color: var(--forest);
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .dotcap { font-size: 15px; line-height: 1.5; color: var(--forest); font-weight: 500; }
+  .dotafter {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-600);
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline-strong);
+  }
+
+  /* Motion. Rest state: the forest layer covers everything. On reveal the
+     clip drains from the bottom to leave the top 10% (250 of 2,500). */
+  .dotfill { clip-path: inset(0 0 0 0); transition: clip-path 2.2s steps(45, end) 0.7s; }
+  .dotfield.on .dotfill { clip-path: inset(0 0 90% 0); }
+  .dotline { opacity: 0; transition: opacity 0.4s ease 2.9s; }
+  .dotfield.on .dotline { opacity: 1; }
+  .dotafter { opacity: 0; transition: opacity 0.5s ease 3.1s; }
+  .dotfield.on .dotafter { opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dotfill { clip-path: inset(0 0 90% 0); }
+    .dotline, .dotafter { opacity: 1; }
+  }
+
+  @media (max-width: 860px) {
+    .problem { padding: 64px 0; }
+    .problem-grid { grid-template-columns: 1fr; gap: 28px; }
+    .dotnum { font-size: 56px; }
   }
 </style>
+
+<script>
+  // The numeral flips to 2,500 on reveal and counts down to 250 in step with
+  // the drain (0.7s delay, 2.2s, ease-out). Reduced motion: stays at 250.
+  const field = document.querySelector('.dotfield') as HTMLElement | null;
+  const num = field?.querySelector('.dotnum') as HTMLElement | null;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function countDown() {
+    if (!num || reduced) return;
+    const fmt = (n: number) => Math.round(n).toLocaleString('en-US');
+    const delay = 700, dur = 2200, from = 2500, to = 250;
+    let start: number | null = null;
+    num.textContent = fmt(from);
+    const step = (ts: number) => {
+      if (start === null) start = ts;
+      const t = ts - start - delay;
+      if (t < 0) { requestAnimationFrame(step); return; }
+      const p = Math.min(t / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      num.textContent = fmt(from + (to - from) * eased);
+      if (p < 1) requestAnimationFrame(step); else num.textContent = fmt(to);
+    };
+    requestAnimationFrame(step);
+  }
+
+  field?.addEventListener('reveal', countDown, { once: true });
+</script>

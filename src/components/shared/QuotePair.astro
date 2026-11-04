@@ -1,0 +1,44 @@
+---
+/**
+ * Staged patient quotes: serif text with a sage opening mark, a vertical
+ * hairline between neighbours. Text is verbatim; attribution is the reviewer's
+ * initials as published on the page today.
+ */
+export interface Quote { text: string; who: string; attribution?: string }
+export interface Props { quotes: Quote[] }
+const { quotes } = Astro.props;
+---
+
+<div class="quotes" data-reveal>
+  {quotes.map(q => (
+    <blockquote class="quotes__q">
+      <span class="quotes__mark rd-serif" aria-hidden="true">“</span>
+      <p class="quotes__text rd-serif">{q.text}</p>
+      <footer class="quotes__by"><strong>{q.who}</strong>{q.attribution ? ` ${q.attribution}` : ''}</footer>
+    </blockquote>
+  ))}
+</div>
+
+<style>
+  .quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
+  .quotes__q {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .quotes__q:not(:last-child) { padding-right: 32px; border-right: 1px solid var(--hairline-strong); }
+  .quotes.on .quotes__q { opacity: 1; transform: none; }
+  .quotes.on .quotes__q:nth-child(2) { transition-delay: 0.3s; }
+  .quotes__mark { font-size: 64px; line-height: 0.6; color: var(--sage-mark); }
+  .quotes__text { margin: 0; font-size: 19px; line-height: 1.5; color: var(--forest); }
+  .quotes__by { font-size: 13px; color: var(--sage-600); }
+  .quotes__by strong { color: var(--forest); font-weight: 600; }
+  @media (max-width: 860px) {
+    .quotes { grid-template-columns: 1fr; gap: 36px; }
+    .quotes__q:not(:last-child) { padding-right: 0; border-right: 0; padding-bottom: 36px; border-bottom: 1px solid var(--hairline-strong); }
+  }
+</style>

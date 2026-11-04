@@ -1,11 +1,12 @@
 ---
-const CATEGORY_LABELS: Record<string, string> = {
-  'direct-primary-care': 'Direct Primary Care',
-  'lifestyle-medicine': 'Lifestyle Medicine',
-  'preventive-medicine': 'Preventive Care',
-  'patient-experience': 'Patient Experience',
-  'concierge-medicine': 'Concierge Medicine',
-};
+/**
+ * A post in the blog index grid, per the Blog board: a ruled text item with
+ * the category link, serif title, description and "author · date". The
+ * category and title keep the same two hrefs as before. `hidden` marks an
+ * item past the first page of the index ("Load more articles" reveals it).
+ */
+import type { ImageMetadata } from 'astro';
+import { blogCategoryLabel } from '../../data/blogCategories';
 
 export interface Props {
   title: string;
@@ -14,126 +15,62 @@ export interface Props {
   date: string;
   slug: string;
   category?: string;
-  featuredImage?: string;
+  /** Accepted for existing callers; the index grid is text-only now. */
+  featuredImage?: ImageMetadata;
+  priority?: boolean;
+  hidden?: boolean;
 }
 
-const { title, description, author, date, slug, category, featuredImage } = Astro.props;
-const categoryLabel = category ? (CATEGORY_LABELS[category] ?? category) : null;
+const { title, description, author, date, slug, category, hidden = false } = Astro.props;
+const categoryLabel = blogCategoryLabel(category);
 
 const dateObj = new Date(date);
-const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+// A bare frontmatter date is a calendar date; UTC keeps it from rendering a day early in US time zones.
+const dateFormatted = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const dateISO = dateObj.toISOString();
 ---
 
-<article class="blog-card card">
-  {featuredImage && (
-    <a href={`/blog/${slug}/`} class="card-img-link" tabindex="-1" aria-hidden="true">
-      <div class="card-img">
-        <img
-          src={featuredImage}
-          alt=""
-          loading="lazy"
-          width="600"
-          height="340"
-        />
-      </div>
-    </a>
-  )}
-  <div class="card-body">
-    {categoryLabel && (
-      <div class="card-tags">
-        <a href={`/blog/category/${category}/`} class="tag cat-tag">{categoryLabel}</a>
-      </div>
-    )}
-    <h3><a href={`/blog/${slug}/`}>{title}</a></h3>
-    <p class="card-desc">{description}</p>
-    <footer class="card-footer">
-      <span class="card-author">{author}</span>
-      <time datetime={dateISO} class="card-date">{dateFormatted}</time>
-    </footer>
-  </div>
+<article class="post-item" hidden={hidden || undefined}>
+  {categoryLabel && <a href={`/blog/category/${category}/`} class="post-item__cat">{categoryLabel}</a>}
+  <h3 class="post-item__title rd-serif"><a href={`/blog/${slug}/`}>{title}</a></h3>
+  <p class="post-item__desc">{description}</p>
+  <p class="post-item__meta">
+    <span>{author}</span>
+    <span class="post-item__dot" aria-hidden="true">·</span>
+    <time datetime={dateISO}>{dateFormatted}</time>
+  </p>
 </article>
 
 <style>
-  .blog-card {
-    padding: 0;
-    overflow: hidden;
+  .post-item {
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.2s, transform 0.2s;
+    gap: 10px;
+    padding: 26px 0;
+    border-top: 1px solid var(--hairline-strong);
+    color: var(--forest);
+    opacity: 0;
+    transform: translateX(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .blog-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-  .card-img {
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    background: var(--cream-200);
-  }
-  .card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-    transition: transform 0.4s;
-  }
-  .blog-card:hover .card-img img { transform: scale(1.04); }
-  .card-body {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .card-tags {
-    display: flex;
-    gap: 0.4rem;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-  }
-  .tag {
-    display: inline-block;
-    background: var(--green-100);
-    color: var(--green-500);
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 0.25rem 0.65rem;
-    border-radius: 999px;
-    white-space: nowrap;
-    letter-spacing: 0.03em;
-  }
-  .cat-tag {
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-  }
-  .cat-tag:hover { background: var(--green-200); color: var(--green-600, var(--green-500)); }
-  .card-body h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
-    line-height: 1.3;
-  }
-  .card-body h3 a {
-    color: var(--ink-900);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .card-body h3 a:hover { color: var(--green-400); }
-  .card-desc {
-    font-size: 0.9rem;
-    color: var(--ink-500);
-    line-height: 1.65;
-    flex: 1;
-    margin-bottom: 1.25rem;
-  }
-  .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    color: var(--ink-300);
-    border-top: 1px solid var(--ink-100);
-    padding-top: 0.75rem;
-    margin-top: auto;
-  }
-  .card-author { font-weight: 600; color: var(--ink-500); }
+  .post-item[hidden] { display: none; }
+  :global(.on) > .post-item { opacity: 1; transform: none; }
+  :global(.on) > .post-item:nth-child(1) { transition-delay: 0.1s; }
+  :global(.on) > .post-item:nth-child(2) { transition-delay: 0.22s; }
+  :global(.on) > .post-item:nth-child(3) { transition-delay: 0.34s; }
+  :global(.on) > .post-item:nth-child(4) { transition-delay: 0.46s; }
+  :global(.on) > .post-item:nth-child(5) { transition-delay: 0.58s; }
+  :global(.on) > .post-item:nth-child(6) { transition-delay: 0.7s; }
+  :global(.on) > .post-item:nth-child(7) { transition-delay: 0.82s; }
+  :global(.on) > .post-item:nth-child(8) { transition-delay: 0.94s; }
+  :global(.on) > .post-item:nth-child(9) { transition-delay: 1.06s; }
+  :global(.on) > .post-item:nth-child(n+10) { transition-delay: 1.18s; }
+  .post-item__cat { font-size: 13px; font-weight: 500; color: var(--sage-600); text-decoration: none; align-self: flex-start; }
+  .post-item__cat:hover { color: var(--forest); }
+  .post-item__title { margin: 0; font-size: 22px; line-height: 1.25; color: var(--forest); }
+  .post-item__title a { color: inherit; text-decoration: none; transition: color 0.18s; }
+  .post-item__title a:hover { color: var(--sage-600); }
+  .post-item__desc { margin: 0; font-size: 14px; line-height: 1.65; color: var(--text-700); }
+  .post-item__meta { margin: auto 0 0; padding-top: 8px; font-size: 13px; color: var(--text-600); }
+  .post-item__dot { color: var(--text-600); margin: 0 8px; }
 </style>

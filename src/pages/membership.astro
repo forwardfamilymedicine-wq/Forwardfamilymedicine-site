@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
-import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+import SageCard from '../components/shared/SageCard.astro';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -43,6 +43,51 @@ const faqs = [
 const INDIVIDUAL_ENROLLMENT_LINK = 'https://forwardfamilymedicine.sigmamd.com/signup/individual-membership';
 const FAMILY_ENROLLMENT_LINK = 'https://forwardfamilymedicine.sigmamd.com/signup/family-membership';
 const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
+
+const individualFeatures = [
+  'Unlimited office visits, no copay',
+  'Same-day and next-day appointments',
+  'Visits: 1–2 hours',
+  'Direct phone, text &amp; email access to your doctor',
+  'Preventive care and annual wellness exams',
+  'Chronic disease management',
+  'Minor in-office procedures',
+  'Wholesale lab and medication pricing',
+  'Telehealth visits',
+  'Specialist referral coordination',
+  'Board-certified Lifestyle Medicine (with Dr. Lieberman, dual board-certified in Family Medicine &amp; Lifestyle Medicine)',
+];
+const familyTiers = [
+  ['2 members', '$175/person/month'],
+  ['3 members', '$150/person/month'],
+  ['4 members', '$125/person/month'],
+  ['5+ members', '$100/person/month'],
+];
+const familyFeatures = [
+  'Everything in Individual Membership',
+  'Coverage for 2 or more family members',
+  'Each member gets their own doctor relationship',
+  'Coordinated family health planning',
+  'Pediatric-friendly care options',
+  'Wholesale lab pricing for the whole family',
+  'All members access Lifestyle Medicine with Dr. Lieberman',
+];
+const employerFeatures = [
+  'Flat per-employee monthly membership',
+  'Pairs with your existing health plan',
+  'Employees get unlimited primary care, no copays',
+  'Direct doctor access for your whole team',
+  'Fewer sick days and ER visits',
+  'Access to board-certified Lifestyle Medicine',
+  "Inquiry-based — we'll build a plan for your company",
+];
+const covers = [
+  { title: 'Primary Care', items: ['Annual physicals and wellness exams', 'Sick visits and acute care', 'Preventive screenings', 'Chronic condition monitoring', 'Prescription management', 'Lab review and follow-up'] },
+  { title: 'Access & Convenience', items: ['Same-day and next-day appointments', 'Visits: 1–2 hours', 'Direct phone, text, and email access', 'Telehealth included', 'After-hours communication (urgent questions)'] },
+  { title: 'Lifestyle Medicine', items: ['Comprehensive lifestyle assessment', 'Personalized nutrition guidance', 'Physical activity planning', 'Sleep optimization', 'Stress management', 'Chronic disease reversal protocols'] },
+  { title: 'Cost Savings', items: ['Wholesale lab pricing — CBC: $2 | CMP: $2 | Lipid panel: $3 | ApoB: $7 | Thyroid panel: $7', 'Medications dispensed at cost — no pharmacy markup', 'Reduced urgent care and ER visits through same-day access', 'Discounted imaging coordination at local centers', 'No per-visit fees, ever'] },
+];
+const chips = ['Prenuvo whole-body MRI', '~250 biomarker results/year', 'Gut microbiome panel', '6 weeks CGM', 'DEXA 2×/year', 'VO₂ max 2×/year', 'Full FFM membership included'];
 ---
 
 <MainLayout
@@ -50,243 +95,113 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
   description="DPC membership plans at Forward Family Medicine in Wayne, PA. Individual and family options. Flat monthly fee. No insurance. Includes board-certified Lifestyle Medicine."
   schema={breadcrumb}
 >
-  <!-- Hero -->
-  <section class="membership-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%); position: relative; overflow: hidden;">
-    <BotanicalGraphic variant="quartet" class="membership-botanical" />
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Membership</span>
-      </nav>
-      <span class="section-label">Simple, Transparent, Valuable</span>
-      <h1>Membership &amp; Pricing</h1>
-      <div class="divider"></div>
-      <p class="section-intro">
-        Concierge-quality care. DPC pricing. Lifestyle Medicine included. One flat monthly fee — no insurance, no copays, no surprises.
-      </p>
-    </div>
-  </section>
-
-  <!-- Value Frame — Critical -->
-  <section class="value-frame section" style="background: var(--green-500);">
-    <div class="container value-frame-inner">
-      <div class="value-quote">
-        <span class="value-quote-mark" aria-hidden="true">"</span>
-        <blockquote>
+  <section class="mem-hero">
+    <div class="rd-wrap mem-hero__grid">
+      <div class="mem-hero__copy">
+        <nav class="crumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Membership</span>
+        </nav>
+        <h1 class="mem-hero__title rd-serif">Membership &amp; Pricing</h1>
+        <p class="mem-hero__lede">Concierge-quality care. DPC pricing. Lifestyle Medicine included. One flat monthly fee — no insurance, no copays, no surprises.</p>
+      </div>
+      <SageCard class="value-quote">
+        <span class="value-mark rd-serif" aria-hidden="true">“</span>
+        <blockquote class="value-text rd-serif">
           Your membership includes something no other DPC practice on the Main Line
           offers: integrated, in-person Lifestyle Medicine. A physician
           with a culinary arts degree, a nutrition science background, and a Lifestyle
           Medicine certification who knows your name, answers your calls, and has
           a plan for your long-term health. That's what the membership covers.
         </blockquote>
+      </SageCard>
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt" id="plans">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 plans-h2">Membership Options</h2>
+      <div class="plans" data-reveal="0.05">
+        <div class="plan plan--pop">
+          <p class="plan-tag plan-tag--gold">Most Popular</p>
+          <h3 class="plan-h rd-serif">Individual Membership</h3>
+          <div class="plan-price rd-serif">$200<span class="plan-unit">/month</span></div>
+          <p class="plan-line">Primary care plus board-certified lifestyle medicine — for you, personally.</p>
+          <ul class="plan-list">{individualFeatures.map(f => <li set:html={f}></li>)}</ul>
+          <div class="plan-foot">
+            <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn-forest">Enroll as Individual</a>
+            <a href="/contact/?source=membership" class="rd-link">Start with a free meet &amp; greet</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <p class="plan-tag">Family</p>
+          <h3 class="plan-h rd-serif">Family Membership</h3>
+          <dl class="plan-tiers">
+            {familyTiers.map(([size, rate]) => <div><dt>{size}</dt><dd>{rate}</dd></div>)}
+          </dl>
+          <p class="plan-line">Whole-family care — every member gets direct access, real time, and genuine relationship.</p>
+          <ul class="plan-list">{familyFeatures.map(f => <li>{f}</li>)}</ul>
+          <div class="plan-foot">
+            <a href={FAMILY_ENROLLMENT_LINK} class="btn-forest">Enroll Your Family</a>
+            <a href="/contact/?source=membership" class="rd-link">Start with a free meet &amp; greet</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <p class="plan-tag">Employer</p>
+          <h3 class="plan-h rd-serif">Employer / Business</h3>
+          <div class="plan-price plan-price--custom rd-serif">Custom Plan</div>
+          <p class="plan-note">Priced per employee per month — built around your team size and structure.</p>
+          <p class="plan-line">Better healthcare for your team — simpler than traditional insurance and genuinely more valuable.</p>
+          <ul class="plan-list">{employerFeatures.map(f => <li>{f}</li>)}</ul>
+          <div class="plan-foot">
+            <a href="/for-businesses/" class="btn-forest">Learn About Employer Plans</a>
+            <a href="/contact/?source=membership" class="rd-link">Or contact us directly →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <div class="notes-list">
+          <p><strong>Children &amp; pediatric patients:</strong> Children are welcome at all ages. Children under 26 may be added to a family membership at the applicable per-person family rate. Contact us with questions about pediatric pricing.</p>
+          <p><strong>Panel size is capped at ~250 patients per physician</strong> to ensure timely access to your doctor. When a panel fills, we open a waitlist.</p>
+          <p>Already a patient? <a href={PATIENT_PORTAL_LINK} target="_blank" rel="noopener noreferrer" class="rd-link">Log in to the Patient Portal →</a></p>
+        </div>
+        <SageCard>
+          <h3 class="rd-h3 notes-h">Not sure which plan is right for you?</h3>
+          <p>Start with a free, no-obligation meet and greet. Come in, meet the team, ask every question — and we'll help you figure out the best fit. No pressure, no commitment.</p>
+          <a href="/contact/?source=membership" class="btn-forest notes-btn">Schedule a Free Meet &amp; Greet</a>
+        </SageCard>
       </div>
     </div>
   </section>
 
-  <!-- Plans -->
-  <section class="plans-section section">
-    <div class="container">
-      <span class="section-label">Choose Your Plan</span>
-      <h2>Membership Options</h2>
-      <div class="divider"></div>
-
-      <div class="plans-grid">
-        <!-- Individual -->
-        <div class="plan-card card featured-plan">
-          <div class="plan-header">
-            <span class="plan-badge plan-badge-featured">Most Popular</span>
-            <h3>Individual Membership</h3>
-            <div class="plan-price">$200<span class="plan-price-unit">/month</span></div>
-            <p class="plan-tagline">Primary care plus board-certified lifestyle medicine — for you, personally.</p>
+  <section class="covers-band">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 covers-h2">What Your Membership Covers</h2>
+      <div class="covers" data-reveal="0.1">
+        {covers.map(c => (
+          <div class="covers-col">
+            <h3 class="covers-h3 rd-serif">{c.title}</h3>
+            <ul>{c.items.map(i => <li>{i}</li>)}</ul>
           </div>
-          <ul class="prose-list plan-features">
-            <li>Unlimited office visits, no copay</li>
-            <li>Same-day and next-day appointments</li>
-            <li>Visits: 1–2 hours</li>
-            <li>Direct phone, text &amp; email access to your doctor</li>
-            <li>Preventive care and annual wellness exams</li>
-            <li>Chronic disease management</li>
-            <li>Minor in-office procedures</li>
-            <li>Wholesale lab and medication pricing</li>
-            <li>Telehealth visits</li>
-            <li>Specialist referral coordination</li>
-            <li>Board-certified Lifestyle Medicine (with Dr. Lieberman, dual board-certified in Family Medicine &amp; Lifestyle Medicine)</li>
-          </ul>
-          <div class="plan-cta">
-            <a href={INDIVIDUAL_ENROLLMENT_LINK} class="btn btn-primary plan-btn">Enroll as Individual</a>
-            <a href="/contact/?source=membership" class="btn btn-outline plan-btn">Start with a free meet &amp; greet</a>
-            <div class="panel-notice">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Panel size is capped at ~250 patients per physician. Spots fill — we recommend reaching out early.
-            </div>
-          </div>
-        </div>
-
-        <!-- Family -->
-        <div class="plan-card card">
-          <div class="plan-header">
-            <span class="plan-badge plan-badge-accent">Family</span>
-            <h3>Family Membership</h3>
-            <div class="plan-price-family">
-              <div class="family-tier"><span class="family-size">2 members</span><span class="family-rate">$175/person/month</span></div>
-              <div class="family-tier"><span class="family-size">3 members</span><span class="family-rate">$150/person/month</span></div>
-              <div class="family-tier"><span class="family-size">4 members</span><span class="family-rate">$125/person/month</span></div>
-              <div class="family-tier"><span class="family-size">5+ members</span><span class="family-rate">$100/person/month</span></div>
-            </div>
-            <p class="plan-tagline">Whole-family care — every member gets direct access, real time, and genuine relationship.</p>
-          </div>
-          <ul class="prose-list plan-features">
-            <li>Everything in Individual Membership</li>
-            <li>Coverage for 2 or more family members</li>
-            <li>Each member gets their own doctor relationship</li>
-            <li>Coordinated family health planning</li>
-            <li>Pediatric-friendly care options</li>
-            <li>Wholesale lab pricing for the whole family</li>
-            <li>All members access Lifestyle Medicine with Dr. Lieberman</li>
-          </ul>
-          <div class="plan-cta">
-            <a href={FAMILY_ENROLLMENT_LINK} class="btn btn-accent plan-btn">Enroll Your Family</a>
-            <a href="/contact/?source=membership" class="btn btn-outline plan-btn">Start with a free meet &amp; greet</a>
-          </div>
-        </div>
-
-        <!-- Business -->
-        <div class="plan-card card">
-          <div class="plan-header">
-            <span class="plan-badge">Employer</span>
-            <h3>Employer / Business</h3>
-            <div class="plan-price employer-price">Custom Plan</div>
-            <p class="employer-price-note">Priced per employee per month — built around your team size and structure.</p>
-            <p class="plan-tagline">Better healthcare for your team — simpler than traditional insurance and genuinely more valuable.</p>
-          </div>
-          <ul class="prose-list plan-features">
-            <li>Flat per-employee monthly membership</li>
-            <li>Pairs with your existing health plan</li>
-            <li>Employees get unlimited primary care, no copays</li>
-            <li>Direct doctor access for your whole team</li>
-            <li>Fewer sick days and ER visits</li>
-            <li>Access to board-certified Lifestyle Medicine</li>
-            <li>Inquiry-based — we'll build a plan for your company</li>
-          </ul>
-          <div class="plan-cta">
-            <a href="/for-businesses/" class="btn btn-primary plan-btn">Learn About Employer Plans</a>
-            <a href="/contact/?source=membership" class="plan-greet-link">Or contact us directly →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pricing-note callout" style="max-width: 680px; margin: 2.5rem auto 1rem;">
-        <strong>Children &amp; pediatric patients:</strong> Children are welcome at all ages. Children under 26 may be added to a family membership at the applicable per-person family rate. Contact us with questions about pediatric pricing.
-      </div>
-
-      <div class="pricing-note callout" style="max-width: 680px; margin: 0 auto 1rem; text-align:center;">
-        Already a patient? <a href={PATIENT_PORTAL_LINK} target="_blank" rel="noopener noreferrer" style="color:var(--green-300); font-weight:600;">Log in to the Patient Portal →</a>
-      </div>
-
-      <div class="pricing-note callout" style="max-width: 680px; margin: 0 auto 1rem;">
-        <strong>Panel size is capped at ~250 patients per physician</strong> to ensure timely access to your doctor. When a panel fills, we open a waitlist.
-      </div>
-
-      <div class="pricing-note callout" style="max-width: 680px; margin: 0 auto 0;">
-        <strong>Not sure which plan is right for you?</strong>
-        <p style="margin-top:0.4rem; margin-bottom:0;">
-          Start with a free, no-obligation meet and greet. Come in, meet the team, ask
-          every question — and we'll help you figure out the best fit. No pressure, no commitment.
-        </p>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- What's included deep dive -->
-  <section class="included-section section" style="background: var(--cream-200);">
-    <div class="container">
-      <span class="section-label">Full Breakdown</span>
-      <h2>What Your Membership Covers</h2>
-      <div class="divider"></div>
-      <div class="included-grid">
-        <div class="included-category">
-          <div class="included-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
-          </div>
-          <h3>Primary Care</h3>
-          <ul class="prose-list">
-            <li>Annual physicals and wellness exams</li>
-            <li>Sick visits and acute care</li>
-            <li>Preventive screenings</li>
-            <li>Chronic condition monitoring</li>
-            <li>Prescription management</li>
-            <li>Lab review and follow-up</li>
-          </ul>
-        </div>
-        <div class="included-category">
-          <div class="included-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3>Access &amp; Convenience</h3>
-          <ul class="prose-list">
-            <li>Same-day and next-day appointments</li>
-            <li>Visits: 1–2 hours</li>
-            <li>Direct phone, text, and email access</li>
-            <li>Telehealth included</li>
-            <li>After-hours communication (urgent questions)</li>
-          </ul>
-        </div>
-        <div class="included-category">
-          <div class="included-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-          </div>
-          <h3>Lifestyle Medicine</h3>
-          <ul class="prose-list">
-            <li>Comprehensive lifestyle assessment</li>
-            <li>Personalized nutrition guidance</li>
-            <li>Physical activity planning</li>
-            <li>Sleep optimization</li>
-            <li>Stress management</li>
-            <li>Chronic disease reversal protocols</li>
-          </ul>
-        </div>
-        <div class="included-category">
-          <div class="included-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
-          <h3>Cost Savings</h3>
-          <ul class="prose-list">
-            <li>Wholesale lab pricing — CBC: $2 | CMP: $2 | Lipid panel: $3 | ApoB: $7 | Thyroid panel: $7</li>
-            <li>Medications dispensed at cost — no pharmacy markup</li>
-            <li>Reduced urgent care and ER visits through same-day access</li>
-            <li>Discounted imaging coordination at local centers</li>
-            <li>No per-visit fees, ever</li>
-          </ul>
-        </div>
+  <section class="clarity-strip rd-sage">
+    <div class="rd-wrap clarity-grid">
+      <div class="rd-stack">
+        <h2 class="rd-h2 clarity-h2">The Clarity Program</h2>
+        <p class="rd-copy clarity-desc">A physician-led longitudinal health operating system — Prenuvo whole-body MRI, advanced biomarker panels, gut microbiome, continuous glucose monitoring, DEXA, and VO₂ max, read together by a single physician across your full program year.</p>
+        <div class="chips">{chips.map(c => <span>{c}</span>)}</div>
       </div>
-    </div>
-  </section>
-
-  <!-- Clarity Tier -->
-  <section class="clarity-tier-section">
-    <div class="container">
-      <div class="clarity-tier-card">
-        <div class="clarity-tier-left">
-          <span class="clarity-tier-badge">Executive Health Program</span>
-          <h2 class="clarity-tier-h2">The Clarity Program</h2>
-          <p class="clarity-tier-desc">A physician-led longitudinal health operating system — Prenuvo whole-body MRI, advanced biomarker panels, gut microbiome, continuous glucose monitoring, DEXA, and VO₂ max, read together by a single physician across your full program year.</p>
-          <div class="clarity-tier-chips">
-            <span class="clarity-tier-chip">Prenuvo whole-body MRI</span>
-            <span class="clarity-tier-chip">~250 biomarker results/year</span>
-            <span class="clarity-tier-chip">Gut microbiome panel</span>
-            <span class="clarity-tier-chip">6 weeks CGM</span>
-            <span class="clarity-tier-chip">DEXA 2×/year</span>
-            <span class="clarity-tier-chip">VO₂ max 2×/year</span>
-            <span class="clarity-tier-chip">Full FFM membership included</span>
-          </div>
-        </div>
-        <div class="clarity-tier-right">
-          <p class="clarity-tier-price">$9,600</p>
-          <p class="clarity-tier-period">per year · paid annually · HSA-eligible</p>
-          <div class="clarity-tier-ctas">
-            <a href="/clarity/" class="clarity-tier-btn-primary">See the full program</a>
-            <a href="/new-patients/?source=clarity#request" class="clarity-tier-btn-ghost">Schedule an inquiry call →</a>
-          </div>
-        </div>
+      <div class="clarity-price">
+        <p class="clarity-amount rd-serif">$9,600</p>
+        <p class="clarity-period">per year · paid annually · HSA-eligible</p>
+        <a href="/clarity/" class="btn-forest">See the full program</a>
+        <a href="/new-patients/?source=clarity#request" class="rd-link">Schedule an inquiry call →</a>
       </div>
     </div>
   </section>
@@ -302,319 +217,93 @@ const PATIENT_PORTAL_LINK = 'https://patient.sigmamd.com';
 </MainLayout>
 
 <style>
-  .membership-hero {
-    position: relative;
-    overflow: hidden;
-  }
-  .membership-hero .container {
-    position: relative;
-    z-index: 1;
-  }
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .crumb { font-size: 13px; color: var(--text-600); }
+  .crumb a { color: var(--text-600); }
+  .crumb a:hover { color: var(--forest); }
+  .crumb span:last-child { color: var(--text-700); }
+  .mem-hero { background: var(--linen); padding: 80px 0 96px; }
+  .mem-hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 72px; align-items: center; }
+  .mem-hero__copy { display: flex; flex-direction: column; gap: 22px; }
+  .mem-hero__title { margin: 0; font-size: 64px; line-height: 1.02; letter-spacing: -0.018em; color: var(--forest); }
+  .mem-hero__lede { margin: 0; font-size: 18px; line-height: 1.7; color: var(--text-900); max-width: 600px; }
+  .crumb { margin-bottom: 18px; }
+  .value-quote { gap: 6px; }
+  .value-mark { font-size: 64px; line-height: 0.6; color: var(--sage-mark); }
+  .value-text { margin: 0; font-size: 18px; line-height: 1.5; color: var(--forest); }
 
-  /* Value Frame */
-  .value-frame-inner {
-    max-width: 800px;
-    margin: 0 auto;
+  .plans-h2 { margin-bottom: 40px; }
+  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 48px; align-items: stretch; }
+  .plan {
+    display: flex; flex-direction: column; gap: 12px;
+    border-top: 3px solid var(--forest);
+    padding-top: 22px;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .value-quote {
-    position: relative;
-    padding-left: 2rem;
-  }
-  .value-quote-mark {
-    position: absolute;
-    left: -0.5rem;
-    top: -1rem;
-    font-family: var(--font-heading);
-    font-size: 6rem;
-    color: rgba(255,255,255,0.15);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .value-quote blockquote {
-    font-family: var(--font-heading);
-    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-    color: white;
-    line-height: 1.7;
-    font-style: italic;
-    margin: 0;
-  }
+  .plans.on .plan { opacity: 1; transform: none; }
+  .plans.on .plan:nth-child(2) { transition-delay: 0.2s; }
+  .plans.on .plan:nth-child(3) { transition-delay: 0.4s; }
+  .plan-tag { margin: 0; font-size: 13px; font-weight: 500; color: var(--sage-600); }
+  .plan-tag--gold { color: var(--gold-text); }
+  .plan-h { margin: 0; font-size: 28px; line-height: 1.15; color: var(--forest); }
+  .plan-price { font-size: 48px; line-height: 1; letter-spacing: -0.02em; color: var(--forest); }
+  .plan-price--custom { font-size: 36px; line-height: 1.1; letter-spacing: -0.015em; }
+  .plan-unit { font-size: 18px; letter-spacing: 0; color: var(--text-600); }
+  .plan-line { margin: 0; font-size: 15px; line-height: 1.65; color: var(--text-700); }
+  .plan-note { margin: 0; font-size: 14px; line-height: 1.6; color: var(--text-600); }
+  .plan-list { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .plan-list li { padding: 11px 0; border-top: 1px solid var(--hairline-strong); font-size: 14.5px; line-height: 1.55; color: var(--text-900); }
+  .plan-list li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .plan-tiers { display: flex; flex-direction: column; margin: 0; }
+  .plan-tiers div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-top: 1px solid var(--hairline-strong); font-size: 14.5px; }
+  .plan-tiers div:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .plan-tiers dt { color: var(--text-700); }
+  .plan-tiers dd { margin: 0; color: var(--forest); font-weight: 500; }
+  .plan-foot { margin-top: auto; padding-top: 22px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 
-  /* Plans */
-  .plans-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
-    margin-top: 2rem;
-  }
-  .plan-card {
-    display: flex;
-    flex-direction: column;
-  }
-  .featured-plan {
-    border: 2px solid var(--green-400);
-    position: relative;
-  }
-  .plan-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    background: var(--green-100);
-    color: var(--ink-900);
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    margin-bottom: 0.75rem;
-  }
-  .plan-badge-accent {
-    background: #fdf0e6;
-    color: #b86a30;
-  }
-  .plan-badge-featured {
-    background: var(--green-500);
-    color: white;
-  }
-  .plan-header h3 {
-    margin-bottom: 0.5rem;
-  }
-  .plan-price {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--ink-900);
-    font-family: var(--font-heading);
-    margin: 0.5rem 0 0.75rem;
-    line-height: 1;
-  }
-  .plan-price-unit {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--ink-300);
-  }
-  .plan-price-family {
-    margin: 0.5rem 0 0.75rem;
-  }
-  .family-tier {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid var(--ink-100);
-    font-size: 0.9rem;
-  }
-  .family-tier:last-child { border-bottom: none; }
-  .family-size { color: var(--ink-700); }
-  .family-rate { font-weight: 700; color: var(--ink-900); }
+  .notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: start; margin-top: 64px; }
+  .notes-list { display: flex; flex-direction: column; font-size: 15px; line-height: 1.7; color: var(--text-900); }
+  .notes-list p { margin: 0; padding: 16px 0; border-top: 1px solid var(--hairline-strong); }
+  .notes-list p:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .notes-list strong { font-weight: 500; color: var(--forest); }
+  .notes-h { font-size: 24px; }
+  .notes-btn { align-self: flex-start; margin-top: 4px; }
 
-  .plan-tagline {
-    font-size: 0.9rem;
-    color: var(--ink-500);
-    margin-bottom: 1.5rem;
-    line-height: 1.55;
-  }
-  .plan-features {
-    flex: 1;
-    margin-bottom: 2rem;
-  }
-  .plan-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: auto;
-  }
-  .plan-btn {
-    width: 100%;
-    text-align: center;
-  }
-  .plan-greet-link {
-    font-size: 0.85rem;
-    color: var(--green-300);
-    text-decoration: none;
-    text-align: center;
-    transition: color 0.15s;
-  }
-  .plan-greet-link:hover { color: var(--green-400); }
-  .panel-notice {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--ink-500);
-    background: var(--cream-200);
-    border: 1px solid var(--cream-300);
-    border-radius: 999px;
-    padding: 0.4rem 0.9rem;
-    margin-top: 1rem;
-  }
-  .panel-notice svg {
-    color: var(--green-400);
-    flex-shrink: 0;
-  }
+  .covers-band { background: var(--forest); color: var(--linen); padding: 96px 0; }
+  .covers-h2 { color: var(--linen); margin-bottom: 40px; }
+  .covers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; }
+  .covers-col { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .covers.on .covers-col { opacity: 1; transform: none; }
+  .covers.on .covers-col:nth-child(2) { transition-delay: 0.15s; }
+  .covers.on .covers-col:nth-child(3) { transition-delay: 0.3s; }
+  .covers.on .covers-col:nth-child(4) { transition-delay: 0.45s; }
+  .covers-h3 { margin: 0 0 14px; font-size: 22px; color: var(--linen); }
+  .covers-col ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .covers-col li { padding: 10px 0; border-top: 1px solid var(--sage); font-size: 14px; line-height: 1.5; color: var(--on-forest); }
+  .covers-col li:last-child { border-bottom: 1px solid var(--sage); }
 
-  .employer-price {
-    font-size: 1.4rem;
-    color: var(--ink-700);
-  }
-  .employer-price-note {
-    font-size: 0.82rem;
-    color: var(--ink-400);
-    margin-top: -0.25rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
+  .clarity-strip { padding: 80px 0; }
+  .clarity-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) auto; gap: 64px; align-items: start; }
+  .clarity-h2 { font-size: 40px; }
+  .clarity-desc { max-width: 640px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span { font-size: 13px; color: var(--forest); padding: 6px 12px; border: 1px solid var(--on-forest-faint); border-radius: 999px; background: var(--linen); }
+  .clarity-price { display: flex; flex-direction: column; gap: 14px; align-items: flex-end; text-align: right; min-width: 260px; }
+  .clarity-price p { margin: 0; }
+  .clarity-amount { font-size: 56px; line-height: 1; letter-spacing: -0.02em; color: var(--forest); }
+  .clarity-period { font-size: 13.5px; color: var(--sage-600); font-weight: 500; }
+  .clarity-price .btn-forest { margin-top: 8px; }
 
-  /* Included grid */
-  .included-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  .included-category {
-    background: white;
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .included-icon {
-    color: var(--green-400);
-    margin-bottom: 0.6rem;
-  }
-  .included-category h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Clarity Tier */
-  .clarity-tier-section {
-    background: var(--cream-50);
-    padding: 2.5rem 0;
-  }
-  .clarity-tier-card {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2.5rem;
-    align-items: center;
-    background: var(--ink-900);
-    border-radius: var(--radius);
-    padding: 2.25rem 2.5rem;
-  }
-  .clarity-tier-badge {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--green-400);
-    border: 1px solid rgba(90, 136, 96, 0.35);
-    border-radius: 4px;
-    padding: 0.25rem 0.6rem;
-    margin-bottom: 0.9rem;
-  }
-  .clarity-tier-h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
-    font-weight: 300;
-    color: #fff;
-    margin: 0 0 0.85rem;
-    line-height: 1.2;
-  }
-  .clarity-tier-desc {
-    font-size: 0.93rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.5);
-    font-weight: 300;
-    margin: 0 0 1.25rem;
-    max-width: 560px;
-  }
-  .clarity-tier-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  .clarity-tier-chip {
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.65);
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 4px;
-    padding: 0.2rem 0.55rem;
-    white-space: nowrap;
-  }
-  .clarity-tier-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.25rem;
-    min-width: 220px;
-  }
-  .clarity-tier-price {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 400;
-    color: #fff;
-    margin: 0;
-    line-height: 1;
-  }
-  .clarity-tier-period {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.45);
-    margin: 0 0 1.25rem;
-    text-align: right;
-  }
-  .clarity-tier-ctas {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.6rem;
-    width: 100%;
-  }
-  .clarity-tier-btn-primary {
-    display: block;
-    text-align: center;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 600;
-    background: var(--green-500);
-    color: #fff;
-    border: 2px solid var(--green-500);
-    border-radius: var(--radius-sm);
-    padding: 0.65rem 1.25rem;
-    text-decoration: none;
-    transition: background 0.2s, border-color 0.2s;
-    width: 100%;
-  }
-  .clarity-tier-btn-primary:hover { background: #3D6B55; border-color: #3D6B55; }
-  .clarity-tier-btn-ghost {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    text-align: center;
-    transition: color 0.15s;
-    width: 100%;
-    display: block;
-  }
-  .clarity-tier-btn-ghost:hover { color: rgba(255,255,255,0.85); }
-
-  @media (max-width: 900px) {
-    .plans-grid { grid-template-columns: 1fr; }
-    .included-grid { grid-template-columns: 1fr; }
-    .clarity-tier-card {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-    .clarity-tier-right {
-      align-items: flex-start;
-      min-width: unset;
-    }
-    .clarity-tier-period { text-align: left; }
-    .clarity-tier-btn-ghost { text-align: left; }
+  @media (max-width: 860px) {
+    .mem-hero { padding: 48px 0 64px; }
+    .mem-hero__grid { grid-template-columns: 1fr; gap: 36px; }
+    .mem-hero__title { font-size: 40px; }
+    .plans, .notes, .covers, .clarity-grid { grid-template-columns: 1fr; gap: 40px; }
+    .covers { gap: 36px; }
+    .covers-band { padding: 64px 0; }
+    .clarity-strip { padding: 56px 0; }
+    .clarity-h2 { font-size: 30px; }
+    .clarity-price { align-items: flex-start; text-align: left; min-width: 0; }
+    .plan-h { font-size: 24px; }
   }
 </style>

@@ -1,0 +1,52 @@
+---
+/**
+ * Numbered rows: gold Playfair "01" beside a serif title and body, each row
+ * under a hairline, fading up in turn on reveal. The numeral is decoration
+ * (aria-hidden); the order is carried by the list itself.
+ */
+export interface Row { title: string; body: string }
+export interface Props { rows: Row[]; class?: string }
+const { rows, class: className = '' } = Astro.props;
+---
+
+<ol class:list={['num-rows', className]} data-reveal>
+  {rows.map((r, i) => (
+    <li class="num-rows__row">
+      <span class="num-rows__n rd-serif" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+      <div class="num-rows__text">
+        <h3 class="rd-h3">{r.title}</h3>
+        <p set:html={r.body}></p>
+      </div>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .num-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .num-rows__row {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid var(--hairline-strong);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .num-rows__row:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .num-rows.on .num-rows__row { opacity: 1; transform: none; }
+  .num-rows.on .num-rows__row:nth-child(1) { transition-delay: 0.1s; }
+  .num-rows.on .num-rows__row:nth-child(2) { transition-delay: 0.28s; }
+  .num-rows.on .num-rows__row:nth-child(3) { transition-delay: 0.46s; }
+  .num-rows.on .num-rows__row:nth-child(4) { transition-delay: 0.64s; }
+  .num-rows.on .num-rows__row:nth-child(5) { transition-delay: 0.82s; }
+  .num-rows.on .num-rows__row:nth-child(n+6) { transition-delay: 1s; }
+  .num-rows__n { font-size: 36px; line-height: 1; color: var(--gold-text); }
+  .num-rows__text { display: flex; flex-direction: column; gap: 8px; }
+  .num-rows__text p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-700); }
+  .num-rows__text :global(a) { color: var(--sage-600); }
+  @media (max-width: 860px) {
+    .num-rows__row { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; }
+    .num-rows__n { font-size: 28px; }
+  }
+</style>

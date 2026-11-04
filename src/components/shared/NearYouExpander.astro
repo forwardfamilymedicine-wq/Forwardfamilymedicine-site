@@ -1,7 +1,8 @@
 ---
 /**
  * Collapsed "near you" town list, sitting below the conversion content as
- * wayfinding rather than persuasion.
+ * wayfinding rather than persuasion: a plain row on the page background with
+ * a "+" marker, per the Local boards, not a band.
  *
  * The whole point of this block is to give the /local/* pages inbound links a
  * crawler can follow, so the links are rendered into the static HTML and are
@@ -32,7 +33,7 @@ const { id, summary, ariaLabel, links } = Astro.props;
 ---
 
 <section class="near-you" aria-label={ariaLabel} data-near-you>
-  <div class="container">
+  <div class="rd-wrap">
     <button
       class="near-you-toggle"
       id={`${id}-btn`}
@@ -55,59 +56,52 @@ const { id, summary, ariaLabel, links } = Astro.props;
 </section>
 
 <style>
-  .near-you {
-    background: var(--cream-200);
-    padding: calc(var(--section-pad) * 0.5) 0;
-  }
+  .near-you { background: var(--linen); padding: 28px 0 8px; }
   .near-you-toggle {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 0.5rem 0;
+    gap: 24px;
+    padding: 18px 0;
     background: none;
-    border: none;
+    border: 0;
     font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--ink-900);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-700);
     cursor: pointer;
     text-align: left;
     transition: color 0.15s;
   }
-  .near-you-toggle:hover { color: var(--green-500); }
+  .near-you-toggle:hover { color: var(--forest); }
   .near-you-icon {
-    font-size: 1.4rem;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
     flex-shrink: 0;
-    color: var(--green-400);
+    color: var(--sage-600);
     transition: transform 0.2s;
   }
-  .near-you-toggle[aria-expanded="true"] .near-you-icon {
-    transform: rotate(45deg);
-  }
+  .near-you-toggle[aria-expanded="true"] .near-you-icon { transform: rotate(45deg); }
 
   /* Town list — plain links, deliberately quieter than the page above it. */
   .near-you-grid {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0 0;
+    margin: 8px 0 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem 2rem;
+    gap: 10px 32px;
   }
   .near-you-grid a {
-    font-size: 0.95rem;
-    color: var(--ink-700);
+    font-size: 14px;
+    color: var(--text-700);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: color 0.15s, border-color 0.15s;
   }
-  .near-you-grid a:hover {
-    color: var(--green-500);
-    border-bottom-color: var(--green-300);
-  }
+  .near-you-grid a:hover { color: var(--forest); border-bottom-color: var(--sage); }
 
   @media (max-width: 860px) {
     .near-you-grid { grid-template-columns: repeat(2, 1fr); }

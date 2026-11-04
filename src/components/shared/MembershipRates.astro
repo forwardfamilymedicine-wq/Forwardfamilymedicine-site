@@ -2,7 +2,8 @@
 /**
  * Individual and family rates for the service pages. Every label and figure is
  * copied from /membership/, which remains the pricing page; change both
- * together.
+ * together. Board: a forest rule over each column, the individual price in a
+ * large serif numeral, family tiers as a hairline definition list.
  */
 const FAMILY_TIERS = [
   { size: '2 members', rate: '$175/person/month' },
@@ -11,70 +12,42 @@ const FAMILY_TIERS = [
   { size: '5+ members', rate: '$100/person/month' },
 ];
 ---
-
 <div class="rates">
-  <div class="rate-card">
-    <h3>Individual Membership</h3>
-    <p class="rate-price">$200<span class="rate-unit">/month</span></p>
+  <div class="rate-col rate-col--ind">
+    <h3 class="rate-h">Individual Membership</h3>
+    <p class="rate-price rd-serif">$200<span class="rate-unit">/month</span></p>
   </div>
-  <div class="rate-card">
-    <h3>Family Membership</h3>
-    <ul class="rate-tiers">
+  <div class="rate-col rate-col--fam">
+    <h3 class="rate-h">Family Membership</h3>
+    <dl class="rate-tiers">
       {FAMILY_TIERS.map(t => (
-        <li><span class="rate-size">{t.size}</span><span class="rate-tier">{t.rate}</span></li>
+        <>
+          <dt>{t.size}</dt>
+          <dd>{t.rate}</dd>
+        </>
       ))}
-    </ul>
+    </dl>
   </div>
 </div>
 
 <style>
-  .rates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    max-width: 760px;
-    margin-top: 2rem;
-  }
-  .rate-card {
-    background: var(--green-50);
-    border: 1px solid var(--green-100);
-    border-radius: 16px;
-    padding: 1.5rem 1.75rem;
-  }
-  .rate-card h3 {
-    font-size: 1.05rem;
-    color: var(--ink-900);
-    margin-bottom: 0.75rem;
-  }
-  .rate-price {
-    font-family: var(--font-heading);
-    font-size: 2.25rem;
-    color: var(--green-500);
-    line-height: 1;
-    margin: 0;
-  }
-  .rate-unit {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--ink-500);
-  }
-  .rate-tiers {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .rate-tiers li {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--green-100);
-    font-size: 0.92rem;
-  }
-  .rate-tiers li:last-child { border-bottom: none; }
-  .rate-size { color: var(--ink-700); }
-  .rate-tier { color: var(--green-500); font-weight: 600; }
-  @media (max-width: 700px) {
+  .rates { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .rate-col { border-top: 1px solid var(--forest); padding: 28px 0; display: flex; flex-direction: column; gap: 10px; }
+  .rate-col--ind { padding-right: 32px; border-right: 1px solid var(--hairline-strong); }
+  .rate-col--fam { padding-left: 32px; }
+  .rate-h { margin: 0; font-size: 14px; font-weight: 600; color: var(--sage-600); }
+  .rate-price { margin: 0; font-size: 52px; line-height: 1; letter-spacing: -0.02em; color: var(--forest); }
+  .rate-unit { font-size: 18px; letter-spacing: 0; color: var(--text-600); }
+  .rate-tiers { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 0; font-size: 15px; }
+  .rate-tiers dt, .rate-tiers dd { margin: 0; padding: 10px 0; border-bottom: 1px solid var(--hairline-strong); }
+  .rate-tiers dt { color: var(--text-700); }
+  .rate-tiers dd { color: var(--forest); font-weight: 500; text-align: right; padding-left: 24px; }
+  .rate-tiers dt:nth-last-of-type(1), .rate-tiers dd:last-of-type { border-bottom: 0; }
+  /* Two columns need about 470px; the split column is narrower than that
+     until roughly 930px, so stack earlier than the page's 860px split. */
+  @media (max-width: 940px) {
     .rates { grid-template-columns: 1fr; }
+    .rate-col--ind { padding-right: 0; border-right: 0; padding-bottom: 20px; }
+    .rate-col--fam { padding-left: 0; }
   }
 </style>

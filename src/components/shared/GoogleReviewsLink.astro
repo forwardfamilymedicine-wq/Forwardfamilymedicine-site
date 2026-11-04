@@ -12,21 +12,27 @@
  *
  * Deliberately no star rating or review count here — Google shows the live
  * number; hardcoding one would go stale the day it changes.
+ *
+ * `align` places the link: center (default, as before), start, or end.
  */
+export interface Props {
+  align?: 'center' | 'start' | 'end';
+}
+const { align = 'center' } = Astro.props;
+
 const GOOGLE_REVIEWS_URL =
   'https://www.google.com/search?q=Forward+Family+Medicine+-+Direct+Primary+Care&kgmid=/g/11w3tyrkjg';
 ---
 
-<p class="google-reviews-link">
-  <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+<p class:list={['google-reviews-link', `google-reviews-link--${align}`]}>
+  <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" class="rd-link">
     Read all our reviews on Google &rarr;
   </a>
 </p>
 
 <style>
-  .google-reviews-link {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-  }
+  .google-reviews-link { margin: 0; font-size: 14px; }
+  .google-reviews-link--center { text-align: center; margin-top: 2rem; }
+  .google-reviews-link--start { text-align: left; }
+  .google-reviews-link--end { text-align: right; }
 </style>

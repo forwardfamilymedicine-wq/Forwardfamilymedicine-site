@@ -1,134 +1,116 @@
 ---
+/**
+ * Team card, per the Team board: portrait left, then status line, name, role,
+ * the first two credential lines and the "Meet Dr. X" link. Used on the Team
+ * page and for "Physicians at This Location" on the office pages.
+ *
+ * Everything is read from the providers and team collections. A physician's
+ * status line is derived in src/utils/availability.ts: "Accepting new patients
+ * · Wayne", "Joining October 2026", or "Panel currently full" (no scheduling
+ * invitation of any kind). A team member shows their location line, and their
+ * job title (kept in `credentials`) after the name, as on the live page.
+ */
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import { getAvailability } from '../../utils/availability';
+import { physicianCredentialRows } from '../../utils/credentialRows';
+import { awardLabel } from '../../utils/physicianSchema';
 
 interface Props {
   provider: CollectionEntry<'providers'> | CollectionEntry<'team'>;
   noLink?: boolean;
+  /** The card whose photo is the page's largest contentful paint: loaded eagerly, at high priority. */
+  priority?: boolean;
+  /** Open office named in the status line of an accepting physician. */
+  office?: string;
+  /** Heading level of the name: h2 under the page title, h3 under a section heading. */
+  as?: 'h2' | 'h3';
 }
 
-const { provider, noLink = false } = Astro.props;
+const { provider, noLink = false, priority = false, office, as: Heading = 'h3' } = Astro.props;
 const d = provider.data as any;
 const isPhysician = provider.collection === 'providers';
-// Availability is derived once, in src/utils/availability.ts.
 const availability = isPhysician ? getAvailability(d) : null;
-const isPanelFull = availability?.status === 'full';
-const isFuture = availability?.status === 'future';
-const isAccepting = availability?.status === 'accepting';
-const openingLabel = availability?.startLabel ?? null;
+const isFull = availability?.status === 'full';
+
+const status = !availability ? (d.title as string | undefined)
+  : availability.status === 'full' ? 'Panel currently full'
+  : availability.status === 'future' ? `Joining ${availability.startLabel}`
+  : office ? `Accepting new patients · ${office}` : 'Accepting new patients';
+
+const rows: string[] = (isPhysician
+  ? [...physicianCredentialRows(d), ...(d.awards ?? []).map(awardLabel)]
+  : (d.specialties ?? [])).slice(0, 2);
+const first = d.name.split(' ')[0];
+const ctaName = isPhysician ? `Dr. ${d.name.split(' ').pop()}` : first;
 ---
 
-<article class={`provider-card card${isPanelFull ? ' panel-full' : ''}`}>
-  <div class="provider-card-photo-wrap">
+<article class="pcard">
+  <div class="pcard__photo">
     {d.photo ? (
-      <img
-        src={d.photo.src}
-        width={d.photo.width}
-        height={d.photo.height}
+      <Image
+        src={d.photo}
         alt={d.photoAlt || d.name}
-        class="provider-card-photo"
-        loading="lazy"
+        width={360}
+        widths={[180, 360, 540]}
+        sizes="(max-width: 860px) 140px, 180px"
+        format="webp"
+        quality={82}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : undefined}
+        class="pcard__img"
       />
     ) : (
-      <div class="provider-card-photo provider-card-photo--placeholder"
-        role="img" aria-label="Photo coming soon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-      </div>
+      <div class="pcard__img pcard__img--placeholder" role="img" aria-label="Photo coming soon"></div>
     )}
-    {isPanelFull && !isFuture && <span class="panel-badge panel-badge--full">Panel Full</span>}
-    {isFuture && <span class="panel-badge panel-badge--future">Joining {openingLabel}</span>}
-    {isAccepting && <span class="panel-badge panel-badge--accepting">Accepting new patients</span>}
   </div>
-
-  <div class="provider-card-body">
-    <h3 class="provider-card-name">{d.name}{d.credentials ? `, ${d.credentials}` : ''}</h3>
-    <p class="provider-card-title">{d.title}</p>
-
-    {d.descriptor && <p class="provider-card-descriptor">{d.descriptor}</p>}
-
-    {d.specialties?.length > 0 && (
-      <div class="specialty-chips">
-        {d.specialties.map((s: string) => <span class="chip">{s}</span>)}
-      </div>
-    )}
-
-    {isPhysician && d.boardStatus && (
-      <div class="board-line">
-        <span class={`board-badge ${d.boardStatus}`}>
-          {d.boardStatus === 'board-certified' ? 'Board-Certified' : 'Board-Eligible'}
-        </span>
-      </div>
-    )}
-
-    {isPhysician && d.additionalCertifications?.length > 0 && (
-      <ul class="credential-list">
-        {d.additionalCertifications.slice(0, 2).map((c: any) => (
-          <li>{c.name}</li>
-        ))}
-      </ul>
-    )}
-
-    {!noLink && (
-      <a href={`/meet-the-team/${d.slug}/`} class="btn btn-outline provider-card-cta">
-        Meet {isPhysician ? `Dr. ${d.name.split(' ').pop()}` : d.name.split(' ')[0]} →
-      </a>
-    )}
+  <div class="pcard__body">
+    {status && <p class:list={['pcard__status', 'rd-eyebrow', { 'rd-eyebrow--gold': isPhysician && !isFull, 'pcard__status--full': isFull }]}>{status}</p>}
+    <Heading class="pcard__name rd-serif">{d.name}{d.credentials ? `, ${d.credentials}` : ''}</Heading>
+    {isPhysician && <p class="pcard__role">{d.title}</p>}
+    {rows.length > 0 && <ul class="pcard__rows">{rows.map(r => <li>{r}</li>)}</ul>}
+    {!noLink && <a href={`/meet-the-team/${d.slug}/`} class="rd-link pcard__cta">Meet {ctaName} →</a>}
   </div>
 </article>
 
 <style>
-  .provider-card { display: flex; flex-direction: column; overflow: hidden; transition: box-shadow 0.2s; flex: 0 1 calc(33.333% - 1.334rem); min-width: 280px; max-width: 360px; }
-  .provider-card:hover { box-shadow: var(--shadow-md); }
-  .provider-card.panel-full { opacity: 0.85; }
-
-  .provider-card-photo-wrap { position: relative; overflow: hidden; background: var(--cream-200); }
-  .provider-card-photo { width: 100%; height: 300px; object-fit: cover; display: block; }
-  .provider-card-photo--placeholder { display: flex; align-items: center; justify-content: center; background: var(--cream-200); color: var(--ink-300); height: 300px; }
-
-  .panel-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.7rem; border-radius: 999px; }
-  .panel-badge--full { background: var(--cream-300); color: var(--ink-700); }
-  .panel-badge--future,
-  .panel-badge--accepting { background: var(--green-100); color: var(--green-500); }
-
-  .provider-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
-  .provider-card-name { font-size: 1.25rem; color: var(--ink-900); margin: 0; }
-  .provider-card-title { font-size: 0.9rem; color: var(--ink-500); margin: 0; font-family: var(--font-body); }
-  .provider-card-descriptor { font-size: 0.85rem; color: var(--ink-500); margin: 0; line-height: 1.5; font-family: var(--font-body); }
-
-  .specialty-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .chip { background: var(--green-50); color: var(--green-500); border: 1px solid var(--green-200); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600; }
-
-  .board-line { margin-top: 0.1rem; }
-  .board-badge { font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.65rem; border-radius: 999px; }
-  .board-badge.board-certified { background: var(--green-100); color: var(--green-500); }
-  .board-badge.board-eligible { background: var(--cream-200); color: var(--ink-700); }
-
-  /* Named credentials (e.g. MSCP, ABLM Diplomate) — a deciding patient often
-     never clicks through to the full bio, so the specific credential belongs
-     on the card, not only in the sidebar of the bio page. */
-  .credential-list { list-style: none; padding: 0; margin: 0.1rem 0 0; }
-  .credential-list li {
-    font-size: 0.82rem;
-    color: var(--ink-500);
+  .pcard { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 26px; align-items: start; }
+  .pcard__photo { min-width: 0; }
+  .pcard :global(.pcard__img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 2px;
+    background: var(--linen-300);
+  }
+  .pcard__body { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+  .pcard__body > :global(*) { margin: 0; }
+  .pcard__status--full { color: var(--text-600); }
+  .pcard__name { margin: 3px 0 0; font-size: 30px; line-height: 1.1; color: var(--forest); }
+  .pcard__role { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--sage-600); }
+  .pcard__rows {
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
     line-height: 1.5;
-    padding-left: 1.1rem;
-    position: relative;
+    color: var(--text-700);
+    border-bottom: 1px solid var(--hairline-strong);
   }
-  .credential-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--green-400);
-    font-weight: 700;
+  .pcard__rows li { padding: 7px 0; border-top: 1px solid var(--hairline-strong); }
+  .pcard__cta { align-self: flex-start; margin-top: 8px; }
+  /* Two cards per row between 861 and 1100px leaves the text column narrow: smaller portrait and name. */
+  @media (max-width: 1100px) {
+    .pcard { grid-template-columns: 140px minmax(0, 1fr); gap: 20px; }
+    .pcard__name { font-size: 26px; }
   }
-
-  .provider-card-cta { margin-top: auto; padding-top: 0.7rem; padding-bottom: 0.7rem; font-size: 0.9rem; text-align: center; }
-
-  @media (max-width: 860px) { .provider-card { flex: 0 1 calc(50% - 1rem); } }
-  @media (max-width: 540px) { .provider-card { flex-basis: 100%; max-width: 100%; } }
+  @media (max-width: 480px) {
+    .pcard { grid-template-columns: 1fr; gap: 18px; }
+    .pcard__photo { max-width: 200px; }
+  }
 </style>

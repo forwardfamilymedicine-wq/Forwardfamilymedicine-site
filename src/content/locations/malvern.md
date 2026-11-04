@@ -33,7 +33,7 @@ photos: []
 photoAlts: []
 providers:
   - "brian-landi-do"
-description: "Direct Primary Care for Malvern, Paoli, and the western Main Line."
+description: "Our Chester County location, serving Malvern, Paoli, Exton, Chester Springs, and the western Main Line."
 displayOrder: 3
 ---
 

@@ -3,14 +3,16 @@
  * The practice's structured data, built from the `locations` collection so
  * every page tells search engines the same thing about the same offices.
  *
- * The practice is one MedicalOrganization with no address of its own: it is
- * not one place. Each office is a MedicalClinic with its own @id, address,
- * coordinates, phone and hours, linked to the practice with
- * parentOrganization / subOrganization. Only an open office with a street
+ * The practice is one Organization with no address of its own: it is not one
+ * place. (Not MedicalOrganization: Google's type hierarchy counts that as a
+ * local business, which needs an address.) Each office is a MedicalClinic with
+ * its own @id, address, coordinates, phone and hours, linked to the practice
+ * with parentOrganization / subOrganization. Only an open office with a street
  * address is listed, so a planned office never appears and a new office
  * appears by itself once its status is "open".
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 import { PRACTICE_EMAIL, PRACTICE_FAX } from './localCompose';
 
 type Location = CollectionEntry<'locations'>;
@@ -50,7 +52,27 @@ function openingHours(hours: Location['data']['hours']) {
   });
 }
 
-function officeNode(l: Location) {
+/** A listed office's postal address, as its node and its physicians' nodes give it. */
+export function postalAddress(l: Location) {
+  const d = l.data;
+  return {
+    "@type": "PostalAddress",
+    "streetAddress": d.addressStreet,
+    "addressLocality": d.addressCity,
+    "addressRegion": d.addressState,
+    "postalCode": d.addressZip,
+    "addressCountry": "US",
+  };
+}
+
+// The office's listing photo, at the size and crop the local pages already
+// serve it (ComposedLocalPage), so no new crop is made for structured data.
+async function listingImageUrl(photo: ImageMetadata) {
+  const img = await getImage({ src: photo, width: 1000, height: 750, fit: 'cover', position: 'center', format: 'webp', quality: 82 });
+  return `${SITE_URL}${img.src}`;
+}
+
+async function officeNode(l: Location) {
   const d = l.data;
   return {
     "@type": "MedicalClinic",
@@ -60,24 +82,18 @@ function officeNode(l: Location) {
     "url": `${SITE_URL}/locations/${d.slug}/`,
     "parentOrganization": { "@id": ORG_ID },
     ...(d.phone ? { "telephone": e164(d.phone) } : {}),
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": d.addressStreet,
-      "addressLocality": d.addressCity,
-      "addressRegion": d.addressState,
-      "postalCode": d.addressZip,
-      "addressCountry": "US",
-    },
+    "address": postalAddress(l),
     ...(d.latitude != null && d.longitude != null ? {
       "geo": { "@type": "GeoCoordinates", "latitude": d.latitude, "longitude": d.longitude },
     } : {}),
     ...(d.hours.length > 0 ? { "openingHoursSpecification": openingHours(d.hours) } : {}),
     "medicalSpecialty": "PrimaryCare",
+    ...(d.listingImage ? { "image": await listingImageUrl(d.listingImage) } : {}),
   };
 }
 
 // The practice, then each listed office in display order.
-function practiceGraph(locations: Location[]) {
+async function practiceGraph(locations: Location[]) {
   const offices = locations.filter(isListedOffice).sort((a, b) => a.data.displayOrder - b.data.displayOrder);
   // The practice's number is the one its offices share. If they ever differ,
   // the practice-wide number is a decision to make, not one to guess.
@@ -87,19 +103,18 @@ function practiceGraph(locations: Location[]) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "MedicalOrganization",
+        "@type": "Organization",
         "@id": ORG_ID,
         "name": "Forward Family Medicine",
         "url": SITE_URL,
         ...(phones.length === 1 ? { "telephone": e164(phones[0]) } : {}),
         "faxNumber": e164(PRACTICE_FAX),
         "email": PRACTICE_EMAIL,
-        "medicalSpecialty": "PrimaryCare",
         "knowsAbout": ["Direct Primary Care", "Lifestyle Medicine", "Concierge Medicine"],
         "subOrganization": offices.map(l => ({ "@id": officeId(l.data.slug) })),
         "sameAs": [],
       },
-      ...offices.map(officeNode),
+      ...(await Promise.all(offices.map(officeNode))),
     ],
   };
 }

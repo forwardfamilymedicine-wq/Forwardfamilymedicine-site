@@ -8,7 +8,6 @@ keywords:
   - foods that lower cholesterol
   - lower cholesterol without medication
 category: lifestyle
-date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

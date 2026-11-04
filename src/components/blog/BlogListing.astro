@@ -1,0 +1,262 @@
+---
+/**
+ * The blog index and its category pages, per the Blog board: title and count,
+ * category tabs, the latest post featured, a three-column ruled grid of the
+ * rest with "Showing N of M articles" and "Load more articles", then the
+ * forest "Medicine Worth Reading" band with the Library card. Every word is
+ * the index page's own, apart from the approved "Showing … / Load more" line.
+ *
+ * The first 24 items are in the page; the rest ship with `hidden` and the
+ * button reveals 24 at a time. The count line and button ship `hidden` and the
+ * script reveals them, so without JavaScript the <noscript> rule shows every
+ * item and there is no dead button.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BlogCard from './BlogCard.astro';
+import { BLOG_CATEGORY_LABELS, blogCategoryLabel } from '../../data/blogCategories';
+import { postSlug } from '../../utils/related';
+
+export interface Props {
+  posts: CollectionEntry<'blog'>[];
+  /** Category slug of the active tab; undefined on the index. */
+  active?: string;
+  h1: string;
+  intro?: string;
+  /** "81 articles" / "5 articles", the live count line. */
+  countLabel: string;
+  crumbs: { label: string; href?: string }[];
+  contactHref: string;
+}
+
+const PAGE = 24;
+const { posts, active, h1, intro, countLabel, crumbs, contactHref } = Astro.props;
+const [featured, ...rest] = posts;
+const total = posts.length;
+const shownFirst = Math.min(total, PAGE);
+// Calendar dates render in UTC so a bare frontmatter date never shows a day early.
+const fmt = (d?: string) => new Date(d ?? new Date().toISOString()).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<section class="blog-hero">
+  <div class="rd-wrap">
+    <nav class="rd-crumb" aria-label="Breadcrumb">
+      {crumbs.map((c, i) => (
+        <Fragment>
+          {i > 0 && <span aria-hidden="true"> › </span>}
+          {c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}
+        </Fragment>
+      ))}
+    </nav>
+    <div class="blog-hero__grid">
+      <div class="blog-hero__copy">
+        <h1 class="rd-h1">{h1}</h1>
+        {intro && <p class="blog-hero__intro">{intro}</p>}
+      </div>
+      <p class="blog-hero__count rd-serif">{countLabel}</p>
+    </div>
+    <nav class="blog-tabs" aria-label="Blog categories">
+      <a href="/blog/" class:list={{ cur: !active }} aria-current={!active ? 'page' : undefined}>All</a>
+      {Object.entries(BLOG_CATEGORY_LABELS).map(([slug, label]) => (
+        <a href={`/blog/category/${slug}/`} class:list={{ cur: slug === active }} aria-current={slug === active ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+  </div>
+</section>
+
+{featured ? (
+  <section class="blog-list">
+    <div class="rd-wrap">
+      <a href={`/blog/${postSlug(featured)}/`} class:list={['blog-feat', { 'blog-feat--solo': !featured.data.image }]}>
+        {featured.data.image && (
+          <Image
+            src={featured.data.image}
+            alt={featured.data.imageAlt ?? ''}
+            widths={[480, 720, 960, 1200]}
+            sizes="(max-width: 860px) calc(100vw - 40px), 580px"
+            format="webp"
+            quality={82}
+            loading="eager"
+            fetchpriority="high"
+            class="blog-feat__img"
+          />
+        )}
+        <div class="blog-feat__body">
+          {blogCategoryLabel(featured.data.category) && <span class="blog-feat__cat">{blogCategoryLabel(featured.data.category)}</span>}
+          <h2 class="blog-feat__title rd-serif">{featured.data.title}</h2>
+          <p class="blog-feat__desc">{featured.data.description}</p>
+          <span class="blog-feat__meta">{featured.data.author ?? 'Forward Family Medicine'}<span class="blog-feat__dot" aria-hidden="true">·</span>{fmt(featured.data.date)}</span>
+        </div>
+      </a>
+
+      {rest.length > 0 && (
+        <div class="blog-grid" data-reveal data-post-grid>
+          {rest.map((post, i) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              author={post.data.author ?? 'Forward Family Medicine'}
+              date={post.data.date ?? new Date().toISOString()}
+              slug={postSlug(post)}
+              category={post.data.category}
+              hidden={i + 1 >= PAGE}
+            />
+          ))}
+        </div>
+      )}
+
+      {total > PAGE && (
+        <div class="blog-more" hidden>
+          <span class="blog-more__count" data-shown-count data-total={total} data-page={PAGE}>Showing {shownFirst} of {total} articles</span>
+          <button type="button" class="btn-ghost" data-load-more>Load more articles</button>
+        </div>
+      )}
+      <noscript><style>.post-item[hidden]{display:flex!important}</style></noscript>
+    </div>
+  </section>
+) : (
+  <section class="blog-list">
+    <div class="rd-wrap">
+      <p class="blog-empty">No articles in this category yet.</p>
+    </div>
+  </section>
+)}
+
+<section class="blog-band">
+  <div class="rd-wrap blog-band__grid">
+    <div class="blog-band__copy">
+      <h2 class="blog-band__h2 rd-serif">Medicine Worth Reading</h2>
+      <p class="blog-band__p">Our physicians write about what actually matters for your health — without the noise. New articles monthly, authored by our physicians.</p>
+      <a class="btn-sage blog-band__btn" href={contactHref}>Schedule a Free Meet &amp; Greet</a>
+    </div>
+    <div class="blog-band__card">
+      <p class="blog-band__label">Also Explore</p>
+      <h3 class="blog-band__h3 rd-serif">Lifestyle Medicine Library</h3>
+      <p class="blog-band__text">Evidence-based articles on nutrition, physical activity, sleep, metabolic health, and more — organized by topic.</p>
+      <a class="rd-link" href="/lifestyle/">Browse the Library →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // "Load more articles": reveal the next page of hidden items and keep the
+  // "Showing N of M" line in step. The featured post counts as shown.
+  const grid = document.querySelector<HTMLElement>('[data-post-grid]');
+  const btn = document.querySelector<HTMLButtonElement>('[data-load-more]');
+  const count = document.querySelector<HTMLElement>('[data-shown-count]');
+  if (grid && btn && count) {
+    // The count line and button are server-rendered hidden; they only work with this script.
+    btn.closest<HTMLElement>('.blog-more')?.removeAttribute('hidden');
+    const total = Number(count.dataset.total);
+    const page = Number(count.dataset.page) || 24;
+    const update = () => {
+      const shown = 1 + grid.querySelectorAll('.post-item:not([hidden])').length;
+      count.textContent = `Showing ${Math.min(shown, total)} of ${total} articles`;
+      if (!grid.querySelector('.post-item[hidden]')) btn.hidden = true;
+    };
+    btn.addEventListener('click', () => {
+      Array.from(grid.querySelectorAll<HTMLElement>('.post-item[hidden]')).slice(0, page).forEach(el => { el.hidden = false; });
+      update();
+    });
+  }
+</script>
+
+<style>
+  .blog-hero { background: var(--linen); padding: 80px 0 56px; }
+  .blog-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: end; }
+  .blog-hero__copy { display: flex; flex-direction: column; gap: 22px; max-width: 800px; }
+  .blog-hero__intro { margin: 0; font-size: 18px; line-height: 1.7; color: var(--text-900); }
+  .blog-hero__count { margin: 0; font-size: 20px; color: var(--text-600); padding-bottom: 6px; white-space: nowrap; }
+  .blog-tabs { display: flex; flex-wrap: wrap; gap: 0 28px; border-bottom: 1px solid var(--hairline-strong); margin-top: 40px; }
+  .blog-tabs a { padding: 14px 0; font-size: 14.5px; font-weight: 500; color: var(--text-600); text-decoration: none; position: relative; }
+  .blog-tabs a.cur { color: var(--forest); }
+  .blog-tabs a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .blog-tabs a:hover::after, .blog-tabs a.cur::after { transform: none; }
+
+  .blog-list { background: var(--linen); padding: 16px 0 96px; }
+  .blog-feat {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 64px;
+    align-items: center;
+    color: var(--forest);
+    text-decoration: none;
+    padding: 8px 0 48px;
+    border-bottom: 1px solid var(--hairline-strong);
+    margin-bottom: 0;
+  }
+  .blog-feat--solo { grid-template-columns: minmax(0, 1fr); }
+  .blog-feat--solo .blog-feat__body { max-width: 800px; }
+  .blog-feat :global(.blog-feat__img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 2px;
+  }
+  .blog-feat__body { display: flex; flex-direction: column; gap: 16px; }
+  .blog-feat__cat { font-size: 13px; font-weight: 500; color: var(--sage-600); }
+  .blog-feat__title { margin: 0; font-size: 40px; line-height: 1.1; letter-spacing: -0.01em; transition: color 0.18s; }
+  .blog-feat:hover .blog-feat__title { color: var(--sage-600); }
+  .blog-feat__desc { margin: 0; font-size: 16px; line-height: 1.7; color: var(--text-700); }
+  .blog-feat__meta { font-size: 13px; color: var(--text-600); }
+  .blog-feat__dot { color: var(--text-600); margin: 0 8px; }
+
+  .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 24px; }
+  .blog-grid :global(.post-item:nth-last-child(-n+3)) { border-bottom: 1px solid var(--hairline-strong); }
+  .blog-more { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
+  .blog-more__count { font-size: 14px; color: var(--text-600); }
+  /* The row's flex and the button's own display beat the UA's [hidden]; restore it. */
+  .blog-more[hidden], .blog-more [data-load-more][hidden] { display: none; }
+  .blog-empty { margin: 0; padding: 48px 0; font-size: 16px; color: var(--text-600); text-align: center; }
+
+  .blog-band { background: var(--forest); color: var(--linen); padding: 96px 0; }
+  .blog-band__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 64px; align-items: center; }
+  .blog-band__copy { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .blog-band__h2 { margin: 0; font-size: 48px; line-height: 1.06; letter-spacing: -0.015em; color: var(--linen); }
+  .blog-band__p { margin: 0; font-size: 17px; line-height: 1.7; color: var(--on-forest-muted); max-width: 560px; }
+  .blog-band__card {
+    padding: 30px 32px;
+    background: var(--linen);
+    border-top: 3px solid var(--sage);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--forest);
+  }
+  .blog-band__label { margin: 0; font-size: 13px; color: var(--text-600); }
+  .blog-band__h3 { margin: 0; font-size: 26px; line-height: 1.15; color: var(--forest); }
+  .blog-band__text { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--text-700); }
+  .blog-band__card .rd-link { align-self: flex-start; }
+
+  @media (max-width: 1023px) {
+    .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .blog-grid :global(.post-item:nth-last-child(-n+3)) { border-bottom: 0; }
+    .blog-grid :global(.post-item:nth-last-child(-n+2)) { border-bottom: 1px solid var(--hairline-strong); }
+  }
+  @media (max-width: 860px) {
+    .blog-hero { padding: 48px 0 40px; }
+    .blog-hero__grid { grid-template-columns: 1fr; gap: 16px; }
+    .blog-tabs { margin-top: 28px; gap: 0 20px; }
+    .blog-list { padding: 8px 0 64px; }
+    .blog-feat { grid-template-columns: 1fr; gap: 28px; padding-bottom: 36px; }
+    .blog-feat__title { font-size: 30px; }
+    .blog-grid { grid-template-columns: 1fr; gap: 0; }
+    .blog-grid :global(.post-item) { border-bottom: 0 !important; }
+    .blog-grid :global(.post-item:last-child) { border-bottom: 1px solid var(--hairline-strong) !important; }
+    .blog-band { padding: 64px 0; }
+    .blog-band__grid { grid-template-columns: 1fr; gap: 36px; }
+    .blog-band__h2 { font-size: 34px; }
+  }
+</style>

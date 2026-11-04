@@ -2,7 +2,14 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
-import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
+import ServiceHero from '../components/shared/ServiceHero.astro';
+import StatsBand from '../components/shared/StatsBand.astro';
+import RuledList from '../components/shared/RuledList.astro';
+import TitledGrid from '../components/shared/TitledGrid.astro';
+import SageCard from '../components/shared/SageCard.astro';
+import { Picture } from 'astro:assets';
+import creamChairs from '../assets/office/wayne-cream-chairs.jpg';
+import windowChairs from '../assets/office/wayne-window-chairs.jpg';
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -31,6 +38,62 @@ const faqs = [
     a: 'At Forward Family Medicine, there is no separate concierge tier. Every member receives the full concierge experience — small panel, direct doctor access, unhurried visits — through the DPC membership. It is the standard, not an upgrade.',
   },
 ];
+
+const stats = [
+  { label: 'Forward Family Medicine', value: '1–2 hr', caption: 'visits' },
+  { label: 'Traditional care', value: '7 min', caption: 'visits', muted: true },
+  { label: 'Forward Family Medicine', value: '~250', caption: 'patients per doctor' },
+  { label: 'Traditional care', value: '2,000–3,000', caption: 'patients per doctor', muted: true },
+];
+
+const dpcIncluded = [
+  'Unlimited office visits — no copay, no per-visit fees',
+  'Same-day and next-day appointments',
+  'Visits: 1–2 hours',
+  'Direct access to your doctor: phone, text, and email',
+  'Preventive care and annual wellness exams',
+  'Chronic disease management (diabetes, hypertension, thyroid, etc.)',
+  'Minor in-office procedures',
+  'Wholesale lab and medication pricing',
+  'Telehealth visits included',
+  'Specialist referral coordination',
+  'Integrated Lifestyle Medicine (with Dr. Lieberman)',
+];
+
+const lmList = [
+  'Comprehensive lifestyle assessment',
+  'Personalized nutrition guidance — culinary-informed, practical',
+  'Physical activity planning',
+  'Sleep optimization protocols',
+  'Stress and mental wellness support',
+  'Evidence-based protocols for diabetes, hypertension, heart health, obesity',
+  'Ongoing accountability built into your membership',
+];
+
+const menoList = [
+  'Comprehensive perimenopause and menopause symptom assessment',
+  'HRT consultation — evidence-based, individualized to your history',
+  'Bone health monitoring and osteoporosis risk reduction',
+  'Cardiovascular risk management tailored to midlife hormonal shifts',
+  'Menopause Society Certified Practitioner credentialing',
+  'Integrated with your DPC membership — no separate referral',
+  'Malvern location, with a West Chester location planned',
+];
+
+const wcItems = [
+  { title: 'Physician-vetted', body: 'Every partner is individually reviewed — not sourced from a database.' },
+  { title: 'Priority access', body: 'Collective partners reserve availability for FFM members.' },
+  { title: 'Coordinated care', body: 'Your physician communicates directly with every referral partner.' },
+  { title: 'Member pricing', body: 'Many partners offer preferred rates exclusively for our members.' },
+];
+
+const clItems = [
+  { title: 'Whole-body imaging', body: 'Annual Prenuvo MRI, DEXA twice yearly, and coronary calcium scoring on the right cadence.' },
+  { title: 'Advanced biomarkers', body: 'Three physician-curated lab panels per year — built around what changes management.' },
+  { title: 'Performance metrics', body: 'VO₂ max, body composition, and continuous glucose data integrated into your plan.' },
+  { title: 'Physician-led synthesis', body: 'Every result is interpreted by your physician — not handed back as raw data.' },
+];
+
 ---
 
 <MainLayout
@@ -38,834 +101,219 @@ const faqs = [
   description="Direct Primary Care, board-certified Lifestyle Medicine, and Concierge Medicine in Wayne PA. Flat monthly membership. No insurance. Serving the Main Line and Chester County."
   schema={[breadcrumb]}
 >
-  <!-- Page hero -->
-  <section class="page-hero section hero-section">
-    <BotanicalGraphic variant="compass" class="services-botanical" />
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Services</span>
-      </nav>
-      <span class="section-label">What We Offer</span>
-      <h1 class="hero-h1">Services Designed Around You, Not Your Insurance</h1>
-      <div class="divider"></div>
-      <p class="section-intro">
-        At Forward Family Medicine, every membership includes three things at once: the financial
-        transparency of Direct Primary Care, the personal attention of concierge medicine, and the
-        clinical depth of board-certified Lifestyle Medicine. These aren't separate services or tiers.
-        They're three dimensions of the same practice — and every member gets all three.
-      </p>
-    </div>
-  </section>
+  <ServiceHero
+    title="Services Designed Around You, Not Your Insurance"
+    image={creamChairs}
+    alt="Two cream armchairs beneath an abstract painting in the Wayne office"
+    aspect="5/4"
+    position="50% 60%"
+  >
+    <nav slot="before" class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Services</span>
+    </nav>
+    <p slot="lede">
+      At Forward Family Medicine, every membership includes three things at once: the financial
+      transparency of Direct Primary Care, the personal attention of concierge medicine, and the
+      clinical depth of board-certified Lifestyle Medicine. These aren't separate services or tiers.
+      They're three dimensions of the same practice — and every member gets all three.
+    </p>
+  </ServiceHero>
 
-  <!-- Stats strip -->
-  <section class="stats-strip">
-    <div class="container">
-      <p class="stats-eyebrow">Why DPC Changes Everything</p>
-      <h2 class="stats-heading">DPC vs. Traditional Care</h2>
-      <div class="stats-compare">
-        <!-- Column headers — FFM first -->
-        <div class="stats-col-headers">
-          <div class="stats-col-header stats-col-header--ffm">
-            Forward Family Medicine
-            <span class="stats-col-sub">Your Care</span>
-          </div>
-          <div class="stats-col-header stats-col-header--trad">Traditional Care</div>
-        </div>
-        <!-- Row: Appointment time -->
-        <div class="stats-row">
-          <p class="stats-row-label">Average Appointment Time</p>
-          <div class="stats-row-cells">
-            <div class="stats-cell stats-cell--ffm">
-              <span class="stats-val stats-val--ffm">1–2 hr visits</span>
-            </div>
-            <div class="stats-cell stats-cell--trad">
-              <span class="stats-val stats-val--trad">7 min visits</span>
-            </div>
-          </div>
-        </div>
-        <!-- Row: Patients per doctor -->
-        <div class="stats-row">
-          <p class="stats-row-label">Patients Per Doctor</p>
-          <div class="stats-row-cells">
-            <div class="stats-cell stats-cell--ffm">
-              <span class="stats-val stats-val--ffm">~250 patients</span>
-              <span class="stats-callout">10× fewer patients per doctor</span>
-            </div>
-            <div class="stats-cell stats-cell--trad">
-              <span class="stats-val stats-val--trad">2,000–3,000 patients</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <StatsBand heading="DPC vs. Traditional Care" stats={stats} foot="10× fewer patients per doctor" size={52} />
 
   <!-- DPC -->
-  <section class="service-detail section dpc-section" id="dpc">
-    <div class="container">
-      <div class="service-detail-inner">
-        <div class="service-detail-content">
-          <span class="section-label">Primary Service</span>
-          <h2>Direct Primary Care</h2>
-          <div class="divider"></div>
-          <p>
-            Direct Primary Care is the financial model that makes everything else possible. No
-            insurance billing. No copays. No per-visit fees. Your membership covers unlimited
-            primary care, and because we don't bill insurance, our overhead is low — which means
-            we can pass real savings to you. Labs at wholesale. Medications at cost. Same-day
-            access that keeps you out of urgent care. This is primary care that is actively trying
-            to lower what healthcare costs you.
-          </p>
-          <p>
-            At Forward Family Medicine, your DPC membership means unlimited primary care with
-            no copay, same-day appointments, and direct access to your doctor via phone, text,
-            or email. Not through a nurse line. Your doctor.
-          </p>
-
-          <h3>What's Included</h3>
-          <ul class="prose-list service-list">
-            <li>Unlimited office visits — no copay, no per-visit fees</li>
-            <li>Same-day and next-day appointments</li>
-            <li>Visits: 1–2 hours</li>
-            <li>Direct access to your doctor: phone, text, and email</li>
-            <li>Preventive care and annual wellness exams</li>
-            <li>Chronic disease management (diabetes, hypertension, thyroid, etc.)</li>
-            <li>Minor in-office procedures</li>
-            <li>Wholesale lab and medication pricing</li>
-            <li>Telehealth visits included</li>
-            <li>Specialist referral coordination</li>
-            <li>Integrated Lifestyle Medicine (with Dr. Lieberman)</li>
-          </ul>
-
-          <div class="callout callout-accent" style="margin-top:1.75rem;">
-            <strong>Important:</strong> DPC membership is not insurance. It covers your
-            day-to-day primary care. We recommend pairing it with a high-deductible health
-            plan or health sharing plan for hospitalizations, surgeries, and specialist care.
-          </div>
-
-          <div class="service-ctas">
-            <a href="/membership/" class="btn btn-primary">See Membership Options</a>
-            <a href="/contact/?source=services" class="btn btn-outline">Schedule a Free Meet &amp; Greet</a>
-          </div>
+  <section class="rd-section" id="dpc">
+    <div class="rd-wrap rd-split rd-split--c">
+      <div class="rd-stack">
+        <h2 class="rd-h2">Direct Primary Care</h2>
+        <p class="rd-copy">
+          Direct Primary Care is the financial model that makes everything else possible. No
+          insurance billing. No copays. No per-visit fees. Your membership covers unlimited
+          primary care, and because we don't bill insurance, our overhead is low — which means
+          we can pass real savings to you. Labs at wholesale. Medications at cost. Same-day
+          access that keeps you out of urgent care. This is primary care that is actively trying
+          to lower what healthcare costs you.
+        </p>
+        <p class="rd-copy">
+          At Forward Family Medicine, your DPC membership means unlimited primary care with
+          no copay, same-day appointments, and direct access to your doctor via phone, text,
+          or email. Not through a nurse line. Your doctor.
+        </p>
+        <h3 class="rd-h3 incl-h3">What's Included</h3>
+        <RuledList size="sm" reveal class="dpc-list">
+          {dpcIncluded.map(i => <li>{i}</li>)}
+        </RuledList>
+        <p class="important"><strong>Important:</strong> DPC membership is not insurance. It covers your
+          day-to-day primary care. We recommend pairing it with a high-deductible health
+          plan or health sharing plan for hospitalizations, surgeries, and specialist care.</p>
+        <div class="ctas">
+          <a href="/membership/" class="btn-forest">See Membership Options</a>
+          <a href="/contact/?source=services" class="btn-ghost">Schedule a Free Meet &amp; Greet</a>
         </div>
-        <div class="service-detail-aside">
-          <div class="card aside-card" style="background: linear-gradient(135deg,var(--green-50),var(--cream-200)); border:2px solid var(--green-300);">
-            <h4>Lifestyle Medicine Included</h4>
-            <p style="font-size:0.9rem; color:var(--ink-700); margin-bottom:1rem;">Every DPC membership includes access to Dr. Lieberman's Lifestyle Medicine practice. Nutrition, movement, sleep, and stress — treated as medicine.</p>
-            <a href="/lifestyle-medicine/" class="btn btn-primary" style="font-size:0.85rem; padding:0.6rem 1.25rem;">Learn More →</a>
-          </div>
-        </div>
+      </div>
+      <div class="rd-stack rd-sticky aside">
+        <SageCard>
+          <p class="rd-eyebrow">Lifestyle Medicine Included</p>
+          <p class="rd-lede">Every DPC membership includes access to Dr. Lieberman's Lifestyle Medicine practice. Nutrition, movement, sleep, and stress — treated as medicine.</p>
+          <a href="/lifestyle-medicine/" class="rd-link aside-link">Learn More →</a>
+        </SageCard>
+        <Picture
+          src={windowChairs}
+          alt="Two green armchairs by a sunlit window in the Wayne office"
+          widths={[400, 640, 800]}
+          sizes="(max-width: 860px) calc(100vw - 40px), 420px"
+          formats={['avif', 'webp']}
+          loading="lazy"
+          class="aside-img"
+          style="aspect-ratio:4/5;object-position:60% 50%"
+        />
       </div>
     </div>
   </section>
 
-  <!-- Lifestyle Medicine teaser -->
-  <section class="service-detail section lm-section" id="lifestyle-medicine">
-    <div class="container">
-      <span class="section-label">Our Differentiator</span>
-      <h2>Lifestyle Medicine</h2>
-      <div class="divider"></div>
-      <div class="grid-2">
-        <div>
-          <p>
-            Forward Family Medicine is the only DPC practice on the Main Line offering
-            in-person, board-certified Lifestyle Medicine. Dr. Lieberman is dual board-certified
-            in Family Medicine and Lifestyle Medicine, with pre-medical training in culinary
-            arts and nutrition science.
-          </p>
-          <p>
-            Lifestyle medicine treats chronic disease at its root — through evidence-based
-            changes in nutrition, physical activity, sleep, stress management, and social
-            connection. At FFM, it's not a handout at the end of your visit. It's integrated
-            into how we practice.
-          </p>
-          <a href="/lifestyle-medicine/" class="btn btn-primary">View Full Lifestyle Medicine Page →</a>
-        </div>
-        <div>
-          <ul class="dot-list">
-            <li>Comprehensive lifestyle assessment</li>
-            <li>Personalized nutrition guidance — culinary-informed, practical</li>
-            <li>Physical activity planning</li>
-            <li>Sleep optimization protocols</li>
-            <li>Stress and mental wellness support</li>
-            <li>Evidence-based protocols for diabetes, hypertension, heart health, obesity</li>
-            <li>Ongoing accountability built into your membership</li>
-          </ul>
-        </div>
+  <!-- Lifestyle Medicine -->
+  <section class="rd-section rd-alt" id="lifestyle-medicine">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">Lifestyle Medicine</h2>
+        <p class="rd-copy">
+          Forward Family Medicine is the only DPC practice on the Main Line offering
+          in-person, board-certified Lifestyle Medicine. Dr. Lieberman is dual board-certified
+          in Family Medicine and Lifestyle Medicine, with pre-medical training in culinary
+          arts and nutrition science.
+        </p>
+        <p class="rd-copy">
+          Lifestyle medicine treats chronic disease at its root — through evidence-based
+          changes in nutrition, physical activity, sleep, stress management, and social
+          connection. At FFM, it's not a handout at the end of your visit. It's integrated
+          into how we practice.
+        </p>
+        <a href="/lifestyle-medicine/" class="btn-forest self-start">View Full Lifestyle Medicine Page →</a>
       </div>
+      <RuledList size="sm" reveal class="svc-rows">
+        {lmList.map(i => <li>{i}</li>)}
+      </RuledList>
     </div>
   </section>
 
-  <!-- Menopause Care teaser -->
-  <section class="service-detail section menopause-section" id="menopause-care">
-    <div class="container">
-      <span class="section-label">Specialty Care</span>
-      <h2>Menopause Care</h2>
-      <div class="divider"></div>
-      <div class="grid-2">
-        <div>
-          <p>
-            Comprehensive perimenopause and menopause care from Dr. Brian Landi, DO — a Menopause
-            Society Certified Practitioner. Symptom assessment, HRT consultation, and integrated
-            cardiovascular and bone health risk management, all within your DPC membership.
-          </p>
-          <p>
-            Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
-            No referral required — menopause care is built into your primary care relationship, not
-            siloed into a specialist appointment.
-          </p>
-          <a href="/menopause/" class="btn btn-primary">View Full Menopause Care Page →</a>
-        </div>
-        <div>
-          <ul class="dot-list">
-            <li>Comprehensive perimenopause and menopause symptom assessment</li>
-            <li>HRT consultation — evidence-based, individualized to your history</li>
-            <li>Bone health monitoring and osteoporosis risk reduction</li>
-            <li>Cardiovascular risk management tailored to midlife hormonal shifts</li>
-            <li>Menopause Society Certified Practitioner credentialing</li>
-            <li>Integrated with your DPC membership — no separate referral</li>
-            <li>Malvern location, with a West Chester location planned</li>
-          </ul>
-        </div>
+  <!-- Menopause Care -->
+  <section class="rd-section" id="menopause-care">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">Menopause Care</h2>
+        <p class="rd-copy">
+          Comprehensive perimenopause and menopause care from Dr. Brian Landi, DO — a Menopause
+          Society Certified Practitioner. Symptom assessment, HRT consultation, and integrated
+          cardiovascular and bone health risk management, all within your DPC membership.
+        </p>
+        <p class="rd-copy">
+          Dr. Landi is accepting new patients now at our Malvern office. A West Chester office is planned.
+          No referral required — menopause care is built into your primary care relationship, not
+          siloed into a specialist appointment.
+        </p>
+        <a href="/menopause/" class="btn-forest self-start">View Full Menopause Care Page →</a>
       </div>
+      <RuledList size="sm" reveal class="svc-rows">
+        {menoList.map(i => <li>{i}</li>)}
+      </RuledList>
     </div>
   </section>
 
   <!-- Concierge -->
-  <section class="service-detail section concierge-section" id="concierge">
-    <div class="container">
-      <span class="section-label">Premium Care</span>
-      <h2>Concierge Medicine</h2>
-      <div class="divider"></div>
-      <div class="grid-2">
-        <div>
-          <p>
-            There is no separate concierge tier at Forward Family Medicine. Every member receives
-            what the industry calls a concierge experience — a physician whose panel is capped at
-            250 patients, who picks up the phone, who runs 1–2 hour visits, and who
-            follows up without being asked. This is not a premium add-on. It is the standard.
-          </p>
-          <a href="/concierge-medicine/" class="btn btn-primary">Learn more about the concierge experience at FFM →</a>
-        </div>
-        <div></div>
+  <section class="rd-section rd-alt" id="concierge">
+    <div class="rd-wrap rd-split rd-split--a">
+      <h2 class="rd-h2">Concierge Medicine</h2>
+      <div class="rd-stack">
+        <p class="rd-lede conc-lede">
+          There is no separate concierge tier at Forward Family Medicine. Every member receives
+          what the industry calls a concierge experience — a physician whose panel is capped at
+          250 patients, who picks up the phone, who runs 1–2 hour visits, and who
+          follows up without being asked. This is not a premium add-on. It is the standard.
+        </p>
+        <a href="/concierge-medicine/" class="rd-link self-start">Learn more about the concierge experience at FFM →</a>
       </div>
     </div>
   </section>
 
-  <!-- ── Wellness Collective Teaser ───────────────────────── -->
-  <section class="wc-teaser">
-    <div class="container">
-      <div class="wc-teaser__grid">
-
-        <div class="wc-teaser__left">
-          <div class="wc-teaser__badge">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="var(--green-500)" stroke-width="1.25"/><polyline points="4,7 6,9.5 10,4.5" stroke="var(--green-500)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Included in every membership
-          </div>
-          <p class="wc-teaser__eyebrow">The Wellness Collective</p>
-          <h2 class="wc-teaser__heading">
-            Care that extends beyond our office.
-          </h2>
-          <p class="wc-teaser__body">
-            Membership at Forward Family Medicine includes access to the
-            Main Line Wellness Collective — a curated network of best-in-class
-            local providers across physical therapy, nutrition, fitness, mental
-            health, dermatology, sleep medicine, and more.
-          </p>
-          <p class="wc-teaser__body">
-            Every provider has been personally vetted by your physician. When
-            you need a referral, we match you, make the connection, and
-            coordinate your care — so nothing falls through the cracks.
-          </p>
-          <a href="/wellness-collective/" class="wc-teaser__link">
-            See the full Collective
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-
-        <div class="wc-teaser__cards">
-          <div class="wc-teaser__card">
-            <div class="wc-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h4>Physician-vetted</h4>
-            <p>Every partner is individually reviewed — not sourced from a database.</p>
-          </div>
-          <div class="wc-teaser__card">
-            <div class="wc-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h4>Priority access</h4>
-            <p>Collective partners reserve availability for FFM members.</p>
-          </div>
-          <div class="wc-teaser__card">
-            <div class="wc-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h4>Coordinated care</h4>
-            <p>Your physician communicates directly with every referral partner.</p>
-          </div>
-          <div class="wc-teaser__card">
-            <div class="wc-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <h4>Member pricing</h4>
-            <p>Many partners offer preferred rates exclusively for our members.</p>
-          </div>
-        </div>
-
+  <!-- Wellness Collective teaser -->
+  <section class="rd-section">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <p class="rd-eyebrow">Included in every membership</p>
+        <h2 class="rd-h2">Care that extends beyond our office.</h2>
+        <p class="rd-copy">
+          Membership at Forward Family Medicine includes access to the
+          Main Line Wellness Collective — a curated network of best-in-class
+          local providers across physical therapy, nutrition, fitness, mental
+          health, dermatology, sleep medicine, and more.
+        </p>
+        <p class="rd-copy">
+          Every provider has been personally vetted by your physician. When
+          you need a referral, we match you, make the connection, and
+          coordinate your care — so nothing falls through the cracks.
+        </p>
+        <a href="/wellness-collective/" class="rd-link self-start">See the full Collective →</a>
       </div>
+      <TitledGrid columns={2} reveal items={wcItems} />
     </div>
   </section>
 
-  <!-- ── Clarity Program Teaser ──────────────────────────── -->
-  <section class="clarity-teaser">
-    <div class="container">
-      <div class="clarity-teaser__grid">
-
-        <div class="clarity-teaser__left">
-          <div class="clarity-teaser__badge">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L2 3.8V7c0 2.8 2.1 5.2 5 5.9 2.9-.7 5-3.1 5-5.9V3.8L7 1z" stroke="var(--ink-500)" stroke-width="1.15" stroke-linejoin="round"/></svg>
-            Premium executive health program
-          </div>
-          <p class="clarity-teaser__eyebrow">The Clarity Program</p>
-          <h2 class="clarity-teaser__heading">
-            An operating system for your health.
-          </h2>
-          <p class="clarity-teaser__body">
-            Clarity is our integrated executive health program — built for members who want the full picture. It combines whole-body imaging, advanced biomarker testing, fitness and body composition analysis, and longitudinal physician guidance into a single, coordinated program.
-          </p>
-          <p class="clarity-teaser__body">
-            Where most executive physicals end with a thick PDF and a handshake, Clarity is a year-round relationship. We measure what matters, track it over time, and translate every result into action.
-          </p>
-          <a href="/clarity/" class="clarity-teaser__link">
-            Explore the Clarity Program
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-
-        <div class="clarity-teaser__cards">
-          <div class="clarity-teaser__card">
-            <div class="clarity-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            </div>
-            <h4>Whole-body imaging</h4>
-            <p>Annual Prenuvo MRI, DEXA twice yearly, and coronary calcium scoring on the right cadence.</p>
-          </div>
-          <div class="clarity-teaser__card">
-            <div class="clarity-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h4>Advanced biomarkers</h4>
-            <p>Three physician-curated lab panels per year — built around what changes management.</p>
-          </div>
-          <div class="clarity-teaser__card">
-            <div class="clarity-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            </div>
-            <h4>Performance metrics</h4>
-            <p>VO₂ max, body composition, and continuous glucose data integrated into your plan.</p>
-          </div>
-          <div class="clarity-teaser__card">
-            <div class="clarity-teaser__card-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-            </div>
-            <h4>Physician-led synthesis</h4>
-            <p>Every result is interpreted by your physician — not handed back as raw data.</p>
-          </div>
-        </div>
-
+  <!-- Clarity teaser -->
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <p class="rd-eyebrow rd-eyebrow--gold">Premium executive health program</p>
+        <h2 class="rd-h2">An operating system for your health.</h2>
+        <p class="rd-copy">
+          Clarity is our integrated executive health program — built for members who want the full picture. It combines whole-body imaging, advanced biomarker testing, fitness and body composition analysis, and longitudinal physician guidance into a single, coordinated program.
+        </p>
+        <p class="rd-copy">
+          Where most executive physicals end with a thick PDF and a handshake, Clarity is a year-round relationship. We measure what matters, track it over time, and translate every result into action.
+        </p>
+        <a href="/clarity/" class="rd-link self-start">Explore the Clarity Program →</a>
       </div>
+      <TitledGrid columns={2} reveal items={clItems} />
     </div>
   </section>
 
   <FAQSection faqs={faqs} headline="Questions About Our Services" />
-  <CTABanner btnHref="/contact/?source=services" />
+  <CTABanner ch={16} btnHref="/contact/?source=services" />
 </MainLayout>
 
 <style>
-  /* ── Hero ─────────────────────────────────────────────────── */
-  .hero-section {
-    background: var(--cream-100);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-section .container {
-    position: relative;
-    z-index: 1;
-  }
-  .hero-h1 {
-    font-size: clamp(2.4rem, 5.5vw, 3.75rem);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
-  }
-
-  /* ── Stats strip ─────────────────────────────────────────── */
-  .stats-strip {
-    background: var(--green-300);
-    padding: clamp(36px, 6vw, 60px) 0;
-  }
-  .stats-eyebrow {
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 1.5rem;
-  }
-  .stats-heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 1.75rem;
-  }
-  /* Comparison table */
-  .stats-compare {
-    max-width: 680px;
-    margin-inline: auto;
-  }
-  /* Column header row */
-  .stats-col-headers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-    align-items: stretch;
-  }
-  .stats-col-header {
-    font-family: var(--font-body);
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.65rem 1rem 0.6rem;
-    border-radius: 6px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-  .stats-col-header--trad {
-    color: rgba(255,255,255,0.45);
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
-  }
-  .stats-col-header--ffm {
-    color: var(--green-100);
-    border: 1px solid rgba(167,204,169,0.5);
-    border-top: 2px solid var(--green-100);
-    background: rgba(167,204,169,0.14);
-  }
-  .stats-col-sub {
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    color: rgba(167,204,169,0.7);
-    text-transform: uppercase;
-  }
-  /* Each metric row */
-  .stats-row {
-    margin-bottom: 1.75rem;
-  }
-  .stats-row:last-child {
-    margin-bottom: 0;
-  }
-  .stats-row-label {
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 0.5rem;
-  }
-  .stats-row-cells {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .stats-cell {
-    padding: 1rem;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.45rem;
-  }
-  .stats-cell--trad {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .stats-cell--ffm {
-    background: rgba(167,204,169,0.12);
-    border: 1px solid rgba(167,204,169,0.3);
-  }
-  .stats-val {
-    font-family: var(--font-heading);
-    line-height: 1.1;
-    display: block;
-  }
-  .stats-val--trad {
-    font-size: clamp(1.4rem, 3vw, 1.9rem);
-    font-weight: 400;
-    color: rgba(255,255,255,0.45);
-  }
-  .stats-val--ffm {
-    font-size: clamp(1.9rem, 4vw, 2.75rem);
-    font-weight: 700;
-    color: var(--green-100);
-  }
-  .stats-callout {
-    font-family: var(--font-body);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--green-100);
-    background: rgba(167,204,169,0.15);
-    border: 1px solid rgba(167,204,169,0.3);
-    border-radius: 999px;
-    padding: 0.2rem 0.7rem;
-    white-space: nowrap;
-  }
-  @media (max-width: 480px) {
-    .stats-compare {
-      max-width: 100%;
-    }
-  }
-
-  /* ── DPC section ─────────────────────────────────────────── */
-  .dpc-section {
-    background: #ffffff;
-  }
-
-  /* ── Lifestyle Medicine section ──────────────────────────── */
-  .lm-section {
-    background: var(--cream-200);
-  }
-  .dot-list {
-    list-style: none;
-    padding: 0;
-  }
-  .dot-list li {
-    padding: 0.5rem 0 0.5rem 1.75rem;
-    position: relative;
-    line-height: 1.55;
-  }
-  .dot-list li::before {
-    content: '●';
-    position: absolute;
-    left: 0;
-    color: var(--green-300);
-    font-size: 0.65rem;
-    top: 0.7rem;
-  }
-
-  /* ── Menopause Care section ─────────────────────────────── */
-  .menopause-section {
-    background: var(--cream-50);
-  }
-
-  /* ── Concierge section ───────────────────────────────────── */
-  .concierge-section {
-    background: #ffffff;
-  }
-
-  /* ── Breadcrumb ──────────────────────────────────────────── */
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
-
-  /* ── DPC layout ──────────────────────────────────────────── */
-  .service-detail-inner {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 3rem;
-    align-items: start;
-  }
-  .service-list {
-    margin-top: 0.75rem;
-  }
-  .service-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 900px) {
-    .service-detail-inner {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* ── Wellness Collective Teaser ──────────────────────────── */
-  .wc-teaser {
-    background: var(--cream-200);
-    padding: var(--section-pad) 0;
-    border-top: 1px solid var(--cream-300);
-  }
-  .wc-teaser__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .wc-teaser__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 14px;
-    background: rgba(63,99,68,0.08);
-    border: 1px solid rgba(63,99,68,0.2);
-    border-radius: 40px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--green-500);
-    margin-bottom: 16px;
-  }
-  .wc-teaser__eyebrow {
-    font-size: 0.73rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--green-500);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-  .wc-teaser__eyebrow::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--green-500);
-    flex-shrink: 0;
-  }
-  .wc-teaser__heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 400;
-    color: var(--ink-900);
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-  .wc-teaser__body {
-    font-size: 0.95rem;
-    font-weight: 300;
-    line-height: 1.82;
-    color: var(--ink-700);
-    margin-bottom: 12px;
-  }
-  .wc-teaser__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 20px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--green-500);
-    text-decoration: none;
-    border-bottom: 1px solid var(--green-200);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s, gap 0.2s;
-  }
-  .wc-teaser__link:hover {
-    color: var(--green-400);
-    border-color: var(--green-500);
-    gap: 12px;
-  }
-  .wc-teaser__cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .wc-teaser__card {
-    background: #ffffff;
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 22px 20px;
-    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
-  }
-  .wc-teaser__card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--green-300);
-  }
-  .wc-teaser__card-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--green-50);
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-  }
-  .wc-teaser__card h4 {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--ink-900);
-    margin-bottom: 5px;
-  }
-  .wc-teaser__card p {
-    font-size: 0.82rem;
-    font-weight: 300;
+  .crumbs { font-size: 13px; color: var(--text-600); margin-bottom: 18px; }
+  .crumbs a { color: var(--text-600); }
+  .crumbs a:hover { color: var(--forest); }
+  .crumbs span:last-child { color: var(--text-700); }
+  .self-start { align-self: flex-start; }
+  /* Board rows are 14px padding (about 53px for one line), not the lg 26px. */
+  :global(.ruled-list.ruled-list--sm.svc-rows > li) { padding: 14px 0; font-size: 15px; line-height: 1.6; }
+  .incl-h3 { font-size: 24px; margin-top: 16px; }
+  .rd-stack :global(.dpc-list) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+  .rd-stack :global(.dpc-list) > :global(li) { font-size: 14px; color: var(--text-900); }
+  .rd-stack :global(.dpc-list) > :global(li:nth-last-child(2):nth-child(odd)) { border-bottom: 0; }
+  .important {
+    margin: 8px 0 0;
+    padding: 16px 20px;
+    border-top: 2px solid var(--gold);
+    background: var(--linen-50);
+    font-size: 14px;
     line-height: 1.65;
-    color: var(--ink-500);
-    margin: 0;
+    color: var(--text-700);
   }
-  @media (max-width: 900px) {
-    .wc-teaser__grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-  }
-  @media (max-width: 480px) {
-    .wc-teaser__cards {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* ── Clarity Program Teaser ──────────────────────────────── */
-  .clarity-teaser {
-    background: var(--cream-50);
-    padding: var(--section-pad) 0;
-    border-top: 1px solid var(--cream-300);
-  }
-  .clarity-teaser__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .clarity-teaser__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 14px;
-    background: rgba(15, 25, 20, 0.06);
-    border: 1px solid rgba(15, 25, 20, 0.12);
-    border-radius: 40px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--ink-700);
-    margin-bottom: 16px;
-  }
-  .clarity-teaser__eyebrow {
-    font-size: 0.73rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-700);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-  .clarity-teaser__eyebrow::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--ink-300);
-    flex-shrink: 0;
-  }
-  .clarity-teaser__heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 400;
-    color: var(--ink-900);
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-  .clarity-teaser__body {
-    font-size: 0.95rem;
-    font-weight: 300;
-    line-height: 1.82;
-    color: var(--ink-700);
-    margin-bottom: 12px;
-  }
-  .clarity-teaser__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 20px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--ink-900);
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink-300);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s, gap 0.2s;
-  }
-  .clarity-teaser__link:hover {
-    color: var(--green-500);
-    border-color: var(--green-400);
-    gap: 12px;
-  }
-  .clarity-teaser__cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .clarity-teaser__card {
-    background: #ffffff;
-    border: 1px solid var(--cream-300);
-    border-radius: var(--radius);
-    padding: 22px 20px;
-    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
-  }
-  .clarity-teaser__card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--ink-300);
-  }
-  .clarity-teaser__card-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--cream-100);
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-  }
-  .clarity-teaser__card h4 {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--ink-900);
-    margin-bottom: 5px;
-  }
-  .clarity-teaser__card p {
-    font-size: 0.82rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--ink-500);
-    margin: 0;
-  }
-  @media (max-width: 900px) {
-    .clarity-teaser__grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-  }
-  @media (max-width: 480px) {
-    .clarity-teaser__cards {
-      grid-template-columns: 1fr;
-    }
+  .important strong { color: var(--forest); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+  .aside { gap: 24px; position: static; }
+  /* The card plus the 4:5 photo is 730-842px tall (taller as the column
+     widens). Pin it under the header only when the viewport has room for all
+     of it plus the 105px offset, so its bottom is never cut off while stuck. */
+  @media (min-width: 861px) and (min-height: 920px) { .aside { position: sticky; } }
+  @media (min-width: 1200px) and (max-height: 959px) { .aside { position: static; } }
+  .aside-link { align-self: flex-start; }
+  .aside :global(.aside-img) { display: block; width: 100%; height: auto; object-fit: cover; border-radius: 2px; }
+  .conc-lede { font-size: 24px; line-height: 1.45; }
+  @media (max-width: 860px) {
+    .rd-stack :global(.dpc-list) { grid-template-columns: 1fr; }
+    .conc-lede { font-size: 20px; }
   }
 </style>

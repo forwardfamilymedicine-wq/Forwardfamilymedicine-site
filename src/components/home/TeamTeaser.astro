@@ -1,26 +1,45 @@
 ---
+/**
+ * Meet the Team: the physicians accepting new patients as portrait rows with
+ * a status line naming their office and their credential paragraph, then the
+ * founder row. Split by availability, not by name, so this follows the data
+ * if a panel opens or closes later.
+ *
+ * The credential paragraphs are reproduced from the previous proof section
+ * and must stay in step with the provider files.
+ */
 import { getCollection } from 'astro:content';
-import ProviderCard from '../shared/ProviderCard.astro';
+import { Image } from 'astro:assets';
 import { getAvailability } from '../../utils/availability';
 import drBigleyPhoto from '../../assets/staff/dr-david-bigley.jpg';
 
 const providers = (await getCollection('providers'))
   .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+const openOffices = (await getCollection('locations'))
+  .filter(l => l.data.status === 'open')
+  .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 
-// Split by availability, not by name, so this follows the data if a panel
-// opens or closes later. Anyone not currently accepting drops out of the
-// primary grid; the founder keeps his own block below.
 const accepting = providers.filter(p => getAvailability(p.data).status !== 'full');
 const founder = providers.find(p => p.data.slug === 'david-bigley-do');
 const showFounderBlock = founder && getAvailability(founder.data).status === 'full';
+
+const credentialCopy: Record<string, string> = {
+  'philip-lieberman-md': 'Dual board-certified in Family Medicine and Lifestyle Medicine, and a diplomate of the American Board of Lifestyle Medicine. During residency at Abington he built the Lifestyle Medicine curriculum that qualified fellow residents for that same board certification. Before medicine, an Associate of Science in Culinary Arts and a Bachelor of Science in Nutrition Science.',
+  'brian-landi-do': 'Board-certified through the American Osteopathic Board of Family Physicians and a Menopause Society Certified Practitioner. Served as Chief Resident of the ChristianaCare Family Medicine residency.',
+};
+
+/** The open office a physician sees patients at, by display order. */
+function officeName(slugs: string[]): string | undefined {
+  return openOffices.find(l => slugs.includes(l.data.slug))?.data.name;
+}
+const lastName = (name: string) => name.split(' ').slice(-1)[0];
 ---
 
-<section class="team-teaser section" aria-label="Meet the team">
-  <div class="container">
-    <div class="team-header text-center">
-      <span class="section-label">Your Care Team</span>
-      <h2 class="section-title">Meet the Team</h2>
-      <p class="section-intro" style="margin:0 auto;">
+<section class="team" aria-label="Meet the team">
+  <div class="rd-wrap">
+    <div class="team-head">
+      <h2 class="rd-h2">Meet the Team</h2>
+      <p class="team-intro">
         Small panels, visits long enough to actually get somewhere, and direct
         access to the doctor who knows your history. The physicians below are
         accepting new patients now.
@@ -28,141 +47,140 @@ const showFounderBlock = founder && getAvailability(founder.data).status === 'fu
     </div>
 
     <div class="team-grid">
-      {accepting.map(p => <ProviderCard provider={p} />)}
+      {accepting.map(p => {
+        const office = officeName(p.data.locations);
+        return (
+          <article class="physician">
+            {p.data.photo && (
+              <Image
+                src={p.data.photo}
+                alt={p.data.photoAlt}
+                class="physician-photo"
+                width={400}
+                height={500}
+                widths={[200, 400, 600]}
+                sizes="(max-width: 860px) 160px, 200px"
+                format="webp"
+                quality={82}
+                loading="lazy"
+              />
+            )}
+            <div class="physician-body">
+              <p class="rd-eyebrow rd-eyebrow--gold">Accepting new patients{office && ` · ${office}`}</p>
+              <h3 class="physician-name rd-serif">{p.data.name}, {p.data.credentials}</h3>
+              <p class="physician-title">{p.data.title}</p>
+              <div class="rd-hair physician-hair"></div>
+              {credentialCopy[p.data.slug] && <p class="physician-cred">{credentialCopy[p.data.slug]}</p>}
+              <a class="rd-link physician-link" href={`/meet-the-team/${p.data.slug}/`}>Meet Dr. {lastName(p.data.name)} →</a>
+            </div>
+          </article>
+        );
+      })}
     </div>
 
     {showFounderBlock && (
-      <div class="founder-block">
-        <div class="founder-header">
-          <img
-            src={drBigleyPhoto.src}
-            alt="Dr. David Bigley, DO, founder of Forward Family Medicine"
-            class="founder-photo"
-            width="96"
-            height="96"
-            loading="lazy"
-          />
-          <div>
-            <p class="founder-eyebrow">Our Founder</p>
-            <h3 class="founder-heading">Founded by Dr. David Bigley, DO</h3>
+      <div class="founder">
+        <Image
+          src={drBigleyPhoto}
+          alt="Dr. David Bigley, DO, founder of Forward Family Medicine"
+          class="founder-photo"
+          width={240}
+          height={240}
+          widths={[120, 240, 360]}
+          sizes="(max-width: 860px) 96px, 120px"
+          format="webp"
+          quality={82}
+          loading="lazy"
+        />
+        <div class="founder-body">
+          <h3 class="founder-heading rd-serif">Founded by Dr. David Bigley, DO</h3>
+          <p>Dr. Bigley opened Forward Family Medicine in 2024. His panel is currently full.</p>
+          <p>
+            That is the model working as designed. Every physician here practices
+            with a deliberate cap on panel size, because the time, the direct
+            access, and the continuity this practice is built on are only possible
+            when a doctor has room for them. A full panel is that commitment kept.
+          </p>
+          <div class="founder-links">
+            <a class="rd-link" href="/meet-the-team/david-bigley-do/">Read Dr. Bigley's story →</a>
+            <a class="rd-link" href="/meet-the-team/">+ Meet our wellness team →</a>
           </div>
         </div>
-        <p class="founder-body">
-          Dr. Bigley opened Forward Family Medicine in 2024. His panel is
-          currently full.
-        </p>
-        <p class="founder-body">
-          That is the model working as designed. Every physician here practices
-          with a deliberate cap on panel size, because the time, the direct
-          access, and the continuity this practice is built on are only possible
-          when a doctor has room for them. A full panel is that commitment kept.
-        </p>
-        <a href="/meet-the-team/david-bigley-do/" class="founder-link">
-          Read Dr. Bigley's story →
-        </a>
       </div>
     )}
-
-    <div class="team-footer text-center">
-      <a href="/meet-the-team/" class="team-all-link">+ Meet our wellness team →</a>
-    </div>
   </div>
 </section>
 
 <style>
-  .team-teaser {
-    background: var(--cream-200);
+  .team {
+    background: var(--linen-50);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 96px 0;
   }
-  .team-header {
-    margin-bottom: 3rem;
-  }
-  /* Two accepting physicians: keep cards at card width and centred rather than
-     letting them stretch across the full container. */
+  .team-head { display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
+  .team-intro { font-size: 16px; line-height: 1.7; color: var(--text-700); margin: 0; }
+
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 360px));
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+    margin-top: 56px;
   }
+  .physician {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+  .physician-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 2px;
+  }
+  .physician-body { display: flex; flex-direction: column; gap: 10px; }
+  .physician-name { font-size: 30px; line-height: 1.1; color: var(--forest); margin: 4px 0 0; }
+  .physician-title { font-size: 14px; color: var(--sage-600); font-weight: 500; margin: 0; }
+  .physician-hair { margin: 6px 0; }
+  .physician-cred { font-size: 14px; line-height: 1.7; color: var(--text-700); margin: 0; }
+  .physician-link { align-self: flex-start; margin-top: 8px; }
 
-  /* Founder block — secondary to the cards above, not a third card. */
-  .founder-block {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: var(--warm-50);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-  }
-  /* Photo sits beside the eyebrow and heading as a credibility anchor, matching
-     the circular treatment used by the blog AuthorBio. */
-  .founder-header {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 1rem;
+  .founder {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline-strong);
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
   }
   .founder-photo {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid var(--green-200);
+    object-position: 50% 15%;
+    border-radius: 50%;
   }
-  .founder-eyebrow {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--green-500);
-    margin: 0 0 0.35rem;
-  }
-  .founder-heading {
-    font-size: 1.15rem;
-    color: var(--ink-900);
-    margin: 0;
-  }
-  .founder-body {
-    font-size: 0.95rem;
-    line-height: 1.75;
-    color: var(--ink-700);
-    margin: 0 0 1rem;
-  }
-  .founder-link {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--green-400);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .founder-link:hover { color: var(--green-500); }
+  .founder-body { display: flex; flex-direction: column; gap: 10px; max-width: 720px; }
+  .founder-heading { font-size: 26px; line-height: 1.2; color: var(--forest); margin: 0; }
+  .founder-body p { font-size: 15px; line-height: 1.7; color: var(--text-700); margin: 0; }
+  .founder-links { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 6px; }
 
-  .team-footer {
-    margin-top: 1.5rem;
-  }
-  .team-all-link {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--green-400);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .team-all-link:hover { color: var(--green-500); }
-
-  /* Override component flex sizing — grid handles width here */
-  .team-grid :global(.provider-card) { max-width: none; min-width: 0; flex: unset; }
-
-  @media (max-width: 780px) {
-    .team-grid { grid-template-columns: minmax(0, 360px); }
+  @media (max-width: 860px) {
+    .team { padding: 64px 0; }
+    .team-grid { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
+    .physician { grid-template-columns: 160px minmax(0, 1fr); gap: 20px; }
+    .physician-name { font-size: 24px; }
+    .founder { grid-template-columns: 96px minmax(0, 1fr); gap: 20px; margin-top: 40px; }
   }
   @media (max-width: 540px) {
-    .team-grid { grid-template-columns: 1fr; }
-    .founder-block { padding: 1.5rem; }
-    .founder-header { gap: 1rem; }
-    .founder-photo { width: 72px; height: 72px; }
+    .physician { grid-template-columns: 1fr; }
+    .physician-photo { max-width: 200px; }
   }
 </style>

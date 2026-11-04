@@ -9,7 +9,6 @@ keywords:
   - stress inflammation
   - HPA axis stress
 category: lifestyle
-date: "2026-01-01"
 author: "Forward Family Medicine"
 schemaType: "Article"
 references:

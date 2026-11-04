@@ -1,14 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import ServiceHero from '../components/shared/ServiceHero.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import FAQSection from '../components/shared/FAQSection.astro';
 import CTABanner from '../components/shared/CTABanner.astro';
 import NearYouExpander from '../components/shared/NearYouExpander.astro';
-import BotanicalGraphic from '../components/shared/BotanicalGraphic.astro';
-import TestimonialCard from '../components/shared/TestimonialCard.astro';
+import TitledGrid from '../components/shared/TitledGrid.astro';
+import PathTimeline from '../components/shared/PathTimeline.astro';
+import QuotePair from '../components/shared/QuotePair.astro';
+import { reviewBy } from '../utils/reviews';
+import RuledList from '../components/shared/RuledList.astro';
+import SageCard from '../components/shared/SageCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { getAvailability } from '../utils/availability';
-import { isListedOffice, officeRef } from '../utils/practiceSchema';
+import { physicianRef } from '../utils/physicianSchema';
 
 // Dr. Lieberman's name, credentials, photo, bio link and availability all come
 // from the providers collection — the same source meet-the-team, the homepage
@@ -17,9 +23,6 @@ const allProviders = await getCollection('providers');
 const lieberman = allProviders.find(p => p.id === 'philip-lieberman-md');
 const d = lieberman?.data;
 const availability = d ? getAvailability(d) : null;
-
-const wayne = (await getCollection('locations')).find(l => l.data.slug === 'wayne');
-if (!wayne) throw new Error('[lifestyle-medicine] no locations entry has the slug "wayne".');
 
 // Town list is derived from the local collection, never hardcoded, so a new
 // /local/lifestyle-medicine-*.md file appears here the moment it is added.
@@ -37,21 +40,9 @@ const breadcrumb = {
   ]
 };
 
-const physicianSchema = {
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "name": d ? `${d.name}, ${d.credentials}` : "Philip Lieberman, MD",
-  "identifier": d?.npi ?? "1669979316",
-  "medicalSpecialty": "LifestyleMedicine",
-  "worksFor": {
-    "@type": "MedicalOrganization",
-    "name": "Forward Family Medicine",
-    "url": "https://www.forwardfamilymedicine.com"
-  },
-  // The office node itself is in the site-wide graph on this page.
-  ...(isListedOffice(wayne) ? { "workLocation": [officeRef(wayne)] } : {}),
-  "url": d ? `https://www.forwardfamilymedicine.com/meet-the-team/${d.slug}/` : undefined
-};
+// The physician's node lives on their bio page; this page refers to it.
+if (!lieberman) throw new Error('[lifestyle-medicine] no providers entry "philip-lieberman-md".');
+const physicianSchema = physicianRef(lieberman);
 
 const faqs = [
   {
@@ -79,6 +70,42 @@ const faqs = [
     a: 'Lifestyle medicine has the strongest evidence base for type 2 diabetes, hypertension, cardiovascular disease, obesity, metabolic syndrome, sleep disorders, anxiety, and depression. It also plays a powerful role in cancer prevention and overall longevity. For members interested in a structured longevity program, see the <a href="/clarity/">Clarity Program</a>.',
   },
 ];
+const why = [
+  { title: 'Dual Board-Certified', body: 'Family Medicine + Lifestyle Medicine' },
+  { title: 'Culinary Trained', body: 'Real food knowledge, not textbook advice' },
+  { title: 'Built the Curriculum', body: 'Trained other physicians at Abington' },
+  { title: 'Included in Membership', body: 'No extra fees, no separate appointments' },
+];
+
+const included = [
+  'Comprehensive lifestyle assessment at intake and regularly throughout care',
+  'Personalized nutrition guidance — culinary-informed, practical, real food',
+  'Physical activity planning tailored to your fitness level and preferences',
+  'Sleep optimization protocols based on your specific patterns',
+  'Stress and mental wellness support',
+  'Evidence-based protocols for type 2 diabetes, hypertension, cardiovascular disease, obesity',
+  'Chronic disease management through lifestyle intervention — alongside or instead of medication',
+  'Ongoing accountability built into your regular appointments',
+];
+
+const who = [
+  { title: 'You Have a Chronic Condition', body: 'Type 2 diabetes, hypertension, cardiovascular disease, high cholesterol, obesity, or metabolic syndrome — lifestyle medicine has the strongest evidence base for all of them.' },
+  { title: 'You Want to Stay Healthy', body: "Prevention is the most powerful application of lifestyle medicine. Build a foundation now so that chronic disease doesn't become your story later." },
+  { title: 'You Want More Energy', body: 'Sleep, nutrition, movement, and stress management are the levers. Dr. Lieberman knows how to use them — and how to fit them into your real life.' },
+  { title: "You've Tried Before and It Didn't Stick", body: "Generic advice doesn't work. A culinary-trained, board-certified physician who builds a plan around your specific situation — that's different." },
+];
+
+const path = [
+  { title: 'Culinary Arts Degree', body: 'Learning food, technique, and flavor from the ground up' },
+  { title: 'BS in Nutrition Science', body: 'The clinical science of food, metabolism, and health' },
+  { title: 'MD — Thomas Jefferson University', body: 'Medical training grounded in an already-deep nutritional foundation' },
+  { title: 'U.S. Navy Physician', body: 'Primary care practice in a demanding environment' },
+  { title: 'Dual Board Certification', body: 'Family Medicine + Lifestyle Medicine' },
+  { title: 'Built the LM Residency Curriculum', body: 'Enabled Abington residents to earn their own Lifestyle Medicine board certification' },
+];
+
+const quotes = ['M.M.', 'P.M.'].map(who => ({ text: reviewBy(who).text, who, attribution: '— Verified Google review' }));
+
 ---
 
 <MainLayout
@@ -86,293 +113,123 @@ const faqs = [
   description="In-person, board-certified Lifestyle Medicine in Wayne PA. The only DPC practice on the Main Line offering evidence-based lifestyle medicine integrated into primary care. Dr. Philip Lieberman, MD."
   schema={[breadcrumb, physicianSchema]}
 >
-  <!-- Hero -->
-  <section class="lm-hero section" style="background: linear-gradient(160deg, var(--green-50) 0%, var(--cream-200) 100%); position: relative; overflow: hidden;">
-    <BotanicalGraphic variant="triadic" class="lm-botanical" />
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="lm-hero">
+    <div class="rd-wrap">
+      <nav class="lm-crumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Lifestyle Medicine</span>
       </nav>
-      <div class="lm-hero-inner">
-        <div class="lm-hero-content">
-          <span class="section-label">The Main Line's Only In-Person Option</span>
-          <h1>Lifestyle Medicine Wayne PA</h1>
-          <div class="divider"></div>
-          <p class="lm-lead">
-            What is Lifestyle Medicine, and why does it matter for your primary care?
-          </p>
-          <p>
-            Lifestyle medicine is an evidence-based clinical specialty that uses therapeutic
-            changes in nutrition, physical activity, sleep, stress management, social connection,
-            and avoidance of harmful substances to prevent, treat, and even reverse chronic disease.
-          </p>
-          <p>
-            At Forward Family Medicine, you don't have to seek this out separately. It's integrated
-            into every visit. Dr. Lieberman is board-certified in Lifestyle Medicine and leads this
-            dimension of the practice. Dr. Bigley, our founder, also incorporates lifestyle medicine
-            principles into his care — together, the practice is built around treating root causes,
-            not just symptoms.
-          </p>
-          <a href="/contact/?source=lifestyle-medicine" class="btn btn-accent" style="margin-top:0.5rem;">Schedule a Free Meet &amp; Greet</a>
+      <div class="lm-hero__grid">
+        <div class="lm-hero__copy">
+          <h1 class="rd-h1 lm-hero__h1">Lifestyle Medicine Wayne PA</h1>
+          <p class="rd-serif lm-hero__lead">What is Lifestyle Medicine, and why does it matter for your primary care?</p>
+          <p class="rd-copy lm-hero__p">Lifestyle medicine is an evidence-based clinical specialty that uses therapeutic changes in nutrition, physical activity, sleep, stress management, social connection, and avoidance of harmful substances to prevent, treat, and even reverse chronic disease.</p>
+          <p class="rd-copy lm-hero__p">At Forward Family Medicine, you don't have to seek this out separately. It's integrated into every visit. Dr. Lieberman is board-certified in Lifestyle Medicine and leads this dimension of the practice. Dr. Bigley, our founder, also incorporates lifestyle medicine principles into his care — together, the practice is built around treating root causes, not just symptoms.</p>
+          <a href="/contact/?source=lifestyle-medicine" class="btn-forest lm-hero__cta">Schedule a Free Meet &amp; Greet</a>
         </div>
-        <div class="lm-hero-credential card">
-          <div class="credential-header">
-            {d?.photo ? (
-              <img
-                src={d.photo.src}
-                alt={d.photoAlt}
-                loading="eager"
-                width="120"
-                height="140"
-                class="credential-photo"
-              />
-            ) : (
-              <div class="credential-photo credential-photo--placeholder" role="img" aria-label="Dr. Lieberman — photo coming soon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-              </div>
+        <div class="lm-card">
+          {d?.photo && (
+            <Image
+              src={d.photo}
+              alt={d.photoAlt}
+              width={480}
+              widths={[480, 720, 960]}
+              sizes="(max-width: 860px) calc(100vw - 40px), 420px"
+              format="webp"
+              quality={82}
+              loading="eager"
+              class="lm-card__photo"
+            />
+          )}
+          <div class="lm-card__body">
+            {availability?.status === 'accepting' && (
+              <p class="lm-card__status">Now accepting new patients</p>
             )}
-            <div>
-              <strong>{d ? `Dr. ${d.name}, ${d.credentials}` : 'Dr. Philip Lieberman, MD'}</strong>
-              <span>Dual Board-Certified Physician</span>
-            </div>
-          </div>
-          {availability?.status === 'accepting' && (
-            <p class="credential-availability">Now accepting new patients</p>
-          )}
-          <ul class="credential-badges">
-            <li class="badge badge-accent">Board-Certified: Lifestyle Medicine</li>
-            <li class="badge badge-accent">Board-Certified: Family Medicine</li>
-            <li class="badge">Culinary Arts Degree</li>
-            <li class="badge">Nutrition Science Degree</li>
-            <li class="badge">Thomas Jefferson University MD</li>
-            <li class="badge">U.S. Navy Physician</li>
-            <li class="badge">Built LM Residency Curriculum at Abington</li>
-          </ul>
-          {d && (
-            <a href={`/meet-the-team/${d.slug}/`} class="credential-bio-link">
-              Read Dr. {d.name.split(' ').pop()}'s full bio &rarr;
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Differentiator -->
-  <section class="lm-diff section" style="background: var(--green-500);">
-    <div class="container lm-diff-inner">
-      <div class="lm-diff-text">
-        <span class="section-label" style="color: var(--green-400);">Why It Matters</span>
-        <h2 style="color: white;">We Are the Only Practice on the Main Line With This</h2>
-        <p style="color: rgba(255,255,255,0.85);">
-          No other local DPC practice offers it at all. At Forward Family Medicine, it's in-person, it's
-          board-certified, and it's integrated into every visit at no extra charge.
-        </p>
-      </div>
-      <div class="lm-diff-stats">
-        <div class="diff-stat">
-          <span class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
-          <strong>Dual Board-Certified</strong>
-          <span>Family Medicine + Lifestyle Medicine</span>
-        </div>
-        <div class="diff-stat">
-          <span class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>
-          <strong>Culinary Trained</strong>
-          <span>Real food knowledge, not textbook advice</span>
-        </div>
-        <div class="diff-stat">
-          <span class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span>
-          <strong>Built the Curriculum</strong>
-          <span>Trained other physicians at Abington</span>
-        </div>
-        <div class="diff-stat">
-          <span class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-          <strong>Included in Membership</strong>
-          <span>No extra fees, no separate appointments</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What's included -->
-  <section class="lm-included section">
-    <div class="container">
-      <span class="section-label">What We Offer</span>
-      <h2>What's Included in Your Lifestyle Medicine Care</h2>
-      <div class="divider"></div>
-      <div class="grid-2">
-        <div>
-          <p>
-            Your lifestyle medicine care at Forward Family Medicine is built around your specific
-            health history, your labs, your goals, and — critically — your actual life. Dr. Lieberman
-            doesn't hand you a pamphlet. He works with you on a real, practical plan that accounts
-            for what you eat, how you sleep, what stresses you, and what your body needs.
-          </p>
-          <p>
-            Because he trained in culinary arts before medical school, his nutrition guidance is
-            specific, practical, and grounded in food that actually tastes good. That's rare in medicine.
-          </p>
-        </div>
-        <div>
-          <ul class="prose-list">
-            <li>Comprehensive lifestyle assessment at intake and regularly throughout care</li>
-            <li>Personalized nutrition guidance — culinary-informed, practical, real food</li>
-            <li>Physical activity planning tailored to your fitness level and preferences</li>
-            <li>Sleep optimization protocols based on your specific patterns</li>
-            <li>Stress and mental wellness support</li>
-            <li>Evidence-based protocols for type 2 diabetes, hypertension, cardiovascular disease, obesity</li>
-            <li>Chronic disease management through lifestyle intervention — alongside or instead of medication</li>
-            <li>Ongoing accountability built into your regular appointments</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Who benefits -->
-  <section class="lm-who section" style="background: var(--cream-200);">
-    <div class="container">
-      <span class="section-label">Who Benefits</span>
-      <h2>Lifestyle Medicine Is For You If…</h2>
-      <div class="divider"></div>
-      <div class="who-grid">
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/></svg></span>
-          <h3>You Have a Chronic Condition</h3>
-          <p>Type 2 diabetes, hypertension, cardiovascular disease, high cholesterol, obesity, or metabolic syndrome — lifestyle medicine has the strongest evidence base for all of them.</p>
-        </div>
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <h3>You Want to Stay Healthy</h3>
-          <p>Prevention is the most powerful application of lifestyle medicine. Build a foundation now so that chronic disease doesn't become your story later.</p>
-        </div>
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-          <h3>You Want More Energy</h3>
-          <p>Sleep, nutrition, movement, and stress management are the levers. Dr. Lieberman knows how to use them — and how to fit them into your real life.</p>
-        </div>
-        <div class="who-card card">
-          <span class="who-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
-          <h3>You've Tried Before and It Didn't Stick</h3>
-          <p>Generic advice doesn't work. A culinary-trained, board-certified physician who builds a plan around your specific situation — that's different.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dr. Lieberman story -->
-  <section class="lieberman-story section">
-    <div class="container">
-      <span class="section-label">Dr. Lieberman's Story</span>
-      <h2>A Different Kind of Medical Training</h2>
-      <div class="divider"></div>
-      <div class="story-inner grid-2">
-        <div>
-          <blockquote class="story-quote">
-            <p>
-              Most doctors learn about nutrition in a single semester. Dr. Lieberman went to
-              culinary school first. Then nutrition science. Then Jefferson Medical College.
-              Then the Navy. Then he wrote the curriculum that teaches other physicians how
-              to practice lifestyle medicine.
-            </p>
-            <p>
-              The result is a doctor who can sit with you in the exam room, interpret your labs,
-              and then help you figure out exactly what to put on your plate — and how to make
-              it taste good.
-            </p>
-          </blockquote>
-        </div>
-        <div>
-          <h3>Dr. Lieberman's Path</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="timeline-dot" aria-hidden="true"></span>
-              <div>
-                <strong>Culinary Arts Degree</strong>
-                <span>Learning food, technique, and flavor from the ground up</span>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-dot" aria-hidden="true"></span>
-              <div>
-                <strong>BS in Nutrition Science</strong>
-                <span>The clinical science of food, metabolism, and health</span>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-dot" aria-hidden="true"></span>
-              <div>
-                <strong>MD — Thomas Jefferson University</strong>
-                <span>Medical training grounded in an already-deep nutritional foundation</span>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-dot" aria-hidden="true"></span>
-              <div>
-                <strong>U.S. Navy Physician</strong>
-                <span>Primary care practice in a demanding environment</span>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-dot" aria-hidden="true"></span>
-              <div>
-                <strong>Dual Board Certification</strong>
-                <span>Family Medicine + Lifestyle Medicine</span>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-dot" aria-hidden="true"></span>
-              <div>
-                <strong>Built the LM Residency Curriculum</strong>
-                <span>Enabled Abington residents to earn their own Lifestyle Medicine board certification</span>
-              </div>
-            </div>
+            <p class="rd-serif lm-card__name">{d ? `Dr. ${d.name}, ${d.credentials}` : 'Dr. Philip Lieberman, MD'}</p>
+            <p class="lm-card__role">Dual Board-Certified Physician</p>
+            <ul class="lm-card__creds">
+              <li>Board-Certified: Lifestyle Medicine</li>
+              <li>Board-Certified: Family Medicine</li>
+              <li>Culinary Arts Degree</li>
+              <li>Nutrition Science Degree</li>
+              <li>Thomas Jefferson University MD</li>
+              <li>U.S. Navy Physician</li>
+              <li>Built LM Residency Curriculum at Abington</li>
+            </ul>
+            {d && (
+              <a href={`/meet-the-team/${d.slug}/`} class="rd-link lm-card__link">
+                Read Dr. {d.name.split(' ').pop()}'s full bio &rarr;
+              </a>
+            )}
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Patient reviews -->
-  <section class="lm-reviews section" aria-label="Patient reviews">
-    <div class="container">
-      <span class="section-label">Patient Reviews</span>
-      <h2 class="section-title">What patients say about Dr. Lieberman</h2>
-      <div class="lm-reviews-grid">
-        <TestimonialCard
-          quote="Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner."
-          author="M.M."
-          detail="Verified Google review"
-        />
-        <TestimonialCard
-          quote="I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. He is incredibly kind and compassionate. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier."
-          author="P.M."
-          detail="Verified Google review"
-        />
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">We Are the Only Practice on the Main Line With This</h2>
+        <p class="rd-copy">No other local DPC practice offers it at all. At Forward Family Medicine, it's in-person, it's board-certified, and it's integrated into every visit at no extra charge.</p>
       </div>
-      <GoogleReviewsLink />
+      <TitledGrid reveal columns={2} items={why} />
     </div>
   </section>
 
-  <!-- Lifestyle Library cross-link -->
-  <section class="section" style="background: var(--cream-200);">
-    <div class="container" style="max-width:680px; text-align:center;">
-      <span class="section-label">Go Deeper</span>
-      <h2>Lifestyle Medicine Library</h2>
-      <p>
-        Browse our evidence-based article library covering nutrition, physical activity, sleep,
-        metabolic health, stress management, and cardiovascular prevention — all through a
-        lifestyle medicine lens.
-      </p>
-      <a href="/lifestyle/" class="btn btn-primary">Browse the Library</a>
-      <p style="margin-top:1.75rem; font-size:0.9rem; color:var(--ink-500); line-height:1.7;">
-        Navigating perimenopause or menopause? Dr. Landi at our Malvern location
-        offers comprehensive, Menopause Society Certified care — see our
-        <a href="/menopause/" style="color:var(--green-400);">Menopause Care page</a> for details.
-      </p>
+  <section class="rd-section lm-incl">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack">
+        <h2 class="rd-h2 lm-incl__h2">What's Included in Your Lifestyle Medicine Care</h2>
+        <p class="rd-copy lm-incl__p">Your lifestyle medicine care at Forward Family Medicine is built around your specific health history, your labs, your goals, and — critically — your actual life. Dr. Lieberman doesn't hand you a pamphlet. He works with you on a real, practical plan that accounts for what you eat, how you sleep, what stresses you, and what your body needs.</p>
+        <p class="rd-copy lm-incl__p">Because he trained in culinary arts before medical school, his nutrition guidance is specific, practical, and grounded in food that actually tastes good. That's rare in medicine.</p>
+      </div>
+      <RuledList reveal size="md" class="lm-incl__list">
+        {included.map(t => <li>{t}</li>)}
+      </RuledList>
+    </div>
+  </section>
+
+  <section class="rd-section">
+    <div class="rd-wrap">
+      <h2 class="rd-h2 lm-who__h2">Lifestyle Medicine Is For You If…</h2>
+      <TitledGrid reveal columns={2} items={who} class="lm-who" />
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--eq">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">A Different Kind of Medical Training</h2>
+        <p class="rd-serif lm-story__lead">Most doctors learn about nutrition in a single semester. Dr. Lieberman went to culinary school first. Then nutrition science. Then Jefferson Medical College. Then the Navy. Then he wrote the curriculum that teaches other physicians how to practice lifestyle medicine.</p>
+        <p class="rd-copy">The result is a doctor who can sit with you in the exam room, interpret your labs, and then help you figure out exactly what to put on your plate — and how to make it taste good.</p>
+      </div>
+      <div class="lm-path">
+        <h3 class="rd-h3">Dr. Lieberman's Path</h3>
+        <PathTimeline steps={path} />
+      </div>
+    </div>
+  </section>
+
+  <section class="rd-section" aria-label="Patient reviews">
+    <div class="rd-wrap">
+      <div class="lm-rev__head">
+        <h2 class="rd-h2">What patients say about Dr. Lieberman</h2>
+        <GoogleReviewsLink align="end" />
+      </div>
+      <div class="lm-rev__quotes"><QuotePair quotes={quotes} /></div>
+    </div>
+  </section>
+
+  <section class="rd-section rd-sage lm-lib">
+    <div class="rd-wrap lm-lib__grid">
+      <div class="rd-stack">
+        <h2 class="rd-h2 lm-lib__h2">Lifestyle Medicine Library</h2>
+        <p class="rd-copy">Browse our evidence-based article library covering nutrition, physical activity, sleep, metabolic health, stress management, and cardiovascular prevention — all through a lifestyle medicine lens.</p>
+        <a href="/lifestyle/" class="btn-forest lm-lib__btn">Browse the Library</a>
+      </div>
+      <SageCard class="lm-lib__note">
+        <p>Navigating perimenopause or menopause? Dr. Landi at our Malvern location offers comprehensive, Menopause Society Certified care — see our <a href="/menopause/">Menopause Care page</a> for details.</p>
+      </SageCard>
     </div>
   </section>
 
@@ -396,227 +253,55 @@ const faqs = [
 </MainLayout>
 
 <style>
-  .lm-hero {
-    position: relative;
-    overflow: hidden;
-  }
-  .lm-hero-inner {
-    position: relative;
-    z-index: 1;
-  }
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
+  .lm-hero { background: var(--linen); padding: 80px 0 96px; }
+  .lm-crumb { font-size: 13px; color: var(--text-600); margin-bottom: 40px; }
+  .lm-crumb a { color: var(--text-600); }
+  .lm-crumb a:hover { color: var(--forest); }
+  .lm-crumb span:last-child { color: var(--text-700); }
+  .lm-hero__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 72px; align-items: start; }
+  .lm-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding-top: 8px; }
+  .lm-hero__h1 { font-size: 60px; max-width: 16ch; }
+  .lm-hero__lead { margin: 0; font-size: 24px; line-height: 1.4; color: var(--forest); max-width: 30ch; }
+  .lm-hero__p { max-width: 620px; }
+  .lm-hero__cta { margin-top: 6px; }
+  .lm-card { background: var(--linen-50); border: 1px solid var(--hairline); border-top: 3px solid var(--forest); }
+  .lm-card :global(.lm-card__photo) { display: block; width: 100%; height: auto; aspect-ratio: 5/4; object-fit: cover; object-position: 50% 20%; }
+  .lm-card__body { padding: 26px 28px 28px; display: flex; flex-direction: column; gap: 10px; }
+  .lm-card__body p { margin: 0; }
+  .lm-card__status { font-size: 13px; font-weight: 500; color: var(--gold-text); }
+  .lm-card__name { font-size: 28px; line-height: 1.1; color: var(--forest); }
+  .lm-card__role { font-size: 14px; font-weight: 500; color: var(--sage-600); }
+  .lm-card__creds { margin: 14px 0 0; padding: 0; list-style: none; }
+  .lm-card__creds li { padding: 11px 0; border-top: 1px solid var(--hairline-strong); font-size: 14px; line-height: 1.5; color: var(--forest); }
+  .lm-card__creds li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .lm-card__link { align-self: flex-start; margin-top: 16px; }
 
-  .lm-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 3rem;
-    align-items: start;
-  }
-  .lm-lead {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--ink-900);
-    margin-bottom: 1rem;
-    font-style: italic;
-  }
+  .lm-incl { background: var(--forest); color: var(--linen); }
+  .lm-incl__h2 { color: var(--linen); }
+  .lm-incl__p { color: var(--on-forest); }
+  .lm-incl :global(.lm-incl__list > li) { border-color: var(--sage); font-size: 15.5px; color: var(--on-forest); }
+  .lm-incl :global(.lm-incl__list > li:last-child) { border-color: var(--sage); }
 
-  .lm-hero-credential {
-    padding: 1.75rem;
-  }
-  .credential-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-  }
-  .credential-photo {
-    width: 72px;
-    height: 88px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 8px;
-    flex-shrink: 0;
-  }
-  .credential-header strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--ink-900);
-    margin-bottom: 0.25rem;
-  }
-  .credential-header span {
-    font-size: 0.8rem;
-    color: var(--ink-300);
-  }
-  .credential-badges {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .credential-badges li {
-    display: inline-block;
-  }
+  .lm-who__h2 { margin-bottom: 40px; }
+  .lm-story__lead { margin: 0; font-size: 22px; line-height: 1.45; color: var(--forest); }
+  .lm-path { display: flex; flex-direction: column; gap: 12px; }
 
-  /* Diff strip */
-  .lm-diff-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .lm-diff-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-  .diff-stat {
-    background: rgba(255,255,255,0.08);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .diff-icon { display: block; margin-bottom: 0.3rem; color: rgba(255,255,255,0.85); }
-  .diff-stat strong {
-    color: white;
-    font-size: 0.95rem;
-  }
-  .diff-stat span {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.82rem;
-  }
+  .lm-rev__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 40px; }
+  .lm-rev__quotes { margin-top: 44px; }
 
-  /* Who grid */
-  .who-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .who-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .who-icon { display: block; margin-bottom: 0.5rem; color: var(--green-400); }
-  .who-card h3 { font-size: 1.05rem; }
-  .who-card p { font-size: 0.9rem; color: var(--ink-700); margin: 0; }
+  .lm-lib { padding: 80px 0; }
+  .lm-lib__grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 64px; align-items: start; }
+  .lm-lib__h2 { font-size: 40px; }
+  .lm-lib__btn { align-self: flex-start; margin-top: 6px; }
+  .lm-lib :global(.lm-lib__note) { background: var(--linen); }
 
-  /* Story */
-  .story-quote {
-    background: linear-gradient(135deg, var(--green-50), var(--cream-200));
-    border-left: 4px solid var(--green-300);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 1.75rem;
-    font-style: italic;
-    color: var(--ink-700);
-    line-height: 1.8;
-    margin: 0;
-  }
-  .story-quote p { margin-bottom: 1rem; }
-  .story-quote p:last-child { margin: 0; }
-
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 8px;
-    top: 12px;
-    bottom: 12px;
-    width: 2px;
-    background: var(--cream-300);
-  }
-  .timeline-item {
-    display: flex;
-    gap: 1.25rem;
-    padding: 0.75rem 0;
-    position: relative;
-  }
-  .timeline-dot {
-    width: 18px;
-    height: 18px;
-    background: var(--green-300);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 2px;
-    position: relative;
-    z-index: 1;
-  }
-  .timeline-item strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--ink-900);
-    margin-bottom: 0.2rem;
-  }
-  .timeline-item span {
-    font-size: 0.85rem;
-    color: var(--ink-500);
-  }
-
-  @media (max-width: 900px) {
-    .lm-hero-inner { grid-template-columns: 1fr; }
-    .lm-diff-inner { grid-template-columns: 1fr; }
-    .lm-diff-stats { grid-template-columns: 1fr 1fr; }
-    .who-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 560px) {
-    .lm-diff-stats { grid-template-columns: 1fr; }
-  }
-
-
-  /* Availability signal and bio link on the credential card — same wording the
-     provider cards and bio pages use, driven by src/utils/availability.ts. */
-  .credential-availability {
-    display: inline-block;
-    margin: 0 0 1rem;
-    padding: 0.25rem 0.7rem;
-    border-radius: 999px;
-    background: var(--green-100);
-    color: var(--green-500);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
-  .credential-photo--placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--cream-200);
-    color: var(--ink-300);
-  }
-  .credential-bio-link {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--green-400);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .credential-bio-link:hover { color: var(--green-500); }
-  .lm-reviews {
-    background: var(--cream-50);
-  }
-  .lm-reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  @media (max-width: 780px) {
-    .lm-reviews-grid { grid-template-columns: 1fr; }
+  @media (max-width: 860px) {
+    .lm-hero { padding: 48px 0 64px; }
+    .lm-crumb { margin-bottom: 24px; }
+    .lm-hero__grid, .lm-lib__grid { grid-template-columns: 1fr; gap: 36px; }
+    .lm-hero__h1 { font-size: 40px; max-width: none; }
+    .lm-hero__lead { font-size: 21px; }
+    .lm-lib { padding: 56px 0; }
+    .lm-lib__h2 { font-size: 30px; }
   }
 </style>

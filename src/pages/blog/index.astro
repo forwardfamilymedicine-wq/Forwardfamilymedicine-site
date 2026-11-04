@@ -1,15 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
-import BlogCard from '../../components/blog/BlogCard.astro';
-
-const CATEGORY_LABELS: Record<string, string> = {
-  'direct-primary-care': 'Direct Primary Care',
-  'lifestyle-medicine': 'Lifestyle Medicine',
-  'preventive-medicine': 'Preventive Care',
-  'patient-experience': 'Patient Experience',
-  'concierge-medicine': 'Concierge Medicine',
-};
+import BlogListing from '../../components/blog/BlogListing.astro';
+import { contactHrefForPath } from '../../utils/leadSource';
 
 const entries = await getCollection('blog');
 const posts = entries
@@ -19,8 +12,6 @@ const posts = entries
     const bDate = b.data.date ? new Date(b.data.date).getTime() : 0;
     return bDate - aDate;
   });
-
-const allCategories = Object.entries(CATEGORY_LABELS);
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -37,174 +28,12 @@ const breadcrumb = {
   description="Evidence-based articles on direct primary care, lifestyle medicine, and women's health from the physicians at Forward Family Medicine in Wayne and Malvern, PA."
   schema={breadcrumb}
 >
-  <section class="blog-hero section" style="background: linear-gradient(160deg, var(--cream-100) 0%, var(--cream-300) 100%);">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Blog</span>
-      </nav>
-      <span class="section-label">From Our Physicians</span>
-      <h1>Health &amp; Wellness Blog</h1>
-      <div class="divider"></div>
-      <p class="section-intro">
-        Evidence-based articles from our physicians — on Direct Primary Care,
-        Lifestyle Medicine, nutrition, sleep, chronic disease, and living well on the Main Line.
-      </p>
-      <p class="post-count">{posts.length} articles</p>
-    </div>
-  </section>
-
-  <section class="cat-nav-section" style="background: var(--cream-200); border-bottom: 1px solid var(--cream-300);">
-    <div class="container">
-      <nav class="cat-tabs" aria-label="Blog categories">
-        <a href="/blog/" class="cat-tab active" aria-current="page">All</a>
-        {allCategories.map(([slug, display]) => (
-          <a href={`/blog/category/${slug}/`} class="cat-tab">{display}</a>
-        ))}
-      </nav>
-    </div>
-  </section>
-
-  <section class="blog-grid-section section">
-    <div class="container">
-      {posts.length > 0 ? (
-        <div class="blog-grid">
-          {posts.map(post => (
-            <BlogCard
-              title={post.data.title}
-              description={post.data.description}
-              author={post.data.author ?? 'Forward Family Medicine'}
-              date={post.data.date ?? new Date().toISOString()}
-              slug={post.id.replace(/\.mdx?$/, '')}
-              category={post.data.category}
-              featuredImage={post.data.image}
-            />
-          ))}
-        </div>
-      ) : (
-        <div class="blog-empty">
-          <div class="blog-empty-inner card">
-            <span class="blog-empty-icon" aria-hidden="true">📝</span>
-            <h2>Articles Coming Soon</h2>
-            <p>
-              Our physicians are preparing evidence-based articles on lifestyle
-              medicine, nutrition, Direct Primary Care, and living well. Check back soon.
-            </p>
-            <p>
-              In the meantime, <a href="/contact/">schedule a free meet and greet</a> to have
-              a real conversation about your health.
-            </p>
-          </div>
-        </div>
-      )}
-    </div>
-  </section>
-
-  <!-- Lifestyle Library promo -->
-  <section class="blog-cta section" style="background: var(--cream-200);">
-    <div class="container blog-cta-inner">
-      <div style="max-width:480px;">
-        <span class="section-label">Stay Informed</span>
-        <h2>Medicine Worth Reading</h2>
-        <p>
-          Our physicians write about what actually matters for your health — without the
-          noise. New articles monthly, authored by our physicians.
-        </p>
-        <a href="/contact/" class="btn btn-accent">Schedule a Free Meet &amp; Greet</a>
-      </div>
-      <div class="lifestyle-promo card">
-        <span class="section-label">Also Explore</span>
-        <h3>Lifestyle Medicine Library</h3>
-        <p>
-          Evidence-based articles on nutrition, physical activity, sleep, metabolic health,
-          and more — organized by topic.
-        </p>
-        <a href="/lifestyle/" class="btn btn-outline">Browse the Library</a>
-      </div>
-    </div>
-  </section>
+  <BlogListing
+    posts={posts}
+    h1="Health & Wellness Blog"
+    intro="Evidence-based articles from our physicians — on Direct Primary Care, Lifestyle Medicine, nutrition, sleep, chronic disease, and living well on the Main Line."
+    countLabel={`${posts.length} articles`}
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
+    contactHref={contactHrefForPath('/blog/')}
+  />
 </MainLayout>
-
-<style>
-  .breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ink-300);
-    margin-bottom: 1.5rem;
-  }
-  .breadcrumb a { color: var(--green-300); text-decoration: none; }
-  .cat-nav-section { padding: 0; }
-  .cat-tabs {
-    display: flex;
-    gap: 0;
-    flex-wrap: wrap;
-    padding: 0.5rem 0;
-  }
-  .cat-tab {
-    padding: 0.55rem 1.1rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--ink-500);
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    transition: color 0.15s, background 0.15s;
-    white-space: nowrap;
-  }
-  .cat-tab:hover { color: var(--green-400); background: var(--green-50); }
-  .cat-tab.active {
-    color: var(--green-500);
-    background: var(--green-50);
-    border-bottom: 2px solid var(--green-400);
-    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-  }
-  .post-count {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--green-400);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .blog-grid-section {
-    background: var(--cream-100);
-  }
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  .blog-empty {
-    display: flex;
-    justify-content: center;
-  }
-  .blog-empty-inner {
-    max-width: 560px;
-    text-align: center;
-    padding: 3rem 2.5rem;
-  }
-  .blog-empty-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-  .blog-empty-inner h2 { margin-bottom: 0.75rem; }
-  .blog-empty-inner p { color: var(--ink-500); }
-  .blog-cta-inner {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .lifestyle-promo {
-    max-width: 320px;
-    padding: 2rem;
-  }
-  .lifestyle-promo h3 { margin-bottom: 0.5rem; }
-  .lifestyle-promo p { color: var(--ink-500); font-size: 0.92rem; margin-bottom: 1.25rem; }
-  @media (max-width: 860px) {
-    .blog-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 540px) {
-    .blog-grid { grid-template-columns: 1fr; }
-  }
-</style>

@@ -61,6 +61,19 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
         ";path=/;SameSite=Lax";
     }
 
+    // Testing aid: ?ga_debug=1 turns on GA4 debug_mode for this browser
+    // session (so DebugView shows the events), ?ga_debug=0 turns it off.
+    // Does nothing unless the visitor has accepted analytics.
+    function gaDebug() {
+      try {
+        var m = location.search.match(/[?&]ga_debug=([01])(?:&|$)/);
+        if (m) sessionStorage.setItem("ffm_ga_debug", m[1]);
+        return sessionStorage.getItem("ffm_ga_debug") === "1";
+      } catch (e) {
+        return /[?&]ga_debug=1(?:&|$)/.test(location.search);
+      }
+    }
+
     function loadGA4() {
       if (!GA4_ID) return;
       var s = document.createElement("script");
@@ -71,7 +84,7 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
       function gtag() { window.dataLayer.push(arguments); }
       window.gtag = gtag;
       gtag("js", new Date());
-      gtag("config", GA4_ID);
+      gtag("config", GA4_ID, gaDebug() ? { debug_mode: true } : {});
     }
 
     function loadClarity() {
@@ -166,38 +179,37 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
 </script>
 
 <style>
+  /* A compact full-width bar along the bottom edge. Fixed, so it never shifts
+     the page; short, so it does not cover the hero's headline and buttons. */
   .consent {
     position: fixed;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 9999;
     background: var(--cream-50);
-    border: 1px solid var(--green-200);
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
-    padding: 1rem 1.25rem;
-    max-width: 720px;
-    margin-inline: auto;
-    height: auto;
-    max-height: 85vh;
+    border-top: 1px solid var(--green-200);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.10);
+    padding: 0.625rem clamp(16px, 4vw, 40px) calc(0.625rem + env(safe-area-inset-bottom));
+    max-height: 40vh;
     overflow-y: auto;
   }
 
   .consent__inner {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem 1.25rem;
-    justify-content: flex-end;
+    gap: 0.5rem 1.25rem;
+    justify-content: space-between;
+    max-width: var(--max-w);
+    margin: 0 auto;
   }
 
   .consent__text {
     margin: 0;
-    flex: 1 1 320px;
+    flex: 1 1 auto;
     color: var(--ink-900);
-    font-size: 0.925rem;
-    line-height: 1.5;
+    font-size: 0.875rem;
+    line-height: 1.45;
   }
 
   .consent__text a {
@@ -213,17 +225,18 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
 
   .consent__btn {
     font: inherit;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    padding: 0.55rem 1.1rem;
+    padding: 0.45rem 1rem;
     border-radius: 8px;
     cursor: pointer;
     border: 1px solid transparent;
     transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  .consent__btn--solid { background: var(--green-400); color: #fff; }
-  .consent__btn--solid:hover { background: var(--green-500); }
+  /* Accept: the site's CTA green. The former --green-400 fill was 4.09:1 against the white label. */
+  .consent__btn--solid { background: var(--sage-600); color: #fff; }
+  .consent__btn--solid:hover { background: var(--forest); }
 
   .consent__btn--ghost {
     background: transparent;
@@ -237,13 +250,17 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
     outline-offset: 2px;
   }
 
-  @media (max-width: 480px) {
+  /* Phones: text above the buttons. The text's flex basis is auto here: a
+     fixed basis in a column becomes a minimum height and leaves the bar tall
+     and mostly empty. */
+  @media (max-width: 640px) {
     .consent__inner {
       flex-direction: column;
       align-items: stretch;
-      gap: 0.85rem;
+      gap: 0.5rem;
       justify-content: flex-start;
     }
+    .consent__text { flex: 0 0 auto; font-size: 0.8125rem; }
     .consent__actions { justify-content: flex-end; }
   }
 
