@@ -558,6 +558,7 @@ tbody tr:hover {
   --sage-600:     #4E6C50;   /* dark sage: the CTA green, labels */
   --forest:       #1E2D1F;   /* forest: headings, dark bands */
   --gold:         #B8873A;   /* status lines, numerals */
+  --sage-mark:    #6B8A6D;   /* sage for large decorative marks (opening quotes): 3.4:1 on sage wash, 3.5:1 on linen, 3.8:1 on lighter linen */
   --gold-text:    #84612A;   /* gold for text under 18px: 5.1:1 on linen, 5.4:1 on linen-50, 4.9:1 on sage-50 */
   /* Text ramp */
   --text-900:     #2C2C2A;

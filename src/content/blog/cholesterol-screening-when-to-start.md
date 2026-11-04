@@ -91,6 +91,6 @@ A: Genetics play a meaningful role in cholesterol levels — familial hyperchole
 
 <div style="margin-top: 3rem; padding: 1.75rem 2rem; background: var(--cream-100); border-left: 3px solid var(--green-500); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
   <p style="font-weight: 500; color: var(--ink-900); margin-bottom: 0.5rem;">Track these markers longitudinally with physician oversight.</p>
-  <p style="font-size: 0.9rem; color: var(--ink-500); font-weight: 300; margin-bottom: 1rem; line-height: 1.7;">The Clarity Program includes ApoB, Lp(a), NMR LipoProfile, and fasting insulin across four physician-reviewed draws per year — alongside whole-body MRI, DEXA, and VO₂ max testing.</p>
+  <p style="font-size: 0.9rem; color: var(--ink-700); font-weight: 300; margin-bottom: 1rem; line-height: 1.7;">The Clarity Program includes ApoB, Lp(a), NMR LipoProfile, and fasting insulin across four physician-reviewed draws per year — alongside whole-body MRI, DEXA, and VO₂ max testing.</p>
   <a href="/clarity/" style="font-size: 0.9rem; color: var(--green-500); font-weight: 500;">See the full program →</a>
 </div>
