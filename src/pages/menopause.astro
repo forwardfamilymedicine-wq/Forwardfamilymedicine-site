@@ -8,7 +8,7 @@ import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import NumberedRows from '../components/shared/NumberedRows.astro';
 import PathTimeline from '../components/shared/PathTimeline.astro';
 import QuotePair from '../components/shared/QuotePair.astro';
-import reviews from '../data/reviews.json';
+import { reviewBy } from '../utils/reviews';
 import RuledList from '../components/shared/RuledList.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
 import { formatMonthYear, getAvailability } from '../utils/availability';
@@ -114,9 +114,7 @@ const path = [
   { title: "Forward Family Medicine — accepting new patients now", body: `${malvernOpen ? 'Malvern office now open.' : `Malvern office opens ${malvernOpening}.`} West Chester location planned.` },
 ];
 
-const ibReview = reviews.find(r => r.who === 'I.B.');
-if (!ibReview) throw new Error('[menopause] no I.B. review in reviews.json.');
-const quotes = [{ text: ibReview.text, who: ibReview.who, attribution: '— Verified Google review' }, { text: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.", who: "E.G.", attribution: '— Verified Google review' }];
+const quotes = ['I.B.', 'E.G.'].map(who => ({ text: reviewBy(who).text, who, attribution: '— Verified Google review' }));
 
 const stats = [
   { value: '15 min', caption: 'average primary care visit, nationally', muted: true },

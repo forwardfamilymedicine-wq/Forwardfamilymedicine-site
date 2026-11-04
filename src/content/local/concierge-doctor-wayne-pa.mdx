@@ -32,6 +32,7 @@ import { Image } from 'astro:assets';
 import FAQSection from '../../components/shared/FAQSection.astro';
 import CTABanner from '../../components/shared/CTABanner.astro';
 import TestimonialCard from '../../components/shared/TestimonialCard.astro';
+import { reviewBy } from '../../utils/reviews';
 import NearYouExpander from '../../components/shared/NearYouExpander.astro';
 import liebermanPhoto from '../../assets/staff/dr-philip-lieberman.jpg';
 import windowChairs from '../../assets/office/wayne-window-chairs.jpg';
@@ -131,7 +132,7 @@ At Forward Family Medicine in Wayne, he brings that rare combination: clinical m
 
     <TestimonialCard
       slot="proof"
-      quote="Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner."
+      quote={reviewBy('M.M.').text}
       author="M.M."
       detail="Verified Google review"
     />

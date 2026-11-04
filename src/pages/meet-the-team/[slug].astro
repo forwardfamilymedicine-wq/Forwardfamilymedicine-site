@@ -20,7 +20,7 @@ import PathTimeline from '../../components/shared/PathTimeline.astro';
 import QuotePair from '../../components/shared/QuotePair.astro';
 import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
 import CTABanner from '../../components/shared/CTABanner.astro';
-import reviewsData from '../../data/reviews.json';
+import { reviewBy } from '../../utils/reviews';
 import { getAvailability } from '../../utils/availability';
 import { isPlanned } from '../../utils/physicianRouting';
 import { contactHrefForPath } from '../../utils/leadSource';
@@ -28,40 +28,16 @@ import { physicianCredentialRows } from '../../utils/credentialRows';
 import { ORG_ID } from '../../utils/practiceSchema';
 import { physicianNode, headshotUrl, awardLabel, HEADSHOT } from '../../utils/physicianSchema';
 
-// Verified Google reviews, keyed by provider slug. Verbatim, never reworded.
-// Lieberman's M.M. and P.M. reviews are also used on lifestyle-medicine.astro
-// (and the homepage carries D.B., M.M. and P.M. too) — that overlap is
-// intentional here, not an oversight: his bio should stand on its own with
-// real proof rather than none. Landi's second review (I.B.) is the verified
-// text in src/data/reviews.json.
-const REVIEWS: Record<string, { quote: string; author: string }[]> = {
-  'philip-lieberman-md': [
-    {
-      quote: "Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner.",
-      author: 'M.M.',
-    },
-    {
-      quote: "I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. He is incredibly kind and compassionate. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier.",
-      author: 'P.M.',
-    },
-  ],
-  'brian-landi-do': [
-    {
-      quote: "I've been a patient of Dr. Landi's for sometime now and I'm excited that he's transitioning to direct primary care! He always takes time to listen and thoroughly explain treatment options and provide truly personalized care! If you're looking for a family medicine doctor who focuses on preventative care, wellness and building long-term relationships, I highly recommend Dr. Landi.",
-      author: 'E.G.',
-    },
-    ...reviewsData.filter(r => r.who === 'I.B.').map(r => ({ quote: r.text, author: r.who })),
-  ],
-  'david-bigley-do': [
-    {
-      quote: "Dr Bigley sat and spoke with me for an hour and 45 minutes, getting to know me as a whole person. I felt so comfortable with him that I was totally honest in a way in which I usually do not feel comfortable with other physicians. This is a very rare person. You can tell he cares and will be dedicated to help you.",
-      author: 'A.K.',
-    },
-    {
-      quote: "I'm 81 years young with a couple medical issues. But Dr Bigley brings back memories from my childhood — house calls! He takes the time to listen and amazingly, his first recommendation does not include a prescription pad. And the phone answers and the next appointment available is not next month.",
-      author: 'J.O.',
-    },
-  ],
+// Verified Google reviews shown on each profile, by reviewer initials. The text
+// is never held here: it is read from src/data/reviews.json (via utils/reviews)
+// so a review has one copy site-wide. Lieberman's and Bigley's reviews also run
+// in the homepage marquee, and Lieberman's on lifestyle-medicine.astro; that
+// overlap is intentional, since each bio should stand on its own with real
+// proof rather than none.
+const REVIEWERS: Record<string, string[]> = {
+  'philip-lieberman-md': ['M.M.', 'P.M.'],
+  'brian-landi-do': ['E.G.', 'I.B.'],
+  'david-bigley-do': ['A.K.', 'J.O.'],
 };
 
 // The sage card beside the details: live copy from elsewhere on the site.
@@ -212,8 +188,7 @@ const certLine = (c: any) => c.name.toLowerCase().includes(c.organization.toLowe
 const card = isPhysician ? CARD[d.slug] : undefined;
 const contactHref = contactHrefForPath(`/meet-the-team/${d.slug}/`);
 const joinHref = `/contact/?subject=${encodeURIComponent(`Join Dr. ${lastName}'s Patient List`)}`;
-const reviews = REVIEWS[d.slug] ?? [];
-const quotes = reviews.map(r => ({ text: r.quote, who: r.author, attribution: '— Verified Google review' }));
+const quotes = (REVIEWERS[d.slug] ?? []).map(who => ({ text: reviewBy(who).text, who, attribution: '— Verified Google review' }));
 
 // Closing band. Accepting physicians: the shared band copy with their lead
 // source. Dr. Bigley and team members: "Ready to find your physician?" from the

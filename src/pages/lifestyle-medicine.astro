@@ -9,6 +9,7 @@ import NearYouExpander from '../components/shared/NearYouExpander.astro';
 import TitledGrid from '../components/shared/TitledGrid.astro';
 import PathTimeline from '../components/shared/PathTimeline.astro';
 import QuotePair from '../components/shared/QuotePair.astro';
+import { reviewBy } from '../utils/reviews';
 import RuledList from '../components/shared/RuledList.astro';
 import SageCard from '../components/shared/SageCard.astro';
 import GoogleReviewsLink from '../components/shared/GoogleReviewsLink.astro';
@@ -103,10 +104,7 @@ const path = [
   { title: 'Built the LM Residency Curriculum', body: 'Enabled Abington residents to earn their own Lifestyle Medicine board certification' },
 ];
 
-const quotes = [
-  { text: "Dr. Lieberman is the way a doctor should be. He spent significant amount of time with me, not only around my concerns about a stroke, but also my mental and nutritional well-being. He took the time to answer my questions and to perform tests that were created to address my specific concerns and he gave me the answers that I simply was not able to get anywhere else. As a Hospice chaplain who works with numerous doctors and nurses, I can honestly say I've never seen anything like this. I wish I switched sooner.", who: 'M.M.', attribution: '— Verified Google review' },
-  { text: "I was so happy that I found a Doctor who listens. He was so tuned in and prepared for my appointments. He is incredibly kind and compassionate. I am just coming off major open heart surgery, he has excellent knowledge not only the body but tremendous in nutrition. I could not be happier.", who: 'P.M.', attribution: '— Verified Google review' },
-];
+const quotes = ['M.M.', 'P.M.'].map(who => ({ text: reviewBy(who).text, who, attribution: '— Verified Google review' }));
 
 ---
 
