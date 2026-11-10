@@ -211,8 +211,11 @@ const breadcrumb = {
         else items[i].removeAttribute('aria-current');
       }
     }
-    document.addEventListener('ffm:mg-step', function (e) { sync(e.detail.step); });
-    sync(document.documentElement.getAttribute('data-mg-step') === '2' ? 2 : 1);
+    // The step is 1 or 2 for the individual flow. An employer inquiry sets
+    // "business": no step applies, so no item is marked.
+    function stepOf(v) { return v === '2' || v === 2 ? 2 : v === 'business' ? 0 : 1; }
+    document.addEventListener('ffm:mg-step', function (e) { sync(stepOf(e.detail.step)); });
+    sync(stepOf(document.documentElement.getAttribute('data-mg-step')));
   })();
 </script>
 
