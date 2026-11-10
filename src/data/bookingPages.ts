@@ -18,6 +18,13 @@ export interface BookingPage {
   cardTitle: string;
   /** Card subline, e.g. "Family Medicine and Menopause Care" */
   cardSubline: string;
+  /** Button label, e.g. "Book with Dr. Landi" */
+  bookLabel: string;
+  /** The office this physician sees meet-and-greet patients at; matches the
+   *  form's "Preferred office" values, so that choice can order the cards. */
+  office: 'wayne' | 'malvern';
+  /** Analytics value for the physician parameter of the meetgreet_* events. */
+  eventKey: 'landi' | 'lieberman';
   /** Booking page share link, used for the "open in a new tab" link. */
   shareUrl: string;
   /** The src of Google's inline-embed iframe snippet, used as given. */
@@ -30,6 +37,9 @@ export const BOOKING_PAGES: BookingPage[] = [
     code: 'BL',
     cardTitle: 'Dr. Brian Landi · Malvern',
     cardSubline: 'Family Medicine and Menopause Care',
+    bookLabel: 'Book with Dr. Landi',
+    office: 'malvern',
+    eventKey: 'landi',
     shareUrl: 'https://calendar.app.google/byvHf4dTyqVfpVWw9',
     embedSrc: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3z_348-rTAgqKq9ZKyYf2Nk16oCiZy-_Hj7zC5LykJFUY57Sj3boJQfNXwDWfJW43Bh7AxGKNB?gv=true',
   },
@@ -37,6 +47,9 @@ export const BOOKING_PAGES: BookingPage[] = [
     code: 'PL',
     cardTitle: 'Dr. Philip Lieberman · Wayne',
     cardSubline: 'Family Medicine and Lifestyle Medicine',
+    bookLabel: 'Book with Dr. Lieberman',
+    office: 'wayne',
+    eventKey: 'lieberman',
     shareUrl: 'https://calendar.app.google/cFzhZWL4te6zgBcG9',
     embedSrc: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Rl8gp9wQjO6JOZw0M2NCtYDQeANBqJKtb6aJTwxa0WVh5za35DU_2s_tw9tawegFYqhSHcKrQ?gv=true',
   },

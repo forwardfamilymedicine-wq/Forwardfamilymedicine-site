@@ -748,3 +748,35 @@ html { scroll-padding-top: var(--header-h); }
   .rd-crumb { margin-bottom: 24px; }
   [data-sticky-fit].is-sticky { position: static; }
 }
+
+/* Meet & Greet step 2: the enrollment block steps back so nothing competes
+   with booking. MeetGreetForm sets data-mg-step="2" on <html> once the form is
+   submitted; at step 1 (and when the attribute is absent) nothing here applies.
+   Used by the Contact and New Patients sidebars. The enrollment links stay on
+   the page as plain text links, so enrolling is still one click, and the
+   delegated outbound_enrollment_click listener in MainLayout still matches them. */
+.enroll-lead { display: none; }
+html[data-mg-step="2"] .enroll {
+  background: transparent;
+  border-top: 1px solid var(--hairline-strong);
+  padding: 14px 0 0;
+  gap: 6px;
+}
+html[data-mg-step="2"] .enroll .enroll-full { display: none; }
+html[data-mg-step="2"] .enroll .enroll-lead { display: block; font-size: 14px; line-height: 1.65; color: var(--text-700); }
+html[data-mg-step="2"] .enroll .enroll__btns { flex-direction: row; flex-wrap: wrap; gap: 0 18px; }
+html[data-mg-step="2"] .enroll .enroll__btns .btn-forest,
+html[data-mg-step="2"] .enroll .enroll__btns .btn-ghost {
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--sage-600);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+html[data-mg-step="2"] .enroll .enroll__btns .btn-forest:hover,
+html[data-mg-step="2"] .enroll .enroll__btns .btn-ghost:hover { background: none; color: var(--forest); }

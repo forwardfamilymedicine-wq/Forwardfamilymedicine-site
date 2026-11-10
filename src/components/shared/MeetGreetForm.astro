@@ -10,13 +10,34 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // physician and embeds that physician's Google booking page. With either
 // value empty, nothing below is rendered and the success state is unchanged.
 const BOOKING_ENABLED = bookingEnabled();
-const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, embedSrc }) => ({ code, cardTitle, shareUrl, embedSrc }));
+const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, embedSrc, eventKey }) => ({ code, cardTitle, shareUrl, embedSrc, eventKey }));
+
+// The two-step progress line above the card. On by default wherever the form
+// renders; a page that must not show it passes stepper={false}. It is also
+// left out when self-scheduling is off, because there is no second step then.
+export interface Props { stepper?: boolean }
+const { stepper = true } = Astro.props;
+const SHOW_STEPPER = stepper && BOOKING_ENABLED;
+
+// Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
+// without submitting. False in a production build, so the script below never
+// looks at the query.
+const DEV = import.meta.env.DEV;
 ---
 
+<div class="mg-flow" id="mg-flow">
+  {SHOW_STEPPER && (
+    <nav class="mg-stepper" id="mg-stepper" aria-label="Meet and greet steps">
+      <ol>
+        <li class="mg-stepper-item is-current" id="mg-stepper-1" aria-current="step"><span class="mg-stepper-n" aria-hidden="true">1</span> Your details<span class="mg-sr" id="mg-stepper-done" hidden> (completed)</span></li>
+        <li class="mg-stepper-item" id="mg-stepper-2"><span class="mg-stepper-n" aria-hidden="true">2</span> Choose your time</li>
+      </ol>
+    </nav>
+  )}
 <div class="form-wrap">
   <div class="form-header" id="mg-form-header">
     <h2>Request Your Free Meet &amp; Greet</h2>
-    <p>Fill out the form below and we'll reach out within 24 hours to schedule your visit. No pressure, no commitment, no credit card.</p>
+    <p>Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.</p>
   </div>
 
   <form id="meetgreet-form" novalidate aria-label="Meet and greet request form">
@@ -157,45 +178,55 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
 
     <p class="form-note">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      We'll contact you within 24 hours. Your information is never shared or sold.
+      Your information is never shared or sold.
     </p>
   </form>
 
   {BOOKING_ENABLED && (
-    <div id="mg-booking" class="mg-booking" hidden>
-      <p id="mg-booking-intro" class="mg-intro" role="status" tabindex="-1"></p>
+    <div id="mg-booking" class="mg-booking" hidden aria-live="polite">
+      <h2 id="mg-booking-intro" class="mg-intro" tabindex="-1"></h2>
 
-      <!-- Step 1: choose a physician. Nothing is preselected. -->
+      <!-- Step 2a: choose a physician. Nothing is preselected. Each card is one
+           target: its button's ::after covers the card. -->
       <div id="mg-step-choose">
+        <p class="mg-body">Your meet &amp; greet isn't booked until you pick a time. Choose the physician you'd like to meet.</p>
         <div class="mg-cards">
           {BOOKING_PAGES.map((p) => (
-            <article class="mg-card">
+            <article class="mg-card" data-office={p.office}>
               <h3 class="mg-card-title">{p.cardTitle}</h3>
               <p class="mg-card-sub">{p.cardSubline}</p>
-              <button type="button" class="btn-forest btn-sm mg-card-btn" data-physician={p.code}>See available times</button>
+              <button type="button" class="btn-forest mg-card-btn" data-physician={p.code}>{p.bookLabel}</button>
             </article>
           ))}
         </div>
+      </div>
+
+      <!-- Step 2b: that physician's booking page, embedded, at the width of
+           the column. -->
+      <div id="mg-step-book" hidden>
+        <div class="mg-sched-head">
+          <h3 id="mg-sched-title" class="mg-sched-title" tabindex="-1"></h3>
+          <div class="mg-sched-links">
+            <button type="button" class="mg-link-btn" id="mg-back">Choose a different physician</button>
+            <a id="mg-newtab" class="mg-newtab" href="#" target="_blank" rel="noopener noreferrer">Open booking page in a new tab</a>
+          </div>
+        </div>
+        <p class="mg-note">Google will ask for your name and email once more. That confirms your spot.</p>
+        <div class="mg-embed">
+          <iframe id="mg-iframe" title="Booking page" src="about:blank"></iframe>
+        </div>
+      </div>
+
+      <div class="mg-foot">
+        <p class="mg-fallback">Would you rather we call you? No problem. We'll reach out within 24 hours.</p>
         <p class="mg-help">
           Questions? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           or call <a href="tel:+12156457044">(215) 645-7044</a>.
         </p>
       </div>
-
-      <!-- Step 2: that physician's booking page, embedded. -->
-      <div id="mg-step-book" hidden>
-        <p class="mg-back-row">
-          <button type="button" class="mg-link-btn" id="mg-back">Choose a different physician</button>
-        </p>
-        <div class="mg-embed">
-          <iframe id="mg-iframe" title="Booking page" src="about:blank"></iframe>
-        </div>
-        <p class="mg-newtab-row">
-          <a id="mg-newtab" href="#" target="_blank" rel="noopener noreferrer">Open booking page in a new tab</a>
-        </p>
-      </div>
     </div>
   )}
+</div>
 </div>
 
 <style>
@@ -209,6 +240,7 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     border-top: 3px solid var(--forest);
   }
   .form-header { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .form-header[hidden] { display: none; }
   .form-header h2 {
     margin: 0;
     font-family: var(--font-heading);
@@ -319,36 +351,68 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     .form-group--office, #family-size-group:not([hidden]) + .form-group--office { grid-column: 1 / -1; }
   }
 
-  /* ── Self-scheduling success state (same success pattern) ── */
+  /* ── Two-step progress line: plain text and a hairline, above the card ── */
+  .mg-stepper { margin: 0 0 16px; }
+  .mg-stepper ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+  .mg-stepper-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 2px solid var(--hairline-strong);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--text-600);
+  }
+  .mg-stepper-n { font-family: var(--font-heading); font-size: 20px; line-height: 1; }
+  .mg-stepper-item.is-current { border-top-color: var(--forest); color: var(--forest); font-weight: 500; }
+  .mg-stepper-item.is-done { border-top-color: var(--sage-600); }
+  .mg-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* ── Step 2: choose a physician, then book. The card's own top rule is the
+     success rule, so the panel adds none. ── */
+  .form-wrap { --mg-pad: 44px; }
+  @media (max-width: 860px) { .form-wrap { --mg-pad: 22px; } }
   .mg-booking {
     /* html { scroll-padding-top } already clears the sticky header; this is
        breathing room only. */
     scroll-margin-top: 1.5rem;
-    border-top: 3px solid var(--forest);
-    padding-top: 24px;
   }
   .mg-booking[hidden] { display: none; }
   .mg-intro {
-    margin: 0 0 24px;
+    margin: 0 0 12px;
     font-family: var(--font-heading);
-    font-size: 24px;
-    line-height: 1.35;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
     color: var(--forest);
   }
-  .mg-intro:focus { outline: none; }
+  .mg-intro:focus, .mg-sched-title:focus { outline: none; }
+  .mg-body { margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--text-700); }
   .mg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  /* One target per card: the button's ::after covers the whole card, so a click
+     anywhere on it books, and the focus ring goes around the card. */
   .mg-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 6px;
-    padding: 22px 0 0;
-    border-top: 1px solid var(--hairline-strong);
+    padding: 22px;
+    background: var(--linen);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 2px;
+    transition: border-color 0.18s;
   }
+  .mg-card:hover { border-color: var(--sage-600); }
   .mg-card-title { margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 22px; line-height: 1.2; color: var(--forest); }
-  .mg-card-sub { flex: 1; margin: 0 0 12px; color: var(--text-700); font-size: 14px; line-height: 1.6; }
-  .mg-help { margin: 24px 0 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
-  .mg-help a, .mg-newtab-row a { color: var(--sage-600); }
+  .mg-card-sub { flex: 1; margin: 0 0 14px; color: var(--text-700); font-size: 14px; line-height: 1.6; }
+  .mg-card-btn::after { content: ''; position: absolute; inset: 0; }
+  .mg-card-btn:focus-visible { outline: none; }
+  .mg-card-btn:focus-visible::after { outline: 2px solid var(--forest); outline-offset: 2px; }
+
+  .mg-sched-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin: 0 0 8px; }
+  .mg-sched-title { margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: 24px; line-height: 1.25; color: var(--forest); }
+  .mg-sched-links { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 14px; }
   .mg-link-btn {
     background: none;
     border: 0;
@@ -359,19 +423,28 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
     text-decoration: underline;
     cursor: pointer;
   }
-  .mg-back-row { margin: 0 0 16px; }
+  .mg-newtab { color: var(--sage-600); text-decoration: underline; }
+  .mg-note { margin: 0 0 14px; font-size: 14px; line-height: 1.6; color: var(--text-700); }
+  /* The scheduler takes the full width of the column: the iframe bleeds past
+     the card's side padding. Height shows the month grid and the time slots
+     without a scrollbar of its own on desktop. */
   .mg-embed iframe {
     display: block;
-    width: 100%;
-    height: 640px;
-    border: 1px solid var(--hairline-strong);
-    border-radius: 2px;
+    width: calc(100% + var(--mg-pad) * 2);
+    margin-inline: calc(var(--mg-pad) * -1);
+    height: 800px;
+    border: 0;
+    border-top: 1px solid var(--hairline-strong);
+    border-bottom: 1px solid var(--hairline-strong);
     background: var(--linen-50);
   }
-  .mg-newtab-row { margin: 16px 0 0; font-size: 14px; }
+  .mg-foot { margin-top: 24px; display: flex; flex-direction: column; gap: 6px; }
+  .mg-fallback, .mg-help { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
+  .mg-help a { color: var(--sage-600); }
   @media (max-width: 560px) {
     .mg-booking { scroll-margin-top: 1rem; }
     .mg-cards { grid-template-columns: 1fr; }
+    .mg-intro { font-size: 24px; }
   }
 </style>
 
@@ -396,7 +469,7 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -407,68 +480,142 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
   const familySizeGroup = document.getElementById('family-size-group');
 
   // Self-scheduling elements. All null when BOOKING_ENABLED is false.
+  const flowRoot     = document.getElementById('mg-flow');
   const formHeader   = document.getElementById('mg-form-header');
   const bookingPanel = document.getElementById('mg-booking');
   const bookingIntro = document.getElementById('mg-booking-intro');
   const stepChoose   = document.getElementById('mg-step-choose');
   const stepBook     = document.getElementById('mg-step-book');
+  const schedTitle   = document.getElementById('mg-sched-title');
   const bookingFrame = document.getElementById('mg-iframe');
   const newTabLink   = document.getElementById('mg-newtab');
   const backBtn      = document.getElementById('mg-back');
-  const bookingReady = !!(BOOKING_ENABLED && bookingPanel && bookingIntro && stepChoose && stepBook && bookingFrame && newTabLink && backBtn);
+  const bookingReady = !!(BOOKING_ENABLED && bookingPanel && bookingIntro && stepChoose && stepBook && schedTitle && bookingFrame && newTabLink && backBtn);
+
+  // Dev preview only (DEV is false in a production build): no analytics fire.
+  let previewing = false;
+  const track = (name, params) => { if (!previewing && window.ffmTrack) window.ffmTrack(name, params); };
 
   // Below this viewport width the embedded booking page is too cramped to
   // use (Google's mobile layout inside a narrow frame, with nested
   // scrolling), so choosing a card opens the booking page in a new tab
   // instead. Matches the 560px breakpoint where the cards stack.
   // 0 would use the embed at every width.
+  // Checked 2026-11-10 against the live embed: at a 350px card it is one
+  // stacked column that needs about 1100px to show the month and the slots
+  // together, so it would scroll inside the page's scroll.
   const EMBED_MIN_WIDTH = 560;
 
-  function showBookingChooser(firstName) {
+  const smooth = () => (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
+
+  // The page's step, for the stepper here and for anything on the page that
+  // reacts to it (the contact page's "How it works" list, the enrollment
+  // block in the sidebar): an attribute on <html> for CSS, and an event.
+  function setStep(step) {
+    document.documentElement.setAttribute('data-mg-step', String(step));
+    const s1 = document.getElementById('mg-stepper-1');
+    const s2 = document.getElementById('mg-stepper-2');
+    const done = document.getElementById('mg-stepper-done');
+    if (s1 && s2) {
+      s1.classList.toggle('is-current', step === 1);
+      s1.classList.toggle('is-done', step === 2);
+      s2.classList.toggle('is-current', step === 2);
+      if (step === 1) { s1.setAttribute('aria-current', 'step'); s2.removeAttribute('aria-current'); }
+      else            { s2.setAttribute('aria-current', 'step'); s1.removeAttribute('aria-current'); }
+      if (done) done.hidden = step !== 2;
+    }
+    document.dispatchEvent(new CustomEvent('ffm:mg-step', { detail: { step } }));
+    // The sidebar changes height here; stickyFit only re-measures on resize.
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  // Dr. at the preferred office first; with no preference, the order as written.
+  function orderCards(preferredOffice) {
+    const cards = Array.from(stepChoose.querySelectorAll('.mg-card'));
+    const first = cards.filter((c) => c.getAttribute('data-office') === preferredOffice);
+    const rest  = cards.filter((c) => first.indexOf(c) === -1);
+    const list  = stepChoose.querySelector('.mg-cards');
+    first.concat(rest).forEach((c) => list.appendChild(c));
+  }
+
+  function scrollToFlow() {
+    (flowRoot || bookingPanel).scrollIntoView({ behavior: smooth(), block: 'start' });
+  }
+
+  function showBookingChooser(firstName, preferredOffice) {
+    // The headline is set while the panel is still hidden, so a screen reader
+    // reads it when focus lands on it.
+    bookingIntro.textContent = firstName
+      ? 'Thanks, ' + firstName + '. One more step: choose your time.'
+      : 'Thanks. One more step: choose your time.';
+    orderCards(preferredOffice || '');
     if (formHeader) formHeader.hidden = true;
     form.hidden = true;
-    bookingIntro.textContent = 'Thank you, ' + firstName + '. Your request is in. '
-      + 'Choose a physician below to pick your meet and greet time, or we\'ll reach out within 24 hours.';
     stepBook.hidden   = true;
+    bookingIntro.hidden = false;
     stepChoose.hidden = false;
     bookingPanel.hidden = false;
-    bookingPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setStep(2);
+    scrollToFlow();
     bookingIntro.focus({ preventScroll: true });
+    track('meetgreet_step2_view');
   }
 
   function choosePhysician(code) {
     const page = BOOKING_PAGES.find((p) => p.code === code);
     if (!page) return;
-    if (window.ffmTrack) window.ffmTrack('mg_physician_selected', { physician: code });
+    track('mg_physician_selected', { physician: code });
+    track('meetgreet_physician_select', { physician: page.eventKey });
     if (EMBED_MIN_WIDTH > 0 && window.innerWidth < EMBED_MIN_WIDTH) {
       window.open(page.shareUrl, '_blank', 'noopener');
       return;
     }
+    schedTitle.textContent = 'Booking with ' + page.cardTitle;
     bookingFrame.title = page.cardTitle + ' booking page';
     bookingFrame.src   = page.embedSrc;
     newTabLink.href    = page.shareUrl;
+    newTabLink.setAttribute('data-physician-key', page.eventKey);
+    bookingIntro.hidden = true;
     stepChoose.hidden  = true;
     stepBook.hidden    = false;
-    bookingPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    backBtn.focus({ preventScroll: true });
+    scrollToFlow();
+    schedTitle.focus({ preventScroll: true });
   }
 
   function backToChooser() {
     bookingFrame.src   = 'about:blank';
     bookingFrame.title = 'Booking page';
     newTabLink.href    = '#';
+    newTabLink.removeAttribute('data-physician-key');
     stepBook.hidden    = true;
+    bookingIntro.hidden = false;
     stepChoose.hidden  = false;
+    scrollToFlow();
     const firstCard = stepChoose.querySelector('.mg-card-btn');
     if (firstCard) firstCard.focus({ preventScroll: true });
   }
 
   if (bookingReady) {
     bookingPanel.addEventListener('click', (e) => {
-      const card = e.target.closest('[data-physician]');
-      if (card) { choosePhysician(card.getAttribute('data-physician')); return; }
-      if (e.target.closest('#mg-back')) backToChooser();
+      const btn = e.target.closest('[data-physician]');
+      if (btn) { choosePhysician(btn.getAttribute('data-physician')); return; }
+      if (e.target.closest('#mg-back')) { backToChooser(); return; }
+      if (e.target.closest('#mg-newtab')) {
+        track('meetgreet_new_tab_click', { physician: newTabLink.getAttribute('data-physician-key') || '' });
+      }
     });
+
+    // Dev only: ?preview=step2[&name=Alex[&office=wayne]] or ?preview=scheduler&physician=BL.
+    // Nothing is submitted and no analytics event fires.
+    if (DEV) {
+      const q = new URLSearchParams(window.location.search);
+      const mode = q.get('preview');
+      if (mode === 'step2' || mode === 'scheduler') {
+        previewing = true;
+        showBookingChooser(q.get('name') || '', q.get('office') || '');
+        if (mode === 'scheduler') choosePhysician(q.get('physician') || 'BL');
+      }
+    }
   }
 
   const formLoadTime = Date.now();
@@ -583,7 +730,7 @@ const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, emb
       if (bookingReady) {
         form.reset();
         if (familySizeGroup) familySizeGroup.hidden = true;
-        showBookingChooser(firstName);
+        showBookingChooser(firstName, preferredOffice);
       } else if (successEl) {
         successEl.innerHTML = `
           <strong>Request received!</strong> We'll reach out within 24 hours to schedule your visit.<br />

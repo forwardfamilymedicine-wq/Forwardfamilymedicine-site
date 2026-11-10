@@ -60,12 +60,12 @@ const breadcrumb = {
       <div class="contact-form-col">
         <MeetGreetForm />
         <div class="after">
-          <h2 class="after__h rd-serif">What Happens After You Submit</h2>
-          <ol class="steps">
-            <li>We review your request</li>
-            <li>We reach out within 24 hours to schedule</li>
-            <li>You come in for your free meet &amp; greet</li>
-            <li>You decide — no pressure, no obligation</li>
+          <h2 class="after__h rd-serif">How it works</h2>
+          <ol class="steps" id="how-steps">
+            <li aria-current="step">Share your details</li>
+            <li>Choose your time (you'll get a confirmation email)</li>
+            <li>Come in for your free meet &amp; greet</li>
+            <li>You decide: no pressure, no obligation</li>
           </ol>
         </div>
       </div>
@@ -116,8 +116,9 @@ const breadcrumb = {
         </div>
 
         <SageCard class="enroll">
-          <h3 class="rd-h3">Ready to Enroll?</h3>
-          <p>If you've already met with us and are ready to join, enroll directly online:</p>
+          <h3 class="rd-h3 enroll-full">Ready to Enroll?</h3>
+          <p class="enroll-full">If you've already met with us and are ready to join, enroll directly online:</p>
+          <p class="enroll-lead">Already met with us? Enroll online</p>
           <div class="enroll__btns">
             <a href="https://forwardfamilymedicine.sigmamd.com/signup/individual-membership" class="btn-forest" target="_blank" rel="noopener noreferrer">Enroll as Individual</a>
             <a href="https://forwardfamilymedicine.sigmamd.com/signup/family-membership" class="btn-ghost" target="_blank" rel="noopener noreferrer">Enroll Your Family</a>
@@ -196,6 +197,25 @@ const breadcrumb = {
   </section>
 </MainLayout>
 
+<script is:inline>
+  // Keeps the "How it works" list in step with the form's stepper. MeetGreetForm
+  // sets data-mg-step on <html> and fires ffm:mg-step; both are read, so the
+  // list is right even when the state was set before this script ran.
+  (function () {
+    var list = document.getElementById('how-steps');
+    if (!list) return;
+    function sync(step) {
+      var items = list.children;
+      for (var i = 0; i < items.length; i++) {
+        if (i === step - 1) items[i].setAttribute('aria-current', 'step');
+        else items[i].removeAttribute('aria-current');
+      }
+    }
+    document.addEventListener('ffm:mg-step', function (e) { sync(e.detail.step); });
+    sync(document.documentElement.getAttribute('data-mg-step') === '2' ? 2 : 1);
+  })();
+</script>
+
 <style>
   :global(.contact-photo) { aspect-ratio: 4 / 5; object-position: 50% 50%; }
 
@@ -219,6 +239,9 @@ const breadcrumb = {
   }
   .steps li:last-child { border-bottom: 1px solid var(--hairline-strong); }
   .steps li::before { content: counter(s); font-family: var(--font-heading); font-size: 24px; color: var(--sage-600); line-height: 1; }
+  /* The step the patient is on, matching the stepper above the form. */
+  .steps li[aria-current="step"] { color: var(--forest); font-weight: 500; }
+  .steps li[aria-current="step"]::before { color: var(--forest); }
 
   .contact-info { display: flex; flex-direction: column; gap: 28px; }
   .info-block { display: flex; flex-direction: column; gap: 10px; }
