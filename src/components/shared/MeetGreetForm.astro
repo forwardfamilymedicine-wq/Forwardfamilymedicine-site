@@ -37,7 +37,7 @@ const DEV = import.meta.env.DEV;
 <div class="form-wrap">
   <div class="form-header" id="mg-form-header">
     <h2>Request Your Free Meet &amp; Greet</h2>
-    <p>Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.</p>
+    <p id="mg-form-sub">Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.</p>
   </div>
 
   <form id="meetgreet-form" novalidate aria-label="Meet and greet request form">
@@ -181,6 +181,16 @@ const DEV = import.meta.env.DEV;
       Your information is never shared or sold.
     </p>
   </form>
+
+  <!-- Employer / Business interest: no physician step. Always rendered, so it
+       works whether or not self-scheduling is on. -->
+  <div id="mg-business" class="mg-business" hidden aria-live="polite">
+    <h2 id="mg-business-intro" class="mg-intro" tabindex="-1"></h2>
+    <p class="mg-help">
+      Questions? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      or call <a href="tel:+12156457044">(215) 645-7044</a>.
+    </p>
+  </div>
 
   {BOOKING_ENABLED && (
     <div id="mg-booking" class="mg-booking" hidden aria-live="polite">
@@ -367,6 +377,7 @@ const DEV = import.meta.env.DEV;
   .mg-stepper-n { font-family: var(--font-heading); font-size: 20px; line-height: 1; }
   .mg-stepper-item.is-current { border-top-color: var(--forest); color: var(--forest); font-weight: 500; }
   .mg-stepper-item.is-done { border-top-color: var(--sage-600); }
+  .mg-stepper[hidden] { display: none; }
   .mg-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
   /* ── Step 2: choose a physician, then book. The card's own top rule is the
@@ -379,6 +390,8 @@ const DEV = import.meta.env.DEV;
     scroll-margin-top: 1.5rem;
   }
   .mg-booking[hidden] { display: none; }
+  .mg-business[hidden] { display: none; }
+  .mg-business { scroll-margin-top: 1.5rem; }
   .mg-intro {
     margin: 0 0 12px;
     font-family: var(--font-heading);
@@ -482,6 +495,10 @@ const DEV = import.meta.env.DEV;
   // Self-scheduling elements. All null when BOOKING_ENABLED is false.
   const flowRoot     = document.getElementById('mg-flow');
   const formHeader   = document.getElementById('mg-form-header');
+  const formSub     = document.getElementById('mg-form-sub');
+  const stepperEl    = document.getElementById('mg-stepper');
+  const bizPanel     = document.getElementById('mg-business');
+  const bizIntro     = document.getElementById('mg-business-intro');
   const bookingPanel = document.getElementById('mg-booking');
   const bookingIntro = document.getElementById('mg-booking-intro');
   const stepChoose   = document.getElementById('mg-step-choose');
@@ -540,6 +557,34 @@ const DEV = import.meta.env.DEV;
 
   function scrollToFlow() {
     (flowRoot || bookingPanel).scrollIntoView({ behavior: smooth(), block: 'start' });
+  }
+
+  // Employer / Business interest: one step, no physician choice. The "two quick
+  // steps" subline and the stepper only fit the individual flow, so they give
+  // way while that interest is selected and return when it is not.
+  const SUBLINE_DEFAULT  = formSub ? formSub.textContent : '';
+  const SUBLINE_BUSINESS = "Tell us a little about your business and we'll follow up within one business day. No pressure, no commitment.";
+  function applyInterest() {
+    const biz = !!interestSel && interestSel.value === 'employer';
+    if (formSub) formSub.textContent = biz ? SUBLINE_BUSINESS : SUBLINE_DEFAULT;
+    if (stepperEl) stepperEl.hidden = biz;
+  }
+
+  // After an employer submit: a plain confirmation, no stepper, no cards, no
+  // scheduler. data-mg-step is "business", never "2", so nothing keyed to step 2
+  // (the sidebar demotion, the "How it works" highlight) applies.
+  function showBusinessSuccess(firstName) {
+    bizIntro.textContent = firstName
+      ? 'Thanks, ' + firstName + '. We have your inquiry and will follow up within one business day.'
+      : 'Thanks. We have your inquiry and will follow up within one business day.';
+    if (formHeader) formHeader.hidden = true;
+    form.hidden = true;
+    if (stepperEl) stepperEl.hidden = true;
+    bizPanel.hidden = false;
+    document.documentElement.setAttribute('data-mg-step', 'business');
+    document.dispatchEvent(new CustomEvent('ffm:mg-step', { detail: { step: 'business' } }));
+    scrollToFlow();
+    bizIntro.focus({ preventScroll: true });
   }
 
   function showBookingChooser(firstName, preferredOffice) {
@@ -604,17 +649,23 @@ const DEV = import.meta.env.DEV;
         track('meetgreet_new_tab_click', { physician: newTabLink.getAttribute('data-physician-key') || '' });
       }
     });
+  }
 
-    // Dev only: ?preview=step2[&name=Alex[&office=wayne]] or ?preview=scheduler&physician=BL.
-    // Nothing is submitted and no analytics event fires.
-    if (DEV) {
-      const q = new URLSearchParams(window.location.search);
-      const mode = q.get('preview');
-      if (mode === 'step2' || mode === 'scheduler') {
-        previewing = true;
-        showBookingChooser(q.get('name') || '', q.get('office') || '');
-        if (mode === 'scheduler') choosePhysician(q.get('physician') || 'BL');
-      }
+  // Dev only (DEV is false in a production build):
+  //   ?preview=step2[&name=Alex[&office=wayne]]   the physician choice
+  //   ?preview=scheduler&physician=BL             the embedded scheduler
+  //   ?preview=business[&name=Alex]               the employer confirmation
+  // Nothing is submitted and no analytics event fires.
+  if (DEV) {
+    const q = new URLSearchParams(window.location.search);
+    const mode = q.get('preview');
+    if (bookingReady && (mode === 'step2' || mode === 'scheduler')) {
+      previewing = true;
+      showBookingChooser(q.get('name') || '', q.get('office') || '');
+      if (mode === 'scheduler') choosePhysician(q.get('physician') || 'BL');
+    } else if (mode === 'business') {
+      previewing = true;
+      showBusinessSuccess(q.get('name') || '');
     }
   }
 
@@ -622,6 +673,7 @@ const DEV = import.meta.env.DEV;
 
   interestSel?.addEventListener('change', () => {
     if (familySizeGroup) familySizeGroup.hidden = interestSel.value !== 'family';
+    applyInterest();
   });
 
   // Fires once, on the first field the visitor interacts with — not on every
@@ -727,7 +779,11 @@ const DEV = import.meta.env.DEV;
         });
       }
 
-      if (bookingReady) {
+      if (interest === 'employer') {
+        form.reset();
+        if (familySizeGroup) familySizeGroup.hidden = true;
+        showBusinessSuccess(firstName);
+      } else if (bookingReady) {
         form.reset();
         if (familySizeGroup) familySizeGroup.hidden = true;
         showBookingChooser(firstName, preferredOffice);
@@ -741,6 +797,7 @@ const DEV = import.meta.env.DEV;
         successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         form.reset();
         if (familySizeGroup) familySizeGroup.hidden = true;
+        applyInterest();
       }
 
     } catch (err) {
