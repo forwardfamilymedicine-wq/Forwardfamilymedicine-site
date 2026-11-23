@@ -8,7 +8,11 @@
  * versions. The consent banner is the site's own, so analytics stay opt-in
  * here exactly as everywhere else. No script module is loaded: importing
  * src/scripts/reveal.ts here would make Vite split it out of MainLayout's
- * inline script on every other page.
+ * inline script on every other page. For the same reason global.css is
+ * pulled in through the <style> block in the head, not a frontmatter import:
+ * a second importer makes Vite split global.css into a shared chunk and adds
+ * a stylesheet link to every page of the site. The style block keeps a copy
+ * of global.css in this layout's own CSS, which only /lp/ pages load.
  *
  * Landing events (B2), all through window.ffmTrack, so they queue until the
  * visitor accepts analytics and are dropped if they decline:
@@ -24,7 +28,6 @@ import LpHeader from '../components/landing/LpHeader.astro';
 import LpFooter from '../components/landing/LpFooter.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import Attribution from '../components/Attribution.astro';
-import '../styles/global.css';
 
 export interface FooterOffice { name: string; street: string; city: string; state: string; zip: string }
 
@@ -95,6 +98,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <Attribution />
+  <style is:global>@import '../styles/global.css';</style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
