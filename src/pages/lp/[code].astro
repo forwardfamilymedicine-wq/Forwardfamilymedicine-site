@@ -1,10 +1,13 @@
 ---
 /**
- * Paid-ad landing pages: /lp/<physicianKey>/<slug>/, one per entry in the
- * landing collection (src/content/landing). Everything on the page comes from
- * the entry and the providers and locations collections; the only copy typed
- * here is the "About the practice" link, the services heading, the FAQ
- * heading and the closing band's defaults.
+ * Paid-ad landing pages: /lp/<code>/ (for example /lp/k4/), one per entry in
+ * the landing collection (src/content/landing). The code is opaque: the URL,
+ * the canonical, the title and the description name neither the physician
+ * nor a condition, and the build refuses an entry whose text does (see
+ * assertNeutral below). Everything on the page comes from the entry and the
+ * providers and locations collections; the only copy typed here is the
+ * "About the practice" link, the services heading, the FAQ heading and the
+ * closing band's defaults.
  *
  * noindex, follow with a canonical to itself (LandingLayout), left out of the
  * sitemap (astro.config.mjs), linked from no nav or footer. Drafts render on
@@ -17,25 +20,33 @@
  * needs that decided before it is used on a landing page.
  */
 import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
-import LandingLayout from '../../../layouts/LandingLayout.astro';
-import LpHero from '../../../components/landing/LpHero.astro';
-import RuledList from '../../../components/shared/RuledList.astro';
-import TitledGrid from '../../../components/shared/TitledGrid.astro';
-import SageCard from '../../../components/shared/SageCard.astro';
-import FAQSection from '../../../components/shared/FAQSection.astro';
-import CTABanner from '../../../components/shared/CTABanner.astro';
-import QuotePair from '../../../components/shared/QuotePair.astro';
-import GoogleReviewsLink from '../../../components/shared/GoogleReviewsLink.astro';
-import MeetGreetForm from '../../../components/shared/MeetGreetForm.astro';
-import { reviewBy } from '../../../utils/reviews';
-import { getAvailability } from '../../../utils/availability';
-import { physicianCredentialRows } from '../../../utils/credentialRows';
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import LpHero from '../../components/landing/LpHero.astro';
+import RuledList from '../../components/shared/RuledList.astro';
+import TitledGrid from '../../components/shared/TitledGrid.astro';
+import SageCard from '../../components/shared/SageCard.astro';
+import FAQSection from '../../components/shared/FAQSection.astro';
+import CTABanner from '../../components/shared/CTABanner.astro';
+import QuotePair from '../../components/shared/QuotePair.astro';
+import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
+import MeetGreetForm from '../../components/shared/MeetGreetForm.astro';
+import { reviewBy } from '../../utils/reviews';
+import { getAvailability } from '../../utils/availability';
+import { physicianCredentialRows } from '../../utils/credentialRows';
 
 export async function getStaticPaths() {
+  const all = await getCollection('landing');
+  // One code, one page: checked over every entry, drafts included.
+  const byCode = new Map<string, string>();
+  for (const e of all) {
+    const prev = byCode.get(e.data.code);
+    if (prev) throw new Error(`[lp] code "${e.data.code}" is used by both ${prev} and ${e.id}.`);
+    byCode.set(e.data.code, e.id);
+  }
   // A draft is a page in review: it exists on `astro dev` and nowhere else.
-  const entries = await getCollection('landing', (e) => import.meta.env.DEV || !e.data.draft);
+  const entries = all.filter((e) => import.meta.env.DEV || !e.data.draft);
   return entries.map((entry) => ({
-    params: { physician: entry.data.physicianKey, slug: entry.data.slug },
+    params: { code: entry.data.code },
     props: { entry },
   }));
 }
@@ -51,6 +62,31 @@ const p = provider.data;
 if (!p.slug.includes(d.physicianKey)) {
   throw new Error(`[lp] ${entry.id}: physicianKey "${d.physicianKey}" does not match the provider "${p.slug}".`);
 }
+
+// What leaves the page: the URL (and so the canonical), the title and the
+// description reach the ad platform, link previews and browser history. None
+// of them may name a physician or a condition. The page body can and does.
+const providers = await getCollection('providers');
+const PHYSICIAN_TERMS = providers
+  .flatMap((pr) => pr.data.name.toLowerCase().split(/\s+/))
+  .concat(['dr', 'doctor', 'landi', 'lieberman', 'bigley']);
+const CLINICAL_TERMS = [
+  'menopause', 'perimenopause', 'midlife', 'hormone', 'hormones', 'hrt', 'estrogen', 'testosterone',
+  'osteoporosis', 'diabetes', 'obesity', 'weight', 'thyroid', 'cardiovascular', 'hypertension',
+  'cholesterol', 'depression', 'anxiety', 'cancer', 'fertility', 'libido', 'sexual',
+  'lifestyle medicine', 'longevity', 'dexa',
+];
+function assertNeutral(label: string, text: string) {
+  const hay = ` ${text.toLowerCase().replace(/[^a-z0-9]+/g, ' ')} `;
+  const hit = [...PHYSICIAN_TERMS, ...CLINICAL_TERMS].find((t) => hay.includes(` ${t} `));
+  if (hit) {
+    throw new Error(`[lp] ${entry.id}: the ${label} contains "${hit}". The URL, canonical, title and description must name neither a physician nor a condition.`);
+  }
+}
+const pathname = `/lp/${d.code}/`;
+assertNeutral('URL', pathname);
+assertNeutral('title', d.seo.title);
+assertNeutral('description', d.seo.description);
 
 const office = (await getCollection('locations')).find((l) => l.data.slug === d.office);
 if (!office) throw new Error(`[lp] ${entry.id}: no locations entry has the slug "${d.office}".`);

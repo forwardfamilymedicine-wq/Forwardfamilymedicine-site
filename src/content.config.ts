@@ -197,21 +197,26 @@ const team = defineCollection({
 });
 
 // Paid-ad landing pages, one entry per page, rendered by
-// src/pages/lp/[physician]/[slug].astro at /lp/<physicianKey>/<slug>/.
+// src/pages/lp/[code].astro at /lp/<code>/ (for example /lp/k4/).
 // Frontmatter is the page's whole configuration; the body is the physician's
 // note in their own voice. A draft renders on `astro dev` only, so a page can
 // be built and reviewed before it exists in production. The URL, title and
 // description are what an ad platform receives when the page is visited or
-// shared, so `slug`, `source`, `seo` and `tracking.lpKey` stay condition-free;
-// the condition-level `topic` is first-party only.
+// shared, so `code` is opaque and `seo` names neither the physician nor a
+// condition (the route checks this at build); the condition-level `topic` is
+// first-party only.
 const landing = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/landing' }),
   schema: ({ image }) => z.object({
     physician: reference('providers'),
-    /** First URL segment. Checked against the provider's slug at build. */
+    /**
+     * The URL: /lp/<code>/. Two to eight lowercase letters and digits, starting
+     * with a letter, unique across entries (checked at build). Opaque on
+     * purpose: it is also the GA4 `lp` parameter of the landing events.
+     */
+    code: z.string().regex(/^[a-z][a-z0-9]{1,7}$/),
+    /** The physician's short key: checked against the provider's slug at build; the GA4 `physician` parameter. */
     physicianKey: z.enum(['landi', 'lieberman', 'bigley']),
-    /** Second URL segment. Neutral: never the condition. */
-    slug: z.string().regex(/^[a-z0-9-]+$/),
     /** What the page is about, for the intake sheet and the team; not rendered, not in the URL. */
     topic: z.string(),
     /** The form's hidden source value and the GA4 `source` parameter; `lp-` plus the key. */
@@ -274,7 +279,6 @@ const landing = defineCollection({
       description: z.string(),
       ogImage: image().optional(),
     }),
-    tracking: z.object({ lpKey: z.string().regex(/^[a-z0-9-]+$/) }),
   }).superRefine((d, ctx) => {
     if (d.form.skipChooser && !d.bookingPhysician) {
       ctx.addIssue({ code: 'custom', path: ['bookingPhysician'], message: 'skipChooser needs bookingPhysician (BL or PL)' });
