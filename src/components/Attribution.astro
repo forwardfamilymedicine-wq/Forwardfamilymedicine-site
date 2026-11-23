@@ -20,17 +20,30 @@
  * ffm_consent "v2.a1.*"), and the script listens for the banner's
  * ffm:consent event to store the pending values if the visitor turns
  * analytics on during this page view.
+ *
+ * A landing page (LandingLayout) passes its entry's form source and the
+ * physician code its form books with. They ride along in the record under
+ * ATTR_LP_FIELDS, written only when the record itself is written, read by
+ * the main-site form. Elsewhere both are empty strings.
  */
-import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } from '../data/attribution';
+import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS, ATTR_LP_FIELDS } from '../data/attribution';
+
+export interface Props {
+  /** Landing pages only: the entry's form source ("lp-...") and, when the form books with one, the physician code (BL or PL). */
+  lpSource?: string;
+  lpPhysician?: string;
+}
+const { lpSource = '', lpPhysician = '' } = Astro.props;
+const ALL_FIELDS = [...ATTR_FIELDS, ...ATTR_LP_FIELDS];
 ---
 
-<script is:inline define:vars={{ ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS }}>
+<script is:inline define:vars={{ ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ALL_FIELDS, LP_SOURCE: lpSource, LP_PHYSICIAN: lpPhysician }}>
   (function () {
     var TTL_MS = ATTR_TTL_DAYS * 24 * 60 * 60 * 1000;
 
     function empty() {
       var o = {};
-      for (var i = 0; i < ATTR_FIELDS.length; i++) o[ATTR_FIELDS[i]] = '';
+      for (var i = 0; i < ALL_FIELDS.length; i++) o[ALL_FIELDS[i]] = '';
       return o;
     }
 
@@ -49,6 +62,8 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
       if (o) {
         o.landing_page = location.pathname;
         o.first_referrer = (document.referrer || '').slice(0, 300);
+        o.lp_source = LP_SOURCE;
+        o.lp_physician = LP_PHYSICIAN;
       }
       return o;
     }
@@ -83,7 +98,7 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
     function store(o) {
       try {
         var rec = {};
-        for (var i = 0; i < ATTR_FIELDS.length; i++) rec[ATTR_FIELDS[i]] = o[ATTR_FIELDS[i]] || '';
+        for (var i = 0; i < ALL_FIELDS.length; i++) rec[ALL_FIELDS[i]] = o[ALL_FIELDS[i]] || '';
         rec.ts = Date.now();
         localStorage.setItem(ATTR_KEY, JSON.stringify(rec));
         return true;
@@ -108,10 +123,12 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
     }
 
     // What a form sends. Stored first touch wins; this URL's values otherwise.
+    // The two lp_ keys are for the form's own source and physician fields,
+    // not for the hidden attribution fields (none carries their names).
     window.ffmAttr = function () {
       var src = readStored() || current || empty();
       var o = empty();
-      for (var i = 0; i < ATTR_FIELDS.length; i++) o[ATTR_FIELDS[i]] = src[ATTR_FIELDS[i]] || '';
+      for (var i = 0; i < ALL_FIELDS.length; i++) o[ALL_FIELDS[i]] = src[ALL_FIELDS[i]] || '';
       return o;
     };
   })();

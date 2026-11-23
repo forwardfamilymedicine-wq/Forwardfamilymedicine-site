@@ -168,6 +168,8 @@ const footerOffice = {
   ctaLabel={d.hero.ctaLabel}
   lpCode={d.code}
   lpPhysician={d.physicianKey}
+  lpSource={d.source}
+  lpPhysicianCode={d.form.skipChooser ? d.bookingPhysician : undefined}
 >
   {DEV && d.todo.length > 0 && (
     <aside class="lp-todo" aria-label="Open items, shown in development only">
