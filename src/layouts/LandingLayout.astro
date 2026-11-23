@@ -49,9 +49,8 @@ export interface Props {
   /** The entry's code (the URL segment) and physician key, for the landing events. */
   lpCode: string;
   lpPhysician: string;
-  /** The entry's form source and the physician code its form books with, for the attribution record (Attribution.astro). */
+  /** The entry's form source, for the attribution record (Attribution.astro). */
   lpSource?: string;
-  lpPhysicianCode?: string;
 }
 
 const {
@@ -66,7 +65,6 @@ const {
   lpCode,
   lpPhysician,
   lpSource = '',
-  lpPhysicianCode = '',
 } = Astro.props;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
@@ -106,7 +104,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
   <meta name="twitter:image" content={ogImage} />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <Attribution lpSource={lpSource} lpPhysician={lpPhysicianCode} />
+  <Attribution lpSource={lpSource} />
   <style is:global>@import '../styles/global.css';</style>
 </head>
 <body>
