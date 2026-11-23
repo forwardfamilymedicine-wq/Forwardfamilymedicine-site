@@ -8,6 +8,9 @@
 //   - "Accept"      -> cookie set (1 year), GA4 loads now and on every page load.
 //   - "Decline"     -> cookie set (1 year), trackers never load.
 //   - "Manage choices" footer link (<a data-consent-reset>) re-opens the banner.
+//   - Every choice is announced as a document event, ffm:consent, with
+//     detail.choice "accepted", "declined" or "reset", for scripts that must
+//     wait for it (src/components/Attribution.astro under Option B).
 //
 // CLARITY: not installed. Load path dormant unless CLARITY_ID is set.
 // ATTORNEY ITEMS (flagged, not blocking): (a) opt-in vs opt-out for GA4 in PA —
@@ -105,6 +108,9 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
 
     function hideBanner() { if (banner) banner.hidden = true; }
     function showBanner() { if (banner) banner.hidden = false; }
+    function announce(choice) {
+      try { document.dispatchEvent(new CustomEvent("ffm:consent", { detail: { choice: choice } })); } catch (e) {}
+    }
 
     // Consent-safe, queue-safe event tracking.
     //
@@ -158,12 +164,14 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
         loadTrackers();
         flushTrackQueue();
         hideBanner();
+        announce("accepted");
       });
     }
     if (declineBtn) {
       declineBtn.addEventListener("click", function () {
         setCookie(COOKIE, "declined", 365);
         hideBanner();
+        announce("declined");
       });
     }
 
@@ -173,6 +181,7 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
         e.preventDefault();
         document.cookie = COOKIE + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
         showBanner();
+        announce("reset");
       }
     });
   })();

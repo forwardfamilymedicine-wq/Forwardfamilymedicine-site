@@ -147,6 +147,8 @@ const footerOffice = {
   office={footerOffice}
   ctaHref={FORM_HREF}
   ctaLabel={d.hero.ctaLabel}
+  lpCode={d.code}
+  lpPhysician={d.physicianKey}
 >
   {DEV && d.todo.length > 0 && (
     <aside class="lp-todo" aria-label="Open items, shown in development only">
@@ -209,13 +211,14 @@ const footerOffice = {
     </div>
   </section>
 
-  <section class="rd-section lp-form" id="meet-greet">
+  <section class="rd-section lp-form" id="meet-greet" data-lp-placement="form">
     <div class="rd-wrap">
       <div class="lp-form__col">
         <MeetGreetForm
           source={d.source}
           physician={d.form.skipChooser ? d.bookingPhysician : undefined}
           office={d.form.lockOffice ? d.office : undefined}
+          topic={d.topic}
           heading={d.form.heading}
           subline={d.form.subline}
         />
@@ -249,13 +252,16 @@ const footerOffice = {
 
   {d.faqs.length > 0 && <FAQSection faqs={d.faqs} headline="Common questions" schema={false} />}
 
-  <CTABanner
-    ch={16}
-    headline={closingHeadline}
-    subhead={closingSubhead}
-    btnText="Request Your Free Meet & Greet"
-    btnHref={FORM_HREF}
-  />
+  <!-- The wrapper names the placement for lp_cta_click (LandingLayout). -->
+  <div data-lp-placement="band">
+    <CTABanner
+      ch={16}
+      headline={closingHeadline}
+      subhead={closingSubhead}
+      btnText="Request Your Free Meet & Greet"
+      btnHref={FORM_HREF}
+    />
+  </div>
 </LandingLayout>
 
 <style>

@@ -9,10 +9,21 @@
  * here exactly as everywhere else. No script module is loaded: importing
  * src/scripts/reveal.ts here would make Vite split it out of MainLayout's
  * inline script on every other page.
+ *
+ * Landing events (B2), all through window.ffmTrack, so they queue until the
+ * visitor accepts analytics and are dropped if they decline:
+ *   lp_view       { lp, physician }      once, on load
+ *   lp_cta_click  { lp, placement, target: 'form' }
+ *                 a[data-lp-cta] (header, hero) or any link to #meet-greet
+ *                 inside [data-lp-placement] (the closing band)
+ *   tel_click     { lp, placement }      every tel: link on the page
+ * `lp` is the entry's opaque code; `physician` its short key. Neither names
+ * a condition. form_start, generate_lead and meetgreet_* are untouched.
  */
 import LpHeader from '../components/landing/LpHeader.astro';
 import LpFooter from '../components/landing/LpFooter.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
+import Attribution from '../components/Attribution.astro';
 import '../styles/global.css';
 
 export interface FooterOffice { name: string; street: string; city: string; state: string; zip: string }
@@ -28,6 +39,9 @@ export interface Props {
   /** Where the header button goes: the form on the page. */
   ctaHref?: string;
   ctaLabel?: string;
+  /** The entry's code (the URL segment) and physician key, for the landing events. */
+  lpCode: string;
+  lpPhysician: string;
 }
 
 const {
@@ -39,6 +53,8 @@ const {
   office,
   ctaHref = '#meet-greet',
   ctaLabel,
+  lpCode,
+  lpPhysician,
 } = Astro.props;
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
@@ -78,6 +94,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
   <meta name="twitter:image" content={ogImage} />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <Attribution />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -87,5 +104,25 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
   </main>
   <LpFooter office={office} />
   <ConsentBanner />
+  <script is:inline define:vars={{ LP_CODE: lpCode, LP_PHYSICIAN: lpPhysician }}>
+    (function () {
+      function track(name, params) { if (window.ffmTrack) window.ffmTrack(name, params); }
+      function placementOf(el, attr) {
+        var own = el.getAttribute(attr);
+        if (own) return own;
+        var wrap = el.closest('[data-lp-placement]');
+        return wrap ? wrap.getAttribute('data-lp-placement') : 'body';
+      }
+      track('lp_view', { lp: LP_CODE, physician: LP_PHYSICIAN });
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var tel = t.closest('a[href^="tel:"]');
+        if (tel) { track('tel_click', { lp: LP_CODE, placement: placementOf(tel, 'data-lp-tel') }); return; }
+        var cta = t.closest('a[data-lp-cta], [data-lp-placement] a[href="#meet-greet"]');
+        if (cta) track('lp_cta_click', { lp: LP_CODE, placement: placementOf(cta, 'data-lp-cta'), target: 'form' });
+      });
+    })();
+  </script>
 </body>
 </html>

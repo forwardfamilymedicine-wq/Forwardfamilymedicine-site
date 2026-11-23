@@ -1,6 +1,7 @@
 ---
 // Meet & Greet interest form — Google Sheets via Apps Script
 import { BOOKING_PAGES, bookingEnabled } from '../../data/bookingPages';
+import { ATTR_FIELDS } from '../../data/attribution';
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
 const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // source is resolved client-side from ?source= query param (static output mode)
@@ -28,12 +29,15 @@ export interface Props {
   /** The card's heading and the line under it. */
   heading?: string;
   subline?: string;
+  /** Landing pages: what the page is about, for the practice's own sheet only. Never rendered. */
+  topic?: string;
 }
 const {
   stepper = true,
   source = 'standard',
   physician,
   office,
+  topic = '',
   heading = 'Request Your Free Meet & Greet',
   subline = 'Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.',
 } = Astro.props;
@@ -43,7 +47,7 @@ if (physician && !BOOKING_PAGES.some((p) => p.code === physician)) {
 }
 // The client script reads this: '' means the chooser, as before.
 const PRESELECT = physician ?? '';
-const OFFICE_LABEL = { wayne: 'Wayne', malvern: 'Malvern' } as const;
+const officeLabel = office === 'wayne' ? 'Wayne' : office === 'malvern' ? 'Malvern' : '';
 
 // Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
 // without submitting. False in a production build, so the script below never
@@ -161,7 +165,7 @@ const DEV = import.meta.env.DEV;
          same field name. Without it, the choice as before. -->
     {office ? (
       <div class="form-group form-group--full">
-        <p class="form-office">Your meet and greet is at our {OFFICE_LABEL[office]} office.</p>
+        <p class="form-office">Your meet and greet is at our {officeLabel} office.</p>
         <input type="hidden" id="preferredOffice" name="preferredOffice" value={office} />
       </div>
     ) : (
@@ -208,6 +212,12 @@ const DEV = import.meta.env.DEV;
     <!-- Source tracking — populated client-side from ?source= query param -->
     <input type="hidden" name="source" value={source} />
     {PRESELECT && <input type="hidden" name="physician" value={PRESELECT} />}
+    {topic && <input type="hidden" name="topic" value={topic} />}
+    <!-- First-party attribution (src/components/Attribution.astro): filled on
+         load from window.ffmAttr(), sent with the request, stored on the
+         practice's own sheet. Empty when the visitor arrived without ad
+         parameters. -->
+    {ATTR_FIELDS.map((f) => <input type="hidden" name={f} value="" />)}
 
     <button type="submit" class="btn-forest submit-btn" id="submit-btn">
       Request My Free Meet &amp; Greet
@@ -527,6 +537,15 @@ const DEV = import.meta.env.DEV;
     const sourceInput = document.querySelector('input[name="source"]');
     if (sourceInput) sourceInput.value = sourceParam;
   }
+  // Attribution hidden fields, from the stored record or this page's URL.
+  if (window.ffmAttr) {
+    const attr = window.ffmAttr();
+    const mgForm = document.getElementById('meetgreet-form');
+    for (const key in attr) {
+      const el = mgForm && mgForm.querySelector('input[type="hidden"][name="' + key + '"]');
+      if (el) el.value = attr[key];
+    }
+  }
   const subjectParam = new URLSearchParams(window.location.search).get('subject');
   if (subjectParam) {
     const messageInput = document.querySelector('textarea[name="message"]');
@@ -542,7 +561,7 @@ const DEV = import.meta.env.DEV;
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT, ATTR_FIELDS }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -818,9 +837,13 @@ const DEV = import.meta.env.DEV;
     const message    = form.querySelector('#message').value.trim();
     const company    = form.querySelector('#company')?.value || '';
     const source     = form.querySelector('[name="source"]')?.value || 'standard';
-    // Landing pages only: the physician the page books with. The script that
-    // receives the form ignores a key it does not know.
+    // Landing pages only: the physician the page books with and the page's
+    // topic. The script that receives the form ignores a key it does not know.
     const physicianReq = form.querySelector('[name="physician"]')?.value || '';
+    const topicReq     = form.querySelector('[name="topic"]')?.value || '';
+    // First-party attribution, as filled into the hidden fields on load.
+    const attribution = {};
+    ATTR_FIELDS.forEach((key) => { attribution[key] = form.querySelector('input[name="' + key + '"]')?.value || ''; });
 
     if (!firstName || !lastName || !email || !phone || !interest) {
       if (errorEl) {
@@ -880,6 +903,8 @@ const DEV = import.meta.env.DEV;
           company,
           source,
           physician: physicianReq,
+          topic:     topicReq,
+          ...attribution,
           loadTime:  formLoadTime,
         }),
       });
