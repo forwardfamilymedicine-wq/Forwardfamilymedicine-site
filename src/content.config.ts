@@ -199,12 +199,14 @@ const team = defineCollection({
 // Paid-ad landing pages, one entry per page, rendered by
 // src/pages/lp/[code].astro at /lp/<code>/ (for example /lp/k4/).
 // Frontmatter is the page's whole configuration; the body is the physician's
-// note in their own voice. A draft renders on `astro dev` only, so a page can
-// be built and reviewed before it exists in production. The URL, title and
-// description are what an ad platform receives when the page is visited or
-// shared, so `code` is opaque and `seo` names neither the physician nor a
-// condition (the route checks this at build); the condition-level `topic` is
-// first-party only.
+// note in their own voice. The page has one job, a meet and greet request,
+// and its shape is fixed here: hero, exactly three proof tiles, up to four
+// "what you get" sentences, the note, pricing, the form, up to three FAQs.
+// A draft renders on `astro dev` only, so a page can be built and reviewed
+// before it exists in production. The URL, title and description are what an
+// ad platform receives when the page is visited or shared, so `code` is
+// opaque and `seo` names neither the physician nor a condition (the route
+// checks this at build); the condition-level `topic` is first-party only.
 const landing = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/landing' }),
   schema: ({ image }) => z.object({
@@ -228,40 +230,20 @@ const landing = defineCollection({
     draft: z.boolean().default(true),
     /** Open items shown on the page in dev. A page cannot publish while any remain. */
     todo: z.array(z.string()).default([]),
+    /** The hero: a headline (two lines at desktop), one supporting sentence, the button. The photo is the physician's. */
     hero: z.object({
-      eyebrow: z.string().optional(),
       headline: z.string(),
       supporting: z.string(),
       ctaLabel: z.string().default('Schedule a Free Meet & Greet'),
-      /** One plain line under the button, e.g. the length and the places it can happen. */
-      ctaNote: z.string().optional(),
-      /** Card photo in place of the physician's portrait (an office, for instance). */
-      image: image().optional(),
-      imageAlt: z.string().optional(),
     }),
-    /** What the care includes: a ruled list of a bold line and an optional plain one. */
-    experience: z.object({
-      heading: z.string(),
-      intro: z.string().optional(),
-      items: z.array(z.object({ title: z.string(), body: z.string().optional() })).min(3).max(8),
-    }),
-    /** Why people come: two to four titled rows. */
-    gap: z.object({
-      heading: z.string(),
-      rows: z.array(z.object({ title: z.string(), body: z.string() })).min(2).max(4),
-    }),
-    /** How care works here: two to four titled items. */
-    approach: z.object({
-      heading: z.string(),
-      items: z.array(z.object({ title: z.string(), body: z.string() })).min(2).max(4),
-    }),
+    /** Exactly three proof tiles: a short serif phrase and one small line each. Facts already on the site only. */
+    tiles: z.array(z.object({ phrase: z.string().min(1), line: z.string().min(1) })).length(3),
+    /** "What you get": one sentence per item, at most four. */
+    whatYouGet: z.array(z.string().min(1)).min(1).max(4),
     /** Heading over the physician's note (the markdown body). Default "A note from Dr. X". */
     noteHeading: z.string().optional(),
-    /** Links into the main site. */
-    services: z.array(z.object({ label: z.string(), href: z.string() })).max(6).default([]),
-    faqs: z.array(z.object({ q: z.string(), a: z.string() })).max(8).default([]),
-    /** Reviewer initials from src/data/reviews.json. Empty leaves the section out. */
-    reviews: z.array(z.string()).max(2).default([]),
+    /** At most three. */
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).max(3).default([]),
     form: z.object({
       heading: z.string().optional(),
       subline: z.string().optional(),
@@ -270,10 +252,6 @@ const landing = defineCollection({
       /** Preselect and hide the Preferred office field. */
       lockOffice: z.boolean().default(true),
     }).default({ skipChooser: true, lockOffice: true }),
-    closing: z.object({
-      headline: z.string().optional(),
-      subhead: z.string().optional(),
-    }).default({}),
     seo: z.object({
       title: z.string(),
       description: z.string(),

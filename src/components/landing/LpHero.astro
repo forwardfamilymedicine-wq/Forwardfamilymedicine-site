@@ -1,130 +1,105 @@
 ---
 /**
- * Landing-page hero: eyebrow, headline, supporting paragraph and the one
- * button, beside a card for the physician the page is about: portrait,
- * status line, name, role and the credential rows the Team cards use. The
- * card photo is the physician's portrait unless the page supplies another
- * image (an office, say), which is shown landscape. The card pattern is the
- * local-page hero's (src/components/editorial/LocalHero.astro).
+ * Landing-page hero: a large serif headline, one supporting sentence, the one
+ * button (to the form on the page), the phone number, and the physician's
+ * portrait cropped tight beside the copy. On a phone the copy comes first
+ * (headline, sentence, button, number) and the portrait follows. No eyebrow,
+ * no card, no motion.
  */
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-export interface HeroCard {
-  photo?: ImageMetadata;
-  photoAlt: string;
-  orientation: 'portrait' | 'landscape';
-  /** "Accepting new patients · Malvern" */
-  status?: string;
-  /** "Dr. Brian Landi, DO" */
-  name: string;
-  /** "Family Medicine Physician" */
-  role: string;
-  rows: string[];
-}
-
 export interface Props {
-  eyebrow?: string;
   headline: string;
   supporting: string;
   cta: { label: string; href: string };
-  ctaNote?: string;
-  card: HeroCard;
+  phone: { href: string; text: string };
+  photo?: ImageMetadata;
+  photoAlt: string;
+  /** "Dr. Brian Landi, DO" and "Family Medicine Physician", under the portrait. */
+  name: string;
+  role: string;
 }
-const { eyebrow, headline, supporting, cta, ctaNote, card } = Astro.props;
-const portrait = card.orientation === 'portrait';
+const { headline, supporting, cta, phone, photo, photoAlt, name, role } = Astro.props;
 ---
 
 <section class="lp-hero">
   <div class="rd-wrap lp-hero__grid">
     <div class="lp-hero__copy">
-      {eyebrow && <p class="rd-eyebrow">{eyebrow}</p>}
       <h1 class="rd-h1 lp-hero__h1">{headline}</h1>
       <p class="lp-hero__p">{supporting}</p>
       <div class="lp-hero__actions">
         <a href={cta.href} class="btn-forest lp-hero__cta" data-lp-cta="hero">{cta.label}</a>
-        {ctaNote && <p class="lp-hero__note">{ctaNote}</p>}
+        <a href={phone.href} class="lp-hero__phone" data-lp-tel="hero">Or call {phone.text}</a>
       </div>
     </div>
 
-    <article class="lp-card">
-      {card.photo && (
+    {photo && (
+      <figure class="lp-hero__figure">
         <Image
-          src={card.photo}
-          alt={card.photoAlt}
-          width={portrait ? 760 : 760}
-          height={portrait ? 950 : 608}
-          widths={[380, 760, 1140]}
-          sizes="(max-width: 860px) calc(100vw - 40px), 380px"
+          src={photo}
+          alt={photoAlt}
+          width={560}
+          height={700}
+          widths={[280, 560, 840]}
+          sizes="(max-width: 860px) calc(100vw - 40px), 280px"
           format="webp"
           quality={82}
           loading="eager"
           fetchpriority="high"
-          class:list={['lp-card__photo', portrait ? 'lp-card__photo--portrait' : 'lp-card__photo--landscape']}
+          class="lp-hero__photo"
         />
-      )}
-      <div class="lp-card__body">
-        {card.status && <p class="rd-eyebrow rd-eyebrow--gold">{card.status}</p>}
-        <p class="lp-card__name rd-serif">{card.name}</p>
-        <p class="lp-card__role">{card.role}</p>
-        {card.rows.length > 0 && (
-          <ul class="lp-card__rows">
-            {card.rows.map(r => <li>{r}</li>)}
-          </ul>
-        )}
-      </div>
-    </article>
+        <figcaption class="lp-hero__cap"><strong>{name}</strong>{role}</figcaption>
+      </figure>
+    )}
   </div>
 </section>
 
 <style>
-  .lp-hero { background: var(--linen); padding: 72px 0 88px; }
+  .lp-hero { background: var(--linen); padding: 80px 0 88px; }
   .lp-hero__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-    gap: 72px;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 48px;
     align-items: center;
   }
-  .lp-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-  .lp-hero__h1 { font-size: 58px; line-height: 1.04; max-width: 15ch; }
-  .lp-hero__p { margin: 0; font-size: 17px; line-height: 1.7; color: var(--text-900); max-width: 600px; }
-  .lp-hero__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 4px; }
-  .lp-hero__note { margin: 0; font-size: 14px; line-height: 1.6; color: var(--text-600); }
-
-  .lp-card {
-    background: var(--linen-50);
-    border: 1px solid var(--hairline);
-    border-top: 3px solid var(--forest);
-    display: flex;
-    flex-direction: column;
-    max-width: 420px;
-    justify-self: end;
-    width: 100%;
+  .lp-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
+  /* Two lines at desktop for a headline of up to about 72 characters. */
+  .lp-hero__h1 { font-size: 40px; line-height: 1.1; text-wrap: balance; }
+  .lp-hero__p { margin: 0; font-size: 18px; line-height: 1.65; color: var(--text-900); max-width: 60ch; }
+  .lp-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 4px; }
+  .lp-hero__phone {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline-dot);
+    padding-bottom: 2px;
   }
-  .lp-card :global(.lp-card__photo) {
+  .lp-hero__phone:hover { border-color: var(--forest); }
+
+  .lp-hero__figure { margin: 0; width: 100%; justify-self: end; }
+  .lp-hero :global(.lp-hero__photo) {
     display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: 50% 20%;
+    object-position: 50% 18%;
+    border-radius: 2px;
   }
-  .lp-card :global(.lp-card__photo--portrait) { aspect-ratio: 4 / 5; }
-  .lp-card :global(.lp-card__photo--landscape) { aspect-ratio: 5 / 4; }
-  .lp-card__body { padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 8px; }
-  .lp-card__body p { margin: 0; }
-  .lp-card__name { font-size: 26px; line-height: 1.15; color: var(--forest); }
-  .lp-card__role { font-size: 14px; line-height: 1.6; color: var(--text-700); }
-  .lp-card__rows { margin: 8px 0 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.5; color: var(--text-700); }
-  .lp-card__rows li { padding: 9px 0; border-top: 1px solid var(--hairline-strong); }
-  .lp-card__rows li:last-child { border-bottom: 1px solid var(--hairline-strong); }
+  .lp-hero__cap { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: var(--text-600); }
+  .lp-hero__cap strong { display: block; font-size: 15px; font-weight: 600; color: var(--forest); }
 
   @media (max-width: 860px) {
-    .lp-hero { padding: 40px 0 56px; }
-    .lp-hero__grid { grid-template-columns: 1fr; gap: 36px; }
-    .lp-hero__h1 { font-size: 38px; max-width: none; }
-    .lp-hero__p { font-size: 16px; }
-    .lp-hero__actions { width: 100%; }
+    .lp-hero { padding: 40px 0 48px; }
+    .lp-hero__grid { grid-template-columns: 1fr; gap: 32px; }
+    .lp-hero__copy { gap: 20px; }
+    .lp-hero__h1 { font-size: 36px; line-height: 1.1; }
+    .lp-hero__p { font-size: 17px; }
+    .lp-hero__actions { width: 100%; flex-direction: column; align-items: flex-start; gap: 16px; }
     .lp-hero__cta { width: 100%; }
-    .lp-card { max-width: none; justify-self: stretch; }
+    .lp-hero__figure { justify-self: stretch; }
+    .lp-hero :global(.lp-hero__photo) { aspect-ratio: 1 / 1; }
   }
 </style>
