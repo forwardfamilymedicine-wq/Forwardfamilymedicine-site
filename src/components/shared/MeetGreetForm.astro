@@ -35,6 +35,8 @@ export interface Props {
   subline?: string;
   /** Landing pages: what the page is about, for the practice's own sheet only. Never rendered. */
   topic?: string;
+  /** What GA4 receives as `source` on this page (landing pages pass their code, "k4"). The hidden source field still goes to the sheet. */
+  gaSource?: string;
 }
 const {
   stepper = true,
@@ -44,6 +46,7 @@ const {
   officeName,
   physicianName,
   topic = '',
+  gaSource = '',
   heading = 'Request Your Free Meet & Greet',
   subline = 'Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.',
 } = Astro.props;
@@ -581,7 +584,7 @@ const DEV = import.meta.env.DEV;
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT, ATTR_FIELDS }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT, ATTR_FIELDS, GA_SOURCE: gaSource }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -829,13 +832,24 @@ const DEV = import.meta.env.DEV;
     applyInterest();
   });
 
+  // What GA4 receives as `source` (form_start, generate_lead): the page's
+  // code where the page sets one (landing pages); otherwise, when the hidden
+  // source is a landing page's "lp-..." value carried over from the stored
+  // record, the code in that record's landing path; otherwise the hidden
+  // source itself. The "lp-..." value goes to the sheet only.
+  function gaSource() {
+    if (GA_SOURCE) return GA_SOURCE;
+    const source = form.querySelector('[name="source"]')?.value || 'standard';
+    if (!/^lp-/.test(source)) return source;
+    const path = form.querySelector('input[name="landing_page"]')?.value || '';
+    const m = path.match(/^\/lp\/([a-z][a-z0-9]{1,7})\/?$/);
+    return m ? m[1] : 'standard';
+  }
+
   // Fires once, on the first field the visitor interacts with — not on every
   // keystroke. `{ once: true }` removes the listener after it fires.
   form?.addEventListener('focusin', () => {
-    if (window.ffmTrack) {
-      const source = form.querySelector('[name="source"]')?.value || 'standard';
-      window.ffmTrack('form_start', { source });
-    }
+    if (window.ffmTrack) window.ffmTrack('form_start', { source: gaSource() });
   }, { once: true });
 
   form?.addEventListener('submit', async (e) => {
@@ -934,11 +948,12 @@ const DEV = import.meta.env.DEV;
       const json = await res.json();
       if (!json.success) throw new Error(json.error || 'Unknown error from script');
 
-      // GA4 gets the landing source and the office only: no inquiry type, no
-      // message, nothing that could name a clinical topic.
+      // GA4 gets the source (the page code, see gaSource) and the office
+      // only: no inquiry type, no message, nothing that could name a
+      // clinical topic or a physician.
       if (window.ffmTrack) {
         window.ffmTrack('generate_lead', {
-          source,
+          source: gaSource(),
           preferred_office: preferredOffice,
         });
       }
