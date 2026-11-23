@@ -20,6 +20,8 @@ export default defineConfig({
       page !== 'https://www.forwardfamilymedicine.com/patient-experience/' &&
       !page.endsWith('/home/') &&
       !page.endsWith('/become-a-patient/') &&
+      // Paid-ad landing pages are noindex and never listed.
+      !page.includes('/lp/') &&
       page !== 'https://www.forwardfamilymedicine.com/home'
   })],
   vite: {

@@ -1,0 +1,103 @@
+---
+/**
+ * Landing-page header: the logo, not linked; the phone number; one button to
+ * the form on the page. No navigation, by decision: a visitor from an ad has
+ * one thing to do here, and the page's own "About the practice" link is the
+ * way into the rest of the site. Sticky at the site header's heights (80px,
+ * 64px at 1023px and under) so --header-h and every anchor offset hold.
+ */
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo/ffm-logo.png';
+
+export interface Props {
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+const { ctaHref = '#meet-greet', ctaLabel = 'Schedule a Free Meet & Greet' } = Astro.props;
+
+const PHONE_HREF = 'tel:+12156457044';
+const PHONE_TEXT = '(215) 645-7044';
+---
+
+<header class="lp-header" role="banner">
+  <div class="rd-wrap lp-header__inner">
+    <div class="lp-header__logo">
+      <Image
+        src={logo}
+        alt="Forward Family Medicine"
+        class="lp-header__img"
+        height={84}
+        widths={[116, 232, 348]}
+        sizes="(max-width: 1023px) 94px, 116px"
+        format="webp"
+        quality={90}
+        loading="eager"
+      />
+    </div>
+    <div class="lp-header__end">
+      <a href={PHONE_HREF} class="lp-header__phone" aria-label={`Call ${PHONE_TEXT}`} data-lp-tel="header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="lp-header__num">{PHONE_TEXT}</span>
+      </a>
+      <a href={ctaHref} class="btn-forest btn-sm lp-header__cta" data-lp-cta="header">
+        <span class="lp-header__cta-long">{ctaLabel}</span>
+        <span class="lp-header__cta-short" aria-hidden="true">Meet &amp; Greet</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Above the page (z 30), below the consent banner (z 9999); opaque. */
+  .lp-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--linen-50);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .lp-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 80px;
+  }
+  .lp-header__logo { display: flex; align-items: center; flex-shrink: 0; }
+  .lp-header :global(.lp-header__img) { height: 42px; width: auto; display: block; }
+  .lp-header__end { display: flex; align-items: center; gap: 22px; }
+  .lp-header__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--forest);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .lp-header__phone:hover { color: var(--sage-600); }
+  .lp-header__phone svg { color: var(--sage-600); flex-shrink: 0; }
+  .lp-header__cta { white-space: nowrap; }
+  .lp-header__cta-short { display: none; }
+
+  @media (max-width: 1023px) {
+    .lp-header__inner { height: 64px; }
+    .lp-header :global(.lp-header__img) { height: 34px; }
+  }
+  /* Phones: the number gives way to its icon (the link keeps its label), and
+     the button keeps a shorter visible label while the full one stays for
+     assistive tech. */
+  @media (max-width: 640px) {
+    .lp-header__inner { gap: 12px; }
+    .lp-header__end { gap: 10px; }
+    .lp-header__phone { min-width: 42px; justify-content: center; }
+    .lp-header__num { display: none; }
+    .lp-header__cta-long {
+      position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    .lp-header__cta-short { display: inline; }
+  }
+</style>

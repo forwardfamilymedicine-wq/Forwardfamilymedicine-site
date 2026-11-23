@@ -10,14 +10,39 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // physician and embeds that physician's Google booking page. With either
 // value empty, nothing below is rendered and the success state is unchanged.
 const BOOKING_ENABLED = bookingEnabled();
-const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, embedSrc, eventKey }) => ({ code, cardTitle, shareUrl, embedSrc, eventKey }));
+const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, bookLabel, shareUrl, embedSrc, eventKey }) => ({ code, cardTitle, bookLabel, shareUrl, embedSrc, eventKey }));
 
 // The two-step progress line above the card. On by default wherever the form
 // renders; a page that must not show it passes stepper={false}. It is also
 // left out when self-scheduling is off, because there is no second step then.
-export interface Props { stepper?: boolean }
-const { stepper = true } = Astro.props;
+export interface Props {
+  stepper?: boolean;
+  // Landing pages (src/pages/lp) pass the rest. Every one is optional, and the
+  // defaults keep the Contact and New Patients pages exactly as they were.
+  /** The hidden source field's default. A ?source= query still overrides it. */
+  source?: string;
+  /** BL or PL: book with this physician straight after step 1, no chooser. */
+  physician?: 'BL' | 'PL';
+  /** Preselect and hide the Preferred office field. */
+  office?: 'wayne' | 'malvern';
+  /** The card's heading and the line under it. */
+  heading?: string;
+  subline?: string;
+}
+const {
+  stepper = true,
+  source = 'standard',
+  physician,
+  office,
+  heading = 'Request Your Free Meet & Greet',
+  subline = 'Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.',
+} = Astro.props;
 const SHOW_STEPPER = stepper && BOOKING_ENABLED;
+if (physician && !BOOKING_PAGES.some((p) => p.code === physician)) {
+  throw new Error(`[MeetGreetForm] physician="${physician}" is not in src/data/bookingPages.ts.`);
+}
+// The client script reads this: '' means the chooser, as before.
+const PRESELECT = physician ?? '';
 
 // Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
 // without submitting. False in a production build, so the script below never
@@ -36,8 +61,8 @@ const DEV = import.meta.env.DEV;
   )}
 <div class="form-wrap">
   <div class="form-header" id="mg-form-header">
-    <h2>Request Your Free Meet &amp; Greet</h2>
-    <p id="mg-form-sub">Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.</p>
+    <h2>{heading}</h2>
+    <p id="mg-form-sub">{subline}</p>
   </div>
 
   <form id="meetgreet-form" novalidate aria-label="Meet and greet request form">
@@ -130,12 +155,14 @@ const DEV = import.meta.env.DEV;
       </select>
     </div>
 
-    <div class="form-group form-group--office">
+    <!-- With `office` set the field is preselected and hidden: the page it is on
+         is about that office, and the value is still sent. -->
+    <div class="form-group form-group--office" hidden={!!office}>
       <label for="preferredOffice">Preferred office</label>
       <select id="preferredOffice" name="preferredOffice">
         <option value="">Select…</option>
-        <option value="wayne">Wayne</option>
-        <option value="malvern">Malvern</option>
+        <option value="wayne" selected={office === 'wayne'}>Wayne</option>
+        <option value="malvern" selected={office === 'malvern'}>Malvern</option>
         <option value="no-preference">Does not matter</option>
       </select>
     </div>
@@ -170,7 +197,8 @@ const DEV = import.meta.env.DEV;
     <!-- Honeypot field — hidden from real users, bots fill it in -->
     <input type="text" id="company" name="company" autocomplete="off" style="display:none" tabindex="-1" aria-hidden="true">
     <!-- Source tracking — populated client-side from ?source= query param -->
-    <input type="hidden" name="source" value="standard" />
+    <input type="hidden" name="source" value={source} />
+    {PRESELECT && <input type="hidden" name="physician" value={PRESELECT} />}
 
     <button type="submit" class="btn-forest submit-btn" id="submit-btn">
       Request My Free Meet &amp; Greet
@@ -226,6 +254,16 @@ const DEV = import.meta.env.DEV;
           <iframe id="mg-iframe" title="Booking page" src="about:blank"></iframe>
         </div>
       </div>
+
+      <!-- Step 2c, landing pages on a phone: the embed is too narrow there, and a
+           new tab can only be opened from a tap, never from the form's own
+           success handler. So the visitor taps this button. -->
+      {PRESELECT && (
+        <div id="mg-step-tap" hidden>
+          <p class="mg-body" id="mg-tap-body">Pick a time on the booking page; it opens in a new tab. Google will ask for your name and email once more. That confirms your spot.</p>
+          <a id="mg-tap-btn" class="btn-forest mg-tap-btn" href="#" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      )}
 
       <div class="mg-foot">
         <p class="mg-fallback">Would you rather we call you? No problem. We'll reach out within 24 hours.</p>
@@ -451,6 +489,8 @@ const DEV = import.meta.env.DEV;
     border-bottom: 1px solid var(--hairline-strong);
     background: var(--linen-50);
   }
+  #mg-step-tap { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+  #mg-step-tap[hidden] { display: none; }
   .mg-foot { margin-top: 24px; display: flex; flex-direction: column; gap: 6px; }
   .mg-fallback, .mg-help { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
   .mg-help a { color: var(--sage-600); }
@@ -482,7 +522,7 @@ const DEV = import.meta.env.DEV;
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -507,6 +547,9 @@ const DEV = import.meta.env.DEV;
   const bookingFrame = document.getElementById('mg-iframe');
   const newTabLink   = document.getElementById('mg-newtab');
   const backBtn      = document.getElementById('mg-back');
+  // Landing pages only (PRESELECT set); null everywhere else.
+  const stepTap      = document.getElementById('mg-step-tap');
+  const tapBtn       = document.getElementById('mg-tap-btn');
   const bookingReady = !!(BOOKING_ENABLED && bookingPanel && bookingIntro && stepChoose && stepBook && schedTitle && bookingFrame && newTabLink && backBtn);
 
   // Dev preview only (DEV is false in a production build): no analytics fire.
@@ -606,12 +649,19 @@ const DEV = import.meta.env.DEV;
     track('meetgreet_step2_view');
   }
 
-  function choosePhysician(code) {
+  // `direct` is the landing-page path: the physician was fixed by the page, so
+  // the thanks line stays, there is no chooser to go back to, and on a phone
+  // the visitor gets a button to tap (see showTapToBook).
+  function choosePhysician(code, direct) {
     const page = BOOKING_PAGES.find((p) => p.code === code);
     if (!page) return;
     track('mg_physician_selected', { physician: code });
     track('meetgreet_physician_select', { physician: page.eventKey });
     if (EMBED_MIN_WIDTH > 0 && window.innerWidth < EMBED_MIN_WIDTH) {
+      // From a tap on a card this opens the booking page at once. After the
+      // form's own (async) success handler a browser blocks window.open, so
+      // the direct path shows a button instead.
+      if (direct) { showTapToBook(page); return; }
       window.open(page.shareUrl, '_blank', 'noopener');
       return;
     }
@@ -620,11 +670,44 @@ const DEV = import.meta.env.DEV;
     bookingFrame.src   = page.embedSrc;
     newTabLink.href    = page.shareUrl;
     newTabLink.setAttribute('data-physician-key', page.eventKey);
-    bookingIntro.hidden = true;
+    bookingIntro.hidden = !direct;
+    backBtn.hidden     = !!direct;
     stepChoose.hidden  = true;
+    if (stepTap) stepTap.hidden = true;
     stepBook.hidden    = false;
     scrollToFlow();
-    schedTitle.focus({ preventScroll: true });
+    (direct ? bookingIntro : schedTitle).focus({ preventScroll: true });
+  }
+
+  // Landing pages: the chooser is skipped and the physician's scheduler (or,
+  // on a phone, the button that opens it) follows the form at once.
+  function showBookingDirect(firstName, code) {
+    if (!BOOKING_PAGES.some((p) => p.code === code)) { showBookingChooser(firstName, ''); return; }
+    bookingIntro.textContent = firstName
+      ? 'Thanks, ' + firstName + '. One more step: choose your time.'
+      : 'Thanks. One more step: choose your time.';
+    if (formHeader) formHeader.hidden = true;
+    form.hidden = true;
+    stepChoose.hidden = true;
+    stepBook.hidden   = true;
+    bookingIntro.hidden = false;
+    bookingPanel.hidden = false;
+    setStep(2);
+    track('meetgreet_step2_view');
+    choosePhysician(code, true);
+  }
+
+  function showTapToBook(page) {
+    if (!stepTap || !tapBtn) { window.open(page.shareUrl, '_blank', 'noopener'); return; }
+    tapBtn.href = page.shareUrl;
+    tapBtn.textContent = page.bookLabel;
+    tapBtn.setAttribute('data-physician-key', page.eventKey);
+    stepChoose.hidden = true;
+    stepBook.hidden   = true;
+    bookingIntro.hidden = false;
+    stepTap.hidden    = false;
+    scrollToFlow();
+    bookingIntro.focus({ preventScroll: true });
   }
 
   function backToChooser() {
@@ -648,6 +731,9 @@ const DEV = import.meta.env.DEV;
       if (e.target.closest('#mg-newtab')) {
         track('meetgreet_new_tab_click', { physician: newTabLink.getAttribute('data-physician-key') || '' });
       }
+      if (tapBtn && e.target.closest('#mg-tap-btn')) {
+        track('meetgreet_new_tab_click', { physician: tapBtn.getAttribute('data-physician-key') || '' });
+      }
     });
   }
 
@@ -655,6 +741,11 @@ const DEV = import.meta.env.DEV;
   //   ?preview=step2[&name=Alex[&office=wayne]]   the physician choice
   //   ?preview=scheduler&physician=BL             the embedded scheduler
   //   ?preview=business[&name=Alex]               the employer confirmation
+  //   ?preview=direct[&name=Alex][&physician=BL]  a landing page's post-submit
+  //                                               state (the page's physician
+  //                                               unless one is given; under
+  //                                               560px wide, the tap-to-book
+  //                                               step)
   // Nothing is submitted and no analytics event fires.
   if (DEV) {
     const q = new URLSearchParams(window.location.search);
@@ -663,6 +754,9 @@ const DEV = import.meta.env.DEV;
       previewing = true;
       showBookingChooser(q.get('name') || '', q.get('office') || '');
       if (mode === 'scheduler') choosePhysician(q.get('physician') || 'BL');
+    } else if (bookingReady && mode === 'direct') {
+      previewing = true;
+      showBookingDirect(q.get('name') || '', q.get('physician') || PRESELECT || 'BL');
     } else if (mode === 'business') {
       previewing = true;
       showBusinessSuccess(q.get('name') || '');
@@ -704,6 +798,9 @@ const DEV = import.meta.env.DEV;
     const message    = form.querySelector('#message').value.trim();
     const company    = form.querySelector('#company')?.value || '';
     const source     = form.querySelector('[name="source"]')?.value || 'standard';
+    // Landing pages only: the physician the page books with. The script that
+    // receives the form ignores a key it does not know.
+    const physicianReq = form.querySelector('[name="physician"]')?.value || '';
 
     if (!firstName || !lastName || !email || !phone || !interest) {
       if (errorEl) {
@@ -762,6 +859,7 @@ const DEV = import.meta.env.DEV;
           userAgent: navigator.userAgent,
           company,
           source,
+          physician: physicianReq,
           loadTime:  formLoadTime,
         }),
       });
@@ -786,7 +884,8 @@ const DEV = import.meta.env.DEV;
       } else if (bookingReady) {
         form.reset();
         if (familySizeGroup) familySizeGroup.hidden = true;
-        showBookingChooser(firstName, preferredOffice);
+        if (PRESELECT) showBookingDirect(firstName, PRESELECT);
+        else showBookingChooser(firstName, preferredOffice);
       } else if (successEl) {
         successEl.innerHTML = `
           <strong>Request received!</strong> We'll reach out within 24 hours to schedule your visit.<br />

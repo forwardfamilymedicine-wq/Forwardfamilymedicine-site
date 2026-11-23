@@ -1,0 +1,91 @@
+---
+/**
+ * Layout for the paid-ad landing pages under /lp/ (src/pages/lp). The same
+ * head as MainLayout where it matters (viewport, description, Open Graph,
+ * favicon, the site styles) with three deliberate differences: every page is
+ * `noindex, follow` with a canonical to itself, there is no structured data
+ * (nothing indexes it), and the header and footer are the stripped landing
+ * versions. The consent banner is the site's own, so analytics stay opt-in
+ * here exactly as everywhere else. No script module is loaded: importing
+ * src/scripts/reveal.ts here would make Vite split it out of MainLayout's
+ * inline script on every other page.
+ */
+import LpHeader from '../components/landing/LpHeader.astro';
+import LpFooter from '../components/landing/LpFooter.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import '../styles/global.css';
+
+export interface FooterOffice { name: string; street: string; city: string; state: string; zip: string }
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  /** The office the page sends people to; its address closes the page. */
+  office: FooterOffice;
+  /** Where the header button goes: the form on the page. */
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = 'https://www.forwardfamilymedicine.com/images/og-image.png',
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
+  office,
+  ctaHref = '#meet-greet',
+  ctaLabel,
+} = Astro.props;
+
+const siteUrl = 'https://www.forwardfamilymedicine.com';
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <!-- Always: an ad destination, never a search result. The sitemap filter in
+       astro.config.mjs leaves /lp/ out as well. -->
+  <meta name="robots" content="noindex, follow" />
+
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content={String(ogImageWidth)} />
+  <meta property="og:image:height" content={String(ogImageHeight)} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Forward Family Medicine" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <LpHeader ctaHref={ctaHref} ctaLabel={ctaLabel} />
+  <main id="main-content">
+    <slot />
+  </main>
+  <LpFooter office={office} />
+  <ConsentBanner />
+</body>
+</html>
