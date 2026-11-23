@@ -224,6 +224,7 @@ const footerOffice = {
         <h2 class="rd-h2">What membership costs</h2>
       </div>
       <div class="lp-price">
+        <p class="lp-price__head">Per person, per month</p>
         <RuledList size="md" class="lp-price__rows">
           {PRICING_ROWS.map((r) => (
             <li class="lp-price__row">
@@ -307,7 +308,9 @@ const footerOffice = {
   .lp-about { align-self: flex-start; }
   .lp-note :global(p) { font-size: 16px; line-height: 1.75; }
 
-  /* The price table: the ruled list's rows, one household size and its figure each. */
+  /* The price table: a column header over the figures, then the ruled list's
+     rows, one household size and its figure each. */
+  .lp-price__head { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--sage-600); text-align: right; }
   :global(.lp-price__rows > li.lp-price__row) { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; font-size: 16px; }
   .lp-price__who { color: var(--text-700); }
   .lp-price__amt { color: var(--forest); font-weight: 600; white-space: nowrap; }
