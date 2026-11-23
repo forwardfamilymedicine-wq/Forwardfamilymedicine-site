@@ -23,7 +23,7 @@ export interface Props {
   source?: string;
   /** BL or PL: book with this physician straight after step 1, no chooser. */
   physician?: 'BL' | 'PL';
-  /** Preselect and hide the Preferred office field. */
+  /** Fix the office: the field becomes a line the visitor reads, not a choice; the value is still sent. */
   office?: 'wayne' | 'malvern';
   /** The card's heading and the line under it. */
   heading?: string;
@@ -43,6 +43,7 @@ if (physician && !BOOKING_PAGES.some((p) => p.code === physician)) {
 }
 // The client script reads this: '' means the chooser, as before.
 const PRESELECT = physician ?? '';
+const OFFICE_LABEL = { wayne: 'Wayne', malvern: 'Malvern' } as const;
 
 // Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
 // without submitting. False in a production build, so the script below never
@@ -155,17 +156,25 @@ const DEV = import.meta.env.DEV;
       </select>
     </div>
 
-    <!-- With `office` set the field is preselected and hidden: the page it is on
-         is about that office, and the value is still sent. -->
-    <div class="form-group form-group--office" hidden={!!office}>
-      <label for="preferredOffice">Preferred office</label>
-      <select id="preferredOffice" name="preferredOffice">
-        <option value="">Select…</option>
-        <option value="wayne" selected={office === 'wayne'}>Wayne</option>
-        <option value="malvern" selected={office === 'malvern'}>Malvern</option>
-        <option value="no-preference">Does not matter</option>
-      </select>
-    </div>
+    <!-- With `office` set (landing pages) the office is the page's: shown as a
+         line the visitor can read but not change, and still sent under the
+         same field name. Without it, the choice as before. -->
+    {office ? (
+      <div class="form-group form-group--full">
+        <p class="form-office">Your meet and greet is at our {OFFICE_LABEL[office]} office.</p>
+        <input type="hidden" id="preferredOffice" name="preferredOffice" value={office} />
+      </div>
+    ) : (
+      <div class="form-group form-group--office">
+        <label for="preferredOffice">Preferred office</label>
+        <select id="preferredOffice" name="preferredOffice">
+          <option value="">Select…</option>
+          <option value="wayne">Wayne</option>
+          <option value="malvern">Malvern</option>
+          <option value="no-preference">Does not matter</option>
+        </select>
+      </div>
+    )}
 
     <div class="form-group form-group--full">
       <label for="referral">How did you hear about us?</label>
@@ -340,6 +349,17 @@ const DEV = import.meta.env.DEV;
     border-color: #c0392b;
   }
   .form-hint { margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text-600); }
+  /* The fixed office (landing pages): the shape of a field, the weight of a note. */
+  .form-office {
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 2px;
+    background: var(--linen);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--text-700);
+  }
   /* iOS Safari centers date text and collapses an empty date field;
      keep it left-aligned at the same height as the other inputs. */
   input[type="date"] { display: block; min-height: 3rem; }

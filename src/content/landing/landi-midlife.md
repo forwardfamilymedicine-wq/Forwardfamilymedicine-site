@@ -19,7 +19,7 @@ todo:
 hero:
   eyebrow: "Menopause and midlife women's health"
   headline: "Menopause Care, Built Into Your Primary Care"
-  supporting: "At Forward Family Medicine, menopause care is delivered by Dr. Brian Landi, DO, a board-certified family physician with Menopause Society Certified Practitioner credentialing, across visits long enough to walk through what's happening, what your options are, and what you want to do about it. No outside referral. No separate appointment. Included in your membership."
+  supporting: "Menopause care from Dr. Brian Landi, DO, a board-certified family physician with Menopause Society Certified Practitioner credentialing. Visits long enough to walk through what's happening, what your options are, and what you want to do about it. No outside referral. Included in your membership."
   ctaLabel: "Schedule a Free Meet & Greet"
   ctaNote: "A free 60-minute meet and greet, no obligation, at our Malvern office or by video."
 experience:
