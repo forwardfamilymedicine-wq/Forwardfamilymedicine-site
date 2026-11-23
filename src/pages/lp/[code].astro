@@ -35,6 +35,7 @@ import { getAvailability } from '../../utils/availability';
 import { physicianCredentialRows } from '../../utils/credentialRows';
 import { PRICING_ROWS } from '../../data/membershipPricing';
 import { assertPricingMatchesMembershipPage } from '../../utils/pricingCheck';
+import { BOOKING_PAGES } from '../../data/bookingPages';
 
 export async function getStaticPaths() {
   const all = await getCollection('landing');
@@ -44,6 +45,17 @@ export async function getStaticPaths() {
     const prev = byCode.get(e.data.code);
     if (prev) throw new Error(`[lp] code "${e.data.code}" is used by both ${prev} and ${e.id}.`);
     byCode.set(e.data.code, e.id);
+  }
+  // The page names its `physician` (the hero card, the note, the form's office
+  // line) and the form books with `bookingPhysician`: the same person, or the
+  // build stops. Drafts included, so a wrong entry cannot wait in review.
+  for (const e of all) {
+    const code = e.data.bookingPhysician;
+    if (!code) continue;
+    const page = BOOKING_PAGES.find((b) => b.code === code);
+    if (!page || !e.data.physician.id.includes(page.eventKey)) {
+      throw new Error(`[lp] ${e.id}: bookingPhysician "${code}" books with ${page ? page.cardTitle : 'no booking page'}, but the entry's physician is "${e.data.physician.id}". They must be the same person.`);
+    }
   }
   // A draft is a page in review: it exists on `astro dev` and nowhere else.
   const entries = all.filter((e) => import.meta.env.DEV || !e.data.draft);
