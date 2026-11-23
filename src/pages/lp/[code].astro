@@ -1,10 +1,13 @@
 ---
 /**
- * Paid-ad landing pages: /lp/<physicianKey>/<slug>/, one per entry in the
- * landing collection (src/content/landing). Everything on the page comes from
- * the entry and the providers and locations collections; the only copy typed
- * here is the "About the practice" link, the services heading, the FAQ
- * heading and the closing band's defaults.
+ * Paid-ad landing pages: /lp/<code>/ (for example /lp/k4/), one per entry in
+ * the landing collection (src/content/landing). The code is opaque: the URL,
+ * the canonical, the title and the description name neither the physician
+ * nor a condition, and the build refuses an entry whose text does (see
+ * assertNeutral below). Everything on the page comes from the entry and the
+ * providers and locations collections; the only copy typed here is the
+ * "About the practice" link, the services heading, the FAQ heading and the
+ * closing band's defaults.
  *
  * noindex, follow with a canonical to itself (LandingLayout), left out of the
  * sitemap (astro.config.mjs), linked from no nav or footer. Drafts render on
@@ -17,25 +20,35 @@
  * needs that decided before it is used on a landing page.
  */
 import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
-import LandingLayout from '../../../layouts/LandingLayout.astro';
-import LpHero from '../../../components/landing/LpHero.astro';
-import RuledList from '../../../components/shared/RuledList.astro';
-import TitledGrid from '../../../components/shared/TitledGrid.astro';
-import SageCard from '../../../components/shared/SageCard.astro';
-import FAQSection from '../../../components/shared/FAQSection.astro';
-import CTABanner from '../../../components/shared/CTABanner.astro';
-import QuotePair from '../../../components/shared/QuotePair.astro';
-import GoogleReviewsLink from '../../../components/shared/GoogleReviewsLink.astro';
-import MeetGreetForm from '../../../components/shared/MeetGreetForm.astro';
-import { reviewBy } from '../../../utils/reviews';
-import { getAvailability } from '../../../utils/availability';
-import { physicianCredentialRows } from '../../../utils/credentialRows';
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import LpHero from '../../components/landing/LpHero.astro';
+import RuledList from '../../components/shared/RuledList.astro';
+import TitledGrid from '../../components/shared/TitledGrid.astro';
+import SageCard from '../../components/shared/SageCard.astro';
+import FAQSection from '../../components/shared/FAQSection.astro';
+import CTABanner from '../../components/shared/CTABanner.astro';
+import QuotePair from '../../components/shared/QuotePair.astro';
+import GoogleReviewsLink from '../../components/shared/GoogleReviewsLink.astro';
+import MeetGreetForm from '../../components/shared/MeetGreetForm.astro';
+import { reviewBy } from '../../utils/reviews';
+import { getAvailability } from '../../utils/availability';
+import { physicianCredentialRows } from '../../utils/credentialRows';
+import { PRICING_ROWS } from '../../data/membershipPricing';
+import { assertPricingMatchesMembershipPage } from '../../utils/pricingCheck';
 
 export async function getStaticPaths() {
+  const all = await getCollection('landing');
+  // One code, one page: checked over every entry, drafts included.
+  const byCode = new Map<string, string>();
+  for (const e of all) {
+    const prev = byCode.get(e.data.code);
+    if (prev) throw new Error(`[lp] code "${e.data.code}" is used by both ${prev} and ${e.id}.`);
+    byCode.set(e.data.code, e.id);
+  }
   // A draft is a page in review: it exists on `astro dev` and nowhere else.
-  const entries = await getCollection('landing', (e) => import.meta.env.DEV || !e.data.draft);
+  const entries = all.filter((e) => import.meta.env.DEV || !e.data.draft);
   return entries.map((entry) => ({
-    params: { physician: entry.data.physicianKey, slug: entry.data.slug },
+    params: { code: entry.data.code },
     props: { entry },
   }));
 }
@@ -51,6 +64,31 @@ const p = provider.data;
 if (!p.slug.includes(d.physicianKey)) {
   throw new Error(`[lp] ${entry.id}: physicianKey "${d.physicianKey}" does not match the provider "${p.slug}".`);
 }
+
+// What leaves the page: the URL (and so the canonical), the title and the
+// description reach the ad platform, link previews and browser history. None
+// of them may name a physician or a condition. The page body can and does.
+const providers = await getCollection('providers');
+const PHYSICIAN_TERMS = providers
+  .flatMap((pr) => pr.data.name.toLowerCase().split(/\s+/))
+  .concat(['dr', 'doctor', 'landi', 'lieberman', 'bigley']);
+const CLINICAL_TERMS = [
+  'menopause', 'perimenopause', 'midlife', 'hormone', 'hormones', 'hrt', 'estrogen', 'testosterone',
+  'osteoporosis', 'diabetes', 'obesity', 'weight', 'thyroid', 'cardiovascular', 'hypertension',
+  'cholesterol', 'depression', 'anxiety', 'cancer', 'fertility', 'libido', 'sexual',
+  'lifestyle medicine', 'longevity', 'dexa',
+];
+function assertNeutral(label: string, text: string) {
+  const hay = ` ${text.toLowerCase().replace(/[^a-z0-9]+/g, ' ')} `;
+  const hit = [...PHYSICIAN_TERMS, ...CLINICAL_TERMS].find((t) => hay.includes(` ${t} `));
+  if (hit) {
+    throw new Error(`[lp] ${entry.id}: the ${label} contains "${hit}". The URL, canonical, title and description must name neither a physician nor a condition.`);
+  }
+}
+const pathname = `/lp/${d.code}/`;
+assertNeutral('URL', pathname);
+assertNeutral('title', d.seo.title);
+assertNeutral('description', d.seo.description);
 
 const office = (await getCollection('locations')).find((l) => l.data.slug === d.office);
 if (!office) throw new Error(`[lp] ${entry.id}: no locations entry has the slug "${d.office}".`);
@@ -84,6 +122,11 @@ const card = {
 };
 
 const FORM_HREF = '#meet-greet';
+
+// What membership costs: the figures are src/data/membershipPricing.ts, and
+// the build stops here if they differ from the ones on /membership/.
+assertPricingMatchesMembershipPage();
+const INCLUDED_LINE = 'Included: unlimited visits with no copay, same-day and next-day appointments, one to two hour visits, direct phone, text, and email access, preventive and chronic care, telehealth, and Lifestyle Medicine.';
 const quotes = d.reviews.map((who) => ({ text: reviewBy(who).text, who, attribution: 'Verified Google review' }));
 const columns = (n: number) => Math.min(4, Math.max(2, n)) as 2 | 3 | 4;
 
@@ -111,6 +154,8 @@ const footerOffice = {
   office={footerOffice}
   ctaHref={FORM_HREF}
   ctaLabel={d.hero.ctaLabel}
+  lpCode={d.code}
+  lpPhysician={d.physicianKey}
 >
   {DEV && d.todo.length > 0 && (
     <aside class="lp-todo" aria-label="Open items, shown in development only">
@@ -173,13 +218,34 @@ const footerOffice = {
     </div>
   </section>
 
-  <section class="rd-section lp-form" id="meet-greet">
+  <section class="rd-section">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">What membership costs</h2>
+      </div>
+      <div class="lp-price">
+        <p class="lp-price__head">Per person, per month</p>
+        <RuledList size="md" class="lp-price__rows">
+          {PRICING_ROWS.map((r) => (
+            <li class="lp-price__row">
+              <span class="lp-price__who">{r.label}</span>
+              <span class="lp-price__amt">{r.price}</span>
+            </li>
+          ))}
+        </RuledList>
+        <p class="lp-price__inc">{INCLUDED_LINE}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rd-section lp-form" id="meet-greet" data-lp-placement="form">
     <div class="rd-wrap">
       <div class="lp-form__col">
         <MeetGreetForm
           source={d.source}
           physician={d.form.skipChooser ? d.bookingPhysician : undefined}
           office={d.form.lockOffice ? d.office : undefined}
+          topic={d.topic}
           heading={d.form.heading}
           subline={d.form.subline}
         />
@@ -213,13 +279,16 @@ const footerOffice = {
 
   {d.faqs.length > 0 && <FAQSection faqs={d.faqs} headline="Common questions" schema={false} />}
 
-  <CTABanner
-    ch={16}
-    headline={closingHeadline}
-    subhead={closingSubhead}
-    btnText="Request Your Free Meet & Greet"
-    btnHref={FORM_HREF}
-  />
+  <!-- The wrapper names the placement for lp_cta_click (LandingLayout). -->
+  <div data-lp-placement="band">
+    <CTABanner
+      ch={16}
+      headline={closingHeadline}
+      subhead={closingSubhead}
+      btnText="Request Your Free Meet & Greet"
+      btnHref={FORM_HREF}
+    />
+  </div>
 </LandingLayout>
 
 <style>
@@ -238,6 +307,14 @@ const footerOffice = {
 
   .lp-about { align-self: flex-start; }
   .lp-note :global(p) { font-size: 16px; line-height: 1.75; }
+
+  /* The price table: a column header over the figures, then the ruled list's
+     rows, one household size and its figure each. */
+  .lp-price__head { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--sage-600); text-align: right; }
+  :global(.lp-price__rows > li.lp-price__row) { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; font-size: 16px; }
+  .lp-price__who { color: var(--text-700); }
+  .lp-price__amt { color: var(--forest); font-weight: 600; white-space: nowrap; }
+  .lp-price__inc { margin: 18px 0 0; font-size: 14.5px; line-height: 1.65; color: var(--text-700); }
 
   .lp-form { background: var(--linen); }
   .lp-form__col { max-width: 820px; margin: 0 auto; }

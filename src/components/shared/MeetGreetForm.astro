@@ -1,6 +1,7 @@
 ---
 // Meet & Greet interest form — Google Sheets via Apps Script
 import { BOOKING_PAGES, bookingEnabled } from '../../data/bookingPages';
+import { ATTR_FIELDS } from '../../data/attribution';
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
 const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // source is resolved client-side from ?source= query param (static output mode)
@@ -23,17 +24,20 @@ export interface Props {
   source?: string;
   /** BL or PL: book with this physician straight after step 1, no chooser. */
   physician?: 'BL' | 'PL';
-  /** Preselect and hide the Preferred office field. */
+  /** Fix the office: the field becomes a line the visitor reads, not a choice; the value is still sent. */
   office?: 'wayne' | 'malvern';
   /** The card's heading and the line under it. */
   heading?: string;
   subline?: string;
+  /** Landing pages: what the page is about, for the practice's own sheet only. Never rendered. */
+  topic?: string;
 }
 const {
   stepper = true,
   source = 'standard',
   physician,
   office,
+  topic = '',
   heading = 'Request Your Free Meet & Greet',
   subline = 'Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.',
 } = Astro.props;
@@ -43,6 +47,7 @@ if (physician && !BOOKING_PAGES.some((p) => p.code === physician)) {
 }
 // The client script reads this: '' means the chooser, as before.
 const PRESELECT = physician ?? '';
+const officeLabel = office === 'wayne' ? 'Wayne' : office === 'malvern' ? 'Malvern' : '';
 
 // Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
 // without submitting. False in a production build, so the script below never
@@ -155,17 +160,25 @@ const DEV = import.meta.env.DEV;
       </select>
     </div>
 
-    <!-- With `office` set the field is preselected and hidden: the page it is on
-         is about that office, and the value is still sent. -->
-    <div class="form-group form-group--office" hidden={!!office}>
-      <label for="preferredOffice">Preferred office</label>
-      <select id="preferredOffice" name="preferredOffice">
-        <option value="">Select…</option>
-        <option value="wayne" selected={office === 'wayne'}>Wayne</option>
-        <option value="malvern" selected={office === 'malvern'}>Malvern</option>
-        <option value="no-preference">Does not matter</option>
-      </select>
-    </div>
+    <!-- With `office` set (landing pages) the office is the page's: shown as a
+         line the visitor can read but not change, and still sent under the
+         same field name. Without it, the choice as before. -->
+    {office ? (
+      <div class="form-group form-group--full">
+        <p class="form-office">Your meet and greet is at our {officeLabel} office.</p>
+        <input type="hidden" id="preferredOffice" name="preferredOffice" value={office} />
+      </div>
+    ) : (
+      <div class="form-group form-group--office">
+        <label for="preferredOffice">Preferred office</label>
+        <select id="preferredOffice" name="preferredOffice">
+          <option value="">Select…</option>
+          <option value="wayne">Wayne</option>
+          <option value="malvern">Malvern</option>
+          <option value="no-preference">Does not matter</option>
+        </select>
+      </div>
+    )}
 
     <div class="form-group form-group--full">
       <label for="referral">How did you hear about us?</label>
@@ -199,6 +212,12 @@ const DEV = import.meta.env.DEV;
     <!-- Source tracking — populated client-side from ?source= query param -->
     <input type="hidden" name="source" value={source} />
     {PRESELECT && <input type="hidden" name="physician" value={PRESELECT} />}
+    {topic && <input type="hidden" name="topic" value={topic} />}
+    <!-- First-party attribution (src/components/Attribution.astro): filled on
+         load from window.ffmAttr(), sent with the request, stored on the
+         practice's own sheet. Empty when the visitor arrived without ad
+         parameters. -->
+    {ATTR_FIELDS.map((f) => <input type="hidden" name={f} value="" />)}
 
     <button type="submit" class="btn-forest submit-btn" id="submit-btn">
       Request My Free Meet &amp; Greet
@@ -340,6 +359,17 @@ const DEV = import.meta.env.DEV;
     border-color: #c0392b;
   }
   .form-hint { margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text-600); }
+  /* The fixed office (landing pages): the shape of a field, the weight of a note. */
+  .form-office {
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 2px;
+    background: var(--linen);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--text-700);
+  }
   /* iOS Safari centers date text and collapses an empty date field;
      keep it left-aligned at the same height as the other inputs. */
   input[type="date"] { display: block; min-height: 3rem; }
@@ -507,6 +537,15 @@ const DEV = import.meta.env.DEV;
     const sourceInput = document.querySelector('input[name="source"]');
     if (sourceInput) sourceInput.value = sourceParam;
   }
+  // Attribution hidden fields, from the stored record or this page's URL.
+  if (window.ffmAttr) {
+    const attr = window.ffmAttr();
+    const mgForm = document.getElementById('meetgreet-form');
+    for (const key in attr) {
+      const el = mgForm && mgForm.querySelector('input[type="hidden"][name="' + key + '"]');
+      if (el) el.value = attr[key];
+    }
+  }
   const subjectParam = new URLSearchParams(window.location.search).get('subject');
   if (subjectParam) {
     const messageInput = document.querySelector('textarea[name="message"]');
@@ -522,7 +561,7 @@ const DEV = import.meta.env.DEV;
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT, ATTR_FIELDS }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -798,9 +837,13 @@ const DEV = import.meta.env.DEV;
     const message    = form.querySelector('#message').value.trim();
     const company    = form.querySelector('#company')?.value || '';
     const source     = form.querySelector('[name="source"]')?.value || 'standard';
-    // Landing pages only: the physician the page books with. The script that
-    // receives the form ignores a key it does not know.
+    // Landing pages only: the physician the page books with and the page's
+    // topic. The script that receives the form ignores a key it does not know.
     const physicianReq = form.querySelector('[name="physician"]')?.value || '';
+    const topicReq     = form.querySelector('[name="topic"]')?.value || '';
+    // First-party attribution, as filled into the hidden fields on load.
+    const attribution = {};
+    ATTR_FIELDS.forEach((key) => { attribution[key] = form.querySelector('input[name="' + key + '"]')?.value || ''; });
 
     if (!firstName || !lastName || !email || !phone || !interest) {
       if (errorEl) {
@@ -860,6 +903,8 @@ const DEV = import.meta.env.DEV;
           company,
           source,
           physician: physicianReq,
+          topic:     topicReq,
+          ...attribution,
           loadTime:  formLoadTime,
         }),
       });

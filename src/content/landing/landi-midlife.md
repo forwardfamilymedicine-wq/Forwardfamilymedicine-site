@@ -3,8 +3,9 @@
 # /menopause/, Dr. Landi's bio, or the booking copy already on the site,
 # rewritten without em dashes. Nothing here is a new claim.
 physician: brian-landi-do
+# The URL: /lp/k4/. Opaque on purpose; change it here and nowhere else.
+code: k4
 physicianKey: landi
-slug: midlife
 topic: menopause
 source: lp-landi-midlife
 bookingPhysician: BL
@@ -14,12 +15,11 @@ todo:
   - "Headline: David to approve. The draft is the /menopause/ page's H1."
   - "Form heading: David to approve."
   - "Physician note: Dr. Landi to write in his own voice. The body below is a placeholder."
-  - "Slug: 'midlife' is pending counsel (item 8 of the Phase A report); the fallback is 'care'."
-  - "SEO description: David to approve. It is condition-free on purpose."
+  - "SEO title and description: David to approve. Both name no physician and no condition, on purpose; the build refuses either if they do."
 hero:
   eyebrow: "Menopause and midlife women's health"
   headline: "Menopause Care, Built Into Your Primary Care"
-  supporting: "At Forward Family Medicine, menopause care is delivered by Dr. Brian Landi, DO, a board-certified family physician with Menopause Society Certified Practitioner credentialing, across visits long enough to walk through what's happening, what your options are, and what you want to do about it. No outside referral. No separate appointment. Included in your membership."
+  supporting: "Menopause care from Dr. Brian Landi, DO, a board-certified family physician with Menopause Society Certified Practitioner credentialing. Visits long enough to walk through what's happening, what your options are, and what you want to do about it. No outside referral. Included in your membership."
   ctaLabel: "Schedule a Free Meet & Greet"
   ctaNote: "A free 60-minute meet and greet, no obligation, at our Malvern office or by video."
 experience:
@@ -86,10 +86,8 @@ closing:
   headline: "Schedule a Meet & Greet with Dr. Landi"
   subhead: "Dr. Landi is accepting new patients now. A 60-minute meet and greet, no obligation, at our Malvern office or by video."
 seo:
-  title: "Dr. Brian Landi, DO | Forward Family Medicine, Malvern"
-  description: "Dr. Brian Landi, DO is a board-certified family physician at Forward Family Medicine's Malvern office. Request a free, no-obligation meet and greet, in person or by video."
-tracking:
-  lpKey: landi-midlife
+  title: "Forward Family Medicine | Malvern, PA"
+  description: "Forward Family Medicine is a Direct Primary Care practice with offices in Wayne and Malvern, PA. Request a free, no-obligation meet and greet, in person or by video."
 ---
 
 TODO Dr. Landi: a short note in your own voice goes here, two or three sentences. Nothing on the site is written in your first person. The one source is the bio paragraph on your clinical interest in midlife health and women's wellness, and rewriting it as "I" needs your approval first.
