@@ -20,8 +20,8 @@
 // becomes advertising consent. Bump CONSENT_VERSION when the policy changes
 // and everyone is asked again.
 //
-// GATES. Analytics loads GA4 (and Clarity, dormant while CLARITY_ID is
-// empty). Advertising loads the Meta Pixel, and only where all three hold:
+// GATES. Analytics loads GA4. Advertising loads the Meta Pixel, and only
+// where all three hold:
 // the page passed pixel={true} (LandingLayout does; MainLayout never does),
 // PUBLIC_META_PIXEL_ID was set at build time, and the saved choice has
 // advertising on. An empty ID means nothing loads anywhere. autoConfig is
@@ -48,7 +48,6 @@ export interface Props {
 const { pixel = false } = Astro.props;
 
 const GA4_ID = "G-8Z3EP3H07B";
-const CLARITY_ID = ""; // dormant: leave empty unless Clarity is added later
 const CONSENT_VERSION = 2;
 // PUBLIC_META_PIXEL_ID: a dev-only env file for a local check, the
 // repository variable for the GitHub Actions build. Empty: the Pixel never
@@ -113,7 +112,7 @@ const PIXEL_ON = pixel && PIXEL_ID !== "";
   </div>
 </div>
 
-<script define:vars={{ GA4_ID, CLARITY_ID, CONSENT_VERSION, PIXEL_ID, PIXEL_ON }}>
+<script define:vars={{ GA4_ID, CONSENT_VERSION, PIXEL_ID, PIXEL_ON }}>
   (function () {
     var COOKIE = "ffm_consent";
     var bar          = document.getElementById("consent-banner");
@@ -181,7 +180,7 @@ const PIXEL_ON = pixel && PIXEL_ID !== "";
       }
     }
 
-    // ── Analytics gate: GA4 and Clarity ──
+    // ── Analytics gate: GA4 ──
     var analyticsLoaded = false;
 
     function loadGA4() {
@@ -197,22 +196,10 @@ const PIXEL_ON = pixel && PIXEL_ID !== "";
       gtag("config", GA4_ID, gaDebug() ? { debug_mode: true } : {});
     }
 
-    function loadClarity() {
-      if (!CLARITY_ID) return; // dormant unless a real ID is set
-      (function (c, l, a, r, i, t, y) {
-        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-        t = l.createElement(r); t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", CLARITY_ID);
-    }
-
     function loadAnalytics() {
       if (analyticsLoaded) return;
       analyticsLoaded = true;
       loadGA4();
-      loadClarity();
     }
 
     // ── Advertising gate: the Meta Pixel, landing pages only ──
