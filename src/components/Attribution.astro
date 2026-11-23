@@ -15,9 +15,11 @@
  * storage call is wrapped: a browser that refuses localStorage (private mode,
  * some in-app browsers) still gets the current URL's values on this page.
  *
- * No consent is read for the URL itself; under 'consent' the script listens
- * for the banner's ffm:consent event and stores the pending values if the
- * visitor accepts during this page view.
+ * No consent is read for the URL itself; under 'consent' the record is
+ * written only while the saved choice has optional analytics on (cookie
+ * ffm_consent "v2.a1.*"), and the script listens for the banner's
+ * ffm:consent event to store the pending values if the visitor turns
+ * analytics on during this page view.
  */
 import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } from '../data/attribution';
 ---
@@ -56,8 +58,15 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
       return m ? decodeURIComponent(m[1]) : null;
     }
 
+    // Option B: the saved choice has optional analytics on.
+    function analyticsConsent() {
+      var raw = cookie('ffm_consent');
+      var m = raw && raw.match(/^v\d+\.a([01])\.p[01]$/);
+      return !!(m && m[1] === '1');
+    }
+
     function mayStore() {
-      return ATTR_STORAGE === 'necessary' || cookie('ffm_consent') === 'accepted';
+      return ATTR_STORAGE === 'necessary' || analyticsConsent();
     }
 
     function readStored() {
@@ -88,10 +97,10 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
       else pending = current;
     }
 
-    // Option B: the visitor accepts the banner on this page view.
+    // Option B: the visitor turns analytics on during this page view.
     if (pending) {
       document.addEventListener('ffm:consent', function (e) {
-        if (pending && e.detail && e.detail.choice === 'accepted' && !readStored()) {
+        if (pending && e.detail && e.detail.analytics === true && !readStored()) {
           store(pending);
           pending = null;
         }

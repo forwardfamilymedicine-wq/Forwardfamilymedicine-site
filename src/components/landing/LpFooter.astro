@@ -1,8 +1,8 @@
 ---
 /**
  * Landing-page footer: the office the page sends people to, the phone number,
- * the Privacy Policy link and "Manage cookie choices" (ConsentBanner listens on
- * [data-consent-reset]), and the practice's standing line that membership is
+ * the Privacy Policy link and "Manage Cookie Choices" (ConsentBanner opens its
+ * dialog from [data-consent-reset]), and the practice's standing line that membership is
  * not insurance. No site navigation, by decision.
  */
 export interface FooterOffice {
@@ -26,7 +26,7 @@ const year = new Date().getFullYear();
     </address>
     <ul class="lp-footer__links" aria-label="Privacy">
       <li><a href="/privacy-policy/">Privacy Policy</a></li>
-      <li><a href="#" data-consent-reset>Manage cookie choices</a></li>
+      <li><a href="#" data-consent-reset>Manage Cookie Choices</a></li>
     </ul>
     <p class="lp-footer__fine">
       &copy; {year} Forward Family Medicine. All rights reserved.

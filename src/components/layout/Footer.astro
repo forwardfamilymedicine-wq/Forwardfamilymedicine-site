@@ -3,7 +3,7 @@
  * Site footer, restyled to the boards' footer (design/boards/Main.dc.html).
  * Every destination the footer linked before is still here: Home, the full
  * quick-links list, the office addresses, phone, fax, email, hours, Areas We
- * Serve, and "Manage cookie choices" (ConsentBanner listens on
+ * Serve, and "Manage Cookie Choices" (ConsentBanner opens its dialog from
  * [data-consent-reset]). Added by decision: the three office pages are linked
  * from the Contact Us column, and both Enroll links sit under the CTA. Patient
  * Portal is a Quick Links entry now that the header's utility bar is gone. The
@@ -108,7 +108,7 @@ const towns = [
         <ul class="footer-links">
           {quickLinks.map(l => <li><a href={l.href}>{l.label}</a></li>)}
           <li><a href="https://patient.sigmamd.com" target="_blank" rel="noopener noreferrer">Patient Portal</a></li>
-          <li><a href="#" data-consent-reset>Manage cookie choices</a></li>
+          <li><a href="#" data-consent-reset>Manage Cookie Choices</a></li>
         </ul>
       </div>
 

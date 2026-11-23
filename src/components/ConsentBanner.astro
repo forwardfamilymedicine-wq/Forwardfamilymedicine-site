@@ -1,41 +1,61 @@
 ---
 // src/components/ConsentBanner.astro
 //
-// Opt-in analytics consent banner for Forward Family Medicine.
+// Privacy choices for Forward Family Medicine: the consent bar and the
+// "Manage Cookie Choices" dialog (B3).
 //
-// BEHAVIOR (opt-in — stricter, PA-safer):
-//   - No choice yet -> banner shows, NO trackers load.
-//   - "Accept"      -> cookie set (1 year), GA4 loads now and on every page load.
-//   - "Decline"     -> cookie set (1 year), trackers never load.
-//   - "Manage choices" footer link (<a data-consent-reset>) re-opens the banner.
-//   - Every choice is announced as a document event, ffm:consent, with
-//     detail.choice "accepted", "declined" or "reset", for scripts that must
-//     wait for it (src/components/Attribution.astro under Option B).
+// BEHAVIOR (opt-in)
+//   - No choice saved  -> the bar shows on every page; nothing optional loads;
+//                         window.ffmTrack holds events in memory for this page view.
+//   - "Accept"         -> optional analytics and advertising both on.
+//   - "Essential only" -> both off, saved, so the bar stops asking.
+//   - Ignoring the bar -> everything stays off and the bar returns next page.
+//   - "Manage Cookie Choices" (footer links with [data-consent-reset]) opens a
+//     small non-modal dialog: two switches and Save, to change or withdraw.
 //
-// CLARITY: not installed. Load path dormant unless CLARITY_ID is set.
-// ATTORNEY ITEMS (flagged, not blocking): (a) opt-in vs opt-out for GA4 in PA —
-// this does opt-in; (b) cookie lifetime (365 days).
+// THE SAVED CHOICE is one cookie, ffm_consent, in the form "v2.a1.p0":
+// version, analytics on/off, advertising on/off, 365 days. Any other value
+// (the old "accepted" and "declined" among them) counts as no choice, so
+// everyone is asked once under this version, and an old "accepted" never
+// becomes advertising consent. Bump CONSENT_VERSION when the policy changes
+// and everyone is asked again.
+//
+// GATES. Analytics loads GA4 (and Clarity, dormant while CLARITY_ID is
+// empty). Advertising is the Meta Pixel, landing pages only; its loader
+// arrives with the `pixel` prop in the next commit, so with advertising on
+// and nothing configured, nothing loads. window.ffmTrack sends an event to
+// GA4 when analytics is on and drops it when analytics is off. Withdrawing
+// analytics on a page where GA4 already loaded stops further events at once
+// (gtag's ga-disable flag) and nothing loads on the next page.
+//
+// Every saved choice is announced as a document event, ffm:consent, with
+// detail { version, analytics, advertising, source: "bar" | "dialog" }
+// (src/components/Attribution.astro listens under Option B).
+//
+// ATTORNEY ITEMS (flagged, not blocking): the cookie lifetime (365 days).
 
 const GA4_ID = "G-8Z3EP3H07B";
-const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
+const CLARITY_ID = ""; // dormant: leave empty unless Clarity is added later
+const CONSENT_VERSION = 2;
 ---
 
 <div
   id="consent-banner"
   class="consent"
   hidden
-  role="dialog"
+  role="region"
   aria-live="polite"
-  aria-label="Cookie and analytics consent"
+  aria-label="Privacy choices"
 >
   <div class="consent__inner">
     <p class="consent__text">
-      We use analytics to understand how visitors use our site. These tools don't
-      load unless you accept. See our <a href="/privacy-policy/">Privacy Policy</a>.
+      We use necessary technologies to run this site. Optional analytics and
+      advertising tools load only with your consent. See our
+      <a href="/privacy-policy/">Privacy Policy</a>.
     </p>
     <div class="consent__actions">
-      <button type="button" id="consent-decline" class="consent__btn consent__btn--ghost">
-        Decline
+      <button type="button" id="consent-essential" class="consent__link">
+        Essential only
       </button>
       <button type="button" id="consent-accept" class="consent__btn consent__btn--solid">
         Accept
@@ -44,12 +64,48 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
   </div>
 </div>
 
-<script define:vars={{ GA4_ID, CLARITY_ID }}>
+<!-- Non-modal: the page stays usable behind it. Opened by any
+     [data-consent-reset] link; Esc or Cancel closes; focus returns to the link. -->
+<div id="consent-dialog" class="cdlg" hidden>
+  <div class="cdlg__panel" role="dialog" aria-modal="false" aria-labelledby="cdlg-title" aria-describedby="cdlg-desc">
+    <h2 id="cdlg-title" class="cdlg__title" tabindex="-1">Manage Cookie Choices</h2>
+    <p id="cdlg-desc" class="cdlg__text">
+      Necessary technologies always run. Turn the optional tools on or off, then save.
+      See our <a href="/privacy-policy/">Privacy Policy</a>.
+    </p>
+    <div class="cdlg__row">
+      <div class="cdlg__labels">
+        <label for="cdlg-analytics" class="cdlg__name">Optional analytics</label>
+        <span id="cdlg-analytics-desc" class="cdlg__desc">Google Analytics, to understand how visitors use the site.</span>
+      </div>
+      <input type="checkbox" role="switch" id="cdlg-analytics" class="cdlg__switch" aria-describedby="cdlg-analytics-desc" />
+    </div>
+    <div class="cdlg__row">
+      <div class="cdlg__labels">
+        <label for="cdlg-advertising" class="cdlg__name">Advertising</label>
+        <span id="cdlg-advertising-desc" class="cdlg__desc">Meta Pixel on our advertising pages, to measure our ads.</span>
+      </div>
+      <input type="checkbox" role="switch" id="cdlg-advertising" class="cdlg__switch" aria-describedby="cdlg-advertising-desc" />
+    </div>
+    <div class="cdlg__actions">
+      <button type="button" id="cdlg-cancel" class="consent__link">Cancel</button>
+      <button type="button" id="cdlg-save" class="consent__btn consent__btn--solid">Save</button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ GA4_ID, CLARITY_ID, CONSENT_VERSION }}>
   (function () {
     var COOKIE = "ffm_consent";
-    var banner = document.getElementById("consent-banner");
-    var acceptBtn = document.getElementById("consent-accept");
-    var declineBtn = document.getElementById("consent-decline");
+    var bar          = document.getElementById("consent-banner");
+    var acceptBtn    = document.getElementById("consent-accept");
+    var essentialBtn = document.getElementById("consent-essential");
+    var dlg          = document.getElementById("consent-dialog");
+    var dlgTitle     = document.getElementById("cdlg-title");
+    var swAnalytics  = document.getElementById("cdlg-analytics");
+    var swAds        = document.getElementById("cdlg-advertising");
+    var saveBtn      = document.getElementById("cdlg-save");
+    var cancelBtn    = document.getElementById("cdlg-cancel");
 
     function getCookie(name) {
       var m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
@@ -64,9 +120,38 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
         ";path=/;SameSite=Lax";
     }
 
+    // The saved choice under this version, or null (not answered). Old
+    // values ("accepted", "declined", another version) are null on purpose.
+    function readChoice() {
+      var raw = getCookie(COOKIE);
+      if (!raw) return null;
+      var m = raw.match(/^v(\d+)\.a([01])\.p([01])$/);
+      if (!m || Number(m[1]) !== CONSENT_VERSION) return null;
+      return { version: CONSENT_VERSION, analytics: m[2] === "1", advertising: m[3] === "1" };
+    }
+
+    var choice = readChoice();
+    function analyticsOn()   { return !!(choice && choice.analytics); }
+    function advertisingOn() { return !!(choice && choice.advertising); }
+
+    function announce(source) {
+      try {
+        document.dispatchEvent(new CustomEvent("ffm:consent", {
+          detail: { version: CONSENT_VERSION, analytics: analyticsOn(), advertising: advertisingOn(), source: source },
+        }));
+      } catch (e) {}
+    }
+
+    function saveChoice(analytics, advertising, source) {
+      setCookie(COOKIE, "v" + CONSENT_VERSION + ".a" + (analytics ? 1 : 0) + ".p" + (advertising ? 1 : 0), 365);
+      choice = { version: CONSENT_VERSION, analytics: !!analytics, advertising: !!advertising };
+      apply();
+      announce(source);
+    }
+
     // Testing aid: ?ga_debug=1 turns on GA4 debug_mode for this browser
     // session (so DebugView shows the events), ?ga_debug=0 turns it off.
-    // Does nothing unless the visitor has accepted analytics.
+    // Does nothing unless analytics is on.
     function gaDebug() {
       try {
         var m = location.search.match(/[?&]ga_debug=([01])(?:&|$)/);
@@ -76,6 +161,9 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
         return /[?&]ga_debug=1(?:&|$)/.test(location.search);
       }
     }
+
+    // ── Analytics gate: GA4 and Clarity ──
+    var analyticsLoaded = false;
 
     function loadGA4() {
       if (!GA4_ID) return;
@@ -101,89 +189,113 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
       })(window, document, "clarity", "script", CLARITY_ID);
     }
 
-    function loadTrackers() {
+    function loadAnalytics() {
+      if (analyticsLoaded) return;
+      analyticsLoaded = true;
       loadGA4();
       loadClarity();
     }
 
-    function hideBanner() { if (banner) banner.hidden = true; }
-    function showBanner() { if (banner) banner.hidden = false; }
-    function announce(choice) {
-      try { document.dispatchEvent(new CustomEvent("ffm:consent", { detail: { choice: choice } })); } catch (e) {}
+    // ── Advertising gate: the Meta Pixel, landing pages only (next commit) ──
+    var advertisingLoaded = false;
+    function loadAdvertising() {
+      if (advertisingLoaded) return;
+      advertisingLoaded = true;
+    }
+    function sendAdvertising(name, params) {}
+
+    // ── Events: one queue, two gates ──
+    // No choice yet -> held for this page view, sent or dropped when a choice
+    // is saved. Analytics on -> GA4. Advertising on -> the Pixel's own hook.
+    // Both off -> dropped.
+    var queue = [];
+
+    function sendAnalytics(name, params) {
+      if (typeof window.gtag === "function") window.gtag("event", name, params || {});
     }
 
-    // Consent-safe, queue-safe event tracking.
-    //
-    // Lives here (not a separate script file) because this is the one place
-    // that already knows, synchronously, both the consent state and the exact
-    // moment gtag becomes ready — avoiding any cross-script load-order race.
-    // ConsentBanner's script is is:inline and runs during initial page parse,
-    // before any user interaction is possible, so window.ffmTrack is always
-    // defined by the time a click/submit/focus handler elsewhere calls it.
-    //
-    // - Consent already accepted / gtag ready -> send immediately.
-    // - Consent not yet decided (banner still showing) -> queue; flushed if
-    //   the visitor accepts during this page view.
-    // - Consent declined -> drop permanently, never queued, never retried.
-    var trackQueue = [];
+    function dispatch(name, params) {
+      if (analyticsOn()) sendAnalytics(name, params);
+      if (advertisingOn()) sendAdvertising(name, params);
+    }
 
     function ffmTrack(eventName, params) {
-      if (typeof window.gtag === "function") {
-        window.gtag("event", eventName, params || {});
-        return;
-      }
-      if (getCookie(COOKIE) === "declined") return;
-      trackQueue.push([eventName, params || {}]);
+      if (!choice) { queue.push([eventName, params || {}]); return; }
+      dispatch(eventName, params);
     }
 
-    function flushTrackQueue() {
-      while (trackQueue.length) {
-        var item = trackQueue.shift();
-        if (typeof window.gtag === "function") {
-          window.gtag("event", item[0], item[1]);
-        }
+    function flushQueue() {
+      if (!choice) return;
+      while (queue.length) {
+        var item = queue.shift();
+        dispatch(item[0], item[1]);
       }
     }
 
     window.ffmTrack = ffmTrack;
 
-    var choice = getCookie(COOKIE);
-    if (choice === "accepted") {
-      loadTrackers();
-      flushTrackQueue();
-      hideBanner();
-    } else if (choice === "declined") {
-      hideBanner();
-    } else {
-      showBanner();
+    // ── Apply the current choice to the page ──
+    function showBar() { if (bar) bar.hidden = false; }
+    function hideBar() { if (bar) bar.hidden = true; }
+
+    function apply() {
+      if (analyticsOn()) {
+        window["ga-disable-" + GA4_ID] = false;
+        loadAnalytics();
+      } else {
+        // Withdrawn on a page where GA4 may already be running: stop it here;
+        // nothing loads on the next page.
+        window["ga-disable-" + GA4_ID] = true;
+      }
+      if (advertisingOn()) loadAdvertising();
+      flushQueue();
+      if (choice) hideBar(); else showBar();
     }
 
-    if (acceptBtn) {
-      acceptBtn.addEventListener("click", function () {
-        setCookie(COOKIE, "accepted", 365);
-        loadTrackers();
-        flushTrackQueue();
-        hideBanner();
-        announce("accepted");
-      });
+    // ── The bar ──
+    if (acceptBtn)    acceptBtn.addEventListener("click", function () { saveChoice(true, true, "bar"); });
+    if (essentialBtn) essentialBtn.addEventListener("click", function () { saveChoice(false, false, "bar"); });
+
+    // ── The dialog ──
+    var opener = null;
+    var dialogReady = !!(dlg && dlgTitle && swAnalytics && swAds && saveBtn && cancelBtn);
+
+    function openDialog(invoker) {
+      if (!dialogReady) return;
+      opener = invoker || document.activeElement;
+      swAnalytics.checked = analyticsOn();
+      swAds.checked = advertisingOn();
+      dlg.hidden = false;
+      dlgTitle.focus();
     }
-    if (declineBtn) {
-      declineBtn.addEventListener("click", function () {
-        setCookie(COOKIE, "declined", 365);
-        hideBanner();
-        announce("declined");
+
+    function closeDialog() {
+      if (!dialogReady || dlg.hidden) return;
+      dlg.hidden = true;
+      if (opener && typeof opener.focus === "function") opener.focus();
+      opener = null;
+    }
+
+    if (dialogReady) {
+      saveBtn.addEventListener("click", function () {
+        saveChoice(swAnalytics.checked, swAds.checked, "dialog");
+        closeDialog();
+      });
+      cancelBtn.addEventListener("click", closeDialog);
+      dlg.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { e.preventDefault(); closeDialog(); }
       });
     }
 
     document.addEventListener("click", function (e) {
       var t = e.target;
-      if (t && t.closest && t.closest("[data-consent-reset]")) {
-        e.preventDefault();
-        document.cookie = COOKIE + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
-        showBanner();
-        announce("reset");
-      }
+      var link = t && t.closest && t.closest("[data-consent-reset]");
+      if (!link) return;
+      e.preventDefault();
+      openDialog(link);
     });
+
+    apply();
   })();
 </script>
 
@@ -221,14 +333,16 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
     line-height: 1.45;
   }
 
-  .consent__text a {
+  .consent__text a,
+  .cdlg__text a {
     color: var(--green-500);
     text-decoration: underline;
   }
 
   .consent__actions {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.875rem;
     flex: 0 0 auto;
   }
 
@@ -243,25 +357,106 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
     transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  /* Accept: the site's CTA green. The former --green-400 fill was 4.09:1 against the white label. */
+  /* Accept and Save: the site's CTA green. */
   .consent__btn--solid { background: var(--sage-600); color: #fff; }
   .consent__btn--solid:hover { background: var(--forest); }
 
-  .consent__btn--ghost {
+  /* The quiet choice: a text link that is a button. */
+  .consent__link {
+    font: inherit;
+    font-size: 0.875rem;
+    padding: 0.45rem 0.25rem;
     background: transparent;
+    border: 0;
     color: var(--ink-700);
-    border-color: var(--ink-300);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    white-space: nowrap;
   }
-  .consent__btn--ghost:hover { border-color: var(--ink-500); }
+  .consent__link:hover { color: var(--ink-900); }
 
-  .consent__btn:focus-visible {
+  .consent__btn:focus-visible,
+  .consent__link:focus-visible {
     outline: 2px solid var(--green-500);
     outline-offset: 2px;
   }
 
-  /* Phones: text above the buttons. The text's flex basis is auto here: a
-     fixed basis in a column becomes a minimum height and leaves the bar tall
-     and mostly empty. */
+  /* ── Manage Cookie Choices: a small panel at the bottom right, above the bar ── */
+  .cdlg {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10000;
+    width: min(440px, calc(100vw - 32px));
+  }
+  .cdlg__panel {
+    background: var(--cream-50);
+    border: 1px solid var(--green-200);
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+    padding: 20px 22px 18px;
+  }
+  .cdlg__title {
+    margin: 0 0 6px;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--forest);
+  }
+  .cdlg__title:focus { outline: none; }
+  .cdlg__text { margin: 0 0 12px; font-size: 0.875rem; line-height: 1.5; color: var(--ink-900); }
+  .cdlg__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--green-200);
+  }
+  .cdlg__labels { display: flex; flex-direction: column; gap: 2px; }
+  .cdlg__name { font-size: 0.9375rem; font-weight: 600; color: var(--ink-900); cursor: pointer; }
+  .cdlg__desc { font-size: 0.8125rem; line-height: 1.4; color: var(--ink-700); }
+  .cdlg__switch {
+    appearance: none;
+    -webkit-appearance: none;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 26px;
+    margin: 0;
+    border: 0;
+    border-radius: 13px;
+    background: var(--ink-300);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+  .cdlg__switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 0.15s ease;
+  }
+  .cdlg__switch:checked { background: var(--sage-600); }
+  .cdlg__switch:checked::after { transform: translateX(18px); }
+  .cdlg__switch:focus-visible { outline: 2px solid var(--green-500); outline-offset: 2px; }
+  .cdlg__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 2px;
+    padding-top: 14px;
+    border-top: 1px solid var(--green-200);
+  }
+
+  /* Phones: text above the buttons in the bar; the panel spans the width. */
   @media (max-width: 640px) {
     .consent__inner {
       flex-direction: column;
@@ -271,9 +466,10 @@ const CLARITY_ID = ""; // dormant — leave empty unless Clarity is added later
     }
     .consent__text { flex: 0 0 auto; font-size: 0.8125rem; }
     .consent__actions { justify-content: flex-end; }
+    .cdlg { left: 12px; right: 12px; bottom: 12px; width: auto; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .consent__btn { transition: none; }
+    .consent__btn, .cdlg__switch, .cdlg__switch::after { transition: none; }
   }
 </style>
