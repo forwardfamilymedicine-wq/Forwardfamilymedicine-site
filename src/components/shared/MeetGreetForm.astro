@@ -914,10 +914,11 @@ const DEV = import.meta.env.DEV;
       const json = await res.json();
       if (!json.success) throw new Error(json.error || 'Unknown error from script');
 
+      // GA4 gets the landing source and the office only: no inquiry type, no
+      // message, nothing that could name a clinical topic.
       if (window.ffmTrack) {
         window.ffmTrack('generate_lead', {
           source,
-          interest,
           preferred_office: preferredOffice,
         });
       }
