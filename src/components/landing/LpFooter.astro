@@ -1,0 +1,54 @@
+---
+/**
+ * Landing-page footer: the office the page sends people to, the phone number,
+ * the Privacy Policy link and "Manage cookie choices" (ConsentBanner listens on
+ * [data-consent-reset]), and the practice's standing line that membership is
+ * not insurance. No site navigation, by decision.
+ */
+export interface FooterOffice {
+  name: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+}
+export interface Props { office: FooterOffice }
+const { office } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="lp-footer" role="contentinfo">
+  <div class="rd-wrap lp-footer__inner">
+    <address class="lp-footer__office">
+      <strong>Forward Family Medicine, {office.name}</strong><br />
+      {office.street}, {office.city}, {office.state} {office.zip}<br />
+      <a href="tel:+12156457044" data-lp-tel="footer">(215) 645-7044</a>
+    </address>
+    <ul class="lp-footer__links" aria-label="Privacy">
+      <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="#" data-consent-reset>Manage cookie choices</a></li>
+    </ul>
+    <p class="lp-footer__fine">
+      &copy; {year} Forward Family Medicine. All rights reserved.
+      Forward Family Medicine is a Direct Primary Care practice. Membership is not insurance.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .lp-footer {
+    background: var(--linen);
+    border-top: 1px solid var(--hairline);
+    padding: 48px 0 40px;
+    color: var(--text-700);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .lp-footer__inner { display: flex; flex-direction: column; gap: 18px; }
+  .lp-footer__office { font-style: normal; margin: 0; }
+  .lp-footer__office strong { color: var(--forest); font-weight: 600; }
+  .lp-footer__office a, .lp-footer__links a { color: var(--sage-600); text-decoration: none; }
+  .lp-footer__office a:hover, .lp-footer__links a:hover { color: var(--forest); }
+  .lp-footer__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+  .lp-footer__fine { margin: 0; font-size: 12px; line-height: 1.6; color: var(--text-600); max-width: 68ch; }
+</style>

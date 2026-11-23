@@ -1,0 +1,253 @@
+---
+/**
+ * Paid-ad landing pages: /lp/<physicianKey>/<slug>/, one per entry in the
+ * landing collection (src/content/landing). Everything on the page comes from
+ * the entry and the providers and locations collections; the only copy typed
+ * here is the "About the practice" link, the services heading, the FAQ
+ * heading and the closing band's defaults.
+ *
+ * noindex, follow with a canonical to itself (LandingLayout), left out of the
+ * sitemap (astro.config.mjs), linked from no nav or footer. Drafts render on
+ * `astro dev` only. The form books with the entry's physician straight after
+ * step 1 when `form.skipChooser` is on (MeetGreetForm's `physician` prop).
+ *
+ * No scroll-reveal here, on purpose: LandingLayout loads no script module, so
+ * MainLayout's inline script (reveal, stickyFit) stays inline on every other
+ * page. A component that hides itself until revealed (QuotePair) therefore
+ * needs that decided before it is used on a landing page.
+ */
+import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
+import LandingLayout from '../../../layouts/LandingLayout.astro';
+import LpHero from '../../../components/landing/LpHero.astro';
+import RuledList from '../../../components/shared/RuledList.astro';
+import TitledGrid from '../../../components/shared/TitledGrid.astro';
+import SageCard from '../../../components/shared/SageCard.astro';
+import FAQSection from '../../../components/shared/FAQSection.astro';
+import CTABanner from '../../../components/shared/CTABanner.astro';
+import QuotePair from '../../../components/shared/QuotePair.astro';
+import GoogleReviewsLink from '../../../components/shared/GoogleReviewsLink.astro';
+import MeetGreetForm from '../../../components/shared/MeetGreetForm.astro';
+import { reviewBy } from '../../../utils/reviews';
+import { getAvailability } from '../../../utils/availability';
+import { physicianCredentialRows } from '../../../utils/credentialRows';
+
+export async function getStaticPaths() {
+  // A draft is a page in review: it exists on `astro dev` and nowhere else.
+  const entries = await getCollection('landing', (e) => import.meta.env.DEV || !e.data.draft);
+  return entries.map((entry) => ({
+    params: { physician: entry.data.physicianKey, slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+interface Props { entry: CollectionEntry<'landing'> }
+const { entry } = Astro.props;
+const d = entry.data;
+const DEV = import.meta.env.DEV;
+
+const provider = await getEntry(d.physician);
+if (!provider) throw new Error(`[lp] ${entry.id}: no providers entry "${d.physician.id}".`);
+const p = provider.data;
+if (!p.slug.includes(d.physicianKey)) {
+  throw new Error(`[lp] ${entry.id}: physicianKey "${d.physicianKey}" does not match the provider "${p.slug}".`);
+}
+
+const office = (await getCollection('locations')).find((l) => l.data.slug === d.office);
+if (!office) throw new Error(`[lp] ${entry.id}: no locations entry has the slug "${d.office}".`);
+if (office.data.status !== 'open') {
+  throw new Error(`[lp] ${entry.id}: the ${office.data.name} office is "${office.data.status}"; a landing page cannot send anyone there.`);
+}
+
+// The schema refuses a published entry with TODO in its frontmatter; the body
+// is checked here, where it is read.
+if (!d.draft && /\bTODO\b/.test(entry.body ?? '')) {
+  throw new Error(`[lp] ${entry.id}: the physician note still contains TODO.`);
+}
+const { Content } = await render(entry);
+
+const lastName = p.name.trim().split(/\s+/).pop() ?? p.name;
+const shortName = `Dr. ${lastName}`;
+const credentialedName = `Dr. ${p.name}, ${p.credentials}`;
+const availability = getAvailability(p);
+const status = availability.status === 'accepting'
+  ? `Accepting new patients · ${office.data.name}`
+  : availability.status === 'full' ? 'Panel currently full' : undefined;
+
+const card = {
+  photo: d.hero.image ?? p.photo,
+  photoAlt: d.hero.image ? (d.hero.imageAlt ?? '') : p.photoAlt,
+  orientation: d.hero.image ? 'landscape' as const : 'portrait' as const,
+  status,
+  name: credentialedName,
+  role: p.title,
+  rows: physicianCredentialRows(p),
+};
+
+const FORM_HREF = '#meet-greet';
+const quotes = d.reviews.map((who) => ({ text: reviewBy(who).text, who, attribution: 'Verified Google review' }));
+const columns = (n: number) => Math.min(4, Math.max(2, n)) as 2 | 3 | 4;
+
+const closingHeadline = d.closing.headline ?? `Schedule a Meet & Greet with ${shortName}`;
+const closingSubhead = d.closing.subhead ?? (availability.status === 'accepting'
+  ? `${shortName} is accepting new patients now. A 60-minute meet and greet, no obligation, at our ${office.data.name} office or by video.`
+  : undefined);
+
+const ogImage = d.seo.ogImage ? new URL(d.seo.ogImage.src, Astro.site).href : undefined;
+const footerOffice = {
+  name: office.data.name,
+  street: office.data.addressStreet,
+  city: office.data.addressCity,
+  state: office.data.addressState,
+  zip: office.data.addressZip,
+};
+---
+
+<LandingLayout
+  title={d.seo.title}
+  description={d.seo.description}
+  ogImage={ogImage}
+  ogImageWidth={d.seo.ogImage?.width}
+  ogImageHeight={d.seo.ogImage?.height}
+  office={footerOffice}
+  ctaHref={FORM_HREF}
+  ctaLabel={d.hero.ctaLabel}
+>
+  {DEV && d.todo.length > 0 && (
+    <aside class="lp-todo" aria-label="Open items, shown in development only">
+      <div class="rd-wrap">
+        <p class="lp-todo__t">Draft. Open before this page can publish:</p>
+        <ul class="lp-todo__list">{d.todo.map((t) => <li>{t}</li>)}</ul>
+      </div>
+    </aside>
+  )}
+
+  <LpHero
+    eyebrow={d.hero.eyebrow}
+    headline={d.hero.headline}
+    supporting={d.hero.supporting}
+    cta={{ label: d.hero.ctaLabel, href: FORM_HREF }}
+    ctaNote={d.hero.ctaNote}
+    card={card}
+  />
+
+  <section class="rd-section">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">{d.experience.heading}</h2>
+        {d.experience.intro && <p class="rd-copy">{d.experience.intro}</p>}
+      </div>
+      <RuledList size="md" class="lp-items">
+        {d.experience.items.map((item) => (
+          <li>
+            <strong class="lp-items__t">{item.title}</strong>
+            {item.body && <span class="lp-items__b">{item.body}</span>}
+          </li>
+        ))}
+      </RuledList>
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap lp-stack">
+      <h2 class="rd-h2 lp-h2">{d.gap.heading}</h2>
+      <TitledGrid items={d.gap.rows} columns={columns(d.gap.rows.length)} />
+    </div>
+  </section>
+
+  <section class="rd-section">
+    <div class="rd-wrap lp-stack">
+      <h2 class="rd-h2 lp-h2">{d.approach.heading}</h2>
+      <TitledGrid items={d.approach.items} columns={columns(d.approach.items.length)} />
+    </div>
+  </section>
+
+  <section class="rd-section rd-alt">
+    <div class="rd-wrap rd-split rd-split--a">
+      <div class="rd-stack rd-sticky">
+        <h2 class="rd-h2">{d.noteHeading ?? `A note from ${shortName}`}</h2>
+        <a href="/about/" class="rd-link lp-about">About the practice →</a>
+      </div>
+      <SageCard class="lp-note">
+        <Content />
+      </SageCard>
+    </div>
+  </section>
+
+  <section class="rd-section lp-form" id="meet-greet">
+    <div class="rd-wrap">
+      <div class="lp-form__col">
+        <MeetGreetForm
+          source={d.source}
+          physician={d.form.skipChooser ? d.bookingPhysician : undefined}
+          office={d.form.lockOffice ? d.office : undefined}
+          heading={d.form.heading}
+          subline={d.form.subline}
+        />
+      </div>
+    </div>
+  </section>
+
+  {(d.services.length > 0 || quotes.length > 0) && (
+    <section class="rd-section rd-alt">
+      <div class:list={['rd-wrap', quotes.length > 0 && d.services.length > 0 ? 'rd-split rd-split--a' : 'lp-stack']}>
+        {d.services.length > 0 && (
+          <div class="rd-stack">
+            <h2 class="rd-h2 lp-h2">More about the practice</h2>
+            <RuledList size="md" class="lp-links">
+              {d.services.map((s) => <li><a href={s.href} class="lp-links__a">{s.label} →</a></li>)}
+            </RuledList>
+          </div>
+        )}
+        {quotes.length > 0 && (
+          <div class="rd-stack">
+            <div class="lp-rev__head">
+              <h2 class="rd-h2 lp-h2">What patients say about {shortName}</h2>
+              <GoogleReviewsLink align="start" />
+            </div>
+            <QuotePair quotes={quotes} />
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  {d.faqs.length > 0 && <FAQSection faqs={d.faqs} headline="Common questions" schema={false} />}
+
+  <CTABanner
+    ch={16}
+    headline={closingHeadline}
+    subhead={closingSubhead}
+    btnText="Request Your Free Meet & Greet"
+    btnHref={FORM_HREF}
+  />
+</LandingLayout>
+
+<style>
+  /* Development only: the entry's open items, so a reviewer sees them on the page. */
+  .lp-todo { background: var(--sage-50); border-bottom: 1px solid var(--gold); padding: 14px 0; font-size: 13px; line-height: 1.5; color: var(--text-700); }
+  .lp-todo__t { margin: 0 0 4px; font-weight: 600; color: var(--gold-text); }
+  .lp-todo__list { margin: 0; padding-left: 18px; }
+
+  .lp-stack { display: flex; flex-direction: column; gap: 40px; }
+  .lp-h2 { max-width: 22ch; }
+
+  /* The ruled list's rows are written here, so these rules reach them. */
+  .lp-items__t { display: block; font-weight: 600; color: var(--forest); }
+  .lp-items__b { display: block; margin-top: 2px; color: var(--text-700); font-size: 14.5px; line-height: 1.6; }
+  :global(.lp-items > li) { padding: 16px 0; }
+
+  .lp-about { align-self: flex-start; }
+  .lp-note :global(p) { font-size: 16px; line-height: 1.75; }
+
+  .lp-form { background: var(--linen); }
+  .lp-form__col { max-width: 820px; margin: 0 auto; }
+
+  .lp-links__a { color: var(--forest); text-decoration: none; }
+  .lp-links__a:hover { color: var(--sage-600); }
+  .lp-rev__head { display: flex; flex-direction: column; gap: 10px; }
+
+  @media (max-width: 860px) {
+    .lp-stack { gap: 28px; }
+    .lp-h2 { max-width: none; }
+  }
+</style>
