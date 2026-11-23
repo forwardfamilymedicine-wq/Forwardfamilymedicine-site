@@ -557,6 +557,22 @@ const DEV = import.meta.env.DEV;
       const el = mgForm && mgForm.querySelector('input[type="hidden"][name="' + key + '"]');
       if (el) el.value = attr[key];
     }
+    // A record stored on a landing page carries that page's form source and
+    // physician code (lp_source, lp_physician). They fill this form's own
+    // fields only where the page has not: the source while it still says
+    // "standard" (a landing page's own source or a ?source= override stands),
+    // and the physician only when the form has no physician input of its own.
+    if (mgForm) {
+      const sourceEl = mgForm.querySelector('input[name="source"]');
+      if (sourceEl && sourceEl.value === 'standard' && attr.lp_source) sourceEl.value = attr.lp_source;
+      if (attr.lp_physician && !mgForm.querySelector('[name="physician"]')) {
+        const physicianEl = document.createElement('input');
+        physicianEl.type = 'hidden';
+        physicianEl.name = 'physician';
+        physicianEl.value = attr.lp_physician;
+        mgForm.appendChild(physicianEl);
+      }
+    }
   }
   const subjectParam = new URLSearchParams(window.location.search).get('subject');
   if (subjectParam) {
