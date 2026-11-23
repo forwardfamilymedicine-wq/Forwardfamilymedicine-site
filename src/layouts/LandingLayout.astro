@@ -107,7 +107,9 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
     <slot />
   </main>
   <LpFooter office={office} />
-  <ConsentBanner />
+  <!-- pixel: the Meta Pixel may load here, and only here, once advertising
+       consent is saved and PUBLIC_META_PIXEL_ID is set (ConsentBanner). -->
+  <ConsentBanner pixel={true} />
   <script is:inline define:vars={{ LP_CODE: lpCode, LP_PHYSICIAN: lpPhysician }}>
     (function () {
       function track(name, params) { if (window.ffmTrack) window.ffmTrack(name, params); }

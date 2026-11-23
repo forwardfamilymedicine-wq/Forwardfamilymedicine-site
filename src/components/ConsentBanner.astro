@@ -21,12 +21,19 @@
 // and everyone is asked again.
 //
 // GATES. Analytics loads GA4 (and Clarity, dormant while CLARITY_ID is
-// empty). Advertising is the Meta Pixel, landing pages only; its loader
-// arrives with the `pixel` prop in the next commit, so with advertising on
-// and nothing configured, nothing loads. window.ffmTrack sends an event to
-// GA4 when analytics is on and drops it when analytics is off. Withdrawing
-// analytics on a page where GA4 already loaded stops further events at once
-// (gtag's ga-disable flag) and nothing loads on the next page.
+// empty). Advertising loads the Meta Pixel, and only where all three hold:
+// the page passed pixel={true} (LandingLayout does; MainLayout never does),
+// PUBLIC_META_PIXEL_ID was set at build time, and the saved choice has
+// advertising on. An empty ID means nothing loads anywhere. autoConfig is
+// off and init carries no user data (no advanced matching from the
+// browser). PageView fires once per page view and one generic Lead per page
+// view when the form's generate_lead event fires, both with an eventID that
+// window.ffmPixelEvents keeps for a server-side event to share one day.
+// MeetGreetForm is untouched: the Lead hook lives in ffmTrack.
+// window.ffmTrack sends an event to GA4 when analytics is on and drops it
+// when analytics is off. Withdrawing analytics on a page where GA4 already
+// loaded stops further events at once (gtag's ga-disable flag) and nothing
+// loads on the next page.
 //
 // Every saved choice is announced as a document event, ffm:consent, with
 // detail { version, analytics, advertising, source: "bar" | "dialog" }
@@ -34,9 +41,21 @@
 //
 // ATTORNEY ITEMS (flagged, not blocking): the cookie lifetime (365 days).
 
+export interface Props {
+  /** Landing pages only: allow the Meta Pixel on this page (still needs advertising consent and an ID). */
+  pixel?: boolean;
+}
+const { pixel = false } = Astro.props;
+
 const GA4_ID = "G-8Z3EP3H07B";
 const CLARITY_ID = ""; // dormant: leave empty unless Clarity is added later
 const CONSENT_VERSION = 2;
+// PUBLIC_META_PIXEL_ID: a dev-only env file for a local check, the
+// repository variable for the GitHub Actions build. Empty: the Pixel never
+// loads. The ID reaches the page script only where the page asked for the
+// Pixel, so main-site pages never carry it.
+const PIXEL_ID = pixel ? (import.meta.env.PUBLIC_META_PIXEL_ID || "").trim() : "";
+const PIXEL_ON = pixel && PIXEL_ID !== "";
 ---
 
 <div
@@ -94,7 +113,7 @@ const CONSENT_VERSION = 2;
   </div>
 </div>
 
-<script define:vars={{ GA4_ID, CLARITY_ID, CONSENT_VERSION }}>
+<script define:vars={{ GA4_ID, CLARITY_ID, CONSENT_VERSION, PIXEL_ID, PIXEL_ON }}>
   (function () {
     var COOKIE = "ffm_consent";
     var bar          = document.getElementById("consent-banner");
@@ -196,13 +215,43 @@ const CONSENT_VERSION = 2;
       loadClarity();
     }
 
-    // ── Advertising gate: the Meta Pixel, landing pages only (next commit) ──
+    // ── Advertising gate: the Meta Pixel, landing pages only ──
     var advertisingLoaded = false;
-    function loadAdvertising() {
-      if (advertisingLoaded) return;
-      advertisingLoaded = true;
+    var leadSent = false;
+    window.ffmPixelEvents = window.ffmPixelEvents || [];
+
+    function eventId() {
+      try { if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID(); } catch (e) {}
+      return "ffm-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
     }
-    function sendAdvertising(name, params) {}
+
+    function loadAdvertising() {
+      if (advertisingLoaded || !PIXEL_ON) return;
+      advertisingLoaded = true;
+      if (!window.fbq) {
+        var n = window.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!window._fbq) window._fbq = n;
+        n.push = n; n.loaded = true; n.version = "2.0"; n.queue = [];
+        var t = document.createElement("script");
+        t.async = true;
+        t.src = "https://connect.facebook.net/en_US/fbevents.js";
+        document.head.appendChild(t);
+      }
+      window.fbq("set", "autoConfig", false, PIXEL_ID);
+      window.fbq("init", PIXEL_ID);
+      var pv = eventId();
+      window.fbq("track", "PageView", {}, { eventID: pv });
+      window.ffmPixelEvents.push({ name: "PageView", eventID: pv });
+    }
+
+    // One generic Lead per page view, on the form's generate_lead, no parameters.
+    function sendAdvertising(name, params) {
+      if (!advertisingLoaded || name !== "generate_lead" || leadSent) return;
+      leadSent = true;
+      var lead = eventId();
+      window.fbq("track", "Lead", {}, { eventID: lead });
+      window.ffmPixelEvents.push({ name: "Lead", eventID: lead });
+    }
 
     // ── Events: one queue, two gates ──
     // No choice yet -> held for this page view, sent or dropped when a choice
