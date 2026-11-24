@@ -2,6 +2,7 @@
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
+import Attribution from '../components/Attribution.astro';
 import { sitePracticeGraph } from '../utils/practiceSchema';
 import '../styles/global.css';
 
@@ -84,6 +85,9 @@ const schemas = [
   {schemas.map(s => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
+  <!-- First-party ad attribution: remembers utm_* and click ids from the URL
+       for the Meet & Greet form; see src/data/attribution.ts for the switch. -->
+  <Attribution />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>

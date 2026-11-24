@@ -1,0 +1,150 @@
+---
+/**
+ * Layout for the paid-ad landing pages under /lp/ (src/pages/lp). The same
+ * head as MainLayout where it matters (viewport, description, Open Graph,
+ * favicon, the site styles) with three deliberate differences: every page is
+ * `noindex, follow` with a canonical to itself, there is no structured data
+ * (nothing indexes it), and the header and footer are the stripped landing
+ * versions. The consent banner is the site's own, so analytics stay opt-in
+ * here exactly as everywhere else. No script module is loaded: importing
+ * src/scripts/reveal.ts here would make Vite split it out of MainLayout's
+ * inline script on every other page. For the same reason global.css is
+ * pulled in through the <style> block in the head, not a frontmatter import:
+ * a second importer makes Vite split global.css into a shared chunk and adds
+ * a stylesheet link to every page of the site. The style block keeps a copy
+ * of global.css in this layout's own CSS, which only /lp/ pages load.
+ *
+ * Landing events (B2), all through window.ffmTrack, so they queue until the
+ * visitor accepts analytics and are dropped if they decline:
+ *   lp_view       { lp, physician }      once, on load
+ *   lp_cta_click  { lp, placement, target: 'form' }
+ *                 a[data-lp-cta] (header, hero) or any link to #meet-greet
+ *                 inside [data-lp-placement]
+ *   tel_click     { lp, placement }      every tel: link on the page
+ *   lp_nav_click  { label }              a[data-lp-nav]: the header's logo
+ *                 (label "logo", to the homepage), the page's "About the
+ *                 practice" link (label "about") and the footer's "Visit our
+ *                 full website" (label "site", to the homepage). No lp
+ *                 parameter, by order.
+ * `lp` is the entry's opaque code; `physician` its short key. Neither names
+ * a condition. form_start, generate_lead and meetgreet_* are untouched.
+ */
+import LpHeader from '../components/landing/LpHeader.astro';
+import LpFooter from '../components/landing/LpFooter.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import Attribution from '../components/Attribution.astro';
+
+export interface FooterOffice {
+  name: string; street: string; city: string; state: string; zip: string;
+  /** Optional, from the same locations entry: the office's number, its directions link, its hours. */
+  phone?: string;
+  directionsUrl?: string;
+  hours?: { day: string; open: string; close: string }[];
+}
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  /** The office the page sends people to; its address, directions, number and hours close the page. */
+  office: FooterOffice;
+  /** Where the header button goes: the form on the page. */
+  ctaHref?: string;
+  ctaLabel?: string;
+  /** The entry's code (the URL segment) and physician key, for the landing events. */
+  lpCode: string;
+  lpPhysician: string;
+  /** The entry's form source, for the attribution record (Attribution.astro). */
+  lpSource?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = 'https://www.forwardfamilymedicine.com/images/og-image.png',
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
+  office,
+  ctaHref = '#meet-greet',
+  ctaLabel,
+  lpCode,
+  lpPhysician,
+  lpSource = '',
+} = Astro.props;
+
+const siteUrl = 'https://www.forwardfamilymedicine.com';
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <!-- Always: an ad destination, never a search result. The sitemap filter in
+       astro.config.mjs leaves /lp/ out as well. -->
+  <meta name="robots" content="noindex, follow" />
+
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content={String(ogImageWidth)} />
+  <meta property="og:image:height" content={String(ogImageHeight)} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Forward Family Medicine" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <Attribution lpSource={lpSource} />
+  <style is:global>@import '../styles/global.css';</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <LpHeader ctaHref={ctaHref} ctaLabel={ctaLabel} />
+  <main id="main-content">
+    <slot />
+  </main>
+  <LpFooter office={office} />
+  <!-- pixel: the Meta Pixel may load here, and only here, once advertising
+       consent is saved and PUBLIC_META_PIXEL_ID is set (ConsentBanner). -->
+  <ConsentBanner pixel={true} />
+  <script is:inline define:vars={{ LP_CODE: lpCode, LP_PHYSICIAN: lpPhysician }}>
+    (function () {
+      function track(name, params) { if (window.ffmTrack) window.ffmTrack(name, params); }
+      function placementOf(el, attr) {
+        var own = el.getAttribute(attr);
+        if (own) return own;
+        var wrap = el.closest('[data-lp-placement]');
+        return wrap ? wrap.getAttribute('data-lp-placement') : 'body';
+      }
+      track('lp_view', { lp: LP_CODE, physician: LP_PHYSICIAN });
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var tel = t.closest('a[href^="tel:"]');
+        if (tel) { track('tel_click', { lp: LP_CODE, placement: placementOf(tel, 'data-lp-tel') }); return; }
+        var nav = t.closest('a[data-lp-nav]');
+        if (nav) { track('lp_nav_click', { label: nav.getAttribute('data-lp-nav') }); return; }
+        var cta = t.closest('a[data-lp-cta], [data-lp-placement] a[href="#meet-greet"]');
+        if (cta) track('lp_cta_click', { lp: LP_CODE, placement: placementOf(cta, 'data-lp-cta'), target: 'form' });
+      });
+    })();
+  </script>
+</body>
+</html>

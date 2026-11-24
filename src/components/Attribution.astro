@@ -1,0 +1,133 @@
+---
+/**
+ * First-party attribution capture. Placed in the <head> of both layouts, so
+ * window.ffmAttr() exists before any form script runs.
+ *
+ * On every page view the script reads the ad parameters from the URL
+ * (src/data/attribution.ts lists them). When at least one is present and no
+ * stored record is standing, it stores them with the landing path and the
+ * referrer under localStorage[ATTR_KEY] for ATTR_TTL_DAYS (first touch: a
+ * later arrival within that window does not replace the record). Whether a
+ * record may be stored at all is ATTR_STORAGE, the one switch in that file.
+ *
+ * window.ffmAttr() returns what a form should send: the stored record when
+ * there is one, else the current URL's parameters, else empty strings. Every
+ * storage call is wrapped: a browser that refuses localStorage (private mode,
+ * some in-app browsers) still gets the current URL's values on this page.
+ *
+ * No consent is read for the URL itself; under 'consent' the record is
+ * written only while the saved choice has optional analytics on (cookie
+ * ffm_consent "v2.a1.*"), and the script listens for the banner's
+ * ffm:consent event to store the pending values if the visitor turns
+ * analytics on during this page view.
+ *
+ * A landing page (LandingLayout) passes its entry's form source. It rides
+ * along in the record under ATTR_LP_FIELDS, written only when the record
+ * itself is written, read by the main-site form. Elsewhere it is an empty
+ * string.
+ */
+import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS, ATTR_LP_FIELDS } from '../data/attribution';
+
+export interface Props {
+  /** Landing pages only: the entry's form source ("lp-..."). */
+  lpSource?: string;
+}
+const { lpSource = '' } = Astro.props;
+const ALL_FIELDS = [...ATTR_FIELDS, ...ATTR_LP_FIELDS];
+---
+
+<script is:inline define:vars={{ ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ALL_FIELDS, LP_SOURCE: lpSource }}>
+  (function () {
+    var TTL_MS = ATTR_TTL_DAYS * 24 * 60 * 60 * 1000;
+
+    function empty() {
+      var o = {};
+      for (var i = 0; i < ALL_FIELDS.length; i++) o[ALL_FIELDS[i]] = '';
+      return o;
+    }
+
+    // The ad parameters on this page's URL, trimmed and capped, or null.
+    function fromUrl() {
+      var q;
+      try { q = new URLSearchParams(location.search); } catch (e) { return null; }
+      var o = null;
+      for (var i = 0; i < ATTR_URL_PARAMS.length; i++) {
+        var v = q.get(ATTR_URL_PARAMS[i]);
+        if (v) {
+          if (!o) o = empty();
+          o[ATTR_URL_PARAMS[i]] = String(v).trim().slice(0, 200);
+        }
+      }
+      if (o) {
+        o.landing_page = location.pathname;
+        o.first_referrer = (document.referrer || '').slice(0, 300);
+        o.lp_source = LP_SOURCE;
+      }
+      return o;
+    }
+
+    function cookie(name) {
+      var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+      return m ? decodeURIComponent(m[1]) : null;
+    }
+
+    // Option B: the saved choice has optional analytics on.
+    function analyticsConsent() {
+      var raw = cookie('ffm_consent');
+      var m = raw && raw.match(/^v\d+\.a([01])\.p[01]$/);
+      return !!(m && m[1] === '1');
+    }
+
+    function mayStore() {
+      return ATTR_STORAGE === 'necessary' || analyticsConsent();
+    }
+
+    function readStored() {
+      try {
+        var raw = localStorage.getItem(ATTR_KEY);
+        if (!raw) return null;
+        var rec = JSON.parse(raw);
+        if (!rec || typeof rec.ts !== 'number') return null;
+        if (Date.now() - rec.ts > TTL_MS) { localStorage.removeItem(ATTR_KEY); return null; }
+        return rec;
+      } catch (e) { return null; }
+    }
+
+    function store(o) {
+      try {
+        var rec = {};
+        for (var i = 0; i < ALL_FIELDS.length; i++) rec[ALL_FIELDS[i]] = o[ALL_FIELDS[i]] || '';
+        rec.ts = Date.now();
+        localStorage.setItem(ATTR_KEY, JSON.stringify(rec));
+        return true;
+      } catch (e) { return false; }
+    }
+
+    var current = fromUrl();
+    var pending = null;
+    if (current && !readStored()) {
+      if (mayStore()) store(current);
+      else pending = current;
+    }
+
+    // Option B: the visitor turns analytics on during this page view.
+    if (pending) {
+      document.addEventListener('ffm:consent', function (e) {
+        if (pending && e.detail && e.detail.analytics === true && !readStored()) {
+          store(pending);
+          pending = null;
+        }
+      });
+    }
+
+    // What a form sends. Stored first touch wins; this URL's values otherwise.
+    // lp_source is for the form's own source field, not for the hidden
+    // attribution fields (none carries its name).
+    window.ffmAttr = function () {
+      var src = readStored() || current || empty();
+      var o = empty();
+      for (var i = 0; i < ALL_FIELDS.length; i++) o[ALL_FIELDS[i]] = src[ALL_FIELDS[i]] || '';
+      return o;
+    };
+  })();
+</script>

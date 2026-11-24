@@ -22,6 +22,9 @@ jobs:
       - run: npm run build
         env:
           PUBLIC_GOOGLE_SCRIPT_URL: ${{ secrets.PUBLIC_GOOGLE_SCRIPT_URL }}
+          # Repository variable, not a secret (the ID is public in page
+          # source). Unset means empty, and an empty ID never loads the Pixel.
+          PUBLIC_META_PIXEL_ID: ${{ vars.PUBLIC_META_PIXEL_ID }}
       # Content-preservation check for the composed /local/ pages: every link,
       # FAQ, paragraph and kept practical line from the source markdown must
       # appear in the built page. No --baseline in CI; there is no prior build.

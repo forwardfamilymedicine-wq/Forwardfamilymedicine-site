@@ -1,0 +1,410 @@
+---
+/**
+ * Paid-ad landing pages: /lp/<code>/ (for example /lp/k4/), one per entry in
+ * the landing collection (src/content/landing). The page has one job, a meet
+ * and greet request, and its shape is the schema's and nothing more: hero,
+ * exactly three proof tiles, "what you get" (at most four sentences), the
+ * physician's note as a pull quote, pricing, the form, up to three FAQs.
+ * The code is opaque: the URL, the canonical, the title and the description
+ * name neither the physician nor a condition, and the build refuses an entry
+ * whose text does (see assertNeutral below). Everything on the page comes
+ * from the entry and the providers and locations collections; the only copy
+ * typed here is the "What you get" and "What membership costs" headings, the
+ * wording around the pricing figures, the "About the practice" link, the FAQ
+ * heading and the hero's "Or call" prefix.
+ *
+ * noindex, follow with a canonical to itself (LandingLayout), left out of the
+ * sitemap (astro.config.mjs), linked from no nav or footer. Drafts render on
+ * `astro dev` only. The form books with the entry's physician straight after
+ * step 1 when `form.skipChooser` is on (MeetGreetForm's `physician` prop).
+ *
+ * No scroll-reveal here, on purpose: LandingLayout loads no script module, so
+ * MainLayout's inline script (reveal, stickyFit) stays inline on every other
+ * page. Nothing on this page moves.
+ */
+import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import LpHero from '../../components/landing/LpHero.astro';
+import RuledList from '../../components/shared/RuledList.astro';
+import FAQSection from '../../components/shared/FAQSection.astro';
+import MeetGreetForm from '../../components/shared/MeetGreetForm.astro';
+import { INDIVIDUAL_MONTHLY, FAMILY_TIERS, PRICING_ROWS } from '../../data/membershipPricing';
+import { assertPricingMatchesMembershipPage } from '../../utils/pricingCheck';
+import { BOOKING_PAGES } from '../../data/bookingPages';
+
+export async function getStaticPaths() {
+  const all = await getCollection('landing');
+  // One code, one page: checked over every entry, drafts included.
+  const byCode = new Map<string, string>();
+  for (const e of all) {
+    const prev = byCode.get(e.data.code);
+    if (prev) throw new Error(`[lp] code "${e.data.code}" is used by both ${prev} and ${e.id}.`);
+    byCode.set(e.data.code, e.id);
+  }
+  // The page names its `physician` (the hero, the note, the form's office
+  // line) and the form books with `bookingPhysician`: the same person, or the
+  // build stops. Drafts included, so a wrong entry cannot wait in review.
+  for (const e of all) {
+    const code = e.data.bookingPhysician;
+    if (!code) continue;
+    const page = BOOKING_PAGES.find((b) => b.code === code);
+    if (!page || !e.data.physician.id.includes(page.eventKey)) {
+      throw new Error(`[lp] ${e.id}: bookingPhysician "${code}" books with ${page ? page.cardTitle : 'no booking page'}, but the entry's physician is "${e.data.physician.id}". They must be the same person.`);
+    }
+  }
+  // A draft is a page in review: it exists on `astro dev` and nowhere else.
+  const entries = all.filter((e) => import.meta.env.DEV || !e.data.draft);
+  return entries.map((entry) => ({
+    params: { code: entry.data.code },
+    props: { entry },
+  }));
+}
+
+interface Props { entry: CollectionEntry<'landing'> }
+const { entry } = Astro.props;
+const d = entry.data;
+const DEV = import.meta.env.DEV;
+
+const provider = await getEntry(d.physician);
+if (!provider) throw new Error(`[lp] ${entry.id}: no providers entry "${d.physician.id}".`);
+const p = provider.data;
+if (!p.slug.includes(d.physicianKey)) {
+  throw new Error(`[lp] ${entry.id}: physicianKey "${d.physicianKey}" does not match the provider "${p.slug}".`);
+}
+
+// What leaves the page: the URL (and so the canonical), the title and the
+// description reach the ad platform, link previews and browser history. None
+// of them may name a physician or a condition. The page body can and does.
+const providers = await getCollection('providers');
+const PHYSICIAN_TERMS = providers
+  .flatMap((pr) => pr.data.name.toLowerCase().split(/\s+/))
+  .concat(['dr', 'doctor', 'landi', 'lieberman', 'bigley']);
+const CLINICAL_TERMS = [
+  'menopause', 'perimenopause', 'midlife', 'hormone', 'hormones', 'hrt', 'estrogen', 'testosterone',
+  'osteoporosis', 'diabetes', 'obesity', 'weight', 'thyroid', 'cardiovascular', 'hypertension',
+  'cholesterol', 'depression', 'anxiety', 'cancer', 'fertility', 'libido', 'sexual',
+  'lifestyle medicine', 'longevity', 'dexa',
+];
+function assertNeutral(label: string, text: string) {
+  const hay = ` ${text.toLowerCase().replace(/[^a-z0-9]+/g, ' ')} `;
+  const hit = [...PHYSICIAN_TERMS, ...CLINICAL_TERMS].find((t) => hay.includes(` ${t} `));
+  if (hit) {
+    throw new Error(`[lp] ${entry.id}: the ${label} contains "${hit}". The URL, canonical, title and description must name neither a physician nor a condition.`);
+  }
+}
+const pathname = `/lp/${d.code}/`;
+assertNeutral('URL', pathname);
+assertNeutral('title', d.seo.title);
+assertNeutral('description', d.seo.description);
+
+const office = (await getCollection('locations')).find((l) => l.data.slug === d.office);
+if (!office) throw new Error(`[lp] ${entry.id}: no locations entry has the slug "${d.office}".`);
+if (office.data.status !== 'open') {
+  throw new Error(`[lp] ${entry.id}: the ${office.data.name} office is "${office.data.status}"; a landing page cannot send anyone there.`);
+}
+
+// The physician's note (the markdown body). Empty, or still carrying TODO, it
+// is a placeholder: the note section is left out of the page on every build,
+// and in development the draft banner shows the placeholder text instead.
+const noteBody = (entry.body ?? '').trim();
+const notePlaceholder = noteBody === '' || /\bTODO\b/.test(noteBody);
+const { Content } = await render(entry);
+
+const lastName = p.name.trim().split(/\s+/).pop() ?? p.name;
+const shortName = `Dr. ${lastName}`;
+const credentialedName = `Dr. ${p.name}, ${p.credentials}`;
+
+const FORM_HREF = '#meet-greet';
+const PHONE = { href: 'tel:+12156457044', text: '(215) 645-7044' };
+
+// What membership costs: the figures are src/data/membershipPricing.ts, and
+// the build stops here if they differ from the ones on /membership/. The
+// line above the table is built from the same figures.
+assertPricingMatchesMembershipPage();
+const perPerson = [INDIVIDUAL_MONTHLY, ...FAMILY_TIERS.map((t) => t.perPerson)];
+const PRICE_LINE = `Membership is $${Math.min(...perPerson)} to $${Math.max(...perPerson)} per person per month, and visits are included.`;
+const INCLUDED_LINE = 'Included: unlimited visits with no copay, same-day and next-day appointments, one to two hour visits, direct phone, text, and email access, preventive and chronic care, telehealth, and Lifestyle Medicine.';
+
+const ogImage = d.seo.ogImage ? new URL(d.seo.ogImage.src, Astro.site).href : undefined;
+// The footer's office block, all from the locations entry: name, address,
+// the office's own number and hours, and the same directions link the office's
+// page builds (src/pages/locations/[slug].astro).
+const destination = `${office.data.addressStreet}, ${office.data.addressCity}, ${office.data.addressState} ${office.data.addressZip}`;
+const footerOffice = {
+  name: office.data.name,
+  street: office.data.addressStreet,
+  city: office.data.addressCity,
+  state: office.data.addressState,
+  zip: office.data.addressZip,
+  phone: office.data.phone,
+  directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Forward Family Medicine, ${destination}`)}`,
+  hours: office.data.hours,
+};
+---
+
+<LandingLayout
+  title={d.seo.title}
+  description={d.seo.description}
+  ogImage={ogImage}
+  ogImageWidth={d.seo.ogImage?.width}
+  ogImageHeight={d.seo.ogImage?.height}
+  office={footerOffice}
+  ctaHref={FORM_HREF}
+  ctaLabel={d.hero.ctaLabel}
+  lpCode={d.code}
+  lpPhysician={d.physicianKey}
+  lpSource={d.source}
+>
+  {DEV && (d.todo.length > 0 || notePlaceholder) && (
+    <aside class="lp-todo" aria-label="Open items, shown in development only">
+      <div class="rd-wrap">
+        <p class="lp-todo__t">Draft. Open before this page can publish:</p>
+        {d.todo.length > 0 && <ul class="lp-todo__list">{d.todo.map((t) => <li>{t}</li>)}</ul>}
+        {notePlaceholder && (
+          <p class="lp-todo__note"><strong>Physician note, placeholder, not rendered on the page:</strong> {noteBody || '(empty)'}</p>
+        )}
+      </div>
+    </aside>
+  )}
+
+  <LpHero
+    headline={d.hero.headline}
+    supporting={d.hero.supporting}
+    cta={{ label: d.hero.ctaLabel, href: FORM_HREF }}
+    phone={PHONE}
+    photo={p.photo}
+    photoAlt={p.photoAlt}
+    name={credentialedName}
+    role={p.title}
+  />
+
+  <section class="lp-sec lp-sec--white lp-tiles-sec" aria-label="Why patients choose this care">
+    <ul class="rd-wrap lp-tiles">
+      {d.tiles.map((t) => (
+        <li class="lp-tile">
+          <p class="lp-tile__t rd-serif">{t.phrase}</p>
+          <p class="lp-tile__s">{t.line}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="lp-sec lp-sec--sage">
+    <div class="rd-wrap lp-split">
+      <div class="lp-stack lp-split__head">
+        <h2 class="rd-h2 lp-h2">What you get</h2>
+        {d.whatYouGetLead && <p class="lp-p lp-split__lead">{d.whatYouGetLead}</p>}
+      </div>
+      <RuledList size="md" class="lp-list">
+        {d.whatYouGet.map((s) => <li>{s}</li>)}
+      </RuledList>
+    </div>
+  </section>
+
+  {!notePlaceholder && (
+    <section class="lp-sec lp-sec--cream">
+      <div class="rd-wrap">
+      <div class="lp-note">
+        <h2 class="rd-h2 lp-h2">{d.noteHeading ?? `A note from ${shortName}`}</h2>
+        <figure class="lp-quote">
+          {p.photo && (
+            <Image
+              src={p.photo}
+              alt=""
+              width={240}
+              height={240}
+              widths={[120, 240]}
+              sizes="120px"
+              format="webp"
+              quality={82}
+              loading="lazy"
+              class="lp-quote__photo"
+            />
+          )}
+          <blockquote class="lp-quote__body">
+            <Content />
+          </blockquote>
+          <figcaption class="lp-quote__who"><strong>{credentialedName}</strong>{p.title}</figcaption>
+        </figure>
+        <a href="/about/" class="lp-link" data-lp-nav="about">About the practice</a>
+      </div>
+      </div>
+    </section>
+  )}
+
+  <section class="lp-sec lp-sec--white">
+    <div class="rd-wrap lp-split">
+      <div class="lp-stack lp-split__head">
+        <h2 class="rd-h2 lp-h2">What membership costs</h2>
+        <p class="lp-p">{PRICE_LINE}</p>
+      </div>
+      <div class="lp-price">
+        <p class="lp-price__head">Per person, per month</p>
+        <RuledList size="md" class="lp-price__rows">
+          {PRICING_ROWS.map((r) => (
+            <li class="lp-price__row">
+              <span class="lp-price__who">{r.label}</span>
+              <span class="lp-price__amt rd-serif">{r.price}</span>
+            </li>
+          ))}
+        </RuledList>
+        <p class="lp-price__inc">{INCLUDED_LINE}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-sec lp-sec--sage lp-form" id="meet-greet" data-lp-placement="form">
+    <div class="rd-wrap">
+      <div class="lp-form__col">
+        <MeetGreetForm
+          source={d.source}
+          physician={d.form.skipChooser ? d.bookingPhysician : undefined}
+          office={d.form.lockOffice ? d.office : undefined}
+          officeName={office.data.name}
+          physicianName={d.form.skipChooser ? `Dr. ${p.name}` : undefined}
+          gaSource={d.code}
+          topic={d.topic}
+          heading={d.form.heading}
+          subline={d.form.subline}
+        />
+      </div>
+    </div>
+  </section>
+
+  {d.faqs.length > 0 && (
+    <div class="lp-faq">
+      <FAQSection faqs={d.faqs} headline="Common questions" schema={false} />
+    </div>
+  )}
+</LandingLayout>
+
+<style>
+  /* Development only: the entry's open items, so a reviewer sees them on the page. */
+  .lp-todo { background: var(--sage-50); border-bottom: 1px solid var(--gold); padding: 14px 0; font-size: 13px; line-height: 1.5; color: var(--text-700); }
+  .lp-todo__t { margin: 0 0 4px; font-weight: 600; color: var(--gold-text); }
+  .lp-todo__list { margin: 0; padding-left: 18px; }
+  .lp-todo__note { margin: 8px 0 0; max-width: 90ch; }
+  .lp-todo__note strong { font-weight: 600; color: var(--gold-text); }
+
+  /* Section rhythm: cream (linen), white (lighter cream), the pale sage wash,
+     in turn; 88px of vertical padding at desktop, 48px on a phone. Green is
+     for the buttons and the form's focus ring only. Nothing moves. */
+  .lp-sec { padding: 88px 0; }
+  .lp-sec--cream { background: var(--linen); }
+  .lp-sec--white { background: var(--cream-50); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .lp-sec--sage { background: var(--sage-50); }
+  .lp-stack { display: flex; flex-direction: column; gap: 20px; }
+  .lp-h2 { max-width: 20ch; }
+  .lp-p { margin: 0; font-size: 18px; line-height: 1.65; color: var(--text-900); max-width: 60ch; }
+  .lp-link {
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline-dot);
+    padding-bottom: 2px;
+  }
+  .lp-link:hover { border-color: var(--forest); }
+
+  /* Proof tiles: three columns parted by hairlines, no cards. The first tile
+     leads: its phrase is set larger, nothing else marks it out. */
+  .lp-tiles-sec { padding: 56px 0; }
+  .lp-tiles { list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lp-tile { padding: 8px 36px 10px; border-left: 1px solid var(--hairline-strong); }
+  .lp-tile:first-child { padding-left: 0; border-left: 0; }
+  .lp-tile:last-child { padding-right: 0; }
+  .lp-tile p { margin: 0; }
+  .lp-tile__t { font-size: 26px; line-height: 1.2; color: var(--forest); letter-spacing: -0.01em; }
+  .lp-tile:first-child .lp-tile__t { font-size: 34px; line-height: 1.12; letter-spacing: -0.015em; }
+  .lp-tile__s { margin-top: 10px !important; font-size: 15px; line-height: 1.55; color: var(--text-600); max-width: 34ch; }
+
+  /* "What you get" and "What membership costs": the heading column (with its
+     lead line) on the left, the list or the table on the right, from 820px up;
+     the heading column stays pinned below the sticky header while the right
+     column scrolls past (the grid row is as tall as the right column, the
+     column itself is start-aligned, and no ancestor clips overflow). Below
+     820px the two stack, heading first, nothing pinned. */
+  .lp-split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+  .lp-split__head { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; gap: 16px; }
+  .lp-split__lead { font-size: 17px; }
+  :global(.lp-list > li) { padding: 18px 0; font-size: 18px; line-height: 1.6; color: var(--text-900); max-width: 60ch; }
+  @media (max-width: 1023px) {
+    .lp-split { gap: 48px; }
+  }
+  @media (max-width: 819px) {
+    .lp-split { grid-template-columns: 1fr; gap: 28px; }
+    .lp-split__head { position: static; }
+  }
+
+  /* The note as a pull quote: the portrait, the words in serif, the name. */
+  .lp-note { display: flex; flex-direction: column; gap: 36px; max-width: 760px; }
+  .lp-quote { margin: 0; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px 36px; align-items: start; }
+  .lp-quote :global(.lp-quote__photo) { display: block; width: 120px; height: 120px; object-fit: cover; object-position: 50% 18%; border-radius: 2px; grid-row: 1 / 3; }
+  .lp-quote__body { margin: 0; }
+  .lp-quote__body :global(p) { margin: 0 0 14px; font-family: var(--font-heading); font-size: 24px; line-height: 1.4; color: var(--forest); max-width: 44ch; }
+  .lp-quote__body :global(p:last-child) { margin-bottom: 0; }
+  /* Typographic quotation marks from the template, never from the note's
+     text: the opening mark hangs outside the text's left edge at desktop (a
+     negative indent on the first paragraph), the closing mark follows the
+     last word. On a phone both sit inline so nothing hangs past the edge. */
+  .lp-quote__body :global(p:first-child) { text-indent: -0.5em; }
+  .lp-quote__body :global(p:first-child)::before { content: "\201C"; }
+  .lp-quote__body :global(p:last-child)::after { content: "\201D"; }
+  .lp-quote__body :global(a:not([class])) { color: var(--forest); border-bottom: 1px solid var(--hairline-dot); }
+  .lp-quote__who { grid-column: 2; font-size: 14px; line-height: 1.5; color: var(--text-600); }
+  .lp-quote__who strong { display: block; font-size: 15px; font-weight: 600; color: var(--forest); }
+
+  /* Pricing: hairline rows, serif figures, nothing heavy. */
+  .lp-price__head { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-600); text-align: right; }
+  :global(.lp-price__rows > li.lp-price__row) { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; font-size: 17px; }
+  .lp-price__who { color: var(--text-700); }
+  .lp-price__amt { font-size: 24px; line-height: 1.1; color: var(--forest); white-space: nowrap; }
+  .lp-price__inc { margin: 20px 0 0; font-size: 15px; line-height: 1.65; color: var(--text-600); }
+
+  /* The form: the shared card, on the sage wash, with a soft shadow. */
+  .lp-form__col { max-width: 820px; margin: 0 auto; }
+  .lp-form :global(.form-wrap) { box-shadow: var(--shadow-lg); }
+
+  /* The shared FAQ section, on this page's rhythm and without its sage marks. */
+  .lp-faq :global(.faq-section) { padding: 88px 0; background: var(--linen); }
+  .lp-faq :global(.faq-mark) { color: var(--forest); }
+  .lp-faq :global(.faq-item summary:hover .faq-q) { color: var(--text-700); }
+  .lp-faq :global(.faq-item summary) { font-size: 17px; }
+  .lp-faq :global(.faq-answer p) { font-size: 17px; max-width: 60ch; }
+
+  @media (max-width: 860px) {
+    .lp-sec { padding: 48px 0; }
+    .lp-tiles-sec { padding: 22px 0 36px; }
+    .lp-tiles { grid-template-columns: 1fr; }
+    .lp-tile { padding: 20px 0; border-left: 0; border-top: 1px solid var(--hairline-strong); }
+    .lp-tile:first-child { padding-top: 0; border-top: 0; }
+    .lp-tile:last-child { padding-bottom: 0; }
+    .lp-tile__t { font-size: 23px; }
+    .lp-tile:first-child .lp-tile__t { font-size: 29px; }
+    .lp-h2 { max-width: none; }
+    .lp-p { font-size: 17px; }
+    :global(.lp-list > li) { font-size: 17px; padding: 16px 0; }
+    .lp-note { gap: 28px; }
+    .lp-quote { grid-template-columns: 1fr; gap: 16px; }
+    .lp-quote :global(.lp-quote__photo) { width: 96px; height: 96px; grid-row: auto; }
+    .lp-quote__body :global(p) { font-size: 21px; }
+    .lp-quote__body :global(p:first-child) { text-indent: 0; }
+    .lp-quote__who { grid-column: 1; }
+    /* The About link as a 45px tap target: the underline becomes a text
+       decoration so the padding does not push it away from the words. */
+    .lp-link {
+      display: inline-block;
+      padding: 9px 0 8px;
+      border-bottom: 0;
+      text-decoration: underline;
+      text-decoration-color: var(--hairline-dot);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+    .lp-link:hover { text-decoration-color: var(--forest); }
+    .lp-price__amt { font-size: 22px; }
+    .lp-faq :global(.faq-section) { padding: 48px 0; }
+  }
+</style>

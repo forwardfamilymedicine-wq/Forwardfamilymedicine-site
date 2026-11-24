@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const baseSchema = z.object({
@@ -196,4 +196,80 @@ const team = defineCollection({
   }),
 });
 
-export const collections = { blog, local, seo, lifestyle, providers, locations, team };
+// Paid-ad landing pages, one entry per page, rendered by
+// src/pages/lp/[code].astro at /lp/<code>/ (for example /lp/k4/).
+// Frontmatter is the page's whole configuration; the body is the physician's
+// note in their own voice. The page has one job, a meet and greet request,
+// and its shape is fixed here: hero, exactly three proof tiles, up to four
+// "what you get" sentences, the note, pricing, the form, up to three FAQs.
+// A draft renders on `astro dev` only, so a page can be built and reviewed
+// before it exists in production. The URL, title and description are what an
+// ad platform receives when the page is visited or shared, so `code` is
+// opaque and `seo` names neither the physician nor a condition (the route
+// checks this at build); the condition-level `topic` is first-party only.
+const landing = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/landing' }),
+  schema: ({ image }) => z.object({
+    physician: reference('providers'),
+    /**
+     * The URL: /lp/<code>/. Two to eight lowercase letters and digits, starting
+     * with a letter, unique across entries (checked at build). Opaque on
+     * purpose: it is also the GA4 `lp` parameter of the landing events.
+     */
+    code: z.string().regex(/^[a-z][a-z0-9]{1,7}$/),
+    /** The physician's short key: checked against the provider's slug at build; the GA4 `physician` parameter. */
+    physicianKey: z.enum(['landi', 'lieberman', 'bigley']),
+    /** What the page is about, for the intake sheet and the team; not rendered, not in the URL. */
+    topic: z.string(),
+    /** The form's hidden source value and the GA4 `source` parameter; `lp-` plus the key. */
+    source: z.string().regex(/^lp-[a-z0-9-]+$/),
+    /** The physician the form books with (src/data/bookingPages.ts). Required when the chooser is skipped. */
+    bookingPhysician: z.enum(['BL', 'PL']).optional(),
+    /** The open office this page sends people to; its address is in the footer. */
+    office: z.enum(['wayne', 'malvern']),
+    draft: z.boolean().default(true),
+    /** Open items shown on the page in dev. A page cannot publish while any remain. */
+    todo: z.array(z.string()).default([]),
+    /** The hero: a headline (two lines at desktop), one supporting sentence, the button. The photo is the physician's. */
+    hero: z.object({
+      headline: z.string(),
+      supporting: z.string(),
+      ctaLabel: z.string().default('Schedule a Free Meet & Greet'),
+    }),
+    /** Exactly three proof tiles: a short serif phrase and one small line each. Facts already on the site only. */
+    tiles: z.array(z.object({ phrase: z.string().min(1), line: z.string().min(1) })).length(3),
+    /** "What you get": one sentence per item, at most four. */
+    whatYouGet: z.array(z.string().min(1)).min(1).max(4),
+    /** One short sentence under the "What you get" heading, desktop only; one line, so at most 60 characters. */
+    whatYouGetLead: z.string().min(1).max(60).optional(),
+    /** Heading over the physician's note (the markdown body). Default "A note from Dr. X". */
+    noteHeading: z.string().optional(),
+    /** At most three. */
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).max(3).default([]),
+    form: z.object({
+      heading: z.string().optional(),
+      subline: z.string().optional(),
+      /** Book with `bookingPhysician` straight after the form, no physician step. */
+      skipChooser: z.boolean().default(true),
+      /** Preselect and hide the Preferred office field. */
+      lockOffice: z.boolean().default(true),
+    }).default({ skipChooser: true, lockOffice: true }),
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+      ogImage: image().optional(),
+    }),
+  }).superRefine((d, ctx) => {
+    if (d.form.skipChooser && !d.bookingPhysician) {
+      ctx.addIssue({ code: 'custom', path: ['bookingPhysician'], message: 'skipChooser needs bookingPhysician (BL or PL)' });
+    }
+    if (!d.draft && d.todo.length > 0) {
+      ctx.addIssue({ code: 'custom', path: ['todo'], message: 'a published page cannot have open todo items' });
+    }
+    if (!d.draft && /\bTODO\b/.test(JSON.stringify(d))) {
+      ctx.addIssue({ code: 'custom', path: ['draft'], message: 'a published page cannot contain "TODO"' });
+    }
+  }),
+});
+
+export const collections = { blog, local, seo, lifestyle, providers, locations, team, landing };

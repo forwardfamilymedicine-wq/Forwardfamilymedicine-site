@@ -1,0 +1,116 @@
+---
+/**
+ * Landing-page hero: a large serif headline, one supporting sentence, the one
+ * button (to the form on the page), the phone number, and the physician's
+ * portrait cropped tight beside the copy. On a phone the copy comes first
+ * (headline, sentence, button, number) and the portrait follows. No eyebrow,
+ * no card, no motion.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+export interface Props {
+  headline: string;
+  supporting: string;
+  cta: { label: string; href: string };
+  phone: { href: string; text: string };
+  photo?: ImageMetadata;
+  photoAlt: string;
+  /** "Dr. Brian Landi, DO" and "Family Medicine Physician", under the portrait. */
+  name: string;
+  role: string;
+}
+const { headline, supporting, cta, phone, photo, photoAlt, name, role } = Astro.props;
+---
+
+<section class="lp-hero">
+  <div class="rd-wrap lp-hero__grid">
+    <div class="lp-hero__copy">
+      <h1 class="rd-h1 lp-hero__h1">{headline}</h1>
+      <p class="lp-hero__p">{supporting}</p>
+      <div class="lp-hero__actions">
+        <a href={cta.href} class="btn-forest lp-hero__cta" data-lp-cta="hero">{cta.label}</a>
+        <a href={phone.href} class="lp-hero__phone" data-lp-tel="hero">Or call {phone.text}</a>
+      </div>
+    </div>
+
+    {photo && (
+      <figure class="lp-hero__figure">
+        <Image
+          src={photo}
+          alt={photoAlt}
+          width={560}
+          height={700}
+          widths={[280, 560, 840]}
+          sizes="(max-width: 860px) calc(100vw - 40px), 280px"
+          format="webp"
+          quality={82}
+          loading="eager"
+          fetchpriority="high"
+          class="lp-hero__photo"
+        />
+        <figcaption class="lp-hero__cap"><strong>{name}</strong><span class="lp-hero__sep">, </span>{role}</figcaption>
+      </figure>
+    )}
+  </div>
+</section>
+
+<style>
+  .lp-hero { background: var(--linen); padding: 80px 0 88px; }
+  .lp-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 48px;
+    align-items: center;
+  }
+  .lp-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
+  /* Two lines at desktop for a headline of up to about 72 characters
+     (the current one is 60). */
+  .lp-hero__h1 { font-size: 40px; line-height: 1.1; text-wrap: balance; }
+  .lp-hero__p { margin: 0; font-size: 18px; line-height: 1.65; color: var(--text-900); max-width: 60ch; }
+  .lp-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 4px; }
+  .lp-hero__phone {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline-dot);
+    padding-bottom: 2px;
+  }
+  .lp-hero__phone:hover { border-color: var(--forest); }
+
+  .lp-hero__figure { margin: 0; width: 100%; justify-self: end; }
+  .lp-hero :global(.lp-hero__photo) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 18%;
+    border-radius: 2px;
+  }
+  .lp-hero__cap { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: var(--text-600); }
+  .lp-hero__cap strong { display: block; font-size: 15px; font-weight: 600; color: var(--forest); }
+  /* The comma between name and role is text, shown only where they share a line. */
+  .lp-hero__sep { display: none; }
+
+  /* A phone: headline, sentence, button, number, then the portrait in a
+     short 3:2 crop (two thirds of the square it was) with the name and role
+     on one line, so the button and the first proof tile share the first
+     screen with the headline (its phrase ends inside 844px with the bottom
+     padding at 24px). 34px sets the current headline in three lines. */
+  @media (max-width: 860px) {
+    .lp-hero { padding: 28px 0 24px; }
+    .lp-hero__grid { grid-template-columns: 1fr; gap: 24px; }
+    .lp-hero__copy { gap: 18px; }
+    .lp-hero__h1 { font-size: 34px; line-height: 1.1; }
+    .lp-hero__p { font-size: 17px; }
+    .lp-hero__actions { width: 100%; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 0; }
+    .lp-hero__cta { width: 100%; }
+    .lp-hero__figure { justify-self: stretch; }
+    .lp-hero :global(.lp-hero__photo) { aspect-ratio: 3 / 2; object-position: 50% 22%; }
+    .lp-hero__cap { margin-top: 10px; }
+    .lp-hero__cap strong { display: inline; }
+    .lp-hero__sep { display: inline; }
+  }
+</style>

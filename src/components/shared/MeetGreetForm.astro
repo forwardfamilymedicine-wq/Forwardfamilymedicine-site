@@ -1,6 +1,7 @@
 ---
 // Meet & Greet interest form — Google Sheets via Apps Script
 import { BOOKING_PAGES, bookingEnabled } from '../../data/bookingPages';
+import { ATTR_FIELDS } from '../../data/attribution';
 const CONTACT_EMAIL = 'information@forwardfamilymedicine.com';
 const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // source is resolved client-side from ?source= query param (static output mode)
@@ -10,14 +11,58 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // physician and embeds that physician's Google booking page. With either
 // value empty, nothing below is rendered and the success state is unchanged.
 const BOOKING_ENABLED = bookingEnabled();
-const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, shareUrl, embedSrc, eventKey }) => ({ code, cardTitle, shareUrl, embedSrc, eventKey }));
+const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, bookLabel, shareUrl, embedSrc, eventKey }) => ({ code, cardTitle, bookLabel, shareUrl, embedSrc, eventKey }));
 
 // The two-step progress line above the card. On by default wherever the form
 // renders; a page that must not show it passes stepper={false}. It is also
 // left out when self-scheduling is off, because there is no second step then.
-export interface Props { stepper?: boolean }
-const { stepper = true } = Astro.props;
+export interface Props {
+  stepper?: boolean;
+  // Landing pages (src/pages/lp) pass the rest. Every one is optional, and the
+  // defaults keep the Contact and New Patients pages exactly as they were.
+  /** The hidden source field's default. A ?source= query still overrides it. */
+  source?: string;
+  /** BL or PL: book with this physician straight after step 1, no chooser. */
+  physician?: 'BL' | 'PL';
+  /** Fix the office: the field becomes a line the visitor reads, not a choice; the value is still sent. */
+  office?: 'wayne' | 'malvern';
+  /** What that line calls the office and the physician ("Malvern", "Dr. Brian Landi"), from the page's
+   *  locations and providers entries. Shown only; neither is sent anywhere. */
+  officeName?: string;
+  physicianName?: string;
+  /** The card's heading and the line under it. */
+  heading?: string;
+  subline?: string;
+  /** Landing pages: what the page is about, for the practice's own sheet only. Never rendered. */
+  topic?: string;
+  /** What GA4 receives as `source` on this page (landing pages pass their code, "k4"). The hidden source field still goes to the sheet. */
+  gaSource?: string;
+}
+const {
+  stepper = true,
+  source = 'standard',
+  physician,
+  office,
+  officeName,
+  physicianName,
+  topic = '',
+  gaSource = '',
+  heading = 'Request Your Free Meet & Greet',
+  subline = 'Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.',
+} = Astro.props;
 const SHOW_STEPPER = stepper && BOOKING_ENABLED;
+if (physician && !BOOKING_PAGES.some((p) => p.code === physician)) {
+  throw new Error(`[MeetGreetForm] physician="${physician}" is not in src/data/bookingPages.ts.`);
+}
+// The client script reads this: '' means the chooser, as before.
+const PRESELECT = physician ?? '';
+// The fixed-office line (landing pages). The office's display name is the
+// page's locations entry; the ternary only covers a caller that passes `office`
+// alone. The physician's name is the providers entry's, and the clause is
+// there only when the page fixes the physician too (otherwise the visitor
+// chooses one in step 2).
+const officeLabel = officeName ?? (office === 'wayne' ? 'Wayne' : office === 'malvern' ? 'Malvern' : '');
+const officeLine = `Your meet and greet will be at our ${officeLabel} office${physicianName ? ` with ${physicianName}` : ''}.`;
 
 // Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
 // without submitting. False in a production build, so the script below never
@@ -36,8 +81,8 @@ const DEV = import.meta.env.DEV;
   )}
 <div class="form-wrap">
   <div class="form-header" id="mg-form-header">
-    <h2>Request Your Free Meet &amp; Greet</h2>
-    <p id="mg-form-sub">Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.</p>
+    <h2>{heading}</h2>
+    <p id="mg-form-sub">{subline}</p>
   </div>
 
   <form id="meetgreet-form" novalidate aria-label="Meet and greet request form">
@@ -130,15 +175,25 @@ const DEV = import.meta.env.DEV;
       </select>
     </div>
 
-    <div class="form-group form-group--office">
-      <label for="preferredOffice">Preferred office</label>
-      <select id="preferredOffice" name="preferredOffice">
-        <option value="">Select…</option>
-        <option value="wayne">Wayne</option>
-        <option value="malvern">Malvern</option>
-        <option value="no-preference">Does not matter</option>
-      </select>
-    </div>
+    <!-- With `office` set (landing pages) the office is the page's: shown as a
+         line the visitor can read but not change, and still sent under the
+         same field name. Without it, the choice as before. -->
+    {office ? (
+      <div class="form-group form-group--full">
+        <p class="form-office">{officeLine}</p>
+        <input type="hidden" id="preferredOffice" name="preferredOffice" value={office} />
+      </div>
+    ) : (
+      <div class="form-group form-group--office">
+        <label for="preferredOffice">Preferred office</label>
+        <select id="preferredOffice" name="preferredOffice">
+          <option value="">Select…</option>
+          <option value="wayne">Wayne</option>
+          <option value="malvern">Malvern</option>
+          <option value="no-preference">Does not matter</option>
+        </select>
+      </div>
+    )}
 
     <div class="form-group form-group--full">
       <label for="referral">How did you hear about us?</label>
@@ -170,7 +225,14 @@ const DEV = import.meta.env.DEV;
     <!-- Honeypot field — hidden from real users, bots fill it in -->
     <input type="text" id="company" name="company" autocomplete="off" style="display:none" tabindex="-1" aria-hidden="true">
     <!-- Source tracking — populated client-side from ?source= query param -->
-    <input type="hidden" name="source" value="standard" />
+    <input type="hidden" name="source" value={source} />
+    {PRESELECT && <input type="hidden" name="physician" value={PRESELECT} />}
+    {topic && <input type="hidden" name="topic" value={topic} />}
+    <!-- First-party attribution (src/components/Attribution.astro): filled on
+         load from window.ffmAttr(), sent with the request, stored on the
+         practice's own sheet. Empty when the visitor arrived without ad
+         parameters. -->
+    {ATTR_FIELDS.map((f) => <input type="hidden" name={f} value="" />)}
 
     <button type="submit" class="btn-forest submit-btn" id="submit-btn">
       Request My Free Meet &amp; Greet
@@ -178,7 +240,7 @@ const DEV = import.meta.env.DEV;
 
     <p class="form-note">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      Your information is never shared or sold.
+      We do not sell your information.
     </p>
   </form>
 
@@ -226,6 +288,16 @@ const DEV = import.meta.env.DEV;
           <iframe id="mg-iframe" title="Booking page" src="about:blank"></iframe>
         </div>
       </div>
+
+      <!-- Step 2c, landing pages on a phone: the embed is too narrow there, and a
+           new tab can only be opened from a tap, never from the form's own
+           success handler. So the visitor taps this button. -->
+      {PRESELECT && (
+        <div id="mg-step-tap" hidden>
+          <p class="mg-body" id="mg-tap-body">Pick a time on the booking page; it opens in a new tab. Google will ask for your name and email once more. That confirms your spot.</p>
+          <a id="mg-tap-btn" class="btn-forest mg-tap-btn" href="#" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      )}
 
       <div class="mg-foot">
         <p class="mg-fallback">Would you rather we call you? No problem. We'll reach out within 24 hours.</p>
@@ -302,6 +374,17 @@ const DEV = import.meta.env.DEV;
     border-color: #c0392b;
   }
   .form-hint { margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text-600); }
+  /* The fixed office (landing pages): the shape of a field, the weight of a note. */
+  .form-office {
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 2px;
+    background: var(--linen);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--text-700);
+  }
   /* iOS Safari centers date text and collapses an empty date field;
      keep it left-aligned at the same height as the other inputs. */
   input[type="date"] { display: block; min-height: 3rem; }
@@ -451,6 +534,8 @@ const DEV = import.meta.env.DEV;
     border-bottom: 1px solid var(--hairline-strong);
     background: var(--linen-50);
   }
+  #mg-step-tap { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+  #mg-step-tap[hidden] { display: none; }
   .mg-foot { margin-top: 24px; display: flex; flex-direction: column; gap: 6px; }
   .mg-fallback, .mg-help { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-700); }
   .mg-help a { color: var(--sage-600); }
@@ -467,6 +552,23 @@ const DEV = import.meta.env.DEV;
     const sourceInput = document.querySelector('input[name="source"]');
     if (sourceInput) sourceInput.value = sourceParam;
   }
+  // Attribution hidden fields, from the stored record or this page's URL.
+  if (window.ffmAttr) {
+    const attr = window.ffmAttr();
+    const mgForm = document.getElementById('meetgreet-form');
+    for (const key in attr) {
+      const el = mgForm && mgForm.querySelector('input[type="hidden"][name="' + key + '"]');
+      if (el) el.value = attr[key];
+    }
+    // A record stored on a landing page carries that page's form source
+    // (lp_source). It fills this form's source only while the field still
+    // says "standard": a landing page's own source and a ?source= override
+    // stand. The physician is never taken from the record.
+    if (mgForm) {
+      const sourceEl = mgForm.querySelector('input[name="source"]');
+      if (sourceEl && sourceEl.value === 'standard' && attr.lp_source) sourceEl.value = attr.lp_source;
+    }
+  }
   const subjectParam = new URLSearchParams(window.location.search).get('subject');
   if (subjectParam) {
     const messageInput = document.querySelector('textarea[name="message"]');
@@ -482,7 +584,7 @@ const DEV = import.meta.env.DEV;
   }
 </script>
 
-<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV }}>
+<script is:inline define:vars={{ CONTACT_EMAIL, SCRIPT_URL, BOOKING_ENABLED, BOOKING_PAGES: BOOKING_PAGES_CLIENT, DEV, PRESELECT, ATTR_FIELDS, GA_SOURCE: gaSource }}>
   (function() {
 
   const form            = document.getElementById('meetgreet-form');
@@ -507,6 +609,9 @@ const DEV = import.meta.env.DEV;
   const bookingFrame = document.getElementById('mg-iframe');
   const newTabLink   = document.getElementById('mg-newtab');
   const backBtn      = document.getElementById('mg-back');
+  // Landing pages only (PRESELECT set); null everywhere else.
+  const stepTap      = document.getElementById('mg-step-tap');
+  const tapBtn       = document.getElementById('mg-tap-btn');
   const bookingReady = !!(BOOKING_ENABLED && bookingPanel && bookingIntro && stepChoose && stepBook && schedTitle && bookingFrame && newTabLink && backBtn);
 
   // Dev preview only (DEV is false in a production build): no analytics fire.
@@ -606,12 +711,19 @@ const DEV = import.meta.env.DEV;
     track('meetgreet_step2_view');
   }
 
-  function choosePhysician(code) {
+  // `direct` is the landing-page path: the physician was fixed by the page, so
+  // the thanks line stays, there is no chooser to go back to, and on a phone
+  // the visitor gets a button to tap (see showTapToBook).
+  function choosePhysician(code, direct) {
     const page = BOOKING_PAGES.find((p) => p.code === code);
     if (!page) return;
     track('mg_physician_selected', { physician: code });
     track('meetgreet_physician_select', { physician: page.eventKey });
     if (EMBED_MIN_WIDTH > 0 && window.innerWidth < EMBED_MIN_WIDTH) {
+      // From a tap on a card this opens the booking page at once. After the
+      // form's own (async) success handler a browser blocks window.open, so
+      // the direct path shows a button instead.
+      if (direct) { showTapToBook(page); return; }
       window.open(page.shareUrl, '_blank', 'noopener');
       return;
     }
@@ -620,11 +732,44 @@ const DEV = import.meta.env.DEV;
     bookingFrame.src   = page.embedSrc;
     newTabLink.href    = page.shareUrl;
     newTabLink.setAttribute('data-physician-key', page.eventKey);
-    bookingIntro.hidden = true;
+    bookingIntro.hidden = !direct;
+    backBtn.hidden     = !!direct;
     stepChoose.hidden  = true;
+    if (stepTap) stepTap.hidden = true;
     stepBook.hidden    = false;
     scrollToFlow();
-    schedTitle.focus({ preventScroll: true });
+    (direct ? bookingIntro : schedTitle).focus({ preventScroll: true });
+  }
+
+  // Landing pages: the chooser is skipped and the physician's scheduler (or,
+  // on a phone, the button that opens it) follows the form at once.
+  function showBookingDirect(firstName, code) {
+    if (!BOOKING_PAGES.some((p) => p.code === code)) { showBookingChooser(firstName, ''); return; }
+    bookingIntro.textContent = firstName
+      ? 'Thanks, ' + firstName + '. One more step: choose your time.'
+      : 'Thanks. One more step: choose your time.';
+    if (formHeader) formHeader.hidden = true;
+    form.hidden = true;
+    stepChoose.hidden = true;
+    stepBook.hidden   = true;
+    bookingIntro.hidden = false;
+    bookingPanel.hidden = false;
+    setStep(2);
+    track('meetgreet_step2_view');
+    choosePhysician(code, true);
+  }
+
+  function showTapToBook(page) {
+    if (!stepTap || !tapBtn) { window.open(page.shareUrl, '_blank', 'noopener'); return; }
+    tapBtn.href = page.shareUrl;
+    tapBtn.textContent = page.bookLabel;
+    tapBtn.setAttribute('data-physician-key', page.eventKey);
+    stepChoose.hidden = true;
+    stepBook.hidden   = true;
+    bookingIntro.hidden = false;
+    stepTap.hidden    = false;
+    scrollToFlow();
+    bookingIntro.focus({ preventScroll: true });
   }
 
   function backToChooser() {
@@ -648,6 +793,9 @@ const DEV = import.meta.env.DEV;
       if (e.target.closest('#mg-newtab')) {
         track('meetgreet_new_tab_click', { physician: newTabLink.getAttribute('data-physician-key') || '' });
       }
+      if (tapBtn && e.target.closest('#mg-tap-btn')) {
+        track('meetgreet_new_tab_click', { physician: tapBtn.getAttribute('data-physician-key') || '' });
+      }
     });
   }
 
@@ -655,6 +803,11 @@ const DEV = import.meta.env.DEV;
   //   ?preview=step2[&name=Alex[&office=wayne]]   the physician choice
   //   ?preview=scheduler&physician=BL             the embedded scheduler
   //   ?preview=business[&name=Alex]               the employer confirmation
+  //   ?preview=direct[&name=Alex][&physician=BL]  a landing page's post-submit
+  //                                               state (the page's physician
+  //                                               unless one is given; under
+  //                                               560px wide, the tap-to-book
+  //                                               step)
   // Nothing is submitted and no analytics event fires.
   if (DEV) {
     const q = new URLSearchParams(window.location.search);
@@ -663,6 +816,9 @@ const DEV = import.meta.env.DEV;
       previewing = true;
       showBookingChooser(q.get('name') || '', q.get('office') || '');
       if (mode === 'scheduler') choosePhysician(q.get('physician') || 'BL');
+    } else if (bookingReady && mode === 'direct') {
+      previewing = true;
+      showBookingDirect(q.get('name') || '', q.get('physician') || PRESELECT || 'BL');
     } else if (mode === 'business') {
       previewing = true;
       showBusinessSuccess(q.get('name') || '');
@@ -676,13 +832,24 @@ const DEV = import.meta.env.DEV;
     applyInterest();
   });
 
+  // What GA4 receives as `source` (form_start, generate_lead): the page's
+  // code where the page sets one (landing pages); otherwise, when the hidden
+  // source is a landing page's "lp-..." value carried over from the stored
+  // record, the code in that record's landing path; otherwise the hidden
+  // source itself. The "lp-..." value goes to the sheet only.
+  function gaSource() {
+    if (GA_SOURCE) return GA_SOURCE;
+    const source = form.querySelector('[name="source"]')?.value || 'standard';
+    if (!/^lp-/.test(source)) return source;
+    const path = form.querySelector('input[name="landing_page"]')?.value || '';
+    const m = path.match(/^\/lp\/([a-z][a-z0-9]{1,7})\/?$/);
+    return m ? m[1] : 'standard';
+  }
+
   // Fires once, on the first field the visitor interacts with — not on every
   // keystroke. `{ once: true }` removes the listener after it fires.
   form?.addEventListener('focusin', () => {
-    if (window.ffmTrack) {
-      const source = form.querySelector('[name="source"]')?.value || 'standard';
-      window.ffmTrack('form_start', { source });
-    }
+    if (window.ffmTrack) window.ffmTrack('form_start', { source: gaSource() });
   }, { once: true });
 
   form?.addEventListener('submit', async (e) => {
@@ -704,6 +871,13 @@ const DEV = import.meta.env.DEV;
     const message    = form.querySelector('#message').value.trim();
     const company    = form.querySelector('#company')?.value || '';
     const source     = form.querySelector('[name="source"]')?.value || 'standard';
+    // Landing pages only: the physician the page books with and the page's
+    // topic. The script that receives the form ignores a key it does not know.
+    const physicianReq = form.querySelector('[name="physician"]')?.value || '';
+    const topicReq     = form.querySelector('[name="topic"]')?.value || '';
+    // First-party attribution, as filled into the hidden fields on load.
+    const attribution = {};
+    ATTR_FIELDS.forEach((key) => { attribution[key] = form.querySelector('input[name="' + key + '"]')?.value || ''; });
 
     if (!firstName || !lastName || !email || !phone || !interest) {
       if (errorEl) {
@@ -762,6 +936,9 @@ const DEV = import.meta.env.DEV;
           userAgent: navigator.userAgent,
           company,
           source,
+          physician: physicianReq,
+          topic:     topicReq,
+          ...attribution,
           loadTime:  formLoadTime,
         }),
       });
@@ -771,10 +948,12 @@ const DEV = import.meta.env.DEV;
       const json = await res.json();
       if (!json.success) throw new Error(json.error || 'Unknown error from script');
 
+      // GA4 gets the source (the page code, see gaSource) and the office
+      // only: no inquiry type, no message, nothing that could name a
+      // clinical topic or a physician.
       if (window.ffmTrack) {
         window.ffmTrack('generate_lead', {
-          source,
-          interest,
+          source: gaSource(),
           preferred_office: preferredOffice,
         });
       }
@@ -786,7 +965,8 @@ const DEV = import.meta.env.DEV;
       } else if (bookingReady) {
         form.reset();
         if (familySizeGroup) familySizeGroup.hidden = true;
-        showBookingChooser(firstName, preferredOffice);
+        if (PRESELECT) showBookingDirect(firstName, PRESELECT);
+        else showBookingChooser(firstName, preferredOffice);
       } else if (successEl) {
         successEl.innerHTML = `
           <strong>Request received!</strong> We'll reach out within 24 hours to schedule your visit.<br />
