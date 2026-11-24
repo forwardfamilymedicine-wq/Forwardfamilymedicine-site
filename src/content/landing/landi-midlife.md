@@ -16,13 +16,13 @@ office: malvern
 draft: false
 hero:
   headline: "You deserve more than a rushed conversation about menopause."
-  supporting: "Visits up to two hours long with Dr. Brian Landi, a Menopause Society Certified Practitioner. HRT, labs and prevention in one place, included in your membership."
+  supporting: "Visits up to two hours long with Dr. Brian Landi, a board-certified family physician with Menopause Society certification. HRT, labs and prevention in one place, included in your membership."
   ctaLabel: "Schedule a Free Meet & Greet"
 tiles:
   - phrase: "Visits up to two hours"
     line: "Long enough to walk through what's happening and what you want to do about it."
-  - phrase: "Menopause Society Certified Practitioner"
-    line: "Dr. Brian Landi, DO, board-certified family physician."
+  - phrase: "Menopause Society certified"
+    line: "Dr. Brian Landi, DO, board-certified family physician (MSCP)."
   - phrase: "Same-day and next-day appointments"
     line: "Direct phone, text, and email access to your physician."
 whatYouGetLead: "Menopause care isn't an add-on or a referral."
