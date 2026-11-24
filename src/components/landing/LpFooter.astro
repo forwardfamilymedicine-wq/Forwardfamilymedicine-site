@@ -4,10 +4,12 @@
  * the light logo, the office the page sends people to (name, address, a
  * "Get directions" link, the phone number, the office hours when the
  * locations entry has them), the Privacy Policy link and "Manage Cookie
- * Choices" (ConsentBanner opens its dialog from [data-consent-reset]), then,
- * under a hairline, the practice's standing copyright and Direct Primary Care
- * line. No site navigation, by decision. Every office detail is the entry's
- * location data, passed in by the route; nothing here names an office.
+ * Choices" (ConsentBanner opens its dialog from [data-consent-reset]) and
+ * "Visit our full website" (the homepage, with the lp_nav_click hook, label
+ * "site"), then, under a hairline, the practice's standing copyright and
+ * Direct Primary Care line. No other navigation, by decision. Every office
+ * detail is the entry's location data, passed in by the route; nothing here
+ * names an office.
  *
  * Colours are tokens only: forest behind, linen for text and links (13:1),
  * sage for the quieter lines and the link rules (5.8:1), the 8% linen
@@ -75,6 +77,7 @@ for (let i = 0; i < hours.length; ) {
       <ul class="lp-footer__links" aria-label="Privacy">
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
         <li><a href="#" data-consent-reset>Manage Cookie Choices</a></li>
+        <li><a href="/" data-lp-nav="site">Visit our full website</a></li>
       </ul>
     </div>
     <p class="lp-footer__fine">
@@ -151,8 +154,10 @@ for (let i = 0; i < hours.length; ) {
       text-align: center;
       font-size: 20px;
     }
-    .lp-footer__links { justify-self: start; gap: 4px; }
-    .lp-footer__links a { display: inline-block; padding: 8px 0 7px; font-size: 16px; }
+    .lp-footer__links { justify-self: start; gap: 2px; }
+    /* Tap targets of at least 44px on a phone: the three links and the directions link. */
+    .lp-footer__links a { display: inline-block; padding: 11px 0 10px; font-size: 16px; }
+    .lp-footer__link { display: inline-block; padding: 10px 0 9px; }
     .lp-footer__fine { margin-top: 32px; }
   }
 </style>
