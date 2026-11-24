@@ -15,20 +15,34 @@
  * storage call is wrapped: a browser that refuses localStorage (private mode,
  * some in-app browsers) still gets the current URL's values on this page.
  *
- * No consent is read for the URL itself; under 'consent' the script listens
- * for the banner's ffm:consent event and stores the pending values if the
- * visitor accepts during this page view.
+ * No consent is read for the URL itself; under 'consent' the record is
+ * written only while the saved choice has optional analytics on (cookie
+ * ffm_consent "v2.a1.*"), and the script listens for the banner's
+ * ffm:consent event to store the pending values if the visitor turns
+ * analytics on during this page view.
+ *
+ * A landing page (LandingLayout) passes its entry's form source. It rides
+ * along in the record under ATTR_LP_FIELDS, written only when the record
+ * itself is written, read by the main-site form. Elsewhere it is an empty
+ * string.
  */
-import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } from '../data/attribution';
+import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS, ATTR_LP_FIELDS } from '../data/attribution';
+
+export interface Props {
+  /** Landing pages only: the entry's form source ("lp-..."). */
+  lpSource?: string;
+}
+const { lpSource = '' } = Astro.props;
+const ALL_FIELDS = [...ATTR_FIELDS, ...ATTR_LP_FIELDS];
 ---
 
-<script is:inline define:vars={{ ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS }}>
+<script is:inline define:vars={{ ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ALL_FIELDS, LP_SOURCE: lpSource }}>
   (function () {
     var TTL_MS = ATTR_TTL_DAYS * 24 * 60 * 60 * 1000;
 
     function empty() {
       var o = {};
-      for (var i = 0; i < ATTR_FIELDS.length; i++) o[ATTR_FIELDS[i]] = '';
+      for (var i = 0; i < ALL_FIELDS.length; i++) o[ALL_FIELDS[i]] = '';
       return o;
     }
 
@@ -47,6 +61,7 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
       if (o) {
         o.landing_page = location.pathname;
         o.first_referrer = (document.referrer || '').slice(0, 300);
+        o.lp_source = LP_SOURCE;
       }
       return o;
     }
@@ -56,8 +71,15 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
       return m ? decodeURIComponent(m[1]) : null;
     }
 
+    // Option B: the saved choice has optional analytics on.
+    function analyticsConsent() {
+      var raw = cookie('ffm_consent');
+      var m = raw && raw.match(/^v\d+\.a([01])\.p[01]$/);
+      return !!(m && m[1] === '1');
+    }
+
     function mayStore() {
-      return ATTR_STORAGE === 'necessary' || cookie('ffm_consent') === 'accepted';
+      return ATTR_STORAGE === 'necessary' || analyticsConsent();
     }
 
     function readStored() {
@@ -74,7 +96,7 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
     function store(o) {
       try {
         var rec = {};
-        for (var i = 0; i < ATTR_FIELDS.length; i++) rec[ATTR_FIELDS[i]] = o[ATTR_FIELDS[i]] || '';
+        for (var i = 0; i < ALL_FIELDS.length; i++) rec[ALL_FIELDS[i]] = o[ALL_FIELDS[i]] || '';
         rec.ts = Date.now();
         localStorage.setItem(ATTR_KEY, JSON.stringify(rec));
         return true;
@@ -88,10 +110,10 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
       else pending = current;
     }
 
-    // Option B: the visitor accepts the banner on this page view.
+    // Option B: the visitor turns analytics on during this page view.
     if (pending) {
       document.addEventListener('ffm:consent', function (e) {
-        if (pending && e.detail && e.detail.choice === 'accepted' && !readStored()) {
+        if (pending && e.detail && e.detail.analytics === true && !readStored()) {
           store(pending);
           pending = null;
         }
@@ -99,10 +121,12 @@ import { ATTR_STORAGE, ATTR_KEY, ATTR_TTL_DAYS, ATTR_URL_PARAMS, ATTR_FIELDS } f
     }
 
     // What a form sends. Stored first touch wins; this URL's values otherwise.
+    // lp_source is for the form's own source field, not for the hidden
+    // attribution fields (none carries its name).
     window.ffmAttr = function () {
       var src = readStored() || current || empty();
       var o = empty();
-      for (var i = 0; i < ATTR_FIELDS.length; i++) o[ATTR_FIELDS[i]] = src[ATTR_FIELDS[i]] || '';
+      for (var i = 0; i < ALL_FIELDS.length; i++) o[ALL_FIELDS[i]] = src[ALL_FIELDS[i]] || '';
       return o;
     };
   })();

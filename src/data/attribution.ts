@@ -39,3 +39,15 @@ export const ATTR_URL_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm
  */
 export const ATTR_FIELDS = [...ATTR_URL_PARAMS, 'landing_page', 'first_referrer'] as const;
 export type AttrField = (typeof ATTR_FIELDS)[number];
+
+/**
+ * Kept in the stored record but outside ATTR_FIELDS, so the hidden fields and
+ * columns R to Y stay as they are: the landing entry's form source
+ * ("lp-..."), written only when a record is written at all (an ad parameter
+ * was present) and only from a landing page; an empty string otherwise. The
+ * main-site form fills its own source field from it (MeetGreetForm.astro), so
+ * an inquiry that starts on a landing page and ends on /contact/ reaches the
+ * sheet under the landing page's source. The physician and the topic are
+ * never stored.
+ */
+export const ATTR_LP_FIELDS = ['lp_source'] as const;
