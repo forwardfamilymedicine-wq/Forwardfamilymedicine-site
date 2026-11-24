@@ -184,10 +184,10 @@ const footerOffice = {
   </section>
 
   <section class="lp-sec lp-sec--sage">
-    <div class="rd-wrap lp-wyg">
-      <div class="lp-stack lp-wyg__head">
+    <div class="rd-wrap lp-split">
+      <div class="lp-stack lp-split__head">
         <h2 class="rd-h2 lp-h2">What you get</h2>
-        {d.whatYouGetLead && <p class="lp-p lp-wyg__lead">{d.whatYouGetLead}</p>}
+        {d.whatYouGetLead && <p class="lp-p lp-split__lead">{d.whatYouGetLead}</p>}
       </div>
       <RuledList size="md" class="lp-list">
         {d.whatYouGet.map((s) => <li>{s}</li>)}
@@ -227,8 +227,8 @@ const footerOffice = {
   )}
 
   <section class="lp-sec lp-sec--white">
-    <div class="rd-wrap rd-split rd-split--a">
-      <div class="lp-stack">
+    <div class="rd-wrap lp-split">
+      <div class="lp-stack lp-split__head">
         <h2 class="rd-h2 lp-h2">What membership costs</h2>
         <p class="lp-p">{PRICE_LINE}</p>
       </div>
@@ -313,15 +313,22 @@ const footerOffice = {
   .lp-tile:first-child .lp-tile__t { font-size: 34px; line-height: 1.12; letter-spacing: -0.015em; }
   .lp-tile__s { margin-top: 10px !important; font-size: 15px; line-height: 1.55; color: var(--text-600); max-width: 34ch; }
 
-  /* "What you get": the heading (with its one-line lead) beside the list at
-     desktop; above the list, without the lead, on a tablet or a phone. */
-  .lp-wyg { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
-  .lp-wyg__head { gap: 16px; }
-  .lp-wyg__lead { font-size: 17px; }
+  /* "What you get" and "What membership costs": the heading column (with its
+     lead line) on the left, the list or the table on the right, from 820px up;
+     the heading column stays pinned below the sticky header while the right
+     column scrolls past (the grid row is as tall as the right column, the
+     column itself is start-aligned, and no ancestor clips overflow). Below
+     820px the two stack, heading first, nothing pinned. */
+  .lp-split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+  .lp-split__head { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; gap: 16px; }
+  .lp-split__lead { font-size: 17px; }
   :global(.lp-list > li) { padding: 18px 0; font-size: 18px; line-height: 1.6; color: var(--text-900); max-width: 60ch; }
-  @media (max-width: 1024px) {
-    .lp-wyg { grid-template-columns: 1fr; gap: 28px; }
-    .lp-wyg__lead { display: none; }
+  @media (max-width: 1023px) {
+    .lp-split { gap: 48px; }
+  }
+  @media (max-width: 819px) {
+    .lp-split { grid-template-columns: 1fr; gap: 28px; }
+    .lp-split__head { position: static; }
   }
 
   /* The note as a pull quote: the portrait, the words in serif, the name. */
