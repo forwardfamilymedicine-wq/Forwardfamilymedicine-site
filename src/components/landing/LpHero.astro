@@ -49,7 +49,7 @@ const { headline, supporting, cta, phone, photo, photoAlt, name, role } = Astro.
           fetchpriority="high"
           class="lp-hero__photo"
         />
-        <figcaption class="lp-hero__cap"><strong>{name}</strong>{role}</figcaption>
+        <figcaption class="lp-hero__cap"><strong>{name}</strong><span class="lp-hero__sep">, </span>{role}</figcaption>
       </figure>
     )}
   </div>
@@ -64,7 +64,8 @@ const { headline, supporting, cta, phone, photo, photoAlt, name, role } = Astro.
     align-items: center;
   }
   .lp-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
-  /* Two lines at desktop for a headline of up to about 72 characters. */
+  /* Two lines at desktop for a headline of up to about 72 characters
+     (the current one is 60). */
   .lp-hero__h1 { font-size: 40px; line-height: 1.1; text-wrap: balance; }
   .lp-hero__p { margin: 0; font-size: 18px; line-height: 1.65; color: var(--text-900); max-width: 60ch; }
   .lp-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 4px; }
@@ -90,16 +91,25 @@ const { headline, supporting, cta, phone, photo, photoAlt, name, role } = Astro.
   }
   .lp-hero__cap { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: var(--text-600); }
   .lp-hero__cap strong { display: block; font-size: 15px; font-weight: 600; color: var(--forest); }
+  /* The comma between name and role is text, shown only where they share a line. */
+  .lp-hero__sep { display: none; }
 
+  /* A phone: headline, sentence, button, number, then the portrait in a
+     short 3:2 crop (two thirds of the square it was) with the name and role
+     on one line, so the button and the first proof tile share the first
+     screen with the headline. 34px sets the current headline in three lines. */
   @media (max-width: 860px) {
-    .lp-hero { padding: 40px 0 48px; }
-    .lp-hero__grid { grid-template-columns: 1fr; gap: 32px; }
-    .lp-hero__copy { gap: 20px; }
-    .lp-hero__h1 { font-size: 36px; line-height: 1.1; }
+    .lp-hero { padding: 28px 0 32px; }
+    .lp-hero__grid { grid-template-columns: 1fr; gap: 24px; }
+    .lp-hero__copy { gap: 18px; }
+    .lp-hero__h1 { font-size: 34px; line-height: 1.1; }
     .lp-hero__p { font-size: 17px; }
-    .lp-hero__actions { width: 100%; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .lp-hero__actions { width: 100%; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 0; }
     .lp-hero__cta { width: 100%; }
     .lp-hero__figure { justify-self: stretch; }
-    .lp-hero :global(.lp-hero__photo) { aspect-ratio: 1 / 1; }
+    .lp-hero :global(.lp-hero__photo) { aspect-ratio: 3 / 2; object-position: 50% 22%; }
+    .lp-hero__cap { margin-top: 10px; }
+    .lp-hero__cap strong { display: inline; }
+    .lp-hero__sep { display: inline; }
   }
 </style>

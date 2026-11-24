@@ -240,6 +240,8 @@ const landing = defineCollection({
     tiles: z.array(z.object({ phrase: z.string().min(1), line: z.string().min(1) })).length(3),
     /** "What you get": one sentence per item, at most four. */
     whatYouGet: z.array(z.string().min(1)).min(1).max(4),
+    /** One short sentence under the "What you get" heading, desktop only; one line, so at most 60 characters. */
+    whatYouGetLead: z.string().min(1).max(60).optional(),
     /** Heading over the physician's note (the markdown body). Default "A note from Dr. X". */
     noteHeading: z.string().optional(),
     /** At most three. */

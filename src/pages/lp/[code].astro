@@ -184,8 +184,11 @@ const footerOffice = {
   </section>
 
   <section class="lp-sec lp-sec--sage">
-    <div class="rd-wrap rd-split rd-split--a">
-      <h2 class="rd-h2 lp-h2">What you get</h2>
+    <div class="rd-wrap lp-wyg">
+      <div class="lp-stack lp-wyg__head">
+        <h2 class="rd-h2 lp-h2">What you get</h2>
+        {d.whatYouGetLead && <p class="lp-p lp-wyg__lead">{d.whatYouGetLead}</p>}
+      </div>
       <RuledList size="md" class="lp-list">
         {d.whatYouGet.map((s) => <li>{s}</li>)}
       </RuledList>
@@ -298,7 +301,8 @@ const footerOffice = {
   }
   .lp-link:hover { border-color: var(--forest); }
 
-  /* Proof tiles: three columns parted by hairlines, no cards. */
+  /* Proof tiles: three columns parted by hairlines, no cards. The first tile
+     leads: its phrase is set larger, nothing else marks it out. */
   .lp-tiles-sec { padding: 56px 0; }
   .lp-tiles { list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .lp-tile { padding: 8px 36px 10px; border-left: 1px solid var(--hairline-strong); }
@@ -306,10 +310,19 @@ const footerOffice = {
   .lp-tile:last-child { padding-right: 0; }
   .lp-tile p { margin: 0; }
   .lp-tile__t { font-size: 26px; line-height: 1.2; color: var(--forest); letter-spacing: -0.01em; }
+  .lp-tile:first-child .lp-tile__t { font-size: 34px; line-height: 1.12; letter-spacing: -0.015em; }
   .lp-tile__s { margin-top: 10px !important; font-size: 15px; line-height: 1.55; color: var(--text-600); max-width: 34ch; }
 
-  /* "What you get": hairline rows, one sentence each. */
+  /* "What you get": the heading (with its one-line lead) beside the list at
+     desktop; above the list, without the lead, on a tablet or a phone. */
+  .lp-wyg { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+  .lp-wyg__head { gap: 16px; }
+  .lp-wyg__lead { font-size: 17px; }
   :global(.lp-list > li) { padding: 18px 0; font-size: 18px; line-height: 1.6; color: var(--text-900); max-width: 60ch; }
+  @media (max-width: 1024px) {
+    .lp-wyg { grid-template-columns: 1fr; gap: 28px; }
+    .lp-wyg__lead { display: none; }
+  }
 
   /* The note as a pull quote: the portrait, the words in serif, the name. */
   .lp-note { display: flex; flex-direction: column; gap: 36px; max-width: 760px; }
@@ -342,12 +355,13 @@ const footerOffice = {
 
   @media (max-width: 860px) {
     .lp-sec { padding: 48px 0; }
-    .lp-tiles-sec { padding: 36px 0; }
+    .lp-tiles-sec { padding: 24px 0 36px; }
     .lp-tiles { grid-template-columns: 1fr; }
     .lp-tile { padding: 20px 0; border-left: 0; border-top: 1px solid var(--hairline-strong); }
     .lp-tile:first-child { padding-top: 0; border-top: 0; }
     .lp-tile:last-child { padding-bottom: 0; }
     .lp-tile__t { font-size: 23px; }
+    .lp-tile:first-child .lp-tile__t { font-size: 29px; }
     .lp-h2 { max-width: none; }
     .lp-p { font-size: 17px; }
     :global(.lp-list > li) { font-size: 17px; padding: 16px 0; }
