@@ -97,9 +97,10 @@ const { headline, supporting, cta, phone, photo, photoAlt, name, role } = Astro.
   /* A phone: headline, sentence, button, number, then the portrait in a
      short 3:2 crop (two thirds of the square it was) with the name and role
      on one line, so the button and the first proof tile share the first
-     screen with the headline. 34px sets the current headline in three lines. */
+     screen with the headline (its phrase ends inside 844px with the bottom
+     padding at 24px). 34px sets the current headline in three lines. */
   @media (max-width: 860px) {
-    .lp-hero { padding: 28px 0 32px; }
+    .lp-hero { padding: 28px 0 24px; }
     .lp-hero__grid { grid-template-columns: 1fr; gap: 24px; }
     .lp-hero__copy { gap: 18px; }
     .lp-hero__h1 { font-size: 34px; line-height: 1.1; }
