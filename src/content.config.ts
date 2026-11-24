@@ -198,10 +198,15 @@ const team = defineCollection({
 
 // Paid-ad landing pages, one entry per page, rendered by
 // src/pages/lp/[code].astro at /lp/<code>/ (for example /lp/k4/).
-// Frontmatter is the page's whole configuration; the body is the physician's
+// Frontmatter is the page's whole configuration; the body is a physician's
 // note in their own voice. The page has one job, a meet and greet request,
-// and its shape is fixed here: hero, exactly three proof tiles, up to four
-// "what you get" sentences, the note, pricing, the form, up to three FAQs.
+// and its shape is fixed here in one of two variants:
+//   one physician (`physician`): hero with the portrait, exactly three proof
+//     tiles, up to four "what you get" sentences, the note, pricing, the
+//     form booking with that physician, up to three FAQs (/lp/k4/);
+//   two physicians (`cards`): hero without a portrait, two physician cards
+//     with a button each to the form, the optional note from `noteFrom`,
+//     pricing, the form with the physician chooser, up to three FAQs.
 // A draft renders on `astro dev` only, so a page can be built and reviewed
 // before it exists in production. The URL, title and description are what an
 // ad platform receives when the page is visited or shared, so `code` is
@@ -210,23 +215,36 @@ const team = defineCollection({
 const landing = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/landing' }),
   schema: ({ image }) => z.object({
-    physician: reference('providers'),
+    /** The page's one physician: the hero portrait, the note's voice, the form's booking. Absent on a two-physician page. */
+    physician: reference('providers').optional(),
+    /**
+     * The two-physician variant: a card each, in this order. The physician's
+     * photo, name, role and status line come from the providers and
+     * locations collections; the credential lines and the two- or
+     * three-sentence bio are written here, from the same sources.
+     */
+    cards: z.array(z.object({
+      physician: reference('providers'),
+      /** One to three lines, as the site already states them. */
+      credentials: z.array(z.string().min(1)).min(1).max(3),
+      bio: z.string().min(1),
+    })).length(2).optional(),
     /**
      * The URL: /lp/<code>/. Two to eight lowercase letters and digits, starting
      * with a letter, unique across entries (checked at build). Opaque on
      * purpose: it is also the GA4 `lp` parameter of the landing events.
      */
     code: z.string().regex(/^[a-z][a-z0-9]{1,7}$/),
-    /** The physician's short key: checked against the provider's slug at build; the GA4 `physician` parameter. */
-    physicianKey: z.enum(['landi', 'lieberman', 'bigley']),
+    /** The physician's short key, checked against the provider's slug at build, or `team` on a two-physician page; the GA4 `physician` parameter. */
+    physicianKey: z.enum(['landi', 'lieberman', 'bigley', 'team']),
     /** What the page is about, for the intake sheet and the team; not rendered, not in the URL. */
     topic: z.string(),
     /** The form's hidden source value and the GA4 `source` parameter; `lp-` plus the key. */
     source: z.string().regex(/^lp-[a-z0-9-]+$/),
     /** The physician the form books with (src/data/bookingPages.ts). Required when the chooser is skipped. */
     bookingPhysician: z.enum(['BL', 'PL']).optional(),
-    /** The open office this page sends people to; its address is in the footer. */
-    office: z.enum(['wayne', 'malvern']),
+    /** The open office this page sends people to; its address is in the footer. Absent, the footer lists every open office. */
+    office: z.enum(['wayne', 'malvern']).optional(),
     draft: z.boolean().default(true),
     /** Open items shown on the page in dev. A page cannot publish while any remain. */
     todo: z.array(z.string()).default([]),
@@ -236,13 +254,15 @@ const landing = defineCollection({
       supporting: z.string(),
       ctaLabel: z.string().default('Schedule a Free Meet & Greet'),
     }),
-    /** Exactly three proof tiles: a short serif phrase and one small line each. Facts already on the site only. */
-    tiles: z.array(z.object({ phrase: z.string().min(1), line: z.string().min(1) })).length(3),
-    /** "What you get": one sentence per item, at most four. */
-    whatYouGet: z.array(z.string().min(1)).min(1).max(4),
+    /** Exactly three proof tiles: a short serif phrase and one small line each. Facts already on the site only. Required with `physician`. */
+    tiles: z.array(z.object({ phrase: z.string().min(1), line: z.string().min(1) })).length(3).optional(),
+    /** "What you get": one sentence per item, at most four. Required with `physician`. */
+    whatYouGet: z.array(z.string().min(1)).min(1).max(4).optional(),
     /** One short sentence under the "What you get" heading, desktop only; one line, so at most 60 characters. */
     whatYouGetLead: z.string().min(1).max(60).optional(),
-    /** Heading over the physician's note (the markdown body). Default "A note from Dr. X". */
+    /** Whose note the markdown body is, when not the page's `physician` (a two-physician page's founder note). */
+    noteFrom: reference('providers').optional(),
+    /** Heading over the note (the markdown body). Default "A note from Dr. X". */
     noteHeading: z.string().optional(),
     /** At most three. */
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).max(3).default([]),
@@ -260,8 +280,27 @@ const landing = defineCollection({
       ogImage: image().optional(),
     }),
   }).superRefine((d, ctx) => {
+    // One variant or the other: a page names one physician or two card physicians.
+    if (!d.physician === !d.cards) {
+      ctx.addIssue({ code: 'custom', path: ['physician'], message: 'an entry has either `physician` (one-physician page) or `cards` (two-physician page), not both and not neither' });
+    }
+    if (d.physician) {
+      if (!d.tiles) ctx.addIssue({ code: 'custom', path: ['tiles'], message: 'a one-physician page has exactly three tiles' });
+      if (!d.whatYouGet) ctx.addIssue({ code: 'custom', path: ['whatYouGet'], message: 'a one-physician page has one to four "what you get" items' });
+      if (d.physicianKey === 'team') ctx.addIssue({ code: 'custom', path: ['physicianKey'], message: 'a one-physician page names its physician\'s key' });
+    }
+    if (d.cards) {
+      if (d.physicianKey !== 'team') ctx.addIssue({ code: 'custom', path: ['physicianKey'], message: 'a two-physician page uses physicianKey "team"' });
+      if (d.cards[0].physician.id === d.cards[1].physician.id) ctx.addIssue({ code: 'custom', path: ['cards'], message: 'the two cards name two different physicians' });
+    }
+    if (d.form.skipChooser && !d.physician) {
+      ctx.addIssue({ code: 'custom', path: ['form', 'skipChooser'], message: 'skipChooser needs the page\'s `physician`' });
+    }
     if (d.form.skipChooser && !d.bookingPhysician) {
       ctx.addIssue({ code: 'custom', path: ['bookingPhysician'], message: 'skipChooser needs bookingPhysician (BL or PL)' });
+    }
+    if (d.form.lockOffice && !d.office) {
+      ctx.addIssue({ code: 'custom', path: ['form', 'lockOffice'], message: 'lockOffice needs `office`' });
     }
     if (!d.draft && d.todo.length > 0) {
       ctx.addIssue({ code: 'custom', path: ['todo'], message: 'a published page cannot have open todo items' });

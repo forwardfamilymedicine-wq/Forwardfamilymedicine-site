@@ -11,6 +11,12 @@
  * detail is the entry's location data, passed in by the route; nothing here
  * names an office.
  *
+ * A page that sends people to more than one office (the two-physician
+ * variant) passes every open office: each gets its name, address and
+ * directions link, side by side at desktop and stacked on a phone; the phone
+ * number and the hours are printed once when every office shares them, and
+ * under each office otherwise. With one office the markup is as it was.
+ *
  * Colours are tokens only: forest behind, linen for text and links (13:1),
  * sage for the quieter lines and the link rules (5.8:1), the 8% linen
  * hairline. On a phone everything stacks (logo, address, directions, the
@@ -34,26 +40,42 @@ export interface FooterOffice {
   /** The entry's hours, in the entry's order; rendered only when present. */
   hours?: FooterHours[];
 }
-export interface Props { office: FooterOffice }
-const { office } = Astro.props;
+export interface Props {
+  /** The offices the page sends people to, in order; at least one. */
+  offices: FooterOffice[];
+}
+const { offices } = Astro.props;
+if (offices.length === 0) throw new Error('[LpFooter] a landing page names at least one office.');
 const year = new Date().getFullYear();
 
-const phoneText = (office.phone ?? '').trim() || '(215) 645-7044';
-const digits = phoneText.replace(/\D/g, '');
-const phoneHref = digits.length === 10 ? `tel:+1${digits}` : 'tel:+12156457044';
+function phoneOf(office: FooterOffice) {
+  const text = (office.phone ?? '').trim() || '(215) 645-7044';
+  const digits = text.replace(/\D/g, '');
+  return { text, href: digits.length === 10 ? `tel:+1${digits}` : 'tel:+12156457044' };
+}
 
 // Hours as the entry gives them, with runs of consecutive entries that share
 // the same times collapsed into one line ("Monday to Friday: 7:30 AM to
 // 5:30 PM"). Nothing is added: an entry with no hours prints no hours.
-const hours = office.hours ?? [];
-const hoursLines: string[] = [];
-for (let i = 0; i < hours.length; ) {
-  let j = i;
-  while (j + 1 < hours.length && hours[j + 1].open === hours[i].open && hours[j + 1].close === hours[i].close) j++;
-  const days = i === j ? hours[i].day : `${hours[i].day} to ${hours[j].day}`;
-  hoursLines.push(`${days}: ${hours[i].open} to ${hours[i].close}`);
-  i = j + 1;
+function hoursLinesOf(office: FooterOffice): string[] {
+  const hours = office.hours ?? [];
+  const lines: string[] = [];
+  for (let i = 0; i < hours.length; ) {
+    let j = i;
+    while (j + 1 < hours.length && hours[j + 1].open === hours[i].open && hours[j + 1].close === hours[i].close) j++;
+    const days = i === j ? hours[i].day : `${hours[i].day} to ${hours[j].day}`;
+    lines.push(`${days}: ${hours[i].open} to ${hours[i].close}`);
+    i = j + 1;
+  }
+  return lines;
 }
+
+// One number and one set of hours for the whole footer when every office
+// shares them (one office always does); otherwise each office prints its own.
+const details = offices.map((o) => ({ office: o, phone: phoneOf(o), hoursLines: hoursLinesOf(o) }));
+const shared = details.every((d) => d.phone.href === details[0].phone.href && d.hoursLines.join('|') === details[0].hoursLines.join('|'));
+const phone = details[0].phone;
+const hoursLines = details[0].hoursLines;
 ---
 
 <footer class="lp-footer" role="contentinfo">
@@ -61,17 +83,44 @@ for (let i = 0; i < hours.length; ) {
     <div class="lp-footer__grid">
       <div class="lp-footer__office">
         <Image src={logoLight} alt="Forward Family Medicine" width={248} height={90} format="webp" quality={90} class="lp-footer__logo" />
-        <address class="lp-footer__addr">
-          <strong>Forward Family Medicine, {office.name}</strong>
-          <span>{office.street}</span>
-          <span>{office.city}, {office.state} {office.zip}</span>
-        </address>
-        {office.directionsUrl && (
-          <a href={office.directionsUrl} class="lp-footer__link" target="_blank" rel="noopener noreferrer">Get directions</a>
+        {details.length === 1 ? (
+          <Fragment><address class="lp-footer__addr">
+              <strong>Forward Family Medicine, {details[0].office.name}</strong>
+              <span>{details[0].office.street}</span>
+              <span>{details[0].office.city}, {details[0].office.state} {details[0].office.zip}</span>
+            </address>
+            {details[0].office.directionsUrl && (
+              <a href={details[0].office.directionsUrl} class="lp-footer__link" target="_blank" rel="noopener noreferrer">Get directions</a>
+            )}</Fragment>
+        ) : (
+          <div class="lp-footer__sites">
+            {details.map((d) => (
+              <div class="lp-footer__site">
+                <address class="lp-footer__addr">
+                  <strong>Forward Family Medicine, {d.office.name}</strong>
+                  <span>{d.office.street}</span>
+                  <span>{d.office.city}, {d.office.state} {d.office.zip}</span>
+                </address>
+                {d.office.directionsUrl && (
+                  <a href={d.office.directionsUrl} class="lp-footer__link" target="_blank" rel="noopener noreferrer">Get directions</a>
+                )}
+                {!shared && (
+                  <Fragment>
+                    <a href={d.phone.href} class="lp-footer__phone" data-lp-tel="footer">{d.phone.text}</a>
+                    {d.hoursLines.length > 0 && (
+                      <p class="lp-footer__hours">{d.hoursLines.map((line) => <span>{line}</span>)}</p>
+                    )}
+                  </Fragment>
+                )}
+              </div>
+            ))}
+          </div>
         )}
-        <a href={phoneHref} class="lp-footer__phone" data-lp-tel="footer">{phoneText}</a>
-        {hoursLines.length > 0 && (
-          <p class="lp-footer__hours">{hoursLines.map((line) => <span>{line}</span>)}</p>
+        {shared && (
+          <Fragment><a href={phone.href} class="lp-footer__phone" data-lp-tel="footer">{phone.text}</a>
+            {hoursLines.length > 0 && (
+              <p class="lp-footer__hours">{hoursLines.map((line) => <span>{line}</span>)}</p>
+            )}</Fragment>
         )}
       </div>
       <ul class="lp-footer__links" aria-label="Privacy">
@@ -102,6 +151,9 @@ for (let i = 0; i < hours.length; ) {
     align-items: start;
   }
   .lp-footer__office { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  /* Two or more offices: side by side, each its own column, parted by a 48px gap. */
+  .lp-footer__sites { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, max-content); gap: 14px 48px; align-self: stretch; }
+  .lp-footer__site { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
   .lp-footer :global(.lp-footer__logo) { display: block; height: 45px; width: auto; }
   .lp-footer__addr { font-style: normal; margin: 0; }
   .lp-footer__addr strong { display: block; font-weight: 600; color: var(--linen); }
@@ -144,6 +196,8 @@ for (let i = 0; i < hours.length; ) {
     .lp-footer { padding: 44px 0 calc(128px + env(safe-area-inset-bottom)); }
     .lp-footer__grid { grid-template-columns: 1fr; gap: 24px; }
     .lp-footer__office { gap: 16px; }
+    .lp-footer__sites { grid-auto-flow: row; grid-auto-columns: auto; gap: 20px; align-self: auto; }
+    .lp-footer__site { gap: 16px; }
     .lp-footer__phone {
       display: block;
       width: 100%;

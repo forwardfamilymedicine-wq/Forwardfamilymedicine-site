@@ -1,0 +1,57 @@
+---
+# The page behind Dr. Bigley's video ads: his panel is full, so the page
+# introduces Dr. Landi and Dr. Lieberman and invites a free meet and greet
+# with either one. Every sentence below is drawn from the providers
+# collection, the Team, Membership and Contact pages, the Meet & Greet copy
+# or the site FAQ, rewritten without em dashes. Nothing here is a new claim.
+# The headline, the supporting line, the bios, the credential lines and the
+# FAQ answers are drafts for David (see todo); the founder note (the body) is
+# his to write.
+cards:
+  - physician: brian-landi-do
+    credentials:
+      - "Board Certified, American Osteopathic Board of Family Physicians"
+      - "Menopause Society certification (MSCP)"
+    bio: "Dr. Landi is a board-certified family physician who trained at ChristianaCare, where he served as Chief Resident. After practicing in an insurance-based system that rushed him through visits, he chose Direct Primary Care to practice unhurried and focused on the whole person. He holds Menopause Society certification (MSCP) and has a special clinical interest in midlife health and women's wellness."
+  - physician: philip-lieberman-md
+    credentials:
+      - "Board Certified, American Board of Family Medicine"
+      - "Diplomate, American Board of Lifestyle Medicine"
+    bio: "Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine. Before medical school he earned an Associate's Degree in Culinary Arts and a Bachelor of Science in Nutrition Science, and he served as a primary care physician in the U.S. Navy before completing residency at Abington Family Medicine. He brings clinical medicine, evidence-based lifestyle protocols, and the practical culinary knowledge to make nutrition advice work in real life."
+# The URL: /lp/v1/. Opaque on purpose; change it here and nowhere else.
+code: v1
+# No one physician: the GA4 `physician` parameter of lp_view is "team".
+physicianKey: team
+topic: bigley-video-ad
+source: lp-bigley-videos
+# No office fixed: the form offers Wayne or Malvern, and the footer lists both.
+# Draft: renders on `astro dev` only until David approves every todo item.
+draft: true
+todo:
+  - "Headline: draft, for David to approve."
+  - "Supporting line: draft from the Membership page and Dr. Bigley's availability note, for David to approve."
+  - "Dr. Landi's card: credential lines and three-sentence bio, drafted from his bio page, for David to approve."
+  - "Dr. Lieberman's card: credential lines and three-sentence bio, drafted from his bio page, for David to approve."
+  - "Founder note from Dr. Bigley: empty on purpose. David writes it in his own voice as this file's body, or the section stays out."
+  - "FAQ: three answers reused from the site FAQ and the Membership page, for David to approve."
+hero:
+  headline: "Dr. Bigley's practice is currently full. Our other physicians practice the same way."
+  supporting: "Dr. Brian Landi in Malvern and Dr. Philip Lieberman in Wayne are accepting new patients now. Same membership, same direct phone, text, and email access to your physician, and the same one to two hour visits."
+  ctaLabel: "Schedule a Free Meet & Greet"
+# The body is Dr. Bigley's note. Empty, it renders nothing.
+noteFrom: david-bigley-do
+noteHeading: "A note from Dr. Bigley"
+faqs:
+  - q: "What happens at the meet and greet?"
+    a: "A free 60-minute conversation with Dr. Landi or Dr. Lieberman, in person at our Malvern or Wayne office or by video. Ask questions, see the office, and decide whether Forward Family Medicine is right for you. No pressure, no commitment."
+  - q: "What does the membership include?"
+    a: "Unlimited office visits with no copay, same-day and next-day appointments, visits of one to two hours, direct phone, text, and email access to your doctor, preventive care, chronic disease management, minor procedures, wholesale lab pricing, telehealth, specialist referral coordination, and integrated Lifestyle Medicine with Dr. Lieberman."
+  - q: "Can I contact my doctor between visits?"
+    a: "Yes. Members have direct access to their physician via phone, text, and secure messaging. You will not reach an answering service or a nurse line."
+form:
+  skipChooser: false
+  lockOffice: false
+seo:
+  title: "Free Meet & Greet | Forward Family Medicine"
+  description: "A free 60-minute meet and greet at our Wayne or Malvern office, with no obligation."
+---

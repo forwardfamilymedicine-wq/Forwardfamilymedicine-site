@@ -48,8 +48,8 @@ export interface Props {
   ogImage?: string;
   ogImageWidth?: number;
   ogImageHeight?: number;
-  /** The office the page sends people to; its address, directions, number and hours close the page. */
-  office: FooterOffice;
+  /** The offices the page sends people to, in order; their addresses, directions, number and hours close the page. */
+  offices: FooterOffice[];
   /** Where the header button goes: the form on the page. */
   ctaHref?: string;
   ctaLabel?: string;
@@ -66,7 +66,7 @@ const {
   ogImage = 'https://www.forwardfamilymedicine.com/images/og-image.png',
   ogImageWidth = 1200,
   ogImageHeight = 630,
-  office,
+  offices,
   ctaHref = '#meet-greet',
   ctaLabel,
   lpCode,
@@ -120,7 +120,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
   <main id="main-content">
     <slot />
   </main>
-  <LpFooter office={office} />
+  <LpFooter offices={offices} />
   <!-- pixel: the Meta Pixel may load here, and only here, once advertising
        consent is saved and PUBLIC_META_PIXEL_ID is set (ConsentBanner). -->
   <ConsentBanner pixel={true} />
