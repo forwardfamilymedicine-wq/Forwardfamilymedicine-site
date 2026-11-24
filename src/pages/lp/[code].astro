@@ -173,7 +173,11 @@ const nameOf = (name: string) => name.trim().split(/\s+/).pop() ?? name;
 // cards, so the founder's portrait is smaller, and a badge on a phone.
 const heroProvider = d.hero.portrait ? await getEntry(d.hero.portrait.physician) : provider;
 if (d.hero.portrait && !heroProvider) throw new Error(`[lp] ${entry.id}: hero.portrait names no providers entry "${d.hero.portrait.physician.id}".`);
-const heroName = heroProvider ? `Dr. ${heroProvider.data.name}, ${heroProvider.data.credentials}` : '';
+// The caption under an entry portrait carries no "Dr." (David, 2026-11-24:
+// "David Bigley, DO" over the role line); the page physician's keeps it.
+const heroName = !heroProvider ? '' : d.hero.portrait
+  ? `${heroProvider.data.name}, ${heroProvider.data.credentials}`
+  : `Dr. ${heroProvider.data.name}, ${heroProvider.data.credentials}`;
 const heroRole = d.hero.portrait?.role ?? heroProvider?.data.title ?? '';
 const heroAlt = d.hero.portrait ? `${heroName}, ${heroRole}` : (heroProvider?.data.photoAlt ?? '');
 const noteShortName = noteProvider ? `Dr. ${nameOf(noteProvider.data.name)}` : '';
@@ -259,8 +263,8 @@ const footerOffices = offices.map((o) => {
                   alt={c.credentialedName}
                   width={1080}
                   height={1350}
-                  widths={[360, 540, 720, 1080]}
-                  sizes="(max-width: 860px) calc(100vw - 42px), 534px"
+                  widths={[360, 440, 720, 880]}
+                  sizes="(max-width: 860px) calc(100vw - 42px), 440px"
                   format="webp"
                   quality={82}
                   loading={i === 0 ? 'eager' : 'lazy'}
@@ -432,14 +436,16 @@ const footerOffices = offices.map((o) => {
 
   /* Two physician cards (the two-physician variant), under one line of
      heading: lighter-linen panels on the white band, side by side from
-     861px, each the portrait across the top in a 4:5 crop, then the status
-     line, name, role, credential rows, the two-sentence bio and the button.
-     The grid stretches both cards to one height and the button sits at the
-     bottom of each (margin-top auto), so the two line up. On a phone the
-     panels stack. Nothing moves. */
+     861px, at most 440px wide each and centred as a pair under a centred
+     heading, each the portrait across the top (square at desktop, 4:5 on a
+     phone), then the status line, name, role, credential rows, the
+     two-sentence bio and the button. The grid stretches both cards to one
+     height and the button sits at the bottom of each (margin-top auto), so
+     the two line up. On a phone the panels stack at full width and the
+     heading sits left like the others. Nothing moves. */
   .lp-cards-sec { padding: 56px 0 88px; }
-  .lp-cards__h { max-width: none; margin-bottom: 28px; }
-  .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; align-items: stretch; }
+  .lp-cards__h { max-width: none; margin-bottom: 28px; text-align: center; }
+  .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 440px)); justify-content: center; gap: 40px; align-items: stretch; }
   .lp-card {
     display: flex;
     flex-direction: column;
@@ -452,7 +458,7 @@ const footerOffices = offices.map((o) => {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: 50% 20%;
     background: var(--linen-300);
@@ -463,9 +469,10 @@ const footerOffices = offices.map((o) => {
   .lp-card__role { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--sage-600); }
   .lp-card :global(.lp-card__rows) { align-self: stretch; margin-top: 4px; }
   .lp-card :global(.lp-card__rows > li) { font-size: 14px; line-height: 1.5; color: var(--text-700); padding: 8px 0; }
-  .lp-card__bio { margin-top: 6px !important; font-size: 16px; line-height: 1.65; color: var(--text-900); }
-  .lp-card__cta { margin-top: auto !important; padding-top: 0; }
-  .lp-card__bio + .lp-card__cta { margin-top: 18px !important; }
+  /* The bio keeps 18px under it, the button takes the rest of the card's
+     height (margin-top auto), so the two buttons sit on one line. */
+  .lp-card__bio { margin: 6px 0 18px !important; font-size: 16px; line-height: 1.65; color: var(--text-900); }
+  .lp-card__cta { margin-top: auto !important; }
   @media (max-width: 1100px) {
     .lp-card__body { padding: 20px 24px 24px; }
     .lp-card__name { font-size: 25px; }
@@ -537,8 +544,9 @@ const footerOffices = offices.map((o) => {
     .lp-h2 { max-width: none; }
     .lp-p { font-size: 17px; }
     .lp-cards-sec { padding: 40px 0 48px; }
-    .lp-cards__h { margin-bottom: 20px; }
+    .lp-cards__h { margin-bottom: 20px; text-align: left; }
     .lp-cards { grid-template-columns: 1fr; gap: 20px; }
+    .lp-card :global(.lp-card__photo) { aspect-ratio: 4 / 5; }
     .lp-card__body { padding: 20px 22px 22px; }
     .lp-card__name { font-size: 26px; }
     .lp-card__bio { font-size: 16px; }

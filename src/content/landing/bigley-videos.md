@@ -17,7 +17,7 @@ cards:
     credentials:
       - "Board Certified, American Board of Family Medicine"
       - "Diplomate, American Board of Lifestyle Medicine"
-    bio: "Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with degrees in Culinary Arts and Nutrition Science before medical school. A former U.S. Navy primary care physician, he brings the practical culinary knowledge to make nutrition advice work in real life."
+    bio: "Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with degrees in Culinary Arts and Nutrition Science before medical school. A former U.S. Navy primary care physician, he knows how to make nutrition advice work in a real kitchen."
 # The URL: /lp/v1/. Opaque on purpose; change it here and nowhere else.
 code: v1
 # No one physician: the GA4 `physician` parameter of lp_view is "team".
