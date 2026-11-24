@@ -127,12 +127,19 @@ const PRICE_LINE = `Membership is $${Math.min(...perPerson)} to $${Math.max(...p
 const INCLUDED_LINE = 'Included: unlimited visits with no copay, same-day and next-day appointments, one to two hour visits, direct phone, text, and email access, preventive and chronic care, telehealth, and Lifestyle Medicine.';
 
 const ogImage = d.seo.ogImage ? new URL(d.seo.ogImage.src, Astro.site).href : undefined;
+// The footer's office block, all from the locations entry: name, address,
+// the office's own number and hours, and the same directions link the office's
+// page builds (src/pages/locations/[slug].astro).
+const destination = `${office.data.addressStreet}, ${office.data.addressCity}, ${office.data.addressState} ${office.data.addressZip}`;
 const footerOffice = {
   name: office.data.name,
   street: office.data.addressStreet,
   city: office.data.addressCity,
   state: office.data.addressState,
   zip: office.data.addressZip,
+  phone: office.data.phone,
+  directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Forward Family Medicine, ${destination}`)}`,
+  hours: office.data.hours,
 };
 ---
 

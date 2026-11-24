@@ -1,33 +1,82 @@
 ---
 /**
- * Landing-page footer: the office the page sends people to, the phone number,
- * the Privacy Policy link and "Manage Cookie Choices" (ConsentBanner opens its
- * dialog from [data-consent-reset]), and the practice's standing line that membership is
- * not insurance. No site navigation, by decision.
+ * Landing-page footer, on forest (the same deep green as the email footer):
+ * the light logo, the office the page sends people to (name, address, a
+ * "Get directions" link, the phone number, the office hours when the
+ * locations entry has them), the Privacy Policy link and "Manage Cookie
+ * Choices" (ConsentBanner opens its dialog from [data-consent-reset]), then,
+ * under a hairline, the practice's standing copyright and Direct Primary Care
+ * line. No site navigation, by decision. Every office detail is the entry's
+ * location data, passed in by the route; nothing here names an office.
+ *
+ * Colours are tokens only: forest behind, linen for text and links (13:1),
+ * sage for the quieter lines and the link rules (5.8:1), the 8% linen
+ * hairline. On a phone everything stacks (logo, address, directions, the
+ * phone number as a full-width tap target, hours, the two links, the legal
+ * line) and the bottom padding leaves room for the consent bar.
  */
+import { Image } from 'astro:assets';
+import logoLight from '../../assets/logo/ffm-logo-light.png';
+
+export interface FooterHours { day: string; open: string; close: string }
 export interface FooterOffice {
   name: string;
   street: string;
   city: string;
   state: string;
   zip: string;
+  /** The office's own number from the locations entry; the practice number when empty. */
+  phone?: string;
+  /** The office's directions link, built by the route from the same entry. */
+  directionsUrl?: string;
+  /** The entry's hours, in the entry's order; rendered only when present. */
+  hours?: FooterHours[];
 }
 export interface Props { office: FooterOffice }
 const { office } = Astro.props;
 const year = new Date().getFullYear();
+
+const phoneText = (office.phone ?? '').trim() || '(215) 645-7044';
+const digits = phoneText.replace(/\D/g, '');
+const phoneHref = digits.length === 10 ? `tel:+1${digits}` : 'tel:+12156457044';
+
+// Hours as the entry gives them, with runs of consecutive entries that share
+// the same times collapsed into one line ("Monday to Friday: 7:30 AM to
+// 5:30 PM"). Nothing is added: an entry with no hours prints no hours.
+const hours = office.hours ?? [];
+const hoursLines: string[] = [];
+for (let i = 0; i < hours.length; ) {
+  let j = i;
+  while (j + 1 < hours.length && hours[j + 1].open === hours[i].open && hours[j + 1].close === hours[i].close) j++;
+  const days = i === j ? hours[i].day : `${hours[i].day} to ${hours[j].day}`;
+  hoursLines.push(`${days}: ${hours[i].open} to ${hours[i].close}`);
+  i = j + 1;
+}
 ---
 
 <footer class="lp-footer" role="contentinfo">
-  <div class="rd-wrap lp-footer__inner">
-    <address class="lp-footer__office">
-      <strong>Forward Family Medicine, {office.name}</strong><br />
-      {office.street}, {office.city}, {office.state} {office.zip}<br />
-      <a href="tel:+12156457044" data-lp-tel="footer">(215) 645-7044</a>
-    </address>
-    <ul class="lp-footer__links" aria-label="Privacy">
-      <li><a href="/privacy-policy/">Privacy Policy</a></li>
-      <li><a href="#" data-consent-reset>Manage Cookie Choices</a></li>
-    </ul>
+  <div class="rd-wrap">
+    <div class="lp-footer__grid">
+      <div class="lp-footer__office">
+        <Image src={logoLight} alt="Forward Family Medicine" width={248} height={90} format="webp" quality={90} class="lp-footer__logo" />
+        <address class="lp-footer__addr">
+          <strong>Forward Family Medicine, {office.name}</strong>
+          <span>{office.street}</span>
+          <span>{office.city}, {office.state} {office.zip}</span>
+        </address>
+        {office.directionsUrl && (
+          <a href={office.directionsUrl} class="lp-footer__link" target="_blank" rel="noopener noreferrer">Get directions</a>
+        )}
+        <a href={phoneHref} class="lp-footer__phone" data-lp-tel="footer">{phoneText}</a>
+        {hoursLines.length > 0 && (
+          <p class="lp-footer__hours">{hoursLines.map((line) => <span>{line}</span>)}</p>
+        )}
+      </div>
+      <ul class="lp-footer__links" aria-label="Privacy">
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="#" data-consent-reset>Manage Cookie Choices</a></li>
+      </ul>
+    </div>
     <p class="lp-footer__fine">
       &copy; {year} Forward Family Medicine. All rights reserved.
       Forward Family Medicine is a Direct Primary Care practice. Membership is not insurance.
@@ -37,18 +86,73 @@ const year = new Date().getFullYear();
 
 <style>
   .lp-footer {
-    background: var(--linen);
-    border-top: 1px solid var(--hairline);
-    padding: 48px 0 40px;
-    color: var(--text-700);
-    font-size: 14px;
-    line-height: 1.65;
+    background: var(--forest);
+    color: var(--linen);
+    padding: 56px 0 48px;
+    font-size: 15px;
+    line-height: 1.6;
   }
-  .lp-footer__inner { display: flex; flex-direction: column; gap: 18px; }
-  .lp-footer__office { font-style: normal; margin: 0; }
-  .lp-footer__office strong { color: var(--forest); font-weight: 600; }
-  .lp-footer__office a, .lp-footer__links a { color: var(--forest); text-decoration: none; border-bottom: 1px solid var(--hairline-dot); }
-  .lp-footer__office a:hover, .lp-footer__links a:hover { border-color: var(--forest); }
-  .lp-footer__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 24px; }
-  .lp-footer__fine { margin: 0; font-size: 12px; line-height: 1.6; color: var(--text-600); max-width: 68ch; }
+  .lp-footer__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px 48px;
+    align-items: start;
+  }
+  .lp-footer__office { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .lp-footer :global(.lp-footer__logo) { display: block; height: 45px; width: auto; }
+  .lp-footer__addr { font-style: normal; margin: 0; }
+  .lp-footer__addr strong { display: block; font-weight: 600; color: var(--linen); }
+  .lp-footer__addr span { display: block; }
+  .lp-footer__link,
+  .lp-footer__links a {
+    color: var(--linen);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 1px;
+  }
+  .lp-footer__link:hover, .lp-footer__links a:hover, .lp-footer__phone:hover { border-color: var(--linen); }
+  .lp-footer__phone {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--linen);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 1px;
+  }
+  .lp-footer__hours { margin: 0; font-size: 14px; color: var(--sage); }
+  .lp-footer__hours span { display: block; }
+  .lp-footer__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; justify-self: end; }
+  .lp-footer__fine {
+    margin: 40px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--linen-08);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--sage);
+    max-width: 68ch;
+  }
+  /* Keyboard focus, visible on forest. */
+  .lp-footer a:focus-visible { outline: 2px solid var(--linen); outline-offset: 3px; border-radius: 2px; }
+
+  /* A phone: one column in the order logo, address, directions, the phone
+     number as a full-width tap target, hours, the two links, the legal line.
+     The bottom padding clears the consent bar (about 105px at 390px). */
+  @media (max-width: 640px) {
+    .lp-footer { padding: 44px 0 calc(128px + env(safe-area-inset-bottom)); }
+    .lp-footer__grid { grid-template-columns: 1fr; gap: 24px; }
+    .lp-footer__office { gap: 16px; }
+    .lp-footer__phone {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px;
+      border: 1px solid var(--sage);
+      border-radius: 8px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .lp-footer__links { justify-self: start; gap: 4px; }
+    .lp-footer__links a { display: inline-block; padding: 8px 0 7px; font-size: 16px; }
+    .lp-footer__fine { margin-top: 32px; }
+  }
 </style>

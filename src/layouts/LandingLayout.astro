@@ -33,7 +33,13 @@ import LpFooter from '../components/landing/LpFooter.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import Attribution from '../components/Attribution.astro';
 
-export interface FooterOffice { name: string; street: string; city: string; state: string; zip: string }
+export interface FooterOffice {
+  name: string; street: string; city: string; state: string; zip: string;
+  /** Optional, from the same locations entry: the office's number, its directions link, its hours. */
+  phone?: string;
+  directionsUrl?: string;
+  hours?: { day: string; open: string; close: string }[];
+}
 
 export interface Props {
   title: string;
@@ -41,7 +47,7 @@ export interface Props {
   ogImage?: string;
   ogImageWidth?: number;
   ogImageHeight?: number;
-  /** The office the page sends people to; its address closes the page. */
+  /** The office the page sends people to; its address, directions, number and hours close the page. */
   office: FooterOffice;
   /** Where the header button goes: the form on the page. */
   ctaHref?: string;
