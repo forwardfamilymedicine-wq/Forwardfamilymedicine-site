@@ -2,9 +2,8 @@
 # Dr. Landi, menopause and midlife care. Every sentence below is drawn from
 # /menopause/, Dr. Landi's bio, the membership page or the booking copy
 # already on the site, rewritten without em dashes. Nothing here is a new
-# claim. The headline and the note are David's of 2026-11-24 (Dr. Landi to
-# confirm); the supporting line, the tile phrases and the three FAQ topics
-# are his draft values of 2026-11-23.
+# claim. The headline and the note are David's and Dr. Landi's; every item
+# on the page was approved by both on 2026-11-24.
 physician: brian-landi-do
 # The URL: /lp/k4/. Opaque on purpose; change it here and nowhere else.
 code: k4
@@ -13,12 +12,8 @@ topic: menopause
 source: lp-landi-midlife
 bookingPhysician: BL
 office: malvern
-draft: true
-todo:
-  - "Headline and physician note: supplied by David on 2026-11-24; Dr. Landi to confirm."
-  - "Supporting line, tile lines and the four 'what you get' sentences: David to approve. Each is drawn from copy already on the site."
-  - "Form heading: David to approve."
-  - "SEO title and description: still to approve. Both name no physician and no condition, on purpose; the build refuses either if they do."
+# Published: builds as /lp/k4/ (noindex, out of the sitemap, linked from nowhere).
+draft: false
 hero:
   headline: "You deserve more than a rushed conversation about menopause."
   supporting: "Visits up to two hours long with Dr. Brian Landi, a Menopause Society Certified Practitioner. HRT, labs and prevention in one place, included in your membership."
@@ -40,7 +35,7 @@ faqs:
   - q: "Is menopause care covered in my membership?"
     a: "Yes. Menopause care is part of how Dr. Landi practices primary care, included at no additional cost. Labs and any prescribed medications are at wholesale or near-cost pricing, separate from the membership fee."
   - q: "Can Dr. Landi prescribe HRT?"
-    a: "Yes, when it's appropriate for you. Dr. Landi can prescribe and manage hormone therapy directly when it's appropriate. For procedural gynecology or specialty issues outside the scope of primary care, we coordinate referrals to GYN partners directly."
+    a: "Yes, when it's appropriate for you. Dr. Landi can prescribe and manage hormone therapy directly. For procedural gynecology or specialty issues outside the scope of primary care, we coordinate referrals to GYN partners directly."
   - q: "What happens at the meet and greet?"
     a: "A free 60-minute conversation with Dr. Landi, at our Malvern office or by video. Meet him, see the office, and ask every question you have. Nothing is signed that day."
 form:
