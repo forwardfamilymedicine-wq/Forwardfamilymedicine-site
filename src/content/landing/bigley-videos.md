@@ -12,12 +12,12 @@ cards:
     credentials:
       - "Board Certified, American Osteopathic Board of Family Physicians"
       - "Menopause Society certification (MSCP)"
-    bio: "Dr. Landi is a board-certified family physician who trained at ChristianaCare, where he served as Chief Resident. After practicing in an insurance-based system that rushed him through visits, he chose Direct Primary Care to practice unhurried and focused on the whole person. He holds Menopause Society certification (MSCP) and has a special clinical interest in midlife health and women's wellness."
+    bio: "Dr. Landi is a board-certified family physician who trained at ChristianaCare, where he served as Chief Resident. He chose Direct Primary Care to practice unhurried and focused on the whole person, and holds Menopause Society certification (MSCP)."
   - physician: philip-lieberman-md
     credentials:
       - "Board Certified, American Board of Family Medicine"
       - "Diplomate, American Board of Lifestyle Medicine"
-    bio: "Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine. Before medical school he earned an Associate's Degree in Culinary Arts and a Bachelor of Science in Nutrition Science, and he served as a primary care physician in the U.S. Navy before completing residency at Abington Family Medicine. He brings clinical medicine, evidence-based lifestyle protocols, and the practical culinary knowledge to make nutrition advice work in real life."
+    bio: "Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with degrees in Culinary Arts and Nutrition Science before medical school. A former U.S. Navy primary care physician, he brings the practical culinary knowledge to make nutrition advice work in real life."
 # The URL: /lp/v1/. Opaque on purpose; change it here and nowhere else.
 code: v1
 # No one physician: the GA4 `physician` parameter of lp_view is "team".
@@ -30,14 +30,19 @@ draft: true
 todo:
   - "Headline: draft, for David to approve."
   - "Supporting line: draft from the Membership page and Dr. Bigley's availability note, for David to approve."
-  - "Dr. Landi's card: credential lines and three-sentence bio, drafted from his bio page, for David to approve."
-  - "Dr. Lieberman's card: credential lines and three-sentence bio, drafted from his bio page, for David to approve."
+  - "Dr. Landi's card: credential lines and the two-sentence bio, drafted from his bio page, for David to approve."
+  - "Dr. Lieberman's card: credential lines and the two-sentence bio, drafted from his bio page, for David to approve."
   - "Founder note from Dr. Bigley: empty on purpose. David writes it in his own voice as this file's body, or the section stays out."
   - "FAQ: three answers reused from the site FAQ and the Membership page, for David to approve."
 hero:
   headline: "Dr. Bigley's practice is currently full. Our other physicians practice the same way."
   supporting: "Dr. Brian Landi in Malvern and Dr. Philip Lieberman in Wayne are accepting new patients now. Same membership, same direct phone, text, and email access to your physician, and the same one to two hour visits."
   ctaLabel: "Schedule a Free Meet & Greet"
+  # Dr. Bigley's portrait from the providers collection, compact; the role
+  # line is the caption's second line (David, 2026-11-24).
+  portrait:
+    physician: david-bigley-do
+    role: "Founder, Forward Family Medicine"
 # The body is Dr. Bigley's note. Empty, it renders nothing.
 noteFrom: david-bigley-do
 noteHeading: "A note from Dr. Bigley"

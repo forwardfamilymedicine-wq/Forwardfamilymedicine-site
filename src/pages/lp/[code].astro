@@ -8,10 +8,11 @@
  *     three proof tiles, "what you get" (at most four sentences), the
  *     physician's note as a pull quote, pricing, the form booking with that
  *     physician, up to three FAQs;
- *   `cards` (two physicians, /lp/v1/): hero without a portrait, a card per
- *     physician with a button to the form, the note from `noteFrom` when the
- *     body has one, pricing, the form with its physician chooser (no
- *     physician fixed, no office fixed), up to three FAQs.
+ *   `cards` (two physicians, /lp/v1/): hero with the founder's compact
+ *     portrait (`hero.portrait`) or none, a card per physician with a button
+ *     to the form, the note from `noteFrom` when the body has one, pricing,
+ *     the form with its physician chooser (no physician fixed, no office
+ *     fixed), up to three FAQs.
  * The code is opaque: the URL, the canonical, the title and the description
  * name neither the physician nor a condition, and the build refuses an entry
  * whose text does (see assertNeutral below). Everything on the page comes
@@ -164,8 +165,17 @@ if (!notePlaceholder && !noteProvider) throw new Error(`[lp] ${entry.id}: the bo
 const { Content } = await render(entry);
 
 const nameOf = (name: string) => name.trim().split(/\s+/).pop() ?? name;
-const shortName = p ? `Dr. ${nameOf(p.name)}` : '';
-const credentialedName = p ? `Dr. ${p.name}, ${p.credentials}` : '';
+
+// The hero portrait: the page's physician (with the provider's own alt text
+// and title), or on a two-physician page `hero.portrait` (the founder, with
+// the entry's role line; the alt text is built here, without the provider's
+// em dash). Compact on a two-physician page: the people to meet are on the
+// cards, so the founder's portrait is smaller, and a badge on a phone.
+const heroProvider = d.hero.portrait ? await getEntry(d.hero.portrait.physician) : provider;
+if (d.hero.portrait && !heroProvider) throw new Error(`[lp] ${entry.id}: hero.portrait names no providers entry "${d.hero.portrait.physician.id}".`);
+const heroName = heroProvider ? `Dr. ${heroProvider.data.name}, ${heroProvider.data.credentials}` : '';
+const heroRole = d.hero.portrait?.role ?? heroProvider?.data.title ?? '';
+const heroAlt = d.hero.portrait ? `${heroName}, ${heroRole}` : (heroProvider?.data.photoAlt ?? '');
 const noteShortName = noteProvider ? `Dr. ${nameOf(noteProvider.data.name)}` : '';
 const noteCredentialedName = noteProvider ? `Dr. ${noteProvider.data.name}, ${noteProvider.data.credentials}` : '';
 
@@ -229,10 +239,11 @@ const footerOffices = offices.map((o) => {
     supporting={d.hero.supporting}
     cta={{ label: d.hero.ctaLabel, href: FORM_HREF }}
     phone={PHONE}
-    photo={p?.photo}
-    photoAlt={p?.photoAlt}
-    name={credentialedName}
-    role={p?.title}
+    photo={heroProvider?.data.photo}
+    photoAlt={heroAlt}
+    name={heroName}
+    role={heroRole}
+    portraitStyle={d.cards ? 'compact' : 'full'}
   />
 
   {cards.length > 0 && (
@@ -246,10 +257,10 @@ const footerOffices = offices.map((o) => {
                 <Image
                   src={c.data.photo}
                   alt={c.credentialedName}
-                  width={480}
-                  height={600}
-                  widths={[240, 480, 720]}
-                  sizes="(max-width: 860px) calc(100vw - 86px), 160px"
+                  width={1080}
+                  height={1350}
+                  widths={[360, 540, 720, 1080]}
+                  sizes="(max-width: 860px) calc(100vw - 42px), 534px"
                   format="webp"
                   quality={82}
                   loading={i === 0 ? 'eager' : 'lazy'}
@@ -421,21 +432,21 @@ const footerOffices = offices.map((o) => {
 
   /* Two physician cards (the two-physician variant), under one line of
      heading: lighter-linen panels on the white band, side by side from
-     861px, each a portrait beside the status line, name, role, credential
-     rows, bio and button. On a phone the panels stack and the portrait sits
-     above the copy in the hero's 3:2 crop. Nothing moves. */
-  .lp-cards-sec { padding: 72px 0 88px; }
-  .lp-cards__h { max-width: none; margin-bottom: 36px; }
-  .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+     861px, each the portrait across the top in a 4:5 crop, then the status
+     line, name, role, credential rows, the two-sentence bio and the button.
+     The grid stretches both cards to one height and the button sits at the
+     bottom of each (margin-top auto), so the two line up. On a phone the
+     panels stack. Nothing moves. */
+  .lp-cards-sec { padding: 56px 0 88px; }
+  .lp-cards__h { max-width: none; margin-bottom: 28px; }
+  .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; align-items: stretch; }
   .lp-card {
-    display: grid;
-    grid-template-columns: 160px minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
-    padding: 28px;
+    display: flex;
+    flex-direction: column;
     background: var(--linen-50);
     border: 1px solid var(--hairline);
     border-radius: 2px;
+    overflow: hidden;
   }
   .lp-card :global(.lp-card__photo) {
     display: block;
@@ -444,19 +455,19 @@ const footerOffices = offices.map((o) => {
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: 50% 20%;
-    border-radius: 2px;
     background: var(--linen-300);
   }
-  .lp-card__body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; }
+  .lp-card__body { flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; padding: 24px 28px 28px; }
   .lp-card__body > :global(*) { margin: 0; }
   .lp-card__name { font-size: 28px; line-height: 1.12; color: var(--forest); letter-spacing: -0.01em; }
   .lp-card__role { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--sage-600); }
   .lp-card :global(.lp-card__rows) { align-self: stretch; margin-top: 4px; }
   .lp-card :global(.lp-card__rows > li) { font-size: 14px; line-height: 1.5; color: var(--text-700); padding: 8px 0; }
   .lp-card__bio { margin-top: 6px !important; font-size: 16px; line-height: 1.65; color: var(--text-900); }
-  .lp-card__cta { margin-top: 10px; }
+  .lp-card__cta { margin-top: auto !important; padding-top: 0; }
+  .lp-card__bio + .lp-card__cta { margin-top: 18px !important; }
   @media (max-width: 1100px) {
-    .lp-card { grid-template-columns: 130px minmax(0, 1fr); gap: 22px; padding: 24px; }
+    .lp-card__body { padding: 20px 24px 24px; }
     .lp-card__name { font-size: 25px; }
   }
 
@@ -526,13 +537,12 @@ const footerOffices = offices.map((o) => {
     .lp-h2 { max-width: none; }
     .lp-p { font-size: 17px; }
     .lp-cards-sec { padding: 40px 0 48px; }
-    .lp-cards__h { margin-bottom: 24px; }
+    .lp-cards__h { margin-bottom: 20px; }
     .lp-cards { grid-template-columns: 1fr; gap: 20px; }
-    .lp-card { grid-template-columns: 1fr; gap: 18px; padding: 22px; }
-    .lp-card :global(.lp-card__photo) { aspect-ratio: 3 / 2; object-position: 50% 22%; }
+    .lp-card__body { padding: 20px 22px 22px; }
     .lp-card__name { font-size: 26px; }
     .lp-card__bio { font-size: 16px; }
-    .lp-card__cta { width: 100%; margin-top: 8px; }
+    .lp-card__cta { width: 100%; }
     :global(.lp-list > li) { font-size: 17px; padding: 16px 0; }
     .lp-note { gap: 28px; }
     .lp-quote { grid-template-columns: 1fr; gap: 16px; }

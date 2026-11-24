@@ -6,6 +6,11 @@
  * (headline, sentence, button, number) and the portrait follows. No eyebrow,
  * no card, no motion. Without a photo (a two-physician page, whose portraits
  * are on the cards below) the copy takes the one column, a little wider.
+ *
+ * `portraitStyle="compact"` (the founder on a two-physician page): at desktop
+ * the portrait column is 272px, so the 4:5 crop is 340px tall, under less
+ * padding; on a phone the portrait is a 96px round badge with the caption
+ * beside it, above the headline, not a block of its own.
  */
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
@@ -20,12 +25,15 @@ export interface Props {
   /** "Dr. Brian Landi, DO" and "Family Medicine Physician", under the portrait. */
   name?: string;
   role?: string;
+  /** "full": the physician's portrait as on /lp/k4/. "compact": see above. */
+  portraitStyle?: 'full' | 'compact';
 }
-const { headline, supporting, cta, phone, photo, photoAlt = '', name = '', role = '' } = Astro.props;
+const { headline, supporting, cta, phone, photo, photoAlt = '', name = '', role = '', portraitStyle = 'full' } = Astro.props;
+const compact = portraitStyle === 'compact';
 ---
 
-<section class="lp-hero">
-  <div class:list={['rd-wrap', 'lp-hero__grid', { 'lp-hero__grid--solo': !photo }]}>
+<section class:list={['lp-hero', { 'lp-hero--compact': compact }]}>
+  <div class:list={['rd-wrap', 'lp-hero__grid', { 'lp-hero__grid--solo': !photo, 'lp-hero__grid--compact': compact }]}>
     <div class="lp-hero__copy">
       <h1 class="rd-h1 lp-hero__h1">{headline}</h1>
       <p class="lp-hero__p">{supporting}</p>
@@ -40,10 +48,10 @@ const { headline, supporting, cta, phone, photo, photoAlt = '', name = '', role 
         <Image
           src={photo}
           alt={photoAlt}
-          width={560}
-          height={700}
-          widths={[280, 560, 840]}
-          sizes="(max-width: 860px) calc(100vw - 40px), 280px"
+          width={compact ? 544 : 560}
+          height={compact ? 680 : 700}
+          widths={compact ? [192, 272, 544, 816] : [280, 560, 840]}
+          sizes={compact ? '(max-width: 860px) 96px, 272px' : '(max-width: 860px) calc(100vw - 40px), 280px'}
           format="webp"
           quality={82}
           loading="eager"
@@ -68,6 +76,10 @@ const { headline, supporting, cta, phone, photo, photoAlt = '', name = '', role 
      up to about 90 characters still sets in two lines. */
   .lp-hero__grid--solo { grid-template-columns: minmax(0, 1fr); }
   .lp-hero__grid--solo .lp-hero__copy { max-width: 880px; }
+  /* The compact portrait: a 272px column (340px tall at 4:5) under 56px of
+     padding, so the section below starts inside a 1360 by 850 screen. */
+  .lp-hero--compact { padding: 56px 0; }
+  .lp-hero__grid--compact { grid-template-columns: minmax(0, 1fr) 272px; }
   .lp-hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
   /* Two lines at desktop for a headline of up to about 72 characters
      (the current one is 60). */
@@ -117,5 +129,13 @@ const { headline, supporting, cta, phone, photo, photoAlt = '', name = '', role 
     .lp-hero__cap { margin-top: 10px; }
     .lp-hero__cap strong { display: inline; }
     .lp-hero__sep { display: inline; }
+    /* The compact portrait on a phone: a 96px round badge and the caption
+       beside it, first in the column, above the headline. */
+    .lp-hero--compact .lp-hero__grid { gap: 20px; }
+    .lp-hero__grid--compact .lp-hero__figure { order: -1; display: flex; align-items: center; gap: 14px; }
+    .lp-hero__grid--compact :global(.lp-hero__photo) { width: 96px; height: 96px; flex-shrink: 0; aspect-ratio: 1 / 1; border-radius: 50%; object-position: 50% 28%; }
+    .lp-hero__grid--compact .lp-hero__cap { margin: 0; }
+    .lp-hero__grid--compact .lp-hero__cap strong { display: block; }
+    .lp-hero__grid--compact .lp-hero__sep { display: none; }
   }
 </style>

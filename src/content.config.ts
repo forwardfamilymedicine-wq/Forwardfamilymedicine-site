@@ -248,11 +248,16 @@ const landing = defineCollection({
     draft: z.boolean().default(true),
     /** Open items shown on the page in dev. A page cannot publish while any remain. */
     todo: z.array(z.string()).default([]),
-    /** The hero: a headline (two lines at desktop), one supporting sentence, the button. The photo is the physician's. */
+    /** The hero: a headline (two lines at desktop), one supporting sentence, the button. The photo is the physician's, or `portrait`'s. */
     hero: z.object({
       headline: z.string(),
       supporting: z.string(),
       ctaLabel: z.string().default('Schedule a Free Meet & Greet'),
+      /**
+       * A two-physician page's hero portrait (the founder's), with the role
+       * line under the name in the caption. The photo is the provider's.
+       */
+      portrait: z.object({ physician: reference('providers'), role: z.string().min(1) }).optional(),
     }),
     /** Exactly three proof tiles: a short serif phrase and one small line each. Facts already on the site only. Required with `physician`. */
     tiles: z.array(z.object({ phrase: z.string().min(1), line: z.string().min(1) })).length(3).optional(),
@@ -288,6 +293,7 @@ const landing = defineCollection({
       if (!d.tiles) ctx.addIssue({ code: 'custom', path: ['tiles'], message: 'a one-physician page has exactly three tiles' });
       if (!d.whatYouGet) ctx.addIssue({ code: 'custom', path: ['whatYouGet'], message: 'a one-physician page has one to four "what you get" items' });
       if (d.physicianKey === 'team') ctx.addIssue({ code: 'custom', path: ['physicianKey'], message: 'a one-physician page names its physician\'s key' });
+      if (d.hero.portrait) ctx.addIssue({ code: 'custom', path: ['hero', 'portrait'], message: 'a one-physician page\'s hero shows that physician; `portrait` is for a two-physician page' });
     }
     if (d.cards) {
       if (d.physicianKey !== 'team') ctx.addIssue({ code: 'custom', path: ['physicianKey'], message: 'a two-physician page uses physicianKey "team"' });
