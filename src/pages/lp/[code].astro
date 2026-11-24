@@ -345,6 +345,13 @@ const footerOffice = {
   .lp-quote__body { margin: 0; }
   .lp-quote__body :global(p) { margin: 0 0 14px; font-family: var(--font-heading); font-size: 24px; line-height: 1.4; color: var(--forest); max-width: 44ch; }
   .lp-quote__body :global(p:last-child) { margin-bottom: 0; }
+  /* Typographic quotation marks from the template, never from the note's
+     text: the opening mark hangs outside the text's left edge at desktop (a
+     negative indent on the first paragraph), the closing mark follows the
+     last word. On a phone both sit inline so nothing hangs past the edge. */
+  .lp-quote__body :global(p:first-child) { text-indent: -0.5em; }
+  .lp-quote__body :global(p:first-child)::before { content: "\201C"; }
+  .lp-quote__body :global(p:last-child)::after { content: "\201D"; }
   .lp-quote__body :global(a:not([class])) { color: var(--forest); border-bottom: 1px solid var(--hairline-dot); }
   .lp-quote__who { grid-column: 2; font-size: 14px; line-height: 1.5; color: var(--text-600); }
   .lp-quote__who strong { display: block; font-size: 15px; font-weight: 600; color: var(--forest); }
@@ -383,7 +390,20 @@ const footerOffice = {
     .lp-quote { grid-template-columns: 1fr; gap: 16px; }
     .lp-quote :global(.lp-quote__photo) { width: 96px; height: 96px; grid-row: auto; }
     .lp-quote__body :global(p) { font-size: 21px; }
+    .lp-quote__body :global(p:first-child) { text-indent: 0; }
     .lp-quote__who { grid-column: 1; }
+    /* The About link as a 45px tap target: the underline becomes a text
+       decoration so the padding does not push it away from the words. */
+    .lp-link {
+      display: inline-block;
+      padding: 9px 0 8px;
+      border-bottom: 0;
+      text-decoration: underline;
+      text-decoration-color: var(--hairline-dot);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+    .lp-link:hover { text-decoration-color: var(--forest); }
     .lp-price__amt { font-size: 22px; }
     .lp-faq :global(.faq-section) { padding: 48px 0; }
   }
