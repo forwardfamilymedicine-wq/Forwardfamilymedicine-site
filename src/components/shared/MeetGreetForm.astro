@@ -37,6 +37,17 @@ export interface Props {
   topic?: string;
   /** What GA4 receives as `source` on this page (landing pages pass their code, "k4"). The hidden source field still goes to the sheet. */
   gaSource?: string;
+  /**
+   * Landing pages with two physicians (/lp/v2/): a "Preferred physician"
+   * field in step 1, the booking pages as its options, sent as `physician`
+   * (BL or PL, the sheet's Physician Requested). A link anywhere on the page
+   * with data-mg-physician="BL" sets it (the physician cards' buttons); the
+   * visitor can change it. Chosen, that physician's booking follows step 1
+   * at once (the second script at the end of this file, rendered only with
+   * this prop, so every other page's markup and script stay as they are);
+   * left empty, the chooser shows as before. Never with `physician`.
+   */
+  physicianChoice?: boolean;
 }
 const {
   stepper = true,
@@ -47,6 +58,7 @@ const {
   physicianName,
   topic = '',
   gaSource = '',
+  physicianChoice = false,
   heading = 'Request Your Free Meet & Greet',
   subline = 'Two quick steps. Tell us a little about you, then pick a time that works. No pressure, no commitment, no credit card.',
 } = Astro.props;
@@ -54,6 +66,8 @@ const SHOW_STEPPER = stepper && BOOKING_ENABLED;
 if (physician && !BOOKING_PAGES.some((p) => p.code === physician)) {
   throw new Error(`[MeetGreetForm] physician="${physician}" is not in src/data/bookingPages.ts.`);
 }
+if (physicianChoice && physician) throw new Error('[MeetGreetForm] physicianChoice and physician are two ways to pick the physician; pass one.');
+if (physicianChoice && !BOOKING_ENABLED) throw new Error('[MeetGreetForm] physicianChoice needs both booking pages in src/data/bookingPages.ts.');
 // The client script reads this: '' means the chooser, as before.
 const PRESELECT = physician ?? '';
 // The fixed-office line (landing pages). The office's display name is the
@@ -173,7 +187,15 @@ const DEV = import.meta.env.DEV;
         <option value="4">4 people</option>
         <option value="5+">5 or more</option>
       </select>
-    </div>
+    </div>{physicianChoice && (
+      <div class="form-group form-group--full">
+        <label for="physician">Preferred physician</label>
+        <select id="physician" name="physician">
+          <option value="">Select…</option>
+          {BOOKING_PAGES.map((p) => <option value={p.code}>{p.cardTitle}</option>)}
+        </select>
+      </div>
+    )}
 
     <!-- With `office` set (landing pages) the office is the page's: shown as a
          line the visitor can read but not change, and still sent under the
@@ -292,7 +314,7 @@ const DEV = import.meta.env.DEV;
       <!-- Step 2c, landing pages on a phone: the embed is too narrow there, and a
            new tab can only be opened from a tap, never from the form's own
            success handler. So the visitor taps this button. -->
-      {PRESELECT && (
+      {(PRESELECT || physicianChoice) && (
         <div id="mg-step-tap" hidden>
           <p class="mg-body" id="mg-tap-body">Pick a time on the booking page; it opens in a new tab. Google will ask for your name and email once more. That confirms your spot.</p>
           <a id="mg-tap-btn" class="btn-forest mg-tap-btn" href="#" target="_blank" rel="noopener noreferrer"></a>
@@ -993,4 +1015,57 @@ const DEV = import.meta.env.DEV;
     }
   });
   })();
-</script>
+</script>{physicianChoice && (
+  <script is:inline define:vars={{ BOOKING_PAGES: BOOKING_PAGES_CLIENT }}>
+    (function () {
+      // The "Preferred physician" field (physicianChoice), beside the form's
+      // own script, which posts the field as `physician` and shows the
+      // chooser at step 2 as before. A link with data-mg-physician sets the
+      // field (the physician cards' buttons scroll here with it chosen); the
+      // visitor can change it. The choice is read at submit, and when step 2
+      // shows it is acted on at once: from 560px up (the form script's
+      // EMBED_MIN_WIDTH) the chosen physician's card in the chooser is
+      // clicked, so that scheduler embeds with "Choose a different physician"
+      // above it; below 560px a new tab can only open from a tap, so the
+      // tap-to-book button takes the chooser's place. Nothing here is sent
+      // anywhere.
+      var EMBED_MIN_WIDTH = 560;
+      var sel = document.getElementById('physician');
+      var form = document.getElementById('meetgreet-form');
+      var chooser = document.getElementById('mg-step-choose');
+      var tap = document.getElementById('mg-step-tap');
+      var tapBtn = document.getElementById('mg-tap-btn');
+      var intro = document.getElementById('mg-booking-intro');
+      if (!sel || !form) return;
+      var known = function (code) { return BOOKING_PAGES.some(function (p) { return p.code === code; }); };
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        var link = t && t.closest ? t.closest('[data-mg-physician]') : null;
+        if (!link) return;
+        var code = link.getAttribute('data-mg-physician') || '';
+        if (known(code)) sel.value = code;
+      });
+      var chosen = '';
+      form.addEventListener('submit', function () { chosen = known(sel.value) ? sel.value : ''; });
+      document.addEventListener('ffm:mg-step', function (e) {
+        if (!e.detail || e.detail.step !== 2 || !chosen) return;
+        var code = chosen;
+        chosen = '';
+        var page = null;
+        for (var i = 0; i < BOOKING_PAGES.length; i++) if (BOOKING_PAGES[i].code === code) page = BOOKING_PAGES[i];
+        if (!page) return;
+        if (window.innerWidth >= EMBED_MIN_WIDTH || !tap || !tapBtn) {
+          var btn = chooser ? chooser.querySelector('[data-physician="' + code + '"]') : null;
+          if (btn) { btn.click(); if (intro) intro.hidden = false; }
+          return;
+        }
+        tapBtn.href = page.shareUrl;
+        tapBtn.textContent = page.bookLabel;
+        tapBtn.setAttribute('data-physician-key', page.eventKey);
+        if (chooser) chooser.hidden = true;
+        if (intro) intro.hidden = false;
+        tap.hidden = false;
+      });
+    })();
+  </script>
+)}

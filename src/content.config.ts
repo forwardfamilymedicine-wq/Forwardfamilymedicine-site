@@ -228,6 +228,8 @@ const landing = defineCollection({
       /** One to three lines, as the site already states them. */
       credentials: z.array(z.string().min(1)).min(1).max(3),
       bio: z.string().min(1),
+      /** Areas of focus, at most four short labels, shown as quiet tags under the bio. */
+      focus: z.array(z.string().min(1)).max(4).optional(),
     })).length(2).optional(),
     /**
      * The URL: /lp/<code>/. Two to eight lowercase letters and digits, starting
@@ -269,8 +271,25 @@ const landing = defineCollection({
     noteFrom: reference('providers').optional(),
     /** Heading over the note (the markdown body). Default "A note from Dr. X". */
     noteHeading: z.string().optional(),
-    /** At most three. */
-    faqs: z.array(z.object({ q: z.string(), a: z.string() })).max(3).default([]),
+    /** Where the note renders: its own section after the cards, or inside the hero beside the portrait (a two-physician page's founder note). */
+    notePlacement: z.enum(['section', 'hero']).default('section'),
+    /** The heading over the cards, when not the template's "Choose the physician you'd like to meet." */
+    cardsHeading: z.string().min(1).optional(),
+    /**
+     * The membership section's copy, when not the template's: a heading in
+     * place of "What membership costs", an intro in place of the price line,
+     * the benefits as a ruled list (at most eight, one short sentence each)
+     * in place of the included line, and the line that says what is separate.
+     * The figures stay src/data/membershipPricing.ts.
+     */
+    membership: z.object({
+      heading: z.string().min(1).optional(),
+      intro: z.string().min(1).optional(),
+      benefits: z.array(z.string().min(1)).min(1).max(8).optional(),
+      separate: z.string().min(1).optional(),
+    }).optional(),
+    /** At most four. */
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).max(4).default([]),
     form: z.object({
       heading: z.string().optional(),
       subline: z.string().optional(),
@@ -278,7 +297,14 @@ const landing = defineCollection({
       skipChooser: z.boolean().default(true),
       /** Preselect and hide the Preferred office field. */
       lockOffice: z.boolean().default(true),
-    }).default({ skipChooser: true, lockOffice: true }),
+      /**
+       * A "Preferred physician" field in step 1 (two-physician pages): the
+       * cards' buttons preselect it, the visitor can change it, and the form
+       * books with the chosen physician straight after step 1. Needs `cards`
+       * and no `skipChooser`.
+       */
+      physicianChoice: z.boolean().default(false),
+    }).default({ skipChooser: true, lockOffice: true, physicianChoice: false }),
     seo: z.object({
       title: z.string(),
       description: z.string(),
@@ -298,6 +324,12 @@ const landing = defineCollection({
     if (d.cards) {
       if (d.physicianKey !== 'team') ctx.addIssue({ code: 'custom', path: ['physicianKey'], message: 'a two-physician page uses physicianKey "team"' });
       if (d.cards[0].physician.id === d.cards[1].physician.id) ctx.addIssue({ code: 'custom', path: ['cards'], message: 'the two cards name two different physicians' });
+    }
+    if (d.form.physicianChoice && (!d.cards || d.form.skipChooser)) {
+      ctx.addIssue({ code: 'custom', path: ['form', 'physicianChoice'], message: 'physicianChoice is for a two-physician page whose form does not skip the chooser' });
+    }
+    if (d.notePlacement === 'hero' && !d.hero.portrait) {
+      ctx.addIssue({ code: 'custom', path: ['notePlacement'], message: 'a note in the hero sits beside `hero.portrait`' });
     }
     if (d.form.skipChooser && !d.physician) {
       ctx.addIssue({ code: 'custom', path: ['form', 'skipChooser'], message: 'skipChooser needs the page\'s `physician`' });

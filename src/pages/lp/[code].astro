@@ -8,11 +8,14 @@
  *     three proof tiles, "what you get" (at most four sentences), the
  *     physician's note as a pull quote, pricing, the form booking with that
  *     physician, up to three FAQs;
- *   `cards` (two physicians, /lp/v1/): hero with the founder's compact
- *     portrait (`hero.portrait`) or none, a card per physician with a button
- *     to the form, the note from `noteFrom` when the body has one, pricing,
+ *   `cards` (two physicians, /lp/v1/, /lp/v2/): hero with the founder's
+ *     compact portrait (`hero.portrait`) or none, the founder's note from
+ *     `noteFrom` in the hero (`notePlacement: hero`) or in its own section
+ *     after the cards, a card per physician with a button to the form (and,
+ *     with `form.physicianChoice`, preselecting that physician in the form),
+ *     pricing with the entry's own copy (`membership`) or the template's,
  *     the form with its physician chooser (no physician fixed, no office
- *     fixed), up to three FAQs.
+ *     fixed), up to four FAQs.
  * The code is opaque: the URL, the canonical, the title and the description
  * name neither the physician nor a condition, and the build refuses an entry
  * whose text does (see assertNeutral below). Everything on the page comes
@@ -141,6 +144,11 @@ const cards = await Promise.all((d.cards ?? []).map(async (c, i) => {
     throw new Error(`[lp] ${entry.id}: Dr. ${pr.data.name} is not accepting new patients at an open office (${availability.status}); a card cannot invite a meet and greet.`);
   }
   const last = pr.data.name.trim().split(/\s+/).pop() ?? pr.data.name;
+  // With `form.physicianChoice`, the card's button also preselects this
+  // physician in the form (MeetGreetForm, [data-mg-physician]); the code is
+  // the booking page whose eventKey is in the provider's slug.
+  const booking = d.form.physicianChoice ? BOOKING_PAGES.find((b) => pr.data.slug.includes(b.eventKey)) : undefined;
+  if (d.form.physicianChoice && !booking) throw new Error(`[lp] ${entry.id}: cards[${i}] (${pr.data.slug}) has no booking page in src/data/bookingPages.ts, so the form cannot preselect this physician.`);
   return {
     data: pr.data,
     status: `Accepting new patients · ${officeName}`,
@@ -148,6 +156,8 @@ const cards = await Promise.all((d.cards ?? []).map(async (c, i) => {
     ctaLabel: `Meet Dr. ${last}`,
     credentials: c.credentials,
     bio: c.bio,
+    focus: c.focus,
+    bookingCode: booking?.code,
     // The lp_cta_click placement: the card's position, never the physician.
     placement: `card-${i + 1}`,
   };
@@ -162,6 +172,12 @@ const notePlaceholder = noteBody === '' || /\bTODO\b/.test(noteBody);
 const noteProvider = d.noteFrom ? await getEntry(d.noteFrom) : provider;
 if (d.noteFrom && !noteProvider) throw new Error(`[lp] ${entry.id}: noteFrom names no providers entry "${d.noteFrom.id}".`);
 if (!notePlaceholder && !noteProvider) throw new Error(`[lp] ${entry.id}: the body is a note, but neither \`noteFrom\` nor \`physician\` says whose.`);
+// In the hero, the note is the portrait's words: the same person, or the build stops.
+if (d.notePlacement === 'hero' && d.hero.portrait && noteProvider && d.hero.portrait.physician.id !== noteProvider.id) {
+  throw new Error(`[lp] ${entry.id}: the note in the hero is by "${noteProvider.id}" but the portrait is "${d.hero.portrait.physician.id}". They must be the same person.`);
+}
+const noteInHero = d.notePlacement === 'hero' && !notePlaceholder && !!noteProvider;
+const noteInSection = d.notePlacement === 'section' && !notePlaceholder && !!noteProvider;
 const { Content } = await render(entry);
 
 const nameOf = (name: string) => name.trim().split(/\s+/).pop() ?? name;
@@ -248,12 +264,13 @@ const footerOffices = offices.map((o) => {
     name={heroName}
     role={heroRole}
     portraitStyle={d.cards ? 'compact' : 'full'}
-  />
+    note={noteInHero ? { name: heroName, role: heroRole } : undefined}
+  >{noteInHero && <Content slot="note" />}</LpHero>
 
   {cards.length > 0 && (
     <section class="lp-sec lp-sec--white lp-cards-sec" aria-labelledby="lp-cards-h">
       <div class="rd-wrap">
-        <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">Choose the physician you'd like to meet.</h2>
+        {d.cardsHeading ? <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">{d.cardsHeading}</h2> : <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">Choose the physician you'd like to meet.</h2>}
         <div class="lp-cards" data-lp-placement="cards">
           {cards.map((c, i) => (
             <article class="lp-card">
@@ -279,8 +296,12 @@ const footerOffices = offices.map((o) => {
                 <RuledList size="sm" class="lp-card__rows">
                   {c.credentials.map((line) => <li>{line}</li>)}
                 </RuledList>
-                <p class="lp-card__bio">{c.bio}</p>
-                <a href={FORM_HREF} class="btn-forest lp-card__cta" data-lp-cta={c.placement}>{c.ctaLabel}</a>
+                <p class="lp-card__bio">{c.bio}</p>{c.focus && (
+                  <ul class="lp-card__focus" aria-label="Areas of focus">
+                    {c.focus.map((f) => <li>{f}</li>)}
+                  </ul>
+                )}
+                <a href={FORM_HREF} class="btn-forest lp-card__cta" data-lp-cta={c.placement} data-mg-physician={c.bookingCode}>{c.ctaLabel}</a>
               </div>
             </article>
           ))}
@@ -316,7 +337,7 @@ const footerOffices = offices.map((o) => {
     </section>
   )}
 
-  {!notePlaceholder && noteProvider && (
+  {noteInSection && noteProvider && (
     <section class="lp-sec lp-sec--cream">
       <div class="rd-wrap">
       <div class="lp-note">
@@ -350,8 +371,8 @@ const footerOffices = offices.map((o) => {
   <section class="lp-sec lp-sec--white">
     <div class="rd-wrap lp-split">
       <div class="lp-stack lp-split__head">
-        <h2 class="rd-h2 lp-h2">What membership costs</h2>
-        <p class="lp-p">{PRICE_LINE}</p>
+        <h2 class="rd-h2 lp-h2">{d.membership?.heading ?? 'What membership costs'}</h2>
+        <p class="lp-p">{d.membership?.intro ?? PRICE_LINE}</p>
       </div>
       <div class="lp-price">
         <p class="lp-price__head">Per person, per month</p>
@@ -363,7 +384,15 @@ const footerOffices = offices.map((o) => {
             </li>
           ))}
         </RuledList>
-        <p class="lp-price__inc">{INCLUDED_LINE}</p>
+        {d.membership?.benefits ? (
+          <Fragment><p class="lp-price__sub">Included in membership</p>
+            <RuledList size="sm" class="lp-price__benefits">
+              {d.membership.benefits.map((b) => <li>{b}</li>)}
+            </RuledList>
+            {d.membership.separate && <p class="lp-price__inc">{d.membership.separate}</p>}</Fragment>
+        ) : (
+          <p class="lp-price__inc">{INCLUDED_LINE}</p>
+        )}
       </div>
     </div>
   </section>
@@ -381,6 +410,7 @@ const footerOffices = offices.map((o) => {
           topic={d.topic}
           heading={d.form.heading}
           subline={d.form.subline}
+          physicianChoice={d.form.physicianChoice}
         />
       </div>
     </div>
@@ -473,6 +503,9 @@ const footerOffices = offices.map((o) => {
      height (margin-top auto), so the two buttons sit on one line. */
   .lp-card__bio { margin: 6px 0 18px !important; font-size: 16px; line-height: 1.65; color: var(--text-900); }
   .lp-card__cta { margin-top: auto !important; }
+  /* Areas of focus: quiet hairline tags, no icons, before the button. */
+  .lp-card :global(.lp-card__focus) { list-style: none; margin: 0 0 18px !important; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .lp-card :global(.lp-card__focus li) { padding: 5px 10px; border: 1px solid var(--hairline-strong); border-radius: 2px; font-size: 13px; line-height: 1.4; color: var(--text-700); }
   @media (max-width: 1100px) {
     .lp-card__body { padding: 20px 24px 24px; }
     .lp-card__name { font-size: 25px; }
@@ -520,6 +553,10 @@ const footerOffices = offices.map((o) => {
   .lp-price__who { color: var(--text-700); }
   .lp-price__amt { font-size: 24px; line-height: 1.1; color: var(--forest); white-space: nowrap; }
   .lp-price__inc { margin: 20px 0 0; font-size: 15px; line-height: 1.65; color: var(--text-600); }
+  /* The entry's benefits: a small heading and a ruled list under the table,
+     then the line about what is separate. */
+  .lp-price__sub { margin: 28px 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-600); }
+  :global(.lp-price__benefits > li) { font-size: 15px; line-height: 1.55; color: var(--text-900); padding: 10px 0; }
 
   /* The form: the shared card, on the sage wash, with a soft shadow. */
   .lp-form__col { max-width: 820px; margin: 0 auto; }
