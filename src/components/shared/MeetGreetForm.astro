@@ -12,6 +12,9 @@ const SCRIPT_URL = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL;
 // value empty, nothing below is rendered and the success state is unchanged.
 const BOOKING_ENABLED = bookingEnabled();
 const BOOKING_PAGES_CLIENT = BOOKING_PAGES.map(({ code, cardTitle, bookLabel, shareUrl, embedSrc, eventKey }) => ({ code, cardTitle, bookLabel, shareUrl, embedSrc, eventKey }));
+// The physician-choice script (physicianChoice, below) also needs each
+// physician's office, to fill Preferred office from the choice.
+const BOOKING_PAGES_CHOICE = BOOKING_PAGES.map(({ code, bookLabel, shareUrl, eventKey, office }) => ({ code, bookLabel, shareUrl, eventKey, office }));
 
 // The two-step progress line above the card. On by default wherever the form
 // renders; a page that must not show it passes stepper={false}. It is also
@@ -42,7 +45,9 @@ export interface Props {
    * field in step 1, the booking pages as its options, sent as `physician`
    * (BL or PL, the sheet's Physician Requested). A link anywhere on the page
    * with data-mg-physician="BL" sets it (the physician cards' buttons); the
-   * visitor can change it. Chosen, that physician's booking follows step 1
+   * visitor can change it. Chosen, Preferred office is set to that
+   * physician's office and its field hidden (cleared, the field returns with
+   * the visitor's own choice), and that physician's booking follows step 1
    * at once (the second script at the end of this file, rendered only with
    * this prop, so every other page's markup and script stay as they are);
    * left empty, the chooser shows as before. Never with `physician`.
@@ -1016,19 +1021,21 @@ const DEV = import.meta.env.DEV;
   });
   })();
 </script>{physicianChoice && (
-  <script is:inline define:vars={{ BOOKING_PAGES: BOOKING_PAGES_CLIENT }}>
+  <script is:inline define:vars={{ BOOKING_PAGES: BOOKING_PAGES_CHOICE }}>
     (function () {
       // The "Preferred physician" field (physicianChoice), beside the form's
       // own script, which posts the field as `physician` and shows the
       // chooser at step 2 as before. A link with data-mg-physician sets the
       // field (the physician cards' buttons scroll here with it chosen); the
-      // visitor can change it. The choice is read at submit, and when step 2
-      // shows it is acted on at once: from 560px up (the form script's
-      // EMBED_MIN_WIDTH) the chosen physician's card in the chooser is
-      // clicked, so that scheduler embeds with "Choose a different physician"
-      // above it; below 560px a new tab can only open from a tap, so the
-      // tap-to-book button takes the chooser's place. Nothing here is sent
-      // anywhere.
+      // visitor can change it. With a physician chosen, Preferred office is
+      // that physician's office and its field is hidden (the value is still
+      // posted); cleared, the field returns with the visitor's own choice.
+      // The choice is read at submit, and when step 2 shows it is acted on
+      // at once: from 560px up (the form script's EMBED_MIN_WIDTH) the
+      // chosen physician's card in the chooser is clicked, so that scheduler
+      // embeds with "Choose a different physician" above it; below 560px a
+      // new tab can only open from a tap, so the tap-to-book button takes
+      // the chooser's place. Nothing here is sent anywhere.
       var EMBED_MIN_WIDTH = 560;
       var sel = document.getElementById('physician');
       var form = document.getElementById('meetgreet-form');
@@ -1036,14 +1043,33 @@ const DEV = import.meta.env.DEV;
       var tap = document.getElementById('mg-step-tap');
       var tapBtn = document.getElementById('mg-tap-btn');
       var intro = document.getElementById('mg-booking-intro');
+      var officeSel = document.getElementById('preferredOffice');
+      var officeGroup = officeSel && officeSel.tagName === 'SELECT' && officeSel.closest ? officeSel.closest('.form-group') : null;
       if (!sel || !form) return;
-      var known = function (code) { return BOOKING_PAGES.some(function (p) { return p.code === code; }); };
+      var pageFor = function (code) { for (var i = 0; i < BOOKING_PAGES.length; i++) if (BOOKING_PAGES[i].code === code) return BOOKING_PAGES[i]; return null; };
+      var known = function (code) { return !!pageFor(code); };
+      // Preferred office follows the physician; the visitor's own office
+      // choice is kept aside and restored when the physician is cleared.
+      var ownOffice = '';
+      function applyOffice() {
+        if (!officeSel || !officeGroup) return;
+        var page = pageFor(sel.value);
+        if (page) {
+          if (!officeGroup.hidden) ownOffice = officeSel.value;
+          officeSel.value = page.office;
+          officeGroup.hidden = true;
+        } else if (officeGroup.hidden) {
+          officeSel.value = ownOffice;
+          officeGroup.hidden = false;
+        }
+      }
+      sel.addEventListener('change', applyOffice);
       document.addEventListener('click', function (e) {
         var t = e.target;
         var link = t && t.closest ? t.closest('[data-mg-physician]') : null;
         if (!link) return;
         var code = link.getAttribute('data-mg-physician') || '';
-        if (known(code)) sel.value = code;
+        if (known(code)) { sel.value = code; applyOffice(); }
       });
       var chosen = '';
       form.addEventListener('submit', function () { chosen = known(sel.value) ? sel.value : ''; });
@@ -1051,8 +1077,7 @@ const DEV = import.meta.env.DEV;
         if (!e.detail || e.detail.step !== 2 || !chosen) return;
         var code = chosen;
         chosen = '';
-        var page = null;
-        for (var i = 0; i < BOOKING_PAGES.length; i++) if (BOOKING_PAGES[i].code === code) page = BOOKING_PAGES[i];
+        var page = pageFor(code);
         if (!page) return;
         if (window.innerWidth >= EMBED_MIN_WIDTH || !tap || !tapBtn) {
           var btn = chooser ? chooser.querySelector('[data-physician="' + code + '"]') : null;

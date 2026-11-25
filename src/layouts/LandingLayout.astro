@@ -15,7 +15,14 @@
  * of global.css in this layout's own CSS, which only /lp/ pages load.
  *
  * Landing events (B2), all through window.ffmTrack, so they queue until the
- * visitor accepts analytics and are dropped if they decline:
+ * visitor accepts analytics and are dropped if they decline. On these pages
+ * window.ffmTrack is wrapped first (B7): a `physician` parameter that is a
+ * booking code (BL, PL) or event key (landi, lieberman) is replaced by the
+ * neutral gaKey of src/data/bookingPages.ts (p1, p2) before it reaches GA4,
+ * so the form's booking events (mg_physician_selected,
+ * meetgreet_physician_select, meetgreet_new_tab_click) and lp_view name no
+ * one here. The form's own POST to the sheet is untouched. Main-site pages
+ * (MainLayout) are not wrapped.
  *   lp_view       { lp, physician }      once, on load
  *   lp_cta_click  { lp, placement, target: 'form' }
  *                 a[data-lp-cta] (header, hero) or any link to #meet-greet
@@ -26,10 +33,12 @@
  *                 practice" link (label "about") and the footer's "Visit our
  *                 full website" (label "site", to the homepage). No lp
  *                 parameter, by order.
- * `lp` is the entry's opaque code; `physician` its short key. Neither names
- * a condition. form_start, generate_lead and meetgreet_* are untouched.
+ * `lp` is the entry's opaque code; `physician` its short key mapped to the
+ * neutral gaKey (`team` on a two-physician page). Neither names a condition
+ * or a person. form_start and generate_lead are untouched.
  */
 import LpHeader from '../components/landing/LpHeader.astro';
+import { BOOKING_PAGES } from '../data/bookingPages';
 import LpFooter from '../components/landing/LpFooter.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import Attribution from '../components/Attribution.astro';
@@ -76,6 +85,10 @@ const {
 
 const siteUrl = 'https://www.forwardfamilymedicine.com';
 const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+
+// Booking code and event key to the neutral GA4 key, from the one mapping.
+const GA_KEYS: Record<string, string> = Object.fromEntries(BOOKING_PAGES.flatMap((b) => [[b.code, b.gaKey], [b.eventKey, b.gaKey]]));
+const lpPhysicianGa = GA_KEYS[lpPhysician] ?? lpPhysician;
 ---
 
 <!doctype html>
@@ -124,8 +137,23 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
   <!-- pixel: the Meta Pixel may load here, and only here, once advertising
        consent is saved and PUBLIC_META_PIXEL_ID is set (ConsentBanner). -->
   <ConsentBanner pixel={true} />
-  <script is:inline define:vars={{ LP_CODE: lpCode, LP_PHYSICIAN: lpPhysician }}>
+  <script is:inline define:vars={{ LP_CODE: lpCode, LP_PHYSICIAN: lpPhysicianGa, GA_KEYS }}>
     (function () {
+      // Every event on this page passes here first: a physician parameter
+      // that is a booking code or event key becomes its neutral key.
+      var inner = window.ffmTrack;
+      if (typeof inner === 'function') {
+        window.ffmTrack = function (name, params) {
+          var p = params || {};
+          if (p.physician && Object.prototype.hasOwnProperty.call(GA_KEYS, p.physician)) {
+            var q = {};
+            for (var k in p) if (Object.prototype.hasOwnProperty.call(p, k)) q[k] = p[k];
+            q.physician = GA_KEYS[p.physician];
+            p = q;
+          }
+          return inner(name, p);
+        };
+      }
       function track(name, params) { if (window.ffmTrack) window.ffmTrack(name, params); }
       function placementOf(el, attr) {
         var own = el.getAttribute(attr);
