@@ -23,8 +23,14 @@ export interface BookingPage {
   /** The office this physician sees meet-and-greet patients at; matches the
    *  form's "Preferred office" values, so that choice can order the cards. */
   office: 'wayne' | 'malvern';
-  /** Analytics value for the physician parameter of the meetgreet_* events. */
+  /** Analytics value for the physician parameter of the meetgreet_* events on the main site. */
   eventKey: 'landi' | 'lieberman';
+  /**
+   * What landing pages (src/layouts/LandingLayout.astro) send GA4 in place of
+   * `code` and `eventKey`: a neutral key that names no one. The sheet still
+   * receives the real `code`. The only mapping; nothing else defines p1/p2.
+   */
+  gaKey: 'p1' | 'p2';
   /** Booking page share link, used for the "open in a new tab" link. */
   shareUrl: string;
   /** The src of Google's inline-embed iframe snippet, used as given. */
@@ -40,6 +46,7 @@ export const BOOKING_PAGES: BookingPage[] = [
     bookLabel: 'Book with Dr. Landi',
     office: 'malvern',
     eventKey: 'landi',
+    gaKey: 'p1',
     shareUrl: 'https://calendar.app.google/byvHf4dTyqVfpVWw9',
     embedSrc: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3z_348-rTAgqKq9ZKyYf2Nk16oCiZy-_Hj7zC5LykJFUY57Sj3boJQfNXwDWfJW43Bh7AxGKNB?gv=true',
   },
@@ -50,6 +57,7 @@ export const BOOKING_PAGES: BookingPage[] = [
     bookLabel: 'Book with Dr. Lieberman',
     office: 'wayne',
     eventKey: 'lieberman',
+    gaKey: 'p2',
     shareUrl: 'https://calendar.app.google/cFzhZWL4te6zgBcG9',
     embedSrc: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Rl8gp9wQjO6JOZw0M2NCtYDQeANBqJKtb6aJTwxa0WVh5za35DU_2s_tw9tawegFYqhSHcKrQ?gv=true',
   },

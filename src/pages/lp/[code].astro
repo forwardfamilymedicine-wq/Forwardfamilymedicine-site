@@ -2,16 +2,28 @@
 /**
  * Paid-ad landing pages: /lp/<code>/ (for example /lp/k4/), one per entry in
  * the landing collection (src/content/landing). The page has one job, a meet
- * and greet request, and its shape is the schema's and nothing more: hero,
- * exactly three proof tiles, "what you get" (at most four sentences), the
- * physician's note as a pull quote, pricing, the form, up to three FAQs.
+ * and greet request, and its shape is the schema's and nothing more, in one
+ * of two variants the entry picks:
+ *   `physician` (one physician, /lp/k4/): hero with the portrait, exactly
+ *     three proof tiles, "what you get" (at most four sentences), the
+ *     physician's note as a pull quote, pricing, the form booking with that
+ *     physician, up to three FAQs;
+ *   `cards` (two physicians, /lp/v1/, /lp/v2/): hero with the founder's
+ *     compact portrait (`hero.portrait`) or none, the founder's note from
+ *     `noteFrom` in the hero (`notePlacement: hero`) or in its own section
+ *     after the cards, a card per physician with a button to the form (and,
+ *     with `form.physicianChoice`, preselecting that physician in the form),
+ *     pricing with the entry's own copy (`membership`) or the template's,
+ *     the form with its physician chooser (no physician fixed, no office
+ *     fixed), up to four FAQs.
  * The code is opaque: the URL, the canonical, the title and the description
  * name neither the physician nor a condition, and the build refuses an entry
  * whose text does (see assertNeutral below). Everything on the page comes
  * from the entry and the providers and locations collections; the only copy
- * typed here is the "What you get" and "What membership costs" headings, the
- * wording around the pricing figures, the "About the practice" link, the FAQ
- * heading and the hero's "Or call" prefix.
+ * typed here is the "What you get", "What membership costs" and cards
+ * headings, the wording around the pricing figures, the "About the practice"
+ * link, the FAQ heading, the cards' "Meet Dr. X" button label and the hero's
+ * "Or call" prefix.
  *
  * noindex, follow with a canonical to itself (LandingLayout), left out of the
  * sitemap (astro.config.mjs), linked from no nav or footer. Drafts render on
@@ -32,6 +44,8 @@ import MeetGreetForm from '../../components/shared/MeetGreetForm.astro';
 import { INDIVIDUAL_MONTHLY, FAMILY_TIERS, PRICING_ROWS } from '../../data/membershipPricing';
 import { assertPricingMatchesMembershipPage } from '../../utils/pricingCheck';
 import { BOOKING_PAGES } from '../../data/bookingPages';
+import { getAvailability } from '../../utils/availability';
+import { openOfficeName } from '../../utils/credentialRows';
 
 export async function getStaticPaths() {
   const all = await getCollection('landing');
@@ -49,8 +63,8 @@ export async function getStaticPaths() {
     const code = e.data.bookingPhysician;
     if (!code) continue;
     const page = BOOKING_PAGES.find((b) => b.code === code);
-    if (!page || !e.data.physician.id.includes(page.eventKey)) {
-      throw new Error(`[lp] ${e.id}: bookingPhysician "${code}" books with ${page ? page.cardTitle : 'no booking page'}, but the entry's physician is "${e.data.physician.id}". They must be the same person.`);
+    if (!page || !e.data.physician || !e.data.physician.id.includes(page.eventKey)) {
+      throw new Error(`[lp] ${e.id}: bookingPhysician "${code}" books with ${page ? page.cardTitle : 'no booking page'}, but the entry's physician is "${e.data.physician?.id ?? 'not set'}". They must be the same person.`);
     }
   }
   // A draft is a page in review: it exists on `astro dev` and nowhere else.
@@ -66,11 +80,19 @@ const { entry } = Astro.props;
 const d = entry.data;
 const DEV = import.meta.env.DEV;
 
-const provider = await getEntry(d.physician);
-if (!provider) throw new Error(`[lp] ${entry.id}: no providers entry "${d.physician.id}".`);
-const p = provider.data;
-if (!p.slug.includes(d.physicianKey)) {
+// The one-physician variant's physician; undefined on a two-physician page.
+const provider = d.physician ? await getEntry(d.physician) : undefined;
+if (d.physician && !provider) throw new Error(`[lp] ${entry.id}: no providers entry "${d.physician.id}".`);
+const p = provider?.data;
+if (p && !p.slug.includes(d.physicianKey)) {
   throw new Error(`[lp] ${entry.id}: physicianKey "${d.physicianKey}" does not match the provider "${p.slug}".`);
+}
+
+// A landing page never calls a physician a practitioner (David, 2026-11-24):
+// the credential is written as a certification. Checked over the entry's
+// own text; the shared collections are not changed here.
+if (/\bpractitioners?\b/i.test(JSON.stringify(d) + (entry.body ?? ''))) {
+  throw new Error(`[lp] ${entry.id}: the entry says "practitioner". Write the credential as a certification instead.`);
 }
 
 // What leaves the page: the URL (and so the canonical), the title and the
@@ -98,22 +120,84 @@ assertNeutral('URL', pathname);
 assertNeutral('title', d.seo.title);
 assertNeutral('description', d.seo.description);
 
-const office = (await getCollection('locations')).find((l) => l.data.slug === d.office);
-if (!office) throw new Error(`[lp] ${entry.id}: no locations entry has the slug "${d.office}".`);
-if (office.data.status !== 'open') {
+// The offices the page sends people to: the entry's one, or every open
+// office in display order when the entry fixes none (the two-physician page).
+const allLocations = (await getCollection('locations')).sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+const office = d.office ? allLocations.find((l) => l.data.slug === d.office) : undefined;
+if (d.office && !office) throw new Error(`[lp] ${entry.id}: no locations entry has the slug "${d.office}".`);
+if (office && office.data.status !== 'open') {
   throw new Error(`[lp] ${entry.id}: the ${office.data.name} office is "${office.data.status}"; a landing page cannot send anyone there.`);
 }
+const offices = office ? [office] : allLocations.filter((l) => l.data.status === 'open');
+if (offices.length === 0) throw new Error(`[lp] ${entry.id}: no open office to send anyone to.`);
 
-// The physician's note (the markdown body). Empty, or still carrying TODO, it
-// is a placeholder: the note section is left out of the page on every build,
-// and in development the draft banner shows the placeholder text instead.
+// The two-physician variant's cards, in the entry's order. Each physician
+// must be accepting new patients at an open office, or the card would make a
+// claim the site does not: the status line is built from the same data the
+// Team page uses (src/utils/availability.ts, src/utils/credentialRows.ts).
+const cards = await Promise.all((d.cards ?? []).map(async (c, i) => {
+  const pr = await getEntry(c.physician);
+  if (!pr) throw new Error(`[lp] ${entry.id}: cards[${i}] names no providers entry "${c.physician.id}".`);
+  const availability = getAvailability(pr.data);
+  const officeName = openOfficeName(pr.data, allLocations);
+  if (availability.status !== 'accepting' || !officeName) {
+    throw new Error(`[lp] ${entry.id}: Dr. ${pr.data.name} is not accepting new patients at an open office (${availability.status}); a card cannot invite a meet and greet.`);
+  }
+  const last = pr.data.name.trim().split(/\s+/).pop() ?? pr.data.name;
+  // With `form.physicianChoice`, the card's button also preselects this
+  // physician in the form (MeetGreetForm, [data-mg-physician]); the code is
+  // the booking page whose eventKey is in the provider's slug.
+  const booking = d.form.physicianChoice ? BOOKING_PAGES.find((b) => pr.data.slug.includes(b.eventKey)) : undefined;
+  if (d.form.physicianChoice && !booking) throw new Error(`[lp] ${entry.id}: cards[${i}] (${pr.data.slug}) has no booking page in src/data/bookingPages.ts, so the form cannot preselect this physician.`);
+  return {
+    data: pr.data,
+    status: `Accepting new patients · ${officeName}`,
+    credentialedName: `Dr. ${pr.data.name}, ${pr.data.credentials}`,
+    ctaLabel: `Meet Dr. ${last}`,
+    credentials: c.credentials,
+    bio: c.bio,
+    focus: c.focus,
+    bookingCode: booking?.code,
+    // The lp_cta_click placement: the card's position, never the physician.
+    placement: `card-${i + 1}`,
+  };
+}));
+
+// The note (the markdown body), in the voice of `noteFrom` or, failing that,
+// the page's physician. Empty, or still carrying TODO, it is a placeholder:
+// the note section is left out of the page on every build, and in
+// development the draft banner shows the placeholder text instead.
 const noteBody = (entry.body ?? '').trim();
 const notePlaceholder = noteBody === '' || /\bTODO\b/.test(noteBody);
+const noteProvider = d.noteFrom ? await getEntry(d.noteFrom) : provider;
+if (d.noteFrom && !noteProvider) throw new Error(`[lp] ${entry.id}: noteFrom names no providers entry "${d.noteFrom.id}".`);
+if (!notePlaceholder && !noteProvider) throw new Error(`[lp] ${entry.id}: the body is a note, but neither \`noteFrom\` nor \`physician\` says whose.`);
+// In the hero, the note is the portrait's words: the same person, or the build stops.
+if (d.notePlacement === 'hero' && d.hero.portrait && noteProvider && d.hero.portrait.physician.id !== noteProvider.id) {
+  throw new Error(`[lp] ${entry.id}: the note in the hero is by "${noteProvider.id}" but the portrait is "${d.hero.portrait.physician.id}". They must be the same person.`);
+}
+const noteInHero = d.notePlacement === 'hero' && !notePlaceholder && !!noteProvider;
+const noteInSection = d.notePlacement === 'section' && !notePlaceholder && !!noteProvider;
 const { Content } = await render(entry);
 
-const lastName = p.name.trim().split(/\s+/).pop() ?? p.name;
-const shortName = `Dr. ${lastName}`;
-const credentialedName = `Dr. ${p.name}, ${p.credentials}`;
+const nameOf = (name: string) => name.trim().split(/\s+/).pop() ?? name;
+
+// The hero portrait: the page's physician (with the provider's own alt text
+// and title), or on a two-physician page `hero.portrait` (the founder, with
+// the entry's role line; the alt text is built here, without the provider's
+// em dash). Compact on a two-physician page: the people to meet are on the
+// cards, so the founder's portrait is smaller, and a badge on a phone.
+const heroProvider = d.hero.portrait ? await getEntry(d.hero.portrait.physician) : provider;
+if (d.hero.portrait && !heroProvider) throw new Error(`[lp] ${entry.id}: hero.portrait names no providers entry "${d.hero.portrait.physician.id}".`);
+// The caption under an entry portrait carries no "Dr." (David, 2026-11-24:
+// "David Bigley, DO" over the role line); the page physician's keeps it.
+const heroName = !heroProvider ? '' : d.hero.portrait
+  ? `${heroProvider.data.name}, ${heroProvider.data.credentials}`
+  : `Dr. ${heroProvider.data.name}, ${heroProvider.data.credentials}`;
+const heroRole = d.hero.portrait?.role ?? heroProvider?.data.title ?? '';
+const heroAlt = d.hero.portrait ? `${heroName}, ${heroRole}` : (heroProvider?.data.photoAlt ?? '');
+const noteShortName = noteProvider ? `Dr. ${nameOf(noteProvider.data.name)}` : '';
+const noteCredentialedName = noteProvider ? `Dr. ${noteProvider.data.name}, ${noteProvider.data.credentials}` : '';
 
 const FORM_HREF = '#meet-greet';
 const PHONE = { href: 'tel:+12156457044', text: '(215) 645-7044' };
@@ -127,20 +211,22 @@ const PRICE_LINE = `Membership is $${Math.min(...perPerson)} to $${Math.max(...p
 const INCLUDED_LINE = 'Included: unlimited visits with no copay, same-day and next-day appointments, one to two hour visits, direct phone, text, and email access, preventive and chronic care, telehealth, and Lifestyle Medicine.';
 
 const ogImage = d.seo.ogImage ? new URL(d.seo.ogImage.src, Astro.site).href : undefined;
-// The footer's office block, all from the locations entry: name, address,
+// The footer's office blocks, all from the locations entries: name, address,
 // the office's own number and hours, and the same directions link the office's
 // page builds (src/pages/locations/[slug].astro).
-const destination = `${office.data.addressStreet}, ${office.data.addressCity}, ${office.data.addressState} ${office.data.addressZip}`;
-const footerOffice = {
-  name: office.data.name,
-  street: office.data.addressStreet,
-  city: office.data.addressCity,
-  state: office.data.addressState,
-  zip: office.data.addressZip,
-  phone: office.data.phone,
-  directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Forward Family Medicine, ${destination}`)}`,
-  hours: office.data.hours,
-};
+const footerOffices = offices.map((o) => {
+  const destination = `${o.data.addressStreet}, ${o.data.addressCity}, ${o.data.addressState} ${o.data.addressZip}`;
+  return {
+    name: o.data.name,
+    street: o.data.addressStreet,
+    city: o.data.addressCity,
+    state: o.data.addressState,
+    zip: o.data.addressZip,
+    phone: o.data.phone,
+    directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Forward Family Medicine, ${destination}`)}`,
+    hours: o.data.hours,
+  };
+});
 ---
 
 <LandingLayout
@@ -149,7 +235,7 @@ const footerOffice = {
   ogImage={ogImage}
   ogImageWidth={d.seo.ogImage?.width}
   ogImageHeight={d.seo.ogImage?.height}
-  office={footerOffice}
+  offices={footerOffices}
   ctaHref={FORM_HREF}
   ctaLabel={d.hero.ctaLabel}
   lpCode={d.code}
@@ -162,7 +248,7 @@ const footerOffice = {
         <p class="lp-todo__t">Draft. Open before this page can publish:</p>
         {d.todo.length > 0 && <ul class="lp-todo__list">{d.todo.map((t) => <li>{t}</li>)}</ul>}
         {notePlaceholder && (
-          <p class="lp-todo__note"><strong>Physician note, placeholder, not rendered on the page:</strong> {noteBody || '(empty)'}</p>
+          <p class="lp-todo__note"><strong>{noteShortName ? `Note from ${noteShortName}` : 'Note'}, placeholder, not rendered on the page:</strong> {noteBody || '(empty)'}</p>
         )}
       </div>
     </aside>
@@ -173,44 +259,93 @@ const footerOffice = {
     supporting={d.hero.supporting}
     cta={{ label: d.hero.ctaLabel, href: FORM_HREF }}
     phone={PHONE}
-    photo={p.photo}
-    photoAlt={p.photoAlt}
-    name={credentialedName}
-    role={p.title}
-  />
+    photo={heroProvider?.data.photo}
+    photoAlt={heroAlt}
+    name={heroName}
+    role={heroRole}
+    portraitStyle={d.cards ? 'compact' : 'full'}
+    note={noteInHero ? { name: heroName, role: heroRole } : undefined}
+  >{noteInHero && <Content slot="note" />}</LpHero>
 
-  <section class="lp-sec lp-sec--white lp-tiles-sec" aria-label="Why patients choose this care">
-    <ul class="rd-wrap lp-tiles">
-      {d.tiles.map((t) => (
-        <li class="lp-tile">
-          <p class="lp-tile__t rd-serif">{t.phrase}</p>
-          <p class="lp-tile__s">{t.line}</p>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <section class="lp-sec lp-sec--sage">
-    <div class="rd-wrap lp-split">
-      <div class="lp-stack lp-split__head">
-        <h2 class="rd-h2 lp-h2">What you get</h2>
-        {d.whatYouGetLead && <p class="lp-p lp-split__lead">{d.whatYouGetLead}</p>}
+  {cards.length > 0 && (
+    <section class="lp-sec lp-sec--white lp-cards-sec" aria-labelledby="lp-cards-h">
+      <div class="rd-wrap">
+        {d.cardsHeading ? <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">{d.cardsHeading}</h2> : <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">Choose the physician you'd like to meet.</h2>}
+        <div class="lp-cards" data-lp-placement="cards">
+          {cards.map((c, i) => (
+            <article class="lp-card">
+              {c.data.photo && (
+                <Image
+                  src={c.data.photo}
+                  alt={c.credentialedName}
+                  width={1080}
+                  height={1350}
+                  widths={[360, 440, 720, 880]}
+                  sizes="(max-width: 860px) calc(100vw - 42px), 440px"
+                  format="webp"
+                  quality={82}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={i === 0 ? 'high' : undefined}
+                  class="lp-card__photo"
+                />
+              )}
+              <div class="lp-card__body">
+                <p class="rd-eyebrow rd-eyebrow--gold lp-card__status">{c.status}</p>
+                <h3 class="rd-serif lp-card__name">{c.credentialedName}</h3>
+                <p class="lp-card__role">{c.data.title}</p>
+                <RuledList size="sm" class="lp-card__rows">
+                  {c.credentials.map((line) => <li>{line}</li>)}
+                </RuledList>
+                <p class="lp-card__bio">{c.bio}</p>{c.focus && (
+                  <ul class="lp-card__focus" aria-label="Areas of focus">
+                    {c.focus.map((f) => <li>{f}</li>)}
+                  </ul>
+                )}
+                <a href={FORM_HREF} class="btn-forest lp-card__cta" data-lp-cta={c.placement} data-mg-physician={c.bookingCode}>{c.ctaLabel}</a>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-      <RuledList size="md" class="lp-list">
-        {d.whatYouGet.map((s) => <li>{s}</li>)}
-      </RuledList>
-    </div>
-  </section>
+    </section>
+  )}
 
-  {!notePlaceholder && (
+  {d.tiles && (
+    <section class="lp-sec lp-sec--white lp-tiles-sec" aria-label="Why patients choose this care">
+      <ul class="rd-wrap lp-tiles">
+        {d.tiles.map((t) => (
+          <li class="lp-tile">
+            <p class="lp-tile__t rd-serif">{t.phrase}</p>
+            <p class="lp-tile__s">{t.line}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {d.whatYouGet && (
+    <section class="lp-sec lp-sec--sage">
+      <div class="rd-wrap lp-split">
+        <div class="lp-stack lp-split__head">
+          <h2 class="rd-h2 lp-h2">What you get</h2>
+          {d.whatYouGetLead && <p class="lp-p lp-split__lead">{d.whatYouGetLead}</p>}
+        </div>
+        <RuledList size="md" class="lp-list">
+          {d.whatYouGet.map((s) => <li>{s}</li>)}
+        </RuledList>
+      </div>
+    </section>
+  )}
+
+  {noteInSection && noteProvider && (
     <section class="lp-sec lp-sec--cream">
       <div class="rd-wrap">
       <div class="lp-note">
-        <h2 class="rd-h2 lp-h2">{d.noteHeading ?? `A note from ${shortName}`}</h2>
+        <h2 class="rd-h2 lp-h2">{d.noteHeading ?? `A note from ${noteShortName}`}</h2>
         <figure class="lp-quote">
-          {p.photo && (
+          {noteProvider.data.photo && (
             <Image
-              src={p.photo}
+              src={noteProvider.data.photo}
               alt=""
               width={240}
               height={240}
@@ -225,7 +360,7 @@ const footerOffice = {
           <blockquote class="lp-quote__body">
             <Content />
           </blockquote>
-          <figcaption class="lp-quote__who"><strong>{credentialedName}</strong>{p.title}</figcaption>
+          <figcaption class="lp-quote__who"><strong>{noteCredentialedName}</strong>{noteProvider.data.title}</figcaption>
         </figure>
         <a href="/about/" class="lp-link" data-lp-nav="about">About the practice</a>
       </div>
@@ -236,8 +371,8 @@ const footerOffice = {
   <section class="lp-sec lp-sec--white">
     <div class="rd-wrap lp-split">
       <div class="lp-stack lp-split__head">
-        <h2 class="rd-h2 lp-h2">What membership costs</h2>
-        <p class="lp-p">{PRICE_LINE}</p>
+        <h2 class="rd-h2 lp-h2">{d.membership?.heading ?? 'What membership costs'}</h2>
+        <p class="lp-p">{d.membership?.intro ?? PRICE_LINE}</p>
       </div>
       <div class="lp-price">
         <p class="lp-price__head">Per person, per month</p>
@@ -249,7 +384,15 @@ const footerOffice = {
             </li>
           ))}
         </RuledList>
-        <p class="lp-price__inc">{INCLUDED_LINE}</p>
+        {d.membership?.benefits ? (
+          <Fragment><p class="lp-price__sub">Included in membership</p>
+            <RuledList size="sm" class="lp-price__benefits">
+              {d.membership.benefits.map((b) => <li>{b}</li>)}
+            </RuledList>
+            {d.membership.separate && <p class="lp-price__inc">{d.membership.separate}</p>}</Fragment>
+        ) : (
+          <p class="lp-price__inc">{INCLUDED_LINE}</p>
+        )}
       </div>
     </div>
   </section>
@@ -261,12 +404,13 @@ const footerOffice = {
           source={d.source}
           physician={d.form.skipChooser ? d.bookingPhysician : undefined}
           office={d.form.lockOffice ? d.office : undefined}
-          officeName={office.data.name}
-          physicianName={d.form.skipChooser ? `Dr. ${p.name}` : undefined}
+          officeName={office?.data.name}
+          physicianName={d.form.skipChooser && p ? `Dr. ${p.name}` : undefined}
           gaSource={d.code}
           topic={d.topic}
           heading={d.form.heading}
           subline={d.form.subline}
+          physicianChoice={d.form.physicianChoice}
         />
       </div>
     </div>
@@ -320,6 +464,53 @@ const footerOffice = {
   .lp-tile:first-child .lp-tile__t { font-size: 34px; line-height: 1.12; letter-spacing: -0.015em; }
   .lp-tile__s { margin-top: 10px !important; font-size: 15px; line-height: 1.55; color: var(--text-600); max-width: 34ch; }
 
+  /* Two physician cards (the two-physician variant), under one line of
+     heading: lighter-linen panels on the white band, side by side from
+     861px, at most 440px wide each and centred as a pair under a centred
+     heading, each the portrait across the top (square at desktop, 4:5 on a
+     phone), then the status line, name, role, credential rows, the
+     two-sentence bio and the button. The grid stretches both cards to one
+     height and the button sits at the bottom of each (margin-top auto), so
+     the two line up. On a phone the panels stack at full width and the
+     heading sits left like the others. Nothing moves. */
+  .lp-cards-sec { padding: 56px 0 88px; }
+  .lp-cards__h { max-width: none; margin-bottom: 28px; text-align: center; }
+  .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 440px)); justify-content: center; gap: 40px; align-items: stretch; }
+  .lp-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--linen-50);
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .lp-card :global(.lp-card__photo) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 50% 20%;
+    background: var(--linen-300);
+  }
+  .lp-card__body { flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; padding: 24px 28px 28px; }
+  .lp-card__body > :global(*) { margin: 0; }
+  .lp-card__name { font-size: 28px; line-height: 1.12; color: var(--forest); letter-spacing: -0.01em; }
+  .lp-card__role { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--sage-600); }
+  .lp-card :global(.lp-card__rows) { align-self: stretch; margin-top: 4px; }
+  .lp-card :global(.lp-card__rows > li) { font-size: 14px; line-height: 1.5; color: var(--text-700); padding: 8px 0; }
+  /* The bio keeps 18px under it, the button takes the rest of the card's
+     height (margin-top auto), so the two buttons sit on one line. */
+  .lp-card__bio { margin: 6px 0 18px !important; font-size: 16px; line-height: 1.65; color: var(--text-900); }
+  .lp-card__cta { margin-top: auto !important; }
+  /* Areas of focus: quiet hairline tags, no icons, before the button. */
+  .lp-card :global(.lp-card__focus) { list-style: none; margin: 0 0 18px !important; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .lp-card :global(.lp-card__focus li) { padding: 5px 10px; border: 1px solid var(--hairline-strong); border-radius: 2px; font-size: 13px; line-height: 1.4; color: var(--text-700); }
+  @media (max-width: 1100px) {
+    .lp-card__body { padding: 20px 24px 24px; }
+    .lp-card__name { font-size: 25px; }
+  }
+
   /* "What you get" and "What membership costs": the heading column (with its
      lead line) on the left, the list or the table on the right, from 820px up;
      the heading column stays pinned below the sticky header while the right
@@ -362,6 +553,10 @@ const footerOffice = {
   .lp-price__who { color: var(--text-700); }
   .lp-price__amt { font-size: 24px; line-height: 1.1; color: var(--forest); white-space: nowrap; }
   .lp-price__inc { margin: 20px 0 0; font-size: 15px; line-height: 1.65; color: var(--text-600); }
+  /* The entry's benefits: a small heading and a ruled list under the table,
+     then the line about what is separate. */
+  .lp-price__sub { margin: 28px 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-600); }
+  :global(.lp-price__benefits > li) { font-size: 15px; line-height: 1.55; color: var(--text-900); padding: 10px 0; }
 
   /* The form: the shared card, on the sage wash, with a soft shadow. */
   .lp-form__col { max-width: 820px; margin: 0 auto; }
@@ -385,6 +580,14 @@ const footerOffice = {
     .lp-tile:first-child .lp-tile__t { font-size: 29px; }
     .lp-h2 { max-width: none; }
     .lp-p { font-size: 17px; }
+    .lp-cards-sec { padding: 40px 0 48px; }
+    .lp-cards__h { margin-bottom: 20px; text-align: left; }
+    .lp-cards { grid-template-columns: 1fr; gap: 20px; }
+    .lp-card :global(.lp-card__photo) { aspect-ratio: 4 / 5; }
+    .lp-card__body { padding: 20px 22px 22px; }
+    .lp-card__name { font-size: 26px; }
+    .lp-card__bio { font-size: 16px; }
+    .lp-card__cta { width: 100%; }
     :global(.lp-list > li) { font-size: 17px; padding: 16px 0; }
     .lp-note { gap: 28px; }
     .lp-quote { grid-template-columns: 1fr; gap: 16px; }
