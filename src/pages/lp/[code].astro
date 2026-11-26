@@ -165,8 +165,9 @@ const cards = await Promise.all((d.cards ?? []).map(async (c, i) => {
 
 // The note (the markdown body), in the voice of `noteFrom` or, failing that,
 // the page's physician. Empty, or still carrying TODO, it is a placeholder:
-// the note section is left out of the page on every build, and in
-// development the draft banner shows the placeholder text instead.
+// the note section is left out of the page on every build, and on a draft
+// in development the banner shows the placeholder text instead. A published
+// page with no note simply has none (/lp/v1/), so no banner.
 const noteBody = (entry.body ?? '').trim();
 const notePlaceholder = noteBody === '' || /\bTODO\b/.test(noteBody);
 const noteProvider = d.noteFrom ? await getEntry(d.noteFrom) : provider;
@@ -242,7 +243,7 @@ const footerOffices = offices.map((o) => {
   lpPhysician={d.physicianKey}
   lpSource={d.source}
 >
-  {DEV && (d.todo.length > 0 || notePlaceholder) && (
+  {DEV && d.draft && (d.todo.length > 0 || notePlaceholder) && (
     <aside class="lp-todo" aria-label="Open items, shown in development only">
       <div class="rd-wrap">
         <p class="lp-todo__t">Draft. Open before this page can publish:</p>
