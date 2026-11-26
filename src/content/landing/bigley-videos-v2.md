@@ -35,11 +35,9 @@ topic: bigley-video-ad
 # The sheet's source. GA4 gets the page code, v2.
 source: lp-bigley-videos-v2
 # No office fixed: the form offers Wayne or Malvern, and the footer lists both.
-# Draft: renders on `astro dev` only until David approves the built page.
-draft: true
-todo:
-  - "David's review of the built page. The cards heading is his wording as written."
-  - "Credential lines are the providers collection's, not the spec's 'Family Medicine | ...' lines; Dr. Landi's second line reads 'Menopause Society certification (MSCP)'."
+# Published on 2026-11-26 at David's direction: builds as /lp/v2/ (noindex,
+# out of the sitemaps, linked from nowhere).
+draft: false
 hero:
   headline: "Primary care with more time, more attention, and a physician who knows you."
   supporting: "I founded Forward Family Medicine to offer a more personal kind of primary care. While I'm not currently accepting new patients, Dr. Brian Landi in Malvern and Dr. Philip Lieberman in Wayne are welcoming new members and share the philosophy that shaped this practice."

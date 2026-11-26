@@ -5,8 +5,8 @@
 # collection, the Team, Membership and Contact pages, the Meet & Greet copy
 # or the site FAQ, rewritten without em dashes. Nothing here is a new claim.
 # The headline, the supporting line, the bios, the credential lines and the
-# FAQ answers are drafts for David (see todo); the founder note (the body) is
-# his to write.
+# FAQ answers were drafted for David; the founder note (the body) is his to
+# write, and while it is empty no note renders.
 cards:
   - physician: brian-landi-do
     credentials:
@@ -25,15 +25,9 @@ physicianKey: team
 topic: bigley-video-ad
 source: lp-bigley-videos
 # No office fixed: the form offers Wayne or Malvern, and the footer lists both.
-# Draft: renders on `astro dev` only until David approves every todo item.
-draft: true
-todo:
-  - "Headline: draft, for David to approve."
-  - "Supporting line: draft from the Membership page and Dr. Bigley's availability note, for David to approve."
-  - "Dr. Landi's card: credential lines and the two-sentence bio, drafted from his bio page, for David to approve."
-  - "Dr. Lieberman's card: credential lines and the two-sentence bio, drafted from his bio page, for David to approve."
-  - "Founder note from Dr. Bigley: empty on purpose. David writes it in his own voice as this file's body, or the section stays out."
-  - "FAQ: three answers reused from the site FAQ and the Membership page, for David to approve."
+# Published on 2026-11-26 at David's direction: builds as /lp/v1/ (noindex,
+# out of the sitemaps, linked from nowhere).
+draft: false
 hero:
   headline: "Dr. Bigley's practice is currently full. Our other physicians practice the same way."
   supporting: "Dr. Brian Landi in Malvern and Dr. Philip Lieberman in Wayne are accepting new patients now. Same membership, same direct phone, text, and email access to your physician, and the same one to two hour visits."
