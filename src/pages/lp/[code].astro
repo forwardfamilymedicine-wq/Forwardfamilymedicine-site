@@ -15,7 +15,11 @@
  *     with `form.physicianChoice`, preselecting that physician in the form),
  *     pricing with the entry's own copy (`membership`) or the template's,
  *     the form with its physician chooser (no physician fixed, no office
- *     fixed), up to four FAQs.
+ *     fixed), up to four FAQs. Optional on this variant (/lp/v3/): a
+ *     contrast after the hero (`contrast`, LpContrast), a line under the
+ *     cards heading (`cardsLead`), a click-to-call link beside the form's
+ *     step line (`form.stepperCall`) and the offices after the FAQ
+ *     (`locations`, LpLocations).
  * The code is opaque: the URL, the canonical, the title and the description
  * name neither the physician nor a condition, and the build refuses an entry
  * whose text does (see assertNeutral below). Everything on the page comes
@@ -46,6 +50,14 @@ import { assertPricingMatchesMembershipPage } from '../../utils/pricingCheck';
 import { BOOKING_PAGES } from '../../data/bookingPages';
 import { getAvailability } from '../../utils/availability';
 import { openOfficeName } from '../../utils/credentialRows';
+// Last on purpose: imported above RuledList, these moved the head's CSS on
+// every /lp/ page (RuledList's and FAQSection's inline styles merged and fell
+// after the landing stylesheet). They carry only inline styles, rendered by
+// the pages that use them, so the live pages' HTML stays as it was.
+import LpContrast from '../../components/landing/LpContrast.astro';
+import LpLocations from '../../components/landing/LpLocations.astro';
+import LpCardsLead from '../../components/landing/LpCardsLead.astro';
+import LpStepCall from '../../components/landing/LpStepCall.astro';
 
 export async function getStaticPaths() {
   const all = await getCollection('landing');
@@ -268,10 +280,10 @@ const footerOffices = offices.map((o) => {
     note={noteInHero ? { name: heroName, role: heroRole } : undefined}
   >{noteInHero && <Content slot="note" />}</LpHero>
 
-  {cards.length > 0 && (
+  {d.contrast && <LpContrast them={d.contrast.them} us={d.contrast.us} />}{cards.length > 0 && (
     <section class="lp-sec lp-sec--white lp-cards-sec" aria-labelledby="lp-cards-h">
       <div class="rd-wrap">
-        {d.cardsHeading ? <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">{d.cardsHeading}</h2> : <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">Choose the physician you'd like to meet.</h2>}
+        {d.cardsHeading ? <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">{d.cardsHeading}</h2> : <h2 class="rd-h2 lp-h2 lp-cards__h" id="lp-cards-h">Choose the physician you'd like to meet.</h2>}{d.cardsLead && <LpCardsLead text={d.cardsLead} />}
         <div class="lp-cards" data-lp-placement="cards">
           {cards.map((c, i) => (
             <article class="lp-card">
@@ -398,7 +410,7 @@ const footerOffices = offices.map((o) => {
     </div>
   </section>
 
-  <section class="lp-sec lp-sec--sage lp-form" id="meet-greet" data-lp-placement="form">
+  <section class:list={['lp-sec', 'lp-sec--sage', 'lp-form', { 'lp-form--steps': d.form.stepperCall }]} id="meet-greet" data-lp-placement="form">
     <div class="rd-wrap">
       <div class="lp-form__col">
         <MeetGreetForm
@@ -412,7 +424,7 @@ const footerOffices = offices.map((o) => {
           heading={d.form.heading}
           subline={d.form.subline}
           physicianChoice={d.form.physicianChoice}
-        />
+        >{d.form.stepperCall && <LpStepCall slot="stepper-aside" phone={PHONE} />}</MeetGreetForm>
       </div>
     </div>
   </section>
@@ -421,7 +433,7 @@ const footerOffices = offices.map((o) => {
     <div class="lp-faq">
       <FAQSection faqs={d.faqs} headline="Common questions" schema={false} />
     </div>
-  )}
+  )}{d.locations && <LpLocations offices={footerOffices} />}
 </LandingLayout>
 
 <style>
