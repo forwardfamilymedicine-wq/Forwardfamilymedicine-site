@@ -60,7 +60,7 @@ contrast:
   them:
     label: "Traditional primary care"
     items:
-      - "Rushed visits, often fifteen minutes."
+      - "Rushed visits, often less than fifteen minutes."
       - "Copays, insurance billing, and unpredictable bills."
       - "Panels of 2,000 to 3,000 patients per doctor."
   us:
