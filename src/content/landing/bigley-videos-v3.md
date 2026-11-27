@@ -4,7 +4,8 @@
 # contrast of traditional primary care and this practice under the hero, the
 # offices from the locations collection after the FAQ. Every claim is one the
 # site already makes; the hero lines, the contrast, the benefits and Dr.
-# Lieberman's bio are drafts for David (see todo). The founder note
+# Lieberman's bio were drafted for David and published at his direction on
+# 2026-11-27. The founder note
 # (the body), the FAQ, the credentials, the focus tags, Dr. Landi's bio and
 # the form copy are v2's, word for word. /lp/v1/ and /lp/v2/ are untouched.
 cards:
@@ -36,14 +37,9 @@ topic: bigley-video-ad
 source: lp-bigley-videos-v3
 # No office fixed: the form offers Wayne or Malvern, the footer and the
 # offices block list both.
-# Draft: renders on `astro dev` only until David approves every todo item.
-draft: true
-todo:
-  - "Headline: draft, for David to approve."
-  - "Supporting line: draft, for David to approve."
-  - "Comparison under the hero: draft, from the site's own wording (About, Careers, Menopause, Services, Concierge pages), for David to approve. 'Feeling like a number' is not on the site, so the third pair is panel size."
-  - "Membership benefits: draft, reworded from the Membership and FAQ pages as answers to the comparison, for David to approve."
-  - "Dr. Lieberman's bio: new two-sentence text for this page (dual board certification, culinary arts and nutrition science, Navy service, practical plans), for David to approve."
+# Published on 2026-11-27 at David's direction: builds as /lp/v3/ (noindex,
+# out of the sitemaps, linked from nowhere).
+draft: false
 hero:
   headline: "Primary care without the rush, the copays, or the insurance billing."
   supporting: "Dr. Bigley's panel is currently full. Dr. Brian Landi in Malvern and Dr. Philip Lieberman in Wayne are accepting new members now, with the same membership and the same philosophy of unhurried care from a physician who knows you."
