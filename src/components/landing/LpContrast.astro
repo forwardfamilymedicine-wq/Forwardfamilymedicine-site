@@ -1,0 +1,81 @@
+---
+/**
+ * Landing pages: a short, plain contrast right after the hero (the entry's
+ * `contrast`). Two columns, each a label and the same number of short lines;
+ * line n of the second column answers line n of the first, and the rows line
+ * up across the two (CSS subgrid). Side by side from 761px, stacked on a
+ * phone with the first column above the second. The first column is set
+ * quieter, the second in forest with a heavier rule. No icons, no cards, no
+ * motion. Every line is the entry's; facts the site already states only.
+ */
+export interface Column { label: string; items: string[] }
+export interface Props { them: Column; us: Column }
+const { them, us } = Astro.props;
+const rows = Math.max(them.items.length, us.items.length);
+---
+
+<section class="lp-vs-sec" aria-label={`${them.label} compared with ${us.label}`}>
+  <div class="rd-wrap">
+    <div class="lp-vs" style={`--lp-vs-rows: ${rows}; --lp-vs-span: ${rows + 1}`}>
+      <div class="lp-vs__col lp-vs__col--them">
+        <h2 class="lp-vs__label">{them.label}</h2>
+        <ul class="lp-vs__list">{them.items.map((t) => <li>{t}</li>)}</ul>
+      </div>
+      <div class="lp-vs__col lp-vs__col--us">
+        <h2 class="lp-vs__label">{us.label}</h2>
+        <ul class="lp-vs__list">{us.items.map((t) => <li>{t}</li>)}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:inline>
+  /* Inline on purpose: this component renders only on the pages that use it,
+     and a bundled style would join the shared landing stylesheet and change
+     the live /lp/ pages' HTML. Class names are unique to this component. */
+  .lp-vs-sec { background: var(--sage-50); border-bottom: 1px solid var(--hairline); padding: 64px 0; }
+  /* One grid of label row plus one row per line; each column and each list
+     is a subgrid of it, so a long line on one side keeps its partner level. */
+  .lp-vs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto repeat(var(--lp-vs-rows), auto);
+    column-gap: 56px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .lp-vs__col { display: grid; grid-row: 1 / span var(--lp-vs-span); grid-template-rows: subgrid; min-width: 0; }
+  .lp-vs__label {
+    margin: 0;
+    padding-bottom: 14px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+  .lp-vs__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-row: 2 / span var(--lp-vs-rows);
+    grid-template-rows: subgrid;
+    border-bottom: 1px solid var(--hairline-strong);
+  }
+  .lp-vs__list li { padding: 16px 0; border-top: 1px solid var(--hairline-strong); font-size: 17px; line-height: 1.55; }
+  .lp-vs__col--them .lp-vs__label { color: var(--text-600); }
+  .lp-vs__col--them li { color: var(--text-700); }
+  .lp-vs__col--us .lp-vs__label { color: var(--forest); }
+  .lp-vs__col--us li { color: var(--forest); font-weight: 500; }
+  .lp-vs__col--us .lp-vs__list { border-bottom-color: var(--forest); }
+  .lp-vs__col--us li:first-child { border-top: 2px solid var(--forest); }
+
+  @media (max-width: 760px) {
+    .lp-vs-sec { padding: 40px 0 44px; }
+    .lp-vs { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 32px; }
+    .lp-vs__col, .lp-vs__list { grid-row: auto; grid-template-rows: none; }
+    .lp-vs__list li { padding: 13px 0; font-size: 16px; }
+  }
+</style>

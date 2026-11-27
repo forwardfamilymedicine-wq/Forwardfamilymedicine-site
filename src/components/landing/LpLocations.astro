@@ -1,0 +1,83 @@
+---
+/**
+ * Landing pages: the offices the page sends people to (the entry's
+ * `locations`), after the FAQ. Every detail is the locations collection's,
+ * passed in by the route as the same records the footer uses: the office
+ * name, the address, a "Get directions" link, the office's phone number and
+ * its hours, each office in its own column from 641px and stacked on a phone.
+ * The phone and the hours read as the footer writes them
+ * (src/utils/officeLines.ts). The only words typed here are the heading and
+ * the link label, both the site's own ("Our Locations", "Get directions").
+ */
+import { officePhone, hoursLines, type OfficeHours } from '../../utils/officeLines';
+
+/** The same office record the route builds for the footer (LpFooter's FooterOffice). */
+export interface Office {
+  name: string; street: string; city: string; state: string; zip: string;
+  phone?: string; directionsUrl?: string; hours?: OfficeHours[];
+}
+export interface Props { offices: Office[] }
+const { offices } = Astro.props;
+const blocks = offices.map((o) => ({ office: o, phone: officePhone(o.phone), hours: hoursLines(o.hours) }));
+---
+
+<section class="lp-loc-sec" aria-labelledby="lp-loc-h">
+  <div class="rd-wrap">
+    <h2 class="rd-h2 lp-loc__h" id="lp-loc-h">Our Locations</h2>
+    <div class="lp-loc">
+      {blocks.map(({ office, phone, hours }) => (
+        <article class="lp-loc__office">
+          <h3 class="rd-serif lp-loc__name">{office.name}</h3>
+          <address class="lp-loc__addr">
+            <span>{office.street}</span>
+            <span>{office.city}, {office.state} {office.zip}</span>
+          </address>
+          <div class="lp-loc__links">
+            {office.directionsUrl && (
+              <a href={office.directionsUrl} class="lp-loc__link" target="_blank" rel="noopener noreferrer">Get directions</a>
+            )}
+            <a href={phone.href} class="lp-loc__link" data-lp-tel="locations">{phone.text}</a>
+          </div>
+          {hours.length > 0 && <p class="lp-loc__hours">{hours.map((line) => <span>{line}</span>)}</p>}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:inline>
+  /* Inline on purpose: this component renders only on the pages that use it,
+     and a bundled style would join the shared landing stylesheet and change
+     the live /lp/ pages' HTML. Class names are unique to this component. */
+  .lp-loc-sec { background: var(--cream-50); border-top: 1px solid var(--hairline); padding: 72px 0 80px; }
+  .lp-loc__h { margin: 0 0 32px; }
+  .lp-loc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 56px; max-width: 920px; }
+  .lp-loc__office { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 20px; border-top: 1px solid var(--hairline-strong); min-width: 0; }
+  .lp-loc__name { margin: 0; font-size: 26px; line-height: 1.15; color: var(--forest); }
+  .lp-loc__addr { font-style: normal; font-size: 16px; line-height: 1.6; color: var(--text-900); }
+  .lp-loc__addr span { display: block; }
+  /* Both links at least 44px tall: a tap target each, side by side. */
+  .lp-loc__links { display: flex; flex-wrap: wrap; gap: 0 24px; }
+  .lp-loc__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: underline;
+    text-decoration-color: var(--hairline-dot);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  .lp-loc__link:hover { text-decoration-color: var(--forest); }
+  .lp-loc__link:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; border-radius: 2px; }
+  .lp-loc__hours { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-600); }
+  .lp-loc__hours span { display: block; }
+
+  @media (max-width: 640px) {
+    .lp-loc-sec { padding: 48px 0 56px; }
+    .lp-loc__h { margin-bottom: 24px; }
+    .lp-loc { grid-template-columns: 1fr; gap: 28px; }
+  }
+</style>

@@ -33,7 +33,7 @@ export interface Props {
    *  locations and providers entries. Shown only; neither is sent anywhere. */
   officeName?: string;
   physicianName?: string;
-  /** The card's heading and the line under it. */
+  /** The card's heading and the line under it. (A `stepper-aside` slot, when given, renders beside the two-step line; landing pages put a click-to-call link there.) */
   heading?: string;
   subline?: string;
   /** Landing pages: what the page is about, for the practice's own sheet only. Never rendered. */
@@ -83,6 +83,10 @@ const PRESELECT = physician ?? '';
 const officeLabel = officeName ?? (office === 'wayne' ? 'Wayne' : office === 'malvern' ? 'Malvern' : '');
 const officeLine = `Your meet and greet will be at our ${officeLabel} office${physicianName ? ` with ${physicianName}` : ''}.`;
 
+// The `stepper-aside` slot, rendered here so that a slot passed with nothing
+// in it (a landing page without the click-to-call link) leaves no wrapper.
+const stepperAside = Astro.slots.has('stepper-aside') ? (await Astro.slots.render('stepper-aside')).trim() : '';
+
 // Dev only: ?preview=step2 or ?preview=scheduler shows the post-submit state
 // without submitting. False in a production build, so the script below never
 // looks at the query.
@@ -95,7 +99,7 @@ const DEV = import.meta.env.DEV;
       <ol>
         <li class="mg-stepper-item is-current" id="mg-stepper-1" aria-current="step"><span class="mg-stepper-n" aria-hidden="true">1</span> Your details<span class="mg-sr" id="mg-stepper-done" hidden> (completed)</span></li>
         <li class="mg-stepper-item" id="mg-stepper-2"><span class="mg-stepper-n" aria-hidden="true">2</span> Choose your time</li>
-      </ol>
+      </ol>{stepperAside && <div class="mg-stepper-aside" set:html={stepperAside} />}
     </nav>
   )}
 <div class="form-wrap">

@@ -1,0 +1,55 @@
+---
+/**
+ * Landing pages: the click-to-call link beside the form's two-step line (the
+ * entry's `form.stepperCall`), passed into MeetGreetForm's `stepper-aside`
+ * slot, with the step line set heavier so the two steps are unmistakable:
+ * numbered circles, a 3px rule, the current step filled forest and a done
+ * step filled sage. The link sits at the right of the steps from 640px and
+ * under them on a phone. The section carries `lp-form--steps` (the route),
+ * so the rules below reach this page's form only.
+ */
+export interface Props { phone: { href: string; text: string } }
+const { phone } = Astro.props;
+---
+
+<a href={phone.href} class="lp-stepcall" data-lp-tel="stepper">Or call {phone.text}</a>
+
+<style is:inline>
+  /* Inline on purpose: this component renders only on the pages that use it,
+     and a bundled style would join the shared landing stylesheet and change
+     the live /lp/ pages' HTML. Class names are unique to this component. */
+  .lp-form--steps .mg-stepper:not([hidden]) { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px 32px; margin: 0 0 18px; }
+  .lp-form.lp-form--steps .mg-stepper ol { flex: 1 1 360px; column-gap: 16px; }
+  .lp-form--steps .mg-stepper .mg-stepper-item { align-items: center; gap: 10px; padding-top: 12px; border-top-width: 3px; font-size: 15px; }
+  .lp-form--steps .mg-stepper .mg-stepper-n {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .lp-form--steps .mg-stepper .mg-stepper-item.is-current .mg-stepper-n { background: var(--forest); border-color: var(--forest); color: var(--linen); }
+  .lp-form--steps .mg-stepper .mg-stepper-item.is-done .mg-stepper-n { background: var(--sage-600); border-color: var(--sage-600); color: var(--linen); }
+  .lp-form--steps .mg-stepper .mg-stepper-aside { flex: 0 0 auto; }
+  .lp-stepcall {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: underline;
+    text-decoration-color: var(--hairline-dot);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    white-space: nowrap;
+  }
+  .lp-stepcall:hover { text-decoration-color: var(--forest); }
+  .lp-stepcall:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; border-radius: 2px; }
+</style>

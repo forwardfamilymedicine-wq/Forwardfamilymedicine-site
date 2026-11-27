@@ -275,6 +275,19 @@ const landing = defineCollection({
     notePlacement: z.enum(['section', 'hero']).default('section'),
     /** The heading over the cards, when not the template's "Choose the physician you'd like to meet." */
     cardsHeading: z.string().min(1).optional(),
+    /** One line under the cards heading. */
+    cardsLead: z.string().min(1).optional(),
+    /**
+     * A short contrast right after the hero: two columns of paired lines
+     * (row n of one answers row n of the other), side by side at desktop,
+     * stacked on a phone. Facts already on the site only.
+     */
+    contrast: z.object({
+      them: z.object({ label: z.string().min(1), items: z.array(z.string().min(1)).min(2).max(4) }),
+      us: z.object({ label: z.string().min(1), items: z.array(z.string().min(1)).min(2).max(4) }),
+    }).refine((c) => c.them.items.length === c.us.items.length, { message: 'the two contrast columns pair up, so they have the same number of lines' }).optional(),
+    /** An offices block after the FAQ: each office the page sends people to, from the locations collection. */
+    locations: z.boolean().default(false),
     /**
      * The membership section's copy, when not the template's: a heading in
      * place of "What membership costs", an intro in place of the price line,
@@ -304,7 +317,9 @@ const landing = defineCollection({
        * and no `skipChooser`.
        */
       physicianChoice: z.boolean().default(false),
-    }).default({ skipChooser: true, lockOffice: true, physicianChoice: false }),
+      /** The click-to-call link beside the form's two-step line, and the step line set heavier. */
+      stepperCall: z.boolean().default(false),
+    }).default({ skipChooser: true, lockOffice: true, physicianChoice: false, stepperCall: false }),
     seo: z.object({
       title: z.string(),
       description: z.string(),

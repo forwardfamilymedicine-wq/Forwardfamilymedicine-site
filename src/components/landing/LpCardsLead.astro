@@ -1,0 +1,20 @@
+---
+/**
+ * Landing pages: one line under the physician cards' heading (the entry's
+ * `cardsLead`), centred with the heading at desktop, left on a phone.
+ */
+export interface Props { text: string }
+const { text } = Astro.props;
+---
+
+<p class="lp-cards__lead">{text}</p>
+
+<style is:inline>
+  /* Inline on purpose: this component renders only on the pages that use it,
+     and a bundled style would join the shared landing stylesheet and change
+     the live /lp/ pages' HTML. Class names are unique to this component. */
+  .lp-cards__lead { margin: -12px auto 32px; max-width: 62ch; text-align: center; font-size: 17px; line-height: 1.65; color: var(--text-900); }
+  @media (max-width: 860px) {
+    .lp-cards__lead { margin: -6px 0 24px; text-align: left; font-size: 16px; }
+  }
+</style>

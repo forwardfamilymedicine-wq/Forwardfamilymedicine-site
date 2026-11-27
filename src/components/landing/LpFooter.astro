@@ -25,6 +25,7 @@
  */
 import { Image } from 'astro:assets';
 import logoLight from '../../assets/logo/ffm-logo-light.png';
+import { officePhone, hoursLines as collapseHours } from '../../utils/officeLines';
 
 export interface FooterHours { day: string; open: string; close: string }
 export interface FooterOffice {
@@ -48,27 +49,10 @@ const { offices } = Astro.props;
 if (offices.length === 0) throw new Error('[LpFooter] a landing page names at least one office.');
 const year = new Date().getFullYear();
 
-function phoneOf(office: FooterOffice) {
-  const text = (office.phone ?? '').trim() || '(215) 645-7044';
-  const digits = text.replace(/\D/g, '');
-  return { text, href: digits.length === 10 ? `tel:+1${digits}` : 'tel:+12156457044' };
-}
-
-// Hours as the entry gives them, with runs of consecutive entries that share
-// the same times collapsed into one line ("Monday to Friday: 7:30 AM to
-// 5:30 PM"). Nothing is added: an entry with no hours prints no hours.
-function hoursLinesOf(office: FooterOffice): string[] {
-  const hours = office.hours ?? [];
-  const lines: string[] = [];
-  for (let i = 0; i < hours.length; ) {
-    let j = i;
-    while (j + 1 < hours.length && hours[j + 1].open === hours[i].open && hours[j + 1].close === hours[i].close) j++;
-    const days = i === j ? hours[i].day : `${hours[i].day} to ${hours[j].day}`;
-    lines.push(`${days}: ${hours[i].open} to ${hours[i].close}`);
-    i = j + 1;
-  }
-  return lines;
-}
+// The number and the hours as src/utils/officeLines.ts writes them (the
+// offices block on a landing page uses the same helpers).
+const phoneOf = (office: FooterOffice) => officePhone(office.phone);
+const hoursLinesOf = (office: FooterOffice) => collapseHours(office.hours);
 
 // One number and one set of hours for the whole footer when every office
 // shares them (one office always does); otherwise each office prints its own.
