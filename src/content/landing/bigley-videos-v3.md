@@ -4,7 +4,7 @@
 # contrast of traditional primary care and this practice under the hero, the
 # offices from the locations collection after the FAQ. Every claim is one the
 # site already makes; the hero lines, the contrast, the benefits and Dr.
-# Lieberman's Navy sentence are drafts for David (see todo). The founder note
+# Lieberman's bio are drafts for David (see todo). The founder note
 # (the body), the FAQ, the credentials, the focus tags, Dr. Landi's bio and
 # the form copy are v2's, word for word. /lp/v1/ and /lp/v2/ are untouched.
 cards:
@@ -21,7 +21,7 @@ cards:
     credentials:
       - "Board Certified, American Board of Family Medicine"
       - "Diplomate, American Board of Lifestyle Medicine"
-    bio: "Dr. Lieberman is board-certified in both Family Medicine and Lifestyle Medicine. With a background in Culinary Arts and Nutrition Science, and after serving as a primary care physician in the U.S. Navy, he brings a practical, whole-person approach to helping patients improve their health and build lasting habits."
+    bio: "Dr. Lieberman is dual board-certified in Family Medicine and Lifestyle Medicine, with a background in culinary arts and nutrition science and service in the U.S. Navy. He works with patients to turn evidence-based guidance on nutrition, movement, sleep, and stress into practical plans that fit real life."
     focus:
       - "Lifestyle Medicine"
       - "Nutrition"
@@ -43,7 +43,7 @@ todo:
   - "Supporting line: draft, for David to approve."
   - "Comparison under the hero: draft, from the site's own wording (About, Careers, Menopause, Services, Concierge pages), for David to approve. 'Feeling like a number' is not on the site, so the third pair is panel size."
   - "Membership benefits: draft, reworded from the Membership and FAQ pages as answers to the comparison, for David to approve."
-  - "Dr. Lieberman's bio: v2's text with the Navy wording from his bio page ('serving as a primary care physician in the U.S. Navy'), for David to approve."
+  - "Dr. Lieberman's bio: new two-sentence text for this page (dual board certification, culinary arts and nutrition science, Navy service, practical plans), for David to approve."
 hero:
   headline: "Primary care without the rush, the copays, or the insurance billing."
   supporting: "Dr. Bigley's panel is currently full. Dr. Brian Landi in Malvern and Dr. Philip Lieberman in Wayne are accepting new members now, with the same membership and the same philosophy of unhurried care from a physician who knows you."
